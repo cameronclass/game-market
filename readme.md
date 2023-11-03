@@ -1,6 +1,9 @@
 # Gulp - Стартовый шаблон
 
-Устанавливаем node зависимости
+
+Устанавливаем node зависимости (Node 14v)
+```javascript
+nvm use node 14
 
 ```javascript
 npm install
