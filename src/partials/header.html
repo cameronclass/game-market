@@ -2,7 +2,8 @@
     <div class="container">
         <div class="header__block">
             <div class="header__logo">
-                <a href="#">Logotype</a>
+                <button class="header__logo_menu"></button>
+                <a class="header__logo_link" href="#">Logotype</a>
             </div>
             <div class="header__menu">
                 <a href="#" class="header__menu_item">Активация</a>
@@ -11,9 +12,17 @@
                 <a href="#" class="header__menu_item">Заказ игры</a>
             </div>
             <div class="header__lang">
-                <button>
-                    <img src="" alt="">
+                <button type="button" class="header__lang_button">
+                    <img class="header__lang_img" src="assets/images/ru.svg" alt="">
                 </button>
+                <div class="header__lang_dropdown">
+                    <a href="#" class="header__lang_link">
+                        <img class="header__lang_img" src="assets/images/en.svg" alt="">
+                    </a>
+                    <a href="#" class="header__lang_link">
+                        <img class="header__lang_img" src="assets/images/uk.svg" alt="">
+                    </a>
+                </div>
             </div>
         </div>
     </div>

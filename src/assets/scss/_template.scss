@@ -3,6 +3,7 @@ body {
     font-family: $font;
     background-color: $dark;
     color: $text-white;
+    font-weight: 400;
 
     &::-webkit-scrollbar {
         display: none;
@@ -20,7 +21,7 @@ a {
     transition: 300ms ease;
 
     &:hover {
-        color: lighten($color: $text-dark, $amount: 20);
+        color: $text-white;
         text-decoration: none;
     }
 }
