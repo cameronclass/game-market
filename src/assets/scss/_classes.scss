@@ -1,9 +1,7 @@
-.position-relative{
-    position: relative;
-}
-.position-absolute{
-    position: absolute;
-}
-.z-index{
-    z-index: 5;
+.container{
+    width: 100%;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
 }
