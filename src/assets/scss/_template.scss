@@ -1,6 +1,6 @@
 html,
 body {
-    font-family: $font;
+    font-family: $font-inter;
     background-color: $dark;
     color: $text-white;
     font-weight: 400;
@@ -27,7 +27,7 @@ a {
 }
 
 button {
-    font-family: $font;
+    font-family: $font-inter;
 
     &:focus {
         outline: none;
