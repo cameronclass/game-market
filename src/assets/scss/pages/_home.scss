@@ -1,6 +1,11 @@
 .section {
+    margin-bottom: 40px;
+    margin-top: 40px;
+
     &__title {
         line-height: 1;
+        margin-top: 40px;
+        margin-bottom: 40px;
 
         &_main {
             font-size: 24px;
@@ -83,10 +88,70 @@
 }
 
 .activate {
+    margin-bottom: 80px;
+
     &__block {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+    }
+
+    &__support {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        &_img {
+            width: 32%;
+            display: flex;
+            justify-content: center;
+
+            &_item {
+                height: 300px;
+                object-fit: contain;
+            }
+        }
+
+        &_video {
+            width: 32%;
+        }
+
+        &_text {
+            width: 32%;
+        }
+
+        &_title {
+            font-size: 36px;
+            color: $text-white;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        &_subtitle {
+            font-size: 16px;
+            color: $text-dark;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        &_btn {
+            max-width: 270px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            color: $text-white;
+            border-radius: 14.5px;
+            border: 1px solid var(--text-Dark, #847F7D);
+            background: linear-gradient(270deg, #4F4F4F 0%, #483C36 31.28%, #46423F 48.78%, #483C36 70.71%, #4F4F4F 100%);
+
+            &_icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
     }
 
     &-card {
@@ -97,7 +162,7 @@
         border: 1px solid #55473E;
         background: linear-gradient(91deg, #2B2823 0%, #27251F 63.74%, #2C2A27 101.17%);
         box-shadow: 0px 4px 70.6px 0px rgba(0, 0, 0, 0.25);
-        padding: 20px;
+        padding: 10px 30px 40px;
 
         &__img {
             display: flex;
@@ -109,29 +174,46 @@
             font-size: 24px;
             font-weight: 500;
             text-align: center;
+            margin-top: 24px;
         }
 
-        &__list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
 
-            &_item {
-                display: flex;
-                align-items: center;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 500;
-            }
 
-            &_img {
-                width: 20px;
-                height: 20px;
-            }
+        &__text {
+            font-size: 12px;
+            color: $text-white;
+            font-weight: 400;
+            margin-top: 16px;
         }
 
-        &__text {}
+        &__subtext {
+            font-size: 12px;
+            color: $text-dark;
+            font-weight: 400;
+            margin-top: 16px;
+        }
+    }
+}
 
-        &__subtext {}
+.vpns {
+
+
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__paid {
+        width: 48%;
+    }
+
+    &__unpaid {
+        width: 48%;
+    }
+
+    &__title {
+        font-size: 36px;
+        font-weight: 700;
+        color: $text-dark;
     }
 }
