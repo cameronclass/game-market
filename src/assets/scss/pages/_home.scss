@@ -285,16 +285,19 @@
     &__block {
         display: flex;
         justify-content: space-between;
+        gap: 20px;
     }
 
     &__time {
         position: relative;
-        width: 48%;
+        width: 100%;
+        max-width: 509px;
         border-radius: 20px;
         overflow: hidden;
 
         &_bg {
             position: relative;
+            height: 100%;
         }
 
         &_overlay {
@@ -321,7 +324,7 @@
         }
 
         &_img {
-            height: 460px;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -344,7 +347,34 @@
             line-height: 1;
         }
 
-        &_pretitle {}
+        &_pretitle {
+            font-size: 14px;
+        }
+    }
+
+    &__contact {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__card {
+        border-radius: 20px;
+        background: linear-gradient(91deg, rgba(51, 50, 49, 0.35) 0%, rgba(79, 79, 79, 0.17) 63.74%, rgba(79, 79, 79, 0.35) 101.17%);
+        padding: 40px;
+        height: 100%;
+
+        &_title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        &_text {
+            color: $text-dark;
+        }
     }
 
     &__btn {
@@ -363,9 +393,9 @@
         max-width: 270px;
     }
 
-    &__contact {}
-
-    &__links {}
-
-    &__email {}
+    &__subs {
+        display: flex;
+        align-items: center;
+        margin-top: 18px;
+    }
 }

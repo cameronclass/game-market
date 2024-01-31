@@ -69,12 +69,15 @@ h4 {
 input,
 textarea {
     width: 100%;
-    border: none;
-    padding: 5px 15px;
+    border-radius: 9px;
+    border: 1px solid $text-dark;
+    padding: 10px;
+    background: transparent;
+    color: $text-white;
 
     &:focus {
         outline: none;
-        border: none;
+        border: 1px solid $text-white;
     }
 }
 
@@ -88,4 +91,14 @@ button {
         outline: none;
         border: none;
     }
+}
+
+.btn {
+    border-radius: 7px;
+    border: 1px solid var(--text-Dark, #847F7D);
+    background: linear-gradient(270deg, #4F4F4F 0%, #483C36 31.28%, #46423F 48.78%, #483C36 70.71%, #4F4F4F 100%);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 40px;
+    color: $text-white;
 }
