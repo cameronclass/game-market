@@ -730,5 +730,12 @@ button {
   align-items: center;
   margin-top: 18px; }
 
+.payment__block {
+  display: flex;
+  justify-content: space-between; }
+
+.payment__icon {
+  height: 61px; }
+
 /* Sliders */
 /* Aos */

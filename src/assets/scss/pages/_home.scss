@@ -399,3 +399,16 @@
         margin-top: 18px;
     }
 }
+
+.payment {
+    &__title {}
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icon {
+        height: 61px;
+    }
+}
