@@ -347,6 +347,36 @@ button {
   .copy-block__text {
     width: 100%; }
 
+.timer {
+  margin-top: 15px;
+  margin-bottom: 30px; }
+  .timer__info {
+    display: flex;
+    align-items: center;
+    gap: 15px; }
+    .timer__info.is-hidden {
+      display: none; }
+  .timer__label {
+    font-size: 14px;
+    color: #847F7D; }
+  .timer__divide {
+    width: 36px;
+    margin-bottom: 20px; }
+  .timer__day, .timer__hours, .timer__minutes, .timer__seconds {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 48px; }
+  .timer__message {
+    visibility: hidden;
+    transition: all 0.5s; }
+    .timer__message.is-visible {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible; }
+
 /* Sections for all pages */
 .header {
   background: linear-gradient(270deg, rgba(79, 79, 79, 0.35) 0%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.78%, rgba(72, 60, 54, 0.35) 70.71%, rgba(79, 79, 79, 0.35) 100%); }
@@ -596,6 +626,68 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px; }
+
+.pre-order__block {
+  display: flex;
+  justify-content: space-between; }
+
+.pre-order__time {
+  position: relative;
+  width: 48%;
+  border-radius: 20px;
+  overflow: hidden; }
+  .pre-order__time_bg {
+    position: relative; }
+  .pre-order__time_overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(28, 27, 25, 0.91) 66.5%); }
+  .pre-order__time_block {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%; }
+  .pre-order__time_img {
+    height: 460px;
+    object-fit: cover; }
+  .pre-order__time_pretitle {
+    font-size: 14px;
+    line-height: 1;
+    margin-bottom: 5px; }
+  .pre-order__time_title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 5px; }
+  .pre-order__time_subtitle {
+    font-size: 14px;
+    color: #847F7D;
+    line-height: 1; }
+
+.pre-order__btn {
+  padding: 20px;
+  border-radius: 14.5px;
+  border: 1px solid var(--text-Dark, #847F7D);
+  background: linear-gradient(270deg, #4F4F4F 0%, #483C36 31.28%, #46423F 48.78%, #483C36 70.71%, #4F4F4F 100%);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #FFFEFC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 270px; }
 
 /* Sliders */
 /* Aos */

@@ -167,3 +167,52 @@
         width: 100%;
     }
 }
+
+.timer {
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+
+    &__label {
+        font-size: 14px;
+        color: $text-dark;
+    }
+
+    &__divide {
+        width: 36px;
+        margin-bottom: 20px;
+    }
+
+    &__day,
+    &__hours,
+    &__minutes,
+    &__seconds {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+        gap: 5px;
+        font-weight: 600;
+        font-size: 48px;
+    }
+
+    &__message {
+        visibility: hidden;
+        transition: all 0.5s;
+
+        &.is-visible {
+            transform: scale(1);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+}
