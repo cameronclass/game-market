@@ -276,6 +276,16 @@ button {
         width: 38px;
         height: 28px;
         object-fit: contain; }
+    .accordion__intro_title {
+      display: flex;
+      align-items: center;
+      gap: 30px; }
+    .accordion__intro_num {
+      font-size: 20px;
+      color: #FFFEFC; }
+    .accordion__intro_text {
+      font-size: 20px;
+      color: #847F7D; }
   .accordion__content {
     padding: 0 25px;
     max-height: 0;
@@ -283,7 +293,10 @@ button {
     will-change: max-height;
     transition: all 0.25s ease-out;
     opacity: 0;
-    border-top: 1px solid #51443B; }
+    border-top: 1px solid #51443B;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; }
   .accordion__active .accordion__intro {
     border-bottom: 1px solid #1E1C18; }
   .accordion__active .accordion__intro_icon {
@@ -545,15 +558,14 @@ button {
   flex-direction: column;
   gap: 12px; }
 
-.vpns__info {
+.vpn-info {
   display: flex;
   flex-direction: column;
   gap: 25px; }
-
-.vpn-info {
-  display: flex;
-  align-items: center;
-  gap: 20px; }
+  .vpn-info__item {
+    display: flex;
+    align-items: center;
+    gap: 20px; }
   .vpn-info__step {
     position: relative; }
     .vpn-info__step_border {
@@ -569,11 +581,21 @@ button {
   .vpn-info__text {
     color: #847F7D; }
 
+.vpn-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #847F7D;
+  line-height: 1.3; }
+
 .vpn-steps {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 30px; }
+  gap: 10px; }
+
+.faq__block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
 
 /* Sliders */
 /* Aos */

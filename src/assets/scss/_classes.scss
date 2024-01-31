@@ -66,6 +66,22 @@
                 object-fit: contain;
             }
         }
+
+        &_title {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        &_num {
+            font-size: 20px;
+            color: $text-white;
+        }
+
+        &_text {
+            font-size: 20px;
+            color: $text-dark;
+        }
     }
 
     &__content {
@@ -76,6 +92,9 @@
         transition: all 0.25s ease-out;
         opacity: 0;
         border-top: 1px solid #51443B;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
     &__active {
