@@ -252,38 +252,87 @@ button {
     color: #FFFEFC; }
 
 .accordion {
-  width: 100%;
-  max-width: 500px;
-  overflow: hidden;
-  margin-top: 20px;
-  background-color: #2c3e50; }
+  border-radius: 8px;
+  border: 1px solid #55473E;
+  background: linear-gradient(91deg, #2B2823 0%, #27251F 63.74%, #2C2A27 101.17%);
+  box-shadow: 0px 4px 70.6px 0px rgba(0, 0, 0, 0.25); }
   .accordion__intro {
     position: relative;
-    padding: 20px;
-    cursor: pointer; }
+    color: #847F7D;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 15px 20px 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .accordion__intro_icon {
+      width: 38px;
+      height: 28px;
+      object-fit: contain;
+      display: flex; }
+      .accordion__intro_icon_active {
+        display: none;
+        width: 38px;
+        height: 28px;
+        object-fit: contain; }
   .accordion__content {
-    padding: 0 20px;
+    padding: 0 25px;
     max-height: 0;
     overflow: hidden;
     will-change: max-height;
     transition: all 0.25s ease-out;
-    color: #f1f1f1;
-    opacity: 0; }
-  .accordion h4,
-  .accordion p {
-    margin: 0;
-    line-height: 1; }
-  .accordion h4 {
-    color: #fff;
-    font-size: 26px;
-    font-weight: 500; }
-  .accordion p {
-    color: #f1f1f1;
-    font-size: 15px;
-    margin: 0; }
+    opacity: 0;
+    border-top: 1px solid #51443B; }
+  .accordion__active .accordion__intro {
+    border-bottom: 1px solid #1E1C18; }
+  .accordion__active .accordion__intro_icon {
+    display: none; }
+  .accordion__active .accordion__intro_icon_active {
+    display: flex; }
   .accordion__active .accordion__content {
-    padding: 0 20px 20px;
+    padding: 20px 25px;
     opacity: 1; }
+
+.copy-block {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px; }
+  .copy-block__overlay {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #55473E;
+    background: linear-gradient(91deg, rgba(43, 40, 35, 0.76) 0%, rgba(39, 37, 31, 0.76) 63.74%, rgba(44, 42, 39, 0.76) 101.17%);
+    backdrop-filter: blur(2px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    top: -50%;
+    left: 0;
+    font-size: 10px;
+    color: #847F7D;
+    padding: 15px; }
+  .copy-block__icon {
+    min-width: 22px; }
+  .copy-block__btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    color: #847F7D;
+    font-weight: 500;
+    transition: 300ms ease;
+    padding-left: 30px; }
+    .copy-block__btn:hover {
+      filter: brightness(10); }
+  .copy-block__text {
+    width: 100%; }
 
 /* Sections for all pages */
 .header {
@@ -476,7 +525,8 @@ button {
 
 .vpns__block {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  gap: 4%; }
 
 .vpns__paid {
   width: 48%; }
@@ -487,7 +537,43 @@ button {
 .vpns__title {
   font-size: 36px;
   font-weight: 700;
-  color: #847F7D; }
+  color: #847F7D;
+  margin-bottom: 20px; }
+
+.vpns__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; }
+
+.vpns__info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; }
+
+.vpn-info {
+  display: flex;
+  align-items: center;
+  gap: 20px; }
+  .vpn-info__step {
+    position: relative; }
+    .vpn-info__step_border {
+      width: 29px; }
+    .vpn-info__step_num {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .vpn-info__text {
+    color: #847F7D; }
+
+.vpn-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px; }
 
 /* Sliders */
 /* Aos */
