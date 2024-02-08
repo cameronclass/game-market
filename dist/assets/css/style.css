@@ -443,6 +443,89 @@ button {
     .header__lang_img {
       width: 40px; }
 
+.payment-footer {
+  padding: 12px 0;
+  border-top: 1px solid #121110;
+  border-bottom: 1px solid #121110; }
+  .payment-footer__title {
+    color: #847F7D;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    line-height: 1; }
+  .payment-footer__block {
+    display: flex;
+    justify-content: space-between; }
+  .payment-footer__icon {
+    width: 92px; }
+  .payment-footer__item {
+    display: flex; }
+
+.advantages-footer {
+  padding: 20px 0;
+  border-top: 1px solid #272624;
+  border-bottom: 1px solid #121110; }
+  .advantages-footer__block {
+    display: flex;
+    justify-content: space-between; }
+  .advantages-footer__item {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .advantages-footer__img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain; }
+  .advantages-footer__title {
+    text-align: center;
+    color: #847F7D;
+    margin-top: 10px;
+    line-height: 1.1; }
+
+.footer-contact {
+  border-top: 1px solid #272624;
+  border-bottom: 1px solid #121110; }
+  .footer-contact__links {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0; }
+  .footer-contact__menu {
+    display: flex;
+    gap: 40px; }
+  .footer-contact__social {
+    display: flex;
+    gap: 20px; }
+    .footer-contact__social_item {
+      height: 25px;
+      transition: 0ms; }
+      .footer-contact__social_item:hover {
+        filter: brightness(10); }
+  .footer-contact__brands {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    margin-bottom: 60px; }
+  .footer-contact__brand {
+    width: auto;
+    height: 41px; }
+
+.footer-bottom {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  border-top: 1px solid #272624;
+  background-color: #1A1917; }
+  .footer-bottom__block {
+    display: flex;
+    justify-content: space-between; }
+  .footer-bottom__text {
+    color: #847F7D; }
+    .footer-bottom__text_white {
+      color: #FFFEFC; }
+  .footer-bottom__links {
+    display: flex;
+    gap: 28px; }
+
 /* Pages */
 .section {
   margin-bottom: 40px;
@@ -729,13 +812,6 @@ button {
   display: flex;
   align-items: center;
   margin-top: 18px; }
-
-.payment__block {
-  display: flex;
-  justify-content: space-between; }
-
-.payment__icon {
-  height: 61px; }
 
 /* Sliders */
 /* Aos */

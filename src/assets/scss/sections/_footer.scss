@@ -1,0 +1,129 @@
+.payment-footer {
+    padding: 12px 0;
+    border-top: 1px solid #121110;
+    border-bottom: 1px solid #121110;
+
+    &__title {
+        color: $text-dark;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 12px;
+        line-height: 1;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icon {
+        width: 92px;
+    }
+
+    &__item {
+        display: flex;
+    }
+}
+
+.advantages-footer {
+    padding: 20px 0;
+    border-top: 1px solid #272624;
+    border-bottom: 1px solid #121110;
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 130px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    &__title {
+        text-align: center;
+        color: $text-dark;
+        margin-top: 10px;
+        line-height: 1.1;
+    }
+}
+
+.footer-contact {
+    border-top: 1px solid #272624;
+    border-bottom: 1px solid #121110;
+
+    &__block {}
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    &__menu {
+        display: flex;
+        gap: 40px;
+    }
+
+    &__social {
+        display: flex;
+        gap: 20px;
+
+
+        &_item {
+            height: 25px;
+            transition: 0ms;
+
+            &:hover {
+                filter: brightness(10);
+            }
+        }
+    }
+
+    &__brands {
+        display: flex;
+        gap: 40px;
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+
+    &__brand {
+        width: auto;
+        height: 41px;
+    }
+}
+
+.footer-bottom {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    border-top: 1px solid #272624;
+    background-color: #1A1917;
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__text {
+        color: $text-dark;
+
+        &_white {
+            color: $text-white;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 28px;
+    }
+
+    &__link {}
+}
