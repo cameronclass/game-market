@@ -39,6 +39,17 @@
 <body>
 
     <header class="header">
+        <!-- Left Shapes -->
+        <div class="header__shape-1"></div>
+        <div class="header__shape-2"></div>
+        <div class="header__shape-3"></div>
+        <div class="header__circle-1"></div>
+
+        <!-- Right Shapes -->
+        <div class="header__shape-4"></div>
+        <div class="header__shape-5"></div>
+        <div class="header__shape-6"></div>
+        <div class="header__circle-2"></div>
         <div class="container">
             <div class="header__block">
                 <div class="header__logo">
@@ -77,7 +88,7 @@
                 <span class="section__title_sub">3 простых шага</span>
             </div>
             <div class="steps__block">
-                <div class="steps__card">
+                <div class="steps__card card-1">
                     <div class="steps__card_title">
                         <div class="steps__card_title_block">
                             <img class="steps__card_title_img" src="assets/images/icons/steps-num.svg" alt="">
@@ -87,6 +98,12 @@
                     </div>
                     <div class="steps__card_content">
                         <div class="steps__card_content_text">Все ключи должны быть активированы на сайт Microsoft <span class="steps__card_content_unique">с использованием VPN</span></div>
+                    </div>
+                    <img src="assets/images/icons/steps-shape.svg" class="steps__card_shape-1" alt="">
+                    <img src="assets/images/icons/steps-shape.svg" class="steps__card_shape-2" alt="">
+
+                    <div class="card-1__alert">
+                        <img src="assets/images/icons/steps-alert.svg" alt="">
                     </div>
                 </div>
                 <div class="steps__card">
@@ -100,8 +117,10 @@
                     <div class="steps__card_content">
                         <div class="steps__card_content_text">Детальный процесс активации вы можете найти ниже</div>
                     </div>
+                    <img src="assets/images/icons/steps-shape.svg" class="steps__card_shape-1" alt="">
+                    <img src="assets/images/icons/steps-shape.svg" class="steps__card_shape-2" alt="">
                 </div>
-                <div class="steps__card">
+                <div class="steps__card card-3">
                     <div class="steps__card_title">
                         <div class="steps__card_title_block">
                             <img class="steps__card_title_img" src="assets/images/icons/steps-num.svg" alt="">
@@ -112,101 +131,118 @@
                     <div class="steps__card_content">
                         <div class="steps__card_content_text">После активации, можете скачать игру на устройстве - и играть :) </div>
                     </div>
+                    <img src="assets/images/icons/steps-shape.svg" class="steps__card_shape-1" alt="">
+                    <img src="assets/images/icons/steps-shape.svg" class="steps__card_shape-2" alt="">
                 </div>
             </div>
         </section>
 
-        <section class="container section activate">
+        <section class="section activate">
 
-            <div class="section__title">
-                <h3 class="section__title_main">Общая инструкция</h3>
-                <span class="section__title_sub">по активации</span>
-            </div>
+            <div class="container">
+                <div class="section__title">
+                    <h3 class="section__title_main">Общая инструкция</h3>
+                    <span class="section__title_sub">по активации</span>
+                </div>
 
-            <div class="activate__block">
+                <div class="activate__block">
 
-                <div class="activate-card">
-                    <img class="activate-card__img" src="assets/images/activate-1.png" alt="">
-                    <div class="activate-card__title">Выбор VPN</div>
-                    <div class="activate-card__list">
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-grey">Выберите впн со списка <b>ниже</b> - либо воспользуйтесь своим.</span>
+                    <div class="activate-card card-1">
+                        <img class="activate-card__img" src="assets/images/activate-1.png" alt="">
+                        <div class="activate-card__block">
+                            <div class="activate-card__title">Выбор VPN</div>
+                            <div class="activate-card__list">
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-grey">Выберите впн со списка <b>ниже</b> - либо воспользуйтесь своим.</span>
+                                </div>
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-white">Используя впн важно выбирать регион, такой же как и регион в ключа!</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-white">Используя впн важно выбирать регион, такой же как и регион в ключа!</span>
+
+                    </div>
+
+                    <div class="activate-card card-2">
+                        <img class="activate-card__img" src="assets/images/activate-2.png" alt="">
+                        <div class="activate-card__block">
+                            <div class="activate-card__title">Активация игры</div>
+                            <div class="activate-card__list">
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-grey">включаем VPN с нужным регионом</span>
+                                </div>
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-grey">переходим на сайт <b>microsoft</b></span>
+                                </div>
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-grey">Активируем ключ - играем!</span>
+                                </div>
+                            </div>
+                            <div class="activate-card__subtext">Если получили ошибку "Не удалось найти этот продукт" -значит игры нету в вашем регионе (не добавили либо исключили разработчики) Вам нужно сменить регион вашего аккаунта - на регион ключа - как это сделать указано в разделе "Ошибки и Решения"</div>
+                            <div class="activate-card__text">В этом разделе мы добавляем все глобальные ошибки - и их решения. Если там не нашли - пишите нам - мы поможем, и добавим :)</div>
                         </div>
                     </div>
-                </div>
 
-                <div class="activate-card">
-                    <img class="activate-card__img" src="assets/images/activate-2.png" alt="">
-                    <div class="activate-card__title">Активация игры</div>
-                    <div class="activate-card__list">
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-grey">включаем VPN с нужным регионом</span>
-                        </div>
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-grey">переходим на сайт <b>microsoft</b></span>
-                        </div>
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-grey">Активируем ключ - играем!</span>
+                    <div class="activate-card card-3">
+                        <img class="activate-card__img" src="assets/images/activate-3.png" alt="">
+                        <div class="activate-card__block">
+                            <div class="activate-card__title">Подарок за отзыв</div>
+                            <div class="activate-card__text">Оставляя положительный отзыв - вы получаете подарочную карту, которой можете воспользоваться в будущем :)</div>
+                            <div class="activate-card__list">
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-grey">Заходим на digiseller.market</span>
+                                </div>
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-grey">Авторизируйтесь под своим Email , который указывали при покупке</span>
+                                </div>
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-grey">Выбираете товар\услугу</span>
+                                </div>
+                                <div class="list-item">
+                                    <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
+                                    <span class="text-grey">Снизу вкладка "Отзыв о товаре"</span>
+                                </div>
+                            </div>
+                            <div class="activate-card__subtext">Оставляя больше положительных отзывов - получаете больше подарочных карт :) Их можно обьединять и использовать вместе</div>
                         </div>
                     </div>
-                    <div class="activate-card__subtext">Если получили ошибку "Не удалось найти этот продукт" -значит игры нету в вашем регионе (не добавили либо исключили разработчики) Вам нужно сменить регион вашего аккаунта - на регион ключа - как это сделать указано в разделе "Ошибки и Решения"</div>
-                    <div class="activate-card__text">В этом разделе мы добавляем все глобальные ошибки - и их решения. Если там не нашли - пишите нам - мы поможем, и добавим :)</div>
+
                 </div>
 
-                <div class="activate-card">
-                    <img class="activate-card__img" src="assets/images/activate-3.png" alt="">
-                    <div class="activate-card__title">Подарок за отзыв</div>
-                    <div class="activate-card__text">Оставляя положительный отзыв - вы получаете подарочную карту, которой можете воспользоваться в будущем :)</div>
-                    <div class="activate-card__list">
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-grey">Заходим на digiseller.market</span>
+                <div class="activate__support">
+
+                    <img src="assets/images/activate-4-bg.svg" class="activate__support_bg" alt="">
+
+                    <div class="activate__support_block">
+                        <div class="activate__support_img">
+                            <img class="activate__support_img_item" src="assets/images/activate-4.png" alt="">
                         </div>
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-grey">Авторизируйтесь под своим Email , который указывали при покупке</span>
+                        <div class="activate__support_video">
+                            <div class="activate__support_title">Видео процесс</div>
+                            <div class="activate__support_subtitle">Активации игры</div>
+                            <button type="button" class="activate__support_btn">
+                                <span class="activate__support_btn_text">Смотреть видео</span>
+                                <img class="activate__support_btn_icon" src="assets/images/icons/play.svg" alt="">
+                            </button>
                         </div>
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-grey">Выбираете товар\услугу</span>
-                        </div>
-                        <div class="list-item">
-                            <img class="list-item__img" src="assets/images/icons/list-icon.png" alt="">
-                            <span class="text-grey">Снизу вкладка "Отзыв о товаре"</span>
+                        <div class="activate__support_text">
+                            <div class="activate__support_title">Помощь активации</div>
+                            <div class="activate__support_subtitle">Нашим менеджером</div>
+                            <button type="button" class="activate__support_btn">
+                                <span class="activate__support_btn_text">Написать менеджеру</span>
+                                <img class="activate__support_btn_icon" src="assets/images/icons/write.svg" alt="">
+                            </button>
                         </div>
                     </div>
-                    <div class="activate-card__subtext">Оставляя больше положительных отзывов - получаете больше подарочных карт :) Их можно обьединять и использовать вместе</div>
-                </div>
 
-            </div>
-
-            <div class="activate__support">
-                <div class="activate__support_img">
-                    <img class="activate__support_img_item" src="assets/images/activate-4.png" alt="">
-                </div>
-                <div class="activate__support_video">
-                    <div class="activate__support_title">Видео процесс</div>
-                    <div class="activate__support_subtitle">Активации игры</div>
-                    <button type="button" class="activate__support_btn">
-                        <span class="activate__support_btn_text">Смотреть видео</span>
-                        <img class="activate__support_btn_icon" src="assets/images/icons/play.svg" alt="">
-                    </button>
-                </div>
-                <div class="activate__support_text">
-                    <div class="activate__support_title">Помощь активации</div>
-                    <div class="activate__support_subtitle">Нашим менеджером</div>
-                    <button type="button" class="activate__support_btn">
-                        <span class="activate__support_btn_text">Написать менеджеру</span>
-                        <img class="activate__support_btn_icon" src="assets/images/icons/write.svg" alt="">
-                    </button>
                 </div>
             </div>
 

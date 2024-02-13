@@ -1,3 +1,8 @@
+.main {
+    position: relative;
+    z-index: 2;
+}
+
 .section {
     margin-bottom: 40px;
     margin-top: 40px;
@@ -22,8 +27,8 @@
 }
 
 .steps {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 
     &__block {
         margin-top: 40px;
@@ -32,11 +37,11 @@
     }
 
     &__card {
-        width: 32.5%;
+        width: 32%;
         padding: 20px;
         border-radius: 20px;
         background: linear-gradient(91deg, rgba(51, 50, 49, 0.35) 0%, rgba(79, 79, 79, 0.17) 63.74%, rgba(51, 49, 44, 0.35) 101.17%);
-
+        position: relative;
 
 
         &_title {
@@ -44,6 +49,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            position: relative;
+            z-index: 3;
 
             &_block {
                 position: relative;
@@ -68,6 +75,8 @@
         }
 
         &_content {
+            position: relative;
+            z-index: 3;
             margin-top: 10px;
 
             &_text {
@@ -84,22 +93,99 @@
                 font-weight: 700;
             }
         }
+
+        &_shape-1 {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 20px;
+            width: 100px;
+            opacity: 0.2;
+        }
+
+        &_shape-2 {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 20px;
+            width: 100px;
+            opacity: 0.2;
+            transform: rotate(180deg);
+        }
+
+        &.card-1 {
+            position: relative;
+            top: 50px;
+            transform: rotate(-4deg);
+        }
+
+        & .card-1__alert {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 17px solid rgb(28, 27, 25);
+            box-shadow: 0px 4px 70.6px 0px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(122.91deg, rgb(43, 40, 35) 0%, rgb(39, 37, 31) 55.236%, rgb(44, 42, 39) 87.676%);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -45px;
+            right: -45px;
+            z-index: 3;
+
+            img {
+                height: 60px;
+                position: relative;
+                top: 5px;
+            }
+        }
+
+        &.card-3 {
+            position: relative;
+            top: 50px;
+            transform: rotate(4deg);
+
+            border: 1px solid rgb(255, 108, 61);
+            border-radius: 20px;
+            box-shadow: 0px 4px 70.6px 0px rgba(245, 144, 52, 0.18);
+            background: linear-gradient(122.91deg, rgb(43, 40, 35) 0%, rgb(39, 37, 31) 60.613%, rgb(44, 42, 39) 96.211%);
+        }
     }
 }
 
 .activate {
+    background: rgb(26, 25, 23);
+    padding-top: 60px;
     margin-bottom: 80px;
 
     &__block {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        margin-top: 100px;
     }
 
     &__support {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        position: relative;
+        top: -100px;
+
+        &_bg {
+            position: absolute;
+            z-index: 2;
+            top: -58px;
+            width: 100%;
+            height: 429px;
+            left: 0;
+        }
+
+        &_block {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 3;
+        }
 
         &_img {
             width: 32%;
@@ -168,29 +254,52 @@
             display: flex;
             height: 210px;
             object-fit: contain;
+            position: relative;
+            top: -60px;
         }
 
         &__title {
             font-size: 24px;
             font-weight: 500;
             text-align: center;
-            margin-top: 24px;
         }
 
+        &__block {
+            position: relative;
+            top: -40px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
 
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
 
         &__text {
             font-size: 12px;
             color: $text-white;
             font-weight: 400;
-            margin-top: 16px;
         }
 
         &__subtext {
             font-size: 12px;
             color: $text-dark;
             font-weight: 400;
-            margin-top: 16px;
+        }
+
+        &.card-1 {
+            height: 429px;
+        }
+
+        &.card-2 {
+            height: 571px;
+        }
+
+        &.card-3 {
+            height: 610px;
         }
     }
 }
@@ -399,4 +508,3 @@
         margin-top: 18px;
     }
 }
-
