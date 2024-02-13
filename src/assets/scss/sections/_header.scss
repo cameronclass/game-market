@@ -3,9 +3,10 @@
     width: 100%;
     top: 0;
     z-index: 10;
-    background-color: #2d2a27;
+    background-color: #2B2824;
     /* background: linear-gradient(268.85deg, rgba(79, 79, 79, 0.35) 0.003%, rgba(72, 60, 54, 0.35) 31.276%, rgba(70, 66, 63, 0.35) 48.784%, rgba(72, 60, 54, 0.35) 70.713%, rgba(79, 79, 79, 0.35) 99.999%); */
 
+    /* left */
     &__shape-1 {
         position: absolute;
         top: 0;
@@ -13,7 +14,7 @@
         width: 25%;
         height: 100px;
         background: linear-gradient(122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.736%, rgba(79, 79, 79, 0.35) 101.168%);
-        clip-path: polygon(0 0, 60% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
     }
 
     &__shape-2 {
@@ -36,14 +37,16 @@
         clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
     }
 
+    /* right */
+
     &__shape-4 {
         position: absolute;
         top: 0;
         right: 0;
         width: 25%;
         height: 100px;
-        background: linear-gradient(122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.735%, rgba(79, 79, 79, 0.35) 101.167%);
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0% 100%);
+        background: linear-gradient(-122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.735%, rgba(79, 79, 79, 0.35) 101.167%);
+        clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
     }
 
     &__shape-5 {
