@@ -1,6 +1,66 @@
+.footer {
+    &__bg {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__shape-1 {
+        background: linear-gradient(143.97deg, rgba(51, 50, 49, 0.1) 0%, rgba(79, 79, 79, 0.05) 32.496%, rgba(79, 79, 79, 0.1) 51.581%);
+        clip-path: polygon(0 0, 30% 0, 100% 100%, 0% 100%);
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    &__shape-2 {
+        background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.39) -0.323%, rgba(255, 108, 61, 0.39) 92.563%);
+        width: 30%;
+        height: 22px;
+        clip-path: polygon(0 0, 0 0, 100% 100%, 0% 100%);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    &__shape-3 {
+        background: linear-gradient(142.31deg, rgba(51, 50, 49, 0.1) 0%, rgba(79, 79, 79, 0.05) 33.954%, rgba(79, 79, 79, 0.1) 53.895%);
+        width: 30%;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__circle-1 {
+        width: 440px;
+        height: 440px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -40%;
+        left: -30%;
+        filter: blur(500px);
+        background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%);
+    }
+
+    &__circle-2 {
+        width: 440px;
+        height: 440px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -40%;
+        right: -20%;
+        filter: blur(500px);
+        background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%);
+    }
+}
+
+
 .payment-footer {
     padding: 12px 0;
-    border-top: 1px solid #121110;
+    border-top: 1px solid #272624;
     border-bottom: 1px solid #121110;
 
     &__title {
@@ -29,6 +89,8 @@
     padding: 20px 0;
     border-top: 1px solid #272624;
     border-bottom: 1px solid #121110;
+    position: relative;
+    z-index: 2;
 
     &__block {
         display: flex;
@@ -59,6 +121,8 @@
 .footer-contact {
     border-top: 1px solid #272624;
     border-bottom: 1px solid #121110;
+    position: relative;
+    z-index: 2;
 
     &__block {}
 

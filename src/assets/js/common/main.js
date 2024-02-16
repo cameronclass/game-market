@@ -87,4 +87,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 1000);
   })();
+
+  /* Hamburger menu */
+  const hamburgerButton = document.querySelector(".js-hamburger");
+  hamburgerButton.addEventListener("click", function () {
+    this.classList.toggle("is-active");
+  });
+
+  /* Language button */
+  const langButton = document.querySelector(".header__lang_button");
+  const langDropdown = document.querySelector(".header__lang_dropdown");
+
+  langButton.addEventListener("click", function () {
+    langDropdown.classList.toggle("active");
+  });
 });

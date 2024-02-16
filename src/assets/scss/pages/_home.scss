@@ -4,8 +4,6 @@
 }
 
 .section {
-    margin-bottom: 40px;
-    margin-top: 40px;
 
     &__title {
         line-height: 1;
@@ -27,8 +25,11 @@
 }
 
 .steps {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 160px;
+    position: relative;
+    z-index: 3;
+    background-color: $dark;
 
     &__block {
         margin-top: 40px;
@@ -155,9 +156,50 @@
 }
 
 .activate {
-    background: rgb(26, 25, 23);
     padding-top: 60px;
     margin-bottom: 80px;
+    position: relative;
+
+    &__bg {
+        width: 100%;
+        height: 600px;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-color: #1A1917;
+    }
+
+    &__circle-1 {
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        top: 300px;
+        left: 50px;
+        filter: blur(500px);
+        background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.55) -88.391%, rgba(255, 108, 61, 0.55) 99.995%);
+    }
+
+    &__circle-2 {
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        bottom: -50px;
+        right: 20%;
+        filter: blur(500px);
+        background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.55) -88.391%, rgba(255, 108, 61, 0.35) 99.995%);
+    }
+
+    &__overlay {
+        position: relative;
+        z-index: 3;
+    }
+
+    &__bg-1 {}
 
     &__block {
         display: flex;
@@ -305,10 +347,16 @@
 }
 
 .vpns {
+    position: relative;
+    z-index: 3;
+    background-color: #1A1917;
+
     &__block {
         display: flex;
         flex-wrap: wrap;
         gap: 4%;
+        padding-top: 60px;
+        padding-bottom: 80px;
     }
 
     &__paid {
@@ -383,14 +431,39 @@
 }
 
 .faq {
+    padding-bottom: 60px;
+    background-color: $dark;
+    position: relative;
+
+    &__overlay {
+        position: relative;
+        z-index: 3;
+    }
+
     &__block {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
+
+    &__circle {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        top: -100px;
+        left: 10%;
+        filter: blur(500px);
+        background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.55) -88.391%, rgba(255, 108, 61, 0.55) 99.995%);
+    }
 }
 
 .pre-order {
+    padding-top: 40px;
+    padding-bottom: 120px;
+    border-bottom: 1px solid #121110;
+
     &__block {
         display: flex;
         justify-content: space-between;
@@ -484,6 +557,22 @@
         &_text {
             color: $text-dark;
         }
+
+        &_block {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        &_contact {
+            width: 150px;
+            display: flex;
+            gap: 30px;
+        }
+
+        &_link {
+            width: 58px;
+        }
     }
 
     &__btn {
@@ -500,11 +589,29 @@
         align-items: center;
         width: 100%;
         max-width: 270px;
+
+        &:hover {
+            background: #0000005b;
+        }
     }
 
     &__subs {
         display: flex;
         align-items: center;
         margin-top: 18px;
+        position: relative;
+
+        &_btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.576);
+            }
+        }
     }
 }
