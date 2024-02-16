@@ -1,2 +1,1 @@
-@@include("libs.js")
-@@include("main.js")
+@@include("common/main.js")

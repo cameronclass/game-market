@@ -1,18 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+  /* Аккордион */
   const accordions = document.querySelectorAll(".accordion");
-
   const openAccordion = (accordion) => {
     const content = accordion.querySelector(".accordion__content");
     accordion.classList.add("accordion__active");
     content.style.maxHeight = content.scrollHeight + 40 + "px";
   };
-
   const closeAccordion = (accordion) => {
     const content = accordion.querySelector(".accordion__content");
     accordion.classList.remove("accordion__active");
     content.style.maxHeight = null;
   };
-
   accordions.forEach((accordion) => {
     const intro = accordion.querySelector(".accordion__intro");
     const content = accordion.querySelector(".accordion__content");
@@ -27,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   });
 
-  var copyBtn = document.querySelector(".copy-js");
-
+  /* Копия не работает пока */
+  let copyBtn = document.querySelector(".copy-js");
   copyBtn.addEventListener("click", function () {
     var textToCopy = document.querySelector(".copy-block__text");
 
@@ -52,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("Text copied: " + textToCopy.textContent);
   });
 
+  /* Таймер */
   (function () {
     // future date for the countdown
     const countDownDate = new Date(2024, 3, 24, 10).getTime();
