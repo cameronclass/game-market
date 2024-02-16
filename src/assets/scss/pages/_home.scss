@@ -35,6 +35,12 @@
         margin-top: 40px;
         display: flex;
         justify-content: space-between;
+
+        @include netbook {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+        }
     }
 
     &__card {
@@ -44,6 +50,9 @@
         background: linear-gradient(91deg, rgba(51, 50, 49, 0.35) 0%, rgba(79, 79, 79, 0.17) 63.74%, rgba(51, 49, 44, 0.35) 101.17%);
         position: relative;
 
+        @include netbook {
+            width: 40%;
+        }
 
         &_title {
             font-size: 36px;
@@ -118,6 +127,11 @@
             position: relative;
             top: 50px;
             transform: rotate(-4deg);
+
+            @include netbook {
+                transform: none;
+                top: 0;
+            }
         }
 
         & .card-1__alert {
@@ -151,6 +165,11 @@
             border-radius: 20px;
             box-shadow: 0px 4px 70.6px 0px rgba(245, 144, 52, 0.18);
             background: linear-gradient(122.91deg, rgb(43, 40, 35) 0%, rgb(39, 37, 31) 60.613%, rgb(44, 42, 39) 96.211%);
+
+            @include netbook {
+                transform: none;
+                top: 0;
+            }
         }
     }
 }
@@ -199,16 +218,16 @@
         z-index: 3;
     }
 
-    &__bg-1 {}
-
     &__block {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        flex-wrap: wrap;
         margin-top: 100px;
     }
 
     &__support {
+        width: 100%;
         position: relative;
         top: -100px;
 

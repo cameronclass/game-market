@@ -393,6 +393,9 @@ button {
 .header {
   position: fixed;
   width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
   top: 0;
   z-index: 10;
   background-color: #2B2824;
@@ -482,6 +485,9 @@ button {
     display: flex;
     align-items: center;
     gap: 30px; }
+    @media screen and (max-width: 1279px) {
+      .header__menu {
+        display: none; } }
     .header__menu_item {
       font-size: 20px;
       padding: 35px 0;
@@ -794,12 +800,20 @@ button {
     margin-top: 40px;
     display: flex;
     justify-content: space-between; }
+    @media screen and (max-width: 1279px) {
+      .steps__block {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px; } }
   .steps__card {
     width: 32%;
     padding: 20px;
     border-radius: 20px;
     background: linear-gradient(91deg, rgba(51, 50, 49, 0.35) 0%, rgba(79, 79, 79, 0.17) 63.74%, rgba(51, 49, 44, 0.35) 101.17%);
     position: relative; }
+    @media screen and (max-width: 1279px) {
+      .steps__card {
+        width: 40%; } }
     .steps__card_title {
       font-size: 36px;
       display: flex;
@@ -853,6 +867,10 @@ button {
       position: relative;
       top: 50px;
       transform: rotate(-4deg); }
+      @media screen and (max-width: 1279px) {
+        .steps__card.card-1 {
+          transform: none;
+          top: 0; } }
     .steps__card .card-1__alert {
       width: 90px;
       height: 90px;
@@ -879,6 +897,10 @@ button {
       border-radius: 20px;
       box-shadow: 0px 4px 70.6px 0px rgba(245, 144, 52, 0.18);
       background: linear-gradient(122.91deg, #2b2823 0%, #27251f 60.613%, #2c2a27 96.211%); }
+      @media screen and (max-width: 1279px) {
+        .steps__card.card-3 {
+          transform: none;
+          top: 0; } }
 
 .activate {
   padding-top: 60px;
@@ -919,8 +941,10 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
     margin-top: 100px; }
   .activate__support {
+    width: 100%;
     position: relative;
     top: -100px; }
     .activate__support_bg {

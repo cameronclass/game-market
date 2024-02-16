@@ -12,13 +12,13 @@
 }
 
 @mixin netbook {
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1279px) {
     @content;
   }
 }
 
 @mixin laptop {
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1280px) {
     @content;
   }
 }
