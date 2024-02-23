@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){new Swiper(".footerPaySwiper",{slidesPerView:9,spaceBetween:20,loop:!0,autoplay:{delay:2500,disableOnInteraction:!1},breakpoints:{0:{slidesPerView:5},768:{slidesPerView:8},1250:{slidesPerView:11}}}),new Swiper(".footerBrandSwiper",{slidesPerView:"auto",spaceBetween:40})}));

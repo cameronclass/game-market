@@ -51,7 +51,7 @@
         position: relative;
 
         @include netbook {
-            width: 40%;
+            width: 45%;
         }
 
         &_title {
@@ -179,6 +179,10 @@
     margin-bottom: 80px;
     position: relative;
 
+    @include netbook {
+        margin-bottom: 0;
+    }
+
     &__bg {
         width: 100%;
         height: 600px;
@@ -187,6 +191,10 @@
         top: 0;
         left: 0;
         background-color: #1A1917;
+
+        @include netbook {
+            height: 60%;
+        }
     }
 
     &__circle-1 {
@@ -219,17 +227,29 @@
     }
 
     &__block {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
         margin-top: 100px;
+
+        @include netbook {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
     }
 
     &__support {
         width: 100%;
         position: relative;
-        top: -100px;
+        top: -95px;
+        grid-row: 2 / 3;
+        grid-column: 1 / 4;
+
+        @include netbook {
+            grid-row: inherit;
+            grid-column: inherit;
+            top: 0;
+        }
 
         &_bg {
             position: absolute;
@@ -238,6 +258,10 @@
             width: 100%;
             height: 429px;
             left: 0;
+
+            @include netbook {
+                display: none;
+            }
         }
 
         &_block {
@@ -246,12 +270,24 @@
             align-items: flex-end;
             position: relative;
             z-index: 3;
+
+            @include netbook {
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 35px;
+                text-align: center;
+            }
         }
 
         &_img {
             width: 32%;
             display: flex;
             justify-content: center;
+
+            @include netbook {
+                width: auto;
+            }
 
             &_item {
                 height: 300px;
@@ -261,10 +297,21 @@
 
         &_video {
             width: 32%;
+
+            @include netbook {
+                width: auto;
+            }
         }
 
         &_text {
             width: 32%;
+
+            @include netbook {
+                width: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         &_title {
@@ -302,14 +349,14 @@
     }
 
     &-card {
-        width: 32.5%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         border-radius: 20px;
         border: 1px solid #55473E;
         background: linear-gradient(91deg, #2B2823 0%, #27251F 63.74%, #2C2A27 101.17%);
         box-shadow: 0px 4px 70.6px 0px rgba(0, 0, 0, 0.25);
-        padding: 10px 30px 40px;
+        padding: 10px 30px 0px;
 
         &__img {
             display: flex;
@@ -352,15 +399,30 @@
         }
 
         &.card-1 {
-            height: 429px;
+            height: 443px;
+            align-self: start;
+
+            @include netbook {
+                height: auto;
+            }
         }
 
         &.card-2 {
-            height: 571px;
+            height: 574px;
+            align-self: start;
+
+            @include netbook {
+                height: auto;
+            }
         }
 
         &.card-3 {
             height: 610px;
+            align-self: start;
+
+            @include netbook {
+                height: auto;
+            }
         }
     }
 }
@@ -487,6 +549,10 @@
         display: flex;
         justify-content: space-between;
         gap: 20px;
+
+        @include netbook {
+            flex-direction: column;
+        }
     }
 
     &__time {
@@ -495,6 +561,10 @@
         max-width: 509px;
         border-radius: 20px;
         overflow: hidden;
+
+        @include netbook {
+            max-width: 100%;
+        }
 
         &_bg {
             position: relative;
@@ -591,6 +661,12 @@
 
         &_link {
             width: 58px;
+        }
+    }
+
+    &__card_2 {
+        @include netbook {
+            text-align: center;
         }
     }
 

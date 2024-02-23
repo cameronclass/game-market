@@ -158,23 +158,25 @@ function cssWatch(cb) {
 }
 
 function js(cb) {
-  return src(path.src.js, { base: srcPath + "assets/js/" })
-    .pipe(
-      plumber({
-        errorHandler: function (err) {
-          notify.onError({
-            title: "JS Error",
-            message: "Error: <%= error.message %>",
-          })(err);
-          this.emit("end");
-        },
-      })
-    )
-    .pipe(fileinclude())
-    .pipe(uglify())
+  return (
+    src(path.src.js, { base: srcPath + "assets/js/" })
+      .pipe(
+        plumber({
+          errorHandler: function (err) {
+            notify.onError({
+              title: "JS Error",
+              message: "Error: <%= error.message %>",
+            })(err);
+            this.emit("end");
+          },
+        })
+      )
+      .pipe(fileinclude())
+      .pipe(uglify())
 
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.reload({ stream: true }));
+      .pipe(dest(path.build.js))
+      .pipe(browserSync.reload({ stream: true }))
+  );
 
   cb();
 }

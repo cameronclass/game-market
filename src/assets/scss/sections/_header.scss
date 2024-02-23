@@ -14,7 +14,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 25%;
+        width: 30%;
         height: 100px;
         background: linear-gradient(122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.736%, rgba(79, 79, 79, 0.35) 101.168%);
         clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
@@ -46,7 +46,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 25%;
+        width: 30%;
         height: 100px;
         background: linear-gradient(-122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.735%, rgba(79, 79, 79, 0.35) 101.167%);
         clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
@@ -119,6 +119,7 @@
         display: flex;
         align-items: center;
         gap: 30px;
+        margin-right: 10%;
 
         @include netbook {
             display: none;
