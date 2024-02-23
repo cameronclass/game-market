@@ -12,6 +12,10 @@
         position: absolute;
         left: 0;
         bottom: 0;
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__shape-2 {
@@ -22,6 +26,10 @@
         position: absolute;
         left: 0;
         bottom: 0;
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__shape-3 {
@@ -32,6 +40,10 @@
         position: absolute;
         right: 0;
         bottom: 0;
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__circle-1 {
@@ -43,6 +55,10 @@
         left: -30%;
         filter: blur(500px);
         background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%);
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__circle-2 {
@@ -54,6 +70,10 @@
         right: -20%;
         filter: blur(500px);
         background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%);
+
+        @include mobile {
+            display: none;
+        }
     }
 }
 
@@ -96,9 +116,14 @@
     position: relative;
     z-index: 2;
 
+    @include mobile {
+        display: none;
+    }
+
     &__block {
         display: flex;
         justify-content: space-between;
+        gap: 10px;
     }
 
     &__item {
@@ -119,6 +144,10 @@
         color: $text-dark;
         margin-top: 10px;
         line-height: 1.1;
+
+        @include netbook {
+            font-size: 14px;
+        }
     }
 }
 
@@ -139,12 +168,20 @@
         @include netbook {
             flex-direction: column;
             align-items: center;
+
+            gap: 40px;
         }
     }
 
     &__menu {
         display: flex;
         gap: 40px;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
     }
 
     &__social {
@@ -180,6 +217,10 @@
     &__brand {
         width: auto;
         height: 41px;
+
+        @include mobile {
+            width: 100%;
+        }
     }
 }
 
@@ -194,10 +235,19 @@
         align-items: center;
         justify-content: space-between;
         gap: 30px;
+
+        @include mobile {
+            flex-direction: column-reverse;
+        }
     }
 
     &__text {
         color: $text-dark;
+
+        @include netbook {
+            width: 100%;
+            max-width: 355px;
+        }
 
         &_white {
             color: $text-white;

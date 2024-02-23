@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     breakpoints: {
       0: {
-        slidesPerView: 5,
+        slidesPerView: 3,
       },
       768: {
         slidesPerView: 8,
@@ -23,13 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
   let footerBrand = new Swiper(".footerBrandSwiper", {
     slidesPerView: "auto",
     spaceBetween: 40,
-    /* breakpoints: {
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
       0: {
-        centeredSlides: true,
+        loop: true,
+        spaceBetween: 20,
       },
-      1250: {
-        centeredSlides: false,
-      },
-    }, */
+      1250: {},
+    },
   });
 });

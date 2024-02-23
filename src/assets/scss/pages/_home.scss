@@ -10,6 +10,10 @@
         margin-top: 40px;
         margin-bottom: 40px;
 
+        @include mobile {
+            text-align: center;
+        }
+
         &_main {
             font-size: 24px;
             font-weight: 300;
@@ -31,6 +35,10 @@
     z-index: 3;
     background-color: $dark;
 
+    @include mobile {
+        padding-bottom: 60px;
+    }
+
     &__block {
         margin-top: 40px;
         display: flex;
@@ -41,6 +49,10 @@
             justify-content: center;
             gap: 60px;
         }
+
+        @include mobile {
+            flex-direction: column;
+        }
     }
 
     &__card {
@@ -49,9 +61,14 @@
         border-radius: 20px;
         background: linear-gradient(91deg, rgba(51, 50, 49, 0.35) 0%, rgba(79, 79, 79, 0.17) 63.74%, rgba(51, 49, 44, 0.35) 101.17%);
         position: relative;
+        border: 1px solid #55473E;
 
         @include netbook {
             width: 45%;
+        }
+
+        @include mobile {
+            width: 100%;
         }
 
         &_title {
@@ -154,6 +171,10 @@
                 position: relative;
                 top: 5px;
             }
+
+            @include mobile {
+                right: 0;
+            }
         }
 
         &.card-3 {
@@ -169,6 +190,12 @@
             @include netbook {
                 transform: none;
                 top: 0;
+            }
+
+            @include mobile {
+                box-shadow: none;
+                border: 1px solid #55473E;
+                background: linear-gradient(91deg, rgba(51, 50, 49, 0.35) 0%, rgba(79, 79, 79, 0.17) 63.74%, rgba(51, 49, 44, 0.35) 101.17%);
             }
         }
     }
@@ -195,6 +222,10 @@
         @include netbook {
             height: 60%;
         }
+
+        @include mobile {
+            background-color: #1C1B19;
+        }
     }
 
     &__circle-1 {
@@ -207,6 +238,10 @@
         left: 50px;
         filter: blur(500px);
         background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.55) -88.391%, rgba(255, 108, 61, 0.55) 99.995%);
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__circle-2 {
@@ -219,6 +254,10 @@
         right: 20%;
         filter: blur(500px);
         background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.55) -88.391%, rgba(255, 108, 61, 0.35) 99.995%);
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__overlay {
@@ -235,6 +274,13 @@
         @include netbook {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
         }
     }
 
@@ -432,20 +478,38 @@
     z-index: 3;
     background-color: #1A1917;
 
+    @include mobile {
+        background-color: #1C1B19;
+    }
+
+
     &__block {
         display: flex;
-        flex-wrap: wrap;
         gap: 4%;
         padding-top: 60px;
         padding-bottom: 80px;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 50px;
+            padding-top: 0;
+        }
     }
 
     &__paid {
         width: 48%;
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     &__unpaid {
         width: 48%;
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     &__title {
@@ -453,6 +517,10 @@
         font-weight: 700;
         color: $text-dark;
         margin-bottom: 20px;
+
+        @include mobile {
+            text-align: center;
+        }
     }
 
     &__list {
@@ -473,6 +541,10 @@
         display: flex;
         align-items: center;
         gap: 20px;
+
+        @include mobile {
+            gap: 8px;
+        }
     }
 
     &__step {
@@ -537,6 +609,10 @@
         left: 10%;
         filter: blur(500px);
         background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.55) -88.391%, rgba(255, 108, 61, 0.55) 99.995%);
+
+        @include mobile {
+            display: none;
+        }
     }
 }
 
@@ -564,6 +640,10 @@
 
         @include netbook {
             max-width: 100%;
+        }
+
+        @include mobile {
+            height: 460px;
         }
 
         &_bg {
@@ -637,10 +717,19 @@
         padding: 40px;
         height: 100%;
 
+        @include mobile {
+            padding: 30px 20px;
+        }
+
         &_title {
             font-size: 36px;
             font-weight: 700;
             margin-bottom: 8px;
+            line-height: 1.1;
+
+            @include mobile {
+                margin-bottom: 15px;
+            }
         }
 
         &_text {
@@ -651,6 +740,11 @@
             display: flex;
             align-items: center;
             gap: 40px;
+
+            @include mobile {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         &_contact {
@@ -688,6 +782,10 @@
         &:hover {
             background: #0000005b;
         }
+
+        @include mobile {
+            margin: 0 auto;
+        }
     }
 
     &__subs {
@@ -696,6 +794,11 @@
         margin-top: 18px;
         position: relative;
 
+        @include mobile {
+            flex-direction: column;
+            gap: 10px;
+        }
+
         &_btn {
             position: absolute;
             top: 4px;
@@ -703,9 +806,17 @@
             height: 38px;
             display: flex;
             align-items: center;
+            justify-content: center;
 
             &:hover {
                 background: rgba(0, 0, 0, 0.576);
+            }
+
+            @include mobile {
+                width: 100%;
+                position: relative;
+                top: inherit;
+                right: inherit;
             }
         }
     }

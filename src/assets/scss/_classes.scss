@@ -161,6 +161,11 @@
         &:hover {
             filter: brightness(10);
         }
+
+        @include mobile {
+            padding: 0 5px;
+            gap: 10px;
+        }
     }
 
     &__text {
@@ -172,6 +177,10 @@
     margin-top: 15px;
     margin-bottom: 30px;
 
+    @include mobile {
+        margin-bottom: 0;
+    }
+
     &__info {
         display: flex;
         align-items: center;
@@ -179,6 +188,10 @@
 
         &.is-hidden {
             display: none;
+        }
+
+        @include mobile {
+            gap: 3px;
         }
     }
 

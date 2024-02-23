@@ -4,9 +4,14 @@ body {
     background-color: $dark;
     color: $text-white;
     font-weight: 400;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
         display: none;
+    }
+
+    @include mobile {
+        background-color: #1C1B19;
     }
 }
 
