@@ -90,8 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* Hamburger menu */
   const hamburgerButton = document.querySelector(".js-hamburger");
+  const hamburgerMenu = document.querySelector(".js-hamburger-menu");
   hamburgerButton.addEventListener("click", function () {
     this.classList.toggle("is-active");
+    hamburgerMenu.classList.toggle("active");
   });
 
   /* Language button */

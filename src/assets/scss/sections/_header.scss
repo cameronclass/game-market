@@ -7,7 +7,6 @@
     top: 0;
     z-index: 10;
     background-color: #2B2824;
-    /* background: linear-gradient(268.85deg, rgba(79, 79, 79, 0.35) 0.003%, rgba(72, 60, 54, 0.35) 31.276%, rgba(70, 66, 63, 0.35) 48.784%, rgba(72, 60, 54, 0.35) 70.713%, rgba(79, 79, 79, 0.35) 99.999%); */
 
     /* left */
     &__shape-1 {
@@ -35,6 +34,7 @@
 
         @include mobile {
             width: 70%;
+            height: 12px;
         }
     }
 
@@ -49,6 +49,8 @@
 
         @include mobile {
             width: 70%;
+            height: 12px;
+            bottom: -12px;
         }
     }
 
@@ -144,17 +146,52 @@
             color: $text-white;
         }
 
-        &_menu {}
+        &_menu {
+            display: none !important;
+
+            @include netbook {
+                display: flex !important;
+            }
+        }
     }
 
     &__menu {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        margin-right: 10%;
 
         @include netbook {
-            display: none;
+            visibility: hidden;
+            opacity: 0;
+            background-color: #1C1B19;
+            position: absolute;
+            top: 74px;
+            width: calc(100% + 50px);
+            left: -25px;
+            transition: 300ms ease;
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &_block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            /* margin-right: 10%; */
+
+            @include netbook {
+                display: flex;
+                justify-content: center;
+                background: linear-gradient(268.85deg, rgba(79, 79, 79, 0.35) 0.01%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.785%, rgba(72, 60, 54, 0.35) 70.712%, rgba(79, 79, 79, 0.35) 99.994%);
+            }
+
+            @include mobile {
+                height: calc(100vh - 100px);
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 0;
+            }
         }
 
         &_item {
@@ -176,6 +213,10 @@
 
             &:hover::after {
                 background-color: $orange;
+            }
+
+            @include mobile {
+                padding: 25px 0;
             }
         }
     }
