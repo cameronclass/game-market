@@ -414,14 +414,24 @@ button {
   top: 0;
   z-index: 10;
   background-color: #2B2824;
+  border-bottom: 2px solid #1C1B19;
   /* left */
   /* right */ }
+  .header::after {
+    content: "";
+    width: 10%;
+    height: 2px;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    background-color: #FF6C3D;
+    border-radius: 2px; }
   .header__shape-1 {
     position: absolute;
     top: 0;
     left: 0;
     width: 30%;
-    height: 100px;
+    height: 98px;
     background: linear-gradient(122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.736%, rgba(79, 79, 79, 0.35) 101.168%);
     clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%); }
     @media screen and (max-width: 800px) {
@@ -441,7 +451,7 @@ button {
         height: 12px; } }
   .header__shape-3 {
     position: absolute;
-    bottom: -22px;
+    bottom: -24px;
     left: 0;
     width: 25%;
     height: 22px;
@@ -456,8 +466,8 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30%;
-    height: 100px;
+    width: 28%;
+    height: 98px;
     background: linear-gradient(-122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.735%, rgba(79, 79, 79, 0.35) 101.167%);
     clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%); }
     @media screen and (max-width: 800px) {
@@ -476,7 +486,7 @@ button {
         display: none; } }
   .header__shape-6 {
     position: absolute;
-    bottom: -22px;
+    bottom: -24px;
     right: 0;
     width: 25%;
     height: 22px;
@@ -564,14 +574,16 @@ button {
     display: flex; }
     .header__menu_item::after {
       content: "";
-      width: 100%;
+      width: 43px;
       height: 2px;
       position: absolute;
       bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       border-radius: 2px;
       background-color: transparent;
       transition: 300ms ease; }
-    .header__menu_item:hover::after {
+    .header__menu_item:hover::after, .header__menu_item.active::after {
       background-color: #FF6C3D; }
     @media screen and (max-width: 800px) {
       .header__menu_item {
@@ -706,71 +718,68 @@ button {
   transform: rotate(-90deg);
   transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-.footer__bg {
-  position: relative;
-  overflow: hidden; }
-
-.footer__shape-1 {
-  background: linear-gradient(143.97deg, rgba(51, 50, 49, 0.1) 0%, rgba(79, 79, 79, 0.05) 32.496%, rgba(79, 79, 79, 0.1) 51.581%);
-  clip-path: polygon(0 0, 30% 0, 100% 100%, 0% 100%);
-  width: 40%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0; }
-  @media screen and (max-width: 800px) {
-    .footer__shape-1 {
-      display: none; } }
-
-.footer__shape-2 {
-  background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.39) -0.323%, rgba(255, 108, 61, 0.39) 92.563%);
-  width: 30%;
-  height: 22px;
-  clip-path: polygon(0 0, 0 0, 100% 100%, 0% 100%);
-  position: absolute;
-  left: 0;
-  bottom: 0; }
-  @media screen and (max-width: 800px) {
-    .footer__shape-2 {
-      display: none; } }
-
-.footer__shape-3 {
-  background: linear-gradient(142.31deg, rgba(51, 50, 49, 0.1) 0%, rgba(79, 79, 79, 0.05) 33.954%, rgba(79, 79, 79, 0.1) 53.895%);
-  width: 30%;
-  height: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%);
-  position: absolute;
-  right: 0;
-  bottom: 0; }
-  @media screen and (max-width: 800px) {
-    .footer__shape-3 {
-      display: none; } }
-
-.footer__circle-1 {
-  width: 440px;
-  height: 440px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -40%;
-  left: -30%;
-  filter: blur(500px);
-  background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%); }
-  @media screen and (max-width: 800px) {
-    .footer__circle-1 {
-      display: none; } }
-
-.footer__circle-2 {
-  width: 440px;
-  height: 440px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -40%;
-  right: -20%;
-  filter: blur(500px);
-  background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%); }
-  @media screen and (max-width: 800px) {
-    .footer__circle-2 {
-      display: none; } }
+.footer {
+  margin-top: 200px; }
+  .footer__bg {
+    position: relative;
+    overflow: hidden; }
+  .footer__shape-1 {
+    background: linear-gradient(143.97deg, rgba(51, 50, 49, 0.1) 0%, rgba(79, 79, 79, 0.05) 32.496%, rgba(79, 79, 79, 0.1) 51.581%);
+    clip-path: polygon(0 0, 30% 0, 100% 100%, 0% 100%);
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+    @media screen and (max-width: 800px) {
+      .footer__shape-1 {
+        display: none; } }
+  .footer__shape-2 {
+    background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.39) -0.323%, rgba(255, 108, 61, 0.39) 92.563%);
+    width: 30%;
+    height: 22px;
+    clip-path: polygon(0 0, 0 0, 100% 100%, 0% 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+    @media screen and (max-width: 800px) {
+      .footer__shape-2 {
+        display: none; } }
+  .footer__shape-3 {
+    background: linear-gradient(142.31deg, rgba(51, 50, 49, 0.1) 0%, rgba(79, 79, 79, 0.05) 33.954%, rgba(79, 79, 79, 0.1) 53.895%);
+    width: 30%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%);
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+    @media screen and (max-width: 800px) {
+      .footer__shape-3 {
+        display: none; } }
+  .footer__circle-1 {
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -40%;
+    left: -30%;
+    filter: blur(500px);
+    background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%); }
+    @media screen and (max-width: 800px) {
+      .footer__circle-1 {
+        display: none; } }
+  .footer__circle-2 {
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -40%;
+    right: -20%;
+    filter: blur(500px);
+    background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%); }
+    @media screen and (max-width: 800px) {
+      .footer__circle-2 {
+        display: none; } }
 
 .payment-footer {
   padding: 12px 0;

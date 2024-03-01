@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* Копия не работает пока */
   let copyBtn = document.querySelector(".copy-js");
-  copyBtn.addEventListener("click", function () {
+  /* copyBtn.addEventListener("click", function () {
     var textToCopy = document.querySelector(".copy-block__text");
 
     // Create a temporary input element
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // You can add any additional feedback or actions here
     alert("Text copied: " + textToCopy.textContent);
-  });
+  }); */
 
   /* Таймер */
   (function () {

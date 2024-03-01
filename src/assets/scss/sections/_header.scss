@@ -7,6 +7,18 @@
     top: 0;
     z-index: 10;
     background-color: #2B2824;
+    border-bottom: 2px solid #1C1B19;
+
+    &::after {
+        content: "";
+        width: 10%;
+        height: 2px;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        background-color: $orange;
+        border-radius: 2px;
+    }
 
     /* left */
     &__shape-1 {
@@ -14,7 +26,7 @@
         top: 0;
         left: 0;
         width: 30%;
-        height: 100px;
+        height: 98px;
         background: linear-gradient(122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.736%, rgba(79, 79, 79, 0.35) 101.168%);
         clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
 
@@ -40,7 +52,7 @@
 
     &__shape-3 {
         position: absolute;
-        bottom: -22px;
+        bottom: -24px;
         left: 0;
         width: 25%;
         height: 22px;
@@ -60,8 +72,8 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 30%;
-        height: 100px;
+        width: 28%;
+        height: 98px;
         background: linear-gradient(-122.91deg, rgba(28, 27, 25, 0.35) 0%, rgba(79, 79, 79, 0.12) 63.735%, rgba(79, 79, 79, 0.35) 101.167%);
         clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
 
@@ -86,7 +98,7 @@
 
     &__shape-6 {
         position: absolute;
-        bottom: -22px;
+        bottom: -24px;
         right: 0;
         width: 25%;
         height: 22px;
@@ -202,16 +214,19 @@
 
             &::after {
                 content: "";
-                width: 100%;
+                width: 43px;
                 height: 2px;
                 position: absolute;
                 bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
                 border-radius: 2px;
                 background-color: transparent;
                 transition: 300ms ease;
             }
 
-            &:hover::after {
+            &:hover::after,
+            &.active::after {
                 background-color: $orange;
             }
 
