@@ -1,8 +1,13 @@
+/* Libs */
+@import "libs/bootstrap/bootstrap-reboot.scss";
+@import "libs/bootstrap/bootstrap-grid.scss";
+@import "libs/swiperjs";
+
+/* Main */
 /* Helpers */
 @import "variables";
 @import "helpers/mixins";
 @import "helpers/media-query";
-
 /* Template */
 @import "common/fonts";
 @import "common/preloader";
@@ -10,16 +15,11 @@
 @import "common/form";
 @import "template";
 @import "classes";
-
 /* Sections for all pages */
 @import "sections/header";
 @import "sections/footer";
-
 /* Pages */
 @import "pages/home";
-
+@import "pages/main";
 /* Sliders */
 @import "common/sliders";
-
-/* Aos */
-//@import "libs/aos";

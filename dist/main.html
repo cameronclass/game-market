@@ -31,11 +31,10 @@
     <meta name="msapplication-navbutton-color" content="#000">
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/libs.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/app.js"></script>
     <title>Главная страница</title>
 </head>
-<script src="assets/js/app.js"></script>
 
 <body>
 
@@ -95,7 +94,124 @@
     </header>
 
     <main class="main">
+        <section class="home-slider container-fluid">
 
+            <div class="container">
+                <div class="home-slider__tabs">
+                    <a class="home-slider__tab" href="#">
+                        <span class="home-slider__tab_block">
+                            <img class="home-slider__tab_img" src="assets/images/home/icons/catalog.svg" alt="">
+                            <span class="home-slider__tab_title">Catalog</span>
+                        </span>
+                    </a>
+                    <a class="home-slider__tab" href="#">
+                        <span class="home-slider__tab_block">
+                            <img class="home-slider__tab_img" src="assets/images/home/icons/pc.svg" alt="">
+                            <span class="home-slider__tab_title">PC</span>
+                        </span>
+                    </a>
+                    <a class="home-slider__tab" href="#">
+                        <span class="home-slider__tab_block">
+                            <img class="home-slider__tab_img" src="assets/images/home/icons/playstation.svg" alt="">
+                            <span class="home-slider__tab_title">PlayStation</span>
+                        </span>
+                    </a>
+                    <a class="home-slider__tab active" href="#">
+                        <span class="home-slider__tab_block">
+                            <img class="home-slider__tab_img" src="assets/images/home/icons/xbox.svg" alt="">
+                            <span class="home-slider__tab_title">Xbox</span>
+                        </span>
+                    </a>
+                    <a class="home-slider__tab" href="#">
+                        <span class="home-slider__tab_block">
+                            <img class="home-slider__tab_img" src="assets/images/home/icons/nintendo.svg" alt="">
+                            <span class="home-slider__tab_title">Nintendo</span>
+                        </span>
+                    </a>
+                    <a class="home-slider__tab" href="#">
+                        <span class="home-slider__tab_block">
+                            <img class="home-slider__tab_img" src="assets/images/home/icons/giftcard.svg" alt="">
+                            <span class="home-slider__tab_title">Gift Cards</span>
+                        </span>
+                    </a>
+                    <a class="home-slider__tab" href="#">
+                        <span class="home-slider__tab_block">
+                            <img class="home-slider__tab_img" src="assets/images/home/icons/subs.svg" alt="">
+                            <span class="home-slider__tab_title">Subscriptions</span>
+                        </span>
+                    </a>
+                    <a class="home-slider__tab" href="#">
+                        <span class="home-slider__tab_block">
+                            <img class="home-slider__tab_img" src="assets/images/home/icons/gamepoints.svg" alt="">
+                            <span class="home-slider__tab_title">Game Points</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="home-slider__block home-swiper-container">
+                    <div class="swiper-container home-swiper-main">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="home-swiper-main__img" src="assets/images/home/main-slider/1.jpg" alt="">
+                                <div class="home-swiper-main__block">
+                                    <div class="home-swiper-main__title">Lorem ipsum dolor sit amet consectetur adipisicing Consectetur?</div>
+                                    <div class="home-swiper-main__subtitle">Поддтекст либо категория игры Поддтекст либо категория игры</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="home-swiper-main__img" src="assets/images/home/main-slider/2.jpg" alt="">
+                                <div class="home-swiper-main__block">
+                                    <div class="home-swiper-main__title">Название игры 5</div>
+                                    <div class="home-swiper-main__subtitle">Поддтекст либо категория игры</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="home-swiper-main__img" src="assets/images/home/main-slider/3.jpg" alt="">
+                                <div class="home-swiper-main__block">
+                                    <div class="home-swiper-main__title">Название игры 5</div>
+                                    <div class="home-swiper-main__subtitle">Поддтекст либо категория игры</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="home-swiper-main__img" src="assets/images/home/main-slider/4.jpg" alt="">
+                                <div class="home-swiper-main__block">
+                                    <div class="home-swiper-main__title">Название игры 5</div>
+                                    <div class="home-swiper-main__subtitle">Поддтекст либо категория игры</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home-swiper-main__arrows">
+                            <div class="swiper-button-prev">
+                                <img src="assets/images/home/icons/arrow-bg.svg" class="home-swiper-main__arrow_left_bg" alt="">
+                                <img src="assets/images/home/icons/arrow-right.svg" class="home-swiper-main__arrow_left" alt="">
+                            </div>
+                            <div class="swiper-button-next">
+                                <img src="assets/images/home/icons/arrow-bg.svg" class="home-swiper-main__arrow_right_bg" alt="">
+                                <img src="assets/images/home/icons/arrow-right.svg" class="home-swiper-main__arrow_right" alt="">
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-container home-swiper-thumbs">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="home-swiper-thumbs__img" src="assets/images/home/main-slider/1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="home-swiper-thumbs__img" src="assets/images/home/main-slider/2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="home-swiper-thumbs__img" src="assets/images/home/main-slider/3.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="home-swiper-thumbs__img" src="assets/images/home/main-slider/4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
 
     <footer class="footer">

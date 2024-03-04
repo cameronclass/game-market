@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let footerPay = new Swiper(".footerPaySwiper", {
+  new Swiper(".footerPaySwiper", {
     slidesPerView: 9,
     spaceBetween: 20,
     loop: true,
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  let footerBrand = new Swiper(".footerBrandSwiper", {
+  new Swiper(".footerBrandSwiper", {
     slidesPerView: "auto",
     spaceBetween: 40,
     autoplay: {
@@ -34,5 +34,45 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       1250: {},
     },
+  });
+
+  let galleryThumbs = new Swiper(".home-swiper-thumbs", {
+    centeredSlides: false,
+    centeredSlidesBounds: false,
+    slidesPerView: 3,
+    watchOverflow: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    direction: "vertical",
+  });
+
+  let galleryMain = new Swiper(".home-swiper-main", {
+    watchOverflow: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    preventInteractionOnTransition: true,
+    navigation: {
+      nextEl: ".home-swiper-main .swiper-button-next",
+      prevEl: ".home-swiper-main .swiper-button-prev",
+    },
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    thumbs: {
+      swiper: galleryThumbs,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  galleryMain.on("slideChangeTransitionStart", function () {
+    galleryThumbs.slideTo(galleryMain.activeIndex);
+  });
+
+  galleryThumbs.on("transitionStart", function () {
+    galleryMain.slideTo(galleryThumbs.activeIndex);
   });
 });
