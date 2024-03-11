@@ -1,78 +1,113 @@
-document.addEventListener("DOMContentLoaded", function () {
-  new Swiper(".footerPaySwiper", {
-    slidesPerView: 9,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
+new Swiper(".footerPaySwiper", {
+  slidesPerView: 9,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 3,
     },
-    breakpoints: {
-      0: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 8,
-      },
-      1250: {
-        slidesPerView: 11,
-      },
+    768: {
+      slidesPerView: 8,
     },
-  });
+    1250: {
+      slidesPerView: 11,
+    },
+  },
+});
 
-  new Swiper(".footerBrandSwiper", {
-    slidesPerView: "auto",
-    spaceBetween: 40,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
+new Swiper(".footerBrandSwiper", {
+  slidesPerView: "auto",
+  spaceBetween: 40,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      loop: true,
+      spaceBetween: 20,
     },
-    breakpoints: {
-      0: {
-        loop: true,
-        spaceBetween: 20,
-      },
-      1250: {},
-    },
-  });
+    1250: {},
+  },
+});
 
-  let galleryThumbs = new Swiper(".home-swiper-thumbs", {
-    centeredSlides: false,
-    centeredSlidesBounds: false,
-    slidesPerView: 3,
-    watchOverflow: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    direction: "vertical",
-  });
+new Swiper(".home-swiper-main", {
+  navigation: {
+    nextEl: ".home-swiper-main .swiper-button-next",
+    prevEl: ".home-swiper-main .swiper-button-prev",
+  },
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
-  let galleryMain = new Swiper(".home-swiper-main", {
-    watchOverflow: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    preventInteractionOnTransition: true,
-    navigation: {
-      nextEl: ".home-swiper-main .swiper-button-next",
-      prevEl: ".home-swiper-main .swiper-button-prev",
-    },
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-    thumbs: {
-      swiper: galleryThumbs,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+new Swiper(".game-swiper-1 .swiper", {
+  slidesPerView: 4,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".game-swiper-1 .swiper-button-next",
+    prevEl: ".game-swiper-1 .swiper-button-prev",
+  },
+});
 
-  galleryMain.on("slideChangeTransitionStart", function () {
-    galleryThumbs.slideTo(galleryMain.activeIndex);
-  });
+new Swiper(".game-swiper-2 .swiper", {
+  slidesPerView: 4,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".game-swiper-2 .swiper-button-next",
+    prevEl: ".game-swiper-2 .swiper-button-prev",
+  },
+});
 
-  galleryThumbs.on("transitionStart", function () {
-    galleryMain.slideTo(galleryThumbs.activeIndex);
-  });
+new Swiper(".game-swiper-3 .swiper", {
+  slidesPerView: 4,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".game-swiper-3 .swiper-button-next",
+    prevEl: ".game-swiper-3 .swiper-button-prev",
+  },
+});
+
+new Swiper(".game-swiper-4 .swiper", {
+  slidesPerView: 6,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".game-swiper-4 .swiper-button-next",
+    prevEl: ".game-swiper-4 .swiper-button-prev",
+  },
+});
+
+new Swiper(".home-statics-swiper .swiper", {
+  slidesPerView: 3,
+  centeredSlides: true,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+});
+
+new Swiper(".home-markets-swiper .swiper", {
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 40,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
 });
