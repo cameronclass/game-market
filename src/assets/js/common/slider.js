@@ -111,3 +111,25 @@ new Swiper(".home-markets-swiper .swiper", {
     disableOnInteraction: false,
   },
 });
+
+new Swiper(".home-blog-swiper .swiper", {
+  slidesPerView: 2,
+  spaceBetween: 20,
+  loop: true,
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+});
+
+new Swiper(".home-reviews-swiper .swiper", {
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 40,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+});

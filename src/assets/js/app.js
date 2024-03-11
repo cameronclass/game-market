@@ -1,4 +1,5 @@
 @@include("libs/swiper.js")
+@@include("libs/readmore.js")
 
 document.addEventListener("DOMContentLoaded", function () {
 

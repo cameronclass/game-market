@@ -102,3 +102,11 @@ const langDropdown = document.querySelector(".header__lang_dropdown");
 langButton.addEventListener("click", function () {
   langDropdown.classList.toggle("active");
 });
+
+
+// Init JS
+const ReadSmore = window.readSmore;
+
+const readMoreEls = document.querySelectorAll(".js-read-smore");
+
+ReadSmore(readMoreEls).init();
