@@ -13,6 +13,7 @@
 @import "common/preloader";
 @import "common/buttons";
 @import "common/form";
+@import "common/sliders";
 @import "template";
 @import "classes";
 /* Sections for all pages */
@@ -21,5 +22,4 @@
 /* Pages */
 @import "pages/home";
 @import "pages/main";
-/* Sliders */
-@import "common/sliders";
+@import "pages/catalog";

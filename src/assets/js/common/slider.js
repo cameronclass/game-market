@@ -133,3 +133,37 @@ new Swiper(".home-reviews-swiper .swiper", {
     disableOnInteraction: false,
   },
 });
+
+new Swiper(".catalog-slider__best .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".catalog-slider__best .swiper-button-next",
+    prevEl: ".catalog-slider__best .swiper-button-prev",
+  },
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
+  pagination: {
+    el: ".catalog-slider__best .swiper-pagination",
+    clickable: true,
+  },
+});
+
+new Swiper(".catalog-slider__best .swiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".catalog-slider__best .swiper-button-next",
+    prevEl: ".catalog-slider__best .swiper-button-prev",
+  },
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
+  pagination: {
+    el: ".catalog-slider__best .swiper-pagination",
+    clickable: true,
+  },
+});

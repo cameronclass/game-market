@@ -460,3 +460,47 @@
         }
     }
 }
+
+.main-card {
+    border-radius: 20px;
+    background: linear-gradient(91deg, rgba(51, 50, 49, 0.35) 0%, rgba(79, 79, 79, 0.17) 63.74%, rgba(79, 79, 79, 0.35) 101.17%);
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+
+    &__title {
+        font-size: 32px;
+        font-family: $font-roboto;
+        font-weight: 600;
+
+        .purple {
+            color: $purple;
+        }
+
+        .orange {
+            color: $orange;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        color: $text-dark;
+        width: 60%;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 60%;
+        height: 80%;
+        display: flex;
+
+        &_item {
+            object-fit: contain;
+            object-position: bottom right;
+        }
+    }
+}
