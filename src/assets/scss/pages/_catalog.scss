@@ -8,6 +8,7 @@
         flex-direction: column;
         line-height: 1.2;
         gap: 6px;
+        margin-bottom: 40px;
 
         &_main {
             display: flex;
@@ -74,17 +75,14 @@
     }
 
     &__block {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        align-items: flex-start;
         gap: 20px;
     }
 
     &__best {
         width: 100%;
         position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
 
         &_block {
             display: flex;
@@ -131,9 +129,6 @@
     &__discount {
         width: 100%;
         position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
 
         &_cards {
             display: grid;
@@ -147,8 +142,39 @@
     &__sold {
         width: 100%;
         position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
+
+        &_slider {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+
+            .swiper {
+                height: 463px;
+            }
+
+
+            .swiper-slide {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+
+        }
+
+        &_swiper {}
+
+        &_actions {}
+
+        &_link {
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        &_img {
+            object-fit: cover;
+        }
     }
 }

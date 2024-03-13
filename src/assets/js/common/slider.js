@@ -151,19 +151,16 @@ new Swiper(".catalog-slider__best .swiper", {
   },
 });
 
-new Swiper(".catalog-slider__best .swiper", {
-  slidesPerView: 1,
+new Swiper(".catalog-slider__sold_slider .swiper", {
+  direction: "vertical",
+  slidesPerView: 2,
   spaceBetween: 20,
   navigation: {
-    nextEl: ".catalog-slider__best .swiper-button-next",
-    prevEl: ".catalog-slider__best .swiper-button-prev",
-  },
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
+    nextEl: ".catalog-slider__sold_slider .swiper-button-next",
+    prevEl: ".catalog-slider__sold_slider .swiper-button-prev",
   },
   pagination: {
-    el: ".catalog-slider__best .swiper-pagination",
+    el: ".catalog-slider__sold_slider .swiper-pagination",
     clickable: true,
   },
 });

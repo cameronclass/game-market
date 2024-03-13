@@ -5846,7 +5846,8 @@ button {
     display: flex;
     flex-direction: column;
     line-height: 1.2;
-    gap: 6px; }
+    gap: 6px;
+    margin-bottom: 40px; }
     .catalog-slider__title_main {
       display: flex;
       align-items: center;
@@ -5895,15 +5896,12 @@ button {
           top: 50%;
           transform: translateY(-50%); }
   .catalog-slider__block {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: flex-start;
     gap: 20px; }
   .catalog-slider__best {
     width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 40px; }
+    position: relative; }
     .catalog-slider__best_block {
       display: flex;
       align-items: flex-end;
@@ -5934,10 +5932,7 @@ button {
       width: 100% !important; }
   .catalog-slider__discount {
     width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 40px; }
+    position: relative; }
     .catalog-slider__discount_cards {
       display: grid;
       gap: 20px;
@@ -5946,7 +5941,21 @@ button {
       grid-template-rows: 1fr 1fr; }
   .catalog-slider__sold {
     width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 40px; }
+    position: relative; }
+    .catalog-slider__sold_slider {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%; }
+      .catalog-slider__sold_slider .swiper {
+        height: 463px; }
+      .catalog-slider__sold_slider .swiper-slide {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px; }
+    .catalog-slider__sold_link {
+      display: flex;
+      border-radius: 20px;
+      overflow: hidden; }
+    .catalog-slider__sold_img {
+      object-fit: cover; }
