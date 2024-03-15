@@ -160,7 +160,7 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
     prevEl: ".catalog-slider__sold_slider .swiper-button-prev",
   },
   pagination: {
+    type: "fraction",
     el: ".catalog-slider__sold_slider .swiper-pagination",
-    clickable: true,
   },
 });
