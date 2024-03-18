@@ -26,3 +26,16 @@
         border-color: white;
     }
 }
+
+.more-btn {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 14px 45px;
+    border-radius: 9px;
+    border: 1px solid $text-dark;
+
+    &:hover {
+        color: white;
+        border-color: white;
+    }
+}
