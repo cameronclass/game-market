@@ -6,6 +6,38 @@
     padding: 0 20px;
 }
 
+.main {
+    padding-top: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.section {
+
+    &__title {
+        line-height: 1;
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        @include mobile {
+            text-align: center;
+        }
+
+        &_main {
+            font-size: 24px;
+            font-weight: 300;
+            font-family: $font-roboto;
+        }
+
+        &_sub {
+            font-size: 14px;
+            font-weight: 400;
+            color: $text-dark;
+        }
+    }
+}
+
+
 .hide {
     display: none;
 }
@@ -699,6 +731,37 @@
             color: $orange;
             text-align: center;
             text-shadow: 0px 4px 21px $orange;
+        }
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        display: none;
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: $text-dark;
+
+    &-item {
+        &::after {
+            content: "/";
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+
+        font-size: 12px;
+
+        a {
+            color: $text-dark;
+            font-size: 12px;
         }
     }
 }

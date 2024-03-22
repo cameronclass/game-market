@@ -11,11 +11,12 @@
     left: inherit;
     right: inherit;
     bottom: inherit;
+    width: auto;
 }
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-    display: none;
+    /* display: none; */
 }
 
 .swiper-button-next.swiper-button-disabled,

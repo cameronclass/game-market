@@ -1,6 +1,5 @@
 .catalog-slider {
     margin-top: 45px;
-    padding-top: 100px;
     padding-bottom: 45px;
 
     &__title {
@@ -78,6 +77,11 @@
         display: flex;
         align-items: flex-start;
         gap: 20px;
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            display: none;
+        }
     }
 
     &__best {

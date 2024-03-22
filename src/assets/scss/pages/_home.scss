@@ -1,35 +1,6 @@
-.main {
-    position: relative;
-    z-index: 2;
-}
-
-.section {
-
-    &__title {
-        line-height: 1;
-        margin-top: 40px;
-        margin-bottom: 40px;
-
-        @include mobile {
-            text-align: center;
-        }
-
-        &_main {
-            font-size: 24px;
-            font-weight: 300;
-            font-family: $font-roboto;
-        }
-
-        &_sub {
-            font-size: 14px;
-            font-weight: 400;
-            color: $text-dark;
-        }
-    }
-}
 
 .steps {
-    padding-top: 120px;
+    padding-top: 20px;
     padding-bottom: 160px;
     position: relative;
     z-index: 3;

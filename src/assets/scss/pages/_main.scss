@@ -1,6 +1,5 @@
 .home-slider {
     margin-top: 40px;
-    padding-top: 100px;
     padding-bottom: 20px;
     background: rgb(28, 27, 25);
 
@@ -131,13 +130,19 @@
         &__arrows {
             position: absolute;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             width: 452px;
             height: 111px;
             bottom: 0;
             left: 0;
             z-index: 2;
+            padding: 0 14px;
+
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                display: none;
+            }
         }
 
         &__block {
@@ -694,4 +699,3 @@
         }
     }
 }
-
