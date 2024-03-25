@@ -28,42 +28,45 @@ accordions.forEach((accordion) => {
 let copyBtn = document.querySelector(".copy-js");
 
 /* Таймер */
-(function () {
-  // future date for the countdown
-  const countDownDate = new Date(2024, 3, 24, 10).getTime();
-  const timerInfo = document.querySelector(".timer__info");
-  const daysContainer = document.querySelector(".timer__day");
-  const hoursContainer = document.querySelector(".timer__hours");
-  const minsContainer = document.querySelector(".timer__minutes");
-  const secsContainer = document.querySelector(".timer__seconds");
-  const messageContainer = document.querySelector(".timer__message");
 
-  // updating the countdown
-  const timer = setInterval(() => {
-    // today date and time
-    const now = new Date().getTime();
-    // distance between now an the count down date
-    const distance = countDownDate - now;
-    // calculate days, hours, mins, and secs
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((distance % (1000 * 60)) / 1000);
-    // insert the datetime data
+// future date for the countdown
+const countDownDate = new Date(2024, 3, 24, 10).getTime();
+const timerInfo = document.querySelector(".timer__info");
+const daysContainer = document.querySelector(".timer__day");
+const hoursContainer = document.querySelector(".timer__hours");
+const minsContainer = document.querySelector(".timer__minutes");
+const secsContainer = document.querySelector(".timer__seconds");
+const messageContainer = document.querySelector(".timer__message");
+
+// updating the countdown
+const timer = setInterval(() => {
+  // today date and time
+  const now = new Date().getTime();
+  // distance between now an the count down date
+  const distance = countDownDate - now;
+  // calculate days, hours, mins, and secs
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((distance % (1000 * 60)) / 1000);
+  // insert the datetime data
+  if (daysContainer)
     daysContainer.innerHTML = days + '<h3 class="timer__label">Дней</h3>';
+  if (hoursContainer)
     hoursContainer.innerHTML = hours + '<h3 class="timer__label">Часов</h3>';
+  if (minsContainer)
     minsContainer.innerHTML = mins + '<h3 class="timer__label">Минут</h3>';
+  if (secsContainer)
     secsContainer.innerHTML = secs + '<h3 class="timer__label">Секунд</h3>';
-    // what happens when countdown ends
-    if (distance < 0) {
-      clearInterval(timer);
-      timerInfo.classList.add("is-hidden");
-      messageContainer.classList.add("is-visible");
-    }
-  }, 1000);
-})();
+  // what happens when countdown ends
+  if (distance < 0) {
+    clearInterval(timer);
+    timerInfo.classList.add("is-hidden");
+    messageContainer.classList.add("is-visible");
+  }
+}, 1000);
 
 /* Hamburger menu */
 const hamburgerButton = document.querySelector(".js-hamburger");
@@ -173,21 +176,24 @@ document.addEventListener("click", function () {
 
 createCustomSelects();
 
+function setupTabs(tabButtonsClass, tabContentClass) {
+  const tabButtons = document.querySelectorAll(tabButtonsClass);
 
-const tabButtons = document.querySelectorAll(".tab-btn");
-
-tabButtons.forEach((tab) => {
-  tab.addEventListener("click", () => tabClicked(tab));
-});
-
-function tabClicked(tab) {
   tabButtons.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabClicked(tab, tabButtonsClass, tabContentClass);
+    });
+  });
+}
+
+function tabClicked(tab, tabButtonsClass, tabContentClass) {
+  const allTabButtons = document.querySelectorAll(tabButtonsClass);
+  allTabButtons.forEach((tab) => {
     tab.classList.remove("_active");
   });
   tab.classList.add("_active");
 
-  const contents = document.querySelectorAll(".tab-content");
-
+  const contents = document.querySelectorAll(tabContentClass);
   contents.forEach((content) => {
     content.classList.remove("_active");
   });
@@ -196,6 +202,18 @@ function tabClicked(tab) {
   const contentSelected = document.getElementById(contentId);
 
   contentSelected.classList.add("_active");
-  //console.log(contentId)
 }
 
+setupTabs(".tab-btn", ".tab-content");
+setupTabs(".tab-btn-second", ".tab-content-second");
+setupTabs(".tab-btn-third", ".tab-content-third");
+
+/* Accordion */
+const accordionItem = document.getElementsByClassName("accordion-js__item");
+const accordionBtn = document.getElementsByClassName("accordion-js__head");
+
+for (let i = 0; i < accordionBtn.length; i++) {
+  accordionBtn[i].addEventListener("click", function () {
+    accordionItem[i].classList.toggle("active");
+  });
+}

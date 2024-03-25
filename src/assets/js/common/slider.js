@@ -164,3 +164,15 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
     el: ".catalog-slider__sold_slider .swiper-pagination",
   },
 });
+
+new Swiper(".screen-swiper .swiper", {
+  slidesPerView: 3,
+  grid: {
+    rows: 2,
+  },
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".screen-swiper .swiper-button-next",
+    prevEl: ".screen-swiper .swiper-button-prev",
+  },
+});
