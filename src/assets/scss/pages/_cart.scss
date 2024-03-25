@@ -5,6 +5,7 @@
 .cart-item {
     &__block {
         display: flex;
+        align-items: flex-start;
         gap: 20px;
     }
 
@@ -211,7 +212,7 @@
     &__desc {
         border-radius: 10px;
         background: #1A1917;
-        padding: 25px;
+        padding: 22px 25px;
 
         &_title {
             font-size: 12px;
@@ -244,11 +245,114 @@
                 &._active {
                     border: 1px solid $orange;
                 }
+            }
 
-                &:focus {
-                    border: 1px solid #33302D;
+            &_content {}
+
+            &_item {
+                display: none;
+
+
+                &._active {
+                    display: flex;
                 }
             }
         }
+
+
+    }
+}
+
+.cart-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2px;
+
+    &__row {
+        display: flex;
+        border: 1px solid #34312D;
+        border-radius: 3px;
+        background-color: #22211E;
+
+        &:nth-child(odd) {
+            background-color: #1C1B19;
+        }
+    }
+
+    &__cell {
+        font-size: 9px;
+        color: $text-dark;
+        padding: 7px 20px;
+        line-height: 1;
+
+        &:first-child {
+            width: 30%;
+            border-right: 1px solid #34312D;
+        }
+    }
+}
+
+.cart-advantages {
+    margin-top: 20px;
+
+    &__block {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 36px;
+        border-radius: 10px;
+        background: #1A1917;
+    }
+
+    &__item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        padding-right: 20px;
+
+        &::after {
+            content: "";
+            width: 1px;
+            height: 28px;
+            background-color: #847F7D;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    &__text {
+        font-size: 12px;
+        color: $text-dark;
+        line-height: 1;
     }
 }
