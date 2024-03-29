@@ -34,10 +34,10 @@ a {
 button {
     font-family: $font-inter;
 
-    &:focus {
+    /* &:focus {
         outline: none;
         border: none;
-    }
+    } */
 }
 
 img {
@@ -95,19 +95,6 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
-
-button {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-
-    &:focus {
-        outline: none;
-        border: none;
-    }
-}
-
 
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
 

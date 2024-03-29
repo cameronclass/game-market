@@ -207,13 +207,5 @@ function tabClicked(tab, tabButtonsClass, tabContentClass) {
 setupTabs(".tab-btn", ".tab-content");
 setupTabs(".tab-btn-second", ".tab-content-second");
 setupTabs(".tab-btn-third", ".tab-content-third");
+setupTabs(".tab-btn-fourth", ".tab-content-fourth");
 
-/* Accordion */
-const accordionItem = document.getElementsByClassName("accordion-js__item");
-const accordionBtn = document.getElementsByClassName("accordion-js__head");
-
-for (let i = 0; i < accordionBtn.length; i++) {
-  accordionBtn[i].addEventListener("click", function () {
-    accordionItem[i].classList.toggle("active");
-  });
-}
