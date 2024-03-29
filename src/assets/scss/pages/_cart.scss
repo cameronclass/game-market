@@ -604,15 +604,27 @@
 .cart-comments {
     margin-top: 26px;
 
+    .cart-heading {
+        padding: 20px;
+    }
+
     &__block {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    &__content {}
-
-    .cart-heading {
-        padding: 20px;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
+
+    &__form {
+        
+    }
+
+    &__items {}
+
+
 }
