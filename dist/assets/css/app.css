@@ -5614,7 +5614,6 @@ input[type=number] {
 
 .home-slider {
   margin-top: 40px;
-  padding-bottom: 20px;
   background: #1c1b19; }
   .home-slider__block {
     margin-top: 35px;
@@ -5761,8 +5760,8 @@ input[type=number] {
       transform: rotate(180deg); }
 
 .game-slider {
-  padding-top: 30px;
-  padding-bottom: 30px; }
+  margin-top: 30px;
+  padding-bottom: 15px; }
   .game-slider__block {
     width: 100%; }
   .game-slider__actions {
@@ -5810,10 +5809,11 @@ input[type=number] {
     font-size: 14px; }
 
 .home-statics {
-  margin-top: 40px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: #1a1917; }
+  padding-top: 35px;
+  padding-bottom: 50px;
+  background: #1a1917;
+  border-top: 2px solid #252221;
+  border-bottom: 2px solid #252221; }
   .home-statics__title {
     text-align: center;
     font-size: 20px;
@@ -5833,12 +5833,12 @@ input[type=number] {
     overflow: visible; }
 
 .home-markets {
-  margin-top: 40px;
   padding-top: 40px;
   padding-bottom: 40px;
   background: #1a1917;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  border-top: 2px solid #252221; }
   .home-markets::after {
     content: "";
     display: flex;
