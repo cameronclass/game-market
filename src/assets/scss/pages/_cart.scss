@@ -146,6 +146,7 @@
             align-items: center;
             gap: 10px;
             transition: 300ms;
+            outline: none;
 
             &:hover,
             &._active {
@@ -153,7 +154,7 @@
             }
 
             &:focus {
-                border: 1px solid #33302D;
+                border: 1px solid $orange;
             }
         }
 
@@ -357,9 +358,26 @@
 .cart-about {
     margin-top: 20px;
 
+    .container {
+        position: relative;
+    }
+
+    &__circle {
+        position: absolute;
+        top: 100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.35%, rgba(255, 108, 61, 0.35) 100%);
+        filter: blur(200px);
+    }
+
     &__block {
         display: flex;
         gap: 20px;
+        position: relative;
+        z-index: 2;
     }
 
     &__info {
@@ -505,11 +523,29 @@
 }
 
 .cart-faq {
+    position: relative;
+    z-index: 2;
 
+    .container {
+        position: relative;
+    }
+
+    &__circle {
+        position: absolute;
+        top: -200px;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.35%, rgba(255, 108, 61, 0.35) 100%);
+        filter: blur(250px);
+    }
 
     &__block {
         border-radius: 10px;
         background: #1A1917;
+        position: relative;
+        z-index: 2;
     }
 
     &__accordion {
@@ -596,22 +632,40 @@
         position: absolute;
         right: 0;
         top: 0;
-        width: 30%;
+        width: 40%;
         height: 100%;
     }
 }
 
 .cart-comments {
     margin-top: 26px;
+    margin-bottom: 50px;
+    position: relative;
 
     .cart-heading {
         padding: 20px;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    &__circle {
+        position: absolute;
+        top: -200px;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.35%, rgba(255, 108, 61, 0.35) 100%);
+        filter: blur(250px);
     }
 
     &__block {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        position: relative;
     }
 
     &__content {
@@ -621,10 +675,203 @@
     }
 
     &__form {
-        
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 30px;
+        border-radius: 10px;
+        background: #1A1917;
+
+        &_block {
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        &_emoji {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+        }
+
+        .pre-order__subs_input {
+            padding-left: 42px;
+            font-size: 14px;
+            padding: 11.5px 42px;
+        }
+
+        .pre-order__subs_btn {}
     }
 
-    &__items {}
+    &__items {
+        padding: 20px;
+        border-radius: 10px;
+        background: #1A1917;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &_content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    &__filter {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &_btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: transparent;
+            border: none;
+            color: $text-dark;
+
+            &._active,
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    &__pagination {}
+}
+
+.comment-item {
+    display: flex;
+    gap: 20px;
+
+    &__avatar {
+        border-radius: 50%;
+        border: 2px solid #FF6C3D;
+        width: 100%;
+        max-width: 46px;
+        height: 46px;
+        position: relative;
+        display: flex;
+
+        &_img {
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        &_role {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #191917;
+            border: 2px solid #44403E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            padding: 3px;
+            color: #FFA183;
+            font-size: 10px;
+            font-weight: bold;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__name {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__like {
+        display: flex;
+        gap: 10px;
+
+        &_icon {
+            width: 12px;
+            height: 12px;
+        }
+
+        &_btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            background-color: transparent;
+            border: none;
+            color: rgba(92, 159, 107, 1);
+
+            &._dislike {
+                color: rgba(169, 77, 77, 1);
+
+                .comment-item__like_icon {
+                    transform: rotateX(180deg);
+                }
+            }
+
+            &:hover {
+                .comment-item__like_icon {
+                    filter: brightness(10);
+                }
+            }
+        }
 
 
+    }
+
+    &__block {
+        border-radius: 4px;
+        border: 1px solid #3A3A39;
+        background: #22221F;
+        padding: 13px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__text {
+        color: $text-dark;
+        font-size: 14px;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__date {
+        font-size: 14px;
+        color: white;
+    }
+
+    &__reply {
+        font-size: 14px;
+        color: white;
+        background: transparent;
+        border: none;
+    }
 }

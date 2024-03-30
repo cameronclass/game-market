@@ -313,6 +313,7 @@
 
         <section class="cart-about">
             <div class="container">
+                <div class="cart-about__circle"></div>
                 <div class="cart-about__block">
                     <div class="cart-about__info">
                         <div class="cart-table">
@@ -602,6 +603,7 @@
 
         <section class="cart-faq">
             <div class="container">
+                <div class="cart-faq__circle"></div>
                 <div class="cart-faq__block">
                     <div class="cart-heading">
                         <div class="cart-heading__tabs">
@@ -681,6 +683,7 @@
 
         <section class="cart-comments">
             <div class="container">
+                <div class="cart-comments__circle"></div>
                 <div class="cart-comments__block">
                     <div class="cart-heading">
                         <div class="cart-heading__tabs">
@@ -688,57 +691,265 @@
                             <button content-id="comment" class="cart-tab-btn tab-btn-fourth _active">Комментарии (24)</button>
                         </div>
                         <div class="cart-heading__help">
-                            <div class="cart-heading__help_title">Остались вопросы?</div>
-                            <button class="btn-bordered">Поддержка</button>
+                            <div class="cart-heading__help_title">Чтобы оставить комментарий</div>
+                            <button class="btn-bordered">Авторизоваться</button>
                         </div>
                     </div>
 
                     <div class="cart-comments__content">
                         <form class="cart-comments__form" method="post">
-                            <div class="cart-comments__form_avatar"></div>
-                            <div class="pre-order__subs">
-                                <input class="pre-order__subs_input" type="email" placeholder="Введите свой email..." name="" id="">
-                                <button class="pre-order__subs_btn btn">Подписаться</button>
+                            <div class="cart-comments__form_avatar header__actions_admin">
+                                <img src="assets/images/home/card-image.png" alt="">
+                            </div>
+                            <div class="cart-comments__form_block">
+                                <img class="cart-comments__form_emoji" src="assets/images/icons/emoji.svg" alt="">
+                                <input class="pre-order__subs_input" type="text" placeholder="Оставить комментарий..." name="" id="">
+                                <button class="pre-order__subs_btn btn">Написать</button>
                             </div>
                         </form>
-                        <div class="cart-comments__items"></div>
+                        <div class="cart-comments__items">
+                            <div class="cart-comments__filter">
+                                <button class="cart-comments__filter_btn _active">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                        <g clip-path="url(#clip0_807_2258)">
+                                            <path d="M9.43522 6.01067H2.56222C2.35613 6.01052 2.15452 5.95046 1.98194 5.83781C1.80936 5.72515 1.67325 5.56476 1.59018 5.37615C1.50711 5.18754 1.48066 4.97885 1.51404 4.77548C1.54743 4.57211 1.63921 4.38283 1.77822 4.23067L5.02172 0.936173C5.14793 0.800534 5.301 0.692662 5.47119 0.619426C5.64138 0.546189 5.82495 0.509193 6.01022 0.510792C6.19548 0.512391 6.37839 0.552551 6.54729 0.628714C6.71618 0.704878 6.86737 0.815376 6.99122 0.953173L10.2067 4.21717C10.3494 4.36803 10.4448 4.55739 10.4811 4.76186C10.5174 4.96633 10.493 5.17696 10.411 5.36772C10.3289 5.55849 10.1928 5.72104 10.0194 5.8353C9.84596 5.94956 9.64289 6.01053 9.43522 6.01067Z" fill="#FF6C3D" />
+                                            <path d="M9.43522 7.00007H2.56222C2.35613 7.00022 2.15452 7.06028 1.98194 7.17293C1.80936 7.28559 1.67325 7.44598 1.59018 7.63459C1.50711 7.8232 1.48066 8.03189 1.51404 8.23526C1.54743 8.43863 1.63921 8.62792 1.77822 8.78007L5.02172 12.0746C5.14793 12.2102 5.301 12.3181 5.47119 12.3913C5.64138 12.4646 5.82495 12.5015 6.01022 12.5C6.19548 12.4984 6.37839 12.4582 6.54729 12.382C6.71618 12.3059 6.86737 12.1954 6.99122 12.0576L10.2067 8.79357C10.3494 8.64271 10.4448 8.45335 10.4811 8.24888C10.5174 8.04441 10.493 7.83378 10.411 7.64302C10.3289 7.45225 10.1928 7.2897 10.0194 7.17544C9.84596 7.06118 9.64289 7.00021 9.43522 7.00007Z" fill="#847F7D" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_807_2258">
+                                                <rect width="12" height="12" fill="white" transform="translate(0 0.5)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <span>По дате</span>
+                                </button>
+                                <button class="cart-comments__filter_btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                                        <g clip-path="url(#clip0_807_2258)">
+                                            <path d="M9.43522 6.01067H2.56222C2.35613 6.01052 2.15452 5.95046 1.98194 5.83781C1.80936 5.72515 1.67325 5.56476 1.59018 5.37615C1.50711 5.18754 1.48066 4.97885 1.51404 4.77548C1.54743 4.57211 1.63921 4.38283 1.77822 4.23067L5.02172 0.936173C5.14793 0.800534 5.301 0.692662 5.47119 0.619426C5.64138 0.546189 5.82495 0.509193 6.01022 0.510792C6.19548 0.512391 6.37839 0.552551 6.54729 0.628714C6.71618 0.704878 6.86737 0.815376 6.99122 0.953173L10.2067 4.21717C10.3494 4.36803 10.4448 4.55739 10.4811 4.76186C10.5174 4.96633 10.493 5.17696 10.411 5.36772C10.3289 5.55849 10.1928 5.72104 10.0194 5.8353C9.84596 5.94956 9.64289 6.01053 9.43522 6.01067Z" fill="#847F7D" />
+                                            <path d="M9.43522 7.00007H2.56222C2.35613 7.00022 2.15452 7.06028 1.98194 7.17293C1.80936 7.28559 1.67325 7.44598 1.59018 7.63459C1.50711 7.8232 1.48066 8.03189 1.51404 8.23526C1.54743 8.43863 1.63921 8.62792 1.77822 8.78007L5.02172 12.0746C5.14793 12.2102 5.301 12.3181 5.47119 12.3913C5.64138 12.4646 5.82495 12.5015 6.01022 12.5C6.19548 12.4984 6.37839 12.4582 6.54729 12.382C6.71618 12.3059 6.86737 12.1954 6.99122 12.0576L10.2067 8.79357C10.3494 8.64271 10.4448 8.45335 10.4811 8.24888C10.5174 8.04441 10.493 7.83378 10.411 7.64302C10.3289 7.45225 10.1928 7.2897 10.0194 7.17544C9.84596 7.06118 9.64289 7.00021 9.43522 7.00007Z" fill="#847F7D" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_807_2258">
+                                                <rect width="12" height="12" fill="white" transform="translate(0 0.5)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <span>По дате</span>
+                                </button>
+                            </div>
+                            <div class="cart-comments__items_content">
+
+                                <div class="comment-item">
+                                    <div class="comment-item__avatar">
+                                        <img class="comment-item__avatar_img" src="assets/images/home/card-image.png" alt="">
+                                        <div class="comment-item__avatar_role">
+                                            <img src="assets/images/icons/comment-role.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="comment-item__contents">
+                                        <div class="comment-item__content">
+                                            <div class="comment-item__name">
+                                                <div>Валерий Генадьевич</div>
+                                                <div class="comment-item__like">
+                                                    <button class="comment-item__like_btn">
+                                                        <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                        <span class="comment-item__like_num">12</span>
+                                                    </button>
+                                                    <button class="comment-item__like_btn _dislike">
+                                                        <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                        <span class="comment-item__like_num">12</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="comment-item__block">
+                                                <div class="comment-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo, animi aspernatur rem corrupti id veniam architecto, totam eligendi aperiam quod, ut nisi illum. Hic harum autem eos commodi veritatis provident cum incidunt neque culpa! Quasi alias nesciunt explicabo ipsum accusantium, nulla maxime autem fugit minima commodi eveniet optio illum.</div>
+                                                <div class="comment-item__actions">
+                                                    <div class="comment-item__date">12:48 12.12.24</div>
+                                                    <button class="comment-item__reply">Ответить</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Replies -->
+                                        <div class="comment-item">
+                                            <div class="comment-item__avatar">
+                                                <img class="comment-item__avatar_img" src="assets/images/home/card-image.png" alt="">
+                                                <div class="comment-item__avatar_role">
+                                                    12
+                                                </div>
+                                            </div>
+                                            <div class="comment-item__contents">
+                                                <div class="comment-item__content">
+                                                    <div class="comment-item__name">
+                                                        <div>Волан’Дэ Мордор</div>
+                                                        <div class="comment-item__like">
+                                                            <button class="comment-item__like_btn">
+                                                                <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                                <span class="comment-item__like_num">12</span>
+                                                            </button>
+                                                            <button class="comment-item__like_btn _dislike">
+                                                                <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                                <span class="comment-item__like_num">12</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-item__block">
+                                                        <div class="comment-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo, animi aspernatur rem corrupti id veniam architecto, totam eligendi aperiam quod, ut nisi illum. Hic harum autem eos commodi veritatis provident cum incidunt neque culpa! Quasi alias nesciunt explicabo ipsum accusantium, nulla maxime autem fugit minima commodi eveniet optio illum.</div>
+                                                        <div class="comment-item__actions">
+                                                            <div class="comment-item__date">12:48 12.12.24</div>
+                                                            <button class="comment-item__reply">Ответить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Replies -->
+
+                                            </div>
+                                        </div>
+
+                                        <div class="comment-item">
+                                            <div class="comment-item__avatar">
+                                                <img class="comment-item__avatar_img" src="assets/images/home/card-image.png" alt="">
+                                                <div class="comment-item__avatar_role">
+                                                    13
+                                                </div>
+                                            </div>
+                                            <div class="comment-item__contents">
+                                                <div class="comment-item__content">
+                                                    <div class="comment-item__name">
+                                                        <div>Ван Хельсинг</div>
+                                                        <div class="comment-item__like">
+                                                            <button class="comment-item__like_btn">
+                                                                <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                                <span class="comment-item__like_num">12</span>
+                                                            </button>
+                                                            <button class="comment-item__like_btn _dislike">
+                                                                <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                                <span class="comment-item__like_num">12</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-item__block">
+                                                        <div class="comment-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo, animi aspernatur rem corrupti id veniam architecto, totam eligendi aperiam quod, ut nisi illum. Hic harum autem eos commodi veritatis provident cum incidunt neque culpa! Quasi alias nesciunt explicabo ipsum accusantium, nulla maxime autem fugit minima commodi eveniet optio illum.</div>
+                                                        <div class="comment-item__actions">
+                                                            <div class="comment-item__date">12:48 12.12.24</div>
+                                                            <button class="comment-item__reply">Ответить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <!-- Replies -->
+                                                <div class="comment-item">
+                                                    <div class="comment-item__avatar">
+                                                        <img class="comment-item__avatar_img" src="assets/images/home/card-image.png" alt="">
+                                                        <div class="comment-item__avatar_role">
+                                                            <img src="assets/images/icons/comment-role.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-item__contents">
+                                                        <div class="comment-item__content">
+                                                            <div class="comment-item__name">
+                                                                <div>Валерий Генадьевич</div>
+                                                                <div class="comment-item__like">
+                                                                    <button class="comment-item__like_btn">
+                                                                        <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                                        <span class="comment-item__like_num">12</span>
+                                                                    </button>
+                                                                    <button class="comment-item__like_btn _dislike">
+                                                                        <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                                        <span class="comment-item__like_num">12</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="comment-item__block">
+                                                                <div class="comment-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo, animi aspernatur rem corrupti id veniam architecto, totam eligendi aperiam quod, ut nisi illum. Hic harum autem eos commodi veritatis provident cum incidunt neque culpa! Quasi alias nesciunt explicabo ipsum accusantium, nulla maxime autem fugit minima commodi eveniet optio illum.</div>
+                                                                <div class="comment-item__actions">
+                                                                    <div class="comment-item__date">12:48 12.12.24</div>
+                                                                    <button class="comment-item__reply">Ответить</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <!-- Replies -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="comment-item">
+                                    <div class="comment-item__avatar">
+                                        <img class="comment-item__avatar_img" src="assets/images/home/card-image.png" alt="">
+                                        <div class="comment-item__avatar_role">
+                                            12
+                                        </div>
+                                    </div>
+                                    <div class="comment-item__contents">
+                                        <div class="comment-item__content">
+                                            <div class="comment-item__name">
+                                                <div>Волан’Дэ Мордор</div>
+                                                <div class="comment-item__like">
+                                                    <button class="comment-item__like_btn">
+                                                        <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                        <span class="comment-item__like_num">12</span>
+                                                    </button>
+                                                    <button class="comment-item__like_btn _dislike">
+                                                        <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
+                                                        <span class="comment-item__like_num">12</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="comment-item__block">
+                                                <div class="comment-item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo, animi aspernatur rem corrupti id veniam architecto, totam eligendi aperiam quod, ut nisi illum. Hic harum autem eos commodi veritatis provident cum incidunt neque culpa! Quasi alias nesciunt explicabo ipsum accusantium, nulla maxime autem fugit minima commodi eveniet optio illum.</div>
+                                                <div class="comment-item__actions">
+                                                    <div class="comment-item__date">12:48 12.12.24</div>
+                                                    <button class="comment-item__reply">Ответить</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Replies -->
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="cart-comments__pagination">
+                                <nav class="pagination">
+                                    <ul class="pagination-list">
+                                        <li class="pagination-item">
+                                            <a class="pagination-link" href="#">
+                                                <div class="swiper-button-prev">
+                                                    <img src="assets/images/home/icons/arrow-bg.svg" class="swiper-arrow__left-bg" alt="">
+                                                    <img src="assets/images/home/icons/arrow-right.svg" class="swiper-arrow__left" alt="">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="pagination-item"><a class="pagination-link _active" href="#">1</a></li>
+                                        <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
+                                        <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
+                                        <li class="pagination-item">
+                                            <a class="pagination-link" href="#">
+                                                <div class="swiper-button-next">
+                                                    <img src="assets/images/home/icons/arrow-bg.svg" class="swiper-arrow__right-bg" alt="">
+                                                    <img src="assets/images/home/icons/arrow-right.svg" class="swiper-arrow__right" alt="">
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <section class="catalog-cards">
-            <div class="container">
-
-                <div class="catalog-cards__pagination">
-                    <nav class="pagination">
-                        <ul class="pagination-list">
-                            <li class="pagination-item">
-                                <a class="pagination-link" href="#">
-                                    <div class="swiper-button-prev">
-                                        <img src="assets/images/home/icons/arrow-bg.svg" class="swiper-arrow__left-bg" alt="">
-                                        <img src="assets/images/home/icons/arrow-right.svg" class="swiper-arrow__left" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="pagination-item"><a class="pagination-link _active" href="#">1</a></li>
-                            <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
-                            <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
-                            <li class="pagination-item">
-                                <a class="pagination-link" href="#">
-                                    <div class="swiper-button-next">
-                                        <img src="assets/images/home/icons/arrow-bg.svg" class="swiper-arrow__right-bg" alt="">
-                                        <img src="assets/images/home/icons/arrow-right.svg" class="swiper-arrow__right" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-            </div>
-        </section>
 
     </main>
 
