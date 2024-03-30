@@ -6547,6 +6547,60 @@ input[type=number] {
     .cart-item__desc_tabs_item._active {
       display: flex; }
 
+.fixed-card {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  top: 115px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 100ms ease; }
+  .fixed-card.active {
+    visibility: visible;
+    opacity: 1; }
+  .fixed-card__img {
+    width: 100%;
+    max-width: 192px;
+    height: 94px;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden; }
+    .fixed-card__img_item {
+      object-fit: cover; }
+  .fixed-card__block {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    border: 1px solid #34312D;
+    background: rgba(26, 25, 23, 0.65);
+    backdrop-filter: blur(4.25px); }
+  .fixed-card__action {
+    width: 100%;
+    max-width: 385px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; }
+  .fixed-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; }
+  .fixed-card__name {
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+    line-height: 1.1; }
+  .fixed-card__text {
+    font-size: 12px;
+    color: #847F7D; }
+  .fixed-card .cart-item__img_offer,
+  .fixed-card .cart-item__img_buynow {
+    margin: 0; }
+
 .cart-table {
   display: flex;
   flex-direction: column;

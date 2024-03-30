@@ -102,10 +102,10 @@ new Swiper(".home-statics-swiper .swiper", {
 });
 
 new Swiper(".home-markets-swiper .swiper", {
+  loop: true,
   slidesPerView: "auto",
   centeredSlides: true,
   spaceBetween: 40,
-  loop: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -125,9 +125,9 @@ new Swiper(".home-blog-swiper .swiper", {
 
 new Swiper(".home-reviews-swiper .swiper", {
   slidesPerView: "auto",
+  loop: true,
   centeredSlides: true,
   spaceBetween: 40,
-  loop: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,

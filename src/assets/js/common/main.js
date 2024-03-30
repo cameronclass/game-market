@@ -209,3 +209,12 @@ setupTabs(".tab-btn-second", ".tab-content-second");
 setupTabs(".tab-btn-third", ".tab-content-third");
 setupTabs(".tab-btn-fourth", ".tab-content-fourth");
 
+window.addEventListener("scroll", function () {
+  let fixedCard = document.querySelector(".fixed-card");
+
+  if (window.scrollY >= 600) {
+    fixedCard.classList.add("active");
+  } else {
+    fixedCard.classList.remove("active");
+  }
+});
