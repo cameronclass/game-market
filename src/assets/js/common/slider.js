@@ -58,6 +58,19 @@ new Swiper(".game-swiper-1 .swiper", {
     nextEl: ".game-swiper-1 .swiper-button-next",
     prevEl: ".game-swiper-1 .swiper-button-prev",
   },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
 });
 
 new Swiper(".game-swiper-2 .swiper", {
@@ -67,6 +80,19 @@ new Swiper(".game-swiper-2 .swiper", {
   navigation: {
     nextEl: ".game-swiper-2 .swiper-button-next",
     prevEl: ".game-swiper-2 .swiper-button-prev",
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
   },
 });
 
@@ -78,6 +104,19 @@ new Swiper(".game-swiper-3 .swiper", {
     nextEl: ".game-swiper-3 .swiper-button-next",
     prevEl: ".game-swiper-3 .swiper-button-prev",
   },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
 });
 
 new Swiper(".game-swiper-4 .swiper", {
@@ -88,6 +127,19 @@ new Swiper(".game-swiper-4 .swiper", {
     nextEl: ".game-swiper-4 .swiper-button-next",
     prevEl: ".game-swiper-4 .swiper-button-prev",
   },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 4,
+    },
+    1024: {
+      slidesPerView: 5,
+    },
+  },
 });
 
 new Swiper(".home-statics-swiper .swiper", {
@@ -95,9 +147,19 @@ new Swiper(".home-statics-swiper .swiper", {
   centeredSlides: true,
   spaceBetween: 20,
   loop: true,
-  autoplay: {
+  /* autoplay: {
     delay: 2500,
     disableOnInteraction: false,
+  }, */
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: -60,
+    },
+    768: {
+      slidesPerView: 3,
+    },
   },
 });
 
@@ -117,9 +179,18 @@ new Swiper(".home-blog-swiper .swiper", {
   spaceBetween: 20,
   loop: true,
 
-  autoplay: {
+  /* autoplay: {
     delay: 2500,
     disableOnInteraction: false,
+  }, */
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
   },
 });
 

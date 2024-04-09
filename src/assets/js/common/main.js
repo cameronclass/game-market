@@ -212,9 +212,34 @@ setupTabs(".tab-btn-fourth", ".tab-content-fourth");
 window.addEventListener("scroll", function () {
   let fixedCard = document.querySelector(".fixed-card");
 
-  if (window.scrollY >= 600) {
-    fixedCard.classList.add("active");
-  } else {
-    fixedCard.classList.remove("active");
-  }
+  if (fixedCard)
+    if (window.scrollY >= 600) {
+      fixedCard.classList.add("active");
+    } else {
+      fixedCard.classList.remove("active");
+    }
+});
+
+/* catalog mobile */
+const catalogButtons = document.querySelectorAll(".catalog__btn");
+const catalogContents = document.querySelectorAll(".catalog__tabs_content");
+const catalogBgs = document.querySelectorAll(".catalog__bg");
+
+// Добавляем обработчик события для каждой кнопки в коллекции
+catalogButtons.forEach((button, index) => {
+  button.addEventListener("click", function (event) {
+    event.stopPropagation(); // Предотвращаем распространение события на родительские элементы
+    catalogContents[index].classList.add("active");
+    catalogBgs[index].classList.add("active");
+  });
+});
+
+document.addEventListener("click", function (event) {
+  // Перебираем все контенты и фоны и убираем класс active
+  catalogContents.forEach((content) => {
+    content.classList.remove("active");
+  });
+  catalogBgs.forEach((bg) => {
+    bg.classList.remove("active");
+  });
 });

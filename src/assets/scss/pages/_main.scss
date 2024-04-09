@@ -2,10 +2,18 @@
     margin-top: 40px;
     background: rgb(28, 27, 25);
 
+    @include mobile {
+        margin-top: 20px;
+    }
+
     &__block {
         margin-top: 35px;
         display: flex;
         gap: 18px;
+
+        @include netbook {
+            flex-direction: column;
+        }
     }
 
     &__info {
@@ -14,6 +22,18 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include netbook {
+            max-width: 100%;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__card {
@@ -25,7 +45,9 @@
         overflow: hidden;
         padding: 1px;
 
-
+        @include mobile {
+            height: 100px;
+        }
 
         &_img {
             width: 100%;
@@ -47,6 +69,10 @@
             justify-content: center;
             gap: 7px;
             padding: 5px 5px 5px 0px;
+
+            @include mobile {
+                justify-content: flex-start;
+            }
         }
 
         &_subtitle {
@@ -58,6 +84,10 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+
+            @include mobile {
+                font-size: 12px;
+            }
         }
 
         &_title {
@@ -76,9 +106,19 @@
             &:hover {
                 color: $orange;
             }
+
+            @include mobile {
+                font-size: 16px;
+            }
         }
 
-        &_btn {}
+        &_btn {
+
+            @include mobile {
+                font-size: 12px;
+                padding: 7px 45px 7px 7px;
+            }
+        }
 
         &._selected {
             box-sizing: border-box;
@@ -90,6 +130,14 @@
 
             .home-slider__card_img {
                 border-radius: 13px 0 0 0;
+
+                @include netbook {
+                    border-radius: 0;
+                }
+            }
+
+            @include netbook {
+                border-radius: 0;
             }
         }
 
@@ -98,9 +146,23 @@
 
             .home-slider__card_img {
                 border-radius: 0 0 0 13px;
+
+                @include netbook {
+                    border-radius: 0;
+                }
+            }
+
+            @include netbook {
+                border-radius: 0;
             }
         }
 
+    }
+
+    .catalog__tabs {
+        @include mobile {
+            display: none;
+        }
     }
 }
 
@@ -112,6 +174,10 @@
         overflow: hidden;
         width: 100%;
         height: 456px;
+
+        @include mobile {
+            height: 400px;
+        }
     }
 
     &-main {
@@ -121,9 +187,17 @@
         border-radius: 10px;
         overflow: hidden;
 
+        @include netbook {
+            max-width: 100%;
+        }
+
         &__img {
             height: 100%;
             object-fit: cover;
+
+            @include mobile {
+                height: 80%;
+            }
         }
 
         &__arrows {
@@ -137,6 +211,11 @@
             left: 0;
             z-index: 2;
             padding: 0 14px;
+
+            @include mobile {
+                width: 100%;
+                padding: 0 8px;
+            }
 
             .swiper-button-next:after,
             .swiper-button-prev:after {
@@ -155,6 +234,10 @@
             border-radius: 0px 15px 0px 10px;
             backdrop-filter: blur(11.2px);
             background: rgba(57, 52, 49, 0.75);
+
+            @include mobile {
+                border-radius: 0;
+            }
         }
 
         &__title {
@@ -170,6 +253,12 @@
             overflow: hidden;
             text-overflow: ellipsis;
             margin-bottom: 5px;
+
+            @include mobile {
+                font-size: 20px;
+                -webkit-line-clamp: 3;
+                height: auto;
+            }
         }
 
         &__subtitle {
@@ -179,6 +268,10 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
+
+            @include mobile {
+                font-size: 12px;
+            }
         }
 
         &__arrow {
@@ -195,6 +288,10 @@
                 &_bg {
                     width: 50px;
                     filter: invert(48%) sepia(97%) saturate(1261%) hue-rotate(334deg) brightness(100%) contrast(102%);
+
+                    @include mobile {
+                        width: 40px;
+                    }
                 }
             }
 
@@ -204,6 +301,12 @@
                 &_bg {
                     transform: rotate(180deg);
                 }
+            }
+        }
+
+        .swiper-pagination {
+            @include mobile {
+                bottom: 0;
             }
         }
 
@@ -225,6 +328,11 @@
         justify-content: space-between;
         gap: 30px;
         margin-bottom: 30px;
+
+        @include mobile {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
     }
 
     &__arrows {
@@ -232,6 +340,10 @@
         display: flex;
         align-items: center;
         gap: 10px;
+
+        @include mobile {
+            display: none;
+        }
 
         .swiper-button-next,
         .swiper-button-prev {
@@ -293,6 +405,12 @@
         color: $text-dark;
     }
 
+    .statics-card {
+        @include mobile {
+            transform: scale(0.75);
+        }
+    }
+
     .swiper-slide-active {
         z-index: 2;
 
@@ -303,6 +421,10 @@
                 linear-gradient(to top, #61492E 14%, #FF6C3D) border-box;
             border: 1px solid transparent;
             transform: scale(1.28);
+
+            @include mobile {
+                transform: scale(0.95);
+            }
         }
 
         .statics-card__number,
@@ -345,6 +467,10 @@
         font-weight: 500;
         margin-bottom: 40px;
         color: $text-dark;
+
+        @include mobile {
+            margin-bottom: 30px;
+        }
     }
 
     &__slide {
@@ -354,6 +480,10 @@
         align-items: center;
         gap: 40px;
         width: auto;
+
+        @include mobile {
+            gap: 30px;
+        }
     }
 
     &__img {
@@ -365,6 +495,14 @@
         &_item {
             height: 52px;
             filter: grayscale(1) brightness(0.5);
+        }
+
+        @include mobile {
+            height: 45px;
+
+            &_item {
+                height: 45px;
+            }
         }
     }
 
@@ -393,9 +531,18 @@
     gap: 15px;
     padding: 25px;
 
+    @include mobile {
+        flex-direction: column;
+        padding: 20px;
+    }
+
     &__img {
         width: 60%;
         border-radius: 15px;
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     &__content {
@@ -486,6 +633,9 @@
         overflow: visible;
     }
 
+    .swiper-slide {
+        height: auto;
+    }
 }
 
 .home-blog-card {
@@ -494,16 +644,24 @@
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0px 4px 70.6px 0px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    padding: 12px;
+
+    @include mobile {
+        padding: 5px 12px 5px 0;
+    }
 
     &__block {
-        padding: 12px;
+        height: 100%;
         position: relative;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 12px;
     }
 
     &__img {
-        height: 320px;
+        width: 100%;
+        height: 100%;
         border-radius: 15px;
 
         &_bg {
@@ -517,12 +675,12 @@
     }
 
     &__content {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 13px;
         color: $text-dark;
-        padding-right: 20px;
     }
 
     &__date {
@@ -541,6 +699,10 @@
         color: $text-white;
         font-size: 24px;
         line-height: 1.2;
+
+        @include netbook {
+            font-size: 16px;
+        }
     }
 
     &__text {
@@ -550,6 +712,10 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        @include netbook {
+            font-size: 12px;
+        }
     }
 
     &__action {
@@ -563,6 +729,10 @@
         color: $orange;
         font-size: 15px;
         font-weight: 400;
+
+        @include netbook {
+            font-size: 12px;
+        }
     }
 
     &__timer {
@@ -667,17 +837,28 @@
 
 .home-other-reviews {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    gap: 11px 1.5%;
+    flex-wrap: wrap;
+
+
 
     &__card {
-        width: 100%;
+        width: 23.5%;
         display: flex;
         align-items: center;
         gap: 25px;
         border-radius: 12.58px;
         background: linear-gradient(175.53deg, rgb(52, 45, 39) 0%, rgb(34, 34, 32) 65.877%);
         padding: 15px 20px;
+
+        @include netbook {
+            width: 31.5%;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
 
         &_img {
             width: 50px;
