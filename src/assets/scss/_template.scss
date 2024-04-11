@@ -33,6 +33,8 @@ a {
 
 button {
     font-family: $font-inter;
+    background-color: transparent;
+    border: none;
 
     &:focus {
         outline: none;

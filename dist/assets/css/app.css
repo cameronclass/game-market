@@ -3802,7 +3802,9 @@ a {
     text-decoration: none; }
 
 button {
-  font-family: "Inter", sans-serif; }
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  border: none; }
   button:focus {
     outline: none;
     border: none; }
