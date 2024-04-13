@@ -163,7 +163,7 @@ new Swiper(".home-statics-swiper .swiper", {
   },
 });
 
-new Swiper(".home-markets-swiper .swiper", {
+/* new Swiper(".home-markets-swiper .swiper", {
   loop: true,
   slidesPerView: "auto",
   centeredSlides: true,
@@ -174,7 +174,7 @@ new Swiper(".home-markets-swiper .swiper", {
     delay: 2500,
     disableOnInteraction: false,
   },
-});
+}); */
 
 new Swiper(".home-blog-swiper .swiper", {
   slidesPerView: 2,
@@ -196,8 +196,8 @@ new Swiper(".home-blog-swiper .swiper", {
   },
 });
 
-new Swiper(".home-reviews-swiper .swiper", {
-  slidesPerView: "auto",
+/* new Swiper(".home-reviews-swiper .swiper", {
+  slidesPerView: 4,
   loop: true,
   centeredSlides: true,
   spaceBetween: 40,
@@ -205,7 +205,7 @@ new Swiper(".home-reviews-swiper .swiper", {
     delay: 2500,
     disableOnInteraction: false,
   },
-});
+}); */
 
 new Swiper(".catalog-slider__best .swiper", {
   slidesPerView: 1,
@@ -249,3 +249,40 @@ new Swiper(".screen-swiper .swiper", {
     prevEl: ".screen-swiper .swiper-button-prev",
   },
 });
+
+/* Splide */
+let homeMarkets = new Splide(".home-markets .splide", {
+  type: "loop",
+  focus: "center",
+  perPage: 4,
+  arrows: false,
+  pagination: false,
+  autoScroll: {
+    speed: 1,
+  },
+});
+
+homeMarkets.mount(window.splide.Extensions);
+
+let homeReviews = new Splide(".home-reviews .splide", {
+  type: "loop",
+  focus: "center",
+  perPage: 4,
+  arrows: false,
+  pagination: false,
+  autoScroll: {
+    speed: 1,
+  },
+});
+
+homeReviews.mount(window.splide.Extensions);
+
+let homeBlog = new Splide(".home-blog .splide", {
+  type: "loop",
+  perPage: 2,
+  arrows: false,
+  pagination: false,
+  gap: 22,
+});
+
+homeBlog.mount();
