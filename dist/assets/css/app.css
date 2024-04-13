@@ -6747,7 +6747,8 @@ input[type=number] {
   .catalog-cards__more {
     margin-top: 20px;
     display: flex;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    position: relative; }
     @media screen and (max-width: 800px) {
       .catalog-cards__more {
         margin-bottom: 25px; }
@@ -6756,7 +6757,10 @@ input[type=number] {
           text-align: center; } }
   .catalog-cards__pagination {
     margin-top: 0px;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
 
 .catalog-preorder {
   padding-bottom: 60px; }

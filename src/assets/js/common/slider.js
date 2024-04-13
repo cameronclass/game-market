@@ -168,6 +168,8 @@ new Swiper(".home-markets-swiper .swiper", {
   slidesPerView: "auto",
   centeredSlides: true,
   spaceBetween: 40,
+  loopedSlides: 10,
+  roundLengths: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,

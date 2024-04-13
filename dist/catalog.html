@@ -32,6 +32,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/app.js"></script>
     <title>Главная страница</title>
 </head>
@@ -65,19 +66,19 @@
                     <div class="header__menu_block">
                         <div class="header__menu_mobile">
                             <a href="#" class="header__actions_link">
-                                <img src="../assets/images/icons/search-normal.svg" alt="">
+                                <img src="assets/images/icons/search-normal.svg" alt="">
                                 <span>Поиск</span>
                             </a>
                             <a href="#" class="header__actions_link">
-                                <img src="../assets/images/icons/messages.svg" alt="">
+                                <img src="assets/images/icons/messages.svg" alt="">
                                 <span>Тикеты</span>
                             </a>
                             <a href="#" class="header__actions_link">
-                                <img src="../assets/images/icons/empty-wallet-add.svg" alt="">
+                                <img src="assets/images/icons/empty-wallet-add.svg" alt="">
                                 <span>Баланс</span>
                             </a>
                             <a href="#" class="header__actions_link">
-                                <img src="../assets/images/icons/bag-2.svg" alt="">
+                                <img src="assets/images/icons/bag-2.svg" alt="">
                                 <span>Корзина</span>
                             </a>
                         </div>
@@ -366,7 +367,6 @@
                 </div>
             </div>
         </section>
-
 
         <section class="catalog-filter">
             <div class="container">
@@ -737,37 +737,37 @@
                 </div>
 
                 <div class="catalog-cards__more">
+                    <div class="catalog-cards__pagination">
+                        <nav class="pagination">
+                            <ul class="pagination-list">
+                                <li class="pagination-item">
+                                    <a class="pagination-link" href="#">
+                                        <div class="swiper-button-prev">
+                                            <img src="assets/images/home/icons/arrow-bg.svg" class="swiper-arrow__left-bg" alt="">
+                                            <img src="assets/images/home/icons/arrow-right.svg" class="swiper-arrow__left" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="pagination-item"><a class="pagination-link _active" href="#">1</a></li>
+                                <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
+                                <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
+                                <li class="pagination-item">
+                                    <a class="pagination-link" href="#">
+                                        <div class="swiper-button-next">
+                                            <img src="assets/images/home/icons/arrow-bg.svg" class="swiper-arrow__right-bg" alt="">
+                                            <img src="assets/images/home/icons/arrow-right.svg" class="swiper-arrow__right" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                     <a href="#" class="more-btn">Загрузить еще</a>
                 </div>
 
-                <div class="catalog-cards__pagination">
-                    <nav class="pagination">
-                        <ul class="pagination-list">
-                            <li class="pagination-item">
-                                <a class="pagination-link" href="#">
-                                    <div class="swiper-button-prev">
-                                        <img src="assets/images/home/icons/arrow-bg.svg" class="swiper-arrow__left-bg" alt="">
-                                        <img src="assets/images/home/icons/arrow-right.svg" class="swiper-arrow__left" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="pagination-item"><a class="pagination-link _active" href="#">1</a></li>
-                            <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
-                            <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
-                            <li class="pagination-item">
-                                <a class="pagination-link" href="#">
-                                    <div class="swiper-button-next">
-                                        <img src="assets/images/home/icons/arrow-bg.svg" class="swiper-arrow__right-bg" alt="">
-                                        <img src="assets/images/home/icons/arrow-right.svg" class="swiper-arrow__right" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+
             </div>
         </section>
-
 
         <section class="section pre-order catalog-preorder">
             <div class="container">
