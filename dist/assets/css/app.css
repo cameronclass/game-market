@@ -5158,7 +5158,8 @@ input[type=number] {
       display: none; }
       @media screen and (max-width: 800px) {
         .header__menu_catalog {
-          display: grid; } }
+          display: grid;
+          width: 90%; } }
   .header__lang {
     position: relative; }
     .header__lang_dropdown {
