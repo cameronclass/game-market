@@ -411,7 +411,7 @@
         }
     }
 
-    .swiper-slide-active {
+    .splide__slide.is-active {
         z-index: 2;
 
         .statics-card {
@@ -433,7 +433,7 @@
         }
     }
 
-    .swiper {
+    .splide__track {
         overflow: visible;
     }
 }
@@ -669,6 +669,7 @@
 
     @include mobile {
         padding: 5px 12px 5px 0;
+        min-height: 250px;
     }
 
     &__block {

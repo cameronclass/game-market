@@ -142,15 +142,11 @@ new Swiper(".game-swiper-4 .swiper", {
   },
 });
 
-new Swiper(".home-statics-swiper .swiper", {
+/* new Swiper(".home-statics-swiper .swiper", {
   slidesPerView: 3,
   centeredSlides: true,
   spaceBetween: 20,
   loop: true,
-  /* autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  }, */
 
   breakpoints: {
     0: {
@@ -160,19 +156,6 @@ new Swiper(".home-statics-swiper .swiper", {
     768: {
       slidesPerView: 3,
     },
-  },
-});
-
-/* new Swiper(".home-markets-swiper .swiper", {
-  loop: true,
-  slidesPerView: "auto",
-  centeredSlides: true,
-  spaceBetween: 40,
-  loopedSlides: 10,
-  roundLengths: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
   },
 }); */
 
@@ -195,17 +178,6 @@ new Swiper(".home-blog-swiper .swiper", {
     },
   },
 });
-
-/* new Swiper(".home-reviews-swiper .swiper", {
-  slidesPerView: 4,
-  loop: true,
-  centeredSlides: true,
-  spaceBetween: 40,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-}); */
 
 new Swiper(".catalog-slider__best .swiper", {
   slidesPerView: 1,
@@ -255,6 +227,12 @@ let homeMarkets = new Splide(".home-markets .splide", {
   type: "loop",
   focus: "center",
   perPage: 4,
+  gap: 20,
+  breakpoints: {
+    768: {
+      perPage: 1,
+    },
+  },
   arrows: false,
   pagination: false,
   autoScroll: {
@@ -268,6 +246,11 @@ let homeReviews = new Splide(".home-reviews .splide", {
   type: "loop",
   focus: "center",
   perPage: 4,
+  breakpoints: {
+    768: {
+      perPage: 1,
+    },
+  },
   arrows: false,
   pagination: false,
   autoScroll: {
@@ -283,6 +266,28 @@ let homeBlog = new Splide(".home-blog .splide", {
   arrows: false,
   pagination: false,
   gap: 22,
+  breakpoints: {
+    768: {
+      perPage: 1,
+    },
+  },
 });
 
 homeBlog.mount();
+
+let homeStatics = new Splide(".home-statics .splide", {
+  type: "loop",
+  focus: "center",
+  perPage: 3,
+  arrows: false,
+  pagination: false,
+  gap: 22,
+  breakpoints: {
+    768: {
+      perPage: 1,
+      gap: -52,
+    },
+  },
+});
+
+homeStatics.mount();
