@@ -266,6 +266,7 @@ let cartAboutSwiper = document.querySelector(".screen-swiper .splide");
 if (cartAboutSwiper)
   new Splide(".screen-swiper .splide", {
     type: "loop",
+    focus: 1,
     height: "340px",
     perPage: 1,
     perMove: 1,
