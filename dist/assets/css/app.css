@@ -7601,12 +7601,7 @@ input[type=number] {
 
 .screen-swiper {
   width: 100%;
-  position: relative;
-  /* .game-slider__arrows {
-        position: absolute;
-        top: -55px;
-        right: 0;
-    } */ }
+  position: relative; }
   .screen-swiper__slide {
     display: flex;
     border-radius: 3px;
@@ -7614,6 +7609,19 @@ input[type=number] {
     height: 100%; }
     .screen-swiper__slide img {
       object-fit: cover; }
+  .screen-swiper .game-slider__arrows {
+    position: absolute;
+    top: -50px;
+    right: 0; }
+    .screen-swiper .game-slider__arrows .swiper-button-next,
+    .screen-swiper .game-slider__arrows .swiper-button-prev {
+      height: 30px; }
+    @media screen and (max-width: 979px) {
+      .screen-swiper .game-slider__arrows {
+        display: flex;
+        justify-content: space-between;
+        position: initial;
+        margin-top: 10px; } }
 
 .cart-faq {
   position: relative;

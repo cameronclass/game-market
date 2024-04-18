@@ -271,6 +271,7 @@ if (cartAboutSwiper)
     perPage: 1,
     perMove: 1,
     gap: 10,
+    pagination: false,
     grid: {
       rows: 2,
       cols: 3,

@@ -742,11 +742,24 @@
         }
     }
 
-    /* .game-slider__arrows {
+    .game-slider__arrows {
         position: absolute;
-        top: -55px;
+        top: -50px;
         right: 0;
-    } */
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            height: 30px;
+        }
+
+        @include mobile {
+            display: flex;
+            justify-content: space-between;
+            position: initial;
+            margin-top: 10px;
+        }
+    }
+
 }
 
 .cart-faq {
