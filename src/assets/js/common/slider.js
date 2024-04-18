@@ -142,23 +142,6 @@ new Swiper(".game-swiper-4 .swiper", {
   },
 });
 
-/* new Swiper(".home-statics-swiper .swiper", {
-  slidesPerView: 3,
-  centeredSlides: true,
-  spaceBetween: 20,
-  loop: true,
-
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: -60,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-  },
-}); */
-
 new Swiper(".home-blog-swiper .swiper", {
   slidesPerView: 2,
   spaceBetween: 20,
@@ -210,84 +193,116 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
   },
 });
 
-new Swiper(".screen-swiper .swiper", {
-  slidesPerView: 3,
-  grid: {
-    rows: 2,
-  },
-  spaceBetween: 10,
-  navigation: {
-    nextEl: ".screen-swiper .swiper-button-next",
-    prevEl: ".screen-swiper .swiper-button-prev",
-  },
-});
-
 /* Splide */
-let homeMarkets = new Splide(".home-markets .splide", {
-  type: "loop",
-  focus: "center",
-  perPage: 4,
-  gap: 20,
-  breakpoints: {
-    768: {
-      perPage: 1,
+
+let homeMarkets = document.querySelector(".home-markets .splide");
+if (homeMarkets) {
+  new Splide(".home-markets .splide", {
+    type: "loop",
+    focus: "center",
+    perPage: 4,
+    gap: 20,
+    breakpoints: {
+      768: {
+        perPage: 1,
+      },
     },
-  },
-  arrows: false,
-  pagination: false,
-  autoScroll: {
-    speed: 1,
-  },
-});
+    arrows: false,
+    pagination: false,
+  }).mount(window.splide.Extensions);
+}
 
-homeMarkets.mount(window.splide.Extensions);
-
-let homeReviews = new Splide(".home-reviews .splide", {
-  type: "loop",
-  focus: "center",
-  perPage: 4,
-  breakpoints: {
-    768: {
-      perPage: 1,
+let homeReviews = document.querySelector(".home-reviews .splide");
+if (homeReviews) {
+  new Splide(".home-reviews .splide", {
+    type: "loop",
+    focus: "center",
+    perPage: 4,
+    breakpoints: {
+      768: {
+        perPage: 1,
+      },
     },
-  },
-  arrows: false,
-  pagination: false,
-  autoScroll: {
-    speed: 1,
-  },
-});
+    arrows: false,
+    pagination: false,
+  }).mount(window.splide.Extensions);
+}
 
-homeReviews.mount(window.splide.Extensions);
-
-let homeBlog = new Splide(".home-blog .splide", {
-  type: "loop",
-  perPage: 2,
-  arrows: false,
-  pagination: false,
-  gap: 22,
-  breakpoints: {
-    768: {
-      perPage: 1,
+let homeBlog = document.querySelector(".home-blog .splide");
+if (homeBlog) {
+  new Splide(".home-blog .splide", {
+    type: "loop",
+    perPage: 2,
+    arrows: false,
+    pagination: false,
+    gap: 22,
+    breakpoints: {
+      768: {
+        perPage: 1,
+      },
     },
-  },
-});
+  }).mount(window.splide.Extensions);
+}
 
-homeBlog.mount();
-
-let homeStatics = new Splide(".home-statics .splide", {
-  type: "loop",
-  focus: "center",
-  perPage: 3,
-  arrows: false,
-  pagination: false,
-  gap: 22,
-  breakpoints: {
-    768: {
-      perPage: 1,
-      gap: -52,
+let homeStatics = document.querySelector(".home-statics .splide");
+if (homeStatics) {
+  new Splide(".home-statics .splide", {
+    type: "loop",
+    focus: "center",
+    perPage: 3,
+    arrows: false,
+    pagination: false,
+    gap: 22,
+    breakpoints: {
+      768: {
+        perPage: 1,
+        gap: -52,
+      },
     },
-  },
-});
+  }).mount(window.splide.Extensions);
+}
 
-homeStatics.mount();
+let cartAboutSwiper = document.querySelector(".screen-swiper .splide");
+if (cartAboutSwiper)
+  new Splide(".screen-swiper .splide", {
+    type: "loop",
+    height: "340px",
+    perPage: 1,
+    perMove: 1,
+    gap: 10,
+    grid: {
+      rows: 2,
+      cols: 3,
+      gap: {
+        row: "10px",
+        col: "10px",
+      },
+    },
+    breakpoints: {
+      1200: {
+        perPage: 1,
+        perMove: 1,
+        grid: {
+          rows: 2,
+          cols: 2,
+          gap: {
+            row: "10px",
+            col: "10px",
+          },
+        },
+      },
+      979: {
+        perPage: 1,
+        perMove: 1,
+        height: "170px",
+        grid: {
+          rows: 1,
+          cols: 2,
+          gap: {
+            row: "10px",
+            col: "10px",
+          },
+        },
+      },
+    },
+  }).mount(window.splide.Extensions);

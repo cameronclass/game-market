@@ -1,11 +1,11 @@
 @mixin mobile {
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 979px) {
     @content;
   }
 }
 
 @mixin netbook {
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 1200px) {
     @content;
   }
 }

@@ -10,9 +10,13 @@
 .cart-item {
     &__block {
         display: grid;
-        grid-template-columns: minmax(300px, 390px) minmax(450px, 1fr);
+        grid-template-columns: minmax(300px, 390px) minmax(400px, 1fr);
         grid-template-rows: repeat(100, 5px);
         gap: 0 20px;
+
+        @include netbook {
+            grid-template-columns: minmax(300px, 390px) minmax(400px, 1fr);
+        }
 
         @include mobile {
             grid-template-columns: 1fr;
@@ -241,7 +245,7 @@
 
         @include mobile {
             grid-column: auto;
-            grid-row: auto;
+            grid-row: 1 / 2;
         }
 
         display: flex;
@@ -266,6 +270,7 @@
         @include mobile {
             grid-column: auto;
             grid-row: auto;
+            padding: 15px;
         }
 
         &_title {
@@ -300,6 +305,7 @@
         @include mobile {
             grid-column: auto;
             grid-row: auto;
+            padding: 15px;
         }
 
         &_title {
@@ -315,6 +321,11 @@
             display: flex;
             gap: 10px;
             margin-bottom: 8px;
+
+            @include mobile {
+                flex-direction: column;
+                gap: 5px;
+            }
         }
 
         &_content {}
@@ -339,6 +350,10 @@
             left: 7px;
             top: 62%;
             transform: translateY(-50%) rotate(180deg);
+        }
+
+        @include mobile {
+            display: none;
         }
     }
 }
@@ -394,12 +409,17 @@
         display: flex;
         flex-direction: column;
         gap: 4px;
+
+        @include mobile {
+            max-width: 100%;
+        }
     }
 
     &__content {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        width: 100%;
 
         @include mobile {
             display: none;
@@ -475,6 +495,20 @@
         padding: 36px;
         border-radius: 10px;
         background: #1A1917;
+
+        @include mobile {
+            padding: 20px;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            & {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
     }
 
     &__item {
@@ -484,6 +518,11 @@
         gap: 10px;
         position: relative;
         padding-right: 20px;
+
+        @include mobile {
+            min-width: 280px;
+            padding-right: 10px;
+        }
 
         &::after {
             content: "";
@@ -548,10 +587,16 @@
     }
 
     &__block {
-        display: flex;
+        display: grid;
         gap: 20px;
         position: relative;
         z-index: 2;
+
+        grid-template-columns: minmax(300px, 390px) minmax(400px, 1fr);
+
+        @include mobile {
+            grid-template-columns: 100%;
+        }
     }
 
     &__info {
@@ -564,6 +609,11 @@
         flex-direction: column;
         gap: 17px;
         height: 415px;
+
+        @include netbook {
+            max-width: 100%;
+            height: auto;
+        }
 
         &_title {
             font-size: 12px;
@@ -642,11 +692,21 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        height: 415px;
+        height: auto;
+
+        @include mobile {
+            max-width: 979px;
+        }
 
         &_tabs {
             display: flex;
             gap: 8px;
+            width: 100%;
+
+            @include mobile {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         &_content {}
@@ -667,33 +727,22 @@
     width: 100%;
     position: relative;
 
-    .swiper {
-        position: relative;
-        width: 100%;
-        height: 340px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .swiper-slide {
-        display: flex;
-    }
-
     &__slide {
         display: flex;
         border-radius: 3px;
         overflow: hidden;
+        height: 100%;
 
         img {
             object-fit: cover;
         }
     }
 
-    .game-slider__arrows {
+    /* .game-slider__arrows {
         position: absolute;
         top: -55px;
         right: 0;
-    }
+    } */
 }
 
 .cart-faq {
