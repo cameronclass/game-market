@@ -7347,6 +7347,9 @@ input[type=number] {
   opacity: 0;
   visibility: hidden;
   transition: 100ms ease; }
+  @media screen and (max-width: 979px) {
+    .fixed-card {
+      top: 105px; } }
   .fixed-card.active {
     visibility: visible;
     opacity: 1; }
@@ -7645,7 +7648,11 @@ input[type=number] {
     .cart-faq__accordion .accordion__intro {
       font-size: 16px;
       color: #847F7D;
-      padding: 19px 23px; }
+      padding: 19px 23px;
+      gap: 5px; }
+      @media screen and (max-width: 979px) {
+        .cart-faq__accordion .accordion__intro {
+          padding: 15px; } }
     .cart-faq__accordion .accordion__content {
       border-top: 1px solid #34312D;
       color: #847F7D; }
@@ -7661,6 +7668,9 @@ input[type=number] {
         color: white; }
       .cart-faq__accordion .accordion__active .accordion__content {
         padding: 12px 40px; }
+        @media screen and (max-width: 979px) {
+          .cart-faq__accordion .accordion__active .accordion__content {
+            padding: 12px 20px; } }
 
 .cart-heading {
   display: flex;
@@ -7671,12 +7681,20 @@ input[type=number] {
   border-radius: 10px;
   background: #1A1917;
   position: relative; }
+  @media screen and (max-width: 979px) {
+    .cart-heading {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 30px; } }
   .cart-heading__help {
     display: flex;
     align-items: center;
     gap: 18px;
     position: relative;
     z-index: 2; }
+    @media screen and (max-width: 979px) {
+      .cart-heading__help {
+        margin-left: auto; } }
     .cart-heading__help_title {
       font-size: 14px;
       color: #847F7D; }
@@ -7689,6 +7707,10 @@ input[type=number] {
     top: 0;
     width: 40%;
     height: 100%; }
+    @media screen and (max-width: 979px) {
+      .cart-heading::after {
+        height: 50%;
+        width: 95%; } }
 
 .cart-comments {
   margin-top: 26px;
@@ -7724,11 +7746,21 @@ input[type=number] {
     padding: 30px;
     border-radius: 10px;
     background: #1A1917; }
+    @media screen and (max-width: 979px) {
+      .cart-comments__form {
+        flex-direction: column;
+        padding: 0 15px; } }
     .cart-comments__form_block {
       width: 100%;
       position: relative;
       display: flex;
       align-items: center; }
+      @media screen and (max-width: 979px) {
+        .cart-comments__form_block {
+          flex-direction: column;
+          gap: 20px;
+          position: relative;
+          top: -10px; } }
     .cart-comments__form_emoji {
       position: absolute;
       top: 50%;
@@ -7737,10 +7769,25 @@ input[type=number] {
       width: 24px;
       height: 24px;
       display: flex; }
+      @media screen and (max-width: 979px) {
+        .cart-comments__form_emoji {
+          top: 10px;
+          transform: none; } }
+    @media screen and (max-width: 979px) {
+      .cart-comments__form_avatar {
+        margin: 0;
+        width: 66px;
+        height: 66px;
+        position: relative;
+        top: -15px; } }
     .cart-comments__form .pre-order__subs_input {
       padding-left: 42px;
       font-size: 14px;
-      padding: 11.5px 42px; }
+      padding: 11.5px 42px;
+      height: 46px; }
+      @media screen and (max-width: 979px) {
+        .cart-comments__form .pre-order__subs_input {
+          height: 100px; } }
   .cart-comments__items {
     padding: 20px;
     border-radius: 10px;
@@ -7756,6 +7803,9 @@ input[type=number] {
     display: flex;
     align-items: center;
     gap: 15px; }
+    @media screen and (max-width: 979px) {
+      .cart-comments__filter {
+        justify-content: center; } }
     .cart-comments__filter_btn {
       display: flex;
       align-items: center;
@@ -7769,12 +7819,17 @@ input[type=number] {
 .comment-item {
   display: flex;
   gap: 20px; }
+  @media screen and (max-width: 979px) {
+    .comment-item {
+      display: grid; } }
   .comment-item__avatar {
     border-radius: 50%;
     border: 2px solid #FF6C3D;
     width: 100%;
     max-width: 46px;
-    height: 46px;
+    min-width: 46px;
+    max-height: 46px;
+    min-height: 46px;
     position: relative;
     display: flex; }
     .comment-item__avatar_img {

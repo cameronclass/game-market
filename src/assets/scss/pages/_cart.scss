@@ -369,6 +369,10 @@
     visibility: hidden;
     transition: 100ms ease;
 
+    @include mobile {
+        top: 105px;
+    }
+
     &.active {
         visibility: visible;
         opacity: 1;
@@ -791,6 +795,11 @@
             font-size: 16px;
             color: $text-dark;
             padding: 19px 23px;
+            gap: 5px;
+
+            @include mobile {
+                padding: 15px;
+            }
         }
 
         .accordion__content {
@@ -817,6 +826,10 @@
 
             .accordion__content {
                 padding: 12px 40px;
+
+                @include mobile {
+                    padding: 12px 20px;
+                }
             }
         }
 
@@ -833,6 +846,12 @@
     background: #1A1917;
     position: relative;
 
+    @include mobile {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
     &__tabs {}
 
     &__help {
@@ -841,6 +860,10 @@
         gap: 18px;
         position: relative;
         z-index: 2;
+
+        @include mobile {
+            margin-left: auto;
+        }
 
         &_title {
             font-size: 14px;
@@ -857,6 +880,11 @@
         top: 0;
         width: 40%;
         height: 100%;
+
+        @include mobile {
+            height: 50%;
+            width: 95%;
+        }
     }
 }
 
@@ -906,11 +934,23 @@
         border-radius: 10px;
         background: #1A1917;
 
+        @include mobile {
+            flex-direction: column;
+            padding: 0 15px;
+        }
+
         &_block {
             width: 100%;
             position: relative;
             display: flex;
             align-items: center;
+
+            @include mobile {
+                flex-direction: column;
+                gap: 20px;
+                position: relative;
+                top: -10px;
+            }
         }
 
         &_emoji {
@@ -921,12 +961,32 @@
             width: 24px;
             height: 24px;
             display: flex;
+
+            @include mobile {
+                top: 10px;
+                transform: none;
+            }
+        }
+
+        &_avatar {
+            @include mobile {
+                margin: 0;
+                width: 66px;
+                height: 66px;
+                position: relative;
+                top: -15px;
+            }
         }
 
         .pre-order__subs_input {
             padding-left: 42px;
             font-size: 14px;
             padding: 11.5px 42px;
+            height: 46px;
+
+            @include mobile {
+                height: 100px;
+            }
         }
 
         .pre-order__subs_btn {}
@@ -952,6 +1012,10 @@
         align-items: center;
         gap: 15px;
 
+        @include mobile {
+            justify-content: center;
+        }
+
         &_btn {
             display: flex;
             align-items: center;
@@ -974,12 +1038,18 @@
     display: flex;
     gap: 20px;
 
+    @include mobile {
+        display: grid;
+    }
+
     &__avatar {
         border-radius: 50%;
         border: 2px solid #FF6C3D;
         width: 100%;
         max-width: 46px;
-        height: 46px;
+        min-width: 46px;
+        max-height: 46px;
+        min-height: 46px;
         position: relative;
         display: flex;
 
