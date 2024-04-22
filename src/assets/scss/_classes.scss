@@ -276,6 +276,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 300ms ease;
 
     &__img {
         width: 100%;
@@ -283,6 +284,7 @@
         object-fit: cover;
         border-bottom: 1px solid rgb(132, 127, 125);
         border-radius: 10px;
+        transition: 300ms ease;
 
         @include mobile {
             height: 220px;
@@ -413,29 +415,44 @@
     }
 
     &__btn {
-        min-width: 50%;
+        transition: 300ms ease;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         bottom: 23px;
         transform: skew(-15deg);
-        border: 1px solid rgb(132, 127, 125);
         border-radius: 4px;
-        background: rgb(31, 28, 26);
-        padding: 0.5rem 1rem;
         color: white;
+        background: rgb(132, 127, 125);
+        padding: 1px;
+        overflow: hidden;
 
         &_block {
-            transform: skew(15deg);
             display: flex;
             align-items: flex-end;
             justify-content: center;
             line-height: 1;
+
+            background: rgb(31, 28, 26);
+            padding: 0.5rem 1rem;
+            min-width: 50%;
+            border-radius: 4px;
+
+            >span {
+                transform: skew(15deg);
+            }
         }
 
-        &:hover {
-            background: black;
+    }
+
+    &:hover {
+        .game-card__img {
+            border-color: $orange;
+        }
+
+        .game-card__btn {
+            background: linear-gradient(to right, #F3B454, #F36754);
         }
     }
 }

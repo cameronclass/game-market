@@ -45,6 +45,11 @@
         overflow: hidden;
         padding: 1px;
 
+        &:hover {
+            background-color: #292724;
+            border-color: #847F7D;
+        }
+
         @include mobile {
             height: 100px;
         }
@@ -102,10 +107,6 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-
-            &:hover {
-                color: $orange;
-            }
 
             @include mobile {
                 font-size: 16px;
@@ -872,6 +873,12 @@
         border-radius: 12.58px;
         background: linear-gradient(175.53deg, rgb(52, 45, 39) 0%, rgb(34, 34, 32) 65.877%);
         padding: 15px 20px;
+        border: 1px solid transparent;
+
+        &:hover {
+            border-color: $orange;
+            background: #00000010;
+        }
 
         @include netbook {
             width: 31.5%;

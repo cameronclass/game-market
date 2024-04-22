@@ -1,6 +1,7 @@
 .btn-arrow {
     font-size: 14px;
-    border: 1px solid rgb(132, 127, 125);
+    color: white;
+    border: 1px solid #847F7D;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -23,7 +24,8 @@
     }
 
     &:hover {
-        border-color: white;
+        border-color: $orange;
+        color: white;
     }
 }
 
@@ -72,4 +74,21 @@
         border-color: white;
     }
 
+}
+
+.btn-blur {
+    border-radius: 7px;
+    border: 1px solid var(--text-Dark, #847F7D);
+    background: linear-gradient(270deg, #4F4F4F 0%, #483C36 31.28%, #46423F 48.78%, #483C36 70.71%, #4F4F4F 100%);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 40px;
+    color: $text-white;
+    transition: 300ms ease;
+    line-height: 1;
+
+    &:hover {
+        border-color: $orange;
+        background: #00000010;
+    }
 }

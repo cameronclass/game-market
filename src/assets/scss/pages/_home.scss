@@ -742,21 +742,12 @@
     &__btn {
         padding: 20px;
         border-radius: 14.5px;
-        border: 1px solid var(--text-Dark, #847F7D);
-        background: linear-gradient(270deg, #4F4F4F 0%, #483C36 31.28%, #46423F 48.78%, #483C36 70.71%, #4F4F4F 100%);
-        font-size: 16px;
         font-weight: 500;
-        line-height: 1;
-        color: $text-white;
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         max-width: 270px;
-
-        &:hover {
-            background: #0000005b;
-        }
 
         @include mobile {
             margin: 0 auto;
@@ -782,10 +773,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
-            &:hover {
-                background: rgba(0, 0, 0, 0.576);
-            }
 
             @include mobile {
                 width: 100%;
