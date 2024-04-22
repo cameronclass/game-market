@@ -189,6 +189,10 @@ input[type=number] {
                     --bc: var(--border-hover);
                 }
             }
+
+            &~span {
+                color: white;
+            }
         }
 
 
@@ -209,6 +213,10 @@ input[type=number] {
         &:checked {
             --s: .5;
         }
+
+        &:hover {
+            border-color: $orange;
+        }
     }
 
 }
@@ -221,4 +229,3 @@ input[type=number] {
     gap: 3px;
     cursor: pointer;
 }
-

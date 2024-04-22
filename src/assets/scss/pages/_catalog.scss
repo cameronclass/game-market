@@ -13,16 +13,22 @@
             display: flex;
             align-items: center;
             gap: 30px;
+            color: white;
 
             &_text {
                 font-size: 24px;
                 font-weight: 300;
                 font-family: $font-roboto;
+
             }
 
             &_icon {
                 width: 18px;
                 filter: invert(48%) sepia(97%) saturate(1261%) hue-rotate(334deg) brightness(100%) contrast(102%);
+            }
+
+            &:hover {
+                color: $orange;
             }
         }
 
@@ -215,6 +221,11 @@
             display: flex;
             border-radius: 20px;
             overflow: hidden;
+            border: 2px solid transparent;
+
+            &:hover {
+                border: 2px solid $orange;
+            }
         }
 
         &_img {
@@ -298,7 +309,11 @@
             grid-column-start: 1;
             grid-column-end: 2;
 
-            &_name {}
+            &_name {
+                &:hover {
+                    color: $orange;
+                }
+            }
 
             &_arrow {
                 width: 12px;
@@ -360,6 +375,13 @@
                 font-size: 12px;
                 color: $text-dark;
             }
+
+            &:hover {
+                .catalog-filter__info_select_text {
+                    color: white;
+                }
+            }
+
         }
     }
 
@@ -436,11 +458,6 @@
             @include mobile {
                 height: 220px;
             }
-        }
-
-
-        .game-card__btn {
-            padding: 8px 20px;
         }
 
         .game-card__price {

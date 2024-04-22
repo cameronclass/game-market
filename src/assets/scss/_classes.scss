@@ -575,6 +575,12 @@
     padding: 25px;
     position: relative;
     overflow: hidden;
+    border: 1px solid transparent;
+
+    &:hover {
+        border: 1px solid $orange;
+        background: linear-gradient(91deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.17) 63.74%, rgba(0, 0, 0, 0.35) 101.17%);
+    }
 
     @include mobile {
         padding: 10px 15px;
@@ -817,6 +823,7 @@
         border-radius: inherit;
         padding: 5px 0;
         line-height: 1;
+        transition: 100ms ease;
 
         &::placeholder {
             font-size: 12px;
@@ -825,6 +832,16 @@
         &:focus {
             border: none;
             border-bottom: 1px dashed white;
+        }
+    }
+
+    &:hover {
+        .search-block__icon {
+            filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
+        }
+
+        .search-block__input::placeholder {
+            color: white;
         }
     }
 }
@@ -885,13 +902,13 @@
 
     .select-items {
         position: absolute;
-        background-color: darken($color: $text-dark, $amount: 30);
+        background-color: #2B2927;
         top: 100%;
         left: 0;
         right: 0;
         z-index: 999;
         border-radius: 0 0 5px 5px;
-        border: 1px solid darken($color: $text-dark, $amount: 30);
+        border: 1px solid #2B2927;
         overflow: hidden;
     }
 
@@ -901,16 +918,30 @@
 
     .select-items div:hover,
     .same-as-selected {
-        background-color: darken($color: $text-dark, $amount: 40);
+        background-color: #FF5F4030;
+        color: white;
     }
 
     &-unique {
         .select-selected {
             border-radius: 4px;
-            border: none;
+            border: 1px solid transparent;
             background: linear-gradient(270deg, rgba(79, 79, 79, 0.35) 0%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.78%, rgba(72, 60, 54, 0.35) 70.71%, rgba(79, 79, 79, 0.35) 100%);
+
+            &:hover {
+                border: 1px solid $orange;
+                color: white;
+            }
+
+            &.select-arrow-active {
+                border: 1px solid $orange;
+                color: white;
+                background: #00000030;
+            }
         }
     }
+
+    &:hover {}
 }
 
 .pagination {

@@ -1,4 +1,3 @@
-
 .steps {
     padding-top: 20px;
     padding-bottom: 160px;
@@ -730,6 +729,25 @@
 
         &_link {
             width: 58px;
+            position: relative;
+
+            &_bg {}
+
+            &_icon {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:hover{
+                .pre-order__card_link_bg{
+                    filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
+                }
+            }
         }
     }
 
