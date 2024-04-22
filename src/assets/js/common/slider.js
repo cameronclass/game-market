@@ -200,8 +200,9 @@ if (homeMarkets) {
   new Splide(".home-markets .splide", {
     type: "loop",
     focus: "center",
+    autoWidth: true,
     perPage: 4,
-    gap: 20,
+    gap: 50,
     breakpoints: {
       768: {
         perPage: 1,
