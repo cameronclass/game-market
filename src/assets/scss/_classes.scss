@@ -91,6 +91,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border: 1px solid transparent;
+
+        &:hover {
+            border: 1px solid $orange;
+        }
 
         &_icon {
             width: 38px;
@@ -139,6 +144,11 @@
     &__active {
         .accordion__intro {
             border-bottom: 1px solid #1E1C18;
+
+            &:hover {
+                border-color: transparent;
+                border-bottom: 1px solid #1E1C18;
+            }
         }
 
         .accordion__intro_icon {
@@ -147,6 +157,7 @@
 
         .accordion__intro_icon_active {
             display: flex;
+            filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
         }
 
         .accordion__content {
@@ -1003,6 +1014,10 @@
         a {
             color: $text-dark;
             font-size: 12px;
+
+            &:hover {
+                color: $orange;
+            }
         }
     }
 }

@@ -71,8 +71,8 @@
             background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
             position: relative;
             padding-right: 40px;
+            transition: 200ms ease;
 
-            &:hover {}
 
             &_buy {
                 display: flex;
@@ -130,6 +130,14 @@
                     font-size: 9px;
                 }
             }
+
+            &:hover {
+                border-color: $orange;
+
+                .cart-item__img_offer_icon {
+                    filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
+                }
+            }
         }
 
         &_buynow {
@@ -142,9 +150,10 @@
             border-radius: 4px;
             background: linear-gradient(180deg, rgba(68, 160, 105, 0.62) 0%, rgba(137, 255, 18, 0.36) 100%);
             backdrop-filter: blur(5.699999809265137px);
+            transition: 200ms ease;
 
             &:hover {
-                background-color: rgba(68, 160, 105, 0.92);
+                background: linear-gradient(180deg, rgba(67, 255, 142, 0.62) 0%, rgba(174, 255, 94, 0.36) 100%);
             }
         }
     }
@@ -405,6 +414,12 @@
         border: 1px solid #34312D;
         background: rgba(26, 25, 23, 0.65);
         backdrop-filter: blur(4.25px);
+
+        &:hover {
+            border-color: $orange;
+            background: rgba(26, 25, 23, 0.65);
+            backdrop-filter: blur(57.099998474121094px);
+        }
     }
 
     &__action {
@@ -515,6 +530,31 @@
         }
     }
 
+
+
+    &__icon {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__title {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    &__text {
+        font-size: 12px;
+        color: $text-dark;
+        line-height: 1;
+    }
+
     &__item {
         width: 100%;
         display: flex;
@@ -546,29 +586,17 @@
         &:last-child {
             padding-right: 0;
         }
-    }
 
-    &__icon {
-        width: 45px;
-        height: 45px;
-        object-fit: contain;
-    }
+        &:hover {
+            .cart-advantages__icon {
+                filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
+            }
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
+            .cart-advantages__text {
+                color: white;
+            }
 
-    &__title {
-        font-size: 18px;
-        line-height: 1;
-    }
-
-    &__text {
-        font-size: 12px;
-        color: $text-dark;
-        line-height: 1;
+        }
     }
 }
 
