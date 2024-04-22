@@ -1170,6 +1170,12 @@
                 .comment-item__like_icon {
                     filter: brightness(10);
                 }
+
+                color: #40FF6A;
+
+                &._dislike {
+                    color: #FF5C5C;
+                }
             }
         }
 

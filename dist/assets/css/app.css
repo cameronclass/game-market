@@ -4023,7 +4023,7 @@ button.swiper-pagination-bullet {
   line-height: 1.2;
   transition: 300ms ease; }
   .btn-bordered:hover {
-    border-color: white; }
+    border-color: #FF6C3D; }
 
 .btn-blur {
   border-radius: 7px;
@@ -7991,8 +7991,12 @@ input[type=number] {
         color: #a94d4d; }
         .comment-item__like_btn._dislike .comment-item__like_icon {
           transform: rotateX(180deg); }
-      .comment-item__like_btn:hover .comment-item__like_icon {
-        filter: brightness(10); }
+      .comment-item__like_btn:hover {
+        color: #40FF6A; }
+        .comment-item__like_btn:hover .comment-item__like_icon {
+          filter: brightness(10); }
+        .comment-item__like_btn:hover._dislike {
+          color: #FF5C5C; }
   .comment-item__block {
     border-radius: 4px;
     border: 1px solid #3A3A39;
