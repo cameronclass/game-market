@@ -5256,7 +5256,7 @@ input[type=number] {
           width: 40px;
           height: 40px; } }
       .header__actions_link:hover img {
-        filter: brightness(10); }
+        filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%); }
     .header__actions_admin {
       width: 46px;
       height: 46px;
@@ -5452,11 +5452,6 @@ input[type=number] {
     display: flex;
     justify-content: space-between;
     gap: 10px; }
-  .advantages-footer__item {
-    width: 130px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
   .advantages-footer__img {
     width: 50px;
     height: 50px;
@@ -5469,6 +5464,15 @@ input[type=number] {
     @media screen and (max-width: 1200px) {
       .advantages-footer__title {
         font-size: 14px; } }
+  .advantages-footer__item {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .advantages-footer__item:hover .advantages-footer__img {
+      filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%); }
+    .advantages-footer__item:hover .advantages-footer__title {
+      color: white; }
 
 .footer-contact {
   border-top: 1px solid #272624;
@@ -5493,6 +5497,8 @@ input[type=number] {
         flex-direction: column;
         align-items: center;
         gap: 15px; } }
+    .footer-contact__menu_item:hover {
+      color: #FF6C3D; }
   .footer-contact__social {
     display: flex;
     gap: 20px; }
@@ -5500,7 +5506,7 @@ input[type=number] {
       height: 25px;
       transition: 0ms; }
       .footer-contact__social_item:hover {
-        filter: brightness(10); }
+        filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%); }
   .footer-contact__brands {
     margin-top: 30px;
     margin-bottom: 60px; }
@@ -5512,6 +5518,8 @@ input[type=number] {
   .footer-contact__brand {
     width: auto;
     height: 41px; }
+    .footer-contact__brand:hover {
+      filter: brightness(4); }
     @media screen and (max-width: 979px) {
       .footer-contact__brand {
         width: 100%; } }
@@ -6387,7 +6395,7 @@ input[type=number] {
       transition: 300ms ease; }
       .game-slider__arrows .swiper-button-next:hover,
       .game-slider__arrows .swiper-button-prev:hover {
-        color: white; }
+        color: #FF6C3D; }
     .game-slider__arrows .swiper-button-next:after,
     .game-slider__arrows .swiper-button-prev:after {
       font-size: 30px;
@@ -6395,10 +6403,12 @@ input[type=number] {
       top: -2px; }
     .game-slider__arrows .swiper-button-next:after,
     .game-slider__arrows .swiper-rtl .swiper-button-prev:after {
+      color: white;
       content: "\2192";
       font-family: 'Courier New', Courier, monospace; }
     .game-slider__arrows .swiper-button-prev:after,
     .game-slider__arrows .swiper-rtl .swiper-button-next:after {
+      color: white;
       content: "\2190";
       font-family: 'Courier New', Courier, monospace; }
   .game-slider__title {
@@ -6545,6 +6555,8 @@ input[type=number] {
     .pre-order-actions__item a {
       color: #83A5FF;
       border-bottom: 1px dashed; }
+      .pre-order-actions__item a:hover {
+        color: #FF6C3D; }
 
 .home-blog {
   background: #1a1917;
@@ -6583,7 +6595,8 @@ input[type=number] {
   box-shadow: 0px 4px 70.6px 0px rgba(0, 0, 0, 0.25);
   height: 100%;
   min-height: 350px;
-  padding: 12px; }
+  padding: 12px;
+  transition: 200ms ease; }
   @media screen and (max-width: 979px) {
     .home-blog-card {
       padding: 5px 12px 5px 0;
@@ -6604,7 +6617,7 @@ input[type=number] {
       left: 0;
       top: 0;
       object-fit: cover;
-      filter: contrast(1) opacity(0.1) brightness(0.3) grayscale(1); }
+      filter: contrast(1) opacity(0.1) brightness(0.5) grayscale(1); }
   .home-blog-card__content {
     width: 100%;
     display: flex;
@@ -6657,6 +6670,10 @@ input[type=number] {
     .home-blog-card__timer_icon {
       width: 12px;
       height: 12px; }
+  .home-blog-card:hover {
+    border: 1px solid #FF6C3D; }
+    .home-blog-card:hover .home-blog-card__img_bg {
+      filter: contrast(1) opacity(0.1) brightness(0.1) grayscale(1); }
 
 .home-reviews {
   padding-top: 40px;

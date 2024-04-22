@@ -127,12 +127,7 @@
         gap: 10px;
     }
 
-    &__item {
-        width: 130px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+
 
     &__img {
         width: 50px;
@@ -148,6 +143,23 @@
 
         @include netbook {
             font-size: 14px;
+        }
+    }
+
+    &__item {
+        width: 130px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover {
+            .advantages-footer__img {
+                filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
+            }
+
+            .advantages-footer__title {
+                color: white;
+            }
         }
     }
 }
@@ -183,6 +195,12 @@
             align-items: center;
             gap: 15px;
         }
+
+        &_item {
+            &:hover {
+                color: $orange;
+            }
+        }
     }
 
     &__social {
@@ -195,7 +213,7 @@
             transition: 0ms;
 
             &:hover {
-                filter: brightness(10);
+                filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
             }
         }
     }
@@ -218,6 +236,10 @@
     &__brand {
         width: auto;
         height: 41px;
+
+        &:hover {
+            filter: brightness(4);
+        }
 
         @include mobile {
             width: 100%;
