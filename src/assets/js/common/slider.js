@@ -35,21 +35,6 @@ new Swiper(".footerBrandSwiper", {
   },
 });
 
-new Swiper(".home-swiper-main", {
-  navigation: {
-    nextEl: ".home-swiper-main .swiper-button-next",
-    prevEl: ".home-swiper-main .swiper-button-prev",
-  },
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
-
 new Swiper(".game-swiper-1 .swiper", {
   slidesPerView: 4,
   spaceBetween: 20,
@@ -194,6 +179,22 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
 });
 
 /* Splide */
+
+let homeMainSlider = document.querySelector(".hot-slider");
+if (homeMainSlider) {
+  new Splide(".hot-slider", {
+    type: "loop",
+    perPage: 1,
+    gap: 50,
+    breakpoints: {
+      768: {
+        perPage: 1,
+      },
+    },
+    arrows: false,
+    pagination: true,
+  }).mount(window.splide.Extensions);
+}
 
 let homeMarkets = document.querySelector(".home-markets .splide");
 if (homeMarkets) {

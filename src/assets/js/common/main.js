@@ -71,10 +71,12 @@ const timer = setInterval(() => {
 /* Hamburger menu */
 const hamburgerButton = document.querySelector(".js-hamburger");
 const hamburgerMenu = document.querySelector(".js-hamburger-menu");
-hamburgerButton.addEventListener("click", function () {
-  this.classList.toggle("is-active");
-  hamburgerMenu.classList.toggle("active");
-});
+
+if (hamburgerButton)
+  hamburgerButton.addEventListener("click", function () {
+    this.classList.toggle("is-active");
+    hamburgerMenu.classList.toggle("active");
+  });
 
 /* Language button */
 const langButton = document.querySelector(".header__lang_button");
