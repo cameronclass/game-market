@@ -6180,6 +6180,75 @@ input[type=number] {
 .home-main-slider {
   padding-top: 40px;
   padding-bottom: 40px; }
+  .home-main-slider__block {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px; }
+  .home-main-slider__card {
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background: linear-gradient(91deg, #2B2823 0%, #27251F 63.74%, #2C2A27 101.17%);
+    padding: 25px;
+    transition: 200ms ease; }
+    .home-main-slider__card_name {
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: white;
+      line-height: 1; }
+    .home-main-slider__card_title {
+      font-size: 46px;
+      font-weight: 700;
+      -webkit-text-stroke-width: 0.5px;
+      -moz-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: white;
+      -moz-text-stroke-color: white;
+      color: transparent;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      font-family: "Roboto", sans-serif;
+      transition: 300ms ease; }
+    .home-main-slider__card_btn {
+      border-radius: 24.5px;
+      border: 1px solid #55473E;
+      background: #1A1916;
+      box-shadow: 0px 4px 70.6px 0px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      font-size: 16px;
+      color: #847F7D;
+      font-weight: 700;
+      line-height: 1;
+      padding: 13px; }
+    .home-main-slider__card:hover {
+      border: 1px solid #FF6C3D;
+      box-shadow: 0px 4px 70.6px 0px #FF6C3D30; }
+      .home-main-slider__card:hover .home-main-slider__card_title {
+        color: #FF6C3D;
+        -webkit-text-stroke-width: 0px;
+        -moz-text-stroke-width: 0px; }
+  .home-main-slider__steam {
+    display: flex; }
+    .home-main-slider__steam_img {
+      width: 100%;
+      min-width: 170px;
+      height: 100%;
+      display: flex;
+      position: relative; }
+      .home-main-slider__steam_img_item {
+        width: 100%;
+        min-width: 190px;
+        height: auto;
+        position: absolute;
+        left: -40px;
+        top: -20px;
+        filter: grayscale(0.6);
+        transition: 200ms ease; }
+    .home-main-slider__steam_content {
+      width: 100%;
+      max-width: 150px;
+      text-align: center; }
+    .home-main-slider__steam:hover .home-main-slider__steam_img_item {
+      filter: grayscale(0); }
 
 .hot-slider__item {
   display: flex;
