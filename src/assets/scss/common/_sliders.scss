@@ -68,3 +68,32 @@
         }
     }
 }
+
+
+.slider-arrows {
+    display: flex;
+    justify-content: space-between;
+
+    &__next,
+    &__prev {
+        border: 1px solid #847F7D;
+        padding: 5px;
+        border-radius: 5px;
+        width: 26px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--DARK-BG, #1C1B19);
+
+        &:hover {
+            border-color: $orange;
+        }
+
+        &:focus {
+            border: 1px solid darken($color: $orange, $amount: 10);
+        }
+    }
+
+    &__prev {}
+}

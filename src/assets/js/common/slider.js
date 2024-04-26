@@ -196,6 +196,41 @@ if (homeMainSlider) {
   }).mount(window.splide.Extensions);
 }
 
+let giftSlider = document.querySelector(".gift-slider");
+if (giftSlider) {
+  new Splide(".gift-slider", {
+    type: "loop",
+    focus: "center",
+    perPage: 5,
+    gap: 10,
+    autoWidth: true,
+    breakpoints: {
+      768: {
+        perPage: 1,
+      },
+    },
+    arrows: false,
+    pagination: true,
+  }).mount(window.splide.Extensions);
+}
+
+let topUpSlider = document.querySelector(".topup-slider");
+if (topUpSlider) {
+  new Splide(".topup-slider", {
+    type: "loop",
+    focus: "center",
+    perPage: 1,
+    gap: -100,
+    breakpoints: {
+      768: {
+        perPage: 1,
+      },
+    },
+    arrows: true,
+    pagination: false,
+  }).mount(window.splide.Extensions);
+}
+
 let homeMarkets = document.querySelector(".home-markets .splide");
 if (homeMarkets) {
   new Splide(".home-markets .splide", {
