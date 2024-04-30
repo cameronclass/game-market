@@ -618,36 +618,55 @@
 }
 
 .home-statics {
-    padding-top: 35px;
+    margin-top: 40px;
     padding-bottom: 50px;
     background: rgb(26, 25, 23);
     border-top: 2px solid #252221;
     border-bottom: 2px solid #252221;
 
     &__title {
+        position: relative;
+        top: -30px;
+        width: max-content;
+        margin: auto;
+        display: flex;
         text-align: center;
         font-size: 20px;
         font-weight: 500;
-        margin-bottom: 50px;
-        color: $text-dark;
+        margin-bottom: 20px;
+        color: white;
+        overflow: hidden;
+        border-radius: 50px;
+        background: linear-gradient(175.53deg,
+                rgb(52, 45, 39) 0%,
+                rgb(34, 34, 32) 67.445%) padding-box,
+            linear-gradient(to top, #ffffff1a 4%, #FF6C3D) border-box;
+        border: 1px solid transparent;
+        backdrop-filter: blur(17.549999237060547px);
+
+        &_bg {
+            background: #22211E;
+            padding: 20px 60px;
+        }
     }
 
     .statics-card {
+
         @include mobile {
             transform: scale(0.75);
         }
     }
 
     .splide__slide.is-active {
-        z-index: 2;
+        z-index: 3;
 
         .statics-card {
             background: linear-gradient(175.53deg,
                     rgb(52, 45, 39) 0%,
                     rgb(34, 34, 32) 67.445%) padding-box,
-                linear-gradient(to top, #61492E 14%, #FF6C3D) border-box;
+                linear-gradient(to top, #ffffff1a 4%, #FF6C3D) border-box;
             border: 1px solid transparent;
-            transform: scale(1.28);
+            transform: scale(1.15);
 
             @include mobile {
                 transform: scale(0.95);

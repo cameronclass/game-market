@@ -289,7 +289,7 @@ if (homeStatics) {
     perPage: 3,
     arrows: false,
     pagination: false,
-    gap: 22,
+    gap: 20,
     breakpoints: {
       768: {
         perPage: 1,
