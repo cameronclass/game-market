@@ -329,56 +329,65 @@
             </div>
         </section>
 
-        <section class="container">
-            <div class="catalog__tabs">
-                <a class="catalog__tab" href="#">
-                    <span class="catalog__tab_block">
-                        <img class="catalog__tab_img" src="assets/images/home/icons/catalog.svg" alt="">
-                        <span class="catalog__tab_title">Catalog</span>
-                    </span>
-                </a>
-                <a class="catalog__tab" href="#">
-                    <span class="catalog__tab_block">
-                        <img class="catalog__tab_img" src="assets/images/home/icons/pc.svg" alt="">
-                        <span class="catalog__tab_title">PC</span>
-                    </span>
-                </a>
-                <a class="catalog__tab" href="#">
-                    <span class="catalog__tab_block">
-                        <img class="catalog__tab_img" src="assets/images/home/icons/playstation.svg" alt="">
-                        <span class="catalog__tab_title">PlayStation</span>
-                    </span>
-                </a>
-                <a class="catalog__tab active" href="#">
-                    <span class="catalog__tab_block">
-                        <img class="catalog__tab_img" src="assets/images/home/icons/xbox.svg" alt="">
-                        <span class="catalog__tab_title">Xbox</span>
-                    </span>
-                </a>
-                <a class="catalog__tab" href="#">
-                    <span class="catalog__tab_block">
-                        <img class="catalog__tab_img" src="assets/images/home/icons/nintendo.svg" alt="">
-                        <span class="catalog__tab_title">Nintendo</span>
-                    </span>
-                </a>
-                <a class="catalog__tab" href="#">
-                    <span class="catalog__tab_block">
-                        <img class="catalog__tab_img" src="assets/images/home/icons/giftcard.svg" alt="">
-                        <span class="catalog__tab_title">Gift Cards</span>
-                    </span>
-                </a>
-                <a class="catalog__tab" href="#">
-                    <span class="catalog__tab_block">
-                        <img class="catalog__tab_img" src="assets/images/home/icons/subs.svg" alt="">
-                        <span class="catalog__tab_title">Subscriptions</span>
-                    </span>
-                </a>
-                <a class="catalog__tab" href="#">
-                    <span class="catalog__tab_block">
-                        <img class="catalog__tab_img" src="assets/images/home/icons/gamepoints.svg" alt="">
-                        <span class="catalog__tab_title">Game Points</span>
-                    </span>
-                </a>
+        <section class="home-catalog-list">
+            <div class="container">
+                <div class="catalog__tabs">
+                    <div class="catalog__tab catalog__tab_name">
+                        <span class="catalog__tab_block">
+                            <img class="catalog__tab_img" src="assets/images/home/icons/catalog.svg" alt="">
+                            <span class="catalog__tab_title">Catalog</span>
+                        </span>
+                    </div>
+                    <button class="catalog__btn">
+                        <span class="catalog__btn_name">Xbox</span>
+                        <img class="catalog__btn_img" src="assets/images/icons/arrow-down.svg" alt="">
+                    </button>
+                    <div class="catalog__tabs_content">
+                        <a class="catalog__tab" href="#">
+                            <span class="catalog__tab_block">
+                                <img class="catalog__tab_img" src="assets/images/home/icons/pc.svg" alt="">
+                                <span class="catalog__tab_title">PC</span>
+                            </span>
+                        </a>
+                        <a class="catalog__tab" href="#">
+                            <span class="catalog__tab_block">
+                                <img class="catalog__tab_img" src="assets/images/home/icons/playstation.svg" alt="">
+                                <span class="catalog__tab_title">PlayStation</span>
+                            </span>
+                        </a>
+                        <a class="catalog__tab" href="#">
+                            <span class="catalog__tab_block">
+                                <img class="catalog__tab_img" src="assets/images/home/icons/xbox.svg" alt="">
+                                <span class="catalog__tab_title">Xbox</span>
+                            </span>
+                        </a>
+                        <a class="catalog__tab" href="#">
+                            <span class="catalog__tab_block">
+                                <img class="catalog__tab_img" src="assets/images/home/icons/nintendo.svg" alt="">
+                                <span class="catalog__tab_title">Nintendo</span>
+                            </span>
+                        </a>
+                        <a class="catalog__tab" href="#">
+                            <span class="catalog__tab_block">
+                                <img class="catalog__tab_img" src="assets/images/home/icons/giftcard.svg" alt="">
+                                <span class="catalog__tab_title">Gift Cards</span>
+                            </span>
+                        </a>
+                        <a class="catalog__tab" href="#">
+                            <span class="catalog__tab_block">
+                                <img class="catalog__tab_img" src="assets/images/home/icons/subs.svg" alt="">
+                                <span class="catalog__tab_title">Subscriptions</span>
+                            </span>
+                        </a>
+                        <a class="catalog__tab" href="#">
+                            <span class="catalog__tab_block">
+                                <img class="catalog__tab_img" src="assets/images/home/icons/gamepoints.svg" alt="">
+                                <span class="catalog__tab_title">Game Points</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="catalog__bg"></div>
+                </div>
             </div>
         </section>
 
@@ -398,7 +407,7 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="game-card">
+                                <!-- <div class="game-card">
                                     <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
                                     <div class="game-card__content">
                                         <div class="game-card__title">Название игры этой карточки карточки карточки</div>
@@ -411,90 +420,25 @@
                                     <a href="#" class="game-card__btn">
                                         <span class="game-card__btn_block">
                                             <span class="game-card__price">1258</span>
-                                        <span class="game-card__price_cur">₽</span>
-                                        <span class="game-card__price_old">1258</span>
+                                            <span class="game-card__price_cur">₽</span>
+                                            <span class="game-card__price_old">1258</span>
                                         </span>
                                     </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="game-card">
-                                    <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                                    <div class="game-card__content">
-                                        <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                                        <div class="game-card__subtitle">Дополнительная информация</div>
-                                        <div class="game-card__label">
-                                            <img src="assets/images/home/xbox.svg" alt="">
+                                </div> -->
+
+                                <div class="new-card">
+                                    <div class="new-card__bg">
+                                        <div class="new-card__img">
+                                            <img class="new-card__img_item" src="assets/images/home/card-image.png" alt="">
                                         </div>
-                                        <div class="game-card__discount">-20%</div>
-                                    </div>
-                                    <a href="#" class="game-card__btn">
-                                        <span class="game-card__btn_block">
-                                            <span class="game-card__price">1258</span>
-                                        <span class="game-card__price_cur">₽</span>
-                                        <span class="game-card__price_old">1258</span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="game-card">
-                                    <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                                    <div class="game-card__content">
-                                        <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                                        <div class="game-card__subtitle">Дополнительная информация</div>
-                                        <div class="game-card__label">
-                                            <img src="assets/images/home/xbox.svg" alt="">
+
+                                        <div class="new-card__content">
+                                            <div class="new-card__title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, quibusdam!</div>
+                                            <div class="new-card__subtitle"><span class="new-card__subtitle_name">Жанр:</span> <span class="new-card__subtitle_item">Аркада</span></div>
+                                            <div class="new-card__newprice">5.450 ₽</div>
+                                            <div class="new-card__oldprice">Без скидки: 10 900 ₽</div>
                                         </div>
-                                        <div class="game-card__discount">-20%</div>
                                     </div>
-                                    <a href="#" class="game-card__btn">
-                                        <span class="game-card__btn_block">
-                                            <span class="game-card__price">1258</span>
-                                        <span class="game-card__price_cur">₽</span>
-                                        <span class="game-card__price_old">1258</span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="game-card">
-                                    <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                                    <div class="game-card__content">
-                                        <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                                        <div class="game-card__subtitle">Дополнительная информация</div>
-                                        <div class="game-card__label">
-                                            <img src="assets/images/home/xbox.svg" alt="">
-                                        </div>
-                                        <div class="game-card__discount">-20%</div>
-                                    </div>
-                                    <a href="#" class="game-card__btn">
-                                        <span class="game-card__btn_block">
-                                            <span class="game-card__price">1258</span>
-                                        <span class="game-card__price_cur">₽</span>
-                                        <span class="game-card__price_old">1258</span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="game-card">
-                                    <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                                    <div class="game-card__content">
-                                        <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                                        <div class="game-card__subtitle">Дополнительная информация</div>
-                                        <div class="game-card__label">
-                                            <img src="assets/images/home/xbox.svg" alt="">
-                                        </div>
-                                        <div class="game-card__discount">-20%</div>
-                                    </div>
-                                    <a href="#" class="game-card__btn">
-                                        <span class="game-card__btn_block">
-                                            <span class="game-card__price">1258</span>
-                                        <span class="game-card__price_cur">₽</span>
-                                        <span class="game-card__price_old">1258</span>
-                                        </span>
-                                    </a>
                                 </div>
                             </div>
                         </div>
