@@ -36,7 +36,7 @@ new Swiper(".footerBrandSwiper", {
 });
 
 new Swiper(".game-swiper-1 .swiper", {
-  slidesPerView: 4,
+  slidesPerView: 5,
   spaceBetween: 20,
   loop: true,
   navigation: {
@@ -53,13 +53,13 @@ new Swiper(".game-swiper-1 .swiper", {
       slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 4,
+      slidesPerView: 5,
     },
   },
 });
 
 new Swiper(".game-swiper-2 .swiper", {
-  slidesPerView: 4,
+  slidesPerView: 5,
   spaceBetween: 20,
   loop: true,
   navigation: {
@@ -76,13 +76,13 @@ new Swiper(".game-swiper-2 .swiper", {
       slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 4,
+      slidesPerView: 5,
     },
   },
 });
 
 new Swiper(".game-swiper-3 .swiper", {
-  slidesPerView: 4,
+  slidesPerView: 5,
   spaceBetween: 20,
   loop: true,
   navigation: {
@@ -99,7 +99,7 @@ new Swiper(".game-swiper-3 .swiper", {
       slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 4,
+      slidesPerView: 5,
     },
   },
 });
