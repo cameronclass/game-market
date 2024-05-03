@@ -545,7 +545,7 @@
 }
 
 .game-slider {
-    margin-top: 30px;
+    padding-top: 30px;
     padding-bottom: 30px;
     position: relative;
     overflow: hidden;
@@ -642,8 +642,7 @@
 .home-statics {
     padding-bottom: 50px;
     background: rgb(26, 25, 23);
-    border-top: 1px solid #E16239;
-    border-bottom: 2px solid #252221;
+    position: relative;
 
     &__title {
         position: relative;
@@ -667,8 +666,41 @@
 
         &_bg {
             background: #22211E;
-            padding: 20px 60px;
+            padding: 15px 50px;
         }
+    }
+
+    &__bg {
+        position: absolute;
+        left: 50%;
+        bottom: -25px;
+        transform: translateX(-50%);
+        width: 400px;
+        height: 50px;
+        border-radius: 446px;
+        background: rgba(255, 108, 61, 0.59);
+        filter: blur(49.150001525878906px);
+    }
+
+    &__border_top {
+        width: 1920px;
+        height: 2px;
+        position: absolute;
+        z-index: -1;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(90deg, rgba(123, 54, 31, 0.00) 0%, #E16239 50.42%, rgba(123, 54, 31, 0.00) 100%);
+    }
+
+    &__border_bottom {
+        width: 273px;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255, 108, 61, 0.00) 0%, #FF6C3D 51.23%, rgba(255, 108, 61, 0.00) 100%);
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .statics-card {
@@ -702,8 +734,12 @@
 
     .splide__track {
         overflow: visible;
+        position: relative;
+        z-index: 2;
     }
 }
+
+
 
 .home-markets {
     padding-top: 40px;
@@ -1191,4 +1227,19 @@
             color: $text-dark;
         }
     }
+}
+
+
+/* unique classes */
+.main-bg-color {
+    background-color: $dark;
+}
+
+.home-top-bg {
+    height: 800px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, #1C1B19 46.15%, #2B0F0A 100%);
 }

@@ -35,75 +35,6 @@ new Swiper(".footerBrandSwiper", {
   },
 });
 
-new Swiper(".game-swiper-1 .swiper", {
-  slidesPerView: 5,
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: ".game-swiper-1 .swiper-button-next",
-    prevEl: ".game-swiper-1 .swiper-button-prev",
-  },
-
-  breakpoints: {
-    0: {
-      slidesPerView: 2,
-      spaceBetween: 15,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 5,
-    },
-  },
-});
-
-new Swiper(".game-swiper-2 .swiper", {
-  slidesPerView: 5,
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: ".game-swiper-2 .swiper-button-next",
-    prevEl: ".game-swiper-2 .swiper-button-prev",
-  },
-
-  breakpoints: {
-    0: {
-      slidesPerView: 2,
-      spaceBetween: 15,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 5,
-    },
-  },
-});
-
-new Swiper(".game-swiper-3 .swiper", {
-  slidesPerView: 5,
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: ".game-swiper-3 .swiper-button-next",
-    prevEl: ".game-swiper-3 .swiper-button-prev",
-  },
-
-  breakpoints: {
-    0: {
-      slidesPerView: 2,
-      spaceBetween: 15,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 5,
-    },
-  },
-});
-
 new Swiper(".game-swiper-4 .swiper", {
   slidesPerView: 6,
   spaceBetween: 20,
@@ -177,6 +108,33 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
     el: ".catalog-slider__sold_slider .swiper-pagination",
   },
 });
+
+function gameSwiper(selector) {
+  return new Swiper(selector + " .swiper", {
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: selector + " .swiper-button-next",
+      prevEl: selector + " .swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+    },
+  });
+}
+
+gameSwiper(".game-swiper-1");
+gameSwiper(".game-swiper-2");
+gameSwiper(".game-swiper-3");
 
 /* Splide */
 

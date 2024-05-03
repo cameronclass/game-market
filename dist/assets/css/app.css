@@ -6654,7 +6654,7 @@ input[type=number] {
   margin-bottom: 30px; }
 
 .game-slider {
-  margin-top: 30px;
+  padding-top: 30px;
   padding-bottom: 30px;
   position: relative;
   overflow: hidden; }
@@ -6728,8 +6728,7 @@ input[type=number] {
 .home-statics {
   padding-bottom: 50px;
   background: #1a1917;
-  border-top: 1px solid #E16239;
-  border-bottom: 2px solid #252221; }
+  position: relative; }
   .home-statics__title {
     position: relative;
     top: -30px;
@@ -6748,7 +6747,34 @@ input[type=number] {
     backdrop-filter: blur(17.55px); }
     .home-statics__title_bg {
       background: #22211E;
-      padding: 20px 60px; }
+      padding: 15px 50px; }
+  .home-statics__bg {
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 50px;
+    border-radius: 446px;
+    background: rgba(255, 108, 61, 0.59);
+    filter: blur(49.15px); }
+  .home-statics__border_top {
+    width: 1920px;
+    height: 2px;
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, rgba(123, 54, 31, 0) 0%, #E16239 50.42%, rgba(123, 54, 31, 0) 100%); }
+  .home-statics__border_bottom {
+    width: 273px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 108, 61, 0) 0%, #FF6C3D 51.23%, rgba(255, 108, 61, 0) 100%);
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%); }
   @media screen and (max-width: 979px) {
     .home-statics .statics-card {
       transform: scale(0.75); } }
@@ -6765,7 +6791,9 @@ input[type=number] {
     .home-statics .splide__slide.is-active .statics-card__text {
       color: white; }
   .home-statics .splide__track {
-    overflow: visible; }
+    overflow: visible;
+    position: relative;
+    z-index: 2; }
 
 .home-markets {
   padding-top: 40px;
@@ -7097,6 +7125,18 @@ input[type=number] {
     .home-other-reviews__card_subtitle {
       font-size: 16px;
       color: #847F7D; }
+
+/* unique classes */
+.main-bg-color {
+  background-color: #1C1B19; }
+
+.home-top-bg {
+  height: 800px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, #1C1B19 46.15%, #2B0F0A 100%); }
 
 .catalog-slider {
   margin-top: 45px;
