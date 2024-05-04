@@ -139,7 +139,7 @@ gameSwiper(".game-swiper-3");
 /* Splide */
 let homeMainSlider = document.querySelector(".hot-slider");
 if (homeMainSlider) {
-  new Splide(".hot-slider", {
+  let homeMainSplide = new Splide(".hot-slider", {
     type: "loop",
     perPage: 1,
     gap: 50,
@@ -150,12 +150,13 @@ if (homeMainSlider) {
     },
     arrows: false,
     pagination: true,
-  }).mount(window.splide.Extensions);
+  });
+  homeMainSplide.mount();
 }
 
 let giftSlider = document.querySelector(".gift-slider");
 if (giftSlider) {
-  new Splide(".gift-slider", {
+  let giftSplide = new Splide(".gift-slider", {
     type: "loop",
     focus: "center",
     perPage: 5,
@@ -168,12 +169,13 @@ if (giftSlider) {
     },
     arrows: false,
     pagination: true,
-  }).mount(window.splide.Extensions);
+  });
+  giftSplide.mount();
 }
 
 let topUpSlider = document.querySelector(".topup-slider");
 if (topUpSlider) {
-  new Splide(".topup-slider", {
+  let topUpSplide = new Splide(".topup-slider", {
     type: "loop",
     focus: "center",
     perPage: 1,
@@ -185,12 +187,13 @@ if (topUpSlider) {
     },
     arrows: true,
     pagination: false,
-  }).mount(window.splide.Extensions);
+  });
+  topUpSplide.mount();
 }
 
 let homeMarkets = document.querySelector(".home-markets .splide");
 if (homeMarkets) {
-  new Splide(".home-markets .splide", {
+  let homeMarketsSplide = new Splide(".home-markets .splide", {
     type: "loop",
     focus: "center",
     autoWidth: true,
@@ -206,12 +209,13 @@ if (homeMarkets) {
     autoScroll: {
       speed: 1,
     },
-  }).mount(window.splide.Extensions);
+  });
+  homeMarketsSplide.mount(window.splide.Extensions);
 }
 
 let homeReviews = document.querySelector(".home-reviews .splide");
 if (homeReviews) {
-  new Splide(".home-reviews .splide", {
+  let homeReviewsSplide = new Splide(".home-reviews .splide", {
     type: "loop",
     focus: "center",
     perPage: 4,
@@ -222,12 +226,13 @@ if (homeReviews) {
     },
     arrows: false,
     pagination: false,
-  }).mount(window.splide.Extensions);
+  });
+  homeReviewsSplide.mount(window.splide.Extensions);
 }
 
 let homeBlog = document.querySelector(".home-blog .splide");
 if (homeBlog) {
-  new Splide(".home-blog .splide", {
+  let homeBlogSplide = new Splide(".home-blog .splide", {
     type: "loop",
     perPage: 2,
     arrows: false,
@@ -238,12 +243,13 @@ if (homeBlog) {
         perPage: 1,
       },
     },
-  }).mount(window.splide.Extensions);
+  });
+  homeBlogSplide.mount();
 }
 
 let homeStatics = document.querySelector(".home-statics .splide");
 if (homeStatics) {
-  new Splide(".home-statics .splide", {
+  let homeStatics = new Splide(".home-statics .splide", {
     type: "loop",
     focus: "center",
     perPage: 3,
@@ -256,12 +262,13 @@ if (homeStatics) {
         gap: -52,
       },
     },
-  }).mount(window.splide.Extensions);
+  });
+  homeStatics.mount();
 }
 
 let cartAboutSwiper = document.querySelector(".screen-swiper .splide");
-if (cartAboutSwiper)
-  new Splide(".screen-swiper .splide", {
+if (cartAboutSwiper) {
+  let cartAboutSplide = new Splide(".screen-swiper .splide", {
     type: "loop",
     focus: 1,
     height: "340px",
@@ -304,4 +311,6 @@ if (cartAboutSwiper)
         },
       },
     },
-  }).mount(window.splide.Extensions);
+  });
+  cartAboutSplide.mount();
+}
