@@ -5432,6 +5432,7 @@ input[type=number] {
     border: 1px solid #2C465E;
     transition: 300ms ease; }
     .logo-menu__payment_card._steam {
+      z-index: 1;
       background-color: #1E2348; }
       .logo-menu__payment_card._steam:hover {
         box-shadow: 0px 4px 28.9px 0px rgba(23, 20, 189, 0.69);
@@ -5440,10 +5441,39 @@ input[type=number] {
           filter: none; }
         .logo-menu__payment_card._steam:hover .logo-menu__payment_card_img {
           transform: rotate(10deg); }
+    .logo-menu__payment_card._boost {
+      z-index: 2;
+      border: 1px solid #FF8998;
+      background: #D05464;
+      box-shadow: 0px 4px 28.9px 0px #6B1E28;
+      backdrop-filter: blur(33.65px); }
+      .logo-menu__payment_card._boost::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #d05464cf;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 15px;
+        transition: 300ms ease; }
+      .logo-menu__payment_card._boost .logo-menu__payment_card_img {
+        transform: none; }
+      .logo-menu__payment_card._boost .logo-menu__payment_card_img_item {
+        width: 250px;
+        top: -20px; }
+      .logo-menu__payment_card._boost:hover {
+        box-shadow: 0px 4px 28.9px 0px #D42B40; }
+        .logo-menu__payment_card._boost:hover .logo-menu__payment_card_img {
+          transform: translateX(20px); }
+        .logo-menu__payment_card._boost:hover .logo-menu__payment_card_content {
+          transform: translateX(20px); }
+        .logo-menu__payment_card._boost:hover::after {
+          background-color: #d05464f2; }
     .logo-menu__payment_card_bg {
       position: absolute;
-      left: -1px;
-      top: -1px;
+      left: 0;
+      top: 0;
       z-index: 0;
       width: 100%;
       height: 100%;
@@ -5471,7 +5501,10 @@ input[type=number] {
       flex-direction: column;
       align-items: flex-start;
       position: relative;
-      z-index: 2; }
+      z-index: 2;
+      transition-duration: 0.3s;
+      transition-property: transform;
+      transform-origin: center center; }
     .logo-menu__payment_card_title {
       font-size: 24px;
       color: white;
@@ -5497,6 +5530,7 @@ input[type=number] {
         font-weight: 700; }
     .logo-menu__payment_card_dis {
       position: absolute;
+      z-index: 3;
       right: -1px;
       bottom: -1px;
       padding: 8px 20px;
@@ -5508,10 +5542,15 @@ input[type=number] {
       font-size: 24px;
       box-shadow: 0px 4px 28.9px 0px white;
       backdrop-filter: blur(33.65px); }
-      .logo-menu__payment_card_dis-steam {
+      .logo-menu__payment_card_dis._steam {
         border-color: #2C465E;
         background: #20294E;
         box-shadow: 0px 4px 28.9px 0px rgba(13, 25, 35, 0.69); }
+      .logo-menu__payment_card_dis._boost {
+        border-color: #FF8998;
+        background: #D05464;
+        box-shadow: 0px 4px 28.9px 0px #6B1E28;
+        backdrop-filter: blur(33.65px); }
 
 .logo-menu__game {
   width: 100%; }
