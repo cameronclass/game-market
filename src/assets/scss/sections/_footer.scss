@@ -35,7 +35,7 @@
 
     &__shape-3 {
         background: linear-gradient(142.31deg, rgba(51, 50, 49, 0.1) 0%, rgba(79, 79, 79, 0.05) 33.954%, rgba(79, 79, 79, 0.1) 53.895%);
-        width: 30%;
+        width: 40%;
         height: 100%;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%);
         position: absolute;
@@ -62,7 +62,6 @@
     }
 
 }
-
 
 .payment-footer {
     padding: 20px 0;
@@ -266,10 +265,39 @@
     &__link {}
 }
 
-
 .footerSwiper {
     .swiper-slide {
         display: flex;
         justify-content: center;
     }
+}
+
+.footer-to-top {
+    background-color: $dark;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    transition: 300ms ease;
+    z-index: 5;
+
+    svg {
+        position: relative;
+        bottom: -5px;
+        transition: 200ms ease;
+
+        &:hover {
+            bottom: 0;
+
+            .footer-to-top__bg {
+                fill: $orange;
+            }
+        }
+    }
+
 }
