@@ -137,7 +137,6 @@ gameSwiper(".game-swiper-2");
 gameSwiper(".game-swiper-3");
 
 /* Splide */
-
 let homeMainSlider = document.querySelector(".hot-slider");
 if (homeMainSlider) {
   new Splide(".hot-slider", {
@@ -204,6 +203,9 @@ if (homeMarkets) {
     },
     arrows: false,
     pagination: false,
+    autoScroll: {
+      speed: 1,
+    },
   }).mount(window.splide.Extensions);
 }
 

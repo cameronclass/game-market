@@ -47,54 +47,28 @@
         }
     }
 
-    &__circle-1 {
-        width: 440px;
-        height: 440px;
-        border-radius: 50%;
+    &__shape-4 {
+        background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.39) -0.323%, rgba(255, 108, 61, 0.39) 92.563%);
+        width: 30%;
+        height: 22px;
+        clip-path: polygon(0 0, 0 0, 100% 100%, 100% 0%);
         position: absolute;
-        bottom: -40%;
-        left: -30%;
-        filter: blur(500px);
-        background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%);
+        right: 0;
+        top: 0;
 
         @include mobile {
             display: none;
         }
     }
 
-    &__circle-2 {
-        width: 440px;
-        height: 440px;
-        border-radius: 50%;
-        position: absolute;
-        bottom: -40%;
-        right: -20%;
-        filter: blur(500px);
-        background: linear-gradient(156.23deg, rgba(135, 61, 37, 0.35) -88.391%, rgba(255, 108, 61, 0.35) 99.995%);
-
-        @include mobile {
-            display: none;
-        }
-    }
 }
 
 
 .payment-footer {
-    padding: 12px 0;
-    border-top: 1px solid #272624;
-    border-bottom: 1px solid #121110;
+    padding: 20px 0;
+    border-top: 2px solid #272624;
+    border-bottom: 2px solid #121110;
 
-    &__title {
-        color: $text-dark;
-        font-size: 16px;
-        font-weight: 400;
-        margin-bottom: 12px;
-        line-height: 1;
-
-        @include netbook {
-            text-align: center;
-        }
-    }
 
     &__block {
         display: flex;
@@ -103,6 +77,12 @@
 
     &__icon {
         height: 61px;
+        filter: grayscale(1) brightness(0.5);
+        transition: 200ms ease;
+
+        &:hover {
+            filter: none;
+        }
     }
 
     &__item {
@@ -112,8 +92,8 @@
 
 .advantages-footer {
     padding: 20px 0;
-    border-top: 1px solid #272624;
-    border-bottom: 1px solid #121110;
+    border-top: 2px solid #272624;
+    border-bottom: 2px solid #121110;
     position: relative;
     z-index: 2;
 
@@ -165,8 +145,8 @@
 }
 
 .footer-contact {
-    border-top: 1px solid #272624;
-    border-bottom: 1px solid #121110;
+    border-top: 2px solid #272624;
+    border-bottom: 2px solid #121110;
     position: relative;
     z-index: 2;
 
@@ -251,7 +231,7 @@
     padding-top: 45px;
     padding-bottom: 45px;
     border-top: 1px solid #272624;
-    background-color: #1A1917;
+    background-color: $dark;
 
     &__block {
         display: flex;
