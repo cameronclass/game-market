@@ -470,7 +470,11 @@
         }
 
         &_card {
-            &_bg {}
+            position: relative;
+
+            &_bg {
+                position: absolute;
+            }
 
             &_img {}
 
