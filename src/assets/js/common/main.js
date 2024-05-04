@@ -74,7 +74,7 @@ const hamburgerMenu = document.querySelector(".js-hamburger-menu");
 
 if (hamburgerButton)
   hamburgerButton.addEventListener("click", function () {
-    this.classList.toggle("is-active");
+    this.classList.toggle("_active");
     hamburgerMenu.classList.toggle("active");
   });
 
