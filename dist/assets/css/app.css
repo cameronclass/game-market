@@ -5554,6 +5554,78 @@ input[type=number] {
 
 .logo-menu__game {
   width: 100%; }
+  .logo-menu__game_block {
+    border-radius: 14px;
+    background: #0D1117;
+    box-shadow: 0px 4px 28.9px 0px rgba(13, 25, 35, 0.69);
+    backdrop-filter: blur(33.65px);
+    padding: 28px; }
+  .logo-menu__game_card {
+    display: flex;
+    align-items: center;
+    gap: 20px; }
+  .logo-menu__game_img {
+    width: 100%;
+    max-width: 170px; }
+  .logo-menu__game_title {
+    font-size: 24px;
+    font-weight: 700; }
+  .logo-menu__game_text {
+    background: var(--Linear, linear-gradient(180deg, #F3B454 0%, #F36754 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .logo-menu__game_items {
+    margin-top: 18px;
+    display: grid;
+    gap: 8px 5px;
+    grid-template-columns: repeat(5, 1fr); }
+  .logo-menu__game_item {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(198, 198, 198, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #20242C;
+    box-shadow: 0px 4px 28.9px 0px rgba(13, 25, 35, 0.69);
+    backdrop-filter: blur(33.65px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; }
+    .logo-menu__game_item_img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 8px;
+      border: 1px solid var(--Linear, #F3B454);
+      border-radius: 12px; }
+    .logo-menu__game_item_overlay {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      border: 1px solid #20242C;
+      border-radius: 10px;
+      background: #20242C;
+      transition: 300ms ease;
+      box-shadow: 0px 4px 28.9px 0px rgba(13, 25, 35, 0.69);
+      backdrop-filter: blur(33.65px); }
+      .logo-menu__game_item_overlay_img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: grayscale(1) brightness(0.6); }
+      .logo-menu__game_item_overlay:hover {
+        border-radius: 10px;
+        border: 1px solid #3D434F;
+        background: #20242C;
+        box-shadow: 0px 4px 28.9px 0px rgba(13, 25, 35, 0.69);
+        backdrop-filter: blur(33.65px); }
+        .logo-menu__game_item_overlay:hover .logo-menu__game_item_overlay_img {
+          filter: none; }
+      .logo-menu__game_item_overlay.remove {
+        visibility: hidden;
+        opacity: 0; }
 
 .footer__bg {
   position: relative;

@@ -78,6 +78,16 @@ if (hamburgerButton)
     hamburgerMenu.classList.toggle("active");
   });
 
+/* Header Game */
+const headerGameBtns = document.querySelectorAll(".js-header-game-open");
+
+if (headerGameBtns)
+  headerGameBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.add("remove");
+    });
+  });
+
 /* Language button */
 const langButton = document.querySelector(".header__lang_button");
 const langDropdown = document.querySelector(".header__lang_dropdown");
