@@ -5378,7 +5378,8 @@ input[type=number] {
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
-    width: 20%; }
+    width: 20%;
+    position: relative; }
     .header__actions_block {
       display: flex;
       align-items: center;
@@ -5412,14 +5413,67 @@ input[type=number] {
       border: 2px solid #44403E;
       background: lightgray 50% / cover no-repeat;
       overflow: hidden;
-      margin-left: 10px; }
+      margin-left: 10px;
+      padding: 0; }
+      .header__actions_admin:focus {
+        border: 2px solid #44403E; }
       .header__actions_admin:hover {
         border-color: #FF6C3D; }
+      .header__actions_admin_drop {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        border-radius: 0px 0px 20px 20px;
+        border: 1px solid #522516;
+        background: rgba(28, 27, 25, 0.8);
+        backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 18px;
+        width: 300px;
+        visibility: hidden;
+        opacity: 0;
+        transition: 300ms ease; }
+        .header__actions_admin_drop._active {
+          visibility: visible;
+          opacity: 1; }
+      .header__actions_admin_item {
+        width: 100%;
+        border-radius: 12px;
+        padding: 14px;
+        background: linear-gradient(270deg, rgba(79, 79, 79, 0.35) 0%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.78%, rgba(72, 60, 54, 0.35) 70.71%, rgba(79, 79, 79, 0.35) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative; }
+        .header__actions_admin_item svg path {
+          transition: 300ms ease; }
+        .header__actions_admin_item:hover {
+          color: white; }
+          .header__actions_admin_item:hover svg path {
+            fill: #FF6C3D; }
+        .header__actions_admin_item._exit {
+          border-radius: 12px;
+          background: #42312A;
+          padding: 10px; }
+          .header__actions_admin_item._exit:hover {
+            background: #FF6C3D;
+            color: black; }
+            .header__actions_admin_item._exit:hover svg path {
+              fill: black; }
+      .header__actions_admin_svg {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%); }
+      .header__actions_admin._active {
+        border: 2px solid #FF6C3D; }
 
 .js-hamburger-menu {
   position: fixed;
   z-index: 10;
-  top: 100px;
+  top: 63px;
   left: 0;
   visibility: hidden;
   transition: 300ms ease;

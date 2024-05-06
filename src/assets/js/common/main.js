@@ -88,6 +88,16 @@ if (headerGameBtns)
     });
   });
 
+/* Header Admin */
+const headerAdminBtn = document.querySelector(".header__actions_admin");
+const headerAdminDrop = document.querySelector(".header__actions_admin_drop");
+
+if (headerAdminBtn)
+  headerAdminBtn.addEventListener("click", () => {
+    headerAdminBtn.classList.toggle("_active");
+    headerAdminDrop.classList.toggle("_active");
+  });
+
 /* Language button */
 const langButton = document.querySelector(".header__lang_button");
 const langDropdown = document.querySelector(".header__lang_dropdown");
