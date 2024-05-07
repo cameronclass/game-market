@@ -8579,3 +8579,42 @@ input[type=number] {
     color: white;
     background: transparent;
     border: none; }
+
+.basket-page {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .basket-page__basket {
+    border-radius: 10px;
+    border-bottom: 1px solid #262724;
+    background: linear-gradient(90deg, rgba(255, 108, 61, 0.2) 0%, rgba(0, 0, 0, 0) 21.96%), #1A1917;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .basket-page__basket_info {
+      display: flex;
+      align-items: center;
+      gap: 55px; }
+    .basket-page__basket_svg {
+      display: flex;
+      align-items: center;
+      gap: 13px; }
+      .basket-page__basket_svg_text {
+        font-size: 15px;
+        font-weight: 500; }
+    .basket-page__basket_count {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 15px;
+      font-weight: 500; }
+      .basket-page__basket_count_title {
+        color: #847F7D; }
+    .basket-page__basket_btn {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      color: #847F7D;
+      border-radius: 6px;
+      background: #22221F;
+      padding: 5px 20px; }

@@ -1,0 +1,67 @@
+.basket-page {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    &__basket {
+        border-radius: 10px;
+        border-bottom: 1px solid #262724;
+        background: linear-gradient(90deg, rgba(255, 108, 61, 0.20) 0%, rgba(0, 0, 0, 0.00) 21.96%), #1A1917;
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_info {
+            display: flex;
+            align-items: center;
+            gap: 55px;
+        }
+
+        &_svg {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            &_item {}
+
+            &_text {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+
+        &_count {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 15px;
+            font-weight: 500;
+
+            &_title {
+                color: $text-dark;
+            }
+
+            &_num {}
+        }
+
+        &_btn {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            color: $text-dark;
+            border-radius: 6px;
+            background: #22221F;
+            padding: 5px 20px;
+        }
+    }
+
+    &__basket {}
+
+    &__basket {}
+
+    &__basket {}
+
+    &__basket {}
+
+    &__basket {}
+}
