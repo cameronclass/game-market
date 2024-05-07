@@ -111,7 +111,7 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
 
 function gameSwiper(selector) {
   return new Swiper(selector + " .swiper", {
-    spaceBetween: 20,
+    spaceBetween: 15,
     loop: true,
     navigation: {
       nextEl: selector + " .swiper-button-next",
@@ -123,10 +123,10 @@ function gameSwiper(selector) {
         spaceBetween: 15,
       },
       768: {
-        slidesPerView: 3,
+        slidesPerView: 4,
       },
       1024: {
-        slidesPerView: 4,
+        slidesPerView: 5,
       },
     },
   });
