@@ -272,3 +272,22 @@ if (scrollToTop)
   scrollToTop.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+const minusBtn = document.querySelector(".basket-page__card_minus");
+const plusBtn = document.querySelector(".basket-page__card_plus");
+const valueEl = document.querySelector(".basket-page__card_value");
+
+let count = parseInt(valueEl.textContent);
+
+if (minusBtn)
+  minusBtn.addEventListener("click", function () {
+    if (count > 1) {
+      count--;
+      valueEl.textContent = count;
+    }
+  });
+if (plusBtn)
+  plusBtn.addEventListener("click", function () {
+    count++;
+    valueEl.textContent = count;
+  });

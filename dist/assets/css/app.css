@@ -8764,3 +8764,11 @@ input[type=number] {
           top: -5px;
           font-weight: 500;
           font-size: 14px; }
+  .basket-page__info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; }
+  .basket-page__price {
+    border-radius: 10px;
+    border-bottom: 1px solid #262724;
+    background: linear-gradient(90deg, rgba(255, 108, 61, 0.2) 0%, rgba(0, 0, 0, 0) 21.96%), #1A1917; }
