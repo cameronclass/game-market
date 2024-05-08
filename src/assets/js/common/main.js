@@ -274,36 +274,54 @@ if (scrollToTop)
   });
 
 /* Basket Counter */
-const minusBtn = document.querySelector(".basket-page__card_minus");
-const plusBtn = document.querySelector(".basket-page__card_plus");
-const valueEl = document.querySelector(".basket-page__card_value");
+const minusBtns = document.querySelectorAll(".basket-page__card_minus");
+const plusBtns = document.querySelectorAll(".basket-page__card_plus");
+const valueEls = document.querySelectorAll(".basket-page__card_value");
 
-let count = parseInt(valueEl.textContent);
-
-if (minusBtn)
-  minusBtn.addEventListener("click", function () {
-    if (count > 1) {
-      count--;
-      valueEl.textContent = count;
-    }
+if (minusBtns)
+  minusBtns.forEach(function (minusBtn, index) {
+    minusBtn.addEventListener("click", function () {
+      let count = parseInt(valueEls[index].textContent);
+      if (count > 1) {
+        count--;
+        valueEls[index].textContent = count;
+      }
+    });
   });
-if (plusBtn)
-  plusBtn.addEventListener("click", function () {
-    count++;
-    valueEl.textContent = count;
+if (plusBtns)
+  plusBtns.forEach(function (plusBtn, index) {
+    plusBtn.addEventListener("click", function () {
+      let count = parseInt(valueEls[index].textContent);
+      count++;
+      valueEls[index].textContent = count;
+    });
   });
 
 /* Basket Delete */
-const basketDeleteBtn = document.querySelector(".basket-page__card_delete");
-const basketOverlay = document.querySelector(".basket-page__card_over");
-const basketOverlayNo = document.querySelector(".basket-page__card_over_no");
-
-if (basketDeleteBtn)
-  basketDeleteBtn.addEventListener("click", function () {
-    basketOverlay.classList.add("_active");
+const basketDeleteBtns = document.querySelectorAll(".basket-page__card_delete");
+const basketOverlays = document.querySelectorAll(".basket-page__card_over");
+const basketOverlayNos = document.querySelectorAll(
+  ".basket-page__card_over_no"
+);
+if (basketDeleteBtns)
+  basketDeleteBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const overlay = btn
+        .closest(".basket-page__card")
+        .querySelector(".basket-page__card_over");
+      if (overlay) {
+        overlay.classList.add("_active");
+      }
+    });
   });
-
-if (basketOverlayNo)
-  basketOverlayNo.addEventListener("click", function () {
-    basketOverlay.classList.remove("_active");
+if (basketOverlayNos)
+  basketOverlayNos.forEach(function (overlayNo) {
+    overlayNo.addEventListener("click", function () {
+      const overlay = overlayNo
+        .closest(".basket-page__card")
+        .querySelector(".basket-page__card_over");
+      if (overlay) {
+        overlay.classList.remove("_active");
+      }
+    });
   });
