@@ -80,6 +80,13 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+        transition: 300ms ease;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            border-color: $orange;
+        }
 
         &_img {
             width: 100%;
@@ -166,6 +173,26 @@
             padding-top: 2px;
             border: 1px solid #21201D;
             box-shadow: 0px 2px 10.6px -3px rgba(0, 0, 0, 0.25);
+
+            transition: 200ms ease;
+
+            svg path {
+                transition: 200ms ease;
+            }
+
+            &:hover {
+                border-color: $orange;
+
+                svg path {
+                    fill: $text-dark
+                }
+            }
+
+            &._active {
+                svg path {
+                    fill: $orange
+                }
+            }
         }
 
         &_more {
@@ -188,6 +215,26 @@
             background: #1B1D1B;
             padding-top: 2px;
             border: 1px solid #0C0E0C;
+
+            svg {
+                transition: 300ms ease;
+            }
+
+            &:hover {
+                background: #242624;
+
+                svg {
+                    transform: rotate(15deg);
+                }
+
+                svg path._dot {
+                    fill: $orange
+                }
+
+                svg path._top {
+                    fill: white
+                }
+            }
         }
 
         &_add {
@@ -209,6 +256,32 @@
             border-radius: 50px;
             width: 28px;
             height: 24px;
+            transition: 200ms ease;
+
+            svg path,
+            svg rect {
+                transition: 200ms ease;
+            }
+        }
+
+        &_minus {
+            &:hover {
+                background-color: #2C1F1F;
+
+                svg rect {
+                    fill: #C24E4E;
+                }
+            }
+        }
+
+        &_plus {
+            &:hover {
+                background-color: #1C271C;
+
+                svg path {
+                    fill: #6AB15E;
+                }
+            }
         }
 
         &_value {
@@ -244,6 +317,70 @@
                     font-size: 14px;
                 }
             }
+        }
+
+        &_over {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(32, 25, 22, 0.00);
+            background: linear-gradient(180deg, rgba(32, 28, 26, 0.82) 0%, rgba(45, 40, 36, 0.82) 100%);
+            backdrop-filter: blur(11.300000190734863px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 200ms ease;
+
+            &._active {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &_title {
+                font-weight: 700;
+            }
+
+            &_block {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
+            &_btn {
+                border-radius: 31.5px;
+                border: 1px solid $orange;
+                background: #22211E;
+                backdrop-filter: blur(17.549999237060547px);
+                font-size: 16px;
+                font-weight: 600;
+                color: white;
+                padding: 6px 20px;
+                line-height: 1;
+            }
+
+            &_no {
+                &:hover {
+                    border: 1px solid #265216;
+                    color: #E2FD3D;
+                    background: #1D3420;
+                }
+            }
+
+            &_yes {
+                &:hover {
+                    border: 1px solid #521616;
+                    color: #FD3D3D;
+                    background: #422424;
+                }
+            }
+
         }
 
     }

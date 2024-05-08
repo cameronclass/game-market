@@ -63,8 +63,8 @@ const timer = setInterval(() => {
   // what happens when countdown ends
   if (distance < 0) {
     clearInterval(timer);
-    timerInfo.classList.add("is-hidden");
-    messageContainer.classList.add("is-visible");
+    if (timerInfo) timerInfo.classList.add("is-hidden");
+    if (messageContainer) messageContainer.classList.add("is-visible");
   }
 }, 1000);
 
@@ -273,6 +273,7 @@ if (scrollToTop)
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
+/* Basket Counter */
 const minusBtn = document.querySelector(".basket-page__card_minus");
 const plusBtn = document.querySelector(".basket-page__card_plus");
 const valueEl = document.querySelector(".basket-page__card_value");
@@ -290,4 +291,19 @@ if (plusBtn)
   plusBtn.addEventListener("click", function () {
     count++;
     valueEl.textContent = count;
+  });
+
+/* Basket Delete */
+const basketDeleteBtn = document.querySelector(".basket-page__card_delete");
+const basketOverlay = document.querySelector(".basket-page__card_over");
+const basketOverlayNo = document.querySelector(".basket-page__card_over_no");
+
+if (basketDeleteBtn)
+  basketDeleteBtn.addEventListener("click", function () {
+    basketOverlay.classList.add("_active");
+  });
+
+if (basketOverlayNo)
+  basketOverlayNo.addEventListener("click", function () {
+    basketOverlay.classList.remove("_active");
   });

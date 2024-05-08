@@ -8643,7 +8643,12 @@ input[type=number] {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px; }
+    gap: 10px;
+    transition: 300ms ease;
+    position: relative;
+    overflow: hidden; }
+    .basket-page__card:hover {
+      border-color: #FF6C3D; }
     .basket-page__card_img {
       width: 100%;
       max-width: 184px;
@@ -8704,7 +8709,16 @@ input[type=number] {
       background: #0C0E0C;
       padding-top: 2px;
       border: 1px solid #21201D;
-      box-shadow: 0px 2px 10.6px -3px rgba(0, 0, 0, 0.25); }
+      box-shadow: 0px 2px 10.6px -3px rgba(0, 0, 0, 0.25);
+      transition: 200ms ease; }
+      .basket-page__card_like svg path {
+        transition: 200ms ease; }
+      .basket-page__card_like:hover {
+        border-color: #FF6C3D; }
+        .basket-page__card_like:hover svg path {
+          fill: #847F7D; }
+      .basket-page__card_like._active svg path {
+        fill: #FF6C3D; }
     .basket-page__card_more {
       display: flex;
       align-items: center;
@@ -8723,6 +8737,16 @@ input[type=number] {
       background: #1B1D1B;
       padding-top: 2px;
       border: 1px solid #0C0E0C; }
+      .basket-page__card_delete svg {
+        transition: 300ms ease; }
+      .basket-page__card_delete:hover {
+        background: #242624; }
+        .basket-page__card_delete:hover svg {
+          transform: rotate(15deg); }
+        .basket-page__card_delete:hover svg path._dot {
+          fill: #FF6C3D; }
+        .basket-page__card_delete:hover svg path._top {
+          fill: white; }
     .basket-page__card_add {
       display: flex;
       align-items: center;
@@ -8738,7 +8762,20 @@ input[type=number] {
       background-color: #1B1D1B;
       border-radius: 50px;
       width: 28px;
-      height: 24px; }
+      height: 24px;
+      transition: 200ms ease; }
+      .basket-page__card_minus svg path,
+      .basket-page__card_minus svg rect, .basket-page__card_plus svg path,
+      .basket-page__card_plus svg rect {
+        transition: 200ms ease; }
+    .basket-page__card_minus:hover {
+      background-color: #2C1F1F; }
+      .basket-page__card_minus:hover svg rect {
+        fill: #C24E4E; }
+    .basket-page__card_plus:hover {
+      background-color: #1C271C; }
+      .basket-page__card_plus:hover svg path {
+        fill: #6AB15E; }
     .basket-page__card_value {
       width: 28px;
       line-height: 1;
@@ -8764,6 +8801,51 @@ input[type=number] {
           top: -5px;
           font-weight: 500;
           font-size: 14px; }
+    .basket-page__card_over {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(32, 25, 22, 0);
+      background: linear-gradient(180deg, rgba(32, 28, 26, 0.82) 0%, rgba(45, 40, 36, 0.82) 100%);
+      backdrop-filter: blur(11.3px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      gap: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: 200ms ease; }
+      .basket-page__card_over._active {
+        visibility: visible;
+        opacity: 1; }
+      .basket-page__card_over_title {
+        font-weight: 700; }
+      .basket-page__card_over_block {
+        display: flex;
+        align-items: center;
+        gap: 20px; }
+      .basket-page__card_over_btn {
+        border-radius: 31.5px;
+        border: 1px solid #FF6C3D;
+        background: #22211E;
+        backdrop-filter: blur(17.55px);
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        padding: 6px 20px;
+        line-height: 1; }
+      .basket-page__card_over_no:hover {
+        border: 1px solid #265216;
+        color: #E2FD3D;
+        background: #1D3420; }
+      .basket-page__card_over_yes:hover {
+        border: 1px solid #521616;
+        color: #FD3D3D;
+        background: #422424; }
   .basket-page__info {
     display: flex;
     flex-direction: column;
