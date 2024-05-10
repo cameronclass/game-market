@@ -10,23 +10,12 @@
     border-bottom: 1px solid #1C1B19;
     box-shadow: 0px 0px 22.2px -3px #282620 inset, 0px 9px 11.8px -3px rgba(0, 0, 0, 0.25);
 
-    &::after {
-        content: "";
-        width: 10%;
-        height: 2px;
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        background-color: $orange;
-        border-radius: 2px;
-    }
-
     /* left */
     &__shape-1 {
         position: absolute;
         top: 0;
         left: 0;
-        width: 22%;
+        width: calc(50% - 380px);
         min-width: 260px;
         height: 63px;
         background: linear-gradient(91deg, #1C1B19 -0.04%, #2E2920 109.69%);
@@ -41,7 +30,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 22%;
+        width: calc(50% - 380px);
         min-width: 260px;
         height: 15px;
         background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
@@ -57,7 +46,7 @@
         position: absolute;
         bottom: -16px;
         left: 0;
-        width: 22%;
+        width: calc(50% - 380px);
         min-width: 260px;
         height: 15px;
         background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.11) -0.323%, rgba(255, 108, 61, 0.11) 92.563%);
@@ -76,7 +65,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 22%;
+        width: calc(50% - 380px);
         min-width: 260px;
         height: 63px;
         background: linear-gradient(180deg, #1C1B19 -0.04%, #2E2920 109.69%);
@@ -91,7 +80,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 22%;
+        width: calc(50% - 380px);
         min-width: 260px;
         height: 15px;
         background: linear-gradient(180deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
@@ -106,7 +95,7 @@
         position: absolute;
         bottom: -16px;
         right: 0;
-        width: 22%;
+        width: calc(50% - 380px);
         min-width: 260px;
         height: 15px;
         background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.11) -0.323%, rgba(255, 108, 61, 0.11) 92.563%);
