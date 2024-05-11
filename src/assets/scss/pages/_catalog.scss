@@ -80,6 +80,7 @@
         }
 
         &_arrows {
+            width: 58px;
             display: flex;
             flex-direction: column;
         }
@@ -102,6 +103,21 @@
 
         .swiper-pagination-bullet {
             transform: rotate(90deg);
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 50px;
+
+            svg {
+                &:hover {
+                    .swiper-button-prev__path {
+                        stroke: $orange;
+                    }
+                }
+            }
+
+
         }
     }
 

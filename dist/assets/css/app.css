@@ -7451,6 +7451,7 @@ input[type=number] {
       border-left: 2px solid #1E1C1A;
       object-fit: cover; }
     .catalog-slider__best_arrows {
+      width: 58px;
       display: flex;
       flex-direction: column; }
     .catalog-slider__best .swiper-pagination {
@@ -7467,6 +7468,12 @@ input[type=number] {
       width: 100% !important; }
     .catalog-slider__best .swiper-pagination-bullet {
       transform: rotate(90deg); }
+    .catalog-slider__best .swiper-button-prev,
+    .catalog-slider__best .swiper-button-next {
+      width: 50px; }
+      .catalog-slider__best .swiper-button-prev svg:hover .swiper-button-prev__path,
+      .catalog-slider__best .swiper-button-next svg:hover .swiper-button-prev__path {
+        stroke: #FF6C3D; }
   .catalog-slider__discount {
     width: 100%;
     position: relative; }
