@@ -1,88 +1,42 @@
 .catalog-slider {
-    margin-top: 45px;
     padding-bottom: 45px;
 
     &__title {
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        gap: 20px;
         line-height: 1.2;
-        gap: 6px;
-        margin-bottom: 40px;
+        margin-bottom: 15px;
+        padding: 5px 20px;
+        border-radius: 10px;
+        background: #282725;
+
+        &_block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &_icon {
+            width: 18px;
+        }
 
         &_main {
-            display: flex;
-            align-items: center;
-            gap: 30px;
             color: white;
-
-            &_text {
-                font-size: 24px;
-                font-weight: 300;
-                font-family: $font-roboto;
-
-            }
-
-            &_icon {
-                width: 18px;
-                filter: invert(48%) sepia(97%) saturate(1261%) hue-rotate(334deg) brightness(100%) contrast(102%);
-            }
-
-            &:hover {
-                color: $orange;
-            }
+            font-size: 20px;
+            font-weight: 300;
+            font-family: $font-roboto;
         }
 
         &_secondary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-
-            &_text {
-                width: 50%;
-                min-width: 155px;
-                font-size: 14px;
-                color: $text-dark;
-            }
-
-            &_icon {
-                width: 50%;
-                max-width: 155px;
-                height: 1px;
-                background-color: $text-dark;
-                position: relative;
-
-                &::before {
-                    content: "";
-                    width: 9px;
-                    height: 9px;
-                    border-radius: 50%;
-                    background-color: $text-dark;
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-
-                &::after {
-                    content: "";
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    background-color: $text-dark;
-                    position: absolute;
-                    right: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-            }
+            font-size: 12px;
+            color: $text-dark;
         }
     }
 
     &__block {
         display: flex;
         align-items: flex-start;
-        gap: 20px;
+        gap: 15px;
 
         .swiper-button-next:after,
         .swiper-button-prev:after {
@@ -281,6 +235,7 @@
 
 .catalog-list {
     padding-bottom: 45px;
+    margin-top: 45px;
 }
 
 .catalog-filter {
