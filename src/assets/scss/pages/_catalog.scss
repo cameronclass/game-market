@@ -61,11 +61,15 @@
         &_link {
             display: flex;
             width: 100%;
-            height: 429px;
+            height: 460px;
 
             @include mobile {
                 height: 180px;
             }
+        }
+
+        &_slider {
+            position: relative;
         }
 
         &_img {
@@ -81,20 +85,23 @@
         }
 
         .swiper-pagination {
-            width: 100%;
-            bottom: 0px;
-            height: 20px;
-            padding-left: 61px;
-            position: relative;
-
-            align-items: flex-end;
+            width: 50px;
+            height: 70%;
+            position: absolute;
+            top: 0;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            gap: 40px;
         }
 
         .swiper-slide {
             display: flex;
             width: 100% !important;
+        }
+
+        .swiper-pagination-bullet {
+            transform: rotate(90deg);
         }
     }
 
@@ -105,7 +112,7 @@
         &_cards {
             display: grid;
             gap: 20px;
-            height: 452px;
+            height: 460px;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
 
@@ -126,7 +133,7 @@
             width: 100%;
 
             .swiper {
-                height: 452px;
+                height: 460px;
             }
 
 

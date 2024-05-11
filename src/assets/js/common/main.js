@@ -114,6 +114,8 @@ const readMoreEls = document.querySelectorAll(".js-read-smore");
 
 ReadSmore(readMoreEls).init();
 
+/* Select */
+
 function createCustomSelects() {
   const customSelects = document.querySelectorAll(".custom-select");
   customSelects.forEach((customSelect) => {
@@ -124,7 +126,6 @@ function createCustomSelects() {
   });
 }
 
-// Функция для создания контейнера выбранного элемента
 function createSelectContainer(customSelect, selectElement) {
   const selectedContainer = document.createElement("DIV");
   selectedContainer.classList.add("select-selected");
@@ -133,7 +134,6 @@ function createSelectContainer(customSelect, selectElement) {
   customSelect.appendChild(selectedContainer);
 }
 
-// Функция для создания списка опций
 function createOptionsList(customSelect, selectElement) {
   const optionsList = document.createElement("DIV");
   optionsList.classList.add("select-items", "select-hide");
@@ -148,11 +148,10 @@ function createOptionsList(customSelect, selectElement) {
   customSelect.appendChild(optionsList);
 }
 
-// Функция для обновления выбранного элемента и селекта
 function updateSelectBox(selectedItem) {
   const selectBox = selectedItem.parentNode.parentNode.querySelector("select");
   const selectedContainer = selectedItem.parentNode.previousSibling;
-  selectBox.selectedIndex = Array.from(selectedBox.options).findIndex(
+  selectBox.selectedIndex = Array.from(selectBox.options).findIndex(
     (option) => option.innerHTML === selectedItem.innerHTML
   );
   selectedContainer.innerHTML = selectedItem.innerHTML;
@@ -163,7 +162,6 @@ function updateSelectBox(selectedItem) {
   selectedContainer.click();
 }
 
-// Функция для добавления обработчиков событий
 function addSelectEventListeners(customSelect) {
   const selectedContainer = customSelect.querySelector(".select-selected");
   selectedContainer.addEventListener("click", function (event) {
@@ -175,7 +173,6 @@ function addSelectEventListeners(customSelect) {
   });
 }
 
-// Функция для закрытия всех селектов
 function closeAllSelects(currentSelect) {
   const allOptionsLists = document.querySelectorAll(".select-items");
   const allSelectedContainers = document.querySelectorAll(".select-selected");
@@ -191,12 +188,14 @@ function closeAllSelects(currentSelect) {
   });
 }
 
-// Добавляем обработчик события для закрытия всех селектов при клике в любом месте документа
 document.addEventListener("click", function () {
   closeAllSelects(null);
 });
 
 createCustomSelects();
+
+
+/* Tabs */
 
 function setupTabs(tabButtonsClass, tabContentClass) {
   const tabButtons = document.querySelectorAll(tabButtonsClass);

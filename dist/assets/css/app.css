@@ -7439,10 +7439,12 @@ input[type=number] {
     .catalog-slider__best_link {
       display: flex;
       width: 100%;
-      height: 429px; }
+      height: 460px; }
       @media screen and (max-width: 979px) {
         .catalog-slider__best_link {
           height: 180px; } }
+    .catalog-slider__best_slider {
+      position: relative; }
     .catalog-slider__best_img {
       width: 100%;
       border-radius: 20px;
@@ -7452,24 +7454,26 @@ input[type=number] {
       display: flex;
       flex-direction: column; }
     .catalog-slider__best .swiper-pagination {
-      width: 100%;
-      bottom: 0px;
-      height: 20px;
-      padding-left: 61px;
-      position: relative;
-      align-items: flex-end;
+      width: 50px;
+      height: 70%;
+      position: absolute;
+      top: 0;
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      flex-direction: column;
+      gap: 40px; }
     .catalog-slider__best .swiper-slide {
       display: flex;
       width: 100% !important; }
+    .catalog-slider__best .swiper-pagination-bullet {
+      transform: rotate(90deg); }
   .catalog-slider__discount {
     width: 100%;
     position: relative; }
     .catalog-slider__discount_cards {
       display: grid;
       gap: 20px;
-      height: 452px;
+      height: 460px;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr; }
       @media screen and (max-width: 979px) {
@@ -7484,7 +7488,7 @@ input[type=number] {
       gap: 20px;
       width: 100%; }
       .catalog-slider__sold_slider .swiper {
-        height: 452px; }
+        height: 460px; }
       .catalog-slider__sold_slider .swiper-slide {
         display: flex;
         justify-content: space-between;
