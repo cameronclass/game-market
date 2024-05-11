@@ -62,9 +62,19 @@
             display: flex;
             width: 100%;
             height: 460px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
 
             @include mobile {
                 height: 180px;
+            }
+
+            &:hover {
+                .catalog-slider__best_overlay {
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
         }
 
@@ -83,6 +93,77 @@
             width: 58px;
             display: flex;
             flex-direction: column;
+        }
+
+        &_overlay {
+            border: 1px solid rgba(32, 25, 22, 0.00);
+            background: linear-gradient(180deg, rgba(32, 28, 26, 0.82) 0%, rgba(45, 40, 36, 0.82) 100%);
+            backdrop-filter: blur(19.700000762939453px);
+            width: fit-content;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            visibility: hidden;
+            opacity: 0;
+            transition: 300ms ease;
+
+            &_img {
+                display: flex;
+                margin-bottom: 40px;
+
+                &_item {
+                    width: 100%;
+                    max-width: 120px;
+                    border-radius: 10px;
+                }
+            }
+
+            &_title {
+                color: white;
+                font-family: $font-roboto;
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: 1.2;
+            }
+
+            &_genre {
+                font-size: 12px;
+                font-family: $font-roboto;
+
+                ._name {
+                    color: $text-dark;
+                }
+
+                ._text {
+                    color: white;
+                }
+            }
+
+            &_action {
+                margin-top: 20px;
+
+                .comment-item__like {
+                    gap: 20px;
+                }
+
+                .comment-item__like_icon {
+                    width: 17px;
+                    height: 17px;
+                }
+
+                .comment-item__like_btn {
+                    font-size: 18px;
+                }
+            }
+
+            &_img {}
+
+            &_img {}
         }
 
         .swiper-pagination {
@@ -116,8 +197,6 @@
                     }
                 }
             }
-
-
         }
     }
 
