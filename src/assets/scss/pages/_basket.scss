@@ -390,20 +390,23 @@
         max-width: 400px;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 50px;
     }
 
     &__price {
         width: 100%;
         padding: 20px 20px 30px;
+        position: relative;
+        z-index: 2;
 
 
         &_border {
-            overflow: hidden;
             border-radius: 10px;
             border: 1px solid transparent;
             background: linear-gradient(180deg, #1A1917 0%, #262724 100%) padding-box,
                 linear-gradient(to bottom, #ffffff00 4%, #FF6C3D) border-box;
+            position: relative;
+            overflow: hidden;
         }
 
         &_promo {
@@ -555,6 +558,70 @@
                         fill: $orange;
                     }
                 }
+            }
+        }
+
+        &_bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+        }
+    }
+
+    &__others {
+        width: 100%;
+        padding: 0px 20px 30px;
+
+
+        &_border {
+            border-radius: 10px;
+            border: 1px solid transparent;
+            background: linear-gradient(0deg, #1A1917 0%, #262724 100%) padding-box,
+                linear-gradient(to top, #ffffff00 4%, #FF6C3D) border-box;
+
+            ._position {
+                position: relative;
+                top: -30px;
+            }
+        }
+
+        &_block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .basket-page__card {
+            border: 1px solid #36302C;
+            background: linear-gradient(180deg, #201C1A 0%, #2D2824 100%);
+            box-shadow: 0px 12px 13px 0px rgba(29, 24, 22, 0.56);
+
+            &:hover {
+                border-color: $orange;
+            }
+
+            &_img {
+                max-width: 130px;
+
+                &_item {
+                    max-width: 130px;
+                }
+            }
+
+            &_content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            &_title {
+                font-size: 20px;
+                line-height: 1.1;
+            }
+
+            &_actions {
+                align-items: center;
+                flex-direction: row-reverse;
             }
         }
     }

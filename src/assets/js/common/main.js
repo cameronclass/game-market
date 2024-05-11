@@ -274,9 +274,15 @@ if (scrollToTop)
   });
 
 /* Basket Counter */
-const minusBtns = document.querySelectorAll(".basket-page__card_minus");
-const plusBtns = document.querySelectorAll(".basket-page__card_plus");
-const valueEls = document.querySelectorAll(".basket-page__card_value");
+const minusBtns = document.querySelectorAll(
+  ".basket-page__items .basket-page__card_minus"
+);
+const plusBtns = document.querySelectorAll(
+  ".basket-page__items .basket-page__card_plus"
+);
+const valueEls = document.querySelectorAll(
+  ".basket-page__items .basket-page__card_value"
+);
 
 if (minusBtns)
   minusBtns.forEach(function (minusBtn, index) {

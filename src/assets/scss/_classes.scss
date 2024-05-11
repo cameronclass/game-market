@@ -49,6 +49,36 @@
     }
 }
 
+.circle-title {
+    line-height: 1.1;
+    width: max-content;
+    margin: auto;
+    position: relative;
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    overflow: hidden;
+    border-radius: 50px;
+    background: linear-gradient(175.53deg,
+            rgb(52, 45, 39) 0%,
+            rgb(34, 34, 32) 67.445%) padding-box,
+        linear-gradient(to top, #ffffff1a 4%, #FF6C3D) border-box;
+    border: 1px solid transparent;
+    backdrop-filter: blur(17.549999237060547px);
+
+    &__bg {
+        background: #22211E;
+        padding: 10px 20px;
+        height: 63px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
 .hide {
     display: none;
 }

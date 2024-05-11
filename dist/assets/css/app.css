@@ -4308,6 +4308,30 @@ input[type=number] {
     font-weight: 400;
     color: #847F7D; }
 
+.circle-title {
+  line-height: 1.1;
+  width: max-content;
+  margin: auto;
+  position: relative;
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  overflow: hidden;
+  border-radius: 50px;
+  background: linear-gradient(175.53deg, #342d27 0%, #222220 67.445%) padding-box, linear-gradient(to top, #ffffff1a 4%, #FF6C3D) border-box;
+  border: 1px solid transparent;
+  backdrop-filter: blur(17.55px); }
+  .circle-title__bg {
+    background: #22211E;
+    padding: 10px 20px;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+
 .hide {
   display: none; }
 
@@ -8842,15 +8866,18 @@ input[type=number] {
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 30px; }
+    gap: 50px; }
   .basket-page__price {
     width: 100%;
-    padding: 20px 20px 30px; }
+    padding: 20px 20px 30px;
+    position: relative;
+    z-index: 2; }
     .basket-page__price_border {
-      overflow: hidden;
       border-radius: 10px;
       border: 1px solid transparent;
-      background: linear-gradient(180deg, #1A1917 0%, #262724 100%) padding-box, linear-gradient(to bottom, #ffffff00 4%, #FF6C3D) border-box; }
+      background: linear-gradient(180deg, #1A1917 0%, #262724 100%) padding-box, linear-gradient(to bottom, #ffffff00 4%, #FF6C3D) border-box;
+      position: relative;
+      overflow: hidden; }
     .basket-page__price_promo {
       position: relative; }
       .basket-page__price_promo_input {
@@ -8954,6 +8981,44 @@ input[type=number] {
             color: white; }
           .basket-page__price_btn_border:hover svg path {
             fill: #FF6C3D; }
+    .basket-page__price_bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0; }
+  .basket-page__others {
+    width: 100%;
+    padding: 0px 20px 30px; }
+    .basket-page__others_border {
+      border-radius: 10px;
+      border: 1px solid transparent;
+      background: linear-gradient(0deg, #1A1917 0%, #262724 100%) padding-box, linear-gradient(to top, #ffffff00 4%, #FF6C3D) border-box; }
+      .basket-page__others_border ._position {
+        position: relative;
+        top: -30px; }
+    .basket-page__others_block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px; }
+    .basket-page__others .basket-page__card {
+      border: 1px solid #36302C;
+      background: linear-gradient(180deg, #201C1A 0%, #2D2824 100%);
+      box-shadow: 0px 12px 13px 0px rgba(29, 24, 22, 0.56); }
+      .basket-page__others .basket-page__card:hover {
+        border-color: #FF6C3D; }
+      .basket-page__others .basket-page__card_img {
+        max-width: 130px; }
+        .basket-page__others .basket-page__card_img_item {
+          max-width: 130px; }
+      .basket-page__others .basket-page__card_content {
+        flex-direction: column;
+        gap: 20px; }
+      .basket-page__others .basket-page__card_title {
+        font-size: 20px;
+        line-height: 1.1; }
+      .basket-page__others .basket-page__card_actions {
+        align-items: center;
+        flex-direction: row-reverse; }
 
 .contract-offer {
   font-size: 12px; }
