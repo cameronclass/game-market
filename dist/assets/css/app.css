@@ -3995,9 +3995,10 @@ button.swiper-pagination-bullet {
 .more-btn {
   font-size: 16px;
   font-weight: 400;
-  padding: 14px 45px;
+  padding: 14px 35px;
   border-radius: 9px;
-  border: 1px solid #847F7D; }
+  border: 1px solid #847F7D;
+  line-height: 1; }
   .more-btn:hover {
     color: white;
     border-color: #FF6C3D; }
@@ -5007,18 +5008,29 @@ input[type=number] {
 
 .pagination {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  border: 1px solid #847F7D;
+  padding: 4px;
+  border-radius: 10px;
+  /* &-item {
+        &:first-child {
+            margin-right: 10px;
+        }
+
+        &:last-child {
+            margin-left: 10px;
+        }
+    } */ }
   .pagination-list {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     align-items: center; }
-  .pagination-item:first-child {
-    margin-right: 10px; }
-  .pagination-item:last-child {
-    margin-left: 10px; }
   .pagination-link {
     font-size: 24px;
-    color: #847F7D; }
+    color: #847F7D;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
     .pagination-link._active {
       color: #FF6C3D;
       text-align: center;
@@ -7811,22 +7823,17 @@ input[type=number] {
   .catalog-cards__item .game-card__price_cur {
     top: -6px; }
   .catalog-cards__more {
-    margin-top: 20px;
     display: flex;
-    justify-content: flex-end;
-    position: relative; }
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 20px; }
     @media screen and (max-width: 979px) {
       .catalog-cards__more {
         margin-bottom: 25px; }
         .catalog-cards__more .more-btn {
           width: 100%;
           text-align: center; } }
-  .catalog-cards__pagination {
-    margin-top: 0px;
-    margin-bottom: 40px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); }
 
 .catalog-preorder {
   padding-bottom: 60px; }

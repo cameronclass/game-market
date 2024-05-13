@@ -994,14 +994,17 @@
 .pagination {
     display: flex;
     justify-content: center;
+    border: 1px solid $text-dark;
+    padding: 4px;
+    border-radius: 10px;
 
     &-list {
         display: flex;
-        gap: 25px;
+        gap: 20px;
         align-items: center;
     }
 
-    &-item {
+    /* &-item {
         &:first-child {
             margin-right: 10px;
         }
@@ -1009,11 +1012,14 @@
         &:last-child {
             margin-left: 10px;
         }
-    }
+    } */
 
     &-link {
         font-size: 24px;
         color: $text-dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &._active {
             color: $orange;
@@ -1022,10 +1028,13 @@
         }
     }
 
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        display: none;
+    .swiper-button-next,
+    .swiper-button-prev {
+        &:after {
+            display: none;
+        }
     }
+
 }
 
 .breadcrumb {

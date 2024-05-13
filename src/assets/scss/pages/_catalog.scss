@@ -371,11 +371,11 @@
             transform: rotate(90deg);
         }
 
-                .swiper-button-next.swiper-button-disabled,
-                .swiper-button-prev.swiper-button-disabled{
-                    filter: none;
-                    opacity: 0.5;
-                }
+        .swiper-button-next.swiper-button-disabled,
+        .swiper-button-prev.swiper-button-disabled {
+            filter: none;
+            opacity: 0.5;
+        }
     }
 }
 
@@ -575,10 +575,11 @@
     }
 
     &__more {
-        margin-top: 20px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
+        margin-top: 20px;
 
         @include mobile {
             margin-bottom: 25px;
@@ -590,13 +591,7 @@
         }
     }
 
-    &__pagination {
-        margin-top: 0px;
-        margin-bottom: 40px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+    &__pagination {}
 }
 
 .catalog-preorder {
