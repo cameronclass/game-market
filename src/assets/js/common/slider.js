@@ -98,7 +98,7 @@ new Swiper(".catalog-slider__best .swiper", {
 new Swiper(".catalog-slider__sold_slider .swiper", {
   direction: "vertical",
   slidesPerView: 2,
-  spaceBetween: 20,
+  spaceBetween: 10,
   navigation: {
     nextEl: ".catalog-slider__sold_slider .swiper-button-next",
     prevEl: ".catalog-slider__sold_slider .swiper-button-prev",
