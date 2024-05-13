@@ -350,8 +350,8 @@
         .swiper-button-prev {
             width: 33px;
             height: 55px;
-            border: 1px solid $orange;
-            border-radius: 25px;
+            border-radius: 5px;
+            background: #282725;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -370,6 +370,12 @@
         .swiper-arrow__right {
             transform: rotate(90deg);
         }
+
+                .swiper-button-next.swiper-button-disabled,
+                .swiper-button-prev.swiper-button-disabled{
+                    filter: none;
+                    opacity: 0.5;
+                }
     }
 }
 
