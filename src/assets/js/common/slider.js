@@ -109,69 +109,53 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
   },
 });
 
-function gameSwiper(selector) {
-  return new Swiper(selector + " .swiper", {
-    spaceBetween: 30,
-    loop: true,
-    /* loopAddBlankSlides: false,
-    loopAdditionalSlides: 2, */
-    navigation: {
-      nextEl: selector + " .swiper-button-next",
-      prevEl: selector + " .swiper-button-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        slidesPerView: "auto",
-        centeredSlides: true,
-      },
-      500: {
-        slidesPerView: 2,
-        slidesPerView: "auto",
-        centeredSlides: true,
-      },
-      786: {
-        slidesPerView: "auto",
-        centeredSlides: true,
-      },
-      1000: {
-        slidesPerView: 4,
-        centeredSlides: false,
-      },
-      1250: {
-        slidesPerView: 5,
-        centeredSlides: true,
-      },
-    },
-  });
-}
-
-gameSwiper(".game-swiper-1");
-gameSwiper(".game-swiper-2");
-gameSwiper(".game-swiper-3");
-
 /* Splide */
-/* let gameSwiper1 = document.querySelector(".game-swiper-1 .splide");
-if (gameSwiper1) {
-  let gameSlider1 = new Splide(".game-swiper-1 .splide", {
+function initSlider(sliderClass) {
+  const gameSwiper = document.querySelector(`.${sliderClass} .splide`);
+  if (!gameSwiper) return;
+
+  const gameSlider = new Splide(`.${sliderClass} .splide`, {
     type: "loop",
-    focus: "center",
     autoWidth: true,
-    perPage: 4,
-    gap: 50,
+    focus: "center",
+    perPage: 5,
+    gap: 20,
     breakpoints: {
       768: {
-        perPage: 1,
+        perPage: 2,
+        focus: "center",
+      },
+      1000: {
+        perPage: 3,
+        focus: "center",
+      },
+      1250: {
+        perPage: 4,
+        focus: "center",
       },
     },
     arrows: false,
     pagination: false,
-    autoScroll: {
-      speed: 1,
-    },
   });
-  gameSlider1.mount(window.splide.Extensions);
-} */
+  gameSlider.mount();
+
+  const btnPrev = document.querySelector(`.${sliderClass} .swiper-button-prev`);
+  const btnNext = document.querySelector(`.${sliderClass} .swiper-button-next`);
+
+  btnNext.addEventListener("click", (e) => {
+    gameSlider.go("+1");
+  });
+
+  btnPrev.addEventListener("click", (e) => {
+    gameSlider.go("-1");
+  });
+}
+
+initSlider("game-swiper-1");
+initSlider("game-swiper-2");
+initSlider("game-swiper-3");
+initSlider("game-swiper-4");
+
 
 let homeMainSlider = document.querySelector(".hot-slider");
 if (homeMainSlider) {

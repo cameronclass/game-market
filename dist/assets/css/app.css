@@ -6999,7 +6999,12 @@ input[type=number] {
   padding-top: 30px;
   padding-bottom: 30px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  /* .swiper-slide {
+        width: auto;
+        display: flex;
+        justify-content: center;
+    } */ }
   .game-slider__bg {
     background: linear-gradient(180deg, #1C1B19 46.15%, #2B0F0A 100%);
     width: 100%;
@@ -7063,10 +7068,8 @@ input[type=number] {
       font-family: 'Courier New', Courier, monospace; }
   .game-slider__title {
     font-size: 14px; }
-  .game-slider .swiper-slide {
-    width: auto;
-    display: flex;
-    justify-content: center; }
+  .game-slider .splide__track {
+    overflow: visible; }
 
 /* Loop Block */
 .home-statics {
