@@ -1075,34 +1075,81 @@
 
     &__svg {}
 
-    /* &__bg {
-        position: relative;
+    &__discount {
         display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        border: 1px solid #272623;
-        border-radius: 15px;
-        clip-path: polygon(0.214% 96.913%, 0.214% 19.644%, 0.214% 1.879%, 0.214% 1.879%, 0.251% 1.596%, 0.356% 1.328%, 0.525% 1.077%, 0.751% 0.849%, 1.029% 0.645%, 1.354% 0.471%, 1.719% 0.329%, 2.118% 0.223%, 2.546% 0.157%, 2.998% 0.134%, 30.167% 0.134%, 97.216% 0.134%, 97.216% 0.134%, 97.668% 0.157%, 98.096% 0.223%, 98.496% 0.329%, 98.86% 0.471%, 99.185% 0.645%, 99.463% 0.849%, 99.689% 1.077%, 99.858% 1.328%, 99.964% 1.596%, 100% 1.879%, 100% 82.323%, 100% 82.323%, 99.991% 82.461%, 99.966% 82.596%, 99.923% 82.73%, 99.865% 82.861%, 99.79% 82.988%, 99.7% 83.111%, 99.595% 83.23%, 99.475% 83.343%, 99.34% 83.451%, 99.192% 83.552%, 73.961% 99.484%, 73.961% 99.484%, 73.798% 99.579%, 73.626% 99.665%, 73.444% 99.741%, 73.253% 99.808%, 73.055% 99.866%, 72.851% 99.914%, 72.64% 99.951%, 72.426% 99.978%, 72.207% 99.994%, 71.985% 100%, 5.139% 100%, 5.139% 100%, 4.34% 99.96%, 3.582% 99.843%, 2.876% 99.655%, 2.231% 99.404%, 1.657% 99.096%, 1.164% 98.736%, 0.764% 98.331%, 0.465% 97.889%, 0.279% 97.414%, 0.214% 96.913%);
-        background: $dark;
-        background: linear-gradient(135deg, $dark 0%, $dark 80%, rgba(255, 108, 61, 1) 100%);
+        width: fit-content;
+        position: absolute;
+        z-index: 3;
+        top: 20px;
+        left: -4.5px;
 
-        &:hover {
-            border-color: $orange;
+        svg {
+            position: relative;
         }
 
-        &::after {
-            content: "";
-            width: 100px;
-            height: 1px;
-            background-color: $orange;
+        span {
             position: absolute;
-            bottom: 0;
-            right: -1px;
-            transform: rotate(-45deg);
+            top: 44%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            font-size: 10px;
+            text-align: center;
+            font-weight: 600;
         }
-    } */
+    }
+
+    &__category {
+        display: flex;
+        width: fit-content;
+        position: absolute;
+        z-index: 3;
+        top: 10px;
+        right: -5.5px;
+
+        svg {
+            position: relative;
+        }
+
+        span {
+            position: absolute;
+            top: 44%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            font-size: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        img {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(167deg) brightness(105%) contrast(104%);
+        }
+    }
+
+    &__new {
+        display: flex;
+        width: fit-content;
+        position: absolute;
+        z-index: 3;
+        bottom: 138px;
+        left: -5px;
+
+        svg {
+            position: relative;
+        }
+
+        span {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            font-size: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+    }
 
     &__img {
         display: flex;
@@ -1220,4 +1267,8 @@
             top: -1px;
         }
     }
+}
+
+.is-overflow {
+    overflow: visible;
 }

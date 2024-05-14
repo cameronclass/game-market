@@ -111,22 +111,36 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
 
 function gameSwiper(selector) {
   return new Swiper(selector + " .swiper", {
-    spaceBetween: 15,
+    spaceBetween: 30,
     loop: true,
+    /* loopAddBlankSlides: false,
+    loopAdditionalSlides: 2, */
     navigation: {
       nextEl: selector + " .swiper-button-next",
       prevEl: selector + " .swiper-button-prev",
     },
     breakpoints: {
       0: {
+        slidesPerView: 1,
+        slidesPerView: "auto",
+        centeredSlides: true,
+      },
+      500: {
         slidesPerView: 2,
-        spaceBetween: 15,
+        slidesPerView: "auto",
+        centeredSlides: true,
       },
-      768: {
+      786: {
+        slidesPerView: "auto",
+        centeredSlides: true,
+      },
+      1000: {
         slidesPerView: 4,
+        centeredSlides: false,
       },
-      1024: {
+      1250: {
         slidesPerView: 5,
+        centeredSlides: true,
       },
     },
   });
@@ -137,6 +151,28 @@ gameSwiper(".game-swiper-2");
 gameSwiper(".game-swiper-3");
 
 /* Splide */
+/* let gameSwiper1 = document.querySelector(".game-swiper-1 .splide");
+if (gameSwiper1) {
+  let gameSlider1 = new Splide(".game-swiper-1 .splide", {
+    type: "loop",
+    focus: "center",
+    autoWidth: true,
+    perPage: 4,
+    gap: 50,
+    breakpoints: {
+      768: {
+        perPage: 1,
+      },
+    },
+    arrows: false,
+    pagination: false,
+    autoScroll: {
+      speed: 1,
+    },
+  });
+  gameSlider1.mount(window.splide.Extensions);
+} */
+
 let homeMainSlider = document.querySelector(".hot-slider");
 if (homeMainSlider) {
   let homeMainSplide = new Splide(".hot-slider", {

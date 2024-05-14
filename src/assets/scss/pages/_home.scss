@@ -634,6 +634,12 @@
     &__title {
         font-size: 14px;
     }
+
+    .swiper-slide {
+        width: auto;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 /* Loop Block */
