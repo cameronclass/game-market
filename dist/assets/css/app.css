@@ -5011,16 +5011,7 @@ input[type=number] {
   justify-content: center;
   border: 1px solid #847F7D;
   padding: 4px;
-  border-radius: 10px;
-  /* &-item {
-        &:first-child {
-            margin-right: 10px;
-        }
-
-        &:last-child {
-            margin-left: 10px;
-        }
-    } */ }
+  border-radius: 10px; }
   .pagination-list {
     display: flex;
     gap: 20px;
@@ -5060,30 +5051,56 @@ input[type=number] {
 
 /* New Card */
 .new-card {
-  position: relative; }
-  .new-card__bg {
+  position: relative;
+  width: 234px;
+  /* &__bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #272623;
+        border-radius: 15px;
+        clip-path: polygon(0.214% 96.913%, 0.214% 19.644%, 0.214% 1.879%, 0.214% 1.879%, 0.251% 1.596%, 0.356% 1.328%, 0.525% 1.077%, 0.751% 0.849%, 1.029% 0.645%, 1.354% 0.471%, 1.719% 0.329%, 2.118% 0.223%, 2.546% 0.157%, 2.998% 0.134%, 30.167% 0.134%, 97.216% 0.134%, 97.216% 0.134%, 97.668% 0.157%, 98.096% 0.223%, 98.496% 0.329%, 98.86% 0.471%, 99.185% 0.645%, 99.463% 0.849%, 99.689% 1.077%, 99.858% 1.328%, 99.964% 1.596%, 100% 1.879%, 100% 82.323%, 100% 82.323%, 99.991% 82.461%, 99.966% 82.596%, 99.923% 82.73%, 99.865% 82.861%, 99.79% 82.988%, 99.7% 83.111%, 99.595% 83.23%, 99.475% 83.343%, 99.34% 83.451%, 99.192% 83.552%, 73.961% 99.484%, 73.961% 99.484%, 73.798% 99.579%, 73.626% 99.665%, 73.444% 99.741%, 73.253% 99.808%, 73.055% 99.866%, 72.851% 99.914%, 72.64% 99.951%, 72.426% 99.978%, 72.207% 99.994%, 71.985% 100%, 5.139% 100%, 5.139% 100%, 4.34% 99.96%, 3.582% 99.843%, 2.876% 99.655%, 2.231% 99.404%, 1.657% 99.096%, 1.164% 98.736%, 0.764% 98.331%, 0.465% 97.889%, 0.279% 97.414%, 0.214% 96.913%);
+        background: $dark;
+        background: linear-gradient(135deg, $dark 0%, $dark 80%, rgba(255, 108, 61, 1) 100%);
+
+        &:hover {
+            border-color: $orange;
+        }
+
+        &::after {
+            content: "";
+            width: 100px;
+            height: 1px;
+            background-color: $orange;
+            position: absolute;
+            bottom: 0;
+            right: -1px;
+            transform: rotate(-45deg);
+        }
+    } */ }
+  .new-card__overlay {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 232px;
+    height: 371px;
+    z-index: 2;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border: 1px solid #272623;
-    border-radius: 15px;
-    clip-path: polygon(0.214% 96.913%, 0.214% 19.644%, 0.214% 1.879%, 0.214% 1.879%, 0.251% 1.596%, 0.356% 1.328%, 0.525% 1.077%, 0.751% 0.849%, 1.029% 0.645%, 1.354% 0.471%, 1.719% 0.329%, 2.118% 0.223%, 2.546% 0.157%, 2.998% 0.134%, 30.167% 0.134%, 97.216% 0.134%, 97.216% 0.134%, 97.668% 0.157%, 98.096% 0.223%, 98.496% 0.329%, 98.86% 0.471%, 99.185% 0.645%, 99.463% 0.849%, 99.689% 1.077%, 99.858% 1.328%, 99.964% 1.596%, 100% 1.879%, 100% 82.323%, 100% 82.323%, 99.991% 82.461%, 99.966% 82.596%, 99.923% 82.73%, 99.865% 82.861%, 99.79% 82.988%, 99.7% 83.111%, 99.595% 83.23%, 99.475% 83.343%, 99.34% 83.451%, 99.192% 83.552%, 73.961% 99.484%, 73.961% 99.484%, 73.798% 99.579%, 73.626% 99.665%, 73.444% 99.741%, 73.253% 99.808%, 73.055% 99.866%, 72.851% 99.914%, 72.64% 99.951%, 72.426% 99.978%, 72.207% 99.994%, 71.985% 100%, 5.139% 100%, 5.139% 100%, 4.34% 99.96%, 3.582% 99.843%, 2.876% 99.655%, 2.231% 99.404%, 1.657% 99.096%, 1.164% 98.736%, 0.764% 98.331%, 0.465% 97.889%, 0.279% 97.414%, 0.214% 96.913%);
-    background: #1C1B19;
-    background: linear-gradient(135deg, #1C1B19 0%, #1C1B19 80%, #ff6c3d 100%); }
-    .new-card__bg:hover {
-      border-color: #FF6C3D; }
+    flex-direction: column; }
   .new-card__img {
     display: flex;
-    background-color: #FF6C3D; }
+    border-bottom: 2px solid #FF6C3D; }
     .new-card__img_item {
       height: 258px;
-      object-fit: cover; }
+      object-fit: cover;
+      border-radius: 6px 6px 0 0; }
   .new-card__content {
     height: 100%;
-    background-color: #1C1B19;
-    padding: 10px; }
+    padding: 10px;
+    border-top: 2px solid #11100F; }
   .new-card__title {
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -5111,12 +5128,16 @@ input[type=number] {
     color: #847F7D; }
   .new-card__btn {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 6px;
+    right: 5px;
     border-radius: 13px 0px;
     border: 1px solid #FF6C3D;
     background: #1A1917;
     padding: 12px; }
+  .new-card:hover .new-card__svg path {
+    stroke: #FF6C3D; }
+  .new-card:hover .new-card__svg {
+    filter: drop-shadow(0px 4px 20.8px rgba(255, 108, 61, 0.34)); }
 
 .price-universal {
   display: flex;
