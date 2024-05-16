@@ -1064,9 +1064,9 @@
 
     &__overlay {
         position: absolute;
-        top: 1px;
-        left: 1px;
-        width: 232px;
+        top: 1.5px;
+        left: 1.5px;
+        width: 231.5px;
         height: 371px;
         z-index: 2;
         display: flex;
@@ -1075,8 +1075,6 @@
 
     &__svg {
         transition: 300ms ease;
-
-        path {}
     }
 
     &__discount {
@@ -1136,7 +1134,7 @@
         width: fit-content;
         position: absolute;
         z-index: 3;
-        bottom: 138px;
+        bottom: 102px;
         left: -5px;
 
         svg {

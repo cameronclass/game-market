@@ -5055,9 +5055,9 @@ input[type=number] {
   width: 234px; }
   .new-card__overlay {
     position: absolute;
-    top: 1px;
-    left: 1px;
-    width: 232px;
+    top: 1.5px;
+    left: 1.5px;
+    width: 231.5px;
     height: 371px;
     z-index: 2;
     display: flex;
@@ -5107,7 +5107,7 @@ input[type=number] {
     width: fit-content;
     position: absolute;
     z-index: 3;
-    bottom: 138px;
+    bottom: 102px;
     left: -5px; }
     .new-card__new svg {
       position: relative; }
@@ -7018,7 +7018,7 @@ input[type=number] {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    margin-bottom: 30px; }
+    margin-bottom: 10px; }
     @media screen and (max-width: 979px) {
       .game-slider__actions {
         justify-content: center;
