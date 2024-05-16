@@ -31,6 +31,10 @@ a {
     }
 }
 
+svg path {
+    transition: 200ms ease;
+}
+
 button {
     font-family: $font-inter;
     background-color: transparent;

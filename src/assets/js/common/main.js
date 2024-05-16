@@ -194,7 +194,6 @@ document.addEventListener("click", function () {
 
 createCustomSelects();
 
-
 /* Tabs */
 
 function setupTabs(tabButtonsClass, tabContentClass) {
@@ -327,6 +326,20 @@ if (basketOverlayNos)
         .querySelector(".basket-page__card_over");
       if (overlay) {
         overlay.classList.remove("_active");
+      }
+    });
+  });
+
+/* Cart Add */
+const cartAddButtons = document.querySelectorAll(".new-card__btn");
+if (cartAddButtons)
+  cartAddButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      console.log(btn);
+      const btnBlock = btn.parentElement;
+      console.log(btnBlock);
+      if (btnBlock) {
+        btnBlock.classList.toggle("_active");
       }
     });
   });
