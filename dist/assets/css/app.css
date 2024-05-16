@@ -5062,6 +5062,8 @@ input[type=number] {
     z-index: 2;
     display: flex;
     flex-direction: column; }
+  .new-card__svg {
+    transition: 300ms ease; }
   .new-card__discount {
     display: flex;
     width: fit-content;
@@ -5163,9 +5165,10 @@ input[type=number] {
     background: #1A1917;
     padding: 12px; }
   .new-card:hover .new-card__svg path {
-    stroke: #FF6C3D; }
+    stroke: #FF6C3D;
+    transition: 300ms ease; }
   .new-card:hover .new-card__svg {
-    filter: drop-shadow(0px 4px 20.8px rgba(255, 108, 61, 0.34)); }
+    filter: drop-shadow(0px 4px 8px rgba(255, 108, 61, 0.34)); }
 
 .price-universal {
   display: flex;
@@ -6997,14 +7000,9 @@ input[type=number] {
 
 .game-slider {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   position: relative;
-  overflow: hidden;
-  /* .swiper-slide {
-        width: auto;
-        display: flex;
-        justify-content: center;
-    } */ }
+  overflow: hidden; }
   .game-slider__bg {
     background: linear-gradient(180deg, #1C1B19 46.15%, #2B0F0A 100%);
     width: 100%;
@@ -7069,7 +7067,10 @@ input[type=number] {
   .game-slider__title {
     font-size: 14px; }
   .game-slider .splide__track {
-    overflow: visible; }
+    padding: 20px !important;
+    width: calc(100% + 24px);
+    position: relative;
+    left: -12px; }
 
 /* Loop Block */
 .home-statics {
@@ -7490,7 +7491,7 @@ input[type=number] {
   background: linear-gradient(0deg, #1C1B19 46.15%, #2B0F0A 100%); }
 
 .home-slider-mb {
-  padding-bottom: 50px; }
+  padding-bottom: 30px; }
 
 .home-slider-pt {
   padding-top: 0; }

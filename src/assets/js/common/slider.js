@@ -122,15 +122,15 @@ function initSlider(sliderClass) {
     gap: 20,
     breakpoints: {
       768: {
-        perPage: 2,
+        perPage: 5,
         focus: "center",
       },
       1000: {
-        perPage: 3,
+        perPage: 5,
         focus: "center",
       },
       1250: {
-        perPage: 4,
+        perPage: 5,
         focus: "center",
       },
     },

@@ -547,7 +547,7 @@
 
 .game-slider {
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     position: relative;
     overflow: hidden;
 
@@ -636,14 +636,13 @@
     }
 
     .splide__track {
-        overflow: visible;
+        padding: 20px !important;
+        width: calc(100% + 24px);
+        position: relative;
+        left: -12px;
     }
 
-    /* .swiper-slide {
-        width: auto;
-        display: flex;
-        justify-content: center;
-    } */
+    .splide__slide {}
 }
 
 /* Loop Block */
@@ -1251,7 +1250,7 @@
 }
 
 .home-slider-mb {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .home-slider-pt {
