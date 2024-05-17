@@ -4111,6 +4111,9 @@ button.swiper-pagination-bullet {
     .slider-arrows__next:focus, .slider-arrows__prev:focus {
       border: 1px solid #ff450a; }
 
+* {
+  box-sizing: border-box; }
+
 html,
 body {
   font-family: "Inter", sans-serif;
@@ -7068,7 +7071,15 @@ input[type=number] {
   padding-top: 30px;
   padding-bottom: 10px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  /* .splide__track {
+        padding: 20px !important;
+        width: calc(100% + 24px);
+        position: relative;
+        left: -12px;
+    }
+
+    .splide__slide {} */ }
   .game-slider__bg {
     background: linear-gradient(180deg, #1C1B19 46.15%, #2B0F0A 100%);
     width: 100%;
@@ -7132,11 +7143,16 @@ input[type=number] {
       font-family: 'Courier New', Courier, monospace; }
   .game-slider__title {
     font-size: 14px; }
-  .game-slider .splide__track {
-    padding: 20px !important;
-    width: calc(100% + 24px);
+  .game-slider .swiper {
+    padding: 20px 15px !important;
+    width: calc(100% + 30px);
     position: relative;
-    left: -12px; }
+    left: -15px; }
+  .game-slider .swiper-wrapper {
+    /* width: calc(100% + 40px);
+        padding: 20px !important;
+        position: relative;
+        left: -25px; */ }
 
 /* Loop Block */
 .home-statics {

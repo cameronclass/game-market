@@ -35,29 +35,6 @@ new Swiper(".footerBrandSwiper", {
   },
 });
 
-new Swiper(".game-swiper-4 .swiper", {
-  slidesPerView: 6,
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: ".game-swiper-4 .swiper-button-next",
-    prevEl: ".game-swiper-4 .swiper-button-prev",
-  },
-
-  breakpoints: {
-    0: {
-      slidesPerView: 2,
-      spaceBetween: 15,
-    },
-    768: {
-      slidesPerView: 4,
-    },
-    1024: {
-      slidesPerView: 5,
-    },
-  },
-});
-
 new Swiper(".home-blog-swiper .swiper", {
   slidesPerView: 2,
   spaceBetween: 20,
@@ -109,8 +86,35 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
   },
 });
 
+function gameSwiper(selector) {
+  return new Swiper(selector + " .swiper", {
+    spaceBetween: 25,
+    loop: true,
+    navigation: {
+      nextEl: selector + " .swiper-button-next",
+      prevEl: selector + " .swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: "auto",
+      },
+      768: {
+        slidesPerView: "auto",
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+    },
+  });
+}
+
+gameSwiper(".game-swiper-1");
+gameSwiper(".game-swiper-2");
+gameSwiper(".game-swiper-3");
+gameSwiper(".game-swiper-4");
+
 /* Splide */
-function initSlider(sliderClass) {
+/* function initSlider(sliderClass) {
   const gameSwiper = document.querySelector(`.${sliderClass} .splide`);
   if (!gameSwiper) return;
 
@@ -154,8 +158,7 @@ function initSlider(sliderClass) {
 initSlider("game-swiper-1");
 initSlider("game-swiper-2");
 initSlider("game-swiper-3");
-initSlider("game-swiper-4");
-
+initSlider("game-swiper-4"); */
 
 let homeMainSlider = document.querySelector(".hot-slider");
 if (homeMainSlider) {

@@ -635,14 +635,28 @@
         font-size: 14px;
     }
 
-    .splide__track {
+    .swiper {
+        padding: 20px 15px !important;
+        width: calc(100% + 30px);
+        position: relative;
+        left: -15px;
+    }
+
+    .swiper-wrapper {
+        /* width: calc(100% + 40px);
+        padding: 20px !important;
+        position: relative;
+        left: -25px; */
+    }
+
+    /* .splide__track {
         padding: 20px !important;
         width: calc(100% + 24px);
         position: relative;
         left: -12px;
     }
 
-    .splide__slide {}
+    .splide__slide {} */
 }
 
 /* Loop Block */
