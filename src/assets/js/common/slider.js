@@ -97,11 +97,9 @@ function gameSwiper(selector) {
     breakpoints: {
       0: {
         slidesPerView: "auto",
+        centeredSlides: true,
       },
-      768: {
-        slidesPerView: "auto",
-      },
-      1024: {
+      1290: {
         slidesPerView: 5,
       },
     },

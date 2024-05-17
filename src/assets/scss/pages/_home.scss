@@ -573,8 +573,8 @@
         margin-bottom: 10px;
 
         @include mobile {
-            justify-content: center;
             margin-bottom: 20px;
+            gap: 15px;
         }
     }
 
@@ -584,9 +584,9 @@
         align-items: center;
         gap: 10px;
 
-        @include mobile {
+        /* @include mobile {
             display: none;
-        }
+        } */
 
         .swiper-button-next,
         .swiper-button-prev {
@@ -642,21 +642,11 @@
         left: -15px;
     }
 
-    .swiper-wrapper {
-        /* width: calc(100% + 40px);
-        padding: 20px !important;
-        position: relative;
-        left: -25px; */
+    .swiper-slide {
+        @include laptop {
+            width: auto !important;
+        }
     }
-
-    /* .splide__track {
-        padding: 20px !important;
-        width: calc(100% + 24px);
-        position: relative;
-        left: -12px;
-    }
-
-    .splide__slide {} */
 }
 
 /* Loop Block */
