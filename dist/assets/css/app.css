@@ -5178,7 +5178,10 @@ input[type=number] {
       .new-card__btn_block._active .new-card__btn {
         background-color: #FF6C3D; }
         .new-card__btn_block._active .new-card__btn svg path {
-          fill: white; }
+          fill: white !important; }
+      .new-card__btn_block._active .new-card__btn_icon {
+        opacity: 1;
+        visibility: visible; }
     .new-card__btn_overlay {
       position: absolute;
       width: fit-content;
@@ -5194,7 +5197,8 @@ input[type=number] {
       justify-content: center;
       padding: 5px 40px 5px 5px;
       opacity: 0;
-      visibility: hidden; }
+      visibility: hidden;
+      transition: 200ms ease; }
     .new-card__btn_link {
       display: flex;
       align-items: center;
@@ -5211,9 +5215,17 @@ input[type=number] {
         .new-card__btn_link:hover svg path {
           fill: white; }
     .new-card__btn_icon {
-      display: none;
+      display: flex;
       opacity: 0;
-      visibility: hidden; }
+      visibility: hidden;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      padding: 4px;
+      border-radius: 10.792px;
+      background: rgba(255, 253, 252, 0.5);
+      box-shadow: 2.815px 2.815px 3.754px -2.815px rgba(166, 77, 49, 0.73);
+      backdrop-filter: blur(5.20846px); }
     .new-card__btn svg path {
       transition: 200ms ease; }
   .new-card:hover .new-card__svg path {

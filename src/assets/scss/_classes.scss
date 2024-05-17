@@ -1234,8 +1234,13 @@
                     background-color: $orange;
 
                     svg path {
-                        fill: white;
+                        fill: white !important;
                     }
+                }
+
+                .new-card__btn_icon {
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
         }
@@ -1256,6 +1261,7 @@
             padding: 5px 40px 5px 5px;
             opacity: 0;
             visibility: hidden;
+            transition: 200ms ease;
         }
 
         &_link {
@@ -1280,9 +1286,17 @@
         }
 
         &_icon {
-            display: none;
+            display: flex;
             opacity: 0;
             visibility: hidden;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            padding: 4px;
+            border-radius: 10.792px;
+            background: rgba(255, 253, 252, 0.50);
+            box-shadow: 2.815px 2.815px 3.754px -2.815px rgba(166, 77, 49, 0.73);
+            backdrop-filter: blur(5.208461761474609px);
         }
 
         svg path {
