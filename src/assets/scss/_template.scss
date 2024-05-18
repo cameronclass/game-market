@@ -85,11 +85,14 @@ input,
 textarea {
     width: 100%;
     border-radius: 9px;
-    border: 1px solid $text-dark;
+    border: 1px solid transparent;
     padding: 10px;
     background: transparent;
     color: $text-white;
     transition: 300ms ease;
+
+    border-radius: 4px;
+    background: #282725;
 
     &:focus {
         outline: none;
@@ -97,7 +100,15 @@ textarea {
     }
 
     &:hover {
-        border-color: white;
+        border-color: $orange;
+
+        &::placeholder {
+            color: white;
+        }
+    }
+
+    &::placeholder {
+        color: $text-dark;
     }
 }
 
@@ -144,10 +155,11 @@ input[type=number] {
         &:after {
             content: '';
             display: block;
-            left: 0;
-            top: 0;
+            left: 50%;
+            top: 50%;
             position: absolute;
-            transform: scale(0.8);
+            transform: scale(0.8) translate(-50%, -50%);
+            transform-origin: left top;
             transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
         }
 
@@ -215,7 +227,7 @@ input[type=number] {
             border-radius: 50%;
             background: var(--active-inner);
             opacity: 0;
-            transform: scale(0.8);
+            transform: scale(0.8) translate(-50%, -50%);
         }
 
         &:checked {

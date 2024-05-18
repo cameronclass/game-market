@@ -11,7 +11,7 @@
         align-items: center;
         justify-content: space-between;
 
-        @include mobile{
+        @include mobile {
             flex-direction: column;
             gap: 20px;
         }
@@ -21,7 +21,7 @@
             align-items: center;
             gap: 55px;
 
-            @include mobile{
+            @include mobile {
                 justify-content: space-between;
                 gap: 20px;
                 width: 100%;
@@ -63,6 +63,13 @@
             border-radius: 6px;
             background: #22221F;
             padding: 5px 20px;
+
+            justify-content: center;
+            transition: 300ms ease;
+
+            &:hover {
+                background: #2F2F2C;
+            }
         }
     }
 
@@ -84,7 +91,7 @@
         flex-direction: column;
         gap: 15px;
 
-        @include mobile{
+        @include mobile {
             max-width: 100%;
         }
     }
@@ -435,7 +442,7 @@
         flex-direction: column;
         gap: 50px;
 
-        @include mobile{
+        @include mobile {
             max-width: 100%;
         }
     }

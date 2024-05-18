@@ -941,7 +941,14 @@
 
     .select-selected {
         border-radius: 4px;
-        border: 1px solid $text-dark;
+        border: 1px solid transparent;
+        background: #282725;
+        transition: 200ms ease;
+
+        &:hover {
+            border-color: $orange;
+            color: white;
+        }
     }
 
     .select-selected:after {
@@ -957,6 +964,8 @@
         transform-origin: center;
     }
 
+
+
     .select-selected.select-arrow-active:after {
         transform: translateY(-50%) rotate(180deg);
     }
@@ -968,6 +977,11 @@
         font-size: 12px;
         cursor: pointer;
         user-select: none;
+    }
+
+    .select-selected.select-arrow-active {
+        border-color: $orange;
+        color: white;
     }
 
     .select-items {
@@ -990,25 +1004,6 @@
     .same-as-selected {
         background-color: #FF5F4030;
         color: white;
-    }
-
-    &-unique {
-        .select-selected {
-            border-radius: 4px;
-            border: 1px solid transparent;
-            background: linear-gradient(270deg, rgba(79, 79, 79, 0.35) 0%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.78%, rgba(72, 60, 54, 0.35) 70.71%, rgba(79, 79, 79, 0.35) 100%);
-
-            &:hover {
-                border: 1px solid $orange;
-                color: white;
-            }
-
-            &.select-arrow-active {
-                border: 1px solid $orange;
-                color: white;
-                background: #00000030;
-            }
-        }
     }
 
     &:hover {}

@@ -462,7 +462,7 @@
         &_choose {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         &_select {
@@ -509,13 +509,13 @@
             font-size: 10px;
             font-family: $font-inter;
             color: $text-dark;
-            margin-bottom: 6px;
+            margin-bottom: 2px;
         }
 
         &_block {
             display: flex;
             justify-content: space-between;
-            gap: 10px;
+            gap: 8px;
         }
 
         &_item {
