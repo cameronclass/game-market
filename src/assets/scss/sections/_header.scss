@@ -393,7 +393,7 @@
                 font-size: 20px;
             }
 
-            img {
+            svg {
 
                 @include mobile {
                     width: 40px;
@@ -402,9 +402,9 @@
 
             }
 
-            &:hover {
-                img {
-                    filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
+            &:hover, &.active {
+                svg path {
+                    fill: $orange;
                 }
             }
         }
@@ -506,7 +506,7 @@
 
 .js-hamburger-menu {
     position: fixed;
-    z-index: 10;
+    z-index: 5;
     top: 63px;
     left: 0;
     visibility: hidden;
@@ -534,7 +534,7 @@
 
 .js-search-menu {
     position: fixed;
-    z-index: 10;
+    z-index: 5;
     top: 63px;
     left: 0;
     visibility: hidden;
@@ -553,10 +553,20 @@
 }
 
 .header-search {
+    position: relative;
+
     &__block {
         width: 100%;
         max-width: 1035px;
         margin-left: auto;
+    }
+
+    &__img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: 186px;
     }
 
     &__search {
@@ -618,6 +628,81 @@
         .catalog-filter__values {
             grid-template-columns: repeat(5, 1fr);
             gap: 10px 20px;
+            padding-bottom: 0;
+        }
+    }
+
+    &__looking {
+        .home-loop-block__title {
+            top: 30px;
+            margin: 0;
+            width: 100%;
+        }
+
+        .home-loop-block__title_bg {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            padding: 15px 35px;
+            overflow: auto;
+
+
+            &::-webkit-scrollbar {
+                width: 100%;
+                height: 2px;
+            }
+
+
+            &::-webkit-scrollbar-track {
+                background: $dark;
+            }
+
+
+            &::-webkit-scrollbar-thumb {
+                background: $orange;
+            }
+
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: orange;
+            }
+        }
+
+        &_title {
+            font-size: 15px;
+            font-weight: 500;
+            min-width: max-content;
+        }
+    }
+}
+
+.search-tags {
+    display: flex;
+    gap: 10px;
+
+    &__tag {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        border-radius: 13px;
+        background: #302D2B;
+        padding: 5px 10px;
+        font-size: 10px;
+        color: $text-dark;
+        width: max-content;
+        opacity: 0.48;
+        transition: 300ms ease;
+
+        &:hover {
+            opacity: 1;
+
+            svg path {
+                fill: $orange;
+            }
         }
     }
 }

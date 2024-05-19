@@ -345,3 +345,14 @@ if (newCards)
       }
     });
   });
+
+/* Search Block */
+const searchButton = document.querySelector(".js-search-open");
+const searchBlock = document.querySelector(".js-search-menu");
+
+if (searchButton)
+  searchButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Предотвращаем переход по ссылке
+    searchButton.classList.toggle("active"); // Добавляем или удаляем класс active на ссылку
+    searchBlock.classList.toggle("active"); // Добавляем или удаляем класс active на div
+  });
