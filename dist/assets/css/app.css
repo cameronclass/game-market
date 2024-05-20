@@ -6747,7 +6747,7 @@ input[type=number] {
   gap: 20px;
   border-radius: 20px;
   overflow: hidden;
-  background: linear-gradient(79deg, rgba(255, 108, 61, 0) 88.9%, rgba(255, 108, 61, 0.19) 101.47%), #161513; }
+  background: linear-gradient(30deg, rgba(255, 108, 61, 0) 88.9%, rgba(255, 108, 61, 0.19) 101.47%), #161513; }
 
 .hot-slider__img {
   width: 100%;
@@ -6829,6 +6829,21 @@ input[type=number] {
   font-size: 12px;
   color: white;
   font-family: "Roboto", sans-serif; }
+
+.hot-slider .splide__pagination {
+  left: inherit; }
+
+.hot-slider .splide__pagination__page {
+  background: linear-gradient(0deg, #33322F 0%, #33322F 100%), #847F7D;
+  width: 9px;
+  height: 9px; }
+
+.hot-slider .splide__pagination__page.is-active {
+  transform: scale(1);
+  width: 20px;
+  border-radius: 20px;
+  background: #FF6C3D;
+  opacity: 1; }
 
 .gift-slider {
   width: 100%; }

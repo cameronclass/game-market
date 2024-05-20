@@ -207,7 +207,7 @@
         gap: 20px;
         border-radius: 20px;
         overflow: hidden;
-        background: linear-gradient(79deg, rgba(255, 108, 61, 0.00) 88.9%, rgba(255, 108, 61, 0.19) 101.47%), #161513;
+        background: linear-gradient(30deg, rgba(255, 108, 61, 0.00) 88.9%, rgba(255, 108, 61, 0.19) 101.47%), #161513;
     }
 
     &__img {
@@ -312,6 +312,24 @@
     }
 
     &__price {}
+
+    .splide__pagination {
+        left: inherit;
+    }
+
+    .splide__pagination__page {
+        background: linear-gradient(0deg, #33322F 0%, #33322F 100%), #847F7D;
+        width: 9px;
+        height: 9px;
+    }
+
+    .splide__pagination__page.is-active {
+        transform: scale(1);
+        width: 20px;
+        border-radius: 20px;
+        background: $orange;
+        opacity: 1;
+    }
 }
 
 .gift-slider {
