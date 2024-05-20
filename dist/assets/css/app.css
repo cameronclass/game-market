@@ -5163,13 +5163,13 @@ input[type=number] {
     padding: 10px;
     border-top: 2px solid #11100F; }
   .new-card__title {
+    font-size: 14px;
+    max-width: 90%;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 14px;
-    max-width: 90%; }
+    text-overflow: ellipsis; }
   .new-card__subtitle {
     display: flex;
     align-items: center;
@@ -5183,10 +5183,21 @@ input[type=number] {
     font-size: 16px;
     font-weight: bold;
     line-height: 1;
-    margin-top: 17px; }
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 2px;
+    transform-origin: left;
+    transition: 200ms ease; }
   .new-card__oldprice {
     font-size: 8px;
-    color: #847F7D; }
+    color: #847F7D;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    transform-origin: left;
+    transition: 200ms ease; }
   .new-card__btn {
     border-radius: 13px 0px;
     border: 1px solid #FF6C3D;
@@ -5263,6 +5274,16 @@ input[type=number] {
     filter: drop-shadow(0px 4px 8px rgba(255, 108, 61, 0.34)); }
   .new-card:hover .new-card__btn svg path {
     fill: #FF6C3D; }
+  .new-card:hover .new-card__newprice {
+    transform: scale(1.05);
+    color: #FF6C3D; }
+    .new-card:hover .new-card__newprice svg path {
+      fill: #FF6C3D; }
+  .new-card:hover .new-card__oldprice {
+    transform: scale(1.05);
+    color: white; }
+    .new-card:hover .new-card__oldprice svg path {
+      fill: white; }
 
 .price-universal {
   display: flex;

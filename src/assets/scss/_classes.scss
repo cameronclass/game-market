@@ -1189,13 +1189,14 @@
     }
 
     &__title {
+        font-size: 14px;
+        max-width: 90%;
+
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 14px;
-        max-width: 90%;
     }
 
     &__subtitle {
@@ -1217,12 +1218,25 @@
         font-size: 16px;
         font-weight: bold;
         line-height: 1;
-        margin-top: 17px;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 2px;
+        transform-origin: left;
+        transition: 200ms ease;
     }
 
     &__oldprice {
         font-size: 8px;
         color: $text-dark;
+
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+        transform-origin: left;
+        transition: 200ms ease;
     }
 
     &__btn {
@@ -1336,6 +1350,24 @@
 
         .new-card__btn svg path {
             fill: $orange;
+        }
+
+        .new-card__newprice {
+            transform: scale(1.05);
+            color: $orange;
+
+            svg path {
+                fill: $orange;
+            }
+        }
+
+        .new-card__oldprice {
+            transform: scale(1.05);
+            color: white;
+
+            svg path {
+                fill: white;
+            }
         }
 
     }
