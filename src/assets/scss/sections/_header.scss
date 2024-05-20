@@ -402,7 +402,8 @@
 
             }
 
-            &:hover, &.active {
+            &:hover,
+            &.active {
                 svg path {
                     fill: $orange;
                 }
@@ -458,6 +459,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                border-bottom: 1px solid transparent;
                 position: relative;
 
                 svg path {
@@ -466,6 +468,8 @@
 
                 &:hover {
                     color: white;
+                    border-bottom: 1px solid $orange;
+                    background: linear-gradient(270deg, rgba(79, 79, 79, 0.35) 0%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.78%, rgba(72, 60, 54, 0.35) 70.71%, rgba(79, 79, 79, 0.35) 100%);
 
                     svg path {
                         fill: $orange;

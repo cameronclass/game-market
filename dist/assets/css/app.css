@@ -5652,11 +5652,14 @@ input[type=number] {
         display: flex;
         align-items: center;
         justify-content: center;
+        border-bottom: 1px solid transparent;
         position: relative; }
         .header__actions_admin_item svg path {
           transition: 300ms ease; }
         .header__actions_admin_item:hover {
-          color: white; }
+          color: white;
+          border-bottom: 1px solid #FF6C3D;
+          background: linear-gradient(270deg, rgba(79, 79, 79, 0.35) 0%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.78%, rgba(72, 60, 54, 0.35) 70.71%, rgba(79, 79, 79, 0.35) 100%); }
           .header__actions_admin_item:hover svg path {
             fill: #FF6C3D; }
         .header__actions_admin_item._exit {
