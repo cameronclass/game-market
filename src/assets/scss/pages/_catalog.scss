@@ -50,7 +50,13 @@
 
     &__best {
         width: 100%;
+        max-width: 33%;
         position: relative;
+
+        @include mobile {
+            max-width: 100%;
+            padding-bottom: 20px;
+        }
 
         &_block {
             display: flex;
@@ -87,6 +93,10 @@
             border-radius: 20px;
             border-left: 2px solid #1E1C1A;
             object-fit: cover;
+
+            @include mobile {
+                object-position: top;
+            }
         }
 
         &_arrows {
@@ -115,6 +125,10 @@
             &_img {
                 display: flex;
                 margin-bottom: 40px;
+
+                @include mobile {
+                    display: none;
+                }
 
                 &_item {
                     width: 100%;
@@ -166,6 +180,10 @@
             &_img {}
         }
 
+        .swiper-wrapper {
+            box-sizing: border-box;
+        }
+
         .swiper-pagination {
             width: 50px;
             height: 70%;
@@ -175,15 +193,27 @@
             justify-content: center;
             flex-direction: column;
             gap: 40px;
+
+            @include mobile {
+                bottom: -15px;
+                width: 100%;
+                height: auto;
+                top: inherit;
+                flex-direction: row;
+                gap: 5px;
+            }
         }
 
         .swiper-slide {
             display: flex;
-            width: 100% !important;
         }
 
         .swiper-pagination-bullet {
             transform: rotate(90deg);
+
+            @include mobile {
+                transform: none;
+            }
         }
 
         .swiper-button-prev,
@@ -201,8 +231,13 @@
     }
 
     &__discount {
+        max-width: 33%;
         width: 100%;
         position: relative;
+
+        @include mobile {
+            max-width: 100%;
+        }
 
         &_cards {
             display: grid;
@@ -218,8 +253,13 @@
     }
 
     &__sold {
+        max-width: 33%;
         width: 100%;
         position: relative;
+
+        @include mobile {
+            max-width: 100%;
+        }
 
         &_slider {
             display: flex;
@@ -227,8 +267,16 @@
             gap: 10px;
             width: 100%;
 
+            @include mobile {
+                flex-direction: column;
+            }
+
             .swiper {
                 height: 460px;
+
+                @include mobile {
+                    height: 250px;
+                }
             }
 
 
@@ -250,6 +298,11 @@
             position: relative;
             width: 33px;
 
+            @include mobile {
+                flex-direction: row;
+                width: 100%;
+            }
+
             &::before {
                 content: "";
                 width: 1px;
@@ -259,6 +312,14 @@
                 top: 18%;
                 left: 50%;
                 transform: translateX(-50%);
+
+                @include mobile {
+                    width: 20%;
+                    height: 1px;
+                    left: 20%;
+                    transform: translateY(-50%);
+                    top: 50%;
+                }
             }
 
             &::after {
@@ -270,6 +331,15 @@
                 bottom: 18%;
                 left: 50%;
                 transform: translateX(-50%);
+
+                @include mobile {
+                    width: 20%;
+                    height: 1px;
+                    right: 20%;
+                    left: inherit;
+                    transform: translateY(-50%);
+                    top: 50%;
+                }
             }
         }
 
@@ -340,6 +410,11 @@
             font-size: 14px;
             font-weight: 400;
             color: $text-dark;
+
+            @include mobile {
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
         }
 
         .swiper-pagination-current {
@@ -355,6 +430,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include mobile {
+                width: 55px;
+                height: 33px;
+            }
         }
 
         .swiper-arrow__left,
@@ -365,10 +445,18 @@
 
         .swiper-arrow__left {
             transform: rotate(-90deg);
+
+            @include mobile {
+                transform: rotate(-180deg);
+            }
         }
 
         .swiper-arrow__right {
             transform: rotate(90deg);
+
+            @include mobile {
+                transform: rotate(0);
+            }
         }
 
         .swiper-button-next.swiper-button-disabled,
@@ -382,6 +470,11 @@
 .catalog-list {
     padding-bottom: 45px;
     margin-top: 45px;
+
+    @include mobile {
+        padding-bottom: 30px;
+        margin-top: 30px;
+    }
 }
 
 .catalog-filter {
@@ -536,19 +629,26 @@
 
     &__block {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 20px;
 
-        @include netbook {
+        @include laptop {
             grid-template-columns: repeat(4, 1fr);
         }
 
+        @include netbook {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         @include mobile {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 
     &__item {
+        display: flex;
+        justify-content: center;
+
         .game-card__content {
             width: calc(100% - 10px);
         }
@@ -577,12 +677,15 @@
     &__more {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
+        gap: 10px;
         position: relative;
         margin-top: 20px;
 
         @include mobile {
             margin-bottom: 25px;
+
 
             .more-btn {
                 width: 100%;
@@ -591,7 +694,11 @@
         }
     }
 
-    &__pagination {}
+    &__pagination {
+        @include mobile {
+            width: 100%;
+        }
+    }
 }
 
 .catalog-preorder {

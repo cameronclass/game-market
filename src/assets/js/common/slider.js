@@ -84,6 +84,14 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
     type: "fraction",
     el: ".catalog-slider__sold_slider .swiper-pagination",
   },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    992: {
+      slidesPerView: 2,
+    },
+  },
 });
 
 function gameSwiper(selector) {
@@ -200,7 +208,7 @@ if (topUpSlider) {
     type: "loop",
     focus: "center",
     perPage: 1,
-    gap: -130,
+    gap: -100,
     breakpoints: {
       0: {
         perPage: 1,
@@ -263,8 +271,18 @@ if (homeBlog) {
     pagination: false,
     gap: 22,
     breakpoints: {
-      768: {
+      980: {
         perPage: 1,
+        focus: "center",
+        autoWidth: false,
+      },
+      1024: {
+        perPage: 1,
+        focus: "center",
+        autoWidth: true,
+      },
+      3000: {
+        perPage: 2,
       },
     },
   });

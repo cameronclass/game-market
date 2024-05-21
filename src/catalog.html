@@ -104,7 +104,7 @@ title: Главная страница
                             <div class="swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <a class="catalog-slider__best_link" href="#">
+                                        <a href="#" class="catalog-slider__best_link">
                                             <img class="catalog-slider__best_img" src="assets/images/catalog/slide-1.png" alt="">
                                             <div class="catalog-slider__best_overlay">
                                                 <div class="catalog-slider__best_overlay_img">
@@ -132,7 +132,7 @@ title: Главная страница
                                         </a>
                                     </div>
                                     <div class="swiper-slide">
-                                        <a class="catalog-slider__best_link" href="#">
+                                        <a href="#" class="catalog-slider__best_link">
                                             <img class="catalog-slider__best_img" src="assets/images/catalog/slide-1.png" alt="">
                                             <div class="catalog-slider__best_overlay">
                                                 <div class="catalog-slider__best_overlay_img">
@@ -145,14 +145,14 @@ title: Главная страница
                                                 </div>
                                                 <div class="catalog-slider__best_overlay_action">
                                                     <div class="comment-item__like">
-                                                        <button class="comment-item__like_btn">
+                                                        <span class="comment-item__like_btn">
                                                             <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
                                                             <span class="comment-item__like_num">12</span>
-                                                        </button>
-                                                        <button class="comment-item__like_btn _dislike">
+                                                        </span>
+                                                        <span class="comment-item__like_btn _dislike">
                                                             <img class="comment-item__like_icon" src="assets/images/icons/like.svg" alt="">
                                                             <span class="comment-item__like_num">12</span>
-                                                        </button>
+                                                        </span>
                                                     </div>
                                                 </div>
                                                 <div class="catalog-slider__best_overlay_price"></div>
@@ -630,224 +630,19 @@ title: Главная страница
         <div class="container">
             <div class="catalog-cards__block">
                 <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
+                    {{> cart }}
                 </div>
                 <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
+                    {{> cart }}
                 </div>
                 <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
+                    {{> cart }}
                 </div>
                 <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
+                    {{> cart }}
                 </div>
                 <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="catalog-cards__item">
-                    <div class="game-card">
-                        <img class="game-card__img" src="assets/images/home/card-image.png" alt="">
-                        <div class="game-card__content">
-                            <div class="game-card__title">Название игры этой карточки карточки карточки</div>
-                            <div class="game-card__subtitle">Дополнительная информация</div>
-                            <div class="game-card__label">
-                                <img src="assets/images/home/xbox.svg" alt="">
-                            </div>
-                            <div class="game-card__discount">-20%</div>
-                        </div>
-                        <a href="#" class="game-card__btn">
-                            <span class="game-card__btn_block">
-                                <span class="game-card__price">1258</span>
-                                <span class="game-card__price_cur">₽</span>
-                                <span class="game-card__price_old">1258</span>
-                            </span>
-                        </a>
-                    </div>
+                    {{> cart }}
                 </div>
             </div>
 
