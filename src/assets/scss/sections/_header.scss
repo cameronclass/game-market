@@ -21,8 +21,12 @@
         background: linear-gradient(91deg, #1C1B19 -0.04%, #2E2920 109.69%);
         clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
 
+        @include netbook {
+            min-width: 230px;
+        }
+
         @include mobile {
-            width: 70%;
+            min-width: 100px;
         }
     }
 
@@ -36,9 +40,12 @@
         background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
         clip-path: polygon(0 0, 0 0, 100% 100%, 0% 100%);
 
+        @include netbook {
+            min-width: 230px;
+        }
+
         @include mobile {
-            width: 70%;
-            height: 12px;
+            min-width: 100px;
         }
     }
 
@@ -52,10 +59,12 @@
         background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.11) -0.323%, rgba(255, 108, 61, 0.11) 92.563%);
         clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
 
+        @include netbook {
+            min-width: 230px;
+        }
+
         @include mobile {
-            width: 70%;
-            height: 12px;
-            bottom: -12px;
+            min-width: 100px;
         }
     }
 
@@ -71,8 +80,12 @@
         background: linear-gradient(180deg, #1C1B19 -0.04%, #2E2920 109.69%);
         clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
 
+        @include netbook {
+            min-width: 230px;
+        }
+
         @include mobile {
-            display: none;
+            min-width: 100px;
         }
     }
 
@@ -86,8 +99,12 @@
         background: linear-gradient(180deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
         clip-path: polygon(100% 0, 100% 100%, 0 100%, 0% 100%);
 
+        @include netbook {
+            min-width: 230px;
+        }
+
         @include mobile {
-            display: none;
+            min-width: 100px;
         }
     }
 
@@ -101,8 +118,12 @@
         background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.11) -0.323%, rgba(255, 108, 61, 0.11) 92.563%);
         clip-path: polygon(100% 0, 100% 100%, 0 0, 0 0);
 
+        @include netbook {
+            min-width: 230px;
+        }
+
         @include mobile {
-            display: none;
+            min-width: 100px;
         }
     }
 
@@ -120,8 +141,27 @@
         gap: 30px;
         width: 20%;
 
+        @include netbook {
+            gap: 15px;
+        }
+
         &_link {
             width: 113px;
+
+            @include netbook {
+                transform: scale(0.7);
+                transform-origin: left;
+            }
+
+            @include mobile {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%) scale(0.8);
+                transform-origin: center;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
         }
 
         &_menu {
@@ -162,11 +202,13 @@
 
     &__menu {
         width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        @include netbook {
+        @include mobile {
             visibility: hidden;
             opacity: 0;
-            background-color: #1C1B19;
             position: absolute;
             top: 74px;
             width: calc(100% + 50px);
@@ -186,23 +228,28 @@
             gap: 0px;
 
             @include netbook {
+                max-width: 480px;
+            }
+
+            /* @include netbook {
                 display: flex;
                 justify-content: center;
                 background: linear-gradient(268.85deg, rgba(79, 79, 79, 0.35) 0.01%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.785%, rgba(72, 60, 54, 0.35) 70.712%, rgba(79, 79, 79, 0.35) 99.994%);
-            }
+            } */
 
-            @include mobile {
+            /* @include mobile {
                 height: calc(100vh - 99px);
                 flex-direction: column;
                 justify-content: flex-start;
                 gap: 0;
-            }
+            } */
         }
 
         &_item {
             position: relative;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             font-family: $font-roboto;
             height: 62px;
@@ -211,6 +258,13 @@
             border-bottom: 1px solid transparent;
             transition: 200ms ease;
             overflow: hidden;
+
+            @include netbook {
+                padding: 0 8px;
+                gap: 2px;
+                width: 100%;
+                overflow: visible;
+            }
 
             &::after {
                 content: "";
@@ -224,9 +278,17 @@
                 left: 50%;
                 transform: translateX(-50%);
                 filter: blur(15px);
+
+                @include netbook {
+                    display: none;
+                }
             }
 
-            &_svg {}
+            &_svg {
+                @include netbook {
+                    transform: scale(0.7);
+                }
+            }
 
             &_text {
                 display: flex;
@@ -241,12 +303,21 @@
                 font-weight: 500;
                 color: #C3B8A2;
                 transition: 200ms ease;
+
+                @include netbook {
+                    font-size: 13px;
+                    line-height: 1;
+                }
             }
 
             &_subtitle {
                 font-size: 10px;
                 font-weight: 300;
                 color: #6D675B;
+
+                @include netbook {
+                    display: none;
+                }
             }
 
             &:hover,
@@ -368,11 +439,19 @@
         width: 20%;
         position: relative;
 
+        @include netbook {
+            gap: 5px;
+        }
+
         &_block {
             display: flex;
             align-items: center;
             justify-content: flex-end;
             gap: 12px;
+
+            @include netbook {
+                gap: 5px;
+            }
 
             @include mobile {
                 display: none;
@@ -419,6 +498,18 @@
             overflow: hidden;
             margin-left: 10px;
             padding: 0;
+
+            @include netbook {
+                border-width: 1px;
+                width: 40px;
+                height: 40px;
+            }
+
+            @include mobile {
+                width: 37px;
+                height: 37px;
+                border-width: 1px;
+            }
 
             &:focus {
                 border: 2px solid #44403E;

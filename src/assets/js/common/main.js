@@ -30,7 +30,7 @@ let copyBtn = document.querySelector(".copy-js");
 /* Таймер */
 
 // future date for the countdown
-const countDownDate = new Date(2024, 3, 24, 10).getTime();
+const countDownDate = new Date(2025, 0, 1, 10).getTime();
 const timerInfo = document.querySelector(".timer__info");
 const daysContainer = document.querySelector(".timer__day");
 const hoursContainer = document.querySelector(".timer__hours");

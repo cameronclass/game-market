@@ -200,8 +200,11 @@ if (topUpSlider) {
     type: "loop",
     focus: "center",
     perPage: 1,
-    gap: -100,
+    gap: -130,
     breakpoints: {
+      0: {
+        perPage: 1,
+      },
       768: {
         perPage: 1,
       },
