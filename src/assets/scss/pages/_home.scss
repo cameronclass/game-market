@@ -752,6 +752,10 @@
 
     .statics-card {
 
+        @include netbook {
+            transform: scale(1);
+        }
+
         @include mobile {
             transform: scale(0.75);
         }
@@ -767,6 +771,10 @@
                 linear-gradient(to top, #ffffff1a 4%, #FF6C3D) border-box;
             border: 1px solid transparent;
             transform: scale(1.20);
+
+            @include netbook {
+                transform: scale(1.20);
+            }
 
             @include mobile {
                 transform: scale(0.95);

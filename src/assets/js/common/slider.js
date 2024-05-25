@@ -119,52 +119,6 @@ gameSwiper(".game-swiper-2");
 gameSwiper(".game-swiper-3");
 gameSwiper(".game-swiper-4");
 
-/* Splide */
-/* function initSlider(sliderClass) {
-  const gameSwiper = document.querySelector(`.${sliderClass} .splide`);
-  if (!gameSwiper) return;
-
-  const gameSlider = new Splide(`.${sliderClass} .splide`, {
-    type: "loop",
-    autoWidth: true,
-    focus: "center",
-    perPage: 5,
-    gap: 20,
-    breakpoints: {
-      768: {
-        perPage: 5,
-        focus: "center",
-      },
-      1000: {
-        perPage: 5,
-        focus: "center",
-      },
-      1250: {
-        perPage: 5,
-        focus: "center",
-      },
-    },
-    arrows: false,
-    pagination: false,
-  });
-  gameSlider.mount();
-
-  const btnPrev = document.querySelector(`.${sliderClass} .swiper-button-prev`);
-  const btnNext = document.querySelector(`.${sliderClass} .swiper-button-next`);
-
-  btnNext.addEventListener("click", (e) => {
-    gameSlider.go("+1");
-  });
-
-  btnPrev.addEventListener("click", (e) => {
-    gameSlider.go("-1");
-  });
-}
-
-initSlider("game-swiper-1");
-initSlider("game-swiper-2");
-initSlider("game-swiper-3");
-initSlider("game-swiper-4"); */
 
 let homeMainSlider = document.querySelector(".hot-slider");
 if (homeMainSlider) {
@@ -299,7 +253,7 @@ if (homeStatics) {
     pagination: false,
     gap: 20,
     breakpoints: {
-      768: {
+      979: {
         perPage: 1,
         gap: -52,
       },
