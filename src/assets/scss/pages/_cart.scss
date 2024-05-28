@@ -535,8 +535,8 @@
 .cart-advantages {
     margin-top: 20px;
 
-    .container{
-        @include mobile{
+    .container {
+        @include mobile {
             padding: 0;
         }
     }
@@ -1064,6 +1064,10 @@
         border-radius: 10px;
         background: #1A1917;
 
+        &._active {
+            filter: brightness(0.9) blur(4.5px);
+        }
+
         @include mobile {
             flex-direction: column;
             padding: 0 15px;
@@ -1140,6 +1144,7 @@
     &__filter {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 15px;
 
         @include mobile {
@@ -1159,9 +1164,24 @@
                 color: white;
             }
         }
+
+        &_btns {
+            display: flex;
+            width: 100%;
+            gap: 15px;
+        }
+
+        &_category {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            gap: 10px;
+        }
     }
 
-    &__pagination {}
+    &__pagination {
+        margin-top: 30px;
+    }
 }
 
 .comment-item {
@@ -1170,6 +1190,28 @@
 
     @include mobile {
         display: grid;
+    }
+
+    &._positive {
+        .comment-item__block {
+            border: 1px solid #233223;
+            background: #233223;
+        }
+
+        .comment-item__text {
+            color: #648E5D;
+        }
+    }
+
+    &._negative {
+        .comment-item__block {
+            border: 1px solid #2C1F1F;
+            background: #2C1F1F;
+        }
+
+        .comment-item__text {
+            color: #AA5454;
+        }
     }
 
     &__avatar {

@@ -94,3 +94,36 @@
         background: #00000010;
     }
 }
+
+.btn-normal {
+    border-radius: 4px;
+    background: #282725;
+    font-size: 14px;
+    padding: 5px 18px;
+    color: white;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: 200ms ease;
+
+    &:hover {
+        background-color: lighten($color: #282725, $amount: 5);
+    }
+
+    &._positive {
+        background: #233223;
+        color: #648E5D;
+
+        &:hover {
+            background-color: lighten($color: #233223, $amount: 5);
+        }
+    }
+
+    &._negative {
+        background: #2C1F1F;
+        color: #AA5454;
+
+        &:hover {
+            background-color: lighten($color: #2C1F1F, $amount: 5);
+        }
+    }
+}
