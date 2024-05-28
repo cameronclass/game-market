@@ -109,12 +109,21 @@
         background-color: lighten($color: #282725, $amount: 5);
     }
 
+    &._active {
+        color: white;
+    }
+
     &._positive {
         background: #233223;
         color: #648E5D;
 
         &:hover {
+            color: #84EA73;
             background-color: lighten($color: #233223, $amount: 5);
+        }
+
+        &._active {
+            color: #84EA73;
         }
     }
 
@@ -123,7 +132,12 @@
         color: #AA5454;
 
         &:hover {
+            color: #FF7474;
             background-color: lighten($color: #2C1F1F, $amount: 5);
+        }
+
+        &._active {
+            color: #FF7474;
         }
     }
 }
