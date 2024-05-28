@@ -695,6 +695,9 @@
     }
 
     &__pagination {
+        display: flex;
+        justify-content: center;
+
         @include mobile {
             width: 100%;
         }

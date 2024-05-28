@@ -172,7 +172,7 @@ function js(cb) {
         })
       )
       .pipe(fileinclude())
-      .pipe(uglify())
+      /* .pipe(uglify()) */
 
       .pipe(dest(path.build.js))
       .pipe(browserSync.reload({ stream: true }))
@@ -195,7 +195,7 @@ function jsWatch(cb) {
       })
     )
     .pipe(fileinclude())
-    .pipe(uglify())
+    /* .pipe(uglify()) */
     .pipe(dest(path.build.js))
     .pipe(browserSync.reload({ stream: true }));
 
