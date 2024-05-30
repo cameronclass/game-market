@@ -278,7 +278,7 @@ if (homeBlog) {
 
 let homeStatics = document.querySelector(".home-statics .splide");
 if (homeStatics) {
-  let homeStatics = new Splide(".home-statics .splide", {
+  let homeStaticsSplide = new Splide(".home-statics .splide", {
     type: "loop",
     focus: "center",
     perPage: 3,
@@ -292,6 +292,27 @@ if (homeStatics) {
       },
     },
   });
-  homeStatics.mount();
+  homeStaticsSplide.mount();
 }
 
+let steamHistory = document.querySelector(".steam-history .splide");
+if (steamHistory) {
+  let steamHistorySplide = new Splide(".steam-history .splide", {
+    type: "loop",
+    focus: "center",
+    autoWidth: true,
+    perPage: 4,
+    gap: 10,
+    breakpoints: {
+      768: {
+        perPage: 1,
+      },
+    },
+    arrows: false,
+    pagination: false,
+    autoScroll: {
+      speed: 1,
+    },
+  });
+  steamHistorySplide.mount(window.splide.Extensions);
+}

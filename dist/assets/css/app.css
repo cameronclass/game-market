@@ -5163,12 +5163,13 @@ html.with-fancybox body.hide-scrollbar {
 
 .cart-tab-btn {
   font-size: 8.95px;
-  color: white;
+  color: #847F7D;
   padding: 8px 20px;
   border-radius: 3px;
   border: 1px solid #33302D;
   background: linear-gradient(142deg, #342D27 0%, #222220 67.95%); }
   .cart-tab-btn:hover, .cart-tab-btn._active {
+    color: white;
     border: 1px solid #FF6C3D; }
   .cart-tab-btn:focus {
     outline: none; }
@@ -10785,3 +10786,81 @@ input[type=number] {
     color: white; }
   .contract-offer:hover .contract-offer__link {
     border-bottom: 1px solid #FF6C3D; }
+
+.steam-history {
+  padding: 20px 0; }
+  .steam-history__card {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 3px;
+    border: 1.2px solid #33302D;
+    background: linear-gradient(142deg, #342D27 0%, #222220 67.95%); }
+    .steam-history__card_img {
+      display: flex;
+      width: 46px;
+      height: 46px; }
+      .steam-history__card_img_item {
+        object-fit: cover; }
+    .steam-history__card_content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-right: 10px;
+      line-height: 1; }
+    .steam-history__card_title {
+      font-size: 10px;
+      color: #847F7D; }
+    .steam-history__card_num {
+      color: #D6B13A;
+      font-weight: 700;
+      font-size: 16px; }
+
+.steam-title {
+  padding: 20px 0; }
+  .steam-title__card {
+    position: relative;
+    border-radius: 15px; }
+    .steam-title__card_bg {
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      height: -webkit-fill-available; }
+    .steam-title__card_content {
+      padding: 27px 30px;
+      position: relative;
+      display: flex;
+      justify-content: space-between; }
+    .steam-title__card_title {
+      width: 50%;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      line-height: 1; }
+      .steam-title__card_title_main {
+        color: #615447;
+        font-size: 32px; }
+      .steam-title__card_title_second {
+        color: #D6B13A;
+        font-size: 20px; }
+    .steam-title__card_img {
+      display: flex;
+      width: 100%;
+      max-width: 460px;
+      position: relative; }
+      .steam-title__card_img_item {
+        width: 100%;
+        position: absolute;
+        top: -140px; }
+    .steam-title__card_btns {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px; }
+  .steam-title .cart-tab-btn {
+    padding: 12px 40px;
+    font-size: 12px; }

@@ -46,7 +46,7 @@
 
 .cart-tab-btn {
     font-size: 8.95px;
-    color: white;
+    color: $text-dark;
     padding: 8px 20px;
     border-radius: 3px;
     border: 1px solid #33302D;
@@ -54,6 +54,7 @@
 
     &:hover,
     &._active {
+        color: white;
         border: 1px solid $orange;
     }
 
