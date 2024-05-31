@@ -51,6 +51,7 @@
     border-radius: 3px;
     border: 1px solid #33302D;
     background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+    transition: 200ms ease;
 
     &:hover,
     &._active {

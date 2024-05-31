@@ -12190,11 +12190,6 @@ new Swiper(".home-blog-swiper .swiper", {
   spaceBetween: 20,
   loop: true,
 
-  /* autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  }, */
-
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -12274,6 +12269,27 @@ new Swiper(".screen-swiper .swiper", {
       },
     },
   },
+});
+
+new Swiper(".steam-bonus .swiper", {
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".steam-bonus .swiper-button-next",
+    prevEl: ".steam-bonus .swiper-button-prev",
+  },
+  /* breakpoints: {
+    0: {
+      slidesPerView: 2,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+    1200: {
+      slidesPerView: 4,
+    },
+  }, */
 });
 
 function gameSwiper(selector) {
@@ -12827,6 +12843,60 @@ if (searchButton)
 
 /* FancyBox */
 Fancybox.bind();
+
+/* Steam */
+const steamPrices = document.querySelectorAll(".steam-discount__price");
+const steamDots = document.querySelectorAll(".steam-discount__dot");
+const steamBtns = document.querySelectorAll(".steam-discount__btn");
+const lineColor = document.querySelector(".steam-discount__line_color");
+
+function updateButtonClasses(index) {
+  steamDots.forEach((dot, i) => {
+    if (i <= index) {
+      dot.classList.add("_active");
+    } else {
+      dot.classList.remove("_active");
+    }
+  });
+
+  steamBtns.forEach((btn, i) => {
+    if (i <= index) {
+      btn.classList.add("_active");
+    } else {
+      btn.classList.remove("_active");
+    }
+  });
+
+  if (lineColor) {
+    const newWidth = (index + 1) * 25; // Calculate new width percentage
+    lineColor.style.width = `${newWidth}%`;
+  }
+}
+
+function togglePriceClass(index) {
+  steamPrices.forEach((price, i) => {
+    if (i === index) {
+      price.classList.add("_active");
+    } else {
+      price.classList.remove("_active");
+    }
+  });
+}
+
+steamBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    updateButtonClasses(index);
+    togglePriceClass(index);
+  });
+});
+
+steamDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    updateButtonClasses(index);
+    togglePriceClass(index);
+  });
+});
+
 
 
 });
