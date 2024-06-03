@@ -11158,7 +11158,7 @@ input[type=number] {
   .steam-login__form {
     border-radius: 10px;
     background: #1A1917;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -11202,7 +11202,7 @@ input[type=number] {
       align-items: center;
       gap: 10px;
       margin-top: 0px;
-      margin-bottom: 10px; }
+      margin-bottom: 20px; }
     .steam-login__form_radio {
       margin: 0;
       width: 100%; }
@@ -11227,4 +11227,145 @@ input[type=number] {
           border-color: #FF6C3D; }
   .steam-login__info {
     width: 100%;
-    max-width: 403px; }
+    max-width: 403px;
+    border-radius: 10px;
+    background: #1A1917;
+    padding: 10px; }
+    .steam-login__info_subtitle {
+      font-size: 13px;
+      color: #847F7D;
+      text-align: center;
+      margin: 16px 0; }
+      .steam-login__info_subtitle_2 {
+        width: 100%;
+        max-width: 300px;
+        font-size: 10px;
+        color: #847F7D;
+        text-align: center;
+        margin: 16px auto; }
+  .steam-login__pay {
+    border-radius: 4px;
+    background: #1D1D1B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 20px;
+    position: relative;
+    overflow: hidden; }
+    .steam-login__pay_card {
+      display: flex;
+      align-items: center;
+      gap: 0px; }
+      .steam-login__pay_card_img {
+        width: 125px; }
+      .steam-login__pay_card_content {
+        display: flex;
+        flex-direction: column; }
+      .steam-login__pay_card_price {
+        font-size: 20px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 600; }
+      .steam-login__pay_card_subprice {
+        font-size: 12px;
+        color: #847F7D; }
+    .steam-login__pay_btn {
+      font-size: 12px;
+      color: #847F7D;
+      padding: 10px 20px;
+      line-height: 1;
+      border-radius: 3px;
+      border: 1.2px solid #33302D;
+      background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+      transition: 300ms ease; }
+      .steam-login__pay_btn:hover {
+        color: white;
+        border-color: #FF6C3D; }
+      .steam-login__pay_btn_main {
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px 20px; }
+    .steam-login__pay_bonus {
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 0px 4px 19.5px 0px;
+      background: #262625;
+      padding: 5px 15px;
+      line-height: 1; }
+      .steam-login__pay_bonus_main {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px; }
+      .steam-login__pay_bonus_sub {
+        color: #847F7D;
+        font-size: 10px; }
+    .steam-login__pay_add {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 0px 19.5px 4px 0px;
+      background: #262625;
+      padding: 10px 15px;
+      font-size: 12px;
+      font-weight: 500; }
+      .steam-login__pay_add_crystal {
+        width: 10px; }
+  .steam-login__price {
+    width: calc(100% + 20px);
+    position: relative;
+    left: -10px;
+    background: linear-gradient(90deg, rgba(255, 108, 61, 0.1) 0%, rgba(25, 25, 23, 0) 100%);
+    padding: 12px 20px 2px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px; }
+    .steam-login__price::before {
+      content: "";
+      display: flex;
+      width: 3px;
+      height: 100%;
+      border-radius: 10px;
+      background: #CBA636;
+      position: absolute;
+      left: 0;
+      top: 0; }
+    .steam-login__price_pay {
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 7px; }
+      .steam-login__price_pay_num {
+        font-size: 20px;
+        color: white;
+        font-weight: 700; }
+    .steam-login__price_sub {
+      font-size: 10px;
+      color: #847F7D; }
+    .steam-login__price_get {
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 7px; }
+      .steam-login__price_get_num {
+        font-size: 20px;
+        color: #D7B038;
+        font-weight: 700; }
+      .steam-login__price_get_block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px; }
+      .steam-login__price_get_bonus {
+        font-size: 12px; }
+    .steam-login__price_svg {
+      margin-top: 12px; }

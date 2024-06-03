@@ -512,7 +512,7 @@
     &__form {
         border-radius: 10px;
         background: #1A1917;
-        padding: 10px;
+        padding: 20px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -573,7 +573,7 @@
             align-items: center;
             gap: 10px;
             margin-top: 0px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         &_radio {
@@ -612,5 +612,200 @@
     &__info {
         width: 100%;
         max-width: 403px;
+        border-radius: 10px;
+        background: #1A1917;
+        padding: 10px;
+
+        &_subtitle {
+            font-size: 13px;
+            color: $text-dark;
+            text-align: center;
+            margin: 16px 0;
+
+            &_2 {
+                width: 100%;
+                max-width: 300px;
+
+                font-size: 10px;
+                color: $text-dark;
+                text-align: center;
+                margin: 16px auto;
+            }
+        }
     }
+
+    &__pay {
+        border-radius: 4px;
+        background: #1D1D1B;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 5px 20px;
+        position: relative;
+        overflow: hidden;
+
+        &_card {
+            display: flex;
+            align-items: center;
+            gap: 0px;
+
+            &_img {
+                width: 125px;
+            }
+
+            &_content {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &_price {
+                font-size: 20px;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-weight: 600;
+            }
+
+            &_subprice {
+                font-size: 12px;
+                color: $text-dark;
+            }
+        }
+
+        &_btn {
+            font-size: 12px;
+            color: $text-dark;
+            padding: 10px 20px;
+            line-height: 1;
+            border-radius: 3px;
+            border: 1.2px solid #33302D;
+            background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+            transition: 300ms ease;
+
+            &:hover {
+                color: white;
+                border-color: $orange;
+            }
+
+            &_main {
+                width: 100%;
+                margin-top: 20px;
+                padding: 15px 20px;
+            }
+        }
+
+        &_bonus {
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 0px 4px 19.5px 0px;
+            background: #262625;
+            padding: 5px 15px;
+            line-height: 1;
+
+            &_main {
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 16px;
+            }
+
+            &_sub {
+                color: $text-dark;
+                font-size: 10px;
+            }
+        }
+
+        &_add {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-radius: 0px 19.5px 4px 0px;
+            background: #262625;
+            padding: 10px 15px;
+            font-size: 12px;
+            font-weight: 500;
+
+            &_crystal {
+                width: 10px;
+            }
+        }
+    }
+
+    &__price {
+        width: calc(100% + 20px);
+        position: relative;
+        left: -10px;
+        background: linear-gradient(90deg, rgba(255, 108, 61, 0.10) 0%, rgba(25, 25, 23, 0.00) 100%);
+        padding: 12px 20px 2px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+
+        &::before {
+            content: "";
+            display: flex;
+            width: 3px;
+            height: 100%;
+            border-radius: 10px;
+            background: #CBA636;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &_pay {
+            line-height: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+
+            &_num {
+                font-size: 20px;
+                color: white;
+                font-weight: 700;
+            }
+        }
+
+        &_sub {
+            font-size: 10px;
+            color: $text-dark;
+        }
+
+        &_get {
+            line-height: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+
+            &_num {
+                font-size: 20px;
+                color: #D7B038;
+                font-weight: 700;
+            }
+
+            &_block {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 5px;
+            }
+
+            &_bonus {
+                font-size: 12px;
+            }
+        }
+
+        &_svg {
+            margin-top: 12px;
+        }
+    }
+
 }
