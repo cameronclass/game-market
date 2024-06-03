@@ -10867,7 +10867,9 @@ input[type=number] {
     font-size: 12px; }
 
 .steam-actions {
-  padding: 40px 0; }
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1; }
   .steam-actions__block {
     display: grid;
     grid-template-columns: 49% 49%;
@@ -11147,3 +11149,82 @@ input[type=number] {
     display: flex;
     align-items: flex-end;
     justify-content: center; }
+
+.steam-login {
+  margin: 40px 0; }
+  .steam-login__block {
+    display: flex;
+    gap: 20px; }
+  .steam-login__form {
+    border-radius: 10px;
+    background: #1A1917;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; }
+    .steam-login__form_group {
+      position: relative; }
+      .steam-login__form_group:hover .steam-login__form_svg path {
+        fill: #D6B13A; }
+    .steam-login__form_input {
+      padding: 18px 20px;
+      padding-left: 50px;
+      border-radius: 6px;
+      border: 1px solid #34312D;
+      background: #1C1B19; }
+    .steam-login__form_btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 4px;
+      font-size: 12px;
+      background: #282725;
+      padding: 8px 25px;
+      color: #847F7D;
+      border: 1px solid transparent;
+      transition: 300ms ease; }
+      .steam-login__form_btn:hover {
+        color: white;
+        border: 1px solid #FF6C3D; }
+    .steam-login__form_svg {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%); }
+    .steam-login__form_subtitle {
+      font-size: 13px;
+      color: #847F7D;
+      line-height: 1; }
+    .steam-login__form_select {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 0px;
+      margin-bottom: 10px; }
+    .steam-login__form_radio {
+      margin: 0;
+      width: 100%; }
+      .steam-login__form_radio input {
+        display: none; }
+        .steam-login__form_radio input:checked ~ span {
+          color: white;
+          border-color: #FF6C3D; }
+      .steam-login__form_radio span {
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        color: #847F7D;
+        border-radius: 3px;
+        padding: 15px 30px;
+        border: 1.2px solid #33302D;
+        background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+        transition: 300ms ease;
+        cursor: pointer; }
+        .steam-login__form_radio span:hover {
+          color: white;
+          border-color: #FF6C3D; }
+  .steam-login__info {
+    width: 100%;
+    max-width: 403px; }
