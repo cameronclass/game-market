@@ -12272,7 +12272,7 @@ new Swiper(".screen-swiper .swiper", {
 });
 
 new Swiper(".steam-bonus .swiper", {
-  loop: true,
+  loop: false,
   slidesPerView: 3,
   spaceBetween: 10,
   navigation: {
@@ -12896,6 +12896,75 @@ steamDots.forEach((dot, index) => {
     togglePriceClass(index);
   });
 });
+
+/* Steam Slider Line */
+/* function updateSwiperLineColor() {
+  const swiperSlides = document.querySelectorAll(
+    ".steam-bonus__slider .swiper-slide"
+  );
+  const swiperLineColor = document.querySelector(".swiper-line");
+
+  if (swiperSlides.length > 0 && swiperLineColor) {
+    // Количество элементов .swiper-slide
+    const slideCount = swiperSlides.length;
+
+    // Расчет ширины: 100% для 3 элементов, если больше 3, добавляем соответствующий процент
+    const baseWidthPercentage = 100;
+    const additionalWidthPercentage = ((slideCount - 3) / 3) * 100;
+
+    // Итоговая ширина
+    const finalWidthPercentage =
+      baseWidthPercentage + additionalWidthPercentage;
+
+    // Установка ширины с анимацией
+    swiperLineColor.style.transition = "width 0.2s ease";
+    swiperLineColor.style.width = `calc(${finalWidthPercentage}%)`;
+  }
+}
+
+updateSwiperLineColor(); */
+
+function updateSwiperLineWidth() {
+  const swiperSlides = document.querySelectorAll(
+    ".steam-bonus__slider .swiper-slide"
+  );
+  const swiperLine = document.querySelector(".swiper-line");
+
+  if (swiperSlides.length > 0 && swiperLine) {
+    const slideCount = swiperSlides.length;
+    const baseWidthPercentage = 100;
+    const additionalWidthPercentage = ((slideCount - 3) / 3) * 100;
+    const finalWidthPercentage =
+      baseWidthPercentage + additionalWidthPercentage;
+
+    swiperLine.style.width = `calc(${finalWidthPercentage}%)`;
+  }
+}
+
+function updateSwiperLineColorWidth() {
+  const cards = document.querySelectorAll(".swiper-slide .steam-bonus__card");
+  const activeCards = document.querySelectorAll(
+    ".swiper-slide .steam-bonus__card._active"
+  );
+  const totalCards = cards.length;
+  const percentagePerCard = 100 / totalCards;
+  let activePercentage = 0;
+
+  activeCards.forEach(() => {
+    activePercentage += percentagePerCard;
+  });
+
+  const swiperLineColor = document.querySelector(".swiper-line__color");
+  if (swiperLineColor) {
+    swiperLineColor.style.transition = "width 0.2s ease";
+    swiperLineColor.style.width = `${activePercentage}%`;
+  }
+}
+
+updateSwiperLineWidth();
+updateSwiperLineColorWidth();
+
+
 
 
 

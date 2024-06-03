@@ -10872,7 +10872,7 @@ input[type=number] {
     display: grid;
     grid-template-columns: 49% 49%;
     grid-template-rows: auto auto;
-    gap: 2%;
+    gap: 30px 2%;
     grid-template-areas: "bonus advantages" "bonus discount"; }
 
 .steam-advantages {
@@ -11012,12 +11012,14 @@ input[type=number] {
   grid-area: bonus;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 10px; }
+  gap: 20px;
+  height: 210px; }
   .steam-bonus__title {
     height: auto;
     display: flex;
-    align-items: center; }
+    align-items: flex-start; }
     .steam-bonus__title_bonus {
       display: flex;
       align-items: center;
@@ -11035,13 +11037,52 @@ input[type=number] {
   .steam-bonus__slider {
     display: flex;
     width: 100%;
-    padding: 20px 10px 0;
+    padding: 0 50px;
     border-radius: 10px;
     background: #191917;
     box-shadow: 0px -31px 42.6px -26px rgba(0, 0, 0, 0.25); }
+    .steam-bonus__slider .swiper {
+      position: relative;
+      top: -20px;
+      height: max-content; }
+    .steam-bonus__slider .swiper-button-next:after,
+    .steam-bonus__slider .swiper-button-prev:after {
+      display: none; }
+    .steam-bonus__slider .swiper-button-next,
+    .steam-bonus__slider .swiper-button-prev {
+      position: absolute; }
+    .steam-bonus__slider .swiper-button-prev {
+      top: 50%;
+      transform: translateY(-70%);
+      left: 10px; }
+    .steam-bonus__slider .swiper-button-next {
+      top: 50%;
+      transform: translateY(-70%);
+      right: 10px; }
+    .steam-bonus__slider .swiper-button-next.swiper-button-disabled,
+    .steam-bonus__slider .swiper-button-prev.swiper-button-disabled {
+      filter: brightness(0.8); }
+    .steam-bonus__slider .swiper-line {
+      border-radius: 3.5px;
+      background: #282725;
+      width: 100%;
+      height: 6px;
+      position: absolute;
+      left: 0;
+      bottom: 39px;
+      display: flex; }
+      .steam-bonus__slider .swiper-line__color {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: auto;
+        height: 100%;
+        border-radius: 3.5px;
+        background: linear-gradient(90deg, #FF6C3D 84.07%, rgba(153, 65, 37, 0) 100%);
+        transition: width 300ms ease-in-out; }
   .steam-bonus__border {
     width: 100%;
-    height: 50%;
+    height: 111px;
     border: 1px solid transparent;
     background: linear-gradient(180deg, #1A1917 0%, #262724 100%) padding-box, linear-gradient(to bottom, #ffffff00 4%, #D6B13A) border-box;
     position: relative;
@@ -11052,6 +11093,10 @@ input[type=number] {
     flex-direction: column;
     align-items: center;
     gap: 10px; }
+    .steam-bonus__card._active .steam-bonus__img_item {
+      filter: none; }
+    .steam-bonus__card._active .steam-bonus__open {
+      display: flex; }
   .steam-bonus__img {
     position: relative;
     display: flex;
@@ -11071,7 +11116,8 @@ input[type=number] {
     border-radius: 22.5px;
     border: 1.2px solid #33302D;
     background: linear-gradient(142deg, rgba(52, 45, 39, 0.71) 0%, rgba(34, 34, 32, 0.71) 67.95%);
-    backdrop-filter: blur(6.35px); }
+    backdrop-filter: blur(6.35px);
+    display: none; }
   .steam-bonus__dot {
     border-radius: 50%;
     border: 3px solid #191917;

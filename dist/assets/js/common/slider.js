@@ -123,7 +123,7 @@ new Swiper(".screen-swiper .swiper", {
 });
 
 new Swiper(".steam-bonus .swiper", {
-  loop: true,
+  loop: false,
   slidesPerView: 3,
   spaceBetween: 10,
   navigation: {
