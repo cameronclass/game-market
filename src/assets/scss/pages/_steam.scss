@@ -817,6 +817,10 @@
         margin-bottom: 30px;
     }
 
+    .swiper-slide {
+        max-width: 240px;
+    }
+
     &__title {
         display: flex;
         align-items: center;

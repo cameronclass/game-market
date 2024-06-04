@@ -12279,6 +12279,7 @@ new Swiper(".steam-bonus .swiper", {
     nextEl: ".steam-bonus .swiper-button-next",
     prevEl: ".steam-bonus .swiper-button-prev",
   },
+
   /* breakpoints: {
     0: {
       slidesPerView: 2,
@@ -12290,6 +12291,24 @@ new Swiper(".steam-bonus .swiper", {
       slidesPerView: 4,
     },
   }, */
+});
+
+new Swiper(".steam-slider .swiper", {
+  spaceBetween: 12,
+  loop: true,
+  navigation: {
+    nextEl: ".steam-slider .swiper-button-next",
+    prevEl: ".steam-slider .swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: "auto",
+      centeredSlides: true,
+    },
+    1290: {
+      slidesPerView: 5,
+    },
+  },
 });
 
 function gameSwiper(selector) {
