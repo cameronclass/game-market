@@ -809,3 +809,38 @@
     }
 
 }
+
+.steam-slider {
+    margin: 40px 0;
+
+    .game-slider__actions {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &_content {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            line-height: 1;
+        }
+
+        &_main {
+            font-size: 19px;
+            color: #C3B8A2;
+            font-family: $font-roboto;
+            font-weight: 500;
+        }
+
+        &_sub {
+            color: #6D675B;
+            font-family: $font-roboto;
+            font-weight: 300;
+            font-size: 12px;
+        }
+    }
+}

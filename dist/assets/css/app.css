@@ -6533,6 +6533,82 @@ input[type=number] {
           top: inherit;
           right: inherit; } }
 
+.steam-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px; }
+  .steam-card__img {
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(28, 27, 25, 0) 0%, #232220 91.48%); }
+    .steam-card__img_item {
+      object-fit: cover;
+      position: relative;
+      z-index: -1; }
+  .steam-card__title {
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    position: absolute;
+    bottom: 10px;
+    left: 10px; }
+  .steam-card__discount {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    border-radius: 3px;
+    background: #FF6C3D;
+    line-height: 1;
+    padding: 3px 6px;
+    font-size: 12px;
+    font-weight: 500; }
+  .steam-card__new {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 3px;
+    background: #377E94;
+    padding: 3px 6px;
+    line-height: 1; }
+  .steam-card__actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 5px;
+    background: linear-gradient(117deg, #23221F 54.83%, #2B2624 102.44%);
+    box-shadow: 0px 12px 12.6px -7px rgba(0, 0, 0, 0.25);
+    padding: 11px 13px; }
+    .steam-card__actions_btns {
+      display: flex;
+      gap: 6px; }
+    .steam-card__actions_price {
+      display: flex;
+      flex-direction: column; }
+  .steam-card__price {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 1; }
+  .steam-card__subprice {
+    font-size: 12px;
+    color: #847F7D;
+    line-height: 1;
+    text-decoration: line-through; }
+  .steam-card__add, .steam-card__favourite {
+    padding: 6px 10px;
+    border-radius: 3px;
+    background: linear-gradient(45deg, #2F2D29 0%, #2B2624 100%); }
+    .steam-card__add:hover svg path, .steam-card__favourite:hover svg path {
+      fill: #FF6C3D; }
+
 /* Sections for all pages */
 .header {
   position: fixed;
@@ -11369,3 +11445,27 @@ input[type=number] {
         font-size: 12px; }
     .steam-login__price_svg {
       margin-top: 12px; }
+
+.steam-slider {
+  margin: 40px 0; }
+  .steam-slider .game-slider__actions {
+    margin-bottom: 30px; }
+  .steam-slider__title {
+    display: flex;
+    align-items: center;
+    gap: 10px; }
+    .steam-slider__title_content {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      line-height: 1; }
+    .steam-slider__title_main {
+      font-size: 19px;
+      color: #C3B8A2;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500; }
+    .steam-slider__title_sub {
+      color: #6D675B;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      font-size: 12px; }
