@@ -419,6 +419,58 @@ function updateSwiperLineWidth() {
   const swiperSlides = document.querySelectorAll(
     ".steam-bonus__slider .swiper-slide"
   );
+  const swiperLine = document.querySelector(".steam-bonus__slider .swiper-line");
+
+  if (swiperSlides.length > 0 && swiperLine) {
+    const slideCount = swiperSlides.length;
+    const baseWidth = window.innerWidth < 980 ? 2 : 3;
+    const baseWidthPercentage = 100;
+    const additionalWidthPercentage =
+      ((slideCount - baseWidth) / baseWidth) * 100;
+    const finalWidthPercentage =
+      baseWidthPercentage + additionalWidthPercentage;
+
+    swiperLine.style.width = `calc(${finalWidthPercentage}%)`;
+  }
+}
+
+function updateSwiperLineColorWidth() {
+  const cards = document.querySelectorAll(
+    ".steam-bonus__slider .swiper-slide .steam-bonus__card"
+  );
+  const activeCards = document.querySelectorAll(
+    ".steam-bonus__slider .swiper-slide .steam-bonus__card._active"
+  );
+  const totalCards = cards.length;
+  const percentagePerCard = 100 / totalCards;
+  let activePercentage = 0;
+
+  activeCards.forEach(() => {
+    activePercentage += percentagePerCard;
+  });
+
+  const swiperLineColor = document.querySelector(
+    ".steam-bonus__slider .swiper-line__color"
+  );
+  if (swiperLineColor) {
+    swiperLineColor.style.transition = "width 0.2s ease";
+    swiperLineColor.style.width = `${activePercentage}%`;
+  }
+}
+
+function updateSwiperLine() {
+  updateSwiperLineWidth();
+  updateSwiperLineColorWidth();
+}
+
+window.addEventListener("resize", updateSwiperLine);
+updateSwiperLine();
+
+
+/* function updateSwiperLineWidth() {
+  const swiperSlides = document.querySelectorAll(
+    ".steam-bonus__slider .swiper-slide"
+  );
   const swiperLine = document.querySelector(".swiper-line");
 
   if (swiperSlides.length > 0 && swiperLine) {
@@ -455,7 +507,7 @@ function updateSwiperLineColorWidth() {
 }
 
 updateSwiperLineWidth();
-updateSwiperLineColorWidth();
+updateSwiperLineColorWidth(); */
 
 
 

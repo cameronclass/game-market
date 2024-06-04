@@ -131,17 +131,14 @@ new Swiper(".steam-bonus .swiper", {
     prevEl: ".steam-bonus .swiper-button-prev",
   },
 
-  /* breakpoints: {
+  breakpoints: {
     0: {
       slidesPerView: 2,
     },
-    992: {
+    980: {
       slidesPerView: 3,
     },
-    1200: {
-      slidesPerView: 4,
-    },
-  }, */
+  },
 });
 
 new Swiper(".steam-slider .swiper", {

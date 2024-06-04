@@ -10911,13 +10911,23 @@ input[type=number] {
       position: relative;
       display: flex;
       justify-content: space-between; }
+      @media screen and (max-width: 979px) {
+        .steam-title__card_content {
+          flex-direction: column; } }
     .steam-title__card_title {
       width: 50%;
       font-weight: 700;
       display: flex;
       flex-direction: column;
       gap: 5px;
-      line-height: 1; }
+      line-height: 1;
+      order: 1; }
+      @media screen and (max-width: 979px) {
+        .steam-title__card_title {
+          order: 2;
+          width: 100%;
+          text-align: center;
+          margin-bottom: 20px; } }
       .steam-title__card_title_main {
         color: #615447;
         font-size: 32px; }
@@ -10928,7 +10938,12 @@ input[type=number] {
       display: flex;
       width: 100%;
       max-width: 460px;
-      position: relative; }
+      position: relative;
+      order: 2; }
+      @media screen and (max-width: 979px) {
+        .steam-title__card_img {
+          order: 1;
+          height: 55px; } }
       .steam-title__card_img_item {
         width: 100%;
         position: absolute;
@@ -10938,7 +10953,12 @@ input[type=number] {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 8px; }
+      gap: 8px;
+      order: 3; }
+      @media screen and (max-width: 979px) {
+        .steam-title__card_btns {
+          width: 100%;
+          justify-content: center; } }
   .steam-title .cart-tab-btn {
     padding: 12px 40px;
     font-size: 12px; }
@@ -10953,12 +10973,19 @@ input[type=number] {
     grid-template-rows: auto auto;
     gap: 30px 2%;
     grid-template-areas: "bonus advantages" "bonus discount"; }
+    @media screen and (max-width: 1200px) {
+      .steam-actions__block {
+        grid-template-columns: 100%;
+        grid-template-areas: "advantages" "bonus" "discount"; } }
 
 .steam-advantages {
   width: 100%;
   display: flex;
   gap: 10px;
   grid-area: advantages; }
+  @media screen and (max-width: 979px) {
+    .steam-advantages {
+      flex-direction: column; } }
   .steam-advantages__card {
     width: 100%;
     display: flex;
@@ -11096,9 +11123,20 @@ input[type=number] {
   gap: 20px;
   height: 210px; }
   .steam-bonus__title {
+    width: 100%;
     height: auto;
     display: flex;
-    align-items: flex-start; }
+    align-items: center; }
+    .steam-bonus__title_text {
+      display: none;
+      font-size: 14px;
+      color: #847F7D; }
+      @media screen and (max-width: 979px) {
+        .steam-bonus__title_text {
+          display: flex; } }
+    @media screen and (max-width: 979px) {
+      .steam-bonus__title {
+        justify-content: space-between; } }
     .steam-bonus__title_bonus {
       display: flex;
       align-items: center;
@@ -11229,9 +11267,15 @@ input[type=number] {
 
 .steam-login {
   margin: 40px 0; }
+  @media screen and (max-width: 979px) {
+    .steam-login {
+      margin-top: 60px; } }
   .steam-login__block {
     display: flex;
     gap: 20px; }
+    @media screen and (max-width: 1200px) {
+      .steam-login__block {
+        flex-direction: column; } }
   .steam-login__form {
     border-radius: 10px;
     background: #1A1917;
@@ -11240,6 +11284,10 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     gap: 10px; }
+    @media screen and (max-width: 979px) {
+      .steam-login__form {
+        background: transparent;
+        padding: 0; } }
     .steam-login__form_group {
       position: relative; }
       .steam-login__form_group:hover .steam-login__form_svg path {
@@ -11265,6 +11313,9 @@ input[type=number] {
       .steam-login__form_btn:hover {
         color: white;
         border: 1px solid #FF6C3D; }
+      @media screen and (max-width: 979px) {
+        .steam-login__form_btn {
+          padding: 8px 12px; } }
     .steam-login__form_svg {
       position: absolute;
       left: 20px;
@@ -11280,6 +11331,10 @@ input[type=number] {
       gap: 10px;
       margin-top: 0px;
       margin-bottom: 20px; }
+      @media screen and (max-width: 979px) {
+        .steam-login__form_select {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr; } }
     .steam-login__form_radio {
       margin: 0;
       width: 100%; }
@@ -11302,12 +11357,22 @@ input[type=number] {
         .steam-login__form_radio span:hover {
           color: white;
           border-color: #FF6C3D; }
+        @media screen and (max-width: 979px) {
+          .steam-login__form_radio span {
+            padding: 12px; } }
   .steam-login__info {
     width: 100%;
     max-width: 403px;
     border-radius: 10px;
     background: #1A1917;
     padding: 10px; }
+    @media screen and (max-width: 1200px) {
+      .steam-login__info {
+        max-width: 100%; } }
+    @media screen and (max-width: 979px) {
+      .steam-login__info {
+        background: transparent;
+        padding: 0; } }
     .steam-login__info_subtitle {
       font-size: 13px;
       color: #847F7D;
@@ -11406,6 +11471,10 @@ input[type=number] {
     align-items: flex-start;
     justify-content: space-between;
     gap: 10px; }
+    @media screen and (max-width: 979px) {
+      .steam-login__price {
+        width: 100%;
+        left: 0; } }
     .steam-login__price::before {
       content: "";
       display: flex;
@@ -11453,6 +11522,9 @@ input[type=number] {
     margin-bottom: 30px; }
   .steam-slider .swiper-slide {
     max-width: 240px; }
+  @media screen and (max-width: 1200px) {
+    .steam-slider .swiper {
+      overflow: visible; } }
   .steam-slider__title {
     display: flex;
     align-items: center;
