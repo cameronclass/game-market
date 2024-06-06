@@ -11592,7 +11592,7 @@ input[type=number] {
   .admin-head__info {
     width: 100%;
     max-width: 932px;
-    padding: 6px;
+    padding: 6px 6px 0 6px;
     border-radius: 10px;
     border-bottom: 1px solid #2C2C2A;
     background: #161513; }
@@ -11669,7 +11669,7 @@ input[type=number] {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0 25px 25px; }
+    padding: 0 25px 10px; }
     .admin-head__allroles .btn-admin {
       width: 100%; }
   .admin-head__wall {
@@ -11681,13 +11681,13 @@ input[type=number] {
       object-fit: cover;
       border-radius: 6px; }
   .admin-head__table {
-    margin-top: 18px; }
+    margin-top: 15px; }
   .admin-head__ref {
     border-radius: 6px;
     border: 1px solid #304B36;
     background: #22211E;
-    padding: 15px;
-    margin-top: 12px;
+    padding: 12px 12px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px; }
@@ -11749,6 +11749,50 @@ input[type=number] {
       align-items: center;
       justify-content: center;
       margin-left: auto; }
+  .admin-head__trofei {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px; }
+    .admin-head__trofei_title {
+      text-align: center;
+      color: #847F7D; }
+    .admin-head__trofei_block {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0px; }
+    .admin-head__trofei_item {
+      padding-top: 9px;
+      padding-bottom: 10px;
+      border-radius: 5px 5px 0 0;
+      transition: 300ms ease;
+      border-bottom: 1px solid transparent; }
+      .admin-head__trofei_item:hover {
+        border-bottom: 1px solid #FF6C3D;
+        background: #242322; }
+        .admin-head__trofei_item:hover .admin-head__trofei_text {
+          visibility: visible;
+          opacity: 1; }
+    .admin-head__trofei_img {
+      display: flex;
+      margin-bottom: 10px; }
+      .admin-head__trofei_img_item {
+        height: 60px;
+        object-fit: contain; }
+    .admin-head__trofei_text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      line-height: 1;
+      gap: 5px;
+      visibility: hidden;
+      opacity: 0; }
+      .admin-head__trofei_text._like {
+        font-size: 10px;
+        color: #FF6C3D; }
+      .admin-head__trofei_text._count {
+        font-size: 13px;
+        color: white; }
 
 .admin-table {
   display: grid;

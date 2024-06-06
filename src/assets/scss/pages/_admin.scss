@@ -18,7 +18,7 @@
     &__info {
         width: 100%;
         max-width: 932px;
-        padding: 6px;
+        padding: 6px 6px 0 6px;
         border-radius: 10px;
         border-bottom: 1px solid #2C2C2A;
         background: #161513;
@@ -128,7 +128,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        padding: 0 25px 25px;
+        padding: 0 25px 10px;
 
         .btn-admin {
             width: 100%;
@@ -149,15 +149,15 @@
     }
 
     &__table {
-        margin-top: 18px;
+        margin-top: 15px;
     }
 
     &__ref {
         border-radius: 6px;
         border: 1px solid #304B36;
         background: #22211E;
-        padding: 15px;
-        margin-top: 12px;
+        padding: 12px 12px;
+        margin-top: 10px;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -225,7 +225,7 @@
             font-weight: 600;
         }
 
-        &_actions{
+        &_actions {
             display: flex;
             gap: 5px;
         }
@@ -242,10 +242,74 @@
             justify-content: center;
             margin-left: auto;
         }
-
-
     }
 
+
+    &__trofei {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+
+        &_title {
+            text-align: center;
+            color: $text-dark;
+        }
+
+        &_block {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0px;
+        }
+
+        &_item {
+            padding-top: 9px;
+            padding-bottom: 10px;
+            border-radius: 5px 5px 0 0;
+            transition: 300ms ease;
+            border-bottom: 1px solid transparent;
+
+            &:hover {
+                border-bottom: 1px solid $orange;
+                background: #242322;
+
+                .admin-head__trofei_text {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &_img {
+            display: flex;
+            margin-bottom: 10px;
+
+            &_item {
+                height: 60px;
+                object-fit: contain;
+            }
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            line-height: 1;
+            gap: 5px;
+            visibility: hidden;
+            opacity: 0;
+
+            &._like {
+                font-size: 10px;
+                color: $orange;
+            }
+
+            &._count {
+                font-size: 13px;
+                color: white;
+            }
+        }
+    }
 
 
 
