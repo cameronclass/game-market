@@ -1412,15 +1412,27 @@
                 }
             }
 
+            &._comment {
+                color: $text-dark;
+            }
+
             &:hover {
                 .comment-item__like_icon {
                     filter: brightness(10);
+                }
+
+                svg path {
+                    fill: white;
                 }
 
                 color: #40FF6A;
 
                 &._dislike {
                     color: #FF5C5C;
+                }
+
+                &._comment {
+                    color: white;
                 }
             }
         }
