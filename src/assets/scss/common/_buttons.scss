@@ -78,6 +78,17 @@
         border-color: $orange;
     }
 
+    &._admin {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid $orange;
+        background: #2D2723;
+        color: $text-dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
 }
 
 .btn-blur {
@@ -142,4 +153,30 @@
             color: #FF7474;
         }
     }
+}
+
+.btn-admin {
+    border-radius: 5px;
+    background: #2E2D2B;
+    padding: 8px 20px;
+    line-height: 1;
+    font-size: 14px;
+    color: $text-dark;
+    transition: 300ms ease;
+    border: 1px solid transparent;
+
+    &:hover {
+        color: white;
+    }
+}
+
+.btn-admin-action {
+    border-radius: 4px;
+    background: #42312A;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 37px;
 }
