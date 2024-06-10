@@ -3,21 +3,24 @@
     margin-bottom: 40px;
 
     &__block {
-        display: flex;
+        display: grid;
         gap: 20px;
+        grid-template-columns: minmax(275px, 298px) minmax(400px, 932px);
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__account {
-        width: 50%;
-        max-width: 298px;
+        overflow: hidden;
         border-radius: 10px;
         background: #231E1B;
         box-shadow: 0px 4px 32.8px 0px rgba(0, 0, 0, 0.25);
     }
 
     &__info {
-        width: 100%;
-        max-width: 932px;
         padding: 6px 6px 0 6px;
         border-radius: 10px;
         border-bottom: 1px solid #2C2C2A;
@@ -119,6 +122,29 @@
         gap: 10px 20px;
         grid-template-columns: repeat(6, 1fr);
 
+        @include netbook {
+            display: flex;
+            overflow-x: auto;
+            margin-bottom: 10px;
+
+            &::-webkit-scrollbar {
+                width: 1px;
+                height: 1px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: $dark;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: $orange;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: $orange;
+            }
+        }
+
         &_item {
             height: 25px;
         }
@@ -161,12 +187,18 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        position: relative;
 
         &_block {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             gap: 30px;
+
+            @include mobile {
+                gap: 10px;
+                padding-right: 40px;
+            }
         }
 
         &_title {
@@ -207,6 +239,10 @@
             background: #2E2D2B;
             padding: 5px;
             margin-left: auto;
+
+            position: absolute;
+            top: 12px;
+            right: 12px;
         }
 
         &_link {
@@ -214,7 +250,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 7px 7px 7px 20px;
-            line-height: 1;
+            line-height: 1.2;
             border-radius: 6px;
             border: 1px solid #304B36;
             background: linear-gradient(90deg, rgba(35, 56, 46, 0.00) 0%, #294424 100%);
@@ -223,6 +259,8 @@
         &_text {
             color: #A6EB71;
             font-weight: 600;
+            word-break: break-word;
+            padding-right: 10px;
         }
 
         &_actions {
@@ -257,12 +295,33 @@
         }
 
         &_block {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            display: flex;
+            justify-content: space-between;
             gap: 0px;
+            overflow-x: scroll;
+
+            &::-webkit-scrollbar {
+                width: 1px;
+                height: 1px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: $dark;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: $orange;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: $orange;
+            }
+
+            @include netbook {}
         }
 
         &_item {
+            min-width: 125px;
             padding-top: 9px;
             padding-bottom: 10px;
             border-radius: 5px 5px 0 0;
@@ -320,6 +379,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 3px;
 
+    @include netbook {
+        grid-template-columns: 1fr;
+    }
+
     &__row {
         display: flex;
         justify-content: space-between;
@@ -330,10 +393,24 @@
         padding: 5px 10px;
         line-height: 1;
 
-        &:nth-child(4n+2),
+        /* &:nth-child(4n+2),
         &:nth-child(4n+3) {
             background: #22211E;
+
+            @include netbook {
+                background: transparent;
+            }
+        } */
+
+        &:nth-child(odd) {
+            background: #22211E;
+
+            @include netbook {
+                background: #22211E;
+            }
         }
+
+
     }
 
     &__head {
@@ -358,6 +435,10 @@
         border-radius: 10px;
         border-bottom: 1px solid #2C2C2A;
         background: #161513;
+
+        @include laptop {
+            padding: 0 10px;
+        }
     }
 
     &__tab {
@@ -416,6 +497,11 @@
         align-items: center;
         gap: 50px;
     }
+
+    .catalog-cards__pagination{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
 
 .admin-comments,
@@ -431,15 +517,25 @@
 .admin-card {
     display: grid;
     grid-template-columns: 112px 1fr;
-    gap: 0 26px;
+    gap: 5px 26px;
     position: relative;
     padding: 12px 0;
     border-bottom: 1px solid #262624;
+
+    @include mobile{
+        gap: 10px 26px;
+    }
 
     &__img {
         display: flex;
         grid-row-start: 1;
         grid-row-end: 3;
+        margin-top: 5px;
+
+        @include mobile {
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
 
         &_item {
             width: 112px;
@@ -458,6 +554,12 @@
     &__text {
         font-size: 14px;
         color: $text-dark;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__actions {
@@ -467,6 +569,12 @@
         align-items: center;
         gap: 20px;
         justify-content: space-between;
+
+        @include mobile {
+            grid-column-start: 1;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
     }
 
     &__date {
@@ -475,6 +583,11 @@
         right: 0;
         font-size: 16px;
         color: $text-dark;
+
+        @include mobile {
+            width: 100%;
+            position: inherit;
+        }
     }
 
     &__link {
