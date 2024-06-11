@@ -12969,7 +12969,7 @@ window.addEventListener("resize", updateSwiperLine);
 updateSwiperLine();
 
 /* Trofei Progress */
-function updateProgressBar() {
+function updateTrofeiProgressBar() {
   const trofeiColor = document.querySelector(
     ".admin-trofei__statics_progress_color"
   );
@@ -12992,7 +12992,27 @@ function updateProgressBar() {
 }
 
 // Call the function to update the progress bar initially
-updateProgressBar();
+updateTrofeiProgressBar();
+
+function updateDoingProgressBars() {
+  const cards = document.querySelectorAll(".doing-card");
+
+  cards.forEach((card) => {
+    const percentElement = card.querySelector(".doing-card__percent");
+    const progressBar = card.querySelector(".doing-card__progress");
+
+    if (percentElement && progressBar) {
+      const percent = parseInt(percentElement.textContent, 10);
+
+      if (!isNaN(percent)) {
+        progressBar.style.width = `${percent}%`;
+      }
+    }
+  });
+}
+
+// Call the function to update all progress bars initially
+updateDoingProgressBars();
 
 
 });

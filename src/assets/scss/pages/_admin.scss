@@ -484,6 +484,10 @@
         border-radius: 10px;
         border-bottom: 1px solid #2C2C2A;
         background: #161513;
+
+        @include mobile {
+            padding: 15px 10px;
+        }
     }
 
     &__btn_title {
@@ -606,6 +610,11 @@
         &_text {
             color: $text-dark;
         }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 
     &__statics {
@@ -679,11 +688,21 @@
         }
     }
 
-    &__done {
+    &__done,
+    &__doing {
         margin-top: 20px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 15px;
+
+        @include netbook {
+            grid-template-columns: 1fr;
+            gap: 7px;
+        }
+    }
+
+    &__doing {
+        margin-top: 40px;
     }
 }
 
@@ -702,6 +721,12 @@
         gap: 25px;
         background: #22211E;
         padding: 12px 20px;
+        position: relative;
+        z-index: 2;
+
+        @include netbook {
+            gap: 15px;
+        }
     }
 
     &__img {
@@ -749,6 +774,10 @@
             display: flex;
             align-items: center;
 
+            @include mobile {
+                display: none;
+            }
+
             ._content {
                 background: #22211E;
                 width: 100%;
@@ -758,5 +787,43 @@
                 line-height: 1;
             }
         }
+    }
+}
+
+.doing-card {
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #353535;
+    background: #22211E;
+
+    &__progress {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: auto;
+        max-width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        border-radius: 6px;
+        background: #1F3124;
+    }
+
+    &__percent {
+        font-weight: 700;
+        font-size: 16px;
+        color: white;
+    }
+
+    .done-card__title {
+        color: $text-dark;
+    }
+
+    .done-card__block {
+        background-color: transparent;
+    }
+
+    .done-card__info_users {
+        border: 1px solid #353535;
+        color: $text-dark;
     }
 }

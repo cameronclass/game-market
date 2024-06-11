@@ -11911,6 +11911,9 @@ input[type=number] {
     border-radius: 10px;
     border-bottom: 1px solid #2C2C2A;
     background: #161513; }
+    @media screen and (max-width: 979px) {
+      .admin-content__block {
+        padding: 15px 10px; } }
   .admin-content__btn_title {
     width: max-content;
     margin-bottom: 15px;
@@ -12002,6 +12005,10 @@ input[type=number] {
   gap: 20px; }
   .admin-trofei__title_text {
     color: #847F7D; }
+  @media screen and (max-width: 979px) {
+    .admin-trofei__title {
+      flex-direction: column;
+      gap: 10px; } }
 
 .admin-trofei__statics {
   display: flex;
@@ -12057,11 +12064,18 @@ input[type=number] {
       border-radius: 25px;
       background: #86B171; }
 
-.admin-trofei__done {
+.admin-trofei__done, .admin-trofei__doing {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px; }
+  @media screen and (max-width: 1200px) {
+    .admin-trofei__done, .admin-trofei__doing {
+      grid-template-columns: 1fr;
+      gap: 7px; } }
+
+.admin-trofei__doing {
+  margin-top: 40px; }
 
 .done-card {
   border-radius: 6px;
@@ -12073,7 +12087,12 @@ input[type=number] {
     align-items: center;
     gap: 25px;
     background: #22211E;
-    padding: 12px 20px; }
+    padding: 12px 20px;
+    position: relative;
+    z-index: 2; }
+    @media screen and (max-width: 1200px) {
+      .done-card__block {
+        gap: 15px; } }
   .done-card__img {
     display: flex;
     height: 47px;
@@ -12104,6 +12123,9 @@ input[type=number] {
       background: linear-gradient(90deg, #304B36, #86B171) padding-box, linear-gradient(to right, #304B36, #86B171) border-box;
       display: flex;
       align-items: center; }
+      @media screen and (max-width: 979px) {
+        .done-card__info_users {
+          display: none; } }
       .done-card__info_users ._content {
         background: #22211E;
         width: 100%;
@@ -12111,3 +12133,30 @@ input[type=number] {
         padding: 9px 20px;
         font-size: 12px;
         line-height: 1; }
+
+.doing-card {
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #353535;
+  background: #22211E; }
+  .doing-card__progress {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: auto;
+    max-width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 6px;
+    background: #1F3124; }
+  .doing-card__percent {
+    font-weight: 700;
+    font-size: 16px;
+    color: white; }
+  .doing-card .done-card__title {
+    color: #847F7D; }
+  .doing-card .done-card__block {
+    background-color: transparent; }
+  .doing-card .done-card__info_users {
+    border: 1px solid #353535;
+    color: #847F7D; }
