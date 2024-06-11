@@ -498,7 +498,7 @@
         gap: 50px;
     }
 
-    .catalog-cards__pagination{
+    .catalog-cards__pagination {
         margin-top: 30px;
         margin-bottom: 30px;
     }
@@ -522,7 +522,7 @@
     padding: 12px 0;
     border-bottom: 1px solid #262624;
 
-    @include mobile{
+    @include mobile {
         gap: 10px 26px;
     }
 
@@ -593,5 +593,170 @@
     &__link {
         font-size: 14px;
         color: $text-dark;
+    }
+}
+
+.admin-trofei {
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        &_text {
+            color: $text-dark;
+        }
+    }
+
+    &__statics {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &_img {
+            width: auto;
+            height: 24px;
+        }
+
+        &_progress {
+            position: relative;
+            width: 190px;
+            height: 29px;
+            display: flex;
+            align-items: center;
+            border-radius: 25px;
+            padding: 3px;
+            border: 2px solid #33302D;
+            background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+
+            &_bg {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border: 1px solid #222220;
+                border-radius: 25px;
+                background: rgba(134, 177, 113, 0.28);
+            }
+
+            &_count {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                border-radius: 25px;
+                background: #2E2D2B;
+                position: relative;
+                z-index: 2;
+                font-size: 10px;
+                padding: 2px 6px;
+                height: 19px;
+
+                ._current {
+                    color: #86B171;
+                }
+
+                ._divide {
+                    color: white;
+                }
+
+                ._all {
+                    color: $text-dark;
+                }
+            }
+
+            &_color {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: auto;
+                max-width: calc(100% - 2px);
+                height: calc(100% - 2px);
+                margin: 1px;
+                border-radius: 25px;
+                background: #86B171;
+            }
+        }
+    }
+
+    &__done {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
+
+.done-card {
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: linear-gradient(90deg,
+            #304B36,
+            #86B171) padding-box, linear-gradient(to left, #304B36,
+            #86B171) border-box;
+    overflow: hidden;
+
+    &__block {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        background: #22211E;
+        padding: 12px 20px;
+    }
+
+    &__img {
+        display: flex;
+        height: 47px;
+        min-width: 40px;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        line-height: 1;
+
+        ._main {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        ._second {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    &__info {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &_svg {
+            width: auto;
+            height: 29px;
+        }
+
+        &_users {
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid transparent;
+            background: linear-gradient(90deg,
+                    #304B36,
+                    #86B171) padding-box, linear-gradient(to right, #304B36,
+                    #86B171) border-box;
+            display: flex;
+            align-items: center;
+
+            ._content {
+                background: #22211E;
+                width: 100%;
+                height: 100%;
+                padding: 9px 20px;
+                font-size: 12px;
+                line-height: 1;
+            }
+        }
     }
 }

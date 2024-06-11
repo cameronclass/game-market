@@ -12919,7 +12919,9 @@ function updateSwiperLineWidth() {
   const swiperSlides = document.querySelectorAll(
     ".steam-bonus__slider .swiper-slide"
   );
-  const swiperLine = document.querySelector(".steam-bonus__slider .swiper-line");
+  const swiperLine = document.querySelector(
+    ".steam-bonus__slider .swiper-line"
+  );
 
   if (swiperSlides.length > 0 && swiperLine) {
     const slideCount = swiperSlides.length;
@@ -12966,51 +12968,31 @@ function updateSwiperLine() {
 window.addEventListener("resize", updateSwiperLine);
 updateSwiperLine();
 
-
-/* function updateSwiperLineWidth() {
-  const swiperSlides = document.querySelectorAll(
-    ".steam-bonus__slider .swiper-slide"
+/* Trofei Progress */
+function updateProgressBar() {
+  const trofeiColor = document.querySelector(
+    ".admin-trofei__statics_progress_color"
   );
-  const swiperLine = document.querySelector(".swiper-line");
+  const trofeiCurrentValue = document.querySelector(
+    ".admin-trofei__statics_progress_count ._current"
+  );
+  const trofeiAllValue = document.querySelector(
+    ".admin-trofei__statics_progress_count ._all"
+  );
 
-  if (swiperSlides.length > 0 && swiperLine) {
-    const slideCount = swiperSlides.length;
-    const baseWidthPercentage = 100;
-    const additionalWidthPercentage = ((slideCount - 3) / 3) * 100;
-    const finalWidthPercentage =
-      baseWidthPercentage + additionalWidthPercentage;
+  if (trofeiColor && trofeiCurrentValue && trofeiAllValue) {
+    const current = parseInt(trofeiCurrentValue.textContent, 10);
+    const all = parseInt(trofeiAllValue.textContent, 10);
 
-    swiperLine.style.width = `calc(${finalWidthPercentage}%)`;
+    if (!isNaN(current) && !isNaN(all) && all > 0) {
+      const percentage = (current / all) * 100;
+      trofeiColor.style.width = `${percentage}%`;
+    }
   }
 }
 
-function updateSwiperLineColorWidth() {
-  const cards = document.querySelectorAll(
-    ".steam-bonus__slider .swiper-slide .steam-bonus__card"
-  );
-  const activeCards = document.querySelectorAll(
-    ".steam-bonus__slider .swiper-slide .steam-bonus__card._active"
-  );
-  const totalCards = cards.length;
-  const percentagePerCard = 100 / totalCards;
-  let activePercentage = 0;
-
-  activeCards.forEach(() => {
-    activePercentage += percentagePerCard;
-  });
-
-  const swiperLineColor = document.querySelector(".swiper-line__color");
-  if (swiperLineColor) {
-    swiperLineColor.style.transition = "width 0.2s ease";
-    swiperLineColor.style.width = `${activePercentage}%`;
-  }
-}
-
-updateSwiperLineWidth();
-updateSwiperLineColorWidth(); */
-
-
-
+// Call the function to update the progress bar initially
+updateProgressBar();
 
 
 });
