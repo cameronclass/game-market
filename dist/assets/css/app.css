@@ -11913,7 +11913,7 @@ input[type=number] {
     background: #161513; }
     @media screen and (max-width: 979px) {
       .admin-content__block {
-        padding: 15px 10px; } }
+        padding: 15px; } }
   .admin-content__btn_title {
     width: max-content;
     margin-bottom: 15px;
