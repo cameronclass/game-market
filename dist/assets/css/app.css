@@ -11691,7 +11691,7 @@ input[type=number] {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0 25px 10px; }
+    padding: 0 25px 15px; }
     .admin-head__allroles .btn-admin {
       width: 100%; }
   .admin-head__wall {
@@ -11752,7 +11752,7 @@ input[type=number] {
       padding: 5px;
       margin-left: auto;
       position: absolute;
-      top: 12px;
+      top: 10px;
       right: 12px; }
     .admin-head__ref_link {
       display: flex;
@@ -11836,6 +11836,75 @@ input[type=number] {
       .admin-head__trofei_text._count {
         font-size: 13px;
         color: white; }
+  .admin-head__wallet {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 28px; }
+    .admin-head__wallet_actions {
+      display: flex;
+      gap: 10px; }
+    .admin-head__wallet_num {
+      display: flex;
+      font-size: 38px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      align-items: center;
+      gap: 12px;
+      line-height: 1; }
+      .admin-head__wallet_num_svg {
+        height: 34px; }
+    .admin-head__wallet_btn {
+      border-radius: 3px;
+      border: 1px solid #33302D;
+      background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+      font-size: 20px;
+      color: #847F7D;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 35px;
+      margin-left: auto;
+      transition: 300ms ease; }
+      .admin-head__wallet_btn:hover {
+        color: white;
+        border-color: #FF6C3D; }
+        .admin-head__wallet_btn:hover svg path {
+          fill: #FF6C3D; }
+    .admin-head__wallet_info {
+      border-radius: 6px;
+      overflow: hidden;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      width: 100%;
+      position: relative;
+      border: 1px solid transparent;
+      background: linear-gradient(1800deg, #4B3530, #FF7347) padding-box, linear-gradient(to left, #4B3530, #FF7347) border-box; }
+      .admin-head__wallet_info_block {
+        background: #1E1817;
+        padding: 18px 22px;
+        line-height: 1; }
+      .admin-head__wallet_info_text {
+        position: relative;
+        z-index: 1;
+        font-size: 20px;
+        font-weight: 600;
+        font-family: "Roboto", sans-serif; }
+        .admin-head__wallet_info_text ._orange {
+          color: #FF6C3D; }
+      .admin-head__wallet_info_bg {
+        position: absolute;
+        height: 44px;
+        width: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%); }
+      .admin-head__wallet_info .admin-head__ref_info {
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%); }
 
 .admin-table {
   display: grid;
@@ -11852,20 +11921,12 @@ input[type=number] {
     border: 1px solid #34312D;
     background: #1C1B19;
     padding: 5px 10px;
-    line-height: 1;
-    /* &:nth-child(4n+2),
-        &:nth-child(4n+3) {
-            background: #22211E;
-
-            @include netbook {
-                background: transparent;
-            }
-        } */ }
-    .admin-table__row:nth-child(odd) {
+    line-height: 1; }
+    .admin-table__row:nth-child(4n+2), .admin-table__row:nth-child(4n+3) {
       background: #22211E; }
-      @media screen and (max-width: 1200px) {
-        .admin-table__row:nth-child(odd) {
-          background: #22211E; } }
+    .admin-table__row._row-2 {
+      grid-column-start: 1;
+      grid-column-end: 3; }
   .admin-table__head {
     color: #847F7D; }
   .admin-table__cell .comment-item__like_btn {

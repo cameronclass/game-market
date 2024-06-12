@@ -154,13 +154,12 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        padding: 0 25px 10px;
+        padding: 0 25px 15px;
 
         .btn-admin {
             width: 100%;
         }
     }
-
 
     &__wall {
         display: flex;
@@ -241,7 +240,7 @@
             margin-left: auto;
 
             position: absolute;
-            top: 12px;
+            top: 10px;
             right: 12px;
         }
 
@@ -281,7 +280,6 @@
             margin-left: auto;
         }
     }
-
 
     &__trofei {
         display: flex;
@@ -370,7 +368,101 @@
         }
     }
 
+    &__wallet {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        margin-top: 12px;
+        margin-bottom: 28px;
 
+        &_actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        &_num {
+            display: flex;
+            font-size: 38px;
+            font-family: $font-roboto;
+            font-weight: 600;
+            align-items: center;
+            gap: 12px;
+            line-height: 1;
+
+            &_svg {
+                height: 34px;
+            }
+        }
+
+        &_btn {
+            border-radius: 3px;
+            border: 1px solid #33302D;
+            background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+            font-size: 20px;
+            color: $text-dark;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 35px;
+            margin-left: auto;
+            transition: 300ms ease;
+
+            &:hover {
+                color: white;
+                border-color: $orange;
+
+                svg path {
+                    fill: $orange;
+                }
+            }
+        }
+
+        &_info {
+            border-radius: 6px;
+            overflow: hidden;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            width: 100%;
+            position: relative;
+            border: 1px solid transparent;
+            background: linear-gradient(1800deg, #4B3530, #FF7347) padding-box, linear-gradient(to left, #4B3530,
+                    #FF7347) border-box;
+
+            &_block {
+                background: #1E1817;
+                padding: 18px 22px;
+                line-height: 1;
+            }
+
+            &_text {
+                position: relative;
+                z-index: 1;
+                font-size: 20px;
+                font-weight: 600;
+                font-family: $font-roboto;
+
+                ._orange {
+                    color: $orange;
+                }
+            }
+
+            &_bg {
+                position: absolute;
+                height: 44px;
+                width: auto;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .admin-head__ref_info {
+                z-index: 1;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
 
 }
 
@@ -393,24 +485,15 @@
         padding: 5px 10px;
         line-height: 1;
 
-        /* &:nth-child(4n+2),
+        &:nth-child(4n+2),
         &:nth-child(4n+3) {
             background: #22211E;
-
-            @include netbook {
-                background: transparent;
-            }
-        } */
-
-        &:nth-child(odd) {
-            background: #22211E;
-
-            @include netbook {
-                background: #22211E;
-            }
         }
 
-
+        &._row-2 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
     }
 
     &__head {
