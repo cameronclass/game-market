@@ -375,9 +375,22 @@
         margin-top: 12px;
         margin-bottom: 28px;
 
+        @include netbook {
+            grid-template-columns: 1fr;
+        }
+
         &_actions {
             display: flex;
+            justify-content: flex-end;
             gap: 10px;
+
+            @include netbook {
+                justify-content: space-between;
+            }
+
+            @include mobile {
+                flex-direction: column;
+            }
         }
 
         &_num {
@@ -392,6 +405,11 @@
             &_svg {
                 height: 34px;
             }
+
+            @include mobile {
+                text-align: center;
+                justify-content: center;
+            }
         }
 
         &_btn {
@@ -403,9 +421,9 @@
             line-height: 1;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             padding: 12px 35px;
-            margin-left: auto;
             transition: 300ms ease;
 
             &:hover {
@@ -415,6 +433,10 @@
                 svg path {
                     fill: $orange;
                 }
+            }
+
+            @include netbook {
+                width: 100%;
             }
         }
 
@@ -428,6 +450,12 @@
             border: 1px solid transparent;
             background: linear-gradient(1800deg, #4B3530, #FF7347) padding-box, linear-gradient(to left, #4B3530,
                     #FF7347) border-box;
+
+
+            @include netbook {
+                grid-column-start: initial;
+                grid-column-end: initial;
+            }
 
             &_block {
                 background: #1E1817;
@@ -493,6 +521,11 @@
         &._row-2 {
             grid-column-start: 1;
             grid-column-end: 3;
+
+            @include netbook {
+                grid-column-start: initial;
+                grid-column-end: initial;
+            }
         }
     }
 
@@ -503,6 +536,87 @@
     &__cell {
         .comment-item__like_btn {
             font-size: 16px;
+        }
+    }
+}
+
+.admin-content-table {
+    position: relative;
+    line-height: 1.2;
+
+    &__head {
+        padding: 10px 15px;
+        margin-bottom: 6px;
+        /* position: sticky;
+        top: 64px; */
+        border-radius: 3px 3px 0px 0px;
+        border: 1px solid var(--text-Dark, #847F7D);
+        background: #1C1B19;
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        grid-template-columns: minmax(100px, 150px) minmax(100px, 200px) minmax(100px, 250px) minmax(100px, 350px) minmax(100px, 150px);
+
+        @include mobile {
+            font-size: 14px;
+            gap: 5px;
+            padding: 10px 5px;
+            grid-template-columns: minmax(20px, 44px) minmax(40px, 80px) repeat(3, 1fr);
+        }
+    }
+
+    &__content {}
+
+    &__row {
+        padding: 10px 15px;
+        margin-bottom: 2px;
+        border-radius: 3px;
+        border: 1px solid #34312D;
+        background: #22211E;
+        color: $text-dark;
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: minmax(100px, 150px) minmax(100px, 200px) minmax(100px, 250px) minmax(100px, 350px) minmax(100px, 150px);
+
+        &:nth-child(odd) {
+            background: #1C1B19;
+        }
+
+        @include mobile {
+            font-size: 14px;
+            gap: 5px;
+            padding: 10px 5px;
+            grid-template-columns: minmax(20px, 44px) minmax(40px, 80px) repeat(3, 1fr);
+        }
+    }
+
+    &__cell {
+        word-break: break-word;
+
+        &._complited {
+            color: #57B055;
+        }
+
+        &._timeout {
+            color: #5288D9;
+        }
+
+        &._na {
+            color: $text-dark;
+        }
+
+        &._add {
+            color: #57B055;
+        }
+
+        &._confirm {
+            color: #A0FFB5;
+        }
+
+        &._cancel {
+            color: #D95252;
         }
     }
 }
@@ -583,6 +697,15 @@
         display: flex;
         align-items: center;
         gap: 50px;
+    }
+
+    &__title {
+        font-size: 16px;
+        color: $text-dark;
+
+        &._center {
+            text-align: center;
+        }
     }
 
     .catalog-cards__pagination {
