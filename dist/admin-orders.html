@@ -280,8 +280,11 @@
                             </svg>
                         </a>
                     </div>
-                    <button class="header__actions_admin">
-                        <img src="assets/images/home-new/admin.png" alt="">
+                    <div class="header__actions_admin">
+                        <button class="header__actions_admin_open">
+                            <img src="assets/images/home-new/admin.png" alt="">
+                        </button>
+
                         <div class="header__actions_admin_drop">
                             <a class="header__actions_admin_item" href="#">
                                 <span class="header__actions_admin_svg">
@@ -335,7 +338,7 @@
                                 </span>
                                 <span class="header__actions_admin_link">Мои тикеты</span>
                             </a>
-                            <a class="header__actions_admin_item _exit" href="#">
+                            <button class="header__actions_admin_item header__actions_admin_item_exit">
                                 <span class="header__actions_admin_svg">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
                                         <g clip-path="url(#clip0_521_24146)">
@@ -350,9 +353,9 @@
                                     </svg>
                                 </span>
                                 <span class="header__actions_admin_link">Выйти</span>
-                            </a>
+                            </button>
                         </div>
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1036,6 +1039,80 @@
         </div>
 
     </footer>
+
+    <div class="main-login _active">
+        <div class="main-login__overlay"></div>
+        <div class="main-login__content">
+            <div class="main-login__form">
+                <div class="main-login__form_block">
+                    <button class="main-login__close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <g clip-path="url(#clip0_1028_49727)">
+                                <path d="M7.97999 6.00037L11.6923 2.28802C12.1025 1.87784 12.1025 1.21284 11.6923 0.803306L11.1974 0.308402C10.7871 -0.101903 10.1221 -0.101903 9.7126 0.308402L6.00037 4.02063L2.28802 0.307633C1.87784 -0.102544 1.21284 -0.102544 0.803306 0.307633L0.307633 0.802536C-0.102544 1.21284 -0.102544 1.87784 0.307633 2.28738L4.02063 6.00037L0.308402 9.7126C-0.101903 10.1229 -0.101903 10.7879 0.308402 11.1974L0.803306 11.6923C1.21348 12.1025 1.87848 12.1025 2.28802 11.6923L6.00037 7.97999L9.7126 11.6923C10.1229 12.1025 10.7879 12.1025 11.1974 11.6923L11.6923 11.1974C12.1025 10.7871 12.1025 10.1221 11.6923 9.7126L7.97999 6.00037Z" fill="#514F4B" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1028_49727">
+                                    <rect width="12" height="12" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                    <div class="main-login__title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M22.5047 17.4057C21.7182 19.285 20.3199 20.8435 18.5365 21.8284C16.7532 22.8133 14.6894 23.1669 12.6799 22.8319C10.6704 22.4968 8.83299 21.4927 7.46569 19.9825C6.0984 18.4722 5.28139 16.5443 5.14715 14.5115C5.01292 12.4787 5.56934 10.4601 6.72618 8.78321C7.88301 7.10627 9.57242 5.8693 11.5204 5.27291C13.4684 4.67652 15.5608 4.75568 17.4581 5.49755C19.3555 6.23942 20.9466 7.6005 21.9734 9.36004L14.1665 13.9159L22.5047 17.4057Z" fill="#FF7347" />
+                            <path d="M26.6431 7.98737C25.1517 4.85138 22.5481 2.38156 19.3379 1.05755C16.1276 -0.266456 12.5399 -0.350147 9.27142 0.82273C6.00294 1.99561 3.28699 4.34134 1.65102 7.40438C0.0150438 10.4674 -0.424185 14.0292 0.418629 17.3979C1.26144 20.7666 3.32614 23.7019 6.21176 25.6337C9.09738 27.5655 12.598 28.3559 16.0337 27.8515C19.4694 27.347 22.595 25.5837 24.8036 22.904C27.0122 20.2243 28.146 16.67 27.9849 13.2012H25.1764C24.5525 13.2012 18.5826 13.2012 18.5826 13.2012C18.5826 13.2012 24.3063 15.976 24.9134 16.2702C24.5307 18.0464 23.7558 19.7547 22.634 21.1159C20.869 23.2574 18.371 24.6666 15.6253 25.0698C12.8795 25.4729 10.0819 24.8412 7.77583 23.2973C5.46971 21.7535 3.81965 19.4077 3.1461 16.7155C2.47254 14.0233 2.82356 11.1768 4.13099 8.72894C5.43842 6.28103 7.60894 4.40637 10.221 3.46904C12.8331 2.5317 15.7004 2.59859 18.2659 3.6567C20.8315 4.71482 22.9823 6.86915 24.1742 9.37536L26.6431 7.98737Z" fill="#FF7347" />
+                        </svg>
+                        <span>Добро пожаловать</span>
+                    </div>
+                    <div class="main-login__inputs">
+                        <div class="main-login__input">
+                            <input class="_input" type="text" placeholder="Введите ваш Email">
+                        </div>
+                        <div class="main-login__input">
+                            <input class="_input" type="text" placeholder="Введите ваш Password">
+                            <a class="_forget" href="#">Забыли?</a>
+                        </div>
+                        <div class="main-login__btns">
+                            <button class="main-login__login">Войти</button>
+                            <div class="main-login__noaccount">
+                                <span class="main-login__noaccount_title">У вас нет аккаунта?</span>
+                                <a class="main-login__noaccount_link" href="#">Зарегистрироваться</a>
+                            </div>
+                            <a class="main-login__social" href="#">
+                                <img class="main-login__social_img" src="assets/images/admin/login-steam.svg" alt="">
+                                <span>Войти с помощью Steam</span>
+                            </a>
+                            <a class="main-login__social" href="#">
+                                <img class="main-login__social_img" src="assets/images/admin/login-google.svg" alt="">
+                                <span>Войти с помощью Google</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-login__promo">
+                <svg class="main-login__promo_svg _svg-1" xmlns="http://www.w3.org/2000/svg" width="26" height="37" viewBox="0 0 26 37" fill="none">
+                    <rect width="11" height="37" rx="5.5" fill="#FF6C3D" />
+                    <rect x="15" width="11" height="37" rx="5.5" fill="#FF6C3D" />
+                </svg>
+                <svg class="main-login__promo_svg _svg-2" xmlns="http://www.w3.org/2000/svg" width="26" height="37" viewBox="0 0 26 37" fill="none">
+                    <rect width="11" height="37" rx="5.5" fill="#FF6C3D" />
+                    <rect x="15" width="11" height="37" rx="5.5" fill="#FF6C3D" />
+                </svg>
+                <div class="main-login__promo_content">
+                    <span class="main-login__promo_title">Промокод для вас</span>
+                    <span class="main-login__promo_subtitle">на скидку в <span class="_orange">20%</span> на новые позиции</span>
+                </div>
+                <button class="main-login__promo_copy">
+                    <img class="main-login__promo_copy_bg" src="../assets/images/admin/promo-btn-bg.svg" alt="">
+                    <span>NEW20BIS</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                        <path d="M15.584 27.6237H23.659C23.24 28.6707 22.5165 29.568 21.582 30.1994C20.6475 30.8308 19.5451 31.1673 18.4173 31.1653H8.50063C7.75642 31.1655 7.01945 31.0191 6.33185 30.7344C5.64425 30.4497 5.01948 30.0323 4.49324 29.5061C3.967 28.9798 3.54961 28.3551 3.26491 27.6675C2.9802 26.9799 2.83378 26.2429 2.83398 25.4987V14.1653C2.83566 12.7854 3.33993 11.4533 4.2525 10.4182C5.16507 9.38311 6.42343 8.71586 7.79227 8.54124V19.832C7.79227 24.1245 11.2914 27.6237 15.584 27.6237ZM27.6256 8.85282H30.629C30.5419 8.72514 30.4422 8.60651 30.3314 8.49868L25.5006 3.66762C25.3963 3.55733 25.2771 3.46212 25.1465 3.38473V6.37368C25.1496 7.03022 25.4118 7.65899 25.8761 8.12324C26.3403 8.5875 26.9691 8.84969 27.6256 8.85282ZM27.6256 10.9778C26.4053 10.9755 25.2355 10.4896 24.3726 9.6267C23.5097 8.76376 23.0238 7.59405 23.0215 6.37368V2.83203H15.584C14.8398 2.83182 14.1028 2.97825 13.4152 3.26295C12.7276 3.54765 12.1028 3.96504 11.5766 4.49128C11.0503 5.01752 10.6329 5.64229 10.3482 6.32989C10.0635 7.0175 9.91707 7.75446 9.91727 8.49868V19.832C9.91708 20.5762 10.0635 21.3132 10.3482 22.0008C10.6329 22.6884 11.0503 23.3132 11.5766 23.8394C12.1028 24.3656 12.7276 24.783 13.4152 25.0677C14.1028 25.3524 14.8398 25.4989 15.584 25.4987H25.5006C26.2448 25.4989 26.9818 25.3524 27.6694 25.0677C28.357 24.783 28.9818 24.3656 29.508 23.8394C30.0342 23.3132 30.4516 22.6884 30.7363 22.0008C31.021 21.3132 31.1675 20.5762 31.1673 19.832V10.9778H27.6256Z" fill="#FFAE95" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

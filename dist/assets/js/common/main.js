@@ -89,7 +89,7 @@ if (headerGameBtns)
   });
 
 /* Header Admin */
-const headerAdminBtn = document.querySelector(".header__actions_admin");
+const headerAdminBtn = document.querySelector(".header__actions_admin_open");
 const headerAdminDrop = document.querySelector(".header__actions_admin_drop");
 
 if (headerAdminBtn)
@@ -513,3 +513,19 @@ function updateDoingProgressBars() {
 
 // Call the function to update all progress bars initially
 updateDoingProgressBars();
+
+const mainLogin = document.querySelector(".main-login");
+const closeButton = document.querySelector(".main-login__close");
+const exitButton = document.querySelector(".header__actions_admin_item_exit");
+
+if (mainLogin && closeButton) {
+  closeButton.addEventListener("click", () => {
+    mainLogin.classList.remove("_active");
+  });
+}
+
+if (mainLogin && exitButton) {
+  exitButton.addEventListener("click", () => {
+    mainLogin.classList.add("_active");
+  });
+}
