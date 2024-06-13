@@ -7453,7 +7453,7 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 50px 30px;
+    padding: 60px 30px;
     overflow-y: scroll; }
     .main-login__content::-webkit-scrollbar {
       display: none; }
@@ -7470,12 +7470,19 @@ input[type=number] {
     .main-login__form_block {
       width: 100%;
       max-width: 610px; }
+    @media screen and (max-width: 979px) {
+      .main-login__form {
+        padding: 60px 12px 40px; } }
   .main-login__btns {
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
     gap: 30px 10px;
     margin-top: 10px; }
+    @media screen and (max-width: 979px) {
+      .main-login__btns {
+        grid-template-columns: 1fr;
+        gap: 10px; } }
   .main-login__close {
     border-radius: 5px;
     background: #2E2D2B;
@@ -7492,6 +7499,10 @@ input[type=number] {
       border-color: #FF6C3D; }
       .main-login__close:hover svg path {
         fill: #FF6C3D; }
+    @media screen and (max-width: 979px) {
+      .main-login__close {
+        top: 12px;
+        right: 12px; } }
   .main-login__login {
     border-radius: 3px;
     border: 1.258px solid #33302D;
@@ -7556,6 +7567,12 @@ input[type=number] {
     align-items: flex-end;
     flex-direction: column;
     line-height: 1.1; }
+    @media screen and (max-width: 979px) {
+      .main-login__noaccount {
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px; } }
     .main-login__noaccount_title {
       color: #847F7D;
       font-size: 14px; }
@@ -7576,11 +7593,20 @@ input[type=number] {
     align-items: center;
     grid-template-columns: 1fr 1fr;
     position: relative; }
+    @media screen and (max-width: 979px) {
+      .main-login__promo {
+        grid-template-columns: max-content;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px; } }
     .main-login__promo_content {
       display: flex;
       flex-direction: column;
       gap: 8px;
       line-height: 1; }
+      @media screen and (max-width: 979px) {
+        .main-login__promo_content {
+          text-align: center; } }
     .main-login__promo_title {
       font-size: 24px;
       font-weight: 700;
@@ -7610,6 +7636,14 @@ input[type=number] {
         position: absolute;
         width: auto;
         height: 150px; }
+        @media screen and (max-width: 979px) {
+          .main-login__promo_copy_bg {
+            height: 120px; } }
+      @media screen and (max-width: 979px) {
+        .main-login__promo_copy {
+          width: auto;
+          padding: 14px 20px;
+          font-size: 24px; } }
     .main-login__promo_svg {
       position: absolute; }
       .main-login__promo_svg._svg-1 {
