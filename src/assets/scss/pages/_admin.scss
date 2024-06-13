@@ -154,6 +154,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        text-align: center;
         padding: 0 25px 15px;
 
         .btn-admin {
@@ -996,7 +997,7 @@
             color: #6993FE;
         }
 
-        ._success{
+        ._success {
             color: $orange;
         }
     }
