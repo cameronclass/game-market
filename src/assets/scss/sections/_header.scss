@@ -615,9 +615,8 @@
     opacity: 0;
     width: 100%;
     border: 1px solid #522516;
-    background: rgba(28, 27, 25, 0.80);
+    background: #1A1917;
     backdrop-filter: blur(17.549999237060547px);
-    padding: 40px 0;
 
     &.active {
         opacity: 1;
@@ -628,8 +627,46 @@
 .logo-menu {
     &__block {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1;
+        padding: 40px 0 25px;
+
+        border-bottom: 1px solid #2D2D2D;
+
+        &_block {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__content {
+        padding-bottom: 40px;
+
+        &_title {
+            padding-top: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: $text-dark;
+        }
+    }
+
+    &__menu {
+        display: grid;
+        grid-template-columns: repeat(6, auto);
         gap: 20px;
+        margin-top: 30px;
+    }
+
+    &__item {
+        font-size: 14px;
+        color: $text-dark;
+        line-height: 1;
     }
 }
 
