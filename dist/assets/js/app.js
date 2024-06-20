@@ -12529,7 +12529,6 @@ let copyBtn = document.querySelector(".copy-js");
 
 /* Таймер */
 
-// future date for the countdown
 const countDownDate = new Date(2025, 0, 1, 10).getTime();
 const timerInfo = document.querySelector(".timer__info");
 const daysContainer = document.querySelector(".timer__day");
@@ -12538,35 +12537,52 @@ const minsContainer = document.querySelector(".timer__minutes");
 const secsContainer = document.querySelector(".timer__seconds");
 const messageContainer = document.querySelector(".timer__message");
 
-// updating the countdown
-const timer = setInterval(() => {
-  // today date and time
+const formatNumber = (number) => {
+  return `<div class="timer__wrapper">${number
+    .toString()
+    .split("")
+    .map(
+      (digit) =>
+        `<span class="timer__digit"><span class="timer__digit_num"> ${digit} </span></span>`
+    )
+    .join("")}</div>`;
+};
+
+const updateTimer = () => {
   const now = new Date().getTime();
-  // distance between now an the count down date
   const distance = countDownDate - now;
-  // calculate days, hours, mins, and secs
+
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
   const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const secs = Math.floor((distance % (1000 * 60)) / 1000);
-  // insert the datetime data
+
   if (daysContainer)
-    daysContainer.innerHTML = days + '<h3 class="timer__label">Дней</h3>';
+    daysContainer.innerHTML =
+      formatNumber(days) + '<h3 class="timer__label">Дней</h3>';
   if (hoursContainer)
-    hoursContainer.innerHTML = hours + '<h3 class="timer__label">Часов</h3>';
+    hoursContainer.innerHTML =
+      formatNumber(hours) + '<h3 class="timer__label">Часов</h3>';
   if (minsContainer)
-    minsContainer.innerHTML = mins + '<h3 class="timer__label">Минут</h3>';
+    minsContainer.innerHTML =
+      formatNumber(mins) + '<h3 class="timer__label">Минут</h3>';
   if (secsContainer)
-    secsContainer.innerHTML = secs + '<h3 class="timer__label">Секунд</h3>';
-  // what happens when countdown ends
+    secsContainer.innerHTML =
+      formatNumber(secs) + '<h3 class="timer__label">Секунд</h3>';
+
   if (distance < 0) {
     clearInterval(timer);
     if (timerInfo) timerInfo.classList.add("is-hidden");
     if (messageContainer) messageContainer.classList.add("is-visible");
   }
-}, 1000);
+};
+
+const timer = setInterval(updateTimer, 1000);
+
+updateTimer();
+
 
 /* Hamburger menu */
 const hamburgerButton = document.querySelector(".js-hamburger");

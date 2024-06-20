@@ -12789,3 +12789,93 @@ input[type=number] {
   .doing-card .done-card__info_users {
     border: 1px solid #353535;
     color: #847F7D; }
+
+.mobile-game-timer {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+  .mobile-game-timer__border {
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background: linear-gradient(90deg, #1A1917 0%, #3D8837 100%) padding-box, linear-gradient(to right, #ffffff00 4%, #ffffff00 50%, #3D8837) border-box;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); }
+  .mobile-game-timer__block {
+    background: #171614;
+    background: linear-gradient(90deg, #171614 0%, #171614 33%, #171614 86%, #20331d 100%);
+    display: flex;
+    align-items: center;
+    overflow: hidden; }
+  .mobile-game-timer__img {
+    width: 100%;
+    max-width: 250px;
+    height: 134px;
+    position: relative;
+    display: flex; }
+    .mobile-game-timer__img_item {
+      position: absolute;
+      width: 420px;
+      height: 100%;
+      object-fit: cover; }
+  .mobile-game-timer__title {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    height: 134px;
+    display: flex; }
+    .mobile-game-timer__title_item {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+  .mobile-game-timer__timer {
+    margin-left: auto;
+    padding-right: 40px; }
+  .mobile-game-timer .timer {
+    margin: 0; }
+    .mobile-game-timer .timer__message {
+      display: none; }
+    .mobile-game-timer .timer__day, .mobile-game-timer .timer__hours, .mobile-game-timer .timer__minutes, .mobile-game-timer .timer__seconds {
+      flex-direction: column-reverse; }
+    .mobile-game-timer .timer__label {
+      font-weight: 400;
+      color: #847F7D;
+      background: none;
+      background-clip: initial;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial; }
+    .mobile-game-timer .timer__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px; }
+    .mobile-game-timer .timer__digit {
+      position: relative;
+      padding: 3px 6px;
+      border-radius: 5px;
+      overflow: hidden; }
+      .mobile-game-timer .timer__digit::before {
+        content: "";
+        display: flex;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #2C2D2C; }
+      .mobile-game-timer .timer__digit::after {
+        content: "";
+        display: flex;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #222322; }
+      .mobile-game-timer .timer__digit_num {
+        background: linear-gradient(180deg, #FFF 0%, #999 74.47%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+        font-size: 46px;
+        position: relative;
+        z-index: 2; }

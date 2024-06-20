@@ -1,0 +1,129 @@
+.mobile-game-timer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &__border {
+        border-radius: 20px;
+        border: 1px solid transparent;
+        background: linear-gradient(90deg, #1A1917 0%, #3D8837 100%) padding-box, linear-gradient(to right, #ffffff00 4%, #ffffff00 50%, #3D8837) border-box;
+        position: relative;
+        overflow: hidden;
+
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    &__block {
+        background: rgb(23, 22, 20);
+        background: linear-gradient(90deg, rgba(23, 22, 20, 1) 0%, rgba(23, 22, 20, 1) 33%, rgba(23, 22, 20, 1) 86%, rgba(32, 51, 29, 1) 100%);
+
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 250px;
+        height: 134px;
+        position: relative;
+        display: flex;
+
+        &_item {
+            position: absolute;
+            width: 420px;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        height: 134px;
+        display: flex;
+
+        &_item {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__timer {
+        margin-left: auto;
+        padding-right: 40px;
+    }
+
+
+    .timer {
+        margin: 0;
+
+        &__message {
+            display: none;
+        }
+
+        &__day,
+        &__hours,
+        &__minutes,
+        &__seconds {
+            flex-direction: column-reverse;
+        }
+
+        &__label {
+            font-weight: 400;
+            color: $text-dark;
+            background: none;
+            background-clip: initial;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+        }
+
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        &__digit {
+            position: relative;
+            padding: 3px 6px;
+            border-radius: 5px;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                display: flex;
+                width: 100%;
+                height: 50%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: #2C2D2C;
+            }
+
+            &::after {
+                content: "";
+                display: flex;
+                width: 100%;
+                height: 50%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: #222322;
+            }
+
+            &_num {
+                background: linear-gradient(180deg, #FFF 0%, #999 74.47%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+                font-size: 46px;
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+
+}
