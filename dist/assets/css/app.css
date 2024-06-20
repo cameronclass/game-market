@@ -5738,6 +5738,9 @@ input[type=number] {
       transform: scale(1);
       opacity: 1;
       visibility: visible; }
+  .timer__wrapper {
+    display: flex;
+    align-items: center; }
 
 .statics-card {
   position: relative;
@@ -12838,7 +12841,7 @@ input[type=number] {
       flex-direction: column-reverse; }
     .mobile-game-timer .timer__label {
       font-weight: 400;
-      color: #847F7D;
+      color: #515151;
       background: none;
       background-clip: initial;
       -webkit-background-clip: initial;
@@ -12849,7 +12852,7 @@ input[type=number] {
       gap: 5px; }
     .mobile-game-timer .timer__digit {
       position: relative;
-      padding: 3px 6px;
+      padding: 3px 7px;
       border-radius: 5px;
       overflow: hidden; }
       .mobile-game-timer .timer__digit::before {
@@ -12879,3 +12882,15 @@ input[type=number] {
         font-size: 46px;
         position: relative;
         z-index: 2; }
+    .mobile-game-timer .timer__divide {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: auto;
+      margin: 20px 0 0; }
+      .mobile-game-timer .timer__divide_dot {
+        width: 6px;
+        height: 6px;
+        background: linear-gradient(180deg, #FFF 0%, #D0D0D0 74.47%); }
+        .mobile-game-timer .timer__divide_dot:nth-child(2) {
+          background: linear-gradient(180deg, #D0D0D0 0%, #999999 74.47%); }

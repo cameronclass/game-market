@@ -72,7 +72,7 @@
 
         &__label {
             font-weight: 400;
-            color: $text-dark;
+            color: #515151;
             background: none;
             background-clip: initial;
             -webkit-background-clip: initial;
@@ -87,7 +87,7 @@
 
         &__digit {
             position: relative;
-            padding: 3px 6px;
+            padding: 3px 7px;
             border-radius: 5px;
             overflow: hidden;
 
@@ -122,6 +122,24 @@
                 font-size: 46px;
                 position: relative;
                 z-index: 2;
+            }
+        }
+
+        &__divide {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: auto;
+            margin: 20px 0 0;
+
+            &_dot {
+                width: 6px;
+                height: 6px;
+                background: linear-gradient(180deg, #FFF 0%, #D0D0D0 74.47%);
+
+                &:nth-child(2) {
+                    background: linear-gradient(180deg, #D0D0D0 0%, #999999 74.47%);
+                }
             }
         }
     }

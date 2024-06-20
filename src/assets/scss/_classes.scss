@@ -316,6 +316,11 @@
         }
     }
 
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
 }
 
 .statics-card {
