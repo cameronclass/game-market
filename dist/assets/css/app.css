@@ -7122,11 +7122,24 @@ input[type=number] {
   grid-template-columns: repeat(6, auto);
   gap: 20px;
   margin-top: 30px; }
+  @media screen and (max-width: 1200px) {
+    .logo-menu__menu {
+      grid-template-columns: repeat(4, auto); } }
+  @media screen and (max-width: 979px) {
+    .logo-menu__menu {
+      grid-template-columns: 1fr;
+      justify-content: center; } }
 
 .logo-menu__item {
   font-size: 14px;
   color: #847F7D;
   line-height: 1; }
+  .logo-menu__item:hover {
+    color: #FF6C3D; }
+  @media screen and (max-width: 979px) {
+    .logo-menu__item {
+      width: 100%;
+      text-align: center; } }
 
 .js-search-menu {
   position: fixed;
