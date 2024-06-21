@@ -1166,11 +1166,73 @@
             backdrop-filter: blur(5.208461761474609px);
         }
 
+        &_svg {
+            width: 25px;
+        }
+
         svg path {
             transition: 200ms ease;
         }
 
         &:hover {}
+    }
+
+    &__gameitem {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 13px;
+        left: 13px;
+        border-radius: 5px;
+        background: #282725;
+        gap: 6px;
+        padding: 4px 7px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        text-transform: uppercase;
+        font-family: $font-roboto;
+        max-width: 150px;
+        justify-content: space-between;
+
+        &_img {
+            width: 22px;
+            height: 18px;
+            object-fit: contain;
+        }
+
+        span {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+
+    &__buycategory {
+        position: absolute;
+        z-index: 3;
+        bottom: 33%;
+        left: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        max-width: calc(100% - 20px);
+
+        &_item {
+            border-radius: 5px;
+            background: rgba(40, 39, 37, 0.80);
+            backdrop-filter: blur(10.100000381469727px);
+            font-size: 12px;
+            line-height: 1;
+            font-family: $font-roboto;
+            padding: 4px 15px;
+            text-align: center;
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
     }
 
     &:hover {

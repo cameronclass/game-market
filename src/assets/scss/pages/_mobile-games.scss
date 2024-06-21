@@ -145,3 +145,28 @@
     }
 
 }
+
+.mobile-game-cards {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px 10px;
+        justify-content: space-between;
+
+        @include netbook {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__item {
+        width: auto;
+        justify-self: center;
+    }
+}

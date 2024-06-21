@@ -6360,8 +6360,57 @@ input[type=number] {
       background: rgba(255, 253, 252, 0.5);
       box-shadow: 2.815px 2.815px 3.754px -2.815px rgba(166, 77, 49, 0.73);
       backdrop-filter: blur(5.20846px); }
+    .new-card__btn_svg {
+      width: 25px; }
     .new-card__btn svg path {
       transition: 200ms ease; }
+  .new-card__gameitem {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 13px;
+    left: 13px;
+    border-radius: 5px;
+    background: #282725;
+    gap: 6px;
+    padding: 4px 7px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    max-width: 150px;
+    justify-content: space-between; }
+    .new-card__gameitem_img {
+      width: 22px;
+      height: 18px;
+      object-fit: contain; }
+    .new-card__gameitem span {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap; }
+  .new-card__buycategory {
+    position: absolute;
+    z-index: 3;
+    bottom: 33%;
+    left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    max-width: calc(100% - 20px); }
+    .new-card__buycategory_item {
+      border-radius: 5px;
+      background: rgba(40, 39, 37, 0.8);
+      backdrop-filter: blur(10.1px);
+      font-size: 12px;
+      line-height: 1;
+      font-family: "Roboto", sans-serif;
+      padding: 4px 15px;
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap; }
   .new-card:hover .new-card__svg path {
     stroke: #FF6C3D;
     transition: 300ms ease; }
@@ -12894,3 +12943,21 @@ input[type=number] {
         background: linear-gradient(180deg, #FFF 0%, #D0D0D0 74.47%); }
         .mobile-game-timer .timer__divide_dot:nth-child(2) {
           background: linear-gradient(180deg, #D0D0D0 0%, #999999 74.47%); }
+
+.mobile-game-cards {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+  .mobile-game-cards__block {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px 10px;
+    justify-content: space-between; }
+    @media screen and (max-width: 1200px) {
+      .mobile-game-cards__block {
+        grid-template-columns: repeat(4, 1fr); } }
+    @media screen and (max-width: 979px) {
+      .mobile-game-cards__block {
+        grid-template-columns: repeat(2, 1fr); } }
+  .mobile-game-cards__item {
+    width: auto;
+    justify-self: center; }
