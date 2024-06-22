@@ -1215,7 +1215,7 @@
         left: 10px;
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 3px;
         width: 100%;
         max-width: calc(100% - 20px);
 
@@ -1226,7 +1226,7 @@
             font-size: 12px;
             line-height: 1;
             font-family: $font-roboto;
-            padding: 4px 15px;
+            padding: 6px 15px;
             text-align: center;
 
             text-overflow: ellipsis;

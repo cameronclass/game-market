@@ -6396,7 +6396,7 @@ input[type=number] {
     left: 10px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 3px;
     width: 100%;
     max-width: calc(100% - 20px); }
     .new-card__buycategory_item {
@@ -6406,7 +6406,7 @@ input[type=number] {
       font-size: 12px;
       line-height: 1;
       font-family: "Roboto", sans-serif;
-      padding: 4px 15px;
+      padding: 6px 15px;
       text-align: center;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -12951,13 +12951,14 @@ input[type=number] {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px 10px;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-bottom: 30px; }
     @media screen and (max-width: 1200px) {
       .mobile-game-cards__block {
-        grid-template-columns: repeat(4, 1fr); } }
+        grid-template-columns: repeat(3, 1fr); } }
     @media screen and (max-width: 979px) {
       .mobile-game-cards__block {
-        grid-template-columns: repeat(2, 1fr); } }
+        grid-template-columns: repeat(1, 1fr); } }
   .mobile-game-cards__item {
     width: auto;
     justify-self: center; }
