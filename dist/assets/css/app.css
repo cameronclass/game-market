@@ -6695,6 +6695,86 @@ input[type=number] {
     .steam-card__add:hover svg path, .steam-card__favourite:hover svg path {
       fill: #FF6C3D; }
 
+/* Forms */
+.form-input {
+  padding: 18px 20px;
+  border-radius: 6px;
+  border: 1px solid #34312D;
+  background: #1C1B19;
+  position: relative;
+  z-index: 10; }
+  .form-input__btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    font-size: 12px;
+    background: #282725;
+    padding: 8px 25px;
+    color: #847F7D;
+    border: 1px solid transparent;
+    transition: 300ms ease;
+    z-index: 11; }
+    .form-input__btn:hover {
+      color: white;
+      border: 1px solid #FF6C3D; }
+    @media screen and (max-width: 979px) {
+      .form-input__btn {
+        padding: 8px 12px; } }
+
+.form-radio {
+  margin: 0;
+  width: 100%; }
+  .form-radio input {
+    display: none; }
+    .form-radio input:checked ~ span {
+      color: white;
+      border-color: #FF6C3D; }
+  .form-radio span {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    color: #847F7D;
+    border-radius: 3px;
+    padding: 15px 30px;
+    border: 1.2px solid #33302D;
+    background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+    transition: 300ms ease;
+    cursor: pointer; }
+    .form-radio span:hover {
+      color: white;
+      border-color: #FF6C3D; }
+    @media screen and (max-width: 979px) {
+      .form-radio span {
+        padding: 12px; } }
+
+.form-group {
+  position: relative; }
+  .form-group:hover svg path {
+    fill: #D6B13A; }
+
+.form-select {
+  position: relative; }
+  .form-select__options {
+    position: absolute;
+    top: calc(100% - 5px);
+    width: 100%;
+    padding-top: 5px;
+    border-radius: 0 0 6px 6px;
+    border: 1px solid #34312D;
+    background: #1C1B19;
+    display: none;
+    z-index: 9; }
+  .form-select__option {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 14px; }
+    .form-select__option:hover {
+      background-color: #292825; }
+    .form-select__option.hidden {
+      display: none; }
+
 /* Sections for all pages */
 .header {
   position: fixed;
@@ -11651,34 +11731,8 @@ input[type=number] {
       .steam-login__form {
         background: transparent;
         padding: 0; } }
-    .steam-login__form_group {
-      position: relative; }
-      .steam-login__form_group:hover .steam-login__form_svg path {
-        fill: #D6B13A; }
     .steam-login__form_input {
-      padding: 18px 20px;
-      padding-left: 50px;
-      border-radius: 6px;
-      border: 1px solid #34312D;
-      background: #1C1B19; }
-    .steam-login__form_btn {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      border-radius: 4px;
-      font-size: 12px;
-      background: #282725;
-      padding: 8px 25px;
-      color: #847F7D;
-      border: 1px solid transparent;
-      transition: 300ms ease; }
-      .steam-login__form_btn:hover {
-        color: white;
-        border: 1px solid #FF6C3D; }
-      @media screen and (max-width: 979px) {
-        .steam-login__form_btn {
-          padding: 8px 12px; } }
+      padding-left: 50px; }
     .steam-login__form_svg {
       position: absolute;
       left: 20px;
@@ -11698,31 +11752,6 @@ input[type=number] {
         .steam-login__form_select {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr 1fr; } }
-    .steam-login__form_radio {
-      margin: 0;
-      width: 100%; }
-      .steam-login__form_radio input {
-        display: none; }
-        .steam-login__form_radio input:checked ~ span {
-          color: white;
-          border-color: #FF6C3D; }
-      .steam-login__form_radio span {
-        display: flex;
-        justify-content: center;
-        font-size: 12px;
-        color: #847F7D;
-        border-radius: 3px;
-        padding: 15px 30px;
-        border: 1.2px solid #33302D;
-        background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
-        transition: 300ms ease;
-        cursor: pointer; }
-        .steam-login__form_radio span:hover {
-          color: white;
-          border-color: #FF6C3D; }
-        @media screen and (max-width: 979px) {
-          .steam-login__form_radio span {
-            padding: 12px; } }
   .steam-login__info {
     width: 100%;
     max-width: 403px;
@@ -12962,3 +12991,69 @@ input[type=number] {
   .mobile-game-cards__item {
     width: auto;
     justify-self: center; }
+
+.mobile-game-form {
+  margin-top: 20px;
+  margin-bottom: 40px; }
+  .mobile-game-form__header {
+    display: flex;
+    align-items: center;
+    position: relative; }
+    .mobile-game-form__header_bg {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%; }
+    .mobile-game-form__header_content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      height: 100%;
+      padding: 10px 20px; }
+    .mobile-game-form__header_logo {
+      width: 104px;
+      height: 104px;
+      object-fit: contain; }
+    .mobile-game-form__header_title {
+      font-size: 24px;
+      font-weight: 600;
+      width: 100%;
+      max-width: 288px;
+      line-height: 1.3; }
+    .mobile-game-form__header_unit {
+      width: 212px;
+      height: 130px;
+      object-fit: contain;
+      margin-left: auto; }
+  .mobile-game-form__block {
+    display: flex;
+    gap: 20px; }
+    @media screen and (max-width: 1200px) {
+      .mobile-game-form__block {
+        flex-direction: column; } }
+  .mobile-game-form__form {
+    border-radius: 10px;
+    background: #1A1917;
+    width: 100%; }
+  .mobile-game-form__inputs {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; }
+  .mobile-game-form__selects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; }
+  .mobile-game-form__checkbox {
+    width: 100%;
+    max-width: calc(50% - 5px); }
+  .mobile-game-form .steam-login__info {
+    position: sticky;
+    top: 50px; }
+  .mobile-game-form .steam-login__pay {
+    margin-top: 15px; }

@@ -1641,3 +1641,114 @@
         }
     }
 }
+
+
+/* Forms */
+.form-input {
+    padding: 18px 20px;
+    border-radius: 6px;
+    border: 1px solid #34312D;
+    background: #1C1B19;
+    position: relative;
+    z-index: 10;
+
+    &__btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 4px;
+        font-size: 12px;
+        background: #282725;
+        padding: 8px 25px;
+        color: $text-dark;
+        border: 1px solid transparent;
+        transition: 300ms ease;
+        z-index: 11;
+
+        &:hover {
+            color: white;
+            border: 1px solid $orange;
+        }
+
+        @include mobile {
+            padding: 8px 12px;
+        }
+    }
+}
+
+.form-radio {
+    margin: 0;
+    width: 100%;
+
+    input {
+        display: none;
+
+        &:checked~span {
+            color: white;
+            border-color: $orange;
+        }
+    }
+
+    span {
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        color: $text-dark;
+        border-radius: 3px;
+        padding: 15px 30px;
+        border: 1.2px solid #33302D;
+        background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
+        transition: 300ms ease;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+            border-color: $orange;
+        }
+
+        @include mobile {
+            padding: 12px;
+        }
+    }
+}
+
+.form-group {
+    position: relative;
+
+    &:hover {
+        svg path {
+            fill: #D6B13A;
+        }
+    }
+}
+
+.form-select {
+    position: relative;
+
+    &__options {
+        position: absolute;
+        top: calc(100% - 5px);
+        width: 100%;
+        padding-top: 5px;
+        border-radius: 0 0 6px 6px;
+        border: 1px solid #34312D;
+        background: #1C1B19;
+        display: none;
+        z-index: 9;
+    }
+
+    &__option {
+        padding: 12px 15px;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+            background-color: lighten($color: #1C1B19, $amount: 5);
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+}

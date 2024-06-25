@@ -585,46 +585,11 @@
             padding: 0;
         }
 
-        &_group {
-            position: relative;
-
-            &:hover {
-                .steam-login__form_svg path {
-                    fill: #D6B13A;
-                }
-            }
-        }
-
         &_input {
-            padding: 18px 20px;
             padding-left: 50px;
-            border-radius: 6px;
-            border: 1px solid #34312D;
-            background: #1C1B19;
         }
 
-        &_btn {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            border-radius: 4px;
-            font-size: 12px;
-            background: #282725;
-            padding: 8px 25px;
-            color: $text-dark;
-            border: 1px solid transparent;
-            transition: 300ms ease;
-
-            &:hover {
-                color: white;
-                border: 1px solid $orange;
-            }
-
-            @include mobile {
-                padding: 8px 12px;
-            }
-        }
+        &_btn {}
 
         &_svg {
             position: absolute;
@@ -649,42 +614,6 @@
             @include mobile {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
-            }
-        }
-
-        &_radio {
-            margin: 0;
-            width: 100%;
-
-            input {
-                display: none;
-
-                &:checked~span {
-                    color: white;
-                    border-color: $orange;
-                }
-            }
-
-            span {
-                display: flex;
-                justify-content: center;
-                font-size: 12px;
-                color: $text-dark;
-                border-radius: 3px;
-                padding: 15px 30px;
-                border: 1.2px solid #33302D;
-                background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
-                transition: 300ms ease;
-                cursor: pointer;
-
-                &:hover {
-                    color: white;
-                    border-color: $orange;
-                }
-
-                @include mobile {
-                    padding: 12px;
-                }
             }
         }
     }

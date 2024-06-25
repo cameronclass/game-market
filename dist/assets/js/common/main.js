@@ -545,3 +545,51 @@ if (mainLogin && exitButton) {
     mainLogin.classList.add("_active");
   });
 }
+
+
+
+/* Form Select */
+const formSelects = document.querySelectorAll(".form-select");
+
+formSelects.forEach((formSelect) => {
+  const searchInput = formSelect.querySelector(".form-input");
+  const selectOptions = formSelect.querySelector(".form-select__options");
+  const options = formSelect.querySelectorAll(".form-select__option");
+
+  searchInput.addEventListener("focus", () => {
+    selectOptions.style.display = "block";
+  });
+
+  searchInput.addEventListener("input", () => {
+    const filter = searchInput.value.toLowerCase();
+    options.forEach((option) => {
+      const text = option.textContent.toLowerCase();
+      if (text.includes(filter)) {
+        option.classList.remove("hidden");
+      } else {
+        option.classList.add("hidden");
+      }
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".form-select")) {
+      selectOptions.style.display = "none";
+    }
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      searchInput.value = option.textContent;
+      selectOptions.style.display = "none";
+    });
+  });
+
+  if (options.length > 4) {
+    selectOptions.style.maxHeight = "150px";
+    selectOptions.style.overflowY = "scroll";
+  } else {
+    selectOptions.style.maxHeight = "";
+    selectOptions.style.overflowY = "";
+  }
+});
