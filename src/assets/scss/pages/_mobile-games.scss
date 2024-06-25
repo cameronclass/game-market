@@ -233,10 +233,16 @@
     }
 
     &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__frame {
         border-radius: 10px;
         background: #1A1917;
         width: 100%;
-
     }
 
     &__inputs {
@@ -259,7 +265,7 @@
 
     .steam-login__info {
         position: sticky;
-        top: 50px;
+        top: 90px;
     }
 
     .steam-login__pay {
