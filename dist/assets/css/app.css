@@ -11807,14 +11807,20 @@ input[type=number] {
     max-width: 403px;
     border-radius: 10px;
     background: #1A1917;
-    padding: 10px; }
+    padding: 10px;
+    display: flex;
+    flex-direction: column; }
     @media screen and (max-width: 1200px) {
       .steam-login__info {
-        max-width: 100%; } }
+        max-width: 100%;
+        flex-direction: row;
+        gap: 40px; } }
     @media screen and (max-width: 979px) {
       .steam-login__info {
+        flex-direction: column;
         background: transparent;
-        padding: 0; } }
+        padding: 0;
+        gap: 0; } }
     .steam-login__info_subtitle {
       font-size: 13px;
       color: #847F7D;
@@ -11864,6 +11870,10 @@ input[type=number] {
         width: 22px;
         height: 18px;
         object-fit: contain; }
+    .steam-login__info_1 {
+      width: 100%; }
+    .steam-login__info_2 {
+      width: 100%; }
   .steam-login__pay {
     border-radius: 4px;
     background: #1D1D1B;
@@ -13126,6 +13136,9 @@ input[type=number] {
       height: 130px;
       object-fit: contain;
       margin-left: auto; }
+      @media screen and (max-width: 979px) {
+        .mobile-game-form__header_unit {
+          display: none; } }
   .mobile-game-form__block {
     display: flex;
     gap: 20px; }
@@ -13137,6 +13150,12 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     gap: 20px; }
+  .mobile-game-form__info {
+    width: 100%;
+    max-width: 403px; }
+    @media screen and (max-width: 1200px) {
+      .mobile-game-form__info {
+        max-width: 100%; } }
   .mobile-game-form__frame {
     border-radius: 10px;
     background: #1A1917;
@@ -13150,9 +13169,15 @@ input[type=number] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px; }
+    @media screen and (max-width: 979px) {
+      .mobile-game-form__selects {
+        grid-template-columns: 1fr; } }
   .mobile-game-form__checkbox {
     width: 100%;
     max-width: calc(50% - 5px); }
+    @media screen and (max-width: 1200px) {
+      .mobile-game-form__checkbox {
+        max-width: 100%; } }
   .mobile-game-form .steam-login__info {
     position: sticky;
     top: 90px; }
@@ -13179,6 +13204,10 @@ input[type=number] {
     display: grid;
     gap: 14px 12px;
     grid-template-columns: repeat(3, 1fr); }
+    @media screen and (max-width: 979px) {
+      .mobile-game-add__cards {
+        grid-template-columns: 1fr;
+        gap: 7px; } }
   .mobile-game-add__card {
     display: flex;
     flex-direction: column;
@@ -13243,6 +13272,12 @@ input[type=number] {
       gap: 6px;
       line-height: 1;
       margin-top: 8px; }
+      @media screen and (max-width: 979px) {
+        .mobile-game-add__card_text {
+          position: absolute;
+          left: 45%;
+          top: 45%;
+          transform: translate(-50%, -50%); } }
       .mobile-game-add__card_text_num {
         font-size: 16px;
         font-weight: 700;

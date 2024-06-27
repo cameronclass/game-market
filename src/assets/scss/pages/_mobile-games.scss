@@ -220,6 +220,10 @@
             height: 130px;
             object-fit: contain;
             margin-left: auto;
+
+            @include mobile {
+                display: none;
+            }
         }
     }
 
@@ -239,6 +243,15 @@
         gap: 20px;
     }
 
+    &__info {
+        width: 100%;
+        max-width: 403px;
+
+        @include netbook {
+            max-width: 100%;
+        }
+    }
+
     &__frame {
         border-radius: 10px;
         background: #1A1917;
@@ -256,11 +269,19 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__checkbox {
         width: 100%;
         max-width: calc(50% - 5px);
+
+        @include netbook {
+            max-width: 100%;
+        }
     }
 
     .steam-login__info {
@@ -301,6 +322,11 @@
         display: grid;
         gap: 14px 12px;
         grid-template-columns: repeat(3, 1fr);
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 7px;
+        }
     }
 
     &__card {
@@ -390,6 +416,13 @@
             gap: 6px;
             line-height: 1;
             margin-top: 8px;
+
+            @include mobile {
+                position: absolute;
+                left: 45%;
+                top: 45%;
+                transform: translate(-50%, -50%);
+            }
 
             &_num {
                 font-size: 16px;

@@ -624,14 +624,20 @@
         border-radius: 10px;
         background: #1A1917;
         padding: 10px;
+        display: flex;
+        flex-direction: column;
 
         @include netbook {
             max-width: 100%;
+            flex-direction: row;
+            gap: 40px;
         }
 
         @include mobile {
+            flex-direction: column;
             background: transparent;
             padding: 0;
+            gap: 0;
         }
 
         &_subtitle {
@@ -699,6 +705,14 @@
                 height: 18px;
                 object-fit: contain;
             }
+        }
+
+        &_1 {
+            width: 100%;
+        }
+
+        &_2 {
+            width: 100%;
         }
     }
 
