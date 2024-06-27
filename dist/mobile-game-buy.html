@@ -705,13 +705,14 @@
                             <div class="mobile-game-form__inputs">
                                 <div class="form-group">
                                     <input class="form-input" placeholder="Введите свой ID">
-                                    <button class="form-input__btn">Не могуй найти ID</button>
+                                    <button class="form-input__btn" type="button">Не могуй найти ID</button>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-input" placeholder="Zone ID">
-                                    <button class="form-input__btn">Не могуй найти Zone ID</button>
+                                    <button class="form-input__btn" type="button">Не могуй найти Zone ID</button>
                                 </div>
                                 <div class="mobile-game-form__selects">
+
                                     <div class="form-select">
                                         <input type="text" class="form-input" placeholder="Выберите регион" required>
                                         <div class="form-select__options">
@@ -722,7 +723,29 @@
                                             <div class="form-select__option">Server 5</div>
                                             <div class="form-select__option">Server 6</div>
                                         </div>
+
+                                        <div class="form-select__region" data-custom-select>
+                                            <input type="hidden" name="server-1" data-select-input>
+                                            <div class="select-trigger" data-select-trigger>
+                                                <img src="assets/images/flags/russia.svg" alt="Flag">
+                                                <span class="select-trigger__arrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8081 3.98863L6.4631 9.33359C6.33958 9.4571 6.1749 9.5249 5.99549 9.5249C5.81968 9.5249 5.6549 9.4571 5.53159 9.33359L0.191511 3.99371C0.0679997 3.8701 0 3.70532 0 3.52951C0 3.35371 0.0679022 3.18883 0.191511 3.06532L0.584778 2.67205C0.70829 2.54854 0.873167 2.48035 1.04897 2.48035C1.22478 2.48035 1.38956 2.54854 1.51316 2.67205L5.99734 7.15623L10.4865 2.66688C10.61 2.54347 10.7748 2.47537 10.9507 2.47537C11.1265 2.47537 11.2912 2.54347 11.4148 2.66688L11.8081 3.06034C12.064 3.31625 12.064 3.73273 11.8081 3.98863Z" fill="#847F7D" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="form-select__region_options" data-select-options>
+                                                <div class="form-select__region_option" data-select-option data-value="ru" data-flag="assets/images/flags/russia.svg">
+                                                    <img src="assets/images/flags/russia.svg" alt="Russian Flag">
+                                                </div>
+                                                <div class="form-select__region_option" data-select-option data-value="en" data-flag="assets/images/flags/russia.svg">
+                                                    <img src="assets/images/flags/russia.svg" alt="English Flag">
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
+
                                     <div class="form-select">
                                         <input type="text" class="form-input" placeholder="Выберите Сервер">
                                         <div class="form-select__options">
@@ -733,9 +756,30 @@
                                             <div class="form-select__option">Server 5</div>
                                             <div class="form-select__option">Server 6</div>
                                         </div>
-                                    </div>
-                                </div>
 
+                                        <div class="form-select__region" data-custom-select>
+                                            <input type="hidden" name="server-1" data-select-input>
+                                            <div class="select-trigger" data-select-trigger>
+                                                <img src="assets/images/flags/russia.svg" alt="Flag">
+                                                <span class="select-trigger__arrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                                        <path d="M11.8081 3.98863L6.4631 9.33359C6.33958 9.4571 6.1749 9.5249 5.99549 9.5249C5.81968 9.5249 5.6549 9.4571 5.53159 9.33359L0.191511 3.99371C0.0679997 3.8701 0 3.70532 0 3.52951C0 3.35371 0.0679022 3.18883 0.191511 3.06532L0.584778 2.67205C0.70829 2.54854 0.873167 2.48035 1.04897 2.48035C1.22478 2.48035 1.38956 2.54854 1.51316 2.67205L5.99734 7.15623L10.4865 2.66688C10.61 2.54347 10.7748 2.47537 10.9507 2.47537C11.1265 2.47537 11.2912 2.54347 11.4148 2.66688L11.8081 3.06034C12.064 3.31625 12.064 3.73273 11.8081 3.98863Z" fill="#847F7D" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="form-select__region_options" data-select-options>
+                                                <div class="form-select__region_option" data-select-option data-value="ru" data-flag="assets/images/flags/russia.svg">
+                                                    <img src="assets/images/flags/russia.svg" alt="Russian Flag">
+                                                </div>
+                                                <div class="form-select__region_option" data-select-option data-value="en" data-flag="assets/images/flags/russia.svg">
+                                                    <img src="assets/images/flags/russia.svg" alt="English Flag">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
                                 <div class="mobile-game-form__checkbox basket-page__price_contract">
                                     <a class="contract-offer" href="#">
                                         <span class="contract-offer__text">Я указал верный </span>
@@ -746,10 +790,12 @@
                                         <span class="contract-offer__slider"></span>
                                     </label>
                                 </div>
+
+
                             </div>
                         </div>
 
-                        <div class="mobile-game-form__frame">
+                        <!--  <div class="mobile-game-form__frame">
                             <div class="mobile-game-form__header">
                                 <img class="mobile-game-form__header_bg" src="assets/images/mobile-game/form-bg.png" class="mobile-game-form__header_bg" alt="">
                                 <div class="mobile-game-form__header_content">
@@ -758,7 +804,7 @@
                                     <img class="mobile-game-form__header_unit" src="assets/images/mobile-game/form-unit.png" alt="">
                                 </div>
                             </div>
-
+    
                             <div class="mobile-game-form__inputs">
                                 <div class="form-group">
                                     <input class="form-input" placeholder="Введите свой ID">
@@ -792,7 +838,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+    
                                 <div class="mobile-game-form__checkbox basket-page__price_contract">
                                     <a class="contract-offer" href="#">
                                         <span class="contract-offer__text">Я указал верный </span>
@@ -803,10 +849,10 @@
                                         <span class="contract-offer__slider"></span>
                                     </label>
                                 </div>
+    
                             </div>
                         </div>
-
-
+     -->
                     </div>
 
                     <div class="mobile-game-form__info">
@@ -880,7 +926,7 @@
                                 </div>
                             </div>
                             <button class="steam-login__pay_btn steam-login__pay_btn_main">Пополнить</button>
-                            <div class="steam-login__info_subtitle_2">Нажимая “ПОПОЛНИТЬ”, вы подтверждаете, что указали логин Steam, а не Ваш Никнейм</div>
+                            <div class="steam-login__info_subtitle_2">Нажимая “Оплатить”, вы подтверждаете, что указали верный СВОЙ ID в PUBG mobile</div>
                         </div>
                     </div>
                 </form>

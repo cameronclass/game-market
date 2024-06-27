@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     @@include("common/slider.js")
     @@include("common/main.js")
+    @@include("common/select.js")
 
 });
 

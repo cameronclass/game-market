@@ -783,8 +783,6 @@
         transform-origin: center;
     }
 
-
-
     .select-selected.select-arrow-active:after {
         transform: translateY(-50%) rotate(180deg);
     }
@@ -1751,4 +1749,75 @@
             display: none;
         }
     }
+
+    &__region {
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+
+        &_options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            border-radius: 4px;
+            background: #282725;
+            z-index: 1000;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+
+        &_option {
+            padding: 6px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 20px;
+                height: 20px;
+                object-fit: contain;
+            }
+
+            &:hover,
+            &.active {
+                background: darken($color: #282725, $amount: 5);
+            }
+        }
+    }
+
+    .select-trigger {
+        border-radius: 4px;
+        background: #282725;
+        padding: 6px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__arrow {
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+
+        &.open .select-trigger__arrow {
+            transform: rotate(180deg);
+        }
+    }
+
+
+
+    /* .select-trigger::after {
+        content: '>';
+        margin-left: 10px;
+        transition: transform 0.3s;
+    }
+
+    .select-trigger.open::after {
+        transform: rotate(180deg);
+    } */
 }

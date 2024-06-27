@@ -6754,7 +6754,16 @@ input[type=number] {
     fill: #D6B13A; }
 
 .form-select {
-  position: relative; }
+  position: relative;
+  /* .select-trigger::after {
+        content: '>';
+        margin-left: 10px;
+        transition: transform 0.3s;
+    }
+
+    .select-trigger.open::after {
+        transform: rotate(180deg);
+    } */ }
   .form-select__options {
     position: absolute;
     top: calc(100% - 5px);
@@ -6773,6 +6782,48 @@ input[type=number] {
       background-color: #292825; }
     .form-select__option.hidden {
       display: none; }
+  .form-select__region {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px; }
+    .form-select__region_options {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      border-radius: 4px;
+      background: #282725;
+      z-index: 1000;
+      max-height: 100px;
+      overflow-y: auto; }
+    .form-select__region_option {
+      padding: 6px 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .form-select__region_option img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain; }
+      .form-select__region_option:hover, .form-select__region_option.active {
+        background: #1b1a19; }
+  .form-select .select-trigger {
+    border-radius: 4px;
+    background: #282725;
+    padding: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .form-select .select-trigger__arrow {
+      margin-left: 10px;
+      transition: transform 0.3s; }
+    .form-select .select-trigger.open .select-trigger__arrow {
+      transform: rotate(180deg); }
 
 /* Sections for all pages */
 .header {
@@ -11894,7 +11945,7 @@ input[type=number] {
     position: relative;
     left: -10px;
     background: linear-gradient(90deg, rgba(255, 108, 61, 0.1) 0%, rgba(25, 25, 23, 0) 100%);
-    padding: 12px 20px 2px;
+    padding: 12px 20px 5px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -11930,7 +11981,7 @@ input[type=number] {
       line-height: 1;
       display: flex;
       flex-direction: column;
-      gap: 7px; }
+      gap: 4px; }
       .steam-login__price_get_num {
         font-size: 20px;
         color: #D7B038;
