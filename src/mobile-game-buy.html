@@ -101,6 +101,7 @@ title: Пополнение стим
                         </div>
 
                         <div class="mobile-game-form__inputs">
+
                             <div class="form-group">
                                 <input class="form-input" placeholder="Введите свой ID">
                                 <button class="form-input__btn" type="button">Не могуй найти ID</button>
@@ -109,6 +110,7 @@ title: Пополнение стим
                                 <input class="form-input" placeholder="Zone ID">
                                 <button class="form-input__btn" type="button">Не могуй найти Zone ID</button>
                             </div>
+
                             <div class="mobile-game-form__selects">
 
                                 <div class="form-select">
@@ -122,8 +124,9 @@ title: Пополнение стим
                                         <div class="form-select__option">Server 6</div>
                                     </div>
 
+                                    <!-- здесь по value можно узнать какой выбран <input type="hidden" value="">-->
                                     <div class="form-select__region" data-custom-select>
-                                        <input type="hidden" name="server-1" data-select-input>
+                                        <input type="hidden" value="" name="server-1" data-select-input>
                                         <div class="select-trigger" data-select-trigger>
                                             <img src="assets/images/flags/russia.svg" alt="Flag">
                                             <span class="select-trigger__arrow">
@@ -154,9 +157,9 @@ title: Пополнение стим
                                         <div class="form-select__option">Server 5</div>
                                         <div class="form-select__option">Server 6</div>
                                     </div>
-
+                                    <!-- здесь по value можно узнать какой выбран <input type="hidden" value="">-->
                                     <div class="form-select__region" data-custom-select>
-                                        <input type="hidden" name="server-1" data-select-input>
+                                        <input type="hidden" value="" name="server-1" data-select-input>
                                         <div class="select-trigger" data-select-trigger>
                                             <img src="assets/images/flags/russia.svg" alt="Flag">
                                             <span class="select-trigger__arrow">
@@ -174,10 +177,11 @@ title: Пополнение стим
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
 
                             </div>
+
                             <div class="mobile-game-form__checkbox basket-page__price_contract">
                                 <a class="contract-offer" href="#">
                                     <span class="contract-offer__text">Я указал верный </span>
@@ -193,64 +197,303 @@ title: Пополнение стим
                         </div>
                     </div>
 
-                    <!--  <div class="mobile-game-form__frame">
-                        <div class="mobile-game-form__header">
-                            <img class="mobile-game-form__header_bg" src="assets/images/mobile-game/form-bg.png" class="mobile-game-form__header_bg" alt="">
-                            <div class="mobile-game-form__header_content">
-                                <img class="mobile-game-form__header_logo" src="assets/images/mobile-game/form-logo.png" alt="">
-                                <div class="mobile-game-form__header_title">Пополнить счет в PUBG: Mobile</div>
-                                <img class="mobile-game-form__header_unit" src="assets/images/mobile-game/form-unit.png" alt="">
-                            </div>
+                    <div class="mobile-game-form__frame mobile-game-add">
+                        <div class="mobile-game-add__title">
+                            <img src="assets/images/mobile-game/pubg-item.png" alt="">
+                            <span>UC</span>
                         </div>
-
-                        <div class="mobile-game-form__inputs">
-                            <div class="form-group">
-                                <input class="form-input" placeholder="Введите свой ID">
-                                <button class="form-input__btn">Не могуй найти ID</button>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-input" placeholder="Zone ID">
-                                <button class="form-input__btn">Не могуй найти Zone ID</button>
-                            </div>
-                            <div class="mobile-game-form__selects">
-                                <div class="form-select">
-                                    <input type="text" class="form-input" placeholder="Выберите регион" required>
-                                    <div class="form-select__options">
-                                        <div class="form-select__option">Server 1</div>
-                                        <div class="form-select__option">Server 2</div>
-                                        <div class="form-select__option">Server 3</div>
-                                        <div class="form-select__option">Server 4</div>
-                                        <div class="form-select__option">Server 5</div>
-                                        <div class="form-select__option">Server 6</div>
-                                    </div>
-                                </div>
-                                <div class="form-select">
-                                    <input type="text" class="form-input" placeholder="Выберите Сервер">
-                                    <div class="form-select__options">
-                                        <div class="form-select__option">Server 1</div>
-                                        <div class="form-select__option">Server 2</div>
-                                        <div class="form-select__option">Server 3</div>
-                                        <div class="form-select__option">Server 4</div>
-                                        <div class="form-select__option">Server 5</div>
-                                        <div class="form-select__option">Server 6</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mobile-game-form__checkbox basket-page__price_contract">
-                                <a class="contract-offer" href="#">
-                                    <span class="contract-offer__text">Я указал верный </span>
-                                    <span class="contract-offer__link">ID</span>
-                                </a>
-                                <label class="contract-offer__switch">
-                                    <input class="contract-offer__input" type="checkbox" required>
-                                    <span class="contract-offer__slider"></span>
-                                </label>
-                            </div>
-
+                        <div class="mobile-game-add__cards">
+                            <label class="mobile-game-add__card">
+                                <input type="radio" name="pubg-add" value="57" id="">
+                                <span class="mobile-game-add__card_image">
+                                    <img class="mobile-game-add__card_img" src="assets/images/mobile-game/add-bg.png" alt="">
+                                    <span class="mobile-game-add__card_content">
+                                        <span class="mobile-game-add__card_count">57</span>
+                                        <span class="mobile-game-add__card_wrap">
+                                            <span class="mobile-game-add__card_title">
+                                                <span>+3</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                                    <path d="M11.6213 9.25872C11.2151 10.2292 10.493 11.034 9.57213 11.5426C8.65122 12.0512 7.58551 12.2338 6.54781 12.0607C5.51011 11.8877 4.5613 11.3692 3.85524 10.5893C3.14917 9.80943 2.72727 8.8139 2.65796 7.76416C2.58864 6.71443 2.87597 5.67206 3.47335 4.8061C4.07074 3.94014 4.94313 3.30138 5.94907 2.99341C6.955 2.68543 8.03548 2.72631 9.01527 3.10941C9.99505 3.4925 10.8167 4.19535 11.3469 5.10397L7.31551 7.45661L11.6213 9.25872Z" fill="#FFFEFC" />
+                                                    <path d="M13.7583 4.39513C12.9882 2.77573 11.6437 1.50033 9.98596 0.816619C8.32821 0.132911 6.47553 0.089694 4.7877 0.69536C3.09988 1.30103 1.69738 2.51235 0.852574 4.09408C0.00776852 5.67582 -0.219046 7.51507 0.216177 9.25466C0.651401 10.9942 1.7176 12.51 3.20771 13.5076C4.69783 14.5051 6.50551 14.9133 8.27969 14.6528C10.0539 14.3923 11.6679 13.4818 12.8084 12.098C13.9489 10.7142 14.5344 8.87879 14.4512 7.08751H13.0009C12.6788 7.08751 9.59592 7.08751 9.59592 7.08751C9.59592 7.08751 12.5516 8.52039 12.8651 8.67236C12.6675 9.58953 12.2674 10.4717 11.688 11.1746C10.7766 12.2805 9.48667 13.0082 8.06879 13.2164C6.6509 13.4245 5.20625 13.0983 4.01539 12.3011C2.82452 11.5039 1.97244 10.2925 1.62462 8.90228C1.2768 7.51205 1.45807 6.04216 2.13322 4.77807C2.80836 3.51399 3.92921 2.54593 5.27808 2.0619C6.62694 1.57786 8.10756 1.6124 9.43239 2.1588C10.7572 2.70521 11.8679 3.81769 12.4834 5.11188L13.7583 4.39513Z" fill="#FFFEFC" />
+                                                </svg>
+                                            </span>
+                                            <span class="mobile-game-add__card_subtitle">на ваш счет</span>
+                                        </span>
+                                        <span class="mobile-game-add__card_icon">
+                                            <img src="assets/images/mobile-game/pubg-item-first.png" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mobile-game-add__card_text">
+                                    <span class="mobile-game-add__card_text_num">57+3 <span class="_yellow">UC</span></span>
+                                    <span class="mobile-game-add__card_text_block">
+                                        <span class="mobile-game-add__card_text_value">
+                                            <span>99</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M8.84114 6.83797C8.53214 7.57626 7.9828 8.18852 7.2822 8.57545C6.5816 8.96239 5.77083 9.1013 4.98138 8.96967C4.19193 8.83803 3.4701 8.44357 2.93295 7.85025C2.3958 7.25694 2.07483 6.49956 2.0221 5.70095C1.96936 4.90235 2.18795 4.10934 2.64243 3.45054C3.0969 2.79175 3.76059 2.3058 4.52588 2.0715C5.29116 1.8372 6.11316 1.8683 6.85855 2.15975C7.60395 2.4512 8.22903 2.98591 8.63242 3.67716L5.56543 5.46698L8.84114 6.83797Z" fill="#FFFEFC" />
+                                                <path d="M10.4669 3.1379C9.88104 1.9059 8.85819 0.935611 7.59702 0.415466C6.33586 -0.104679 4.92639 -0.137558 3.64234 0.323215C2.3583 0.783989 1.29132 1.70553 0.648613 2.90886C0.00591006 4.1122 -0.166644 5.51145 0.164461 6.83488C0.495567 8.15831 1.3067 9.31145 2.44034 10.0704C3.57397 10.8293 4.9492 11.1398 6.29895 10.9416C7.64869 10.7435 8.87663 10.0508 9.74427 8.998C10.6119 7.94526 11.0574 6.54893 10.9941 5.18618H9.89073C9.64564 5.18618 7.3003 5.18618 7.3003 5.18618C7.3003 5.18618 9.54891 6.27627 9.78741 6.39188C9.63706 7.08964 9.33264 7.76077 8.89192 8.29552C8.19852 9.13685 7.21719 9.69046 6.1385 9.84883C5.05981 10.0072 3.96077 9.75904 3.05479 9.15253C2.14882 8.54602 1.50058 7.62445 1.23597 6.5668C0.971355 5.50915 1.10926 4.3909 1.62289 3.42923C2.13652 2.46755 2.98923 1.73108 4.01541 1.36284C5.04159 0.994598 6.168 1.02087 7.17589 1.43656C8.18378 1.85225 9.02876 2.6986 9.49699 3.68318L10.4669 3.1379Z" fill="#FFFEFC" />
+                                            </svg>
+                                        </span>
+                                        <span class="_divide">/</span>
+                                        <span class="mobile-game-add__card_text_price">100₽</span>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="mobile-game-add__card">
+                                <input type="radio" name="pubg-add" value="57" id="">
+                                <span class="mobile-game-add__card_image">
+                                    <img class="mobile-game-add__card_img" src="assets/images/mobile-game/add-bg.png" alt="">
+                                    <span class="mobile-game-add__card_content">
+                                        <span class="mobile-game-add__card_count">57</span>
+                                        <span class="mobile-game-add__card_wrap">
+                                            <span class="mobile-game-add__card_title">
+                                                <span>+3</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                                    <path d="M11.6213 9.25872C11.2151 10.2292 10.493 11.034 9.57213 11.5426C8.65122 12.0512 7.58551 12.2338 6.54781 12.0607C5.51011 11.8877 4.5613 11.3692 3.85524 10.5893C3.14917 9.80943 2.72727 8.8139 2.65796 7.76416C2.58864 6.71443 2.87597 5.67206 3.47335 4.8061C4.07074 3.94014 4.94313 3.30138 5.94907 2.99341C6.955 2.68543 8.03548 2.72631 9.01527 3.10941C9.99505 3.4925 10.8167 4.19535 11.3469 5.10397L7.31551 7.45661L11.6213 9.25872Z" fill="#FFFEFC" />
+                                                    <path d="M13.7583 4.39513C12.9882 2.77573 11.6437 1.50033 9.98596 0.816619C8.32821 0.132911 6.47553 0.089694 4.7877 0.69536C3.09988 1.30103 1.69738 2.51235 0.852574 4.09408C0.00776852 5.67582 -0.219046 7.51507 0.216177 9.25466C0.651401 10.9942 1.7176 12.51 3.20771 13.5076C4.69783 14.5051 6.50551 14.9133 8.27969 14.6528C10.0539 14.3923 11.6679 13.4818 12.8084 12.098C13.9489 10.7142 14.5344 8.87879 14.4512 7.08751H13.0009C12.6788 7.08751 9.59592 7.08751 9.59592 7.08751C9.59592 7.08751 12.5516 8.52039 12.8651 8.67236C12.6675 9.58953 12.2674 10.4717 11.688 11.1746C10.7766 12.2805 9.48667 13.0082 8.06879 13.2164C6.6509 13.4245 5.20625 13.0983 4.01539 12.3011C2.82452 11.5039 1.97244 10.2925 1.62462 8.90228C1.2768 7.51205 1.45807 6.04216 2.13322 4.77807C2.80836 3.51399 3.92921 2.54593 5.27808 2.0619C6.62694 1.57786 8.10756 1.6124 9.43239 2.1588C10.7572 2.70521 11.8679 3.81769 12.4834 5.11188L13.7583 4.39513Z" fill="#FFFEFC" />
+                                                </svg>
+                                            </span>
+                                            <span class="mobile-game-add__card_subtitle">на ваш счет</span>
+                                        </span>
+                                        <span class="mobile-game-add__card_icon">
+                                            <img src="assets/images/mobile-game/pubg-item-first.png" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mobile-game-add__card_text">
+                                    <span class="mobile-game-add__card_text_num">57+3 <span class="_yellow">UC</span></span>
+                                    <span class="mobile-game-add__card_text_block">
+                                        <span class="mobile-game-add__card_text_value">
+                                            <span>99</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M8.84114 6.83797C8.53214 7.57626 7.9828 8.18852 7.2822 8.57545C6.5816 8.96239 5.77083 9.1013 4.98138 8.96967C4.19193 8.83803 3.4701 8.44357 2.93295 7.85025C2.3958 7.25694 2.07483 6.49956 2.0221 5.70095C1.96936 4.90235 2.18795 4.10934 2.64243 3.45054C3.0969 2.79175 3.76059 2.3058 4.52588 2.0715C5.29116 1.8372 6.11316 1.8683 6.85855 2.15975C7.60395 2.4512 8.22903 2.98591 8.63242 3.67716L5.56543 5.46698L8.84114 6.83797Z" fill="#FFFEFC" />
+                                                <path d="M10.4669 3.1379C9.88104 1.9059 8.85819 0.935611 7.59702 0.415466C6.33586 -0.104679 4.92639 -0.137558 3.64234 0.323215C2.3583 0.783989 1.29132 1.70553 0.648613 2.90886C0.00591006 4.1122 -0.166644 5.51145 0.164461 6.83488C0.495567 8.15831 1.3067 9.31145 2.44034 10.0704C3.57397 10.8293 4.9492 11.1398 6.29895 10.9416C7.64869 10.7435 8.87663 10.0508 9.74427 8.998C10.6119 7.94526 11.0574 6.54893 10.9941 5.18618H9.89073C9.64564 5.18618 7.3003 5.18618 7.3003 5.18618C7.3003 5.18618 9.54891 6.27627 9.78741 6.39188C9.63706 7.08964 9.33264 7.76077 8.89192 8.29552C8.19852 9.13685 7.21719 9.69046 6.1385 9.84883C5.05981 10.0072 3.96077 9.75904 3.05479 9.15253C2.14882 8.54602 1.50058 7.62445 1.23597 6.5668C0.971355 5.50915 1.10926 4.3909 1.62289 3.42923C2.13652 2.46755 2.98923 1.73108 4.01541 1.36284C5.04159 0.994598 6.168 1.02087 7.17589 1.43656C8.18378 1.85225 9.02876 2.6986 9.49699 3.68318L10.4669 3.1379Z" fill="#FFFEFC" />
+                                            </svg>
+                                        </span>
+                                        <span class="_divide">/</span>
+                                        <span class="mobile-game-add__card_text_price">100₽</span>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="mobile-game-add__card">
+                                <input type="radio" name="pubg-add" value="57" id="">
+                                <span class="mobile-game-add__card_image">
+                                    <img class="mobile-game-add__card_img" src="assets/images/mobile-game/add-bg.png" alt="">
+                                    <span class="mobile-game-add__card_content">
+                                        <span class="mobile-game-add__card_count">57</span>
+                                        <span class="mobile-game-add__card_wrap">
+                                            <span class="mobile-game-add__card_title">
+                                                <span>+3</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                                    <path d="M11.6213 9.25872C11.2151 10.2292 10.493 11.034 9.57213 11.5426C8.65122 12.0512 7.58551 12.2338 6.54781 12.0607C5.51011 11.8877 4.5613 11.3692 3.85524 10.5893C3.14917 9.80943 2.72727 8.8139 2.65796 7.76416C2.58864 6.71443 2.87597 5.67206 3.47335 4.8061C4.07074 3.94014 4.94313 3.30138 5.94907 2.99341C6.955 2.68543 8.03548 2.72631 9.01527 3.10941C9.99505 3.4925 10.8167 4.19535 11.3469 5.10397L7.31551 7.45661L11.6213 9.25872Z" fill="#FFFEFC" />
+                                                    <path d="M13.7583 4.39513C12.9882 2.77573 11.6437 1.50033 9.98596 0.816619C8.32821 0.132911 6.47553 0.089694 4.7877 0.69536C3.09988 1.30103 1.69738 2.51235 0.852574 4.09408C0.00776852 5.67582 -0.219046 7.51507 0.216177 9.25466C0.651401 10.9942 1.7176 12.51 3.20771 13.5076C4.69783 14.5051 6.50551 14.9133 8.27969 14.6528C10.0539 14.3923 11.6679 13.4818 12.8084 12.098C13.9489 10.7142 14.5344 8.87879 14.4512 7.08751H13.0009C12.6788 7.08751 9.59592 7.08751 9.59592 7.08751C9.59592 7.08751 12.5516 8.52039 12.8651 8.67236C12.6675 9.58953 12.2674 10.4717 11.688 11.1746C10.7766 12.2805 9.48667 13.0082 8.06879 13.2164C6.6509 13.4245 5.20625 13.0983 4.01539 12.3011C2.82452 11.5039 1.97244 10.2925 1.62462 8.90228C1.2768 7.51205 1.45807 6.04216 2.13322 4.77807C2.80836 3.51399 3.92921 2.54593 5.27808 2.0619C6.62694 1.57786 8.10756 1.6124 9.43239 2.1588C10.7572 2.70521 11.8679 3.81769 12.4834 5.11188L13.7583 4.39513Z" fill="#FFFEFC" />
+                                                </svg>
+                                            </span>
+                                            <span class="mobile-game-add__card_subtitle">на ваш счет</span>
+                                        </span>
+                                        <span class="mobile-game-add__card_icon">
+                                            <img src="assets/images/mobile-game/pubg-item-first.png" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mobile-game-add__card_text">
+                                    <span class="mobile-game-add__card_text_num">57+3 <span class="_yellow">UC</span></span>
+                                    <span class="mobile-game-add__card_text_block">
+                                        <span class="mobile-game-add__card_text_value">
+                                            <span>99</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M8.84114 6.83797C8.53214 7.57626 7.9828 8.18852 7.2822 8.57545C6.5816 8.96239 5.77083 9.1013 4.98138 8.96967C4.19193 8.83803 3.4701 8.44357 2.93295 7.85025C2.3958 7.25694 2.07483 6.49956 2.0221 5.70095C1.96936 4.90235 2.18795 4.10934 2.64243 3.45054C3.0969 2.79175 3.76059 2.3058 4.52588 2.0715C5.29116 1.8372 6.11316 1.8683 6.85855 2.15975C7.60395 2.4512 8.22903 2.98591 8.63242 3.67716L5.56543 5.46698L8.84114 6.83797Z" fill="#FFFEFC" />
+                                                <path d="M10.4669 3.1379C9.88104 1.9059 8.85819 0.935611 7.59702 0.415466C6.33586 -0.104679 4.92639 -0.137558 3.64234 0.323215C2.3583 0.783989 1.29132 1.70553 0.648613 2.90886C0.00591006 4.1122 -0.166644 5.51145 0.164461 6.83488C0.495567 8.15831 1.3067 9.31145 2.44034 10.0704C3.57397 10.8293 4.9492 11.1398 6.29895 10.9416C7.64869 10.7435 8.87663 10.0508 9.74427 8.998C10.6119 7.94526 11.0574 6.54893 10.9941 5.18618H9.89073C9.64564 5.18618 7.3003 5.18618 7.3003 5.18618C7.3003 5.18618 9.54891 6.27627 9.78741 6.39188C9.63706 7.08964 9.33264 7.76077 8.89192 8.29552C8.19852 9.13685 7.21719 9.69046 6.1385 9.84883C5.05981 10.0072 3.96077 9.75904 3.05479 9.15253C2.14882 8.54602 1.50058 7.62445 1.23597 6.5668C0.971355 5.50915 1.10926 4.3909 1.62289 3.42923C2.13652 2.46755 2.98923 1.73108 4.01541 1.36284C5.04159 0.994598 6.168 1.02087 7.17589 1.43656C8.18378 1.85225 9.02876 2.6986 9.49699 3.68318L10.4669 3.1379Z" fill="#FFFEFC" />
+                                            </svg>
+                                        </span>
+                                        <span class="_divide">/</span>
+                                        <span class="mobile-game-add__card_text_price">100₽</span>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="mobile-game-add__card">
+                                <input type="radio" name="pubg-add" value="57" id="">
+                                <span class="mobile-game-add__card_image">
+                                    <img class="mobile-game-add__card_img" src="assets/images/mobile-game/add-bg.png" alt="">
+                                    <span class="mobile-game-add__card_content">
+                                        <span class="mobile-game-add__card_count">57</span>
+                                        <span class="mobile-game-add__card_wrap">
+                                            <span class="mobile-game-add__card_title">
+                                                <span>+3</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                                    <path d="M11.6213 9.25872C11.2151 10.2292 10.493 11.034 9.57213 11.5426C8.65122 12.0512 7.58551 12.2338 6.54781 12.0607C5.51011 11.8877 4.5613 11.3692 3.85524 10.5893C3.14917 9.80943 2.72727 8.8139 2.65796 7.76416C2.58864 6.71443 2.87597 5.67206 3.47335 4.8061C4.07074 3.94014 4.94313 3.30138 5.94907 2.99341C6.955 2.68543 8.03548 2.72631 9.01527 3.10941C9.99505 3.4925 10.8167 4.19535 11.3469 5.10397L7.31551 7.45661L11.6213 9.25872Z" fill="#FFFEFC" />
+                                                    <path d="M13.7583 4.39513C12.9882 2.77573 11.6437 1.50033 9.98596 0.816619C8.32821 0.132911 6.47553 0.089694 4.7877 0.69536C3.09988 1.30103 1.69738 2.51235 0.852574 4.09408C0.00776852 5.67582 -0.219046 7.51507 0.216177 9.25466C0.651401 10.9942 1.7176 12.51 3.20771 13.5076C4.69783 14.5051 6.50551 14.9133 8.27969 14.6528C10.0539 14.3923 11.6679 13.4818 12.8084 12.098C13.9489 10.7142 14.5344 8.87879 14.4512 7.08751H13.0009C12.6788 7.08751 9.59592 7.08751 9.59592 7.08751C9.59592 7.08751 12.5516 8.52039 12.8651 8.67236C12.6675 9.58953 12.2674 10.4717 11.688 11.1746C10.7766 12.2805 9.48667 13.0082 8.06879 13.2164C6.6509 13.4245 5.20625 13.0983 4.01539 12.3011C2.82452 11.5039 1.97244 10.2925 1.62462 8.90228C1.2768 7.51205 1.45807 6.04216 2.13322 4.77807C2.80836 3.51399 3.92921 2.54593 5.27808 2.0619C6.62694 1.57786 8.10756 1.6124 9.43239 2.1588C10.7572 2.70521 11.8679 3.81769 12.4834 5.11188L13.7583 4.39513Z" fill="#FFFEFC" />
+                                                </svg>
+                                            </span>
+                                            <span class="mobile-game-add__card_subtitle">на ваш счет</span>
+                                        </span>
+                                        <span class="mobile-game-add__card_icon">
+                                            <img src="assets/images/mobile-game/pubg-item-first.png" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mobile-game-add__card_text">
+                                    <span class="mobile-game-add__card_text_num">57+3 <span class="_yellow">UC</span></span>
+                                    <span class="mobile-game-add__card_text_block">
+                                        <span class="mobile-game-add__card_text_value">
+                                            <span>99</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M8.84114 6.83797C8.53214 7.57626 7.9828 8.18852 7.2822 8.57545C6.5816 8.96239 5.77083 9.1013 4.98138 8.96967C4.19193 8.83803 3.4701 8.44357 2.93295 7.85025C2.3958 7.25694 2.07483 6.49956 2.0221 5.70095C1.96936 4.90235 2.18795 4.10934 2.64243 3.45054C3.0969 2.79175 3.76059 2.3058 4.52588 2.0715C5.29116 1.8372 6.11316 1.8683 6.85855 2.15975C7.60395 2.4512 8.22903 2.98591 8.63242 3.67716L5.56543 5.46698L8.84114 6.83797Z" fill="#FFFEFC" />
+                                                <path d="M10.4669 3.1379C9.88104 1.9059 8.85819 0.935611 7.59702 0.415466C6.33586 -0.104679 4.92639 -0.137558 3.64234 0.323215C2.3583 0.783989 1.29132 1.70553 0.648613 2.90886C0.00591006 4.1122 -0.166644 5.51145 0.164461 6.83488C0.495567 8.15831 1.3067 9.31145 2.44034 10.0704C3.57397 10.8293 4.9492 11.1398 6.29895 10.9416C7.64869 10.7435 8.87663 10.0508 9.74427 8.998C10.6119 7.94526 11.0574 6.54893 10.9941 5.18618H9.89073C9.64564 5.18618 7.3003 5.18618 7.3003 5.18618C7.3003 5.18618 9.54891 6.27627 9.78741 6.39188C9.63706 7.08964 9.33264 7.76077 8.89192 8.29552C8.19852 9.13685 7.21719 9.69046 6.1385 9.84883C5.05981 10.0072 3.96077 9.75904 3.05479 9.15253C2.14882 8.54602 1.50058 7.62445 1.23597 6.5668C0.971355 5.50915 1.10926 4.3909 1.62289 3.42923C2.13652 2.46755 2.98923 1.73108 4.01541 1.36284C5.04159 0.994598 6.168 1.02087 7.17589 1.43656C8.18378 1.85225 9.02876 2.6986 9.49699 3.68318L10.4669 3.1379Z" fill="#FFFEFC" />
+                                            </svg>
+                                        </span>
+                                        <span class="_divide">/</span>
+                                        <span class="mobile-game-add__card_text_price">100₽</span>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="mobile-game-add__card">
+                                <input type="radio" name="pubg-add" value="57" id="">
+                                <span class="mobile-game-add__card_image">
+                                    <img class="mobile-game-add__card_img" src="assets/images/mobile-game/add-bg.png" alt="">
+                                    <span class="mobile-game-add__card_content">
+                                        <span class="mobile-game-add__card_count">57</span>
+                                        <span class="mobile-game-add__card_wrap">
+                                            <span class="mobile-game-add__card_title">
+                                                <span>+3</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                                    <path d="M11.6213 9.25872C11.2151 10.2292 10.493 11.034 9.57213 11.5426C8.65122 12.0512 7.58551 12.2338 6.54781 12.0607C5.51011 11.8877 4.5613 11.3692 3.85524 10.5893C3.14917 9.80943 2.72727 8.8139 2.65796 7.76416C2.58864 6.71443 2.87597 5.67206 3.47335 4.8061C4.07074 3.94014 4.94313 3.30138 5.94907 2.99341C6.955 2.68543 8.03548 2.72631 9.01527 3.10941C9.99505 3.4925 10.8167 4.19535 11.3469 5.10397L7.31551 7.45661L11.6213 9.25872Z" fill="#FFFEFC" />
+                                                    <path d="M13.7583 4.39513C12.9882 2.77573 11.6437 1.50033 9.98596 0.816619C8.32821 0.132911 6.47553 0.089694 4.7877 0.69536C3.09988 1.30103 1.69738 2.51235 0.852574 4.09408C0.00776852 5.67582 -0.219046 7.51507 0.216177 9.25466C0.651401 10.9942 1.7176 12.51 3.20771 13.5076C4.69783 14.5051 6.50551 14.9133 8.27969 14.6528C10.0539 14.3923 11.6679 13.4818 12.8084 12.098C13.9489 10.7142 14.5344 8.87879 14.4512 7.08751H13.0009C12.6788 7.08751 9.59592 7.08751 9.59592 7.08751C9.59592 7.08751 12.5516 8.52039 12.8651 8.67236C12.6675 9.58953 12.2674 10.4717 11.688 11.1746C10.7766 12.2805 9.48667 13.0082 8.06879 13.2164C6.6509 13.4245 5.20625 13.0983 4.01539 12.3011C2.82452 11.5039 1.97244 10.2925 1.62462 8.90228C1.2768 7.51205 1.45807 6.04216 2.13322 4.77807C2.80836 3.51399 3.92921 2.54593 5.27808 2.0619C6.62694 1.57786 8.10756 1.6124 9.43239 2.1588C10.7572 2.70521 11.8679 3.81769 12.4834 5.11188L13.7583 4.39513Z" fill="#FFFEFC" />
+                                                </svg>
+                                            </span>
+                                            <span class="mobile-game-add__card_subtitle">на ваш счет</span>
+                                        </span>
+                                        <span class="mobile-game-add__card_icon">
+                                            <img src="assets/images/mobile-game/pubg-item-first.png" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mobile-game-add__card_text">
+                                    <span class="mobile-game-add__card_text_num">57+3 <span class="_yellow">UC</span></span>
+                                    <span class="mobile-game-add__card_text_block">
+                                        <span class="mobile-game-add__card_text_value">
+                                            <span>99</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M8.84114 6.83797C8.53214 7.57626 7.9828 8.18852 7.2822 8.57545C6.5816 8.96239 5.77083 9.1013 4.98138 8.96967C4.19193 8.83803 3.4701 8.44357 2.93295 7.85025C2.3958 7.25694 2.07483 6.49956 2.0221 5.70095C1.96936 4.90235 2.18795 4.10934 2.64243 3.45054C3.0969 2.79175 3.76059 2.3058 4.52588 2.0715C5.29116 1.8372 6.11316 1.8683 6.85855 2.15975C7.60395 2.4512 8.22903 2.98591 8.63242 3.67716L5.56543 5.46698L8.84114 6.83797Z" fill="#FFFEFC" />
+                                                <path d="M10.4669 3.1379C9.88104 1.9059 8.85819 0.935611 7.59702 0.415466C6.33586 -0.104679 4.92639 -0.137558 3.64234 0.323215C2.3583 0.783989 1.29132 1.70553 0.648613 2.90886C0.00591006 4.1122 -0.166644 5.51145 0.164461 6.83488C0.495567 8.15831 1.3067 9.31145 2.44034 10.0704C3.57397 10.8293 4.9492 11.1398 6.29895 10.9416C7.64869 10.7435 8.87663 10.0508 9.74427 8.998C10.6119 7.94526 11.0574 6.54893 10.9941 5.18618H9.89073C9.64564 5.18618 7.3003 5.18618 7.3003 5.18618C7.3003 5.18618 9.54891 6.27627 9.78741 6.39188C9.63706 7.08964 9.33264 7.76077 8.89192 8.29552C8.19852 9.13685 7.21719 9.69046 6.1385 9.84883C5.05981 10.0072 3.96077 9.75904 3.05479 9.15253C2.14882 8.54602 1.50058 7.62445 1.23597 6.5668C0.971355 5.50915 1.10926 4.3909 1.62289 3.42923C2.13652 2.46755 2.98923 1.73108 4.01541 1.36284C5.04159 0.994598 6.168 1.02087 7.17589 1.43656C8.18378 1.85225 9.02876 2.6986 9.49699 3.68318L10.4669 3.1379Z" fill="#FFFEFC" />
+                                            </svg>
+                                        </span>
+                                        <span class="_divide">/</span>
+                                        <span class="mobile-game-add__card_text_price">100₽</span>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="mobile-game-add__card">
+                                <input type="radio" name="pubg-add" value="57" id="">
+                                <span class="mobile-game-add__card_image">
+                                    <img class="mobile-game-add__card_img" src="assets/images/mobile-game/add-bg.png" alt="">
+                                    <span class="mobile-game-add__card_content">
+                                        <span class="mobile-game-add__card_count">57</span>
+                                        <span class="mobile-game-add__card_wrap">
+                                            <span class="mobile-game-add__card_title">
+                                                <span>+3</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                                    <path d="M11.6213 9.25872C11.2151 10.2292 10.493 11.034 9.57213 11.5426C8.65122 12.0512 7.58551 12.2338 6.54781 12.0607C5.51011 11.8877 4.5613 11.3692 3.85524 10.5893C3.14917 9.80943 2.72727 8.8139 2.65796 7.76416C2.58864 6.71443 2.87597 5.67206 3.47335 4.8061C4.07074 3.94014 4.94313 3.30138 5.94907 2.99341C6.955 2.68543 8.03548 2.72631 9.01527 3.10941C9.99505 3.4925 10.8167 4.19535 11.3469 5.10397L7.31551 7.45661L11.6213 9.25872Z" fill="#FFFEFC" />
+                                                    <path d="M13.7583 4.39513C12.9882 2.77573 11.6437 1.50033 9.98596 0.816619C8.32821 0.132911 6.47553 0.089694 4.7877 0.69536C3.09988 1.30103 1.69738 2.51235 0.852574 4.09408C0.00776852 5.67582 -0.219046 7.51507 0.216177 9.25466C0.651401 10.9942 1.7176 12.51 3.20771 13.5076C4.69783 14.5051 6.50551 14.9133 8.27969 14.6528C10.0539 14.3923 11.6679 13.4818 12.8084 12.098C13.9489 10.7142 14.5344 8.87879 14.4512 7.08751H13.0009C12.6788 7.08751 9.59592 7.08751 9.59592 7.08751C9.59592 7.08751 12.5516 8.52039 12.8651 8.67236C12.6675 9.58953 12.2674 10.4717 11.688 11.1746C10.7766 12.2805 9.48667 13.0082 8.06879 13.2164C6.6509 13.4245 5.20625 13.0983 4.01539 12.3011C2.82452 11.5039 1.97244 10.2925 1.62462 8.90228C1.2768 7.51205 1.45807 6.04216 2.13322 4.77807C2.80836 3.51399 3.92921 2.54593 5.27808 2.0619C6.62694 1.57786 8.10756 1.6124 9.43239 2.1588C10.7572 2.70521 11.8679 3.81769 12.4834 5.11188L13.7583 4.39513Z" fill="#FFFEFC" />
+                                                </svg>
+                                            </span>
+                                            <span class="mobile-game-add__card_subtitle">на ваш счет</span>
+                                        </span>
+                                        <span class="mobile-game-add__card_icon">
+                                            <img src="assets/images/mobile-game/pubg-item-first.png" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mobile-game-add__card_text">
+                                    <span class="mobile-game-add__card_text_num">57+3 <span class="_yellow">UC</span></span>
+                                    <span class="mobile-game-add__card_text_block">
+                                        <span class="mobile-game-add__card_text_value">
+                                            <span>99</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M8.84114 6.83797C8.53214 7.57626 7.9828 8.18852 7.2822 8.57545C6.5816 8.96239 5.77083 9.1013 4.98138 8.96967C4.19193 8.83803 3.4701 8.44357 2.93295 7.85025C2.3958 7.25694 2.07483 6.49956 2.0221 5.70095C1.96936 4.90235 2.18795 4.10934 2.64243 3.45054C3.0969 2.79175 3.76059 2.3058 4.52588 2.0715C5.29116 1.8372 6.11316 1.8683 6.85855 2.15975C7.60395 2.4512 8.22903 2.98591 8.63242 3.67716L5.56543 5.46698L8.84114 6.83797Z" fill="#FFFEFC" />
+                                                <path d="M10.4669 3.1379C9.88104 1.9059 8.85819 0.935611 7.59702 0.415466C6.33586 -0.104679 4.92639 -0.137558 3.64234 0.323215C2.3583 0.783989 1.29132 1.70553 0.648613 2.90886C0.00591006 4.1122 -0.166644 5.51145 0.164461 6.83488C0.495567 8.15831 1.3067 9.31145 2.44034 10.0704C3.57397 10.8293 4.9492 11.1398 6.29895 10.9416C7.64869 10.7435 8.87663 10.0508 9.74427 8.998C10.6119 7.94526 11.0574 6.54893 10.9941 5.18618H9.89073C9.64564 5.18618 7.3003 5.18618 7.3003 5.18618C7.3003 5.18618 9.54891 6.27627 9.78741 6.39188C9.63706 7.08964 9.33264 7.76077 8.89192 8.29552C8.19852 9.13685 7.21719 9.69046 6.1385 9.84883C5.05981 10.0072 3.96077 9.75904 3.05479 9.15253C2.14882 8.54602 1.50058 7.62445 1.23597 6.5668C0.971355 5.50915 1.10926 4.3909 1.62289 3.42923C2.13652 2.46755 2.98923 1.73108 4.01541 1.36284C5.04159 0.994598 6.168 1.02087 7.17589 1.43656C8.18378 1.85225 9.02876 2.6986 9.49699 3.68318L10.4669 3.1379Z" fill="#FFFEFC" />
+                                            </svg>
+                                        </span>
+                                        <span class="_divide">/</span>
+                                        <span class="mobile-game-add__card_text_price">100₽</span>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="mobile-game-add__card">
+                                <input type="radio" name="pubg-add" value="57" id="">
+                                <span class="mobile-game-add__card_image">
+                                    <img class="mobile-game-add__card_img" src="assets/images/mobile-game/add-bg.png" alt="">
+                                    <span class="mobile-game-add__card_content">
+                                        <span class="mobile-game-add__card_count">57</span>
+                                        <span class="mobile-game-add__card_wrap">
+                                            <span class="mobile-game-add__card_title">
+                                                <span>+3</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                                    <path d="M11.6213 9.25872C11.2151 10.2292 10.493 11.034 9.57213 11.5426C8.65122 12.0512 7.58551 12.2338 6.54781 12.0607C5.51011 11.8877 4.5613 11.3692 3.85524 10.5893C3.14917 9.80943 2.72727 8.8139 2.65796 7.76416C2.58864 6.71443 2.87597 5.67206 3.47335 4.8061C4.07074 3.94014 4.94313 3.30138 5.94907 2.99341C6.955 2.68543 8.03548 2.72631 9.01527 3.10941C9.99505 3.4925 10.8167 4.19535 11.3469 5.10397L7.31551 7.45661L11.6213 9.25872Z" fill="#FFFEFC" />
+                                                    <path d="M13.7583 4.39513C12.9882 2.77573 11.6437 1.50033 9.98596 0.816619C8.32821 0.132911 6.47553 0.089694 4.7877 0.69536C3.09988 1.30103 1.69738 2.51235 0.852574 4.09408C0.00776852 5.67582 -0.219046 7.51507 0.216177 9.25466C0.651401 10.9942 1.7176 12.51 3.20771 13.5076C4.69783 14.5051 6.50551 14.9133 8.27969 14.6528C10.0539 14.3923 11.6679 13.4818 12.8084 12.098C13.9489 10.7142 14.5344 8.87879 14.4512 7.08751H13.0009C12.6788 7.08751 9.59592 7.08751 9.59592 7.08751C9.59592 7.08751 12.5516 8.52039 12.8651 8.67236C12.6675 9.58953 12.2674 10.4717 11.688 11.1746C10.7766 12.2805 9.48667 13.0082 8.06879 13.2164C6.6509 13.4245 5.20625 13.0983 4.01539 12.3011C2.82452 11.5039 1.97244 10.2925 1.62462 8.90228C1.2768 7.51205 1.45807 6.04216 2.13322 4.77807C2.80836 3.51399 3.92921 2.54593 5.27808 2.0619C6.62694 1.57786 8.10756 1.6124 9.43239 2.1588C10.7572 2.70521 11.8679 3.81769 12.4834 5.11188L13.7583 4.39513Z" fill="#FFFEFC" />
+                                                </svg>
+                                            </span>
+                                            <span class="mobile-game-add__card_subtitle">на ваш счет</span>
+                                        </span>
+                                        <span class="mobile-game-add__card_icon">
+                                            <img src="assets/images/mobile-game/pubg-item-first.png" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mobile-game-add__card_text">
+                                    <span class="mobile-game-add__card_text_num">57+3 <span class="_yellow">UC</span></span>
+                                    <span class="mobile-game-add__card_text_block">
+                                        <span class="mobile-game-add__card_text_value">
+                                            <span>99</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M8.84114 6.83797C8.53214 7.57626 7.9828 8.18852 7.2822 8.57545C6.5816 8.96239 5.77083 9.1013 4.98138 8.96967C4.19193 8.83803 3.4701 8.44357 2.93295 7.85025C2.3958 7.25694 2.07483 6.49956 2.0221 5.70095C1.96936 4.90235 2.18795 4.10934 2.64243 3.45054C3.0969 2.79175 3.76059 2.3058 4.52588 2.0715C5.29116 1.8372 6.11316 1.8683 6.85855 2.15975C7.60395 2.4512 8.22903 2.98591 8.63242 3.67716L5.56543 5.46698L8.84114 6.83797Z" fill="#FFFEFC" />
+                                                <path d="M10.4669 3.1379C9.88104 1.9059 8.85819 0.935611 7.59702 0.415466C6.33586 -0.104679 4.92639 -0.137558 3.64234 0.323215C2.3583 0.783989 1.29132 1.70553 0.648613 2.90886C0.00591006 4.1122 -0.166644 5.51145 0.164461 6.83488C0.495567 8.15831 1.3067 9.31145 2.44034 10.0704C3.57397 10.8293 4.9492 11.1398 6.29895 10.9416C7.64869 10.7435 8.87663 10.0508 9.74427 8.998C10.6119 7.94526 11.0574 6.54893 10.9941 5.18618H9.89073C9.64564 5.18618 7.3003 5.18618 7.3003 5.18618C7.3003 5.18618 9.54891 6.27627 9.78741 6.39188C9.63706 7.08964 9.33264 7.76077 8.89192 8.29552C8.19852 9.13685 7.21719 9.69046 6.1385 9.84883C5.05981 10.0072 3.96077 9.75904 3.05479 9.15253C2.14882 8.54602 1.50058 7.62445 1.23597 6.5668C0.971355 5.50915 1.10926 4.3909 1.62289 3.42923C2.13652 2.46755 2.98923 1.73108 4.01541 1.36284C5.04159 0.994598 6.168 1.02087 7.17589 1.43656C8.18378 1.85225 9.02876 2.6986 9.49699 3.68318L10.4669 3.1379Z" fill="#FFFEFC" />
+                                            </svg>
+                                        </span>
+                                        <span class="_divide">/</span>
+                                        <span class="mobile-game-add__card_text_price">100₽</span>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="mobile-game-add__card">
+                                <input type="radio" name="pubg-add" value="57" id="">
+                                <span class="mobile-game-add__card_image">
+                                    <img class="mobile-game-add__card_img" src="assets/images/mobile-game/add-bg.png" alt="">
+                                    <span class="mobile-game-add__card_content">
+                                        <span class="mobile-game-add__card_count">57</span>
+                                        <span class="mobile-game-add__card_wrap">
+                                            <span class="mobile-game-add__card_title">
+                                                <span>+3</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                                    <path d="M11.6213 9.25872C11.2151 10.2292 10.493 11.034 9.57213 11.5426C8.65122 12.0512 7.58551 12.2338 6.54781 12.0607C5.51011 11.8877 4.5613 11.3692 3.85524 10.5893C3.14917 9.80943 2.72727 8.8139 2.65796 7.76416C2.58864 6.71443 2.87597 5.67206 3.47335 4.8061C4.07074 3.94014 4.94313 3.30138 5.94907 2.99341C6.955 2.68543 8.03548 2.72631 9.01527 3.10941C9.99505 3.4925 10.8167 4.19535 11.3469 5.10397L7.31551 7.45661L11.6213 9.25872Z" fill="#FFFEFC" />
+                                                    <path d="M13.7583 4.39513C12.9882 2.77573 11.6437 1.50033 9.98596 0.816619C8.32821 0.132911 6.47553 0.089694 4.7877 0.69536C3.09988 1.30103 1.69738 2.51235 0.852574 4.09408C0.00776852 5.67582 -0.219046 7.51507 0.216177 9.25466C0.651401 10.9942 1.7176 12.51 3.20771 13.5076C4.69783 14.5051 6.50551 14.9133 8.27969 14.6528C10.0539 14.3923 11.6679 13.4818 12.8084 12.098C13.9489 10.7142 14.5344 8.87879 14.4512 7.08751H13.0009C12.6788 7.08751 9.59592 7.08751 9.59592 7.08751C9.59592 7.08751 12.5516 8.52039 12.8651 8.67236C12.6675 9.58953 12.2674 10.4717 11.688 11.1746C10.7766 12.2805 9.48667 13.0082 8.06879 13.2164C6.6509 13.4245 5.20625 13.0983 4.01539 12.3011C2.82452 11.5039 1.97244 10.2925 1.62462 8.90228C1.2768 7.51205 1.45807 6.04216 2.13322 4.77807C2.80836 3.51399 3.92921 2.54593 5.27808 2.0619C6.62694 1.57786 8.10756 1.6124 9.43239 2.1588C10.7572 2.70521 11.8679 3.81769 12.4834 5.11188L13.7583 4.39513Z" fill="#FFFEFC" />
+                                                </svg>
+                                            </span>
+                                            <span class="mobile-game-add__card_subtitle">на ваш счет</span>
+                                        </span>
+                                        <span class="mobile-game-add__card_icon">
+                                            <img src="assets/images/mobile-game/pubg-item-first.png" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="mobile-game-add__card_text">
+                                    <span class="mobile-game-add__card_text_num">57+3 <span class="_yellow">UC</span></span>
+                                    <span class="mobile-game-add__card_text_block">
+                                        <span class="mobile-game-add__card_text_value">
+                                            <span>99</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M8.84114 6.83797C8.53214 7.57626 7.9828 8.18852 7.2822 8.57545C6.5816 8.96239 5.77083 9.1013 4.98138 8.96967C4.19193 8.83803 3.4701 8.44357 2.93295 7.85025C2.3958 7.25694 2.07483 6.49956 2.0221 5.70095C1.96936 4.90235 2.18795 4.10934 2.64243 3.45054C3.0969 2.79175 3.76059 2.3058 4.52588 2.0715C5.29116 1.8372 6.11316 1.8683 6.85855 2.15975C7.60395 2.4512 8.22903 2.98591 8.63242 3.67716L5.56543 5.46698L8.84114 6.83797Z" fill="#FFFEFC" />
+                                                <path d="M10.4669 3.1379C9.88104 1.9059 8.85819 0.935611 7.59702 0.415466C6.33586 -0.104679 4.92639 -0.137558 3.64234 0.323215C2.3583 0.783989 1.29132 1.70553 0.648613 2.90886C0.00591006 4.1122 -0.166644 5.51145 0.164461 6.83488C0.495567 8.15831 1.3067 9.31145 2.44034 10.0704C3.57397 10.8293 4.9492 11.1398 6.29895 10.9416C7.64869 10.7435 8.87663 10.0508 9.74427 8.998C10.6119 7.94526 11.0574 6.54893 10.9941 5.18618H9.89073C9.64564 5.18618 7.3003 5.18618 7.3003 5.18618C7.3003 5.18618 9.54891 6.27627 9.78741 6.39188C9.63706 7.08964 9.33264 7.76077 8.89192 8.29552C8.19852 9.13685 7.21719 9.69046 6.1385 9.84883C5.05981 10.0072 3.96077 9.75904 3.05479 9.15253C2.14882 8.54602 1.50058 7.62445 1.23597 6.5668C0.971355 5.50915 1.10926 4.3909 1.62289 3.42923C2.13652 2.46755 2.98923 1.73108 4.01541 1.36284C5.04159 0.994598 6.168 1.02087 7.17589 1.43656C8.18378 1.85225 9.02876 2.6986 9.49699 3.68318L10.4669 3.1379Z" fill="#FFFEFC" />
+                                            </svg>
+                                        </span>
+                                        <span class="_divide">/</span>
+                                        <span class="mobile-game-add__card_text_price">100₽</span>
+                                    </span>
+                                </span>
+                            </label>
                         </div>
                     </div>
- -->
+
                 </div>
 
                 <div class="mobile-game-form__info">

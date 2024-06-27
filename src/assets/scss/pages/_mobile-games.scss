@@ -272,3 +272,163 @@
         margin-top: 15px;
     }
 }
+
+.mobile-game-add {
+    padding: 20px;
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 25px;
+
+
+        img {
+            width: 35px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        span {
+            color: #D7B038;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        gap: 14px 12px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        input {
+            display: none;
+
+            &:checked~.mobile-game-add__card_image {
+                border-color: $orange;
+            }
+        }
+
+        &_image {
+            overflow: hidden;
+            position: relative;
+            border-radius: 6px;
+            border: 1px solid #34312D;
+            transition: 300ms ease;
+        }
+
+        &_img {
+            position: absolute;
+            left: -1%;
+            top: -1%;
+            width: 102%;
+            height: 102%;
+            object-fit: cover;
+        }
+
+        &_content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 115px;
+        }
+
+        &_wrap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 0px 19.5px 0px 6px;
+            background: #262625;
+            padding: 6px 20px 6px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        &_title {
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        &_subtitle {
+            line-height: 1;
+            font-size: 10px;
+            color: $text-dark;
+        }
+
+        &_count {
+            color: #D7B038;
+            font-weight: 700;
+            font-size: 20px;
+            padding: 10px 10px 0;
+        }
+
+        &_icon {
+            padding-right: 10px;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            top: -20px;
+
+            img {
+                width: 96px;
+                height: 78px;
+                object-fit: contain;
+            }
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            line-height: 1;
+            margin-top: 8px;
+
+            &_num {
+                font-size: 16px;
+                font-weight: 700;
+                color: white;
+
+                ._yellow {
+                    color: #D7B038;
+                }
+            }
+
+            &_block {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            &_block {
+                font-size: 14px;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                ._divide {
+                    display: flex;
+                    align-items: center;
+                    color: $text-dark;
+                    font-weight: 600;
+                }
+            }
+
+            &_value {
+                font-weight: 600;
+            }
+
+            &_price {
+                color: $text-dark;
+            }
+        }
+    }
+}

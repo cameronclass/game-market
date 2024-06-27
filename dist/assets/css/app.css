@@ -13158,3 +13158,113 @@ input[type=number] {
     top: 90px; }
   .mobile-game-form .steam-login__pay {
     margin-top: 15px; }
+
+.mobile-game-add {
+  padding: 20px; }
+  .mobile-game-add__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px; }
+    .mobile-game-add__title img {
+      width: 35px;
+      height: 28px;
+      object-fit: contain; }
+    .mobile-game-add__title span {
+      color: #D7B038;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1; }
+  .mobile-game-add__cards {
+    display: grid;
+    gap: 14px 12px;
+    grid-template-columns: repeat(3, 1fr); }
+  .mobile-game-add__card {
+    display: flex;
+    flex-direction: column;
+    position: relative; }
+    .mobile-game-add__card input {
+      display: none; }
+      .mobile-game-add__card input:checked ~ .mobile-game-add__card_image {
+        border-color: #FF6C3D; }
+    .mobile-game-add__card_image {
+      overflow: hidden;
+      position: relative;
+      border-radius: 6px;
+      border: 1px solid #34312D;
+      transition: 300ms ease; }
+    .mobile-game-add__card_img {
+      position: absolute;
+      left: -1%;
+      top: -1%;
+      width: 102%;
+      height: 102%;
+      object-fit: cover; }
+    .mobile-game-add__card_content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      height: 115px; }
+    .mobile-game-add__card_wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 0px 19.5px 0px 6px;
+      background: #262625;
+      padding: 6px 20px 6px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px; }
+    .mobile-game-add__card_title {
+      font-weight: 600;
+      line-height: 1; }
+    .mobile-game-add__card_subtitle {
+      line-height: 1;
+      font-size: 10px;
+      color: #847F7D; }
+    .mobile-game-add__card_count {
+      color: #D7B038;
+      font-weight: 700;
+      font-size: 20px;
+      padding: 10px 10px 0; }
+    .mobile-game-add__card_icon {
+      padding-right: 10px;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      top: -20px; }
+      .mobile-game-add__card_icon img {
+        width: 96px;
+        height: 78px;
+        object-fit: contain; }
+    .mobile-game-add__card_text {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      line-height: 1;
+      margin-top: 8px; }
+      .mobile-game-add__card_text_num {
+        font-size: 16px;
+        font-weight: 700;
+        color: white; }
+        .mobile-game-add__card_text_num ._yellow {
+          color: #D7B038; }
+      .mobile-game-add__card_text_block {
+        display: flex;
+        align-items: center;
+        gap: 10px; }
+      .mobile-game-add__card_text_block {
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        gap: 10px; }
+        .mobile-game-add__card_text_block ._divide {
+          display: flex;
+          align-items: center;
+          color: #847F7D;
+          font-weight: 600; }
+      .mobile-game-add__card_text_value {
+        font-weight: 600; }
+      .mobile-game-add__card_text_price {
+        color: #847F7D; }
