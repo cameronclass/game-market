@@ -181,3 +181,17 @@
     width: 37px;
     height: 37px;
 }
+
+.btn-orange {
+    border-radius: 50px;
+    background: $orange;
+    line-height: 1;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+
+    &:hover {
+        filter: drop-shadow(0 0 15px $orange);
+    }
+}

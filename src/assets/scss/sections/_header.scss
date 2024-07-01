@@ -178,15 +178,19 @@
                 display: none;
             }
 
-            &:hover {
-                .header__logo_menu_static {
-                    display: none;
-                }
+            @media (min-width: 768px) {
+                &:hover {
+                    .header__logo_menu_static {
+                        display: none;
+                    }
 
-                .header__logo_menu_hover {
-                    display: flex;
+                    .header__logo_menu_hover {
+                        display: flex;
+                    }
                 }
             }
+
+
 
             &._active {
                 .header__logo_menu_static {
@@ -642,6 +646,11 @@
         &_block {
             display: flex;
             justify-content: space-between;
+
+            @include mobile {
+                justify-content: center;
+                text-align: center;
+            }
         }
     }
 
@@ -653,6 +662,10 @@
             font-size: 16px;
             font-weight: 600;
             color: $text-dark;
+
+            @include mobile {
+                text-align: center;
+            }
         }
     }
 
@@ -669,6 +682,8 @@
         @include mobile {
             grid-template-columns: 1fr;
             justify-content: center;
+            text-align: center;
+            gap: 5px;
         }
     }
 
@@ -684,6 +699,12 @@
         @include mobile {
             width: 100%;
             text-align: center;
+        }
+    }
+
+    &__close {
+        @include mobile {
+            display: none;
         }
     }
 }
