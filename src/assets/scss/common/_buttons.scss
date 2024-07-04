@@ -182,7 +182,9 @@
     height: 37px;
 }
 
-.btn-orange {
+.btn-orange,
+.btn-blue,
+.btn-yellow {
     border-radius: 50px;
     background: $orange;
     line-height: 1;
@@ -190,8 +192,27 @@
     font-size: 18px;
     font-weight: 600;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         filter: drop-shadow(0 0 15px $orange);
+    }
+}
+
+.btn-blue {
+    background: linear-gradient(180deg, #2A62EB 0%, #7656FF 100%);
+
+    &:hover {
+        filter: drop-shadow(0 0 15px #2A62EB);
+    }
+}
+
+.btn-yellow {
+    background: linear-gradient(180deg, #FD9733 0%, #F77134 100%);
+
+    &:hover {
+        filter: drop-shadow(0 0 15px #FD9733);
     }
 }
