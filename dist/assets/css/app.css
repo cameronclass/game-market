@@ -13727,8 +13727,10 @@ input[type=number] {
         .about-services__card:last-child {
           margin-bottom: 0; } }
     .about-services__card._reverse {
-      flex-direction: row-reverse;
-      flex-direction: column; }
+      flex-direction: row-reverse; }
+      @media screen and (max-width: 979px) {
+        .about-services__card._reverse {
+          flex-direction: column; } }
     .about-services__card_img {
       width: 100%; }
       .about-services__card_img ._img-1 {

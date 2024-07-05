@@ -513,7 +513,9 @@
         &._reverse {
             flex-direction: row-reverse;
 
-            flex-direction: column;
+            @include mobile {
+                flex-direction: column;
+            }
         }
 
         &_img {
