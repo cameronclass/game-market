@@ -1327,10 +1327,7 @@
 
     @include netbook {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include mobile {
-        grid-template-columns: 1fr;
+        gap: 11px;
     }
 
 
@@ -1343,6 +1340,12 @@
         background: linear-gradient(175.53deg, rgb(52, 45, 39) 0%, rgb(34, 34, 32) 65.877%);
         padding: 15px 20px;
         border: 1px solid transparent;
+
+        @include netbook {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px 10px;
+        }
 
         &:hover {
             border-color: $orange;
@@ -1360,6 +1363,10 @@
             flex-direction: column;
             line-height: 1;
             gap: 4px;
+
+            @include netbook {
+                gap: 10px;
+            }
         }
 
         &_title {
