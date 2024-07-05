@@ -13479,7 +13479,8 @@ input[type=number] {
   background-color: #161513;
   position: relative;
   padding-top: 50px;
-  padding-bottom: 100px; }
+  padding-bottom: 100px;
+  overflow: hidden; }
   .about-steps__cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -13536,13 +13537,15 @@ input[type=number] {
       position: relative;
       top: -30px; }
   .about-steps__left {
+    width: 320px;
     position: absolute;
-    left: -100px;
-    top: 50px; }
+    left: -10px;
+    bottom: -10px; }
   .about-steps__right {
+    width: 320px;
     position: absolute;
     top: 50px;
-    right: -100px; }
+    right: -10px; }
 
 .about-why {
   background-color: #161513;
@@ -13629,7 +13632,9 @@ input[type=number] {
   background-color: #161513;
   position: relative;
   padding-top: 50px;
-  padding-bottom: 100px; }
+  padding-bottom: 100px;
+  height: 1300px;
+  overflow: hidden; }
   .about-reviews .home-other-reviews {
     margin-top: 40px; }
   .about-reviews__block {
@@ -13637,8 +13642,8 @@ input[type=number] {
     columns: 4;
     column-gap: 20px;
     position: relative;
-    height: 1000px;
-    overflow: hidden; }
+    overflow: hidden;
+    height: 1200px; }
     .about-reviews__block::after {
       content: "";
       position: absolute;

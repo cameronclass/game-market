@@ -182,6 +182,7 @@
     position: relative;
     padding-top: 50px;
     padding-bottom: 100px;
+    overflow: hidden;
 
     &__cards {
         display: grid;
@@ -263,15 +264,17 @@
     }
 
     &__left {
+        width: 320px;
         position: absolute;
-        left: -100px;
-        top: 50px;
+        left: -10px;
+        bottom: -10px;
     }
 
     &__right {
+        width: 320px;
         position: absolute;
         top: 50px;
-        right: -100px;
+        right: -10px;
     }
 }
 
@@ -401,6 +404,8 @@
     position: relative;
     padding-top: 50px;
     padding-bottom: 100px;
+    height: 1300px;
+    overflow: hidden;
 
     .home-other-reviews {
         margin-top: 40px;
@@ -411,8 +416,8 @@
         columns: 4;
         column-gap: 20px;
         position: relative;
-        height: 1000px;
         overflow: hidden;
+        height: 1200px;
 
         &::after {
             content: "";
