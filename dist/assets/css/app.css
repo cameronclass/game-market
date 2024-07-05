@@ -9305,12 +9305,17 @@ input[type=number] {
     font-size: 14px; }
 
 .home-other-reviews {
-  display: flex;
-  justify-content: center;
-  gap: 11px 1.5%;
-  flex-wrap: wrap; }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px 20px; }
+  @media screen and (max-width: 1200px) {
+    .home-other-reviews {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (max-width: 979px) {
+    .home-other-reviews {
+      grid-template-columns: 1fr; } }
   .home-other-reviews__card {
-    width: 23.5%;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 25px;
@@ -9321,12 +9326,6 @@ input[type=number] {
     .home-other-reviews__card:hover {
       border-color: #FF6C3D;
       background: #00000010; }
-    @media screen and (max-width: 1200px) {
-      .home-other-reviews__card {
-        width: 31.5%; } }
-    @media screen and (max-width: 979px) {
-      .home-other-reviews__card {
-        width: 100%; } }
     .home-other-reviews__card_img {
       width: 50px;
       height: 50px;
@@ -13394,8 +13393,7 @@ input[type=number] {
     display: flex;
     position: absolute;
     width: 200vw;
-    left: 100%;
-    right: 100%;
+    left: 90vw;
     margin-left: -100vw;
     margin-right: -100vw;
     gap: 30px; }
@@ -13537,6 +13535,14 @@ input[type=number] {
     .about-steps__card._top {
       position: relative;
       top: -30px; }
+  .about-steps__left {
+    position: absolute;
+    left: -100px;
+    top: 50px; }
+  .about-steps__right {
+    position: absolute;
+    top: 50px;
+    right: -100px; }
 
 .about-why {
   background-color: #161513;
@@ -13618,3 +13624,77 @@ input[type=number] {
       margin-bottom: 40px; }
     .about-services__card_btn {
       display: flex; }
+
+.about-reviews {
+  background-color: #161513;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 100px; }
+  .about-reviews .home-other-reviews {
+    margin-top: 40px; }
+  .about-reviews__block {
+    margin: 40px auto 0;
+    columns: 4;
+    column-gap: 20px;
+    position: relative;
+    height: 1000px;
+    overflow: hidden; }
+    .about-reviews__block::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(22, 21, 19, 0) 0%, #161513 89.22%); }
+  .about-reviews__card {
+    margin-bottom: 20px;
+    border-radius: 11px 35px 35px 35px;
+    background: #2D2B29;
+    padding: 25px;
+    break-inside: avoid; }
+    .about-reviews__card_text {
+      font-size: 14px;
+      color: #847F7D; }
+    .about-reviews__card_block {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 15px; }
+    .about-reviews__card_img {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      overflow: hidden; }
+    .about-reviews__card_content {
+      display: flex;
+      flex-direction: column; }
+    .about-reviews__card_name {
+      font-size: 16px;
+      font-weight: 600; }
+    .about-reviews__card_game {
+      font-size: 12px;
+      color: #847F7D; }
+    .about-reviews__card_date {
+      font-size: 12px;
+      color: #847F7D; }
+
+.about-others {
+  background-color: #161513;
+  position: relative;
+  border-bottom: 1px solid #FF6C3D;
+  height: calc(100% - 65px); }
+  .about-others .home-loop-block__title {
+    z-index: 4;
+    margin-bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+  .about-others .home-loop-block__border_top {
+    top: 0;
+    z-index: 1; }
+  .about-others .about-header__block {
+    overflow: hidden; }

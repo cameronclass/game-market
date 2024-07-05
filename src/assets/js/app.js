@@ -4,6 +4,7 @@
 @@include("libs/splide-autoscroll.js")
 @@include("libs/swiper.js")
 @@include("libs/fancybox.js")
+@@include("libs/masonry.js")
 
 document.addEventListener("DOMContentLoaded", function () {
 

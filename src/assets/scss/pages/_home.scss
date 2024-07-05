@@ -1320,15 +1320,22 @@
 }
 
 .home-other-reviews {
-    display: flex;
-    justify-content: center;
-    gap: 11px 1.5%;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 11px 20px;
 
+
+    @include netbook {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
 
 
     &__card {
-        width: 23.5%;
+        width: 100%;
         display: flex;
         align-items: center;
         gap: 25px;
@@ -1340,14 +1347,6 @@
         &:hover {
             border-color: $orange;
             background: #00000010;
-        }
-
-        @include netbook {
-            width: 31.5%;
-        }
-
-        @include mobile {
-            width: 100%;
         }
 
         &_img {
