@@ -13771,7 +13771,6 @@ accordions.forEach((accordion) => {
 let copyBtn = document.querySelector(".copy-js");
 
 /* Таймер */
-
 const countDownDate = new Date(2025, 0, 1, 10).getTime();
 const timerInfo = document.querySelector(".timer__info");
 const daysContainer = document.querySelector(".timer__day");
@@ -13827,13 +13826,23 @@ const timer = setInterval(updateTimer, 1000);
 updateTimer();
 
 /* Hamburger menu */
+const headerMenu = document.querySelector(".header__menu");
 const hamburgerButton = document.querySelector(".js-hamburger");
 const hamburgerMenu = document.querySelector(".js-hamburger-menu");
+const hamburgerMenuClose = document.querySelector(".js-hamburger-close");
 
 if (hamburgerButton)
   hamburgerButton.addEventListener("click", function () {
     this.classList.toggle("_active");
     hamburgerMenu.classList.toggle("active");
+    headerMenu.classList.toggle("active");
+  });
+
+if (hamburgerMenuClose)
+  hamburgerMenuClose.addEventListener("click", function () {
+    hamburgerMenu.classList.remove("active");
+    hamburgerButton.classList.remove("_active");
+    headerMenu.classList.remove("active");
   });
 
 /* Header Game */
@@ -14333,7 +14342,6 @@ formSelects.forEach((formSelect) => {
     selectOptions.style.overflowY = "";
   }
 });
-
 
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
