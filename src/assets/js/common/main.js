@@ -602,23 +602,38 @@ formSelects.forEach((formSelect) => {
 
 /* Catalog */
 
-const catalogTabButtons = document.querySelectorAll(".catalog__tab_btn");
-const catalogTabDrops = document.querySelectorAll(".catalog__tab_drop");
+const catalogTabsContent = document.querySelector(".catalog__tabs_content");
+const catalogTabs = catalogTabsContent.querySelectorAll(".catalog__tab");
 
-catalogTabButtons.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    const isActive = btn.classList.contains("_active");
+if (catalogTabs)
+  catalogTabs.forEach((tab) => {
+    const catalogTabBtn = tab.querySelector(".catalog__tab_btn");
+    const catalogTabDrop = tab.querySelector(".catalog__tab_drop");
 
-    // Remove _active class from all buttons and drops
-    catalogTabButtons.forEach((b, i) => {
-      b.classList.remove("_active");
-      catalogTabDrops[i].classList.remove("_active");
+    catalogTabBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isActive = catalogTabBtn.classList.contains("_active");
+
+      catalogTabs.forEach((innerTab) => {
+        innerTab.querySelector(".catalog__tab_btn").classList.remove("_active");
+        innerTab
+          .querySelector(".catalog__tab_drop")
+          .classList.remove("_active");
+      });
+
+      if (!isActive) {
+        catalogTabBtn.classList.add("_active");
+        catalogTabDrop.classList.add("_active");
+      }
     });
+  });
 
-    // If the clicked button was not active, toggle _active class to it and the corresponding drop
-    if (!isActive) {
-      btn.classList.add("_active");
-      catalogTabDrops[index].classList.add("_active");
+if (catalogTabsContent)
+  document.addEventListener("click", (event) => {
+    if (!catalogTabsContent.contains(event.target)) {
+      catalogTabs.forEach((tab) => {
+        tab.querySelector(".catalog__tab_btn").classList.remove("_active");
+        tab.querySelector(".catalog__tab_drop").classList.remove("_active");
+      });
     }
   });
-});

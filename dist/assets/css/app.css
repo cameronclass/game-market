@@ -5972,7 +5972,11 @@ input[type=number] {
     padding: 10px 5px;
     gap: 4px; }
     .catalog__tab_btn:hover {
-      filter: brightness(230%); }
+      filter: brightness(230%);
+      /* &~.catalog__tab_drop {
+                    visibility: visible;
+                    opacity: 1;
+                } */ }
     @media screen and (max-width: 1200px) {
       .catalog__tab_btn {
         padding: 8px; } }
