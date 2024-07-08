@@ -513,7 +513,6 @@
         background: #161513;
         display: grid;
         grid-template-columns: repeat(8, 120px);
-        overflow: hidden;
         justify-content: center;
 
 
@@ -562,12 +561,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
 
         @include mobile {
             max-width: 100%;
         }
 
-        &_block {
+        &_btn {
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -579,6 +579,10 @@
 
             &:hover {
                 filter: brightness(230%);
+            }
+
+            &._active{
+                
             }
 
             @include netbook {
@@ -595,28 +599,96 @@
             }
         }
 
-        &_img {
-            height: 28px;
-            object-fit: contain;
+        &_drop {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            z-index: 5;
+            padding: 0px;
+            width: 435px;
+            visibility: hidden;
+            opacity: 0;
+            transition: 300ms ease;
 
-            @include mobile {
-                width: auto;
-                height: 25px;
+            border-radius: 0px 0px 14px 14px;
+            border-bottom: 2px solid #7792D8;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.51) 100%), linear-gradient(270deg, rgba(79, 79, 79, 0.35) 0%, rgba(72, 60, 54, 0.35) 31.28%, rgba(70, 66, 63, 0.35) 48.78%, rgba(72, 60, 54, 0.35) 70.71%, rgba(79, 79, 79, 0.35) 100%);
+            backdrop-filter: blur(30.899999618530273px);
+
+            &._active{
+                visibility: visible;
+                opacity: 1;
             }
+
+            &_header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                border-bottom: 1px solid #7792D8;
+            }
+
+            &_all {
+                border-radius: 20px;
+                background: #262421;
+                font-size: 12px;
+                font-weight: 600;
+                color: $text-dark;
+                text-align: center;
+                padding: 7px 30px;
+                margin-right: 10px;
+            }
+
+            &_title {
+                padding: 18px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+
+                svg {
+                    width: 16px;
+                }
+            }
+
+            &_content {
+                display: flex;
+                gap: 60px;
+                padding: 10px;
+            }
+
+            &_menu {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                max-width: 146px;
+                width: 100%;
+            }
+
+            &_link {
+                width: 100%;
+                font-size: 12px;
+                font-weight: 600;
+                color: $text-dark;
+                padding: 4px 14px;
+                border-radius: 4px;
+
+                &._active,
+                &:hover {
+                    border-right: 1px solid $orange;
+                    background: #262421;
+                }
+            }
+
+            &_card {}
+        }
+
+        &_svg {
+            width: 28px;
         }
 
         &_title {
             font-size: 14px;
-        }
-
-        &:hover,
-        &.active {
-            border-bottom: 1px solid $orange;
-            background: linear-gradient(268.85deg, rgba(79, 79, 79, 0.35) 0.269%, rgba(72, 60, 54, 0.35) 31.412%, rgba(70, 66, 63, 0.35) 48.847%, rgba(72, 60, 54, 0.35) 70.685%, rgba(79, 79, 79, 0.35) 99.848%);
-        }
-
-        &.active .catalog__tab_block {
-            filter: brightness(230%);
         }
 
         &_name {
@@ -636,19 +708,19 @@
             }
         }
 
-        @include netbook {
-            /*  display: none;
-
-            &:first-child {
-                display: flex;
-                width: auto;
-            }
-
-            &.active {
-                display: flex;
-                position: absolute;
-            } */
+        &:hover,
+        &.active {
+            border-bottom: 1px solid $orange;
+            background: linear-gradient(268.85deg, rgba(79, 79, 79, 0.35) 0.269%, rgba(72, 60, 54, 0.35) 31.412%, rgba(70, 66, 63, 0.35) 48.847%, rgba(72, 60, 54, 0.35) 70.685%, rgba(79, 79, 79, 0.35) 99.848%);
         }
+
+        &.active .catalog__tab_block {
+            filter: brightness(230%);
+        }
+
+
+
+        @include netbook {}
 
     }
 

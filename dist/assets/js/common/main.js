@@ -599,3 +599,26 @@ formSelects.forEach((formSelect) => {
     selectOptions.style.overflowY = "";
   }
 });
+
+/* Catalog */
+
+const catalogTabButtons = document.querySelectorAll(".catalog__tab_btn");
+const catalogTabDrops = document.querySelectorAll(".catalog__tab_drop");
+
+catalogTabButtons.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    const isActive = btn.classList.contains("_active");
+
+    // Remove _active class from all buttons and drops
+    catalogTabButtons.forEach((b, i) => {
+      b.classList.remove("_active");
+      catalogTabDrops[i].classList.remove("_active");
+    });
+
+    // If the clicked button was not active, toggle _active class to it and the corresponding drop
+    if (!isActive) {
+      btn.classList.add("_active");
+      catalogTabDrops[index].classList.add("_active");
+    }
+  });
+});

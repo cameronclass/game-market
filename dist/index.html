@@ -751,8 +751,13 @@
             <div class="container">
                 <div class="catalog__tabs">
                     <div class="catalog__tab catalog__tab_name">
-                        <span class="catalog__tab_block">
-                            <img class="catalog__tab_img" src="assets/images/home/icons/catalog.svg" alt="">
+                        <span class="catalog__tab_btn">
+                            <svg class="catalog__tab_svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.7814 2.33325H19.5647C17.0214 2.33325 15.6797 3.67492 15.6797 6.21825V8.43492C15.6797 10.9783 17.0214 12.3199 19.5647 12.3199H21.7814C24.3247 12.3199 25.6664 10.9783 25.6664 8.43492V6.21825C25.6664 3.67492 24.3247 2.33325 21.7814 2.33325Z" fill="#847F7D" />
+                                <path d="M8.44536 15.6682H6.2287C3.6737 15.6682 2.33203 17.0099 2.33203 19.5532V21.7699C2.33203 24.3249 3.6737 25.6665 6.21703 25.6665H8.4337C10.977 25.6665 12.3187 24.3249 12.3187 21.7815V19.5649C12.3304 17.0099 10.9887 15.6682 8.44536 15.6682Z" fill="#847F7D" />
+                                <path d="M7.33703 12.3433C10.1012 12.3433 12.342 10.1024 12.342 7.33825C12.342 4.57407 10.1012 2.33325 7.33703 2.33325C4.57285 2.33325 2.33203 4.57407 2.33203 7.33825C2.33203 10.1024 4.57285 12.3433 7.33703 12.3433Z" fill="#847F7D" />
+                                <path d="M20.6612 25.6667C23.4254 25.6667 25.6662 23.4259 25.6662 20.6617C25.6662 17.8976 23.4254 15.6567 20.6612 15.6567C17.8971 15.6567 15.6562 17.8976 15.6562 20.6617C15.6562 23.4259 17.8971 25.6667 20.6612 25.6667Z" fill="#847F7D" />
+                            </svg>
                             <span class="catalog__tab_title">Catalog</span>
                         </span>
                     </div>
@@ -761,48 +766,72 @@
                         <img class="catalog__btn_img" src="assets/images/icons/arrow-down.svg" alt="">
                     </button>
                     <div class="catalog__tabs_content">
-                        <a class="catalog__tab" href="#">
-                            <span class="catalog__tab_block">
-                                <img class="catalog__tab_img" src="assets/images/home/icons/pc.svg" alt="">
+                        <div class="catalog__tab">
+                            <button class="catalog__tab_btn">
+                                <svg class="catalog__tab_svg" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" fill="none">
+                                    <path d="M28.2422 0H1.75781C0.788672 0 0 0.788672 0 1.75781V19.2188C0 20.1879 0.788672 20.9766 1.75781 20.9766H28.2422C29.2113 20.9766 30 20.1879 30 19.2188V1.75781C30 0.788672 29.2113 0 28.2422 0Z" fill="#847F7D" />
+                                    <path d="M24.375 25.3125H19.6289V22.7344H10.3711V25.3125H5.625C5.13984 25.3125 4.74609 25.7062 4.74609 26.1914C4.74609 26.6766 5.13984 27.0703 5.625 27.0703H24.375C24.8602 27.0703 25.2539 26.6766 25.2539 26.1914C25.2539 25.7062 24.8602 25.3125 24.375 25.3125Z" fill="#847F7D" />
+                                </svg>
                                 <span class="catalog__tab_title">PC</span>
-                            </span>
-                        </a>
-                        <a class="catalog__tab" href="#">
-                            <span class="catalog__tab_block">
-                                <img class="catalog__tab_img" src="assets/images/home/icons/playstation.svg" alt="">
-                                <span class="catalog__tab_title">PlayStation</span>
-                            </span>
-                        </a>
-                        <a class="catalog__tab" href="#">
-                            <span class="catalog__tab_block">
-                                <img class="catalog__tab_img" src="assets/images/home/icons/xbox.svg" alt="">
-                                <span class="catalog__tab_title">Xbox</span>
-                            </span>
-                        </a>
-                        <a class="catalog__tab" href="#">
-                            <span class="catalog__tab_block">
-                                <img class="catalog__tab_img" src="assets/images/home/icons/nintendo.svg" alt="">
-                                <span class="catalog__tab_title">Nintendo</span>
-                            </span>
-                        </a>
-                        <a class="catalog__tab" href="#">
-                            <span class="catalog__tab_block">
-                                <img class="catalog__tab_img" src="assets/images/home/icons/giftcard.svg" alt="">
-                                <span class="catalog__tab_title">Gift Cards</span>
-                            </span>
-                        </a>
-                        <a class="catalog__tab" href="#">
-                            <span class="catalog__tab_block">
-                                <img class="catalog__tab_img" src="assets/images/home/icons/subs.svg" alt="">
-                                <span class="catalog__tab_title">Subscriptions</span>
-                            </span>
-                        </a>
-                        <a class="catalog__tab" href="#">
-                            <span class="catalog__tab_block">
-                                <img class="catalog__tab_img" src="assets/images/home/icons/gamepoints.svg" alt="">
-                                <span class="catalog__tab_title">Game Points</span>
-                            </span>
-                        </a>
+                            </button>
+                            <div class="catalog__tab_drop">
+                                <div class="catalog__tab_drop_header">
+                                    <div class="catalog__tab_drop_title">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" fill="none">
+                                            <path d="M28.2422 0H1.75781C0.788672 0 0 0.788672 0 1.75781V19.2188C0 20.1879 0.788672 20.9766 1.75781 20.9766H28.2422C29.2113 20.9766 30 20.1879 30 19.2188V1.75781C30 0.788672 29.2113 0 28.2422 0Z" fill="#847F7D" />
+                                            <path d="M24.375 25.3125H19.6289V22.7344H10.3711V25.3125H5.625C5.13984 25.3125 4.74609 25.7062 4.74609 26.1914C4.74609 26.6766 5.13984 27.0703 5.625 27.0703H24.375C24.8602 27.0703 25.2539 26.6766 25.2539 26.1914C25.2539 25.7062 24.8602 25.3125 24.375 25.3125Z" fill="#847F7D" />
+                                        </svg>
+                                        <span>pc</span>
+                                    </div>
+                                    <a href="#" class="catalog__tab_drop_all">Смотреть всё</a>
+                                </div>
+                                <div class="catalog__tab_drop_content">
+                                    <div class="catalog__tab_drop_menu">
+                                        <a class="catalog__tab_drop_link" href="#">Промо акции</a>
+                                        <a class="catalog__tab_drop_link" href="#">Бестцелеры</a>
+                                        <a class="catalog__tab_drop_link" href="#">Выбор GB</a>
+                                        <a class="catalog__tab_drop_link" href="#">Премиальные</a>
+                                        <a class="catalog__tab_drop_link" href="#">DLC's</a>
+                                        <a class="catalog__tab_drop_link" href="#">Выбор фанатов</a>
+                                        <a class="catalog__tab_drop_link" href="#">Платформы</a>
+                                    </div>
+                                    <div class="catalog__tab_drop_card"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog__tab">
+                            <button class="catalog__tab_btn">
+                                <svg class="catalog__tab_svg" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" fill="none">
+                                    <path d="M28.2422 0H1.75781C0.788672 0 0 0.788672 0 1.75781V19.2188C0 20.1879 0.788672 20.9766 1.75781 20.9766H28.2422C29.2113 20.9766 30 20.1879 30 19.2188V1.75781C30 0.788672 29.2113 0 28.2422 0Z" fill="#847F7D" />
+                                    <path d="M24.375 25.3125H19.6289V22.7344H10.3711V25.3125H5.625C5.13984 25.3125 4.74609 25.7062 4.74609 26.1914C4.74609 26.6766 5.13984 27.0703 5.625 27.0703H24.375C24.8602 27.0703 25.2539 26.6766 25.2539 26.1914C25.2539 25.7062 24.8602 25.3125 24.375 25.3125Z" fill="#847F7D" />
+                                </svg>
+                                <span class="catalog__tab_title">PC</span>
+                            </button>
+                            <div class="catalog__tab_drop">
+                                <div class="catalog__tab_drop_header">
+                                    <div class="catalog__tab_drop_title">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" fill="none">
+                                            <path d="M28.2422 0H1.75781C0.788672 0 0 0.788672 0 1.75781V19.2188C0 20.1879 0.788672 20.9766 1.75781 20.9766H28.2422C29.2113 20.9766 30 20.1879 30 19.2188V1.75781C30 0.788672 29.2113 0 28.2422 0Z" fill="#847F7D" />
+                                            <path d="M24.375 25.3125H19.6289V22.7344H10.3711V25.3125H5.625C5.13984 25.3125 4.74609 25.7062 4.74609 26.1914C4.74609 26.6766 5.13984 27.0703 5.625 27.0703H24.375C24.8602 27.0703 25.2539 26.6766 25.2539 26.1914C25.2539 25.7062 24.8602 25.3125 24.375 25.3125Z" fill="#847F7D" />
+                                        </svg>
+                                        <span>pc</span>
+                                    </div>
+                                    <a href="#" class="catalog__tab_drop_all">Смотреть всё</a>
+                                </div>
+                                <div class="catalog__tab_drop_content">
+                                    <div class="catalog__tab_drop_menu">
+                                        <a class="catalog__tab_drop_link" href="#">Промо акции</a>
+                                        <a class="catalog__tab_drop_link" href="#">Бестцелеры</a>
+                                        <a class="catalog__tab_drop_link" href="#">Выбор GB</a>
+                                        <a class="catalog__tab_drop_link" href="#">Премиальные</a>
+                                        <a class="catalog__tab_drop_link" href="#">DLC's</a>
+                                        <a class="catalog__tab_drop_link" href="#">Выбор фанатов</a>
+                                        <a class="catalog__tab_drop_link" href="#">Платформы</a>
+                                    </div>
+                                    <div class="catalog__tab_drop_card"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="catalog__bg"></div>
                 </div>
