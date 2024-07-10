@@ -14007,29 +14007,7 @@ window.addEventListener("scroll", function () {
     }
 });
 
-/* catalog mobile */
-const catalogButtons = document.querySelectorAll(".catalog__btn");
-const catalogContents = document.querySelectorAll(".catalog__tabs_content");
-const catalogBgs = document.querySelectorAll(".catalog__bg");
 
-// Добавляем обработчик события для каждой кнопки в коллекции
-catalogButtons.forEach((button, index) => {
-  button.addEventListener("click", function (event) {
-    event.stopPropagation(); // Предотвращаем распространение события на родительские элементы
-    catalogContents[index].classList.add("active");
-    catalogBgs[index].classList.add("active");
-  });
-});
-
-document.addEventListener("click", function (event) {
-  // Перебираем все контенты и фоны и убираем класс active
-  catalogContents.forEach((content) => {
-    content.classList.remove("active");
-  });
-  catalogBgs.forEach((bg) => {
-    bg.classList.remove("active");
-  });
-});
 
 const scrollToTop = document.querySelector(".footer-to-top");
 
@@ -14344,11 +14322,41 @@ formSelects.forEach((formSelect) => {
 });
 
 /* Catalog */
+const catalogTabWrapper = document.querySelectorAll(".catalog__tabs");
+const catalogButtons = document.querySelectorAll(".catalog__btn");
+const catalogContents = document.querySelectorAll(".catalog__tabs_content");
+const catalogBgs = document.querySelectorAll(".catalog__bg");
+
+catalogButtons.forEach((button, index) => {
+  button.addEventListener("click", function (event) {
+    event.stopPropagation();
+    catalogContents[index].classList.toggle("active");
+    catalogBgs[index].classList.toggle("active");
+    catalogTabWrapper[index].classList.toggle("active");
+  });
+});
+
+document.addEventListener("click", function (event) {
+  if (!event.target.closest(".catalog__tabs")) {
+    catalogContents.forEach((content) => {
+      content.classList.remove("active");
+    });
+    catalogBgs.forEach((bg) => {
+      bg.classList.remove("active");
+    });
+    catalogTabWrapper.forEach((wrap) => {
+      wrap.classList.remove("active");
+    });
+  }
+});
 
 const catalogTabsContent = document.querySelector(".catalog__tabs_content");
-const catalogTabs = catalogTabsContent.querySelectorAll(".catalog__tab");
+if (catalogTabsContent) {
+  const catalogTabs = catalogTabsContent.querySelectorAll(".catalog__tab");
+  const catalogTabReturns = catalogTabsContent.querySelectorAll(
+    ".catalog__tab_drop_return"
+  );
 
-if (catalogTabs)
   catalogTabs.forEach((tab) => {
     const catalogTabBtn = tab.querySelector(".catalog__tab_btn");
     const catalogTabDrop = tab.querySelector(".catalog__tab_drop");
@@ -14358,6 +14366,7 @@ if (catalogTabs)
       const isActive = catalogTabBtn.classList.contains("_active");
 
       catalogTabs.forEach((innerTab) => {
+        innerTab.classList.remove("_active");
         innerTab.querySelector(".catalog__tab_btn").classList.remove("_active");
         innerTab
           .querySelector(".catalog__tab_drop")
@@ -14365,21 +14374,34 @@ if (catalogTabs)
       });
 
       if (!isActive) {
+        tab.classList.add("_active");
         catalogTabBtn.classList.add("_active");
         catalogTabDrop.classList.add("_active");
       }
     });
+
+    catalogTabReturns.forEach((returnBtn) => {
+      returnBtn.addEventListener("click", () => {
+        catalogTabs.forEach((tab) => {
+          tab.classList.remove("_active");
+          tab.querySelector(".catalog__tab_btn").classList.remove("_active");
+          tab.querySelector(".catalog__tab_drop").classList.remove("_active");
+        });
+      });
+    });
   });
 
-if (catalogTabsContent)
   document.addEventListener("click", (event) => {
     if (!catalogTabsContent.contains(event.target)) {
       catalogTabs.forEach((tab) => {
+        tab.classList.remove("_active");
         tab.querySelector(".catalog__tab_btn").classList.remove("_active");
         tab.querySelector(".catalog__tab_drop").classList.remove("_active");
       });
     }
   });
+}
+
 
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
