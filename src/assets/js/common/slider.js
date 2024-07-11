@@ -270,9 +270,20 @@ if (homeReviews) {
     type: "loop",
     focus: "center",
     perPage: 4,
+    gap: 20,
+    mediaQuery: "min",
     breakpoints: {
-      768: {
+      0: {
         perPage: 1,
+      },
+      768: {
+        perPage: 2,
+      },
+      979: {
+        perPage: 3,
+      },
+      1200: {
+        perPage: 4,
       },
     },
     arrows: false,
@@ -289,19 +300,22 @@ if (homeBlog) {
     arrows: false,
     pagination: false,
     gap: 22,
+    mediaQuery: "min",
     breakpoints: {
-      980: {
-        perPage: 1,
-        focus: "center",
-        autoWidth: false,
-      },
-      1024: {
+      0: {
         perPage: 1,
         focus: "center",
         autoWidth: true,
       },
-      3000: {
+      768: {
+        focus: "center",
+        perPage: 1,
+        autoWidth: true,
+      },
+      1200: {
+        focus: 1,
         perPage: 2,
+        autoWidth: false,
       },
     },
   });
@@ -336,8 +350,17 @@ if (steamHistory) {
     perPage: 4,
     gap: 10,
     breakpoints: {
-      768: {
+      0: {
         perPage: 1,
+      },
+      768: {
+        perPage: 2,
+      },
+      979: {
+        perPage: 3,
+      },
+      1200: {
+        perPage: 4,
       },
     },
     arrows: false,

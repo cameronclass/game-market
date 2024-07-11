@@ -1273,7 +1273,7 @@
 
         &_btns {
             display: flex;
-            width: 100%;
+            width: auto;
             gap: 15px;
 
             @include mobile {
@@ -1284,12 +1284,16 @@
         &_category {
             display: flex;
             justify-content: flex-end;
-            width: 100%;
+            width: auto;
             gap: 10px;
 
             @include mobile {
                 justify-content: center;
                 flex-direction: column;
+            }
+
+            .btn-normal {
+                white-space: nowrap;
             }
         }
     }

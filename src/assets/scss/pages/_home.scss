@@ -751,10 +751,8 @@
 
 /* Loop Block */
 .home-statics {
-    padding-bottom: 30px;
+    position: relative;
     background: rgb(26, 25, 23);
-
-    /* overflow-x: hidden; */
 
     .statics-card {
 
@@ -805,11 +803,12 @@
 }
 
 .home-markets {
-    padding-bottom: 50px;
     background: rgb(26, 25, 23);
     position: relative;
 
-    /* overflow-x: hidden; */
+    .home-loop-block {
+        padding-top: 0;
+    }
 
 
     &__title {
@@ -870,7 +869,6 @@
         }
     }
 
-
     .splide__track {
         overflow: visible;
     }
@@ -879,6 +877,7 @@
 .home-loop-block {
     position: relative;
     overflow-x: hidden;
+    padding: 15px 0 50px;
 
     &__title {
         line-height: 1.1;
@@ -953,6 +952,59 @@
         bottom: 0px;
         left: 50%;
         transform: translateX(-50%);
+    }
+}
+
+.home-blog {
+    background: rgb(26, 25, 23);
+    padding-bottom: 40px;
+
+    .home-loop-block {
+        padding: 0;
+    }
+
+    .home-loop-block__title {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        font-family: $font-roboto;
+
+        &_main {
+            font-size: 20px;
+            font-weight: 700;
+
+            & ._orange {
+                color: $orange;
+            }
+        }
+
+        &_secondary {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: $font-roboto;
+        }
+    }
+
+    .splide__track {
+        overflow: visible;
+    }
+
+    .splide__slide {
+        height: auto;
+        width: auto;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    .splide__slide {
+        filter: opacity(0.2);
+    }
+
+    .splide__slide.is-visible {
+        filter: none;
     }
 }
 
@@ -1036,50 +1088,6 @@
 
 }
 
-.home-blog {
-    background: rgb(26, 25, 23);
-    padding-bottom: 40px;
-
-    .home-loop-block__title {
-        margin-bottom: 0;
-    }
-
-    &__title {
-        font-family: $font-roboto;
-
-        &_main {
-            font-size: 20px;
-            font-weight: 700;
-
-            & ._orange {
-                color: $orange;
-            }
-        }
-
-        &_secondary {
-            font-size: 14px;
-            font-weight: 400;
-            font-family: $font-roboto;
-        }
-    }
-
-    .splide__track {
-        overflow: visible;
-    }
-
-    .splide__slide {
-        height: auto;
-    }
-
-    .splide__slide {
-        filter: opacity(0.2);
-    }
-
-    .splide__slide.is-visible {
-        filter: none;
-    }
-}
-
 .home-blog-card {
     border: 1px solid #33302D;
     position: relative;
@@ -1094,6 +1102,7 @@
     @include netbook {
         width: 100%;
         max-width: 612px;
+        min-width: 612px;
     }
 
     @include mobile {
@@ -1324,7 +1333,7 @@
     gap: 11px 20px;
 
 
-    @include netbook {
+    @include mobile {
         grid-template-columns: repeat(2, 1fr);
         gap: 11px;
     }
@@ -1352,9 +1361,14 @@
         }
 
         &_img {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             object-fit: contain;
+
+            @include netbook{
+                width: auto;
+                height: 55px;
+            }
         }
 
         &_content {

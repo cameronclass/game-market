@@ -286,6 +286,10 @@
     transition: 300ms ease;
     z-index: 5;
 
+    @include netbook{
+        right: 20px;
+    }
+
     svg {
         position: relative;
         bottom: -5px;
