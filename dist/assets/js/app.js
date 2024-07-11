@@ -13771,13 +13771,6 @@ accordions.forEach((accordion) => {
 let copyBtn = document.querySelector(".copy-js");
 
 /* Таймер */
-const countDownDate = new Date(2025, 0, 1, 10).getTime();
-const timerInfo = document.querySelector(".timer__info");
-const daysContainer = document.querySelector(".timer__day");
-const hoursContainer = document.querySelector(".timer__hours");
-const minsContainer = document.querySelector(".timer__minutes");
-const secsContainer = document.querySelector(".timer__seconds");
-const messageContainer = document.querySelector(".timer__message");
 
 const formatNumber = (number) => {
   return `<div class="timer__wrapper">${number
@@ -13785,14 +13778,14 @@ const formatNumber = (number) => {
     .split("")
     .map(
       (digit) =>
-        `<span class="timer__digit"><span class="timer__digit_num"> ${digit} </span></span>`
+        `<span class="timer__digit"><span class="timer__digit_num">${digit}</span></span>`
     )
     .join("")}</div>`;
 };
 
-const updateTimer = () => {
+const updateTimer = (timer, deadline) => {
   const now = new Date().getTime();
-  const distance = countDownDate - now;
+  const distance = deadline - now;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
@@ -13800,6 +13793,13 @@ const updateTimer = () => {
   );
   const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+  const daysContainer = timer.querySelector(".timer__day");
+  const hoursContainer = timer.querySelector(".timer__hours");
+  const minsContainer = timer.querySelector(".timer__minutes");
+  const secsContainer = timer.querySelector(".timer__seconds");
+  const timerInfo = timer.querySelector(".timer__info");
+  const messageContainer = timer.querySelector(".timer__message");
 
   if (daysContainer)
     daysContainer.innerHTML =
@@ -13815,15 +13815,23 @@ const updateTimer = () => {
       formatNumber(secs) + '<h3 class="timer__label">Секунд</h3>';
 
   if (distance < 0) {
-    clearInterval(timer);
+    clearInterval(timer.interval);
     if (timerInfo) timerInfo.classList.add("is-hidden");
     if (messageContainer) messageContainer.classList.add("is-visible");
   }
 };
 
-const timer = setInterval(updateTimer, 1000);
+const timers = document.querySelectorAll(".timer");
 
-updateTimer();
+timers.forEach((timer) => {
+  const deadline = new Date(timer.getAttribute("data-deadline")).getTime();
+
+  timer.interval = setInterval(() => {
+    updateTimer(timer, deadline);
+  }, 1000);
+
+  updateTimer(timer, deadline); 
+});
 
 /* Hamburger menu */
 const headerMenu = document.querySelector(".header__menu");
@@ -14006,8 +14014,6 @@ window.addEventListener("scroll", function () {
       fixedCard.classList.remove("active");
     }
 });
-
-
 
 const scrollToTop = document.querySelector(".footer-to-top");
 
@@ -14401,7 +14407,6 @@ if (catalogTabsContent) {
     }
   });
 }
-
 
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
