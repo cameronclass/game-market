@@ -1111,6 +1111,7 @@
         max-height: 300px;
         height: 100%;
         max-width: 100%;
+        min-width: auto;
     }
 
     &__block {
@@ -1365,7 +1366,7 @@
             height: 44px;
             object-fit: contain;
 
-            @include netbook{
+            @include netbook {
                 width: auto;
                 height: 55px;
             }

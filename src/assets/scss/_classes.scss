@@ -1230,7 +1230,6 @@
     }
 }
 
-
 .search-block {
     display: flex;
     align-items: center;
@@ -1368,6 +1367,10 @@
     border-radius: 10px;
     width: max-content;
 
+    @include mobile {
+        width: 100%;
+    }
+
     &-list {
         display: flex;
         gap: 20px;
@@ -1440,6 +1443,11 @@
 .new-card {
     position: relative;
     width: 234px;
+
+    @include netbook {
+        width: auto;
+        transform: scale(0.9);
+    }
 
     &__overlay {
         position: absolute;

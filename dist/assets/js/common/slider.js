@@ -171,6 +171,7 @@ function gameSwiper(selector) {
       0: {
         slidesPerView: "auto",
         centeredSlides: true,
+        spaceBetween: 5,
       },
       1290: {
         slidesPerView: 5,

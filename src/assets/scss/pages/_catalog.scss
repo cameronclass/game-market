@@ -349,6 +349,10 @@
             overflow: hidden;
             position: relative;
 
+            @include mobile {
+                width: 100%;
+            }
+
             &:hover {
                 .catalog-slider__sold_overlay {
                     visibility: visible;
@@ -626,22 +630,40 @@
 .catalog-cards {
     margin-top: 20px;
     margin-bottom: 20px;
+    overflow: hidden;
 
     &__block {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
+        gap: 15px 10px;
 
-        @include laptop {
-            grid-template-columns: repeat(4, 1fr);
+        @media screen and (max-width: 1300px) {
+            gap: 15px 0;
         }
 
         @include netbook {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
         }
 
         @include mobile {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: 735px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 500px) {
+            grid-template-columns: repeat(2, 210px);
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: 470px) {
+            grid-template-columns: 1fr;
+            gap: 10px;
         }
     }
 
@@ -649,28 +671,68 @@
         display: flex;
         justify-content: center;
 
-        .game-card__content {
-            width: calc(100% - 10px);
-        }
-
-        .game-card__img {
-            height: 305px;
-
-            @include mobile {
-                height: 220px;
+        @media screen and (max-width: 1300px) {
+            .new-card {
+                transform: scale(0.9);
             }
         }
 
-        .game-card__price {
-            font-size: 16px;
+        @media screen and (max-width: 735px) {
+            height: 340px;
+
+            .new-card {
+                transform: scale(0.85);
+            }
         }
 
-        .game-card__price_old {
-            font-size: 10px;
-        }
+        @media screen and (max-width: 470px) {
+            height: auto;
 
-        .game-card__price_cur {
-            top: -6px;
+            .new-card {
+                transform: scale(1);
+
+                &__svg,
+                &__discount,
+                &__new,
+                &__category {
+                    display: none;
+                }
+
+                &__overlay {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: auto;
+                    display: grid;
+                    grid-template-columns: 125px 1fr;
+                    gap: 15px;
+                    border-radius: 16px;
+                    border: 1px solid rgba(32, 25, 22, 0.00);
+                    background: linear-gradient(180deg, rgba(32, 28, 26, 0.82) 0%, rgba(45, 40, 36, 0.82) 100%);
+                    backdrop-filter: blur(11.300000190734863px);
+                    padding: 6px;
+                }
+
+                &__content {
+                    border: none;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                &__img {
+                    border: none;
+
+                    &_item {
+                        width: 125px;
+                        height: 100px;
+                        border-radius: 5px;
+                        border: 1px solid #847F7D;
+                    }
+                }
+            }
         }
     }
 
