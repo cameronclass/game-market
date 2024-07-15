@@ -13795,7 +13795,6 @@ accordions.forEach((accordion) => {
 let copyBtn = document.querySelector(".copy-js");
 
 /* Таймер */
-
 const formatNumber = (number) => {
   return `<div class="timer__wrapper">${number
     .toString()
@@ -13854,7 +13853,7 @@ timers.forEach((timer) => {
     updateTimer(timer, deadline);
   }, 1000);
 
-  updateTimer(timer, deadline); 
+  updateTimer(timer, deadline);
 });
 
 /* Hamburger menu */

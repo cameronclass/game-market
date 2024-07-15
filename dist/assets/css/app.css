@@ -6207,7 +6207,8 @@ input[type=number] {
     .catalog__tab_drop_card.new-card {
       width: 100%;
       padding: 5px;
-      max-width: min-content; }
+      max-width: min-content;
+      min-width: 180px; }
     .catalog__tab_drop_card .new-card__img {
       border: none; }
       .catalog__tab_drop_card .new-card__img_item {
@@ -6539,7 +6540,7 @@ input[type=number] {
 .new-card {
   position: relative;
   width: 234px; }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1300px) {
     .new-card {
       width: auto;
       transform: scale(0.9); } }
@@ -11167,13 +11168,17 @@ input[type=number] {
         .cart-comments__form_emoji {
           top: 10px;
           transform: none; } }
-    @media screen and (max-width: 979px) {
-      .cart-comments__form_avatar {
-        margin: 0;
-        width: 66px;
-        height: 66px;
-        position: relative;
-        top: -15px; } }
+    .cart-comments__form_avatar {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      border-radius: 50%;
+      border: 1px solid #847F7D;
+      overflow: hidden; }
+      @media screen and (max-width: 979px) {
+        .cart-comments__form_avatar {
+          position: relative;
+          top: -15px; } }
     .cart-comments__form .pre-order__subs_input {
       padding-left: 42px;
       font-size: 14px;
@@ -12526,7 +12531,8 @@ input[type=number] {
       margin-top: 12px; }
 
 .steam-slider {
-  margin: 40px 0; }
+  margin: 40px 0;
+  overflow: hidden; }
   .steam-slider .game-slider__actions {
     margin-bottom: 30px; }
   .steam-slider .swiper-slide {

@@ -1208,10 +1208,14 @@
         }
 
         &_avatar {
+            width: 46px;
+            height: 46px;
+            display: flex;
+            border-radius: 50%;
+            border: 1px solid $text-dark;
+            overflow: hidden;
+
             @include mobile {
-                margin: 0;
-                width: 66px;
-                height: 66px;
                 position: relative;
                 top: -15px;
             }

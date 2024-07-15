@@ -949,6 +949,7 @@
                     width: 100%;
                     padding: 5px;
                     max-width: min-content;
+                    min-width: 180px;
                 }
 
                 .new-card__img {
@@ -1444,7 +1445,7 @@
     position: relative;
     width: 234px;
 
-    @include netbook {
+    @media screen and (max-width: 1300px) {
         width: auto;
         transform: scale(0.9);
     }
@@ -2175,7 +2176,6 @@
         }
     }
 }
-
 
 /* Forms */
 .form-input {
