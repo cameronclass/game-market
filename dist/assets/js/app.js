@@ -13554,7 +13554,7 @@ new Swiper(".steam-slider .swiper", {
 new Swiper(".home-main-slider .swiper", {
   spaceBetween: 12,
   loop: true,
-  effect: "fade",
+  /* effect: "fade", */
   breakpoints: {
     0: {},
   },
