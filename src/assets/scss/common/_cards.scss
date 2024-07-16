@@ -497,18 +497,31 @@
         font-weight: 400;
         font-size: 7px;
         margin-bottom: 11px;
+        color: $text-dark;
     }
 
     &__name {
         font-size: 16px;
         font-weight: 400;
         margin-bottom: 10px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__text {
         font-size: 12px;
         font-weight: 400;
         color: $text-dark;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__actions {
