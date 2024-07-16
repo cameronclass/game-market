@@ -13576,6 +13576,24 @@ gameSwiper(".game-swiper-1");
 gameSwiper(".game-swiper-2");
 gameSwiper(".game-swiper-3");
 gameSwiper(".game-swiper-4");
+gameSwiper(".game-swiper-5");
+gameSwiper(".game-swiper-6");
+gameSwiper(".game-swiper-7");
+gameSwiper(".game-swiper-8");
+
+let steamGiftsBottom = new Swiper(".steam-gifts-bottom", {
+  spaceBetween: 8,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+  direction: "vertical",
+});
+let steamGiftsTop = new Swiper(".steam-gifts-top", {
+  spaceBetween: 10,
+  thumbs: {
+    swiper: steamGiftsBottom,
+  },
+});
 
 /* Splide */
 let homeMainSlider = document.querySelector(".hot-slider");

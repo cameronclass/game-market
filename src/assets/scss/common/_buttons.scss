@@ -216,3 +216,61 @@
         filter: drop-shadow(0 0 15px #FD9733);
     }
 }
+
+.buy-btn {
+    border: 1px solid $text-dark;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px 0 15px 0;
+
+    &__svg {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    &__main {
+        font-size: 16px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        color: white;
+        line-height: 1;
+    }
+
+    &__before {
+        font-size: 8px;
+        color: $text-dark;
+        font-family: $font-roboto;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        transition: 0;
+    }
+
+    &:hover {
+
+        border: 1px solid $orange;
+
+        .buy-btn__svg {
+            path {
+                fill: $orange;
+            }
+        }
+
+        .buy-btn__before {
+            color: $text-dark;
+        }
+    }
+}
