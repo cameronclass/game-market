@@ -13551,6 +13551,17 @@ new Swiper(".steam-slider .swiper", {
   },
 });
 
+new Swiper(".home-main-slider .swiper", {
+  spaceBetween: 12,
+  loop: true,
+  breakpoints: {
+    0: {},
+  },
+  pagination: {
+    el: ".home-main-slider .swiper-pagination",
+  },
+});
+
 function gameSwiper(selector) {
   return new Swiper(selector + " .swiper", {
     spaceBetween: 25,
@@ -13607,62 +13618,6 @@ let steamGiftsTop = new Swiper(".steam-gifts-top", {
 });
 
 /* Splide */
-let homeMainSlider = document.querySelector(".hot-slider");
-if (homeMainSlider) {
-  let homeMainSplide = new Splide(".hot-slider", {
-    type: "loop",
-    perPage: 1,
-    gap: 50,
-    breakpoints: {
-      768: {
-        perPage: 1,
-      },
-    },
-    arrows: false,
-    pagination: true,
-  });
-  homeMainSplide.mount();
-}
-
-let giftSlider = document.querySelector(".gift-slider");
-if (giftSlider) {
-  let giftSplide = new Splide(".gift-slider", {
-    type: "loop",
-    focus: "center",
-    perPage: 5,
-    gap: 10,
-    autoWidth: true,
-    breakpoints: {
-      768: {
-        perPage: 1,
-      },
-    },
-    arrows: false,
-    pagination: true,
-  });
-  giftSplide.mount();
-}
-
-let topUpSlider = document.querySelector(".topup-slider");
-if (topUpSlider) {
-  let topUpSplide = new Splide(".topup-slider", {
-    type: "loop",
-    focus: "center",
-    perPage: 1,
-    gap: -100,
-    breakpoints: {
-      0: {
-        perPage: 1,
-      },
-      768: {
-        perPage: 1,
-      },
-    },
-    arrows: true,
-    pagination: false,
-  });
-  topUpSplide.mount();
-}
 
 let homeMarkets = document.querySelector(".home-markets .splide");
 if (homeMarkets) {
