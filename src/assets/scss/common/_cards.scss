@@ -498,6 +498,11 @@
         font-size: 7px;
         margin-bottom: 11px;
         color: $text-dark;
+
+        svg {
+            height: 13px;
+            display: flex;
+        }
     }
 
     &__name {

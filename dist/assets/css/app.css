@@ -5693,6 +5693,9 @@ html.with-fancybox body.hide-scrollbar {
     font-size: 7px;
     margin-bottom: 11px;
     color: #847F7D; }
+    .slider-card__category svg {
+      height: 13px;
+      display: flex; }
   .slider-card__name {
     font-size: 16px;
     font-weight: 400;
