@@ -130,6 +130,15 @@
         grid-template-columns: 1fr 1fr;
         gap: 18px;
     }
+
+    .swiper-pagination {
+        display: flex;
+        align-items: center;
+        width: calc(50% - 30px);
+        justify-content: flex-end;
+        bottom: 20px;
+        top: inherit;
+    }
 }
 
 .home-swiper {

@@ -5709,7 +5709,9 @@ html.with-fancybox body.hide-scrollbar {
     font-size: 10px;
     font-weight: 600;
     font-family: "Inter", sans-serif;
-    padding: 6px 13px; }
+    padding: 6px 13px;
+    position: relative;
+    z-index: 1; }
   .slider-card__discount {
     font-weight: 900;
     font-size: 16px;
@@ -8949,6 +8951,13 @@ input[type=number] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px; }
+  .home-main-slider .swiper-pagination {
+    display: flex;
+    align-items: center;
+    width: calc(50% - 30px);
+    justify-content: flex-end;
+    bottom: 20px;
+    top: inherit; }
 
 .home-swiper-container {
   position: relative;

@@ -13554,11 +13554,13 @@ new Swiper(".steam-slider .swiper", {
 new Swiper(".home-main-slider .swiper", {
   spaceBetween: 12,
   loop: true,
+  effect: "fade",
   breakpoints: {
     0: {},
   },
   pagination: {
     el: ".home-main-slider .swiper-pagination",
+    clickable: true,
   },
 });
 

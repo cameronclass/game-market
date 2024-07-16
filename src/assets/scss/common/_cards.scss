@@ -523,6 +523,8 @@
         font-weight: 600;
         font-family: $font-inter;
         padding: 6px 13px;
+        position: relative;
+        z-index: 1;
     }
 
     &__discount {
