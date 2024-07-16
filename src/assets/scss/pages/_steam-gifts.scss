@@ -6,11 +6,23 @@
     &__block {
         display: flex;
         gap: 18px;
+
+        @include netbook {
+            flex-direction: column;
+        }
     }
 
     .steam-gifts-top {
         width: 70%;
         height: 430px;
+
+        @include netbook {
+            width: 100%;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
 
         &__slide {
             position: relative;
@@ -32,6 +44,10 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
+
+                @include mobile {
+                    padding: 15px 15px 30px;
+                }
             }
 
             &_img {
@@ -66,6 +82,16 @@
 
 
         }
+
+        .swiper-pagination {
+            display: none;
+
+            @include mobile {
+                display: flex;
+                justify-content: center;
+                bottom: 10px;
+            }
+        }
     }
 
     .steam-gifts-bottom {
@@ -73,14 +99,23 @@
         height: 430px;
         flex-direction: column;
 
+        @include netbook {
+            width: 100%;
+            height: 120px;
+        }
+
+        @include mobile {
+            display: none;
+        }
+
         &__slide {
             border-radius: 10px;
             border: 1px solid #36332D;
-
             overflow: hidden;
             height: 100%;
             position: relative;
             transition: 300ms ease;
+
 
             &:hover {
                 border-color: $orange;
@@ -122,6 +157,10 @@
                 gap: 20px;
                 padding: 12px;
                 z-index: 2;
+
+                @include netbook {
+                    gap: 10px;
+                }
             }
 
             &_img {
@@ -133,7 +172,6 @@
                 height: 77px;
 
                 img {
-
                     border-radius: 6px;
                     object-fit: cover;
                 }
@@ -143,7 +181,22 @@
                 font-size: 20px;
                 font-weight: 500;
                 font-family: $font-roboto;
-                line-height: 1;
+                line-height: 1.2;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+
+                @include netbook {
+                    font-size: 18px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                }
             }
         }
 
@@ -158,10 +211,18 @@
 .steam-gifts-series {
     padding: 40px 0;
 
+    @include mobile {
+        padding: 20px 0;
+    }
+
     &__block {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__card {

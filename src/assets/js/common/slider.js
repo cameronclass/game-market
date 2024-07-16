@@ -195,11 +195,22 @@ let steamGiftsBottom = new Swiper(".steam-gifts-bottom", {
   freeMode: true,
   watchSlidesProgress: true,
   direction: "vertical",
+  breakpoints: {
+    0: {
+      direction: "horizontal",
+    },
+    1200: {
+      direction: "vertical",
+    },
+  },
 });
 let steamGiftsTop = new Swiper(".steam-gifts-top", {
   spaceBetween: 10,
   thumbs: {
     swiper: steamGiftsBottom,
+  },
+  pagination: {
+    el: ".steam-gifts-top .swiper-pagination",
   },
 });
 
