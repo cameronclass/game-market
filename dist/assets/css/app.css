@@ -11765,6 +11765,98 @@ input[type=number] {
   .contract-offer:hover .contract-offer__link {
     border-bottom: 1px solid #FF6C3D; }
 
+.basket-steps {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background: rgba(16, 15, 14, 0.78);
+  backdrop-filter: blur(24.85px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200px 0; }
+  .basket-steps__content {
+    width: 100%;
+    max-width: 826px;
+    border-radius: 10px;
+    border: 1px solid #2F2D2B;
+    background: #1A1917;
+    overflow: hidden; }
+  .basket-steps__header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #141413; }
+    .basket-steps__header_title {
+      font-size: 16px;
+      color: #847F7D; }
+  .basket-steps__close {
+    border-radius: 5px;
+    background: #2E2D2B;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .basket-steps__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) minmax(140px, 179px);
+    gap: 50px 20px;
+    padding: 24px 24px 50px;
+    border-top: 1px solid #22221F;
+    border-bottom: 1px solid #141413; }
+  .basket-steps__card {
+    display: flex;
+    flex-direction: column;
+    position: relative; }
+    .basket-steps__card_img {
+      border-radius: 10px;
+      height: 110px;
+      object-fit: cover; }
+    .basket-steps__card_price {
+      font-weight: 600;
+      color: #847F7D;
+      position: absolute;
+      bottom: -30px; }
+    .basket-steps__card_more {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px;
+      border-radius: 10px;
+      background: #282725; }
+      .basket-steps__card_more_count {
+        font-weight: 600;
+        font-size: 20px;
+        color: white; }
+      .basket-steps__card_more_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px; }
+      .basket-steps__card_more_price {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+        gap: 3px; }
+        .basket-steps__card_more_price ._title {
+          font-size: 12px;
+          font-weight: 400;
+          color: white; }
+        .basket-steps__card_more_price ._price {
+          font-size: 16px;
+          font-weight: 600;
+          color: #FF6C3D; }
+      .basket-steps__card_more_button {
+        padding: 0; }
+  .basket-steps__body {
+    padding: 20px 24px;
+    border-top: 1px solid #22221F; }
+
 .steam-history {
   padding: 20px 0; }
   .steam-history__card {
