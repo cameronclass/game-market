@@ -225,6 +225,10 @@ let steamGiftsTop = new Swiper(".steam-gifts-top", {
   pagination: {
     el: ".steam-gifts-top .swiper-pagination",
   },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
 });
 
 /* Splide */
