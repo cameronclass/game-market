@@ -13876,11 +13876,22 @@ if (headerGameBtns)
 const headerAdminBtn = document.querySelector(".header__actions_admin_open");
 const headerAdminDrop = document.querySelector(".header__actions_admin_drop");
 
-if (headerAdminBtn)
-  headerAdminBtn.addEventListener("click", () => {
+if (headerAdminBtn) {
+  headerAdminBtn.addEventListener("click", (event) => {
     headerAdminBtn.classList.toggle("_active");
     headerAdminDrop.classList.toggle("_active");
   });
+
+  window.addEventListener("click", (event) => {
+    if (
+      !headerAdminBtn.contains(event.target) &&
+      !headerAdminDrop.contains(event.target)
+    ) {
+      headerAdminBtn.classList.remove("_active");
+      headerAdminDrop.classList.remove("_active");
+    }
+  });
+}
 
 /* Language button */
 const langButton = document.querySelector(".header__lang_button");
@@ -14274,22 +14285,6 @@ function updateDoingProgressBars() {
 // Call the function to update all progress bars initially
 updateDoingProgressBars();
 
-const mainLogin = document.querySelector(".main-login");
-const closeButton = document.querySelector(".main-login__close");
-const exitButton = document.querySelector(".header__actions_admin_item_exit");
-
-if (mainLogin && closeButton) {
-  closeButton.addEventListener("click", () => {
-    mainLogin.classList.remove("_active");
-  });
-}
-
-if (mainLogin && exitButton) {
-  exitButton.addEventListener("click", () => {
-    mainLogin.classList.add("_active");
-  });
-}
-
 /* Form Select */
 const formSelects = document.querySelectorAll(".form-select");
 
@@ -14416,6 +14411,30 @@ if (catalogTabsContent) {
     }
   });
 }
+
+/* Modal */
+// Open modal
+document.querySelectorAll("[data-modal-target]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = document.querySelector(button.dataset.modalTarget);
+    modal.classList.add("active");
+  });
+});
+
+// Close modal
+document.querySelectorAll("[data-modal-close]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest("[data-modal]");
+    modal.classList.remove("active");
+  });
+});
+
+// Close modal when clicking outside of modal content
+window.addEventListener("click", (event) => {
+  if (event.target.hasAttribute("data-modal")) {
+    event.target.classList.remove("active");
+  }
+});
 
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
