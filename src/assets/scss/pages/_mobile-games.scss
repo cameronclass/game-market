@@ -19,6 +19,11 @@
         display: flex;
         align-items: center;
         overflow: hidden;
+
+        @include mobile {
+            flex-direction: column;
+            padding: 0px 15px 15px;
+        }
     }
 
     &__img {
@@ -27,6 +32,10 @@
         height: 134px;
         position: relative;
         display: flex;
+
+        @include mobile {
+            display: none;
+        }
 
         &_item {
             position: absolute;
@@ -43,6 +52,10 @@
         height: 134px;
         display: flex;
 
+        @include mobile {
+            height: 110px;
+        }
+
         &_item {
             position: absolute;
             top: 50%;
@@ -53,6 +66,11 @@
     &__timer {
         margin-left: auto;
         padding-right: 40px;
+
+        @include mobile{
+            padding: 0;
+            margin: 0 auto;
+        }
     }
 
 
@@ -87,9 +105,19 @@
 
         &__digit {
             position: relative;
-            padding: 3px 7px;
+            padding: 6px 7px;
             border-radius: 5px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 45px;
+            max-width: 45px;
+
+            @include mobile {
+                min-width: 35px;
+                max-width: 35px;
+            }
 
             &::before {
                 content: "";
@@ -118,10 +146,14 @@
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                font-weight: 700;
+                font-weight: 600;
                 font-size: 46px;
                 position: relative;
                 z-index: 2;
+
+                @include mobile {
+                    font-size: 30px;
+                }
             }
         }
 

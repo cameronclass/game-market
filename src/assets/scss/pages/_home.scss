@@ -7,6 +7,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+
+        @include netbook {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__main {
@@ -161,6 +165,19 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 18px;
+
+        @include netbook {
+            grid-template-columns: 1fr 1fr;
+
+            &_card:nth-last-child(1),
+            &_card:nth-last-child(2) {
+                display: none;
+            }
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
     }
 
     .swiper-pagination {

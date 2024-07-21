@@ -8430,6 +8430,9 @@ input[type=number] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px; }
+    @media screen and (max-width: 1200px) {
+      .home-main-slider__slide {
+        grid-template-columns: 1fr; } }
   .home-main-slider__main {
     border-radius: 10px;
     border: 1px solid #36332D;
@@ -8542,6 +8545,14 @@ input[type=number] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px; }
+    @media screen and (max-width: 1200px) {
+      .home-main-slider__secondary {
+        grid-template-columns: 1fr 1fr; }
+        .home-main-slider__secondary_card:nth-last-child(1), .home-main-slider__secondary_card:nth-last-child(2) {
+          display: none; } }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__secondary {
+        grid-template-columns: 1fr; } }
   .home-main-slider .swiper-pagination {
     display: flex;
     align-items: center;
@@ -13254,12 +13265,19 @@ input[type=number] {
     display: flex;
     align-items: center;
     overflow: hidden; }
+    @media screen and (max-width: 979px) {
+      .mobile-game-timer__block {
+        flex-direction: column;
+        padding: 0px 15px 15px; } }
   .mobile-game-timer__img {
     width: 100%;
     max-width: 250px;
     height: 134px;
     position: relative;
     display: flex; }
+    @media screen and (max-width: 979px) {
+      .mobile-game-timer__img {
+        display: none; } }
     .mobile-game-timer__img_item {
       position: absolute;
       width: 420px;
@@ -13271,6 +13289,9 @@ input[type=number] {
     position: relative;
     height: 134px;
     display: flex; }
+    @media screen and (max-width: 979px) {
+      .mobile-game-timer__title {
+        height: 110px; } }
     .mobile-game-timer__title_item {
       position: absolute;
       top: 50%;
@@ -13278,6 +13299,10 @@ input[type=number] {
   .mobile-game-timer__timer {
     margin-left: auto;
     padding-right: 40px; }
+    @media screen and (max-width: 979px) {
+      .mobile-game-timer__timer {
+        padding: 0;
+        margin: 0 auto; } }
   .mobile-game-timer .timer {
     margin: 0; }
     .mobile-game-timer .timer__message {
@@ -13297,9 +13322,18 @@ input[type=number] {
       gap: 5px; }
     .mobile-game-timer .timer__digit {
       position: relative;
-      padding: 3px 7px;
+      padding: 6px 7px;
       border-radius: 5px;
-      overflow: hidden; }
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 45px;
+      max-width: 45px; }
+      @media screen and (max-width: 979px) {
+        .mobile-game-timer .timer__digit {
+          min-width: 35px;
+          max-width: 35px; } }
       .mobile-game-timer .timer__digit::before {
         content: "";
         display: flex;
@@ -13323,10 +13357,13 @@ input[type=number] {
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 46px;
         position: relative;
         z-index: 2; }
+        @media screen and (max-width: 979px) {
+          .mobile-game-timer .timer__digit_num {
+            font-size: 30px; } }
     .mobile-game-timer .timer__divide {
       display: flex;
       flex-direction: column;
