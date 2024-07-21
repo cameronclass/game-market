@@ -784,9 +784,12 @@
     background: rgba(16, 15, 14, 0.78);
     backdrop-filter: blur(24.850000381469727px);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 200px 0;
+    flex-direction: column;
+    gap: 15px;
+    padding: 150px 15px 150px;
+    overflow-y: auto;
 
     &__bg {}
 
@@ -796,19 +799,47 @@
         border-radius: 10px;
         border: 1px solid #2F2D2B;
         background: #1A1917;
-        overflow: hidden;
     }
 
     &__header {
         padding: 15px;
+        gap: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid #141413;
 
+        @include mobile {
+            align-items: flex-start;
+        }
+
         &_title {
             font-size: 16px;
             color: $text-dark;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @include mobile {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            ._progress {
+                padding: 4px 12px;
+                border-radius: 16.5px;
+                background: #EDB64C;
+                color: white;
+                font-weight: 600;
+            }
+
+            ._done {
+                padding: 4px 12px;
+                border-radius: 16.5px;
+                background: #4CED83;
+                color: white;
+                font-weight: 600;
+            }
         }
     }
 
@@ -829,6 +860,10 @@
         padding: 24px 24px 50px;
         border-top: 1px solid #22221F;
         border-bottom: 1px solid #141413;
+
+        @include mobile {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     &__card {
@@ -898,5 +933,278 @@
     &__body {
         padding: 20px 24px;
         border-top: 1px solid #22221F;
+
+        &_pay {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &_info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 20px;
+
+            ._row-all {
+                grid-column-start: 1;
+                grid-column-end: 3;
+
+                @include mobile {
+                    grid-column-start: inherit;
+                    grid-column-end: inherit;
+                }
+            }
+
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .steam-login__pay {
+            justify-content: center;
+        }
+
+        .steam-login__pay_btn {
+            padding: 13px;
+        }
+
+        .custom-select .select-items div,
+        .custom-select .select-selected {
+            padding: 7px 15px;
+            font-size: 16px;
+        }
+
+        .form-input__btn {
+            @include mobile {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__pay {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &_text {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            font-size: 16px;
+            color: $text-dark;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        &_bonus {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            padding: 20px 0;
+
+            ._text {
+                font-size: 12px;
+                color: white;
+            }
+
+            ._block {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+            }
+
+            ._count {
+                font-size: 16px;
+                font-weight: 600;
+                color: $orange;
+            }
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        max-width: 826px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+
+        @include mobile {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &_step {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            border-radius: 10px;
+            border: 1px solid #2F2D2B;
+            background: #1A1917;
+            padding: 30px 10px;
+            color: $text-dark;
+
+            &._done {
+                border-color: #5AF173;
+                color: white;
+
+                .basket-steps__footer_number {
+                    color: #5AF173;
+                }
+            }
+
+            &._progress {
+                border-color: #EDB64C;
+
+                .basket-steps__footer_number {
+                    color: #EDB64C;
+                }
+            }
+        }
+
+        &_number {
+            position: absolute;
+            left: 10px;
+            top: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        &_text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    &__contact {
+        padding: 40px 24px;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        color: $text-dark;
+        text-align: center;
+
+        a {
+            color: white;
+            border-bottom: 1px solid;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+
+    &__orders {
+        padding: 20px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        &_title {
+            font-size: 16px;
+            color: $text-dark;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__order {
+
+        &_block {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            @include mobile {
+                gap: 10px;
+            }
+        }
+
+        &_title {
+            font-size: 16px;
+            color: $text-dark;
+        }
+
+        &_img {
+            width: 55px;
+            height: 52px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        &_content {}
+
+        &_group {
+            position: relative;
+
+            &_title {
+                font-size: 14px;
+                font-weight: 400;
+                color: $text-dark;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+
+            &_input {
+                border-radius: 6px;
+                border: 1px dashed #34312D;
+                background: #161616;
+                padding: 20px 50px 20px 20px;
+                font-size: 16px;
+                font-weight: 700;
+
+                @include mobile {
+                    font-size: 14px;
+                    padding: 15px 50px 15px 10px;
+                }
+            }
+
+            &_btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 10px;
+
+                &:hover {
+                    svg path {
+                        fill: $orange;
+                    }
+                }
+
+                &._second {
+                    right: 40px;
+                }
+            }
+        }
+
+        &_link {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            text-align: center;
+            border-radius: 4px;
+            background: #282725;
+            font-size: 12px;
+            color: $text-dark;
+        }
+    }
+
+    ._row-border {
+        width: 100%;
+        height: 1px;
+        background: #141413;
+        border-bottom: 1px solid #22221F;
     }
 }
