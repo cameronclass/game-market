@@ -348,8 +348,7 @@
 }
 
 .game-slider {
-    padding-top: 30px;
-    padding-bottom: 10px;
+    margin: 20px 0;
     position: relative;
     overflow: hidden;
 
@@ -1113,10 +1112,11 @@
     background: linear-gradient(0deg, #1C1B19 46.15%, #2B0F0A 100%);
 }
 
-.home-slider-mb {
+.home-slider-padding {
     padding-bottom: 30px;
-}
+    margin: 0;
 
-.home-slider-pt {
-    padding-top: 0;
+    &._top{
+        padding-top: 30px;
+    }
 }

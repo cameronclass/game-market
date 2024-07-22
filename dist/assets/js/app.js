@@ -14440,6 +14440,26 @@ window.addEventListener("click", (event) => {
   }
 });
 
+
+document.querySelector(".admin-tabs-open").addEventListener("click", () => {
+  document.querySelector(".admin-tabs__block").classList.add("_active");
+});
+
+document.addEventListener("click", (event) => {
+  const adminTabsBlock = document.querySelector(".admin-tabs__block");
+  const adminTabsTab = document.querySelectorAll(".admin-tabs__tab");
+  const isAdminTab = Array.from(adminTabsTab).some((tab) =>
+    tab.contains(event.target)
+  );
+  const isButton = document
+    .querySelector(".admin-tabs-open")
+    .contains(event.target);
+
+  if (!isAdminTab && !isButton) {
+    adminTabsBlock.classList.remove("_active");
+  }
+});
+
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
   const optionsContainer = selectElement.querySelector("[data-select-options]");
