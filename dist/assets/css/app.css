@@ -10909,7 +10909,8 @@ input[type=number] {
     .basket-page__card_content {
       width: 100%;
       display: flex;
-      gap: 10px; }
+      gap: 10px;
+      margin: auto; }
       @media screen and (max-width: 1200px) {
         .basket-page__card_content {
           flex-direction: column; } }
@@ -10923,6 +10924,13 @@ input[type=number] {
       @media screen and (max-width: 1200px) {
         .basket-page__card_title {
           font-size: 20px; } }
+      @media screen and (max-width: 979px) {
+        .basket-page__card_title {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis; } }
     .basket-page__card_subtitle {
       font-size: 12px;
       font-weight: 400;
@@ -10964,6 +10972,11 @@ input[type=number] {
           align-items: center;
           flex-wrap: wrap;
           justify-content: flex-end; } }
+      @media screen and (max-width: 979px) {
+        .basket-page__card_actions {
+          position: inherit;
+          width: 100%;
+          justify-content: space-between; } }
     .basket-page__card_action {
       display: flex;
       align-items: center;
@@ -11267,6 +11280,11 @@ input[type=number] {
         max-width: 130px; }
         .basket-page__others .basket-page__card_img_item {
           max-width: 130px; }
+        @media screen and (max-width: 979px) {
+          .basket-page__others .basket-page__card_img {
+            max-width: 110px; }
+            .basket-page__others .basket-page__card_img_item {
+              max-width: 110px; } }
       .basket-page__others .basket-page__card_content {
         flex-direction: column;
         gap: 20px; }
@@ -11620,6 +11638,72 @@ input[type=number] {
   height: 1px;
   background: #141413;
   border-bottom: 1px solid #22221F; }
+
+.basket-none__block {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; }
+
+.basket-none__img {
+  width: 100%;
+  max-width: 680px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; }
+
+.basket-none__content {
+  margin: 300px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2; }
+  @media screen and (max-width: 979px) {
+    .basket-none__content {
+      margin: 200px 0; } }
+
+.basket-none__title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 8px; }
+  @media screen and (max-width: 979px) {
+    .basket-none__title {
+      font-size: 22px; } }
+
+.basket-none__subtitle {
+  font-size: 16px;
+  color: #847F7D;
+  margin-bottom: 20px; }
+  @media screen and (max-width: 979px) {
+    .basket-none__subtitle {
+      font-size: 14px; } }
+
+.basket-none__btn {
+  font-size: 20px;
+  color: #847F7D;
+  padding: 15px 45px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #2A2724;
+  justify-content: center; }
+  @media screen and (max-width: 979px) {
+    .basket-none__btn {
+      font-size: 16px;
+      padding: 12px 35px; } }
+  .basket-none__btn svg {
+    height: 34px; }
 
 .steam-history {
   padding: 20px 0; }
