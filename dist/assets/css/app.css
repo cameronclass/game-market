@@ -12885,7 +12885,7 @@ input[type=number] {
       .admin-tabs__tab:hover svg path, .admin-tabs__tab._active svg path {
         fill: #FF6C3D; }
   .admin-tabs__mobile {
-    display: grid;
+    display: none;
     align-items: center;
     grid-template-columns: 1fr 50px;
     justify-content: center;
@@ -12895,6 +12895,9 @@ input[type=number] {
     border-radius: 10px;
     border-bottom: 1px solid #2C2C2A;
     background: #161513; }
+    @media screen and (max-width: 979px) {
+      .admin-tabs__mobile {
+        display: grid; } }
   .admin-tabs-open {
     display: none; }
     @media screen and (max-width: 979px) {
@@ -12906,7 +12909,7 @@ input[type=number] {
 .admin-content {
   margin: 20px 0 40px; }
   .admin-content__block {
-    padding: 20px 30px;
+    padding: 20px 30px 40px;
     border-radius: 10px;
     border-bottom: 1px solid #2C2C2A;
     background: #161513; }
@@ -12924,11 +12927,26 @@ input[type=number] {
     align-items: center;
     gap: 50px; }
   .admin-content__title {
+    position: relative;
     font-size: 16px;
     color: #847F7D;
     margin-bottom: 20px; }
     .admin-content__title._center {
       text-align: center; }
+  .admin-content__back {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    background: #2E2D2B;
+    color: #847F7D;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px; }
+    .admin-content__back:hover svg path {
+      fill: white; }
   .admin-content .catalog-cards__pagination {
     margin-top: 30px;
     margin-bottom: 30px; }
@@ -12945,6 +12963,24 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   gap: 8px; }
+
+.admin-order-opinion {
+  border-radius: 10px;
+  border: 1px solid #2F2D2B;
+  background: #1A1917; }
+  .admin-order-opinion__header {
+    padding: 10px; }
+  .admin-order-opinion__content {
+    border-radius: 6px;
+    border: 1px solid #34312D;
+    background: #1C1B19;
+    padding: 10px 5px 24px;
+    margin: 20px 20px 0; }
+  .admin-order-opinion ._row-border {
+    width: 100%;
+    height: 1px;
+    background: #141413;
+    border-bottom: 1px solid #22221F; }
 
 .admin-order-card {
   position: relative;
@@ -12993,7 +13029,8 @@ input[type=number] {
   .admin-order-card__title {
     font-size: 15px;
     line-height: 1.2;
-    font-weight: 500; }
+    font-weight: 500;
+    color: white; }
     .admin-order-card__title ._support {
       color: #FF6C3D; }
     .admin-order-card__title ._return {
@@ -13013,6 +13050,12 @@ input[type=number] {
     gap: 20px;
     align-items: center;
     margin-top: 6px; }
+    @media screen and (max-width: 979px) {
+      .admin-order-card__info {
+        margin-top: 8px;
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start; } }
   .admin-order-card__date {
     font-size: 12px;
     color: #847F7D;
@@ -13299,6 +13342,121 @@ input[type=number] {
   .doing-card .done-card__info_users {
     border: 1px solid #353535;
     color: #847F7D; }
+
+.admin-chat__block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 30px; }
+
+.admin-chat__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+  .admin-chat__form_textarea {
+    height: 98px; }
+  .admin-chat__form_block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    @media screen and (max-width: 979px) {
+      .admin-chat__form_block {
+        width: 100%;
+        flex-direction: column; } }
+  .admin-chat__form_send {
+    display: flex;
+    align-items: center;
+    gap: 10px; }
+    @media screen and (max-width: 979px) {
+      .admin-chat__form_send {
+        width: 100%;
+        flex-direction: column; } }
+  .admin-chat__form_btn {
+    border-radius: 5px;
+    background: #2E2D2B;
+    color: #847F7D;
+    font-size: 14px;
+    padding: 8px 45px;
+    line-height: 1;
+    transition: 300ms ease;
+    border: 1px solid transparent; }
+    @media screen and (max-width: 979px) {
+      .admin-chat__form_btn {
+        width: 100%; } }
+    .admin-chat__form_btn:hover {
+      color: white;
+      border-color: #FF6C3D; }
+
+.admin-chat__answer .admin-chat__card {
+  margin-left: auto;
+  flex-direction: row-reverse; }
+
+.admin-chat__card {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px; }
+  .admin-chat__card_img {
+    display: flex; }
+    .admin-chat__card_img_item {
+      width: 67px;
+      height: 67px;
+      object-fit: cover;
+      border-radius: 8px; }
+  .admin-chat__card_title {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 6px; }
+  .admin-chat__card_name {
+    font-size: 15px;
+    font-weight: 500; }
+  .admin-chat__card_time {
+    font-size: 15px;
+    font-weight: 500; }
+  .admin-chat__card_text {
+    font-size: 12px;
+    color: #847F7D; }
+
+.admin-chat__check {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; }
+  .admin-chat__check_btns {
+    display: flex;
+    align-items: center;
+    gap: 12px; }
+  .admin-chat__check_btn {
+    border-radius: 31.5px;
+    border: 1px solid #FF6C3D;
+    background: #22211E;
+    backdrop-filter: blur(17.55px);
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+    padding: 7px 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px; }
+    .admin-chat__check_btn img {
+      width: 20px;
+      height: 20px; }
+    .admin-chat__check_btn._positive:hover {
+      border: 1px solid #265216;
+      color: #E2FD3D;
+      background: #1D3420; }
+    .admin-chat__check_btn._negative:hover {
+      border: 1px solid #521616;
+      color: #FD3D3D;
+      background: #422424; }
 
 .mobile-game-timer {
   margin-top: 40px;

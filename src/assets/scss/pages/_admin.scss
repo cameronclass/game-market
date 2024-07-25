@@ -822,7 +822,7 @@
     }
 
     &__mobile {
-        display: grid;
+        display: none;
         align-items: center;
         grid-template-columns: 1fr 50px;
         justify-content: center;
@@ -833,6 +833,10 @@
         border-radius: 10px;
         border-bottom: 1px solid #2C2C2A;
         background: #161513;
+
+        @include mobile {
+            display: grid;
+        }
     }
 
     &-open {
@@ -850,7 +854,7 @@
     margin: 20px 0 40px;
 
     &__block {
-        padding: 20px 30px;
+        padding: 20px 30px 40px;
         border-radius: 10px;
         border-bottom: 1px solid #2C2C2A;
         background: #161513;
@@ -873,12 +877,33 @@
     }
 
     &__title {
+        position: relative;
         font-size: 16px;
         color: $text-dark;
         margin-bottom: 20px;
 
         &._center {
             text-align: center;
+        }
+    }
+
+    &__back {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 10px;
+        background: #2E2D2B;
+        color: $text-dark;
+        padding: 8px 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &:hover {
+            svg path {
+                fill: white;
+            }
         }
     }
 
@@ -902,6 +927,31 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.admin-order-opinion {
+    border-radius: 10px;
+    border: 1px solid #2F2D2B;
+    background: #1A1917;
+
+    &__header {
+        padding: 10px;
+    }
+
+    &__content {
+        border-radius: 6px;
+        border: 1px solid #34312D;
+        background: #1C1B19;
+        padding: 10px 5px 24px;
+        margin: 20px 20px 0;
+    }
+
+    ._row-border {
+        width: 100%;
+        height: 1px;
+        background: #141413;
+        border-bottom: 1px solid #22221F;
+    }
 }
 
 .admin-order-card {
@@ -969,6 +1019,7 @@
         font-size: 15px;
         line-height: 1.2;
         font-weight: 500;
+        color: white;
 
         ._support {
             color: $orange;
@@ -997,6 +1048,13 @@
         gap: 20px;
         align-items: center;
         margin-top: 6px;
+
+        @include mobile {
+            margin-top: 8px;
+            flex-direction: column;
+            gap: 0;
+            align-items: flex-start;
+        }
     }
 
     &__date {
@@ -1393,5 +1451,176 @@
     .done-card__info_users {
         border: 1px solid #353535;
         color: $text-dark;
+    }
+}
+
+.admin-chat {
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &_textarea {
+            height: 98px;
+        }
+
+        &_block {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            @include mobile {
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+
+        &_send {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @include mobile {
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+
+        &_close {}
+
+        &_btn {
+            border-radius: 5px;
+            background: #2E2D2B;
+            color: $text-dark;
+            font-size: 14px;
+            padding: 8px 45px;
+            line-height: 1;
+            transition: 300ms ease;
+            border: 1px solid transparent;
+
+            @include mobile {
+                width: 100%;
+            }
+
+            &:hover {
+                color: white;
+                border-color: $orange;
+            }
+        }
+    }
+
+    &__question {}
+
+    &__answer {
+        .admin-chat__card {
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__card {
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+
+        &_img {
+            display: flex;
+
+            &_item {
+                width: 67px;
+                height: 67px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+        }
+
+        &_content {}
+
+        &_title {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        &_name {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        &_time {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        &_text {
+            font-size: 12px;
+            color: $text-dark;
+        }
+
+    }
+
+    &__check {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        &_btns {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        &_btn {
+            border-radius: 31.5px;
+            border: 1px solid $orange;
+            background: #22211E;
+            backdrop-filter: blur(17.549999237060547px);
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            line-height: 1;
+            padding: 7px 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+
+            &._positive {
+                &:hover {
+                    border: 1px solid #265216;
+                    color: #E2FD3D;
+                    background: #1D3420;
+                }
+            }
+
+            &._negative {
+                &:hover {
+                    border: 1px solid #521616;
+                    color: #FD3D3D;
+                    background: #422424;
+                }
+            }
+
+        }
     }
 }
