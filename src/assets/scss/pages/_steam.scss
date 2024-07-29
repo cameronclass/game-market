@@ -965,12 +965,98 @@
         border: 1px solid #2F2D2B;
         background: #1A1917;
         box-shadow: 0px 4px 20.8px 0px rgba(0, 0, 0, 0.60);
+        padding-bottom: 20px;
     }
 
     &__header {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         gap: 10px;
-        padding: 18px 24px;
+        color: $text-dark;
+        font-size: 16px;
+        padding: 11px;
+    }
+
+    &__contact {
+        border-radius: 5px;
+        border: 1px solid #423D39;
+        background: linear-gradient(270deg, #232220 0%, #191917 100%);
+        padding: 12px;
+        margin: 11px;
+        display: flex;
+        justify-content: space-between;
+
+        &_btns {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &_img {
+            display: flex;
+            position: relative;
+            width: 100px;
+            height: 40px;
+
+            &_item {
+                position: absolute;
+                right: 50px;
+                bottom: -20px;
+                width: auto;
+                height: 130px;
+            }
+        }
+    }
+
+    &__questions {
+        margin: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &__question {
+        border-radius: 2px;
+        border: 1px solid #34312D;
+        background: #1C1B19;
+
+        &:hover {
+            border-color: $orange;
+        }
+
+        &:nth-child(odd) {
+            border-radius: 2px;
+            border: 1px solid #34312D;
+            background: #22211E;
+
+            &:hover {
+                border-color: $orange;
+            }
+        }
+
+        .accordion__intro {
+            padding: 12px 15px;
+        }
+
+        .accordion__intro_icon {
+            background: transparent;
+            padding: 8px;
+            margin-left: 20px;
+        }
+
+        &.accordion__active .accordion__content {
+            padding: 10px 20px;
+        }
+
+        &_title {
+            color: $text-dark;
+            line-height: 1.2;
+        }
+
+        &_text {
+            font-size: 14px;
+            line-height: 1.2;
+        }
     }
 }

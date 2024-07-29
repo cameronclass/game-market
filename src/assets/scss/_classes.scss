@@ -16,6 +16,13 @@
     z-index: 3;
 }
 
+.row-border {
+    width: 100%;
+    height: 1px;
+    background: #141413;
+    border-bottom: 1px solid #22221F;
+}
+
 .text-orange {
     color: $orange;
 }

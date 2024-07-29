@@ -5992,6 +5992,12 @@ input[type=number] {
   position: relative;
   z-index: 3; }
 
+.row-border {
+  width: 100%;
+  height: 1px;
+  background: #141413;
+  border-bottom: 1px solid #22221F; }
+
 .text-orange {
   color: #FF6C3D; }
 
@@ -12398,13 +12404,74 @@ input[type=number] {
   border-radius: 10px;
   border: 1px solid #2F2D2B;
   background: #1A1917;
-  box-shadow: 0px 4px 20.8px 0px rgba(0, 0, 0, 0.6); }
+  box-shadow: 0px 4px 20.8px 0px rgba(0, 0, 0, 0.6);
+  padding-bottom: 20px; }
 
 .faq-steam__header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 10px;
-  padding: 18px 24px; }
+  color: #847F7D;
+  font-size: 16px;
+  padding: 11px; }
+
+.faq-steam__contact {
+  border-radius: 5px;
+  border: 1px solid #423D39;
+  background: linear-gradient(270deg, #232220 0%, #191917 100%);
+  padding: 12px;
+  margin: 11px;
+  display: flex;
+  justify-content: space-between; }
+  .faq-steam__contact_btns {
+    display: flex;
+    align-items: center;
+    gap: 10px; }
+  .faq-steam__contact_img {
+    display: flex;
+    position: relative;
+    width: 100px;
+    height: 40px; }
+    .faq-steam__contact_img_item {
+      position: absolute;
+      right: 50px;
+      bottom: -20px;
+      width: auto;
+      height: 130px; }
+
+.faq-steam__questions {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px; }
+
+.faq-steam__question {
+  border-radius: 2px;
+  border: 1px solid #34312D;
+  background: #1C1B19; }
+  .faq-steam__question:hover {
+    border-color: #FF6C3D; }
+  .faq-steam__question:nth-child(odd) {
+    border-radius: 2px;
+    border: 1px solid #34312D;
+    background: #22211E; }
+    .faq-steam__question:nth-child(odd):hover {
+      border-color: #FF6C3D; }
+  .faq-steam__question .accordion__intro {
+    padding: 12px 15px; }
+  .faq-steam__question .accordion__intro_icon {
+    background: transparent;
+    padding: 8px;
+    margin-left: 20px; }
+  .faq-steam__question.accordion__active .accordion__content {
+    padding: 10px 20px; }
+  .faq-steam__question_title {
+    color: #847F7D;
+    line-height: 1.2; }
+  .faq-steam__question_text {
+    font-size: 14px;
+    line-height: 1.2; }
 
 .admin-head {
   margin-top: 40px;
@@ -13074,11 +13141,6 @@ input[type=number] {
     background: #1C1B19;
     padding: 10px 5px 24px;
     margin: 20px 20px 0; }
-  .admin-order-opinion ._row-border {
-    width: 100%;
-    height: 1px;
-    background: #141413;
-    border-bottom: 1px solid #22221F; }
 
 .admin-order-card {
   position: relative;
