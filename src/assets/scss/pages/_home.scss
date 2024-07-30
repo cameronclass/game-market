@@ -1111,6 +1111,13 @@
         backdrop-filter: blur(35.599998474121094px);
         padding: 20px 40px;
         transition: 200ms ease;
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
         &_header {
             display: flex;

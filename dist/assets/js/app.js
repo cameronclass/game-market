@@ -14440,12 +14440,12 @@ window.addEventListener("click", (event) => {
   }
 });
 
+if (document.querySelector(".admin-tabs-open"))
+  document.querySelector(".admin-tabs-open").addEventListener("click", () => {
+    document.querySelector(".admin-tabs__block").classList.add("_active");
+  });
 
-document.querySelector(".admin-tabs-open").addEventListener("click", () => {
-  document.querySelector(".admin-tabs__block").classList.add("_active");
-});
-
-document.addEventListener("click", (event) => {
+/* document.addEventListener("click", (event) => {
   const adminTabsBlock = document.querySelector(".admin-tabs__block");
   const adminTabsTab = document.querySelectorAll(".admin-tabs__tab");
   const isAdminTab = Array.from(adminTabsTab).some((tab) =>
@@ -14458,6 +14458,35 @@ document.addEventListener("click", (event) => {
   if (!isAdminTab && !isButton) {
     adminTabsBlock.classList.remove("_active");
   }
+}); */
+
+// Найти все кнопки
+let lastElement = null;
+const addClassBtns = document.querySelectorAll(".add-class-btn");
+
+// Добавить обработчик событий на каждую кнопку
+addClassBtns.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.getAttribute("data-class-target");
+    const classToAdd = button.getAttribute("data-class-name");
+
+    // Найти целевой элемент по data-class-element
+    const targetElement = document.querySelector(
+      `[data-class-element="${targetId}"]`
+    );
+
+    if (targetElement && classToAdd) {
+      // Удалить класс с последнего элемента, если он был
+      if (lastElement && lastElement !== targetElement) {
+        lastElement.classList.remove(classToAdd);
+      }
+      // Добавить класс к текущему элементу
+      targetElement.classList.toggle(classToAdd);
+
+      // Обновить последний измененный элемент
+      lastElement = targetElement;
+    }
+  });
 });
 
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
