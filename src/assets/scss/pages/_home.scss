@@ -1034,6 +1034,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 11px 20px;
+    position: relative;
 
 
     @include mobile {
@@ -1095,6 +1096,72 @@
             color: $text-dark;
         }
     }
+
+    &__content {
+        position: absolute;
+        z-index: 10;
+        top: calc(100% + 25px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1030px;
+        border-radius: 20px;
+        border: 1.258px solid #33302D;
+        background: linear-gradient(142deg, rgba(52, 45, 39, 0.81) 0%, rgba(34, 34, 32, 0.81) 67.95%);
+        backdrop-filter: blur(35.599998474121094px);
+        padding: 20px 40px;
+        transition: 200ms ease;
+
+        &_header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+        }
+
+        &_img {
+            height: 37px;
+            width: auto;
+            margin-bottom: 25px;
+        }
+
+        &_info {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+        }
+
+        &_reviews {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            overflow-y: auto;
+            height: 420px;
+            padding-right: 10px;
+
+            &::-webkit-scrollbar-track {
+                background: #161513;
+                padding: 4px;
+                border-radius: 10px;
+            }
+
+            /* Задаем стили для бегунка прокрутки */
+            &::-webkit-scrollbar-thumb {
+                background: #2B2824;
+                border-radius: 10px;
+                border: 4px solid transparent;
+                background-clip: padding-box;
+            }
+
+            /* Задаем стили для всей области прокрутки */
+            &::-webkit-scrollbar {
+                width: 16px;
+            }
+        }
+
+        &_review {}
+    }
 }
 
 
@@ -1116,7 +1183,7 @@
     padding-bottom: 30px;
     margin: 0;
 
-    &._top{
+    &._top {
         padding-top: 30px;
     }
 }
