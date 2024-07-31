@@ -1087,6 +1087,10 @@
             @include netbook {
                 gap: 10px;
             }
+
+            @include mobile {
+                align-items: center;
+            }
         }
 
         &_title {
@@ -1117,6 +1121,10 @@
         opacity: 0;
         visibility: hidden;
 
+        @include mobile {
+            padding: 20px;
+        }
+
         &.active {
             opacity: 1;
             visibility: visible;
@@ -1127,13 +1135,18 @@
             align-items: center;
             justify-content: space-between;
             gap: 20px;
+            margin-bottom: 25px;
 
+            @include mobile {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
         }
 
         &_img {
             height: 37px;
             width: auto;
-            margin-bottom: 25px;
         }
 
         &_info {
