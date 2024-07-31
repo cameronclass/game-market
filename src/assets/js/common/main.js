@@ -703,31 +703,67 @@ if (document.querySelector(".admin-tabs-open"))
   }
 }); */
 
-// Найти все кнопки
+
+/* Reviews Buttons */
 let lastElement = null;
+let lastButton = null;
 const addClassBtns = document.querySelectorAll(".add-class-btn");
 
-// Добавить обработчик событий на каждую кнопку
-addClassBtns.forEach((button) => {
-  button.addEventListener("click", () => {
-    const targetId = button.getAttribute("data-class-target");
-    const classToAdd = button.getAttribute("data-class-name");
+if (addClassBtns)
+  addClassBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.getAttribute("data-class-target");
+      const classToAdd = button.getAttribute("data-class-name");
 
-    // Найти целевой элемент по data-class-element
-    const targetElement = document.querySelector(
-      `[data-class-element="${targetId}"]`
-    );
+      // Найти целевой элемент по data-class-element
+      const targetElement = document.querySelector(
+        `[data-class-element="${targetId}"]`
+      );
 
-    if (targetElement && classToAdd) {
-      // Удалить класс с последнего элемента, если он был
-      if (lastElement && lastElement !== targetElement) {
-        lastElement.classList.remove(classToAdd);
+      if (targetElement && classToAdd) {
+        // Удалить класс с последнего элемента и кнопки, если они были
+        if (lastElement && lastElement !== targetElement) {
+          lastElement.classList.remove(classToAdd);
+        }
+        if (lastButton && lastButton !== button) {
+          lastButton.classList.remove(classToAdd);
+        }
+
+        // Добавить или удалить класс у текущего целевого элемента и кнопки
+        targetElement.classList.toggle(classToAdd);
+        button.classList.toggle(classToAdd);
+
+        // Обновить последний измененный элемент и кнопку
+        lastElement = targetElement;
+        lastButton = button;
       }
-      // Добавить класс к текущему элементу
-      targetElement.classList.toggle(classToAdd);
+    });
+  });
 
-      // Обновить последний измененный элемент
-      lastElement = targetElement;
+
+
+const reviewCards = document.querySelectorAll(".home-other-reviews__card");
+const aboutReviewsBlock = document.querySelector(".about-reviews__block");
+
+let lastClickedCard = null;
+
+reviewCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    if (!aboutReviewsBlock) return;
+
+    if (card === lastClickedCard) {
+      // Если клик по тому же самому элементу, переключаем класс active
+      aboutReviewsBlock.classList.toggle("active");
+      lastClickedCard = null;
+    } else {
+      // Если клик по другому элементу, просто добавляем класс active
+      aboutReviewsBlock.classList.add("active");
+      lastClickedCard = card;
     }
   });
 });
+
+
+
+
+

@@ -582,8 +582,21 @@
         columns: 4;
         column-gap: 20px;
         position: relative;
-        overflow: hidden;
+        /* overflow: hidden; */
         height: 1800px;
+
+        &.active {
+            &::after {
+                content: "";
+                width: 200%;
+                height: 100%;
+                position: absolute;
+                left: -50%;
+                top: -20px;
+                background: linear-gradient(180deg, rgba(22, 21, 19, 0.00) 0%, #161513 62.51%);
+                backdrop-filter: blur(12.600000381469727px);
+            }
+        }
 
         @include mobile {
             columns: 2;

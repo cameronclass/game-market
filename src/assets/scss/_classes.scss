@@ -2215,6 +2215,12 @@
         height: 18px;
         display: flex;
         align-items: center;
+
+        img {
+            width: auto;
+            height: 18px;
+            object-fit: cover;
+        }
     }
 
     &__content {

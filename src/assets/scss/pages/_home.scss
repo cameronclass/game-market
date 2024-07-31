@@ -1035,6 +1035,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 11px 20px;
     position: relative;
+    z-index: 2;
 
 
     @include mobile {
@@ -1059,8 +1060,9 @@
             padding: 15px 10px;
         }
 
-        &:hover {
-            border-color: $orange;
+        &:hover,
+        &.active {
+            border: 1px solid $orange;
             background: #00000010;
         }
 
@@ -1078,6 +1080,7 @@
         &_content {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
             line-height: 1;
             gap: 4px;
 
@@ -1164,6 +1167,21 @@
             /* Задаем стили для всей области прокрутки */
             &::-webkit-scrollbar {
                 width: 16px;
+            }
+        }
+
+        &_positive,
+        &_negative,
+        &_count {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: $text-dark;
+
+            img {
+                width: auto;
+                height: 18px;
+                object-fit: cover;
             }
         }
 

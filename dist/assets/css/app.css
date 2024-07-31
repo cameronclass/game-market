@@ -5838,10 +5838,10 @@ svg path {
 button {
   font-family: "Inter", sans-serif;
   background-color: transparent;
-  border: none; }
+  border: 1px solid transparent; }
   button:focus {
-    outline: none;
-    border: none; }
+    outline: 1px solid transparent;
+    border: 1px solid transparent; }
 
 img {
   width: 100%;
@@ -7558,6 +7558,10 @@ input[type=number] {
     height: 18px;
     display: flex;
     align-items: center; }
+    .review-item__icon img {
+      width: auto;
+      height: 18px;
+      object-fit: cover; }
   .review-item__content {
     color: #847F7D;
     font-size: 12px; }
@@ -9181,7 +9185,8 @@ input[type=number] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 11px 20px;
-  position: relative; }
+  position: relative;
+  z-index: 2; }
   @media screen and (max-width: 979px) {
     .home-other-reviews {
       grid-template-columns: repeat(2, 1fr);
@@ -9200,8 +9205,8 @@ input[type=number] {
         flex-direction: column;
         text-align: center;
         padding: 15px 10px; } }
-    .home-other-reviews__card:hover {
-      border-color: #FF6C3D;
+    .home-other-reviews__card:hover, .home-other-reviews__card.active {
+      border: 1px solid #FF6C3D;
       background: #00000010; }
     .home-other-reviews__card_img {
       width: 44px;
@@ -9214,6 +9219,7 @@ input[type=number] {
     .home-other-reviews__card_content {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       line-height: 1;
       gap: 4px; }
       @media screen and (max-width: 1200px) {
@@ -9277,6 +9283,15 @@ input[type=number] {
         background-clip: padding-box; }
       .home-other-reviews__content_reviews::-webkit-scrollbar {
         width: 16px; }
+    .home-other-reviews__content_positive, .home-other-reviews__content_negative, .home-other-reviews__content_count {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #847F7D; }
+      .home-other-reviews__content_positive img, .home-other-reviews__content_negative img, .home-other-reviews__content_count img {
+        width: auto;
+        height: 18px;
+        object-fit: cover; }
 
 /* unique classes */
 .main-bg-color {
@@ -14460,8 +14475,17 @@ input[type=number] {
     columns: 4;
     column-gap: 20px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 1800px; }
+    .about-reviews__block.active::after {
+      content: "";
+      width: 200%;
+      height: 100%;
+      position: absolute;
+      left: -50%;
+      top: -20px;
+      background: linear-gradient(180deg, rgba(22, 21, 19, 0) 0%, #161513 62.51%);
+      backdrop-filter: blur(12.6px); }
     @media screen and (max-width: 979px) {
       .about-reviews__block {
         columns: 2;

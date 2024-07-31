@@ -41,11 +41,11 @@ svg path {
 button {
     font-family: $font-inter;
     background-color: transparent;
-    border: none;
+    border: 1px solid transparent;
 
     &:focus {
-        outline: none;
-        border: none;
+        outline: 1px solid transparent;
+        border: 1px solid transparent;
     }
 }
 
