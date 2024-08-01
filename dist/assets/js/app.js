@@ -13852,12 +13852,12 @@ const hamburgerButton = document.querySelector(".js-hamburger");
 const hamburgerMenu = document.querySelector(".js-hamburger-menu");
 const hamburgerMenuClose = document.querySelector(".js-hamburger-close");
 
-if (hamburgerButton)
+/* if (hamburgerButton)
   hamburgerButton.addEventListener("click", function () {
     this.classList.toggle("_active");
     hamburgerMenu.classList.toggle("active");
     headerMenu.classList.toggle("active");
-  });
+  }); */
 
 if (hamburgerMenuClose)
   hamburgerMenuClose.addEventListener("click", function () {
@@ -14122,7 +14122,7 @@ if (newCards)
   });
 
 /* Search Block */
-const searchButton = document.querySelector(".js-search-open");
+/* const searchButton = document.querySelector(".js-search-open");
 const searchBlock = document.querySelector(".js-search-menu");
 
 if (searchButton)
@@ -14130,7 +14130,7 @@ if (searchButton)
     event.preventDefault(); // Предотвращаем переход по ссылке
     searchButton.classList.toggle("active"); // Добавляем или удаляем класс active на ссылку
     searchBlock.classList.toggle("active"); // Добавляем или удаляем класс active на div
-  });
+  }); */
 
 /* FancyBox */
 Fancybox.bind();
@@ -14462,7 +14462,7 @@ if (document.querySelector(".admin-tabs-open"))
 
 
 /* Reviews Buttons */
-let lastElement = null;
+let lastElements = [];
 let lastButton = null;
 const addClassBtns = document.querySelectorAll(".add-class-btn");
 
@@ -14472,27 +14472,40 @@ if (addClassBtns)
       const targetId = button.getAttribute("data-class-target");
       const classToAdd = button.getAttribute("data-class-name");
 
-      // Найти целевой элемент по data-class-element
-      const targetElement = document.querySelector(
+      // Найти все целевые элементы с data-class-element
+      const targetElements = document.querySelectorAll(
         `[data-class-element="${targetId}"]`
       );
 
-      if (targetElement && classToAdd) {
-        // Удалить класс с последнего элемента и кнопки, если они были
-        if (lastElement && lastElement !== targetElement) {
-          lastElement.classList.remove(classToAdd);
-        }
-        if (lastButton && lastButton !== button) {
-          lastButton.classList.remove(classToAdd);
-        }
+      if (targetElements.length > 0 && classToAdd) {
+        const isActive = Array.from(targetElements).some((el) =>
+          el.classList.contains(classToAdd)
+        );
 
-        // Добавить или удалить класс у текущего целевого элемента и кнопки
-        targetElement.classList.toggle(classToAdd);
-        button.classList.toggle(classToAdd);
+        if (isActive) {
+          // Удалить класс у всех целевых элементов и кнопки
+          targetElements.forEach((el) => el.classList.remove(classToAdd));
+          button.classList.remove(classToAdd);
+          // Очистить массив lastElements и сбросить lastButton
+          lastElements = [];
+          lastButton = null;
+        } else {
+          // Удалить класс с последних элементов и кнопки, если они были
+          if (lastElements.length > 0) {
+            lastElements.forEach((el) => el.classList.remove(classToAdd));
+          }
+          if (lastButton && lastButton !== button) {
+            lastButton.classList.remove(classToAdd);
+          }
 
-        // Обновить последний измененный элемент и кнопку
-        lastElement = targetElement;
-        lastButton = button;
+          // Добавить класс у текущих целевых элементов и кнопки
+          targetElements.forEach((el) => el.classList.add(classToAdd));
+          button.classList.add(classToAdd);
+
+          // Обновить последний измененный набор элементов и кнопку
+          lastElements = Array.from(targetElements);
+          lastButton = button;
+        }
       }
     });
   });
@@ -14503,22 +14516,22 @@ const reviewCards = document.querySelectorAll(".home-other-reviews__card");
 const aboutReviewsBlock = document.querySelector(".about-reviews__block");
 
 let lastClickedCard = null;
+if (reviewCards)
+  reviewCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      if (!aboutReviewsBlock) return;
 
-reviewCards.forEach((card) => {
-  card.addEventListener("click", () => {
-    if (!aboutReviewsBlock) return;
-
-    if (card === lastClickedCard) {
-      // Если клик по тому же самому элементу, переключаем класс active
-      aboutReviewsBlock.classList.toggle("active");
-      lastClickedCard = null;
-    } else {
-      // Если клик по другому элементу, просто добавляем класс active
-      aboutReviewsBlock.classList.add("active");
-      lastClickedCard = card;
-    }
+      if (card === lastClickedCard) {
+        // Если клик по тому же самому элементу, переключаем класс active
+        aboutReviewsBlock.classList.toggle("active");
+        lastClickedCard = null;
+      } else {
+        // Если клик по другому элементу, просто добавляем класс active
+        aboutReviewsBlock.classList.add("active");
+        lastClickedCard = card;
+      }
+    });
   });
-});
 
 
 
