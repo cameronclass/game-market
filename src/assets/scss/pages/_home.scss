@@ -129,6 +129,23 @@
                     border-radius: 50%;
                 }
             }
+
+            &._nintendo {
+                color: #E94A35;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    z-index: -1;
+                    left: -10px;
+                    bottom: -10px;
+                    filter: blur(30px);
+                    background-color: #E94A35;
+                    border-radius: 50%;
+                }
+            }
         }
 
         &_img {
@@ -399,6 +416,10 @@
             margin-top: 25px;
             margin-left: 20px;
             position: relative;
+
+            @include mobile {
+                margin-left: 0;
+            }
         }
 
         &_card {
@@ -426,6 +447,10 @@
             align-items: center;
             gap: 10px;
             margin-top: 10px;
+
+            @include mobile {
+                flex-direction: column;
+            }
         }
 
         &_title {
@@ -452,6 +477,11 @@
         &_action {
             width: 30%;
             max-width: 160px;
+
+            @include mobile {
+                max-width: 100%;
+                width: 100%;
+            }
         }
 
         &_btn {
@@ -468,7 +498,75 @@
             right: -40%;
             top: 50%;
             transform: translateY(-50%);
+
+            @include mobile {
+                top: -20px;
+                font-size: 40px;
+                right: 0;
+            }
         }
+    }
+
+    &__nintendo {
+        &_block {
+            display: flex;
+            gap: 10px;
+        }
+
+        &_img {
+            height: 70vh;
+            width: 55%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            object-fit: contain;
+            object-position: bottom;
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &_content {
+            margin-left: auto;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        &_discount {
+            font-size: 130px;
+            font-weight: 900;
+            line-height: 1;
+            text-align: right;
+            font-family: $font-roboto;
+
+            @include mobile {
+                font-size: 60px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+
+        &_btn {
+            width: max-content;
+            margin: 0 auto 20px;
+        }
+
+        &_text {
+            font-size: 12px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
     }
 
 

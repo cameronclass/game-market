@@ -8612,6 +8612,19 @@ input[type=number] {
           filter: blur(30px);
           background-color: #81D77F;
           border-radius: 50%; }
+      .home-main-slider__main_category._nintendo {
+        color: #E94A35; }
+        .home-main-slider__main_category._nintendo::after {
+          content: "";
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          z-index: -1;
+          left: -10px;
+          bottom: -10px;
+          filter: blur(30px);
+          background-color: #E94A35;
+          border-radius: 50%; }
     .home-main-slider__main_img {
       position: absolute;
       left: -30px;
@@ -8801,6 +8814,9 @@ input[type=number] {
     margin-top: 25px;
     margin-left: 20px;
     position: relative; }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__xbox_cards {
+        margin-left: 0; } }
   .home-main-slider__xbox_card {
     transform: skew(-20deg);
     position: relative;
@@ -8822,6 +8838,9 @@ input[type=number] {
     align-items: center;
     gap: 10px;
     margin-top: 10px; }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__xbox_content {
+        flex-direction: column; } }
   .home-main-slider__xbox_title {
     color: #81D77F;
     text-align: center;
@@ -8840,6 +8859,10 @@ input[type=number] {
   .home-main-slider__xbox_action {
     width: 30%;
     max-width: 160px; }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__xbox_action {
+        max-width: 100%;
+        width: 100%; } }
   .home-main-slider__xbox_btn {
     padding: 14px 10px;
     text-align: center;
@@ -8852,6 +8875,55 @@ input[type=number] {
     right: -40%;
     top: 50%;
     transform: translateY(-50%); }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__xbox_dis {
+        top: -20px;
+        font-size: 40px;
+        right: 0; } }
+  .home-main-slider__nintendo_block {
+    display: flex;
+    gap: 10px; }
+  .home-main-slider__nintendo_img {
+    height: 70vh;
+    width: 55%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    object-fit: contain;
+    object-position: bottom; }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__nintendo_img {
+        display: none; } }
+  .home-main-slider__nintendo_content {
+    margin-left: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2; }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__nintendo_content {
+        width: 100%; } }
+  .home-main-slider__nintendo_discount {
+    font-size: 130px;
+    font-weight: 900;
+    line-height: 1;
+    text-align: right;
+    font-family: "Roboto", sans-serif; }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__nintendo_discount {
+        font-size: 60px;
+        text-align: center;
+        margin-bottom: 10px; } }
+  .home-main-slider__nintendo_btn {
+    width: max-content;
+    margin: 0 auto 20px; }
+  .home-main-slider__nintendo_text {
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center; }
   .home-main-slider .swiper-pagination {
     display: flex;
     align-items: center;
