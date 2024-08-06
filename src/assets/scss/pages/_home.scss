@@ -29,6 +29,7 @@
 
         @include mobile {
             padding: 15px;
+            height: 284px;
         }
 
         &_bg {
@@ -279,8 +280,9 @@
             grid-template-columns: repeat(4, 1fr);
 
             @include mobile {
+                margin-top: 15px;
                 gap: 10px;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -290,6 +292,10 @@
 
             @include mobile {
                 width: 100%;
+
+                &:nth-child(4) {
+                    display: none;
+                }
             }
 
             &_img {
@@ -302,6 +308,10 @@
                     object-fit: cover;
                     border-radius: 5px;
                     border: 1px solid #36332D;
+
+                    @include mobile {
+                        height: 95px;
+                    }
                 }
 
                 &_dis {
@@ -338,6 +348,10 @@
                 text-align: center;
                 margin-bottom: 7px;
                 margin-top: 5px;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &_btn {
@@ -345,6 +359,11 @@
                 padding: 7px 20px;
                 width: max-content;
                 margin: auto;
+
+                @include mobile {
+                    margin: 6px auto;
+                    padding: 4px 8px;
+                }
             }
 
             &:nth-child(4) {
@@ -373,6 +392,16 @@
         &_content {
             display: flex;
             flex-direction: column;
+
+            @include mobile {
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            &_block {
+                display: flex;
+                flex-direction: column;
+            }
 
             &_title {
                 color: #C83C56;
@@ -419,6 +448,7 @@
 
             @include mobile {
                 margin-left: 0;
+                display: none;
             }
         }
 
@@ -450,6 +480,7 @@
 
             @include mobile {
                 flex-direction: column;
+                margin-top: 40px;
             }
         }
 
@@ -488,6 +519,12 @@
             padding: 14px 10px;
             text-align: center;
             font-size: 14px;
+
+            @include mobile {
+                padding: 10px 20px;
+                width: max-content;
+                margin: auto;
+            }
         }
 
         &_dis {

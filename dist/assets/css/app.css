@@ -8536,7 +8536,8 @@ input[type=number] {
     position: relative; }
     @media screen and (max-width: 979px) {
       .home-main-slider__main {
-        padding: 15px; } }
+        padding: 15px;
+        height: 284px; } }
     .home-main-slider__main_bg {
       position: absolute;
       width: 100%;
@@ -8717,14 +8718,17 @@ input[type=number] {
     grid-template-columns: repeat(4, 1fr); }
     @media screen and (max-width: 979px) {
       .home-main-slider__ps_cards {
+        margin-top: 15px;
         gap: 10px;
-        grid-template-columns: repeat(2, 1fr); } }
+        grid-template-columns: repeat(3, 1fr); } }
   .home-main-slider__ps_card {
     position: relative;
     width: 130%; }
     @media screen and (max-width: 979px) {
       .home-main-slider__ps_card {
-        width: 100%; } }
+        width: 100%; }
+        .home-main-slider__ps_card:nth-child(4) {
+          display: none; } }
     .home-main-slider__ps_card_img {
       position: relative;
       display: flex; }
@@ -8734,6 +8738,9 @@ input[type=number] {
         object-fit: cover;
         border-radius: 5px;
         border: 1px solid #36332D; }
+        @media screen and (max-width: 979px) {
+          .home-main-slider__ps_card_img_item {
+            height: 95px; } }
       .home-main-slider__ps_card_img_dis {
         position: absolute;
         top: 6px;
@@ -8762,11 +8769,18 @@ input[type=number] {
       text-align: center;
       margin-bottom: 7px;
       margin-top: 5px; }
+      @media screen and (max-width: 979px) {
+        .home-main-slider__ps_card_title {
+          display: none; } }
     .home-main-slider__ps_card_btn {
       font-size: 10px;
       padding: 7px 20px;
       width: max-content;
       margin: auto; }
+      @media screen and (max-width: 979px) {
+        .home-main-slider__ps_card_btn {
+          margin: 6px auto;
+          padding: 4px 8px; } }
     .home-main-slider__ps_card:nth-child(4) {
       right: 30%; }
       @media screen and (max-width: 979px) {
@@ -8783,6 +8797,13 @@ input[type=number] {
   .home-main-slider__ps_content {
     display: flex;
     flex-direction: column; }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__ps_content {
+        flex-direction: row;
+        gap: 20px; } }
+    .home-main-slider__ps_content_block {
+      display: flex;
+      flex-direction: column; }
     .home-main-slider__ps_content_title {
       color: #C83C56;
       font-size: 21px;
@@ -8816,7 +8837,8 @@ input[type=number] {
     position: relative; }
     @media screen and (max-width: 979px) {
       .home-main-slider__xbox_cards {
-        margin-left: 0; } }
+        margin-left: 0;
+        display: none; } }
   .home-main-slider__xbox_card {
     transform: skew(-20deg);
     position: relative;
@@ -8840,7 +8862,8 @@ input[type=number] {
     margin-top: 10px; }
     @media screen and (max-width: 979px) {
       .home-main-slider__xbox_content {
-        flex-direction: column; } }
+        flex-direction: column;
+        margin-top: 40px; } }
   .home-main-slider__xbox_title {
     color: #81D77F;
     text-align: center;
@@ -8867,6 +8890,11 @@ input[type=number] {
     padding: 14px 10px;
     text-align: center;
     font-size: 14px; }
+    @media screen and (max-width: 979px) {
+      .home-main-slider__xbox_btn {
+        padding: 10px 20px;
+        width: max-content;
+        margin: auto; } }
   .home-main-slider__xbox_dis {
     font-size: 96px;
     font-weight: 900;
