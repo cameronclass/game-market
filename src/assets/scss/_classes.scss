@@ -472,19 +472,24 @@
         }
 
         &.active {
-            .catalog__header {
-                z-index: 13;
-                position: fixed;
-                left: 20px;
-                top: 95px;
-                max-width: calc(100% - 40px);
+            position: relative;
+            z-index: 12;
 
-                .catalog__btn {
-                    border: 1px solid $orange;
-                    background: #2E2D2B;
+            @include mobile {
+                .catalog__header {
+                    z-index: 13;
+                    position: fixed;
+                    left: 20px;
+                    top: 95px;
+                    max-width: calc(100% - 40px);
 
-                    &_img {
-                        transform: rotateX(180deg);
+                    .catalog__btn {
+                        border: 1px solid $orange;
+                        background: #2E2D2B;
+
+                        &_img {
+                            transform: rotateX(180deg);
+                        }
                     }
                 }
             }

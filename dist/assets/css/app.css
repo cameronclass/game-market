@@ -6335,17 +6335,21 @@ input[type=number] {
         .catalog__tabs_content.active {
           top: 175px;
           opacity: 1; } }
-  .catalog__tabs.active .catalog__header {
-    z-index: 13;
-    position: fixed;
-    left: 20px;
-    top: 95px;
-    max-width: calc(100% - 40px); }
-    .catalog__tabs.active .catalog__header .catalog__btn {
-      border: 1px solid #FF6C3D;
-      background: #2E2D2B; }
-      .catalog__tabs.active .catalog__header .catalog__btn_img {
-        transform: rotateX(180deg); }
+  .catalog__tabs.active {
+    position: relative;
+    z-index: 12; }
+    @media screen and (max-width: 979px) {
+      .catalog__tabs.active .catalog__header {
+        z-index: 13;
+        position: fixed;
+        left: 20px;
+        top: 95px;
+        max-width: calc(100% - 40px); }
+        .catalog__tabs.active .catalog__header .catalog__btn {
+          border: 1px solid #FF6C3D;
+          background: #2E2D2B; }
+          .catalog__tabs.active .catalog__header .catalog__btn_img {
+            transform: rotateX(180deg); } }
 
 .catalog__tab {
   width: 100%;
@@ -14354,7 +14358,8 @@ input[type=number] {
   .mobile-game-add__card {
     display: flex;
     flex-direction: column;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     .mobile-game-add__card input {
       display: none; }
       .mobile-game-add__card input:checked ~ .mobile-game-add__card_image {
