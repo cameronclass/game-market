@@ -13852,19 +13852,22 @@ const hamburgerButton = document.querySelector(".js-hamburger");
 const hamburgerMenu = document.querySelector(".js-hamburger-menu");
 const hamburgerMenuClose = document.querySelector(".js-hamburger-close");
 
-/* if (hamburgerButton)
-  hamburgerButton.addEventListener("click", function () {
-    this.classList.toggle("_active");
-    hamburgerMenu.classList.toggle("active");
-    headerMenu.classList.toggle("active");
-  }); */
+const logoMenuBg = document.querySelector(".logo-menu__bg");
 
-if (hamburgerMenuClose)
-  hamburgerMenuClose.addEventListener("click", function () {
+if (logoMenuBg) {
+  logoMenuBg.addEventListener("click", function () {
     hamburgerMenu.classList.remove("active");
-    hamburgerButton.classList.remove("_active");
+    hamburgerButton.classList.remove("active");
     headerMenu.classList.remove("active");
   });
+}
+if (hamburgerMenuClose) {
+  hamburgerMenuClose.addEventListener("click", function () {
+    hamburgerMenu.classList.remove("active");
+    hamburgerButton.classList.remove("active");
+    headerMenu.classList.remove("active");
+  });
+}
 
 /* Header Game */
 const headerGameBtns = document.querySelectorAll(".js-header-game-open");
@@ -14123,7 +14126,7 @@ if (newCards)
 
 /* Search Block */
 /* const searchButton = document.querySelector(".js-search-open");
-const searchBlock = document.querySelector(".js-search-menu");
+
 
 if (searchButton)
   searchButton.addEventListener("click", function (event) {
@@ -14131,7 +14134,16 @@ if (searchButton)
     searchButton.classList.toggle("active"); // Добавляем или удаляем класс active на ссылку
     searchBlock.classList.toggle("active"); // Добавляем или удаляем класс active на div
   }); */
+const searchBlock = document.querySelector(".js-search-menu");
+const headerSearchBg = document.querySelector(".header-search__bg");
+const jsSearchButton = document.querySelector(".js-search-button");
 
+if (headerSearchBg) {
+  headerSearchBg.addEventListener("click", function () {
+    searchBlock.classList.remove("active");
+    jsSearchButton.classList.remove("active");
+  });
+}
 /* FancyBox */
 Fancybox.bind();
 
@@ -14460,7 +14472,6 @@ if (document.querySelector(".admin-tabs-open"))
   }
 }); */
 
-
 /* Reviews Buttons */
 let lastElements = [];
 let lastButton = null;
@@ -14510,8 +14521,6 @@ if (addClassBtns)
     });
   });
 
-
-
 const reviewCards = document.querySelectorAll(".home-other-reviews__card");
 const aboutReviewsBlock = document.querySelector(".about-reviews__block");
 
@@ -14532,11 +14541,6 @@ if (reviewCards)
       }
     });
   });
-
-
-
-
-
 
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
