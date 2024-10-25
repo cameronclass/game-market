@@ -22,7 +22,9 @@
 
         @include mobile {
             flex-direction: column;
-            padding: 0px 15px 15px;
+            padding: 15px;
+            gap: 15px;
+
         }
     }
 
@@ -30,8 +32,9 @@
         width: 100%;
         max-width: 250px;
         height: 134px;
-        position: relative;
+        position: absolute;
         display: flex;
+        align-items: center;
 
         @include mobile {
             display: none;
@@ -49,17 +52,20 @@
         width: 100%;
         max-width: 400px;
         position: relative;
+        left: 17vw;
         height: 134px;
         display: flex;
+        align-items: center;
 
         @include mobile {
-            height: 110px;
+            height: auto;
+            left: inherit;
         }
 
         &_item {
-            position: absolute;
+            /* position: absolute;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-50%); */
         }
     }
 

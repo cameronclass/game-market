@@ -14117,13 +14117,15 @@ input[type=number] {
     @media screen and (max-width: 979px) {
       .mobile-game-timer__block {
         flex-direction: column;
-        padding: 0px 15px 15px; } }
+        padding: 15px;
+        gap: 15px; } }
   .mobile-game-timer__img {
     width: 100%;
     max-width: 250px;
     height: 134px;
-    position: relative;
-    display: flex; }
+    position: absolute;
+    display: flex;
+    align-items: center; }
     @media screen and (max-width: 979px) {
       .mobile-game-timer__img {
         display: none; } }
@@ -14136,15 +14138,18 @@ input[type=number] {
     width: 100%;
     max-width: 400px;
     position: relative;
+    left: 17vw;
     height: 134px;
-    display: flex; }
+    display: flex;
+    align-items: center; }
     @media screen and (max-width: 979px) {
       .mobile-game-timer__title {
-        height: 110px; } }
+        height: auto;
+        left: inherit; } }
     .mobile-game-timer__title_item {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%); }
+      /* position: absolute;
+            top: 50%;
+            transform: translateY(-50%); */ }
   .mobile-game-timer__timer {
     margin-left: auto;
     padding-right: 40px; }
