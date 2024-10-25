@@ -1022,6 +1022,10 @@
             &:nth-child(odd) {
                 background: #1C1B19;
             }
+
+            &:hover {
+                border-color: $orange;
+            }
         }
 
         .accordion__intro {

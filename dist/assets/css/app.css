@@ -10975,6 +10975,8 @@ input[type=number] {
       background: #22211E; }
       .cart-faq__accordion .accordion:nth-child(odd) {
         background: #1C1B19; }
+      .cart-faq__accordion .accordion:hover {
+        border-color: #FF6C3D; }
     .cart-faq__accordion .accordion__intro {
       font-size: 16px;
       color: #847F7D;
