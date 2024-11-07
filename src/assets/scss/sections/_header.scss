@@ -1,7 +1,7 @@
 .header {
     position: fixed;
     width: 100%;
-    height: 63px;
+    height: 96px;
     display: flex;
     align-items: center;
     top: 0;
@@ -209,6 +209,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        gap: 10px;
 
         @include mobile {
             visibility: hidden;
@@ -229,6 +231,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            background: linear-gradient(90deg, #873D25, #FF6C3D);
 
             @include mobile {
                 display: flex;
@@ -260,8 +264,8 @@
             justify-content: center;
             gap: 8px;
             font-family: $font-roboto;
-            height: 62px;
-            padding: 0 15px;
+            height: auto;
+            padding: 5px 15px;
             background: transparent;
             border-bottom: 1px solid transparent;
             transition: 200ms ease;
@@ -283,7 +287,7 @@
 
             &::after {
                 content: "";
-                display: inline-block;
+                display: none;
                 width: 50%;
                 height: 20px;
                 background: transparent;
@@ -342,7 +346,7 @@
             &_subtitle {
                 font-size: 10px;
                 font-weight: 300;
-                color: #6D675B;
+                color: #C3B8A2;
 
                 @include netbook {
                     display: none;
@@ -351,8 +355,8 @@
 
             &:hover,
             &.active {
-                border-bottom-color: $orange;
-                background: linear-gradient(0deg, rgba(28, 27, 25, 1), rgba(60, 56, 50, 0.5));
+                /* border-bottom-color: $orange;
+                background: linear-gradient(0deg, rgba(28, 27, 25, 1), rgba(60, 56, 50, 0.5)); */
 
                 .svg-active {
                     fill: white;
@@ -398,6 +402,29 @@
             @include mobile {
                 display: grid;
                 width: 90%;
+            }
+        }
+
+        &-catalog {
+            width: 100%;
+
+
+            .catalog__tabs {
+                background-color: transparent;
+                border: none;
+                grid-template-columns: repeat(8, 1fr);
+            }
+
+            .catalog__tab_btn {
+                padding: 0;
+            }
+
+            .catalog__tab_svg {
+                height: 20px;
+            }
+
+            .catalog__tab_title {
+                font-size: 10px;
             }
         }
     }
@@ -645,7 +672,7 @@
 .js-hamburger-menu {
     position: fixed;
     z-index: 5;
-    top: 63px;
+    top: 96px;
     left: 0;
     visibility: hidden;
     transition: 300ms ease;
@@ -776,7 +803,7 @@
 .js-search-menu {
     position: fixed;
     z-index: 10;
-    top: 63px;
+    top: 96px;
     left: 0;
     visibility: hidden;
     transition: 300ms ease;
