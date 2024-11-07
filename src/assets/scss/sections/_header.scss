@@ -210,7 +210,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 10px;
 
         @include mobile {
             visibility: hidden;
@@ -410,13 +409,14 @@
 
 
             .catalog__tabs {
-                background-color: transparent;
+                background-color: #0B0A09;
                 border: none;
                 grid-template-columns: repeat(8, 1fr);
+                border-radius: 0;
             }
 
             .catalog__tab_btn {
-                padding: 0;
+                padding: 4px;
             }
 
             .catalog__tab_svg {

@@ -5989,7 +5989,7 @@ input[type=number] {
     padding: 0; }
 
 .main {
-  padding-top: 63px;
+  padding-top: 96px;
   position: relative;
   z-index: 3; }
 
@@ -7738,8 +7738,7 @@ input[type=number] {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 10px; }
+    flex-direction: column; }
     @media screen and (max-width: 979px) {
       .header__menu {
         visibility: hidden;
@@ -7885,11 +7884,12 @@ input[type=number] {
     .header__menu-catalog {
       width: 100%; }
       .header__menu-catalog .catalog__tabs {
-        background-color: transparent;
+        background-color: #0B0A09;
         border: none;
-        grid-template-columns: repeat(8, 1fr); }
+        grid-template-columns: repeat(8, 1fr);
+        border-radius: 0; }
       .header__menu-catalog .catalog__tab_btn {
-        padding: 0; }
+        padding: 4px; }
       .header__menu-catalog .catalog__tab_svg {
         height: 20px; }
       .header__menu-catalog .catalog__tab_title {
