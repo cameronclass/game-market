@@ -7755,7 +7755,8 @@ input[type=number] {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(90deg, #873D25, #FF6C3D); }
+      background: #6E3A28;
+      height: 50px; }
       @media screen and (max-width: 979px) {
         .header__menu_block {
           display: flex;
@@ -7813,6 +7814,9 @@ input[type=number] {
         @media screen and (max-width: 1200px) {
           .header__menu_item::after {
             display: none; } }
+      .header__menu_item_svg svg {
+        width: 22px;
+        height: 22px; }
       @media screen and (max-width: 1200px) {
         .header__menu_item_svg {
           transform: scale(0.7); } }
@@ -7829,7 +7833,7 @@ input[type=number] {
         position: relative;
         z-index: 2; }
       .header__menu_item_title {
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 500;
         color: #C3B8A2;
         transition: 200ms ease; }
@@ -7842,7 +7846,7 @@ input[type=number] {
             font-size: 18px;
             line-height: 1.2; } }
       .header__menu_item_subtitle {
-        font-size: 10px;
+        font-size: 8px;
         font-weight: 300;
         color: #C3B8A2; }
         @media screen and (max-width: 1200px) {
@@ -7882,14 +7886,20 @@ input[type=number] {
           display: grid;
           width: 90%; } }
     .header__menu-catalog {
-      width: 100%; }
+      width: auto; }
+      .header__menu-catalog .catalog__header {
+        display: none; }
+      .header__menu-catalog .catalog__tabs_content {
+        grid-column-start: 1;
+        grid-column-end: 8; }
       .header__menu-catalog .catalog__tabs {
-        background-color: #0B0A09;
+        background-color: transparent;
         border: none;
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(7, 1fr);
         border-radius: 0; }
       .header__menu-catalog .catalog__tab_btn {
-        padding: 4px; }
+        width: 88px;
+        padding: 3px; }
       .header__menu-catalog .catalog__tab_svg {
         height: 20px; }
       .header__menu-catalog .catalog__tab_title {
@@ -9721,6 +9731,7 @@ input[type=number] {
   margin-bottom: 40px; }
 
 .catalog-slider {
+  padding-top: 30px;
   padding-bottom: 45px; }
   .catalog-slider__title {
     display: flex;
