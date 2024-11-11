@@ -14579,6 +14579,22 @@ document.addEventListener("click", function (event) {
   }
 });
 
+
+/* clip path */
+function updateClipPath() {
+  const element = document.querySelector(".header__shape-1");
+  const width = element.offsetWidth; // Получаем текущую ширину элемента
+  const fixedPoint = 40; // Фиксированное значение в пикселях
+  const percentagePoint = (fixedPoint / width) * 100; // Вычисляем процентное значение
+
+  // Обновляем clip-path с учетом ширины элемента
+  const clipPathValue = `polygon(0 0, ${percentagePoint}% 0%, 100% 100%, 0% 100%)`;
+  element.style.clipPath = clipPathValue;
+}
+
+// Обновляем clip-path при загрузке и изменении размера окна
+window.addEventListener("load", updateClipPath);
+window.addEventListener("resize", updateClipPath);
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
   const optionsContainer = selectElement.querySelector("[data-select-options]");
