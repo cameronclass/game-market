@@ -23,7 +23,7 @@
         min-width: 100px;
         height: 53px;
         background: linear-gradient(91deg, #1C1B19 -0.04%, #2E2920 109.69%);
-        clip-path: polygon(0 0, 40px 0%, 100% 100%, 0% 100%);
+        /* clip-path: polygon(0 0, 35px 0%, 100% 100%, 0% 100%); */
 
         @include netbook {
             min-width: 230px;
@@ -42,7 +42,7 @@
         min-width: 100px;
         height: 53px;
         background: linear-gradient(91deg, #1C1B19 -0.04%, #2E2920 109.69%);
-        clip-path: polygon(0 0, 100% 0, 420px 100%, 0% 100%);
+        /* clip-path: polygon(0 0, 100% 0%, 35px 100%, 0% 100%); */
 
         @include netbook {
             min-width: 230px;
@@ -111,7 +111,7 @@
         min-width: 100px;
         height: 53px;
         background: linear-gradient(90deg, rgba(46, 41, 32, 1) 0%, rgba(28, 27, 25, 1) 100%);
-        clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%);
+        /* clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%); */
 
         @include netbook {
             min-width: 230px;
@@ -130,7 +130,7 @@
         min-width: 100px;
         height: 53px;
         background: linear-gradient(90deg, rgba(46, 41, 32, 1) 0%, rgba(28, 27, 25, 1) 100%);
-        clip-path: polygon(0 0, 100% 0%, 100% 100%, 12% 100%);
+        /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 12% 100%); */
 
         @include netbook {
             min-width: 230px;
@@ -284,7 +284,7 @@
             justify-content: center;
             background: #6E3A28;
             height: 54px;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 0, 94% 100%, 6% 100%, 0 0);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 0, 95% 100%, 5% 100%, 0 0);
             width: calc(100% + 80px);
 
             @include mobile {

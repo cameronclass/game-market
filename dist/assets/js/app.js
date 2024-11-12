@@ -14581,15 +14581,33 @@ document.addEventListener("click", function (event) {
 
 
 /* clip path */
-function updateClipPath() {
-  const element = document.querySelector(".header__shape-1");
-  const width = element.offsetWidth; // Получаем текущую ширину элемента
-  const fixedPoint = 40; // Фиксированное значение в пикселях
-  const percentagePoint = (fixedPoint / width) * 100; // Вычисляем процентное значение
 
-  // Обновляем clip-path с учетом ширины элемента
-  const clipPathValue = `polygon(0 0, ${percentagePoint}% 0%, 100% 100%, 0% 100%)`;
-  element.style.clipPath = clipPathValue;
+function updateClipPath() {
+  const elements = document.querySelectorAll(".clip-element");
+
+  elements.forEach((element) => {
+    const clipPathValue = element.getAttribute("data-clip-path"); // Получаем значение clip-path из data-атрибута
+    const fixedPoint = 40; // Фиксированное значение в пикселях
+    const width = element.offsetWidth; // Получаем текущую ширину элемента
+    const position = element.getAttribute("data-clip-position"); // Получаем позицию (left или right)
+
+    let updatedClipPathValue;
+
+    if (position === "right") {
+      // Позиция от правого края
+      const rightPoint = width - fixedPoint; // Позиция от правого края
+      updatedClipPathValue = clipPathValue.replace(
+        /(\d+)px/,
+        `${rightPoint}px`
+      );
+    } else if (position === "left") {
+      // Позиция от левого края
+      const leftPoint = fixedPoint; // Позиция от левого края
+      updatedClipPathValue = clipPathValue.replace(/(\d+)px/, `${leftPoint}px`);
+    }
+
+    element.style.clipPath = updatedClipPathValue;
+  });
 }
 
 // Обновляем clip-path при загрузке и изменении размера окна

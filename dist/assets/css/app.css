@@ -5989,7 +5989,7 @@ input[type=number] {
     padding: 0; }
 
 .main {
-  padding-top: 96px;
+  padding-top: 106px;
   position: relative;
   z-index: 3; }
 
@@ -7606,7 +7606,7 @@ input[type=number] {
     min-width: 100px;
     height: 53px;
     background: linear-gradient(91deg, #1C1B19 -0.04%, #2E2920 109.69%);
-    clip-path: polygon(0 0, 40px 0%, 100% 100%, 0% 100%); }
+    /* clip-path: polygon(0 0, 35px 0%, 100% 100%, 0% 100%); */ }
     @media screen and (max-width: 1200px) {
       .header__shape-1 {
         min-width: 230px; } }
@@ -7621,7 +7621,7 @@ input[type=number] {
     min-width: 100px;
     height: 53px;
     background: linear-gradient(91deg, #1C1B19 -0.04%, #2E2920 109.69%);
-    clip-path: polygon(0 0, 100% 0, 420px 100%, 0% 100%); }
+    /* clip-path: polygon(0 0, 100% 0%, 35px 100%, 0% 100%); */ }
     @media screen and (max-width: 1200px) {
       .header__shape-1b {
         min-width: 230px; } }
@@ -7674,7 +7674,7 @@ input[type=number] {
     min-width: 100px;
     height: 53px;
     background: linear-gradient(90deg, #2e2920 0%, #1c1b19 100%);
-    clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%); }
+    /* clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0% 100%); */ }
     @media screen and (max-width: 1200px) {
       .header__shape-4 {
         min-width: 230px; } }
@@ -7689,7 +7689,7 @@ input[type=number] {
     min-width: 100px;
     height: 53px;
     background: linear-gradient(90deg, #2e2920 0%, #1c1b19 100%);
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 12% 100%); }
+    /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 12% 100%); */ }
     @media screen and (max-width: 1200px) {
       .header__shape-4b {
         min-width: 230px; } }
@@ -7797,7 +7797,7 @@ input[type=number] {
       justify-content: center;
       background: #6E3A28;
       height: 54px;
-      clip-path: polygon(25% 0%, 75% 0%, 100% 0, 94% 100%, 6% 100%, 0 0);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 0, 95% 100%, 5% 100%, 0 0);
       width: calc(100% + 80px); }
       @media screen and (max-width: 979px) {
         .header__menu_block {
@@ -8586,7 +8586,7 @@ input[type=number] {
 
 /* Pages */
 .home-main-slider {
-  padding-top: 40px;
+  padding-top: 20px;
   margin-bottom: 30px;
   position: relative; }
   @media screen and (max-width: 979px) {
@@ -9774,7 +9774,7 @@ input[type=number] {
   margin-bottom: 40px; }
 
 .catalog-slider {
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 45px; }
   .catalog-slider__title {
     display: flex;
@@ -10671,7 +10671,7 @@ input[type=number] {
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
-  top: 70px;
+  top: 110px;
   width: 100%;
   opacity: 0;
   visibility: hidden;
@@ -13025,7 +13025,7 @@ input[type=number] {
     line-height: 1.2; }
 
 .admin-head {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px; }
   .admin-head__block {
     display: grid;
@@ -14170,7 +14170,7 @@ input[type=number] {
       background: #422424; }
 
 .mobile-game-timer {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px; }
   .mobile-game-timer__border {
     border-radius: 20px;
@@ -15037,7 +15037,7 @@ input[type=number] {
       padding-bottom: 20px; } }
 
 .steam-gifts-slider {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px; }
   .steam-gifts-slider__block {
     display: flex;
