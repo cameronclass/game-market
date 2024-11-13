@@ -14,6 +14,10 @@
     padding-top: 106px;
     position: relative;
     z-index: 3;
+
+    @include mobile {
+        padding-top: 64px;
+    }
 }
 
 .row-border {
@@ -1065,6 +1069,11 @@
         &:hover,
         &.active {
             background: linear-gradient(268.85deg, rgba(79, 79, 79, 0.35) 0.269%, rgba(72, 60, 54, 0.35) 31.412%, rgba(70, 66, 63, 0.35) 48.847%, rgba(72, 60, 54, 0.35) 70.685%, rgba(79, 79, 79, 0.35) 99.848%);
+
+            .catalog__tab_drop {
+                visibility: visible;
+                opacity: 1;
+            }
         }
 
         &:nth-last-child(1),
