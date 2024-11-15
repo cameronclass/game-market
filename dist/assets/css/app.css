@@ -8669,7 +8669,7 @@ input[type=number] {
       margin-bottom: 60px; } }
   .home-main-slider__slide {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px; }
     @media screen and (max-width: 1200px) {
       .home-main-slider__slide {
@@ -8797,7 +8797,7 @@ input[type=number] {
           padding: 8px 18px; } }
     .home-main-slider__main_cards {
       display: grid;
-      grid-template-columns: minmax(100px, 170px) minmax(100px, 170px);
+      grid-template-columns: minmax(100px, 130px) minmax(100px, 130px);
       gap: 15px;
       justify-content: flex-end; }
       @media screen and (max-width: 979px) {
@@ -8814,7 +8814,7 @@ input[type=number] {
           border-width: 2px; } }
       .home-main-slider__main_card_img {
         object-fit: cover;
-        height: 190px;
+        height: 150px;
         border-radius: 5px; }
         @media screen and (max-width: 979px) {
           .home-main-slider__main_card_img {
