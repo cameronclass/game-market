@@ -8678,7 +8678,7 @@ input[type=number] {
     border-radius: 10px;
     border: 1px solid #36332D;
     background: linear-gradient(0deg, rgba(22, 21, 19, 0.92) 0%, rgba(22, 21, 19, 0.92) 100%);
-    padding: 20px 30px;
+    padding: 20px 30px 50px;
     overflow: hidden;
     position: relative; }
     @media screen and (max-width: 979px) {
@@ -8797,7 +8797,7 @@ input[type=number] {
           padding: 8px 18px; } }
     .home-main-slider__main_cards {
       display: grid;
-      grid-template-columns: minmax(80px, 133px) minmax(80px, 133px);
+      grid-template-columns: minmax(100px, 170px) minmax(100px, 170px);
       gap: 15px;
       justify-content: flex-end; }
       @media screen and (max-width: 979px) {
@@ -8814,7 +8814,7 @@ input[type=number] {
           border-width: 2px; } }
       .home-main-slider__main_card_img {
         object-fit: cover;
-        height: 158px;
+        height: 190px;
         border-radius: 5px; }
         @media screen and (max-width: 979px) {
           .home-main-slider__main_card_img {
