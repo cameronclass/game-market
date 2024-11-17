@@ -118,7 +118,7 @@
         width: calc(50% - 600px);
         min-width: auto;
         height: 15px;
-        background: linear-gradient(90deg, rgba(45, 35, 29, 1) 0%, rgba(66, 46, 34, 1) 100%);
+        background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
         clip-path: polygon(0 0, 0 0, 100% 0, 0% 100%);
         z-index: 5;
     }
@@ -231,7 +231,7 @@
         width: calc(50% - 600px);
         min-width: auto;
         height: 15px;
-        background: linear-gradient(270deg, rgba(45, 35, 29, 1) 0%, rgba(66, 46, 34, 1) 100%);
+        background: linear-gradient(270deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
         clip-path: polygon(0 0, 100% 100%, 100% 0);
         z-index: 5;
     }
@@ -739,7 +739,7 @@
 
             &_drop {
                 position: absolute;
-                top: calc(100% + 10px);
+                top: calc(100% + 32px);
                 right: 0;
                 border-radius: 0px 0px 20px 20px;
                 border: 1px solid #522516;
@@ -953,7 +953,7 @@
 .js-search-menu {
     position: fixed;
     z-index: 10;
-    top: 105px;
+    top: 106px;
     left: 0;
     visibility: hidden;
     transition: 300ms ease;
