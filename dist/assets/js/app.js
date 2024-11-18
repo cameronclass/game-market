@@ -14348,101 +14348,118 @@ formSelects.forEach((formSelect) => {
 });
 
 /* Catalog */
-const catalogTabWrapper = document.querySelectorAll(".catalog__tabs");
-const catalogButtons = document.querySelectorAll(".catalog__btn");
-const catalogContents = document.querySelectorAll(".catalog__tabs_content");
-const catalogBgs = document.querySelectorAll(".catalog__bg");
+function initializeCatalog() {
+  const catalogTabWrapper = document.querySelectorAll(".catalog__tabs");
+  const catalogButtons = document.querySelectorAll(".catalog__btn");
+  const catalogContents = document.querySelectorAll(".catalog__tabs_content");
+  const catalogBgs = document.querySelectorAll(".catalog__bg");
 
-catalogButtons.forEach((button, index) => {
-  button.addEventListener("click", function (event) {
-    event.stopPropagation();
-    catalogContents[index].classList.toggle("active");
-    catalogBgs[index].classList.toggle("active");
-    catalogTabWrapper[index].classList.toggle("active");
-  });
-});
-
-document.addEventListener("click", function (event) {
-  if (!event.target.closest(".catalog__tabs")) {
-    catalogContents.forEach((content) => {
-      content.classList.remove("active");
-    });
-    catalogBgs.forEach((bg) => {
-      bg.classList.remove("active");
-    });
-    catalogTabWrapper.forEach((wrap) => {
-      wrap.classList.remove("active");
-    });
-  }
-});
-
-const catalogTabsContent = document.querySelector(".catalog__tabs_content");
-if (catalogTabsContent) {
-  const catalogTabs = catalogTabsContent.querySelectorAll(".catalog__tab");
-  const catalogTabReturns = catalogTabsContent.querySelectorAll(
-    ".catalog__tab_drop_return"
-  );
-
-  catalogTabs.forEach((tab) => {
-    const catalogTabBtn = tab.querySelector(".catalog__tab_btn");
-    const catalogTabDrop = tab.querySelector(".catalog__tab_drop");
-
-    const catalogTabWrapper = document.querySelectorAll(".catalog__tabs");
-    const catalogBgs = document.querySelectorAll(".catalog__bg");
-
-    catalogTabBtn.addEventListener("click", (event) => {
+  catalogButtons.forEach((button, index) => {
+    button.addEventListener("click", function (event) {
       event.stopPropagation();
-      const isActive = catalogTabBtn.classList.contains("_active");
-
-      catalogTabWrapper.forEach((item) => {
-        item.classList.add("active");
-      });
-      catalogBgs.forEach((item) => {
-        item.classList.add("active");
-      });
-
-      catalogTabs.forEach((innerTab) => {
-        innerTab.classList.remove("_active");
-        innerTab.querySelector(".catalog__tab_btn").classList.remove("_active");
-        innerTab
-          .querySelector(".catalog__tab_drop")
-          .classList.remove("_active");
-      });
-
-      if (!isActive) {
-        tab.classList.add("_active");
-        catalogTabBtn.classList.add("_active");
-        catalogTabDrop.classList.add("_active");
-      }
+      catalogContents[index].classList.toggle("active");
+      catalogBgs[index].classList.toggle("active");
+      catalogTabWrapper[index].classList.toggle("active");
     });
+  });
 
-    catalogTabReturns.forEach((returnBtn) => {
-      returnBtn.addEventListener("click", () => {
-        catalogTabs.forEach((tab) => {
-          tab.classList.remove("_active");
-          tab.querySelector(".catalog__tab_btn").classList.remove("_active");
-          tab.querySelector(".catalog__tab_drop").classList.remove("_active");
-          catalogTabWrapper.forEach((item) => {
-            item.classList.remove("active");
-          });
-          catalogBgs.forEach((item) => {
-            item.classList.remove("active");
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".catalog__tabs")) {
+      catalogContents.forEach((content) => {
+        content.classList.remove("active");
+      });
+      catalogBgs.forEach((bg) => {
+        bg.classList.remove("active");
+      });
+      catalogTabWrapper.forEach((wrap) => {
+        wrap.classList.remove("active");
+      });
+    }
+  });
+
+  const catalogTabsContent = document.querySelector(".catalog__tabs_content");
+  if (catalogTabsContent) {
+    const catalogTabs = catalogTabsContent.querySelectorAll(".catalog__tab");
+    const catalogTabReturns = catalogTabsContent.querySelectorAll(
+      ".catalog__tab_drop_return"
+    );
+
+    catalogTabs.forEach((tab) => {
+      const catalogTabBtn = tab.querySelector(".catalog__tab_btn");
+      const catalogTabDrop = tab.querySelector(".catalog__tab_drop");
+
+      catalogTabBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const isActive = catalogTabBtn.classList.contains("_active");
+
+        catalogTabWrapper.forEach((item) => {
+          item.classList.add("active");
+        });
+        catalogBgs.forEach((item) => {
+          item.classList.add("active");
+        });
+
+        catalogTabs.forEach((innerTab) => {
+          innerTab.classList.remove("_active");
+          innerTab
+            .querySelector(".catalog__tab_btn")
+            .classList.remove("_active");
+          innerTab
+            .querySelector(".catalog__tab_drop")
+            .classList.remove("_active");
+        });
+
+        if (!isActive) {
+          tab.classList.add("_active");
+          catalogTabBtn.classList.add("_active");
+          catalogTabDrop.classList.add("_active");
+        }
+      });
+
+      catalogTabReturns.forEach((returnBtn) => {
+        returnBtn.addEventListener("click", () => {
+          catalogTabs.forEach((tab) => {
+            tab.classList.remove("_active");
+            tab.querySelector(".catalog__tab_btn").classList.remove("_active");
+            tab.querySelector(".catalog__tab_drop").classList.remove("_active");
+            catalogTabWrapper.forEach((item) => {
+              item.classList.remove("active");
+            });
+            catalogBgs.forEach((item) => {
+              item.classList.remove("active");
+            });
           });
         });
       });
     });
-  });
 
-  document.addEventListener("click", (event) => {
-    if (!catalogTabsContent.contains(event.target)) {
-      catalogTabs.forEach((tab) => {
-        tab.classList.remove("_active");
-        tab.querySelector(".catalog__tab_btn").classList.remove("_active");
-        tab.querySelector(".catalog__tab_drop").classList.remove("_active");
-      });
-    }
-  });
+    document.addEventListener("click", (event) => {
+      if (!catalogTabsContent.contains(event.target)) {
+        catalogTabs.forEach((tab) => {
+          tab.classList.remove("_active");
+          tab.querySelector(".catalog__tab_btn").classList.remove("_active");
+          tab.querySelector(".catalog__tab_drop").classList.remove("_active");
+        });
+      }
+    });
+  }
 }
+
+function checkScreenSize() {
+  if (window.innerWidth <= 768) {
+    initializeCatalog();
+  } else {
+    // Здесь можно добавить код для отключения функциональности на десктопе, если это необходимо
+    // Например, удалить все обработчики событий или скрыть элементы
+    /* console.log("Десктопная версия, функциональность отключена."); */
+  }
+}
+
+// Инициализация при загрузке страницы
+checkScreenSize();
+
+// Добавление обработчика события изменения размера окна
+window.addEventListener("resize", checkScreenSize);
 
 /* Modal */
 // Open modal
@@ -14472,21 +14489,6 @@ if (document.querySelector(".admin-tabs-open"))
   document.querySelector(".admin-tabs-open").addEventListener("click", () => {
     document.querySelector(".admin-tabs__block").classList.add("_active");
   });
-
-/* document.addEventListener("click", (event) => {
-  const adminTabsBlock = document.querySelector(".admin-tabs__block");
-  const adminTabsTab = document.querySelectorAll(".admin-tabs__tab");
-  const isAdminTab = Array.from(adminTabsTab).some((tab) =>
-    tab.contains(event.target)
-  );
-  const isButton = document
-    .querySelector(".admin-tabs-open")
-    .contains(event.target);
-
-  if (!isAdminTab && !isButton) {
-    adminTabsBlock.classList.remove("_active");
-  }
-}); */
 
 /* Reviews Buttons */
 let lastElements = [];
@@ -14579,7 +14581,6 @@ document.addEventListener("click", function (event) {
   }
 });
 
-
 /* clip path */
 
 function updateClipPath() {
@@ -14613,6 +14614,7 @@ function updateClipPath() {
 // Обновляем clip-path при загрузке и изменении размера окна
 window.addEventListener("load", updateClipPath);
 window.addEventListener("resize", updateClipPath);
+
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
   const optionsContainer = selectElement.querySelector("[data-select-options]");

@@ -10,7 +10,7 @@
     /* border-bottom: 1px solid #1C1B19; */
     box-shadow: 0px 0px 22.2px -3px #282620 inset, 0px 9px 11.8px -3px rgba(0, 0, 0, 0.25);
 
-    &::after{
+    &::after {
         content: "";
         width: 100%;
         height: 1px;
@@ -41,6 +41,11 @@
         height: 53px;
         background: linear-gradient(90deg, rgba(34, 32, 28, 1) 0%, rgba(44, 40, 32, 1) 100%);
         z-index: 5;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 100px);
+        }
     }
 
     &__shape-1b {
@@ -52,6 +57,11 @@
         height: 53px;
         background: linear-gradient(90deg, rgba(34, 32, 28, 1) 0%, rgba(44, 40, 32, 1) 100%);
         z-index: 5;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 100px);
+        }
     }
 
     &__shape-1-1 {
@@ -63,6 +73,11 @@
         height: 53px;
         background: linear-gradient(90deg, rgba(39, 36, 30, 1) 0%, rgba(40, 37, 30, 1) 100%);
         z-index: 4;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 80px);
+        }
     }
 
     &__shape-1-1b {
@@ -74,6 +89,11 @@
         height: 53px;
         background: linear-gradient(90deg, rgba(39, 36, 30, 1) 0%, rgba(40, 37, 30, 1) 100%);
         z-index: 4;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 80px);
+        }
     }
 
     &__shape-1-2 {
@@ -85,6 +105,11 @@
         height: 53px;
         background: linear-gradient(90deg, rgba(34, 32, 29, 1) 0%, rgba(34, 32, 29, 1) 100%);
         z-index: 3;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 60px);
+        }
     }
 
     &__shape-1-2b {
@@ -96,8 +121,12 @@
         height: 53px;
         background: linear-gradient(90deg, rgba(34, 32, 29, 1) 0%, rgba(34, 32, 29, 1) 100%);
         z-index: 3;
-    }
 
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 60px);
+        }
+    }
 
     &__shape-2 {
         position: absolute;
@@ -109,6 +138,11 @@
         background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
         clip-path: polygon(0 0, 0 0, 100% 100%, 0% 100%);
         z-index: 5;
+
+        @include mobile {
+            width: calc(50% - 110px);
+            height: 8px;
+        }
     }
 
     &__shape-2t {
@@ -121,6 +155,11 @@
         background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
         clip-path: polygon(0 0, 0 0, 100% 0, 0% 100%);
         z-index: 5;
+
+        @include mobile {
+            width: calc(50% - 110px);
+            height: 8px;
+        }
     }
 
     &__shape-3 {
@@ -132,6 +171,12 @@
         height: 15px;
         background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.11) -0.323%, rgba(255, 108, 61, 0.11) 92.563%);
         clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
+
+        @include mobile {
+            bottom: -9px;
+            width: calc(50% - 110px);
+            height: 8px;
+        }
     }
 
     &__shape-arrow {
@@ -155,6 +200,11 @@
         height: 53px;
         background: linear-gradient(90deg, rgba(46, 41, 32, 1) 0%, rgba(28, 27, 25, 1) 100%);
         z-index: 5;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 100px);
+        }
     }
 
     &__shape-4b {
@@ -166,6 +216,11 @@
         height: 53px;
         background: linear-gradient(90deg, rgba(46, 41, 32, 1) 0%, rgba(28, 27, 25, 1) 100%);
         z-index: 5;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 100px);
+        }
     }
 
     &__shape-4-1 {
@@ -177,6 +232,11 @@
         height: 53px;
         background: linear-gradient(270deg, rgba(39, 36, 30, 1) 0%, rgba(40, 37, 30, 1) 100%);
         z-index: 4;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 80px);
+        }
     }
 
     &__shape-4-1b {
@@ -188,6 +248,11 @@
         height: 53px;
         background: linear-gradient(270deg, rgba(39, 36, 30, 1) 0%, rgba(40, 37, 30, 1) 100%);
         z-index: 4;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 80px);
+        }
     }
 
     &__shape-4-2 {
@@ -199,6 +264,11 @@
         height: 53px;
         background: linear-gradient(270deg, rgba(34, 32, 29, 1) 0%, rgba(34, 32, 29, 1) 100%);
         z-index: 3;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 60px);
+        }
     }
 
     &__shape-4-2b {
@@ -210,6 +280,11 @@
         height: 53px;
         background: linear-gradient(270deg, rgba(34, 32, 29, 1) 0%, rgba(34, 32, 29, 1) 100%);
         z-index: 3;
+
+        @include mobile {
+            height: 32px;
+            width: calc(50% - 60px);
+        }
     }
 
     &__shape-5 {
@@ -222,6 +297,11 @@
         background: linear-gradient(180deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
         clip-path: polygon(100% 0, 100% 100%, 0 100%, 0% 100%);
         z-index: 5;
+
+        @include mobile {
+            height: 8px;
+            width: calc(50% - 110px);
+        }
     }
 
     &__shape-5t {
@@ -234,6 +314,11 @@
         background: linear-gradient(270deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
         clip-path: polygon(0 0, 100% 100%, 100% 0);
         z-index: 5;
+
+        @include mobile {
+            height: 8px;
+            width: calc(50% - 110px);
+        }
     }
 
     &__shape-6 {
@@ -246,6 +331,11 @@
         background: linear-gradient(157.72deg, rgba(135, 61, 37, 0.11) -0.323%, rgba(255, 108, 61, 0.11) 92.563%);
         clip-path: polygon(100% 0, 100% 100%, 0 0, 0 0);
 
+        @include mobile {
+            bottom: -9px;
+            width: calc(50% - 110px);
+            height: 8px;
+        }
     }
 
     &__block {
@@ -254,6 +344,7 @@
         justify-content: space-between;
         position: relative;
         z-index: 2;
+        height: 100%;
     }
 
     &__logo {
@@ -266,6 +357,7 @@
 
         @include netbook {
             gap: 15px;
+            position: initial;
         }
 
         &_link {
@@ -335,6 +427,7 @@
         flex-direction: column;
 
         @include mobile {
+            gap: 20px;
             visibility: hidden;
             opacity: 0;
             position: absolute;
@@ -364,6 +457,7 @@
                 background-color: transparent;
                 height: auto;
                 width: 100%;
+                clip-path: initial;
             }
         }
 
@@ -374,7 +468,8 @@
             gap: 0px;
 
             @include netbook {
-                max-width: 480px;
+                gap: 15px;
+                /* max-width: 480px; */
             }
 
             @include mobile {
@@ -399,14 +494,14 @@
             overflow: hidden;
 
             @include netbook {
-                padding: 0 8px;
-                gap: 2px;
+                padding: 0;
+                gap: 5px;
                 width: 100%;
                 overflow: visible;
             }
 
             @include mobile {
-                gap: 15px;
+                gap: 10px;
                 padding: 0;
                 height: auto;
                 justify-content: flex-start;
@@ -436,9 +531,9 @@
                     height: 22px;
                 }
 
-                @include netbook {
+                /* @include netbook {
                     transform: scale(0.7);
-                }
+                } */
 
                 @include mobile {
                     transform: scale(1);
@@ -542,8 +637,16 @@
         &-catalog {
             width: auto;
 
+            @include mobile{
+                width: 100%;
+            }
+
             .catalog__header {
                 display: none;
+
+                @include mobile{
+                    display: flex;
+                }
             }
 
             .catalog__tabs_content {
@@ -722,9 +825,13 @@
                 &._active {
                     border: 2px solid $orange;
                 }
+
+                @include mobile {
+                    margin-left: 0;
+                }
             }
 
-            @include netbook {
+            /* @include netbook {
                 border-width: 1px;
                 width: 40px;
                 height: 40px;
@@ -734,7 +841,7 @@
                 width: 37px;
                 height: 37px;
                 border-width: 1px;
-            }
+            } */
 
 
             &_drop {
@@ -742,7 +849,7 @@
                 top: calc(100% + 32px);
                 right: 0;
                 border-radius: 0px 0px 20px 20px;
-                border: 1px solid #522516;
+                border: 1px solid $orange;
                 background: rgba(28, 27, 25, 0.80);
                 backdrop-filter: blur(20px);
                 display: flex;
@@ -757,6 +864,10 @@
                 &._active {
                     visibility: visible;
                     opacity: 1;
+                }
+
+                @include mobile {
+                    top: calc(100% + 10px);
                 }
             }
 
@@ -852,7 +963,7 @@
         gap: 10px;
 
         @include mobile {
-            padding-top: 210px;
+            padding-top: 290px;
         }
     }
 
@@ -963,6 +1074,10 @@
     &.active {
         opacity: 1;
         visibility: visible;
+    }
+
+    @include mobile{
+        top: 64px;
     }
 }
 
