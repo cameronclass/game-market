@@ -8099,10 +8099,20 @@ input[type=number] {
       .header__menu-catalog .catalog__tab_btn {
         width: 88px;
         padding: 4px; }
+        @media screen and (max-width: 979px) {
+          .header__menu-catalog .catalog__tab_btn {
+            width: 100%;
+            padding: 10px; } }
       .header__menu-catalog .catalog__tab_svg {
         height: 20px; }
+        @media screen and (max-width: 979px) {
+          .header__menu-catalog .catalog__tab_svg {
+            height: 25px; } }
       .header__menu-catalog .catalog__tab_title {
         font-size: 10px; }
+        @media screen and (max-width: 979px) {
+          .header__menu-catalog .catalog__tab_title {
+            font-size: 18px; } }
   .header__lang {
     position: relative; }
     .header__lang_dropdown {
@@ -8303,7 +8313,7 @@ input[type=number] {
   gap: 10px; }
   @media screen and (max-width: 979px) {
     .logo-menu__block {
-      padding-top: 290px; } }
+      padding-top: 320px; } }
 
 .logo-menu__title {
   font-size: 20px;

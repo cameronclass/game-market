@@ -666,14 +666,27 @@
             .catalog__tab_btn {
                 width: 88px;
                 padding: 4px;
+
+                @include mobile{
+                    width: 100%;
+                    padding: 10px;
+                }
             }
 
             .catalog__tab_svg {
                 height: 20px;
+
+                @include mobile{
+                    height: 25px;
+                }
             }
 
             .catalog__tab_title {
                 font-size: 10px;
+
+                @include mobile{
+                    font-size: 18px;
+                }
             }
         }
     }
@@ -963,7 +976,7 @@
         gap: 10px;
 
         @include mobile {
-            padding-top: 290px;
+            padding-top: 320px;
         }
     }
 
