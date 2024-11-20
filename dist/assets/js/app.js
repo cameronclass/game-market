@@ -14422,12 +14422,12 @@ function initializeCatalog() {
             tab.classList.remove("_active");
             tab.querySelector(".catalog__tab_btn").classList.remove("_active");
             tab.querySelector(".catalog__tab_drop").classList.remove("_active");
-            catalogTabWrapper.forEach((item) => {
+            /* catalogTabWrapper.forEach((item) => {
               item.classList.remove("active");
             });
             catalogBgs.forEach((item) => {
               item.classList.remove("active");
-            });
+            }); */
           });
         });
       });
