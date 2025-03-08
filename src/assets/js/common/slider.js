@@ -1,4 +1,20 @@
 /* Swiper */
+new Swiper(".new-blog .swiper", {
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".new-blog .new-arrow-right",
+    prevEl: ".new-blog .new-arrow-left",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+  },
+});
 new Swiper(".new-catalog .swiper", {
   spaceBetween: 20,
   loop: true,
@@ -14,6 +30,41 @@ new Swiper(".new-catalog .swiper", {
     },
     1290: {
       slidesPerView: 5,
+    },
+  },
+});
+new Swiper(".new-mobile .swiper", {
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".new-mobile .new-arrow-right",
+    prevEl: ".new-mobile .new-arrow-left",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 5,
+    },
+    1290: {
+      slidesPerView: 5,
+    },
+  },
+});
+new Swiper(".new-refill-services .swiper", {
+  spaceBetween: 15,
+  loop: true,
+  navigation: {
+    nextEl: ".new-refill-services .new-arrow-right",
+    prevEl: ".new-refill-services .new-arrow-left",
+  },
+  breakpoints: {
+    0: {
+      centeredSlides: true,
+      spaceBetween: 5,
+    },
+    1290: {
+      slidesPerView: "auto",
     },
   },
 });

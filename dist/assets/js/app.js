@@ -13391,6 +13391,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* Swiper */
+new Swiper(".new-blog .swiper", {
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".new-blog .new-arrow-right",
+    prevEl: ".new-blog .new-arrow-left",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+  },
+});
 new Swiper(".new-catalog .swiper", {
   spaceBetween: 20,
   loop: true,
@@ -13406,6 +13422,41 @@ new Swiper(".new-catalog .swiper", {
     },
     1290: {
       slidesPerView: 5,
+    },
+  },
+});
+new Swiper(".new-mobile .swiper", {
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".new-mobile .new-arrow-right",
+    prevEl: ".new-mobile .new-arrow-left",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 5,
+    },
+    1290: {
+      slidesPerView: 5,
+    },
+  },
+});
+new Swiper(".new-refill-services .swiper", {
+  spaceBetween: 15,
+  loop: true,
+  navigation: {
+    nextEl: ".new-refill-services .new-arrow-right",
+    prevEl: ".new-refill-services .new-arrow-left",
+  },
+  breakpoints: {
+    0: {
+      centeredSlides: true,
+      spaceBetween: 5,
+    },
+    1290: {
+      slidesPerView: "auto",
     },
   },
 });
@@ -14600,7 +14651,6 @@ document.addEventListener("click", function (event) {
 });
 
 /* clip path */
-
 function updateClipPath() {
   const elements = document.querySelectorAll(".clip-element");
 
@@ -14632,6 +14682,41 @@ function updateClipPath() {
 // Обновляем clip-path при загрузке и изменении размера окна
 window.addEventListener("load", updateClipPath);
 window.addEventListener("resize", updateClipPath);
+
+/* new-reviews */
+(function () {
+  const content = document.querySelector(".new-reviews__content");
+
+  content.addEventListener("mousedown", (e) => {
+    let isDown = true;
+    let startX = e.pageX - content.offsetLeft;
+    let scrollLeft = content.scrollLeft;
+
+    content.classList.add("active");
+
+    const mouseMoveHandler = (e) => {
+      if (!isDown) return; // Если мышь не нажата, выходим
+      e.preventDefault();
+      const x = e.pageX - content.offsetLeft;
+      const walk = (x - startX) * 2; // Увеличьте или уменьшите скорость прокрутки
+      content.scrollLeft = scrollLeft - walk;
+    };
+
+    const mouseUpHandler = () => {
+      isDown = false;
+      content.classList.remove("active");
+      document.removeEventListener("mousemove", mouseMoveHandler);
+      document.removeEventListener("mouseup", mouseUpHandler);
+    };
+
+    document.addEventListener("mousemove", mouseMoveHandler);
+    document.addEventListener("mouseup", mouseUpHandler);
+  });
+
+  content.addEventListener("mouseleave", () => {
+    content.classList.remove("active");
+  });
+})();
 
     document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
   const trigger = selectElement.querySelector("[data-select-trigger]");
