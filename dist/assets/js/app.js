@@ -13391,6 +13391,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* Swiper */
+new Swiper(".new-catalog .swiper", {
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".new-catalog .new-arrow-right",
+    prevEl: ".new-catalog .new-arrow-left",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 5,
+    },
+    1290: {
+      slidesPerView: 5,
+    },
+  },
+});
 new Swiper(".footerPaySwiper", {
   slidesPerView: 9,
   spaceBetween: 20,
