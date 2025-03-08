@@ -19,7 +19,7 @@
     padding: 18px;
     background: #191816;
     overflow: hidden;
-    height: 180px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -61,16 +61,17 @@
     width: 100%;
     border-radius: 24px;
     background: #191816;
-    padding: 18px;
+    padding: 8px;
 
     &_heading {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 15px 10px;
     }
 
     &_content {
-      margin-top: 30px;
+      margin-top: 10px;
     }
   }
 }

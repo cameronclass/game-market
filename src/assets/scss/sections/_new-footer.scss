@@ -207,6 +207,16 @@
       &::placeholder {
         color: white;
       }
+
+      &:hover {
+        background: #2c2b27;
+        border: 1px solid transparent;
+      }
+
+      &:focus {
+        background: #2c2b27;
+        border: 1px solid transparent;
+      }
     }
 
     &_button {

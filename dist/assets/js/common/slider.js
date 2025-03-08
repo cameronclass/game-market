@@ -1,6 +1,6 @@
 /* Swiper */
 new Swiper(".new-blog .swiper", {
-  spaceBetween: 20,
+  spaceBetween: 8,
   loop: true,
   navigation: {
     nextEl: ".new-blog .new-arrow-right",
