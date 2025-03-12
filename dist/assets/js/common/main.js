@@ -1,3 +1,14 @@
+/* New-Header */
+window.addEventListener("scroll", function () {
+  const header = document.querySelector(".new-header");
+  if (window.scrollY > 50) {
+    // Если прокрутка больше 50 пикселей
+    header.classList.add("active");
+  } else {
+    header.classList.remove("active");
+  }
+});
+
 /* Аккордион */
 const accordions = document.querySelectorAll(".accordion");
 const openAccordion = (accordion) => {

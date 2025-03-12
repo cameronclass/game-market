@@ -32,6 +32,10 @@ a {
     color: $text-white;
     text-decoration: none;
   }
+  &:focus-visible {
+    border: none;
+    outline: none;
+  }
 }
 
 svg path {
@@ -244,4 +248,3 @@ input[type="number"] {
   gap: 3px;
   cursor: pointer;
 }
-

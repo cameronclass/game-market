@@ -35,10 +35,13 @@
 @import "pages/steam-gifts";
 
 /* partials */
+@import "partials/new-elements";
+@import "sections/new-header";
+@import "sections/new-footer";
+
 @import "partials/new-catalog";
 @import "partials/new-steam";
 @import "partials/new-mobile";
 @import "partials/new-advantages";
 @import "partials/new-blog";
 @import "partials/new-reviews";
-@import "sections/new-footer";
