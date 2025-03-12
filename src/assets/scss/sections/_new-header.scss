@@ -8,7 +8,12 @@
 
   &.active {
     .new-header__bottom {
-      display: none;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      padding: 0;
+      transition: visibility 0s linear 0s, opacity 0ms ease, height 150ms ease,
+        padding 150ms ease;
     }
   }
 
@@ -84,6 +89,11 @@
   }
 
   &__bottom {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transition: visibility 0s linear 0ms, opacity 0ms ease, height 150ms ease,
+      padding 150ms ease;
     padding: 0 0 10px;
     display: flex;
     align-items: center;

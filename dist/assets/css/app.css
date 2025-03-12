@@ -15552,7 +15552,11 @@ input[type="number"] {
   border-bottom: 1px solid #ff6c3d50;
   background: #191816; }
   .new-header.active .new-header__bottom {
-    display: none; }
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    transition: visibility 0s linear 0s, opacity 0ms ease, height 150ms ease, padding 150ms ease; }
   .new-header__top {
     display: flex;
     align-items: center;
@@ -15598,6 +15602,10 @@ input[type="number"] {
     display: flex;
     gap: 10px; }
   .new-header__bottom {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transition: visibility 0s linear 0ms, opacity 0ms ease, height 150ms ease, padding 150ms ease;
     padding: 0 0 10px;
     display: flex;
     align-items: center;

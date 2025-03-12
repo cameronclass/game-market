@@ -1,12 +1,19 @@
 /* New-Header */
+let lastScrollTop = 0; // Переменная для хранения последней позиции скролла
+
 window.addEventListener("scroll", function () {
   const header = document.querySelector(".new-header");
-  if (window.scrollY > 50) {
-    // Если прокрутка больше 50 пикселей
+  const currentScroll = window.scrollY; // Текущая позиция скролла
+
+  if (currentScroll > lastScrollTop && currentScroll > 50) {
+    // Если скроллим вниз и прокрутка больше 50 пикселей
     header.classList.add("active");
-  } else {
+  } else if (currentScroll < lastScrollTop) {
+    // Если скроллим вверх
     header.classList.remove("active");
   }
+
+  lastScrollTop = currentScroll; // Обновляем последнюю позицию скролла
 });
 
 /* Аккордион */
