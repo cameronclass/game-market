@@ -1892,6 +1892,10 @@
   position: relative;
   z-index: 10;
 
+  &::placeholder {
+    color: white;
+  }
+
   &__btn {
     position: absolute;
     right: 10px;
@@ -1909,7 +1913,8 @@
     align-items: center;
     gap: 15px;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: white;
       border: 1px solid $orange;
     }
