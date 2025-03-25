@@ -4,21 +4,22 @@
   position: relative;
   width: 100%;
 
-  svg {
+  &__img {
+    width: 16px;
+    height: auto;
     position: absolute;
-    left: 20px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
   }
 
   &__input {
     border-radius: 8px;
-    background: #22211e;
     color: #fff;
     font-size: 12px;
     font-weight: 300;
-    padding: 10px 50px;
-    height: 42px;
+    padding: 10px 20px;
+    height: 50px;
     border: none;
     border: 1px solid transparent;
     font-family: $font-roboto;
@@ -43,30 +44,32 @@
 
     &--bordered {
       border: 1px solid #37332a;
-      background: #22211e;
     }
   }
 }
 
 .new-btn {
   border-radius: 8px;
-  background: #22211e;
+
   color: #ebe2d0;
   font-size: 13px;
   font-weight: 500;
-  padding: 10px 30px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
   transition: 300ms ease;
   font-family: $font-roboto;
-  height: 42px;
-  border: 1px solid transparent;
+  border: 1px solid #37332a;
 
   &:hover {
     background: #ebe2d0;
     color: #22211e;
     border: 1px solid;
+
+    svg path{
+      fill: #22211e;
+    }
   }
 
   &:focus {
@@ -80,6 +83,12 @@
   &--white {
     background: #ebe2d0;
     color: #22211e;
+  }
+
+  &--normal {
+    padding: 10px 30px;
+    height: 50px;
+    background: #22211e;
   }
 
   &--bordered {

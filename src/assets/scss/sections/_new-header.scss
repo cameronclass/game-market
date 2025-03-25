@@ -3,8 +3,7 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid #ff6c3d50;
-  background: #191816;
+  /*   background: #191816; */
 
   &.active {
     .new-header__bottom {
@@ -21,13 +20,32 @@
   }
 
   &__top {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 10px 0;
+    background-color: #121110;
+    &-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 10px;
+      border-top: 1px solid #391d14;
+      background: linear-gradient(
+        90deg,
+        #ff6c3d50 0%,
+        rgba(14, 13, 12, 0) 20%,
+        rgba(14, 13, 12, 0) 80%,
+        #ff6c3d50 100%
+      );
+    }
   }
 
   &__logo {
+    margin-right: 40px;
     display: flex;
     align-items: center;
     gap: 7px;
@@ -49,30 +67,24 @@
   }
 
   &__catalog {
-    width: 100%;
-    max-width: 160px;
-    margin-right: auto;
+    width: auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 16px;
+    transition: 100ms;
 
-    &-btn {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      width: 100%;
-      font-size: 16px;
-      transition: 100ms;
+    &:hover {
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: #22211e;
+      }
 
-      &:hover {
-        .hamburger-inner,
-        .hamburger-inner::before,
-        .hamburger-inner::after {
-          background-color: #22211e;
-        }
-
-        .hamburger.is-active .hamburger-inner,
-        .hamburger.is-active .hamburger-inner:after,
-        .hamburger.is-active .hamburger-inner:before {
-          background-color: #22211e;
-        }
+      .hamburger.is-active .hamburger-inner,
+      .hamburger.is-active .hamburger-inner:after,
+      .hamburger.is-active .hamburger-inner:before {
+        background-color: #22211e;
       }
     }
   }
@@ -83,9 +95,67 @@
     margin: 0 auto;
   }
 
+  &__balance {
+    width: 100%;
+    max-width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 15px;
+    height: 50px;
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    &-content {
+      display: flex;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    &-currency {
+    }
+    &-number {
+    }
+    &-text {
+      font-size: 10px;
+      line-height: 1;
+    }
+    &-icon {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &__notification,
+  &__basket {
+    width: 100%;
+    max-width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 15px;
+    height: 50px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
   &__login {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
+    padding: 10px 15px;
+    height: 50px;
   }
 
   &__bottom {
@@ -94,17 +164,20 @@
     height: auto;
     transition: visibility 0s linear 0ms, opacity 0ms ease, height 150ms ease,
       padding 150ms ease;
-    padding: 0 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 10px 0;
     gap: 20px;
+    background-color: #22211e;
+
+    &-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
   }
 
   &__menu {
-    margin: 0 auto;
     display: flex;
-    gap: 10px;
+    gap: 8px;
 
     &-item {
       position: relative;
@@ -113,25 +186,18 @@
       justify-content: center;
       gap: 8px;
       font-family: $font-roboto;
-      height: auto;
       padding: 8px 12px;
-      height: 42px;
+      height: 50px;
       background: transparent;
       border-radius: 8px;
       border: 1px solid #37332a;
       transition: 200ms ease;
       overflow: hidden;
 
-      &-svg {
-        svg {
-          width: 22px;
-          height: 22px;
-        }
-      }
-
       &-text {
         display: flex;
         flex-direction: column;
+        gap: 2px;
         line-height: 1;
         position: relative;
         z-index: 2;
@@ -167,10 +233,6 @@
       &:hover,
       &.active {
         border-color: white;
-
-        .svg-active {
-          fill: white;
-        }
 
         .new-header__menu-item-title {
           color: white;
