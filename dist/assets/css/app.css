@@ -15582,7 +15582,7 @@ input[type="number"] {
       align-items: center;
       gap: 10px; }
   .new-header__logo {
-    margin-right: 40px;
+    margin-right: 60px;
     display: flex;
     align-items: center;
     gap: 7px; }
@@ -15635,34 +15635,6 @@ input[type="number"] {
       @media screen and (max-width: 979px) {
         .new-header__search-mobile {
           display: flex; } }
-  .new-header__balance {
-    width: 100%;
-    max-width: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 10px 15px;
-    height: 50px; }
-    @media screen and (max-width: 979px) {
-      .new-header__balance {
-        display: none; } }
-    .new-header__balance-block {
-      display: flex;
-      flex-direction: column;
-      gap: 4px; }
-    .new-header__balance-content {
-      display: flex;
-      gap: 5px;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1; }
-    .new-header__balance-text {
-      font-size: 10px;
-      line-height: 1; }
-    .new-header__balance-icon svg {
-      width: 18px;
-      height: 18px; }
   .new-header__notification, .new-header__basket {
     width: 100%;
     max-width: 54px;
