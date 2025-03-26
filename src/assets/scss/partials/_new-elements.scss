@@ -45,6 +45,10 @@
     &--bordered {
       border: 1px solid #37332a;
     }
+
+    &--normal{
+      background: #22211e;
+    }
   }
 }
 
@@ -67,17 +71,17 @@
     color: #22211e;
     border: 1px solid;
 
-    svg path{
+    svg path {
       fill: #22211e;
     }
   }
 
   &:focus {
-    border: 1px solid transparent;
+    border: 1px solid #37332a;
   }
 
   &:focus-visible {
-    border: 1px solid transparent;
+    border: 1px solid #37332a;
   }
 
   &--white {

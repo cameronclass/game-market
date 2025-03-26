@@ -15490,6 +15490,8 @@ input[type="number"] {
       color: white; }
     .new-search-block__input--bordered {
       border: 1px solid #37332a; }
+    .new-search-block__input--normal {
+      background: #22211e; }
 
 .new-btn {
   border-radius: 8px;
@@ -15510,9 +15512,9 @@ input[type="number"] {
     .new-btn:hover svg path {
       fill: #22211e; }
   .new-btn:focus {
-    border: 1px solid transparent; }
+    border: 1px solid #37332a; }
   .new-btn:focus-visible {
-    border: 1px solid transparent; }
+    border: 1px solid #37332a; }
   .new-btn--white {
     background: #ebe2d0;
     color: #22211e; }
@@ -16174,7 +16176,8 @@ input[type="number"] {
   width: 50%; }
 
 .new-catalog__btn {
-  height: 48px; }
+  height: 48px;
+  padding: 5px 25px; }
 
 .new-catalog__input {
   max-width: 360px;
