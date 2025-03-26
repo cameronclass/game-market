@@ -27,6 +27,10 @@
     display: grid;
     grid-template-columns: minmax(320px, 500px) minmax(500px, 790px);
     gap: 8px;
+
+    @include mobile {
+      grid-template-columns: auto;
+    }
   }
 
   &__card {

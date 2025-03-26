@@ -4,6 +4,11 @@
   position: relative;
   width: 100%;
 
+  @include mobile {
+    position: absolute;
+    top: -150%;
+  }
+
   &__img {
     width: 16px;
     height: auto;
@@ -46,7 +51,7 @@
       border: 1px solid #37332a;
     }
 
-    &--normal{
+    &--normal {
       background: #22211e;
     }
   }

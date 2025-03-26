@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  /*   background: #191816; */
+  /* background: #191816; */
 
   &.active {
     .new-header__bottom {
@@ -113,6 +113,33 @@
     width: 100%;
     max-width: 950px;
     margin: 0 auto;
+
+    @include mobile {
+      width: auto;
+      max-width: min-content;
+      margin: 0;
+    }
+
+    &-mobile {
+      display: none;
+      width: 100%;
+      max-width: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 15px;
+      height: 50px;
+
+      &-img {
+        display: flex;
+        width: 20px;
+        height: 20px;
+      }
+
+      @include mobile {
+        display: flex;
+      }
+    }
   }
 
   &__balance {
@@ -124,6 +151,11 @@
     gap: 10px;
     padding: 10px 15px;
     height: 50px;
+
+    @include mobile {
+      display: none;
+    }
+
     &-block {
       display: flex;
       flex-direction: column;
@@ -181,6 +213,10 @@
   &__menu {
     display: flex;
     gap: 8px;
+
+    @include mobile {
+      display: none;
+    }
 
     &-item {
       position: relative;
@@ -260,6 +296,11 @@
   &__basket {
     display: flex;
     margin-left: auto;
+
+    @include mobile {
+      margin: 0;
+    }
+
     &-link {
       display: flex;
       align-items: center;

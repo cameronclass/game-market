@@ -1,6 +1,7 @@
 .new-reviews {
   margin-top: 20px;
   margin-bottom: 20px;
+
   &__block {
   }
 
@@ -8,6 +9,10 @@
     display: flex;
     justify-content: space-between;
     gap: 4%;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__content {
@@ -53,6 +58,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
+
+    @include mobile {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__card {
