@@ -108,6 +108,9 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    @include mobile {
+      display: none;
+    }
     &_img {
       height: 43px;
       width: auto;

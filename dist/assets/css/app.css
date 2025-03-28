@@ -15607,6 +15607,9 @@ input[type="number"] {
       align-items: center;
       gap: 8px;
       padding: 10px 0; }
+      @media screen and (max-width: 979px) {
+        .new-header__top-block {
+          padding: 15px 10px; } }
     .new-header__top-actions {
       display: flex;
       align-items: center;
@@ -15636,6 +15639,9 @@ input[type="number"] {
     gap: 20px;
     background-color: #22211e;
     position: relative; }
+    @media screen and (max-width: 979px) {
+      .new-header__bottom {
+        padding: 10px; } }
     .new-header__bottom-block {
       display: flex;
       align-items: center;
@@ -15808,11 +15814,15 @@ input[type="number"] {
     .new-header__category-icon svg {
       width: 18px;
       height: 18px; }
-    .new-header__category-arrow svg {
-      width: 14px;
-      height: 14px; }
+    .new-header__category-arrow {
+      margin-left: 40px; }
+      @media screen and (max-width: 979px) {
+        .new-header__category-arrow {
+          display: none; } }
+      .new-header__category-arrow svg {
+        width: 14px;
+        height: 14px; }
     .new-header__category-text {
-      margin-right: 40px;
       font-weight: 500;
       font-size: 16px; }
 
@@ -16078,6 +16088,9 @@ input[type="number"] {
     display: flex;
     align-items: center;
     gap: 12px; }
+    @media screen and (max-width: 979px) {
+      .new-footer__logo {
+        display: none; } }
     .new-footer__logo_img {
       height: 43px;
       width: auto; }
@@ -16185,71 +16198,79 @@ input[type="number"] {
       .mail-sub__form_agreement--active {
         color: #ce7559; }
 
-.new-catalog,
-.new-mobile {
+.new-catalog__block,
+.new-mobile__block {
+  padding: 20px;
   background-color: #191816;
   border-radius: 24px;
   margin-top: 30px;
   margin-bottom: 20px; }
-  .new-catalog__block,
-  .new-mobile__block {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px; }
-  .new-catalog__header,
-  .new-mobile__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px; }
-  .new-catalog__search,
-  .new-mobile__search {
-    position: relative; }
-    .new-catalog__search-input,
-    .new-mobile__search-input {
-      width: 200px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 4px;
-      background-color: #2a2a2a;
-      color: #fff; }
-      .new-catalog__search-input:focus,
-      .new-mobile__search-input:focus {
-        outline: 2px solid #3a3a3a; }
-  .new-catalog__tabs,
-  .new-mobile__tabs {
-    display: flex;
-    gap: 10px; }
-  .new-catalog__tab,
-  .new-mobile__tab {
-    padding: 8px 16px;
+  @media screen and (max-width: 979px) {
+    .new-catalog__block,
+    .new-mobile__block {
+      border-radius: 12px; } }
+
+.new-catalog__header,
+.new-mobile__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px; }
+
+.new-catalog__search,
+.new-mobile__search {
+  position: relative; }
+  .new-catalog__search-input,
+  .new-mobile__search-input {
+    width: 200px;
+    padding: 8px 12px;
     border: none;
     border-radius: 4px;
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s ease; }
-    .new-catalog__tab:hover,
-    .new-mobile__tab:hover {
-      background-color: #333; }
-    .new-catalog__tab--active,
-    .new-mobile__tab--active {
-      background-color: #ff5500;
-      color: #fff; }
-  .new-catalog .swiper,
-  .new-mobile .swiper {
-    padding: 20px 20px !important;
-    width: calc(100% + 40px);
-    position: relative;
-    left: -20px; }
-    .new-catalog .swiper-slide,
-    .new-mobile .swiper-slide {
-      width: auto;
-      display: flex; }
+    background-color: #2a2a2a;
+    color: #fff; }
+    .new-catalog__search-input:focus,
+    .new-mobile__search-input:focus {
+      outline: 2px solid #3a3a3a; }
+
+.new-catalog__tabs,
+.new-mobile__tabs {
+  display: flex;
+  gap: 10px; }
+
+.new-catalog__tab,
+.new-mobile__tab {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease; }
+  .new-catalog__tab:hover,
+  .new-mobile__tab:hover {
+    background-color: #333; }
+  .new-catalog__tab--active,
+  .new-mobile__tab--active {
+    background-color: #ff5500;
+    color: #fff; }
+
+.new-catalog .swiper,
+.new-mobile .swiper {
+  padding: 20px 20px !important;
+  width: calc(100% + 40px);
+  position: relative;
+  left: -20px; }
+  @media screen and (max-width: 979px) {
+    .new-catalog .swiper,
+    .new-mobile .swiper {
+      padding: 0 20px !important; } }
+  .new-catalog .swiper-slide,
+  .new-mobile .swiper-slide {
+    width: auto;
+    display: flex; }
 
 .new-catalog__block {
-  padding: 15px 10px;
+  padding: 15px;
   overflow: hidden; }
 
 .new-catalog__header {
@@ -16312,110 +16333,142 @@ input[type="number"] {
   max-width: 360px;
   height: 48px; }
 
-.new-steam {
+.new-steam__block {
+  display: grid;
+  grid-template-columns: minmax(320px, 500px) 1fr;
+  gap: 8px;
   padding: 8px;
   background-color: #191816;
   border-radius: 24px;
   margin-bottom: 15px;
   margin-top: 20px; }
-  .new-steam__block {
-    display: grid;
-    grid-template-columns: minmax(320px, 500px) 1fr;
-    gap: 8px; }
-    @media screen and (max-width: 979px) {
-      .new-steam__block {
-        display: flex;
-        flex-direction: column; } }
-  .new-steam__heading {
-    padding: 15px 15px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-  .new-steam__cards {
-    display: grid;
-    grid-template-columns: minmax(320px, 500px) minmax(500px, 790px);
-    gap: 8px; }
-    @media screen and (max-width: 979px) {
-      .new-steam__cards {
-        grid-template-columns: auto; } }
-  .new-steam__card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 16px;
-    background: #22211e;
-    padding: 20px;
-    position: relative;
-    font-family: "Roboto", sans-serif;
-    transition: 300ms ease; }
-    .new-steam__card:hover {
-      background: #2c2b27; }
-    .new-steam__card_icon {
-      height: 34px;
-      margin-bottom: 20px; }
-      .new-steam__card_icon--partner {
-        height: 110px;
-        width: auto;
-        margin: 0;
-        margin-top: 20px; }
-    .new-steam__card_title {
-      font-size: 24px;
-      color: #c3b8a2;
-      font-weight: 500;
-      line-height: 1.2; }
-    .new-steam__card_subtitle {
-      font-size: 16px;
-      color: #c3b8a2; }
-    .new-steam__card--steam {
-      text-align: center; }
-    .new-steam__card--discount {
-      text-align: center;
-      background: #43352f;
-      background: linear-gradient(45deg, #43352f 0%, #312d2a 20%, #312d2a 80%, #43352f 100%);
-      transition: 300ms ease; }
-      .new-steam__card--discount:hover {
-        background: #36261e;
-        background: linear-gradient(45deg, #36261e 0%, #201a16 20%, #201a16 80%, #36261e 100%); }
-    .new-steam__card--partner {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 30px; }
+  @media screen and (max-width: 979px) {
+    .new-steam__block {
+      display: flex;
+      flex-direction: column; } }
 
-.new-refill-services {
+.new-steam__heading {
+  padding: 15px 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  @media screen and (max-width: 979px) {
+    .new-steam__heading {
+      flex-direction: row;
+      margin-bottom: 15px; } }
+  @media screen and (max-width: 979px) {
+    .new-steam__heading-img {
+      display: none; } }
+
+.new-steam__cards {
+  display: grid;
+  grid-template-columns: minmax(320px, 500px) minmax(500px, 790px);
+  gap: 8px; }
+  @media screen and (max-width: 979px) {
+    .new-steam__cards {
+      grid-template-columns: auto; } }
+
+.new-steam__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 16px;
+  background: #22211e;
+  padding: 20px;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  transition: 300ms ease; }
+  .new-steam__card:hover {
+    background: #2c2b27; }
+  .new-steam__card_icon {
+    height: 34px;
+    margin-bottom: 20px; }
+    .new-steam__card_icon--partner {
+      height: 110px;
+      width: auto;
+      margin: 0;
+      margin-top: 20px; }
+  .new-steam__card_title {
+    font-size: 24px;
+    color: #c3b8a2;
+    font-weight: 500;
+    line-height: 1.2; }
+  .new-steam__card_subtitle {
+    font-size: 16px;
+    color: #c3b8a2; }
+  .new-steam__card--steam {
+    text-align: center; }
+  .new-steam__card--discount {
+    text-align: center;
+    background: #43352f;
+    background: linear-gradient(45deg, #43352f 0%, #312d2a 20%, #312d2a 80%, #43352f 100%);
+    transition: 300ms ease; }
+    .new-steam__card--discount:hover {
+      background: #36261e;
+      background: linear-gradient(45deg, #36261e 0%, #201a16 20%, #201a16 80%, #36261e 100%); }
+  .new-steam__card--partner {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px; }
+
+.new-steam__arrows {
+  display: none; }
+  @media screen and (max-width: 979px) {
+    .new-steam__arrows {
+      display: flex;
+      gap: 4px; } }
+
+.new-refill-services__block {
   padding: 25px;
   background-color: #191816;
   border-radius: 24px;
   margin-bottom: 40px;
-  margin-top: 15px; }
-  .new-refill-services__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; }
-  .new-refill-services__item {
-    width: 100%;
-    max-width: 170px;
-    display: flex; }
-    .new-refill-services__item_img {
-      height: 100px;
-      object-fit: contain; }
-  .new-refill-services__content {
-    margin-top: 30px; }
-  .new-refill-services .swiper-slide {
-    display: flex;
-    max-width: 170px; }
+  margin-top: 15px;
+  overflow: hidden; }
+  @media screen and (max-width: 979px) {
+    .new-refill-services__block {
+      padding: 15px 15px 25px;
+      border-radius: 15px; } }
+
+.new-refill-services__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.new-refill-services__item {
+  width: 100%;
+  max-width: 170px;
+  display: flex; }
+  .new-refill-services__item_img {
+    height: 100px;
+    object-fit: contain; }
+
+.new-refill-services__content {
+  margin-top: 30px; }
+  @media screen and (max-width: 979px) {
+    .new-refill-services__content {
+      margin: 20px -20px 0; } }
+
+.new-refill-services .swiper-slide {
+  display: flex;
+  max-width: 170px; }
 
 .new-advantages {
   padding: 0;
   margin-top: 20px;
   margin-bottom: 20px; }
+  @media screen and (max-width: 979px) {
+    .new-advantages {
+      display: none; } }
   .new-advantages__block {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 8px; }
+    gap: 8px;
+    padding: 0 20px; }
   .new-advantages__card {
     width: 100%;
     border-radius: 24px;
@@ -16462,21 +16515,21 @@ input[type="number"] {
           background-color: #ebe2d0;
           color: #161513; }
     .new-advantages__card--contact {
-      max-width: 421px; }
+      max-width: 415px; }
     .new-advantages__card--discount {
-      max-width: 314px; }
+      max-width: 305px; }
     .new-advantages__card--ship {
-      max-width: 314px; }
+      max-width: 305px; }
     .new-advantages__card--work {
-      max-width: 207px; }
+      max-width: 200px; }
     .new-advantages__card--price {
-      max-width: 207px; }
+      max-width: 200px; }
     .new-advantages__card--payment {
-      max-width: 314px; }
+      max-width: 305px; }
     .new-advantages__card--selected {
-      max-width: 314px; }
+      max-width: 305px; }
     .new-advantages__card--partner {
-      max-width: 421px;
+      max-width: 415px;
       background: #ff6c3d;
       color: #161513;
       font-weight: 700; }

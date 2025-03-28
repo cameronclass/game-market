@@ -26,7 +26,7 @@ new Swiper(".new-catalog .swiper", {
     0: {
       slidesPerView: "auto",
       centeredSlides: true,
-      spaceBetween: 5,
+      spaceBetween: 0,
     },
     1290: {
       slidesPerView: 5,
@@ -44,7 +44,7 @@ new Swiper(".new-mobile .swiper", {
     0: {
       slidesPerView: "auto",
       centeredSlides: true,
-      spaceBetween: 5,
+      spaceBetween: 0,
     },
     1290: {
       slidesPerView: 5,
@@ -60,6 +60,7 @@ new Swiper(".new-refill-services .swiper", {
   },
   breakpoints: {
     0: {
+      slidesPerView: "auto",
       centeredSlides: true,
       spaceBetween: 5,
     },

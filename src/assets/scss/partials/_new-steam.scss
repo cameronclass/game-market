@@ -1,14 +1,14 @@
 .new-steam {
-  padding: 8px;
-  background-color: #191816;
-  border-radius: 24px;
-  margin-bottom: 15px;
-  margin-top: 20px;
-
   &__block {
     display: grid;
     grid-template-columns: minmax(320px, 500px) 1fr;
     gap: 8px;
+
+    padding: 8px;
+    background-color: #191816;
+    border-radius: 24px;
+    margin-bottom: 15px;
+    margin-top: 20px;
 
     @include mobile {
       display: flex;
@@ -21,6 +21,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: row;
+      margin-bottom: 15px;
+    }
+
+    &-img {
+      @include mobile {
+        display: none;
+      }
+    }
   }
 
   &__cards {
@@ -118,16 +129,30 @@
 
   &__block {
   }
+
+  &__arrows {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      gap: 4px;
+    }
+  }
 }
 
 .new-refill-services {
-  padding: 25px;
-  background-color: #191816;
-  border-radius: 24px;
-  margin-bottom: 40px;
-  margin-top: 15px;
-
   &__block {
+    padding: 25px;
+    background-color: #191816;
+    border-radius: 24px;
+    margin-bottom: 40px;
+    margin-top: 15px;
+    overflow: hidden;
+
+    @include mobile {
+      padding: 15px 15px 25px;
+      border-radius: 15px;
+    }
   }
   &__header {
     display: flex;
@@ -146,6 +171,10 @@
   }
   &__content {
     margin-top: 30px;
+
+    @include mobile {
+      margin: 20px -20px 0;
+    }
   }
 
   .swiper-slide {

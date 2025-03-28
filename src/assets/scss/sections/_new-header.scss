@@ -29,6 +29,10 @@
       align-items: center;
       gap: 8px;
       padding: 10px 0;
+
+      @include mobile {
+        padding: 15px 10px;
+      }
     }
 
     &-actions {
@@ -76,6 +80,10 @@
     gap: 20px;
     background-color: #22211e;
     position: relative;
+
+    @include mobile {
+      padding: 10px;
+    }
 
     &-block {
       display: flex;
@@ -322,13 +330,20 @@
       height: 18px;
     }
 
-    &-arrow svg {
-      width: 14px;
-      height: 14px;
+    &-arrow {
+      margin-left: 40px;
+
+      @include mobile {
+        display: none;
+      }
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
     }
 
     &-text {
-      margin-right: 40px;
       font-weight: 500;
       font-size: 16px;
     }
