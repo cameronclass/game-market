@@ -4,11 +4,6 @@
   position: relative;
   width: 100%;
 
-  @include mobile {
-    position: absolute;
-    top: -150%;
-  }
-
   &__img {
     width: 16px;
     height: auto;
@@ -25,7 +20,6 @@
     font-weight: 300;
     padding: 10px 20px;
     height: 50px;
-    border: none;
     border: 1px solid transparent;
     font-family: $font-roboto;
 
@@ -118,5 +112,71 @@
     border: 1px solid #ff6c3d;
     background-color: #ff6c3d;
     color: white;
+  }
+}
+
+.new-block {
+  &__title {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-family: $font-roboto;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    &_icon {
+      width: auto;
+      height: 24px;
+      object-fit: contain;
+      margin-top: 8px;
+
+      @include mobile{
+        height: 13px;
+      }
+    }
+
+    &_text {
+      font-size: 30px;
+      color: #c3b8a2;
+      font-weight: 500;
+      line-height: 1.3;
+
+      &:hover {
+        color: #ff5500;
+      }
+
+      @include mobile{
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.new-arrow-left,
+.new-arrow-right {
+  background: #22211e;
+  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 47px;
+  height: 47px;
+  transition: none;
+
+  @include mobile{
+    width: 37px;
+    height: 37px;
+  }
+
+  &:hover {
+    background: #ebe2d0;
+
+    svg path {
+      fill: #22211e;
+    }
   }
 }

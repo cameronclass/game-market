@@ -8,6 +8,10 @@
   &-fluid {
     padding: 0;
   }
+
+  @include mobile{
+    padding: 0 6px;
+  }
 }
 
 .main-new {
@@ -16,10 +20,6 @@
   padding-bottom: 40px;
   position: relative;
   z-index: 3;
-
-  @include mobile {
-    padding-top: 64px;
-  }
 }
 
 .main {

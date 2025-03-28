@@ -23,11 +23,31 @@
 
   &__top {
     background-color: #121110;
+
     &-block {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 10px 0;
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      width: 100%;
+
+      @include mobile {
+        margin-left: auto;
+      }
+    }
+
+    &-search {
+      @include mobile {
+        position: absolute;
+        top: -150%;
+      }
     }
 
     &::after {
@@ -70,6 +90,10 @@
     align-items: center;
     gap: 7px;
 
+    @include mobile {
+      margin: 0;
+    }
+
     &-img {
       width: auto;
       height: 24px;
@@ -82,6 +106,10 @@
 
       &--active {
         color: #c3b8a2;
+      }
+
+      @include mobile {
+        display: none;
       }
     }
   }
@@ -349,6 +377,11 @@
       gap: 20px;
       border-right: 1px solid #c4bcac;
       padding: 10px;
+
+      @include mobile {
+        max-width: 100%;
+        border-right: none;
+      }
     }
 
     &-buttons {
@@ -429,6 +462,11 @@
       width: 100%;
       height: 400px;
       overflow-y: auto;
+
+      @include mobile {
+        position: absolute;
+        right: -200%;
+      }
     }
 
     &-menu {
@@ -485,10 +523,6 @@
   &.active {
     opacity: 1;
     visibility: visible;
-  }
-
-  @include mobile {
-    top: 63px;
   }
 }
 
