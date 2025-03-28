@@ -16322,7 +16322,8 @@ input[type="number"] {
       display: none; } }
   .new-catalog__search-btn {
     padding: 5px;
-    margin-left: 4px; }
+    margin-left: 4px;
+    display: none; }
     .new-catalog__search-btn-img {
       height: 17px; }
     @media screen and (max-width: 979px) {
