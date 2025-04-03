@@ -1,11 +1,14 @@
 .main-card {
-    border-radius: 20px;
+    border-radius: 15px;
     background: linear-gradient(91deg, rgba(51, 50, 49, 0.35) 0%, rgba(79, 79, 79, 0.17) 63.74%, rgba(79, 79, 79, 0.35) 101.17%);
     padding: 25px;
     position: relative;
     overflow: hidden;
     border: 1px solid transparent;
     transition: 300ms ease;
+    display: flex;
+    flex-direction: column;
+    color: white;
 
     &:hover {
         border: 1px solid $orange;

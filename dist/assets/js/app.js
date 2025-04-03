@@ -13407,24 +13407,6 @@ new Swiper(".new-blog .swiper", {
     },
   },
 });
-new Swiper(".new-catalog .swiper", {
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: ".new-catalog .new-arrow-right",
-    prevEl: ".new-catalog .new-arrow-left",
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 0,
-    },
-    1290: {
-      slidesPerView: 5,
-    },
-  },
-});
 new Swiper(".new-mobile .swiper", {
   spaceBetween: 20,
   loop: true,
@@ -13458,6 +13440,7 @@ new Swiper(".new-refill-services .swiper", {
     },
     1290: {
       slidesPerView: "auto",
+      spaceBetween: 10,
     },
   },
 });
