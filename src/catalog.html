@@ -5,7 +5,7 @@ title: Главная страница
 
 <main class="main-new">
 
-<!--     <section class="home-catalog-list">
+    <!--     <section class="home-catalog-list">
         <div class="container">
             <div class="catalog__tabs">
 
@@ -1024,12 +1024,78 @@ title: Главная страница
         </div>
     </section> -->
 
+
+    <div class="catalog-page">
+        <div class="container">
+            <div class="catalog-page__block">
+                <div class="catalog-page__filter"></div>
+                <div class="catalog-page__cards">
+                    <div class="catalog-cards__block">
+                        <div class="catalog-cards__item">
+                            {{> cart }}
+                        </div>
+                        <div class="catalog-cards__item">
+                            {{> cart }}
+                        </div>
+                        <div class="catalog-cards__item">
+                            {{> cart }}
+                        </div>
+                        <div class="catalog-cards__item">
+                            {{> cart }}
+                        </div>
+                        <div class="catalog-cards__item">
+                            {{> cart }}
+                        </div>
+                    </div>
+                    <div class="catalog-cards__more">
+                        <a href="#" class="more-btn">Загрузить еще</a>
+                        <div class="catalog-cards__pagination">
+                            <nav class="pagination">
+                                <ul class="pagination-list">
+                                    <li class="pagination-item">
+                                        <a class="pagination-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="37"
+                                                viewBox="0 0 46 37" fill="none">
+                                                <rect width="46" height="37" rx="5" fill="#282725" />
+                                                <path
+                                                    d="M32 17C32.5523 17 33 17.4477 33 18C33 18.5523 32.5523 19 32 19L32 17ZM13.2929 18.7071C12.9024 18.3166 12.9024 17.6834 13.2929 17.2929L19.6569 10.9289C20.0474 10.5384 20.6805 10.5384 21.0711 10.9289C21.4616 11.3195 21.4616 11.9526 21.0711 12.3431L15.4142 18L21.0711 23.6569C21.4616 24.0474 21.4616 24.6805 21.0711 25.0711C20.6805 25.4616 20.0474 25.4616 19.6569 25.0711L13.2929 18.7071ZM32 19L14 19L14 17L32 17L32 19Z"
+                                                    fill="#FFFEFC" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="pagination-item"><a class="pagination-link _active" href="#">1</a></li>
+                                    <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
+                                    <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
+                                    <li class="pagination-item"><a class="pagination-link" href="#">...</a></li>
+                                    <li class="pagination-item"><a class="pagination-link" href="#">20</a></li>
+                                    <li class="pagination-item">
+                                        <a class="pagination-link" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="37"
+                                                viewBox="0 0 46 37" fill="none">
+                                                <rect width="46" height="37" rx="5" transform="matrix(-1 0 0 1 46 0)"
+                                                    fill="#282725" />
+                                                <path
+                                                    d="M14 17C13.4477 17 13 17.4477 13 18C13 18.5523 13.4477 19 14 19L14 17ZM32.7071 18.7071C33.0976 18.3166 33.0976 17.6834 32.7071 17.2929L26.3431 10.9289C25.9526 10.5384 25.3195 10.5384 24.9289 10.9289C24.5384 11.3195 24.5384 11.9526 24.9289 12.3431L30.5858 18L24.9289 23.6569C24.5384 24.0474 24.5384 24.6805 24.9289 25.0711C25.3195 25.4616 25.9526 25.4616 26.3431 25.0711L32.7071 18.7071ZM14 19L32 19L32 17L14 17L14 19Z"
+                                                    fill="#FFFEFC" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="catalog-filter">
         <div class="container">
             <div class="catalog-filter__info arrow-divide">
                 <div class="catalog-filter__info_title">
                     <a href="#" class="catalog-filter__info_title_name">Каталог</a>
-                    <div class="catalog-filter__info_title_arrow"><img src="assets/images/home/icons/arrow-right.svg" alt=""></div>
+                    <div class="catalog-filter__info_title_arrow"><img src="assets/images/home/icons/arrow-right.svg"
+                            alt=""></div>
                     <div class="catalog-filter__info_title_active">Xbox</div>
                 </div>
                 <div class="catalog-filter__info_search search-block">
@@ -1169,55 +1235,6 @@ title: Главная страница
 
     <section class="catalog-cards">
         <div class="container">
-            <div class="catalog-cards__block">
-                <div class="catalog-cards__item">
-                    {{> cart }}
-                </div>
-                <div class="catalog-cards__item">
-                    {{> cart }}
-                </div>
-                <div class="catalog-cards__item">
-                    {{> cart }}
-                </div>
-                <div class="catalog-cards__item">
-                    {{> cart }}
-                </div>
-                <div class="catalog-cards__item">
-                    {{> cart }}
-                </div>
-            </div>
-
-            <div class="catalog-cards__more">
-                <a href="#" class="more-btn">Загрузить еще</a>
-                <div class="catalog-cards__pagination">
-                    <nav class="pagination">
-                        <ul class="pagination-list">
-                            <li class="pagination-item">
-                                <a class="pagination-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="37" viewBox="0 0 46 37" fill="none">
-                                        <rect width="46" height="37" rx="5" fill="#282725" />
-                                        <path d="M32 17C32.5523 17 33 17.4477 33 18C33 18.5523 32.5523 19 32 19L32 17ZM13.2929 18.7071C12.9024 18.3166 12.9024 17.6834 13.2929 17.2929L19.6569 10.9289C20.0474 10.5384 20.6805 10.5384 21.0711 10.9289C21.4616 11.3195 21.4616 11.9526 21.0711 12.3431L15.4142 18L21.0711 23.6569C21.4616 24.0474 21.4616 24.6805 21.0711 25.0711C20.6805 25.4616 20.0474 25.4616 19.6569 25.0711L13.2929 18.7071ZM32 19L14 19L14 17L32 17L32 19Z" fill="#FFFEFC" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="pagination-item"><a class="pagination-link _active" href="#">1</a></li>
-                            <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
-                            <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
-                            <li class="pagination-item"><a class="pagination-link" href="#">...</a></li>
-                            <li class="pagination-item"><a class="pagination-link" href="#">20</a></li>
-                            <li class="pagination-item">
-                                <a class="pagination-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="37" viewBox="0 0 46 37" fill="none">
-                                        <rect width="46" height="37" rx="5" transform="matrix(-1 0 0 1 46 0)" fill="#282725" />
-                                        <path d="M14 17C13.4477 17 13 17.4477 13 18C13 18.5523 13.4477 19 14 19L14 17ZM32.7071 18.7071C33.0976 18.3166 33.0976 17.6834 32.7071 17.2929L26.3431 10.9289C25.9526 10.5384 25.3195 10.5384 24.9289 10.9289C24.5384 11.3195 24.5384 11.9526 24.9289 12.3431L30.5858 18L24.9289 23.6569C24.5384 24.0474 24.5384 24.6805 24.9289 25.0711C25.3195 25.4616 25.9526 25.4616 26.3431 25.0711L32.7071 18.7071ZM14 19L32 19L32 17L14 17L14 19Z" fill="#FFFEFC" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
 
         </div>
     </section>
@@ -1265,16 +1282,19 @@ title: Главная страница
                         <div class="pre-order__card_block">
                             <div class="pre-order__card_info">
                                 <div class="pre-order__card_title">Используйте APP</div>
-                                <div class="pre-order__card_text">Чтобы использовать все возможные функции сервиса скачайте наше приложение</div>
+                                <div class="pre-order__card_text">Чтобы использовать все возможные функции сервиса
+                                    скачайте наше приложение</div>
                             </div>
                             <div class="pre-order__card_contact">
                                 <a href="#" class="pre-order__card_link">
                                     <img class="pre-order__card_link_bg" src="assets/images/icons/bg-line.svg" alt="">
-                                    <img class="pre-order__card_link_icon" src="assets/images/icons/telegram-colored.svg" alt="">
+                                    <img class="pre-order__card_link_icon"
+                                        src="assets/images/icons/telegram-colored.svg" alt="">
                                 </a>
                                 <a href="#" class="pre-order__card_link">
                                     <img class="pre-order__card_link_bg" src="assets/images/icons/bg-line.svg" alt="">
-                                    <img class="pre-order__card_link_icon" src="assets/images/icons/whatsapp-colored.svg" alt="">
+                                    <img class="pre-order__card_link_icon"
+                                        src="assets/images/icons/whatsapp-colored.svg" alt="">
                                 </a>
                             </div>
 
@@ -1283,9 +1303,11 @@ title: Главная страница
                     </div>
                     <div class="pre-order__card pre-order__card_2">
                         <div class="pre-order__card_title">Подпишись и получи скидку</div>
-                        <div class="pre-order__card_text">Подпишись на нашу интересную рассылку и получай дополнительные скидки на весь ассортимент</div>
+                        <div class="pre-order__card_text">Подпишись на нашу интересную рассылку и получай дополнительные
+                            скидки на весь ассортимент</div>
                         <form class="pre-order__subs" method="post">
-                            <input class="pre-order__subs_input" type="email" placeholder="Введите свой email..." name="" id="">
+                            <input class="pre-order__subs_input" type="email" placeholder="Введите свой email..."
+                                name="" id="">
                             <button class="pre-order__subs_btn btn-blur">Подписаться</button>
                         </form>
                     </div>

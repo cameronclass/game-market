@@ -272,36 +272,3 @@
     }
 }
 
-.footer-to-top {
-    background-color: $dark;
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    position: absolute;
-    right: 0;
-    bottom: 0px;
-    transition: 300ms ease;
-    z-index: 5;
-
-    @include netbook {
-        right: 20px;
-    }
-
-    svg {
-        position: relative;
-        bottom: -5px;
-        transition: 200ms ease;
-
-        &:hover {
-            bottom: 0;
-
-            .footer-to-top__bg {
-                fill: $orange;
-            }
-        }
-    }
-
-}

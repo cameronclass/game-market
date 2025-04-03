@@ -25,7 +25,7 @@
 /* Pages */
 @import "pages/vpn";
 @import "pages/home";
-@import "pages/catalog";
+
 @import "pages/cart";
 @import "pages/basket";
 @import "pages/steam";
@@ -39,9 +39,13 @@
 @import "sections/new-header";
 @import "sections/new-footer";
 
-@import "partials/new-catalog";
-@import "partials/new-steam";
-@import "partials/new-mobile";
-@import "partials/new-advantages";
-@import "partials/new-blog";
-@import "partials/new-reviews";
+
+/* Index Page */
+@import "partials/index/new-catalog";
+@import "partials/index/new-steam";
+@import "partials/index/new-advantages";
+@import "partials/index/new-blog";
+@import "partials/index/new-reviews";
+
+/* Catalog Page */
+@import "partials/catalog/catalog";
