@@ -32,6 +32,7 @@ a {
     color: $text-white;
     text-decoration: none;
   }
+
   &:focus-visible {
     border: none;
     outline: none;
@@ -146,7 +147,7 @@ input[type="number"] {
     background: #4f4f4f50;
     transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
 
-    & ~ span {
+    &~span {
       color: $text-dark;
       transition: 300ms ease;
       font-size: 12px;
@@ -169,7 +170,7 @@ input[type="number"] {
       background-color: transparent;
       box-shadow: 0 0 20px -3px $orange;
 
-      & ~ span {
+      &~span {
         color: white;
       }
     }
@@ -200,7 +201,7 @@ input[type="number"] {
         --bc: var(--border);
       }
 
-      & + label {
+      &+label {
         cursor: not-allowed;
       }
     }
@@ -212,7 +213,7 @@ input[type="number"] {
         }
       }
 
-      & ~ span {
+      &~span {
         color: white;
       }
     }
