@@ -1,9 +1,10 @@
 .catalog-page {
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 30px;
 
     &__block {
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
     }
 
@@ -15,6 +16,16 @@
     &__cards {
         width: 100%;
         max-width: 980px;
+    }
+
+    &__header {
+        width: 100%;
+        padding: 20px;
+        background-color: #22211E;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 
@@ -191,8 +202,6 @@
             gap: 10px;
             align-items: center;
             color: $text-dark;
-            grid-column-start: 1;
-            grid-column-end: 2;
 
             &_name {
                 &:hover {
@@ -225,12 +234,11 @@
         }
 
         &_sort {
-            grid-column-start: 4;
-            grid-column-end: 7;
+            width: 100%;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 10px;
+            gap: 40px;
+            justify-content: flex-end;
 
             @include netbook {
                 grid-column-start: 3;

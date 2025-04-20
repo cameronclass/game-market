@@ -1,0 +1,40 @@
+.catalog-page-slider {
+    padding-top: 40px;
+    padding-bottom: 20px;
+
+    &__block {}
+
+    &__header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        line-height: 1.2;
+
+        &_main {
+            color: #C3B8A2;
+            font-size: 18px;
+        }
+
+        &_secondary {
+            color: #6D675B;
+            font-size: 12px;
+        }
+    }
+
+    .catalog-slider__best_link {
+        height: 375px;
+    }
+
+    .catalog-slider__best_overlay_img {
+        margin-bottom: 20px
+    }
+
+}

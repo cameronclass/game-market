@@ -13481,6 +13481,25 @@ new Swiper(".footerBrandSwiper", {
   },
 });
 
+new Swiper(".catalog-page-slider .swiper", {
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".catalog-page-slider .new-arrow-right",
+    prevEl: ".catalog-page-slider .new-arrow-left",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 0,
+    },
+    1290: {
+      slidesPerView: 4,
+    },
+  },
+});
+
 new Swiper(".home-blog-swiper .swiper", {
   slidesPerView: 2,
   spaceBetween: 20,
