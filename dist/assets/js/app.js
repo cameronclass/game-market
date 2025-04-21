@@ -13482,7 +13482,7 @@ new Swiper(".footerBrandSwiper", {
 });
 
 new Swiper(".catalog-page-slider .swiper", {
-  spaceBetween: 20,
+  spaceBetween: 10,
   loop: true,
   navigation: {
     nextEl: ".catalog-page-slider .new-arrow-right",
@@ -14684,6 +14684,38 @@ function updateClipPath() {
 window.addEventListener("load", updateClipPath);
 window.addEventListener("resize", updateClipPath);
 
+
+function initExpandableFilterBlock(
+  containerSelector = ".filter-block__card_content"
+) {
+  document.querySelectorAll(containerSelector).forEach((block) => {
+    const items = block.querySelectorAll(".main-input__checkbox");
+    const button = block.querySelector(".filter-block__card_more");
+
+    if (!button || items.length <= 4) {
+      if (button) button.style.display = "none";
+      return;
+    }
+
+    // Скрываем все элементы, начиная с 5-го
+    items.forEach((item, index) => {
+      if (index >= 4) item.style.display = "none";
+    });
+
+    let expanded = false;
+
+    button.addEventListener("click", () => {
+      expanded = !expanded;
+      items.forEach((item, index) => {
+        if (index >= 4) {
+          item.style.display = expanded ? "" : "none";
+        }
+      });
+      button.textContent = expanded ? "Скрыть" : "Показать все";
+    });
+  });
+}
+initExpandableFilterBlock();
 
 
     const hamburgerButton = document.querySelector(".js-hamburger");
