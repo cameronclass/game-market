@@ -732,53 +732,61 @@ if (document.querySelector(".admin-tabs-open"))
   });
 
 /* Reviews Buttons */
-let lastElements = [];
-let lastButton = null;
-const addClassBtns = document.querySelectorAll(".add-class-btn");
+function setupToggleClassButtons() {
+  const addClassBtns = document.querySelectorAll(".add-class-btn");
 
-if (addClassBtns)
+  const stateMap = new Map(); // хранит lastElements и lastButton по targetId
+
   addClassBtns.forEach((button) => {
     button.addEventListener("click", () => {
       const targetId = button.getAttribute("data-class-target");
       const classToAdd = button.getAttribute("data-class-name");
 
-      // Найти все целевые элементы с data-class-element
       const targetElements = document.querySelectorAll(
         `[data-class-element="${targetId}"]`
       );
 
-      if (targetElements.length > 0 && classToAdd) {
-        const isActive = Array.from(targetElements).some((el) =>
-          el.classList.contains(classToAdd)
-        );
+      if (targetElements.length === 0 || !classToAdd) return;
 
-        if (isActive) {
-          // Удалить класс у всех целевых элементов и кнопки
-          targetElements.forEach((el) => el.classList.remove(classToAdd));
-          button.classList.remove(classToAdd);
-          // Очистить массив lastElements и сбросить lastButton
-          lastElements = [];
-          lastButton = null;
-        } else {
-          // Удалить класс с последних элементов и кнопки, если они были
-          if (lastElements.length > 0) {
-            lastElements.forEach((el) => el.classList.remove(classToAdd));
-          }
-          if (lastButton && lastButton !== button) {
-            lastButton.classList.remove(classToAdd);
-          }
+      const isActive = Array.from(targetElements).some((el) =>
+        el.classList.contains(classToAdd)
+      );
 
-          // Добавить класс у текущих целевых элементов и кнопки
-          targetElements.forEach((el) => el.classList.add(classToAdd));
-          button.classList.add(classToAdd);
+      const state = stateMap.get(targetId) || {
+        lastElements: [],
+        lastButton: null,
+      };
 
-          // Обновить последний измененный набор элементов и кнопку
-          lastElements = Array.from(targetElements);
-          lastButton = button;
+      if (isActive) {
+        // Удалить класс у всех элементов с текущим targetId
+        targetElements.forEach((el) => el.classList.remove(classToAdd));
+        button.classList.remove(classToAdd);
+        stateMap.set(targetId, {
+          lastElements: [],
+          lastButton: null,
+        });
+      } else {
+        // Удалить с предыдущих элементов, если они есть
+        state.lastElements.forEach((el) => el.classList.remove(classToAdd));
+        if (state.lastButton && state.lastButton !== button) {
+          state.lastButton.classList.remove(classToAdd);
         }
+
+        // Добавить класс к текущим элементам
+        targetElements.forEach((el) => el.classList.add(classToAdd));
+        button.classList.add(classToAdd);
+
+        // Обновить stateMap
+        stateMap.set(targetId, {
+          lastElements: Array.from(targetElements),
+          lastButton: button,
+        });
       }
     });
   });
+}
+setupToggleClassButtons();
+
 
 const reviewCards = document.querySelectorAll(".home-other-reviews__card");
 const aboutReviewsBlock = document.querySelector(".about-reviews__block");

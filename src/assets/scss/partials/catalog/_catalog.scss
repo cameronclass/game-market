@@ -40,14 +40,10 @@
     overflow: hidden;
 
     &__block {
-        display: flex;
+        display: grid;
         flex-wrap: wrap;
-        justify-content: space-between;
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px 10px;
-
-        @media screen and (max-width: 1300px) {
-            gap: 15px 0;
-        }
 
         @include netbook {
             grid-template-columns: repeat(4, 1fr);
@@ -312,16 +308,35 @@
         &_block {
             display: flex;
             justify-content: space-between;
-            gap: 8px;
+            gap: 4px;
         }
 
         &_item {
             width: 100%;
+            position: relative;
 
             input {
                 border-radius: 4px;
-                padding: 7px 10px;
+                padding: 10px 10px 10px 30px;
                 font-size: 10px;
+                background-color: #2D2C29;
+                border: none;
+                font-size: 14px;
+                color: #EBE2D0;
+                font-weight: 500;
+
+                &:hover{
+                    background-color: #353330;
+                    border: none;
+                }
+            }
+
+            span{
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
             }
         }
     }

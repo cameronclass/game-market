@@ -8711,11 +8711,11 @@ input[type=number] {
 .custom-select .select-selected {
   border-radius: 4px;
   border: 1px solid transparent;
-  background: #282725;
+  background: #2D2C29;
   transition: 200ms ease;
 }
 .custom-select .select-selected:hover {
-  border-color: #ff6c3d;
+  border-color: transparent;
   color: white;
 }
 .custom-select .select-selected:after {
@@ -8736,7 +8736,7 @@ input[type=number] {
 .custom-select .select-items div,
 .custom-select .select-selected {
   color: #847f7d;
-  padding: 6px 12px;
+  padding: 8px 12px;
   font-size: 12px;
   cursor: pointer;
   user-select: none;
@@ -20866,15 +20866,10 @@ input:checked + .contract-offer__slider:before {
   overflow: hidden;
 }
 .catalog-cards__block {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  justify-content: space-between;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px 10px;
-}
-@media screen and (max-width: 1300px) {
-  .catalog-cards__block {
-    gap: 15px 0;
-  }
 }
 @media screen and (max-width: 1200px) {
   .catalog-cards__block {
@@ -21115,15 +21110,32 @@ input:checked + .contract-offer__slider:before {
 .catalog-filter__value_block {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 4px;
 }
 .catalog-filter__value_item {
   width: 100%;
+  position: relative;
 }
 .catalog-filter__value_item input {
   border-radius: 4px;
-  padding: 7px 10px;
+  padding: 10px 10px 10px 30px;
   font-size: 10px;
+  background-color: #2D2C29;
+  border: none;
+  font-size: 14px;
+  color: #EBE2D0;
+  font-weight: 500;
+}
+.catalog-filter__value_item input:hover {
+  background-color: #353330;
+  border: none;
+}
+.catalog-filter__value_item span {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
 }
 
 .catalog-preorder {

@@ -1356,11 +1356,11 @@
   .select-selected {
     border-radius: 4px;
     border: 1px solid transparent;
-    background: #282725;
+    background: #2D2C29;
     transition: 200ms ease;
 
     &:hover {
-      border-color: $orange;
+      border-color: transparent;
       color: white;
     }
   }
@@ -1385,7 +1385,7 @@
   .select-items div,
   .select-selected {
     color: $text-dark;
-    padding: 6px 12px;
+    padding: 8px 12px;
     font-size: 12px;
     cursor: pointer;
     user-select: none;
