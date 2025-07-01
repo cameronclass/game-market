@@ -19510,6 +19510,15 @@ input:checked + .contract-offer__slider:before {
   padding-bottom: 40px;
   position: relative;
 }
+.new-footer__block {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 979px) {
+  .new-footer__block {
+    flex-direction: column-reverse;
+  }
+}
 .new-footer__content {
   display: flex;
   margin-top: 80px;
@@ -19519,6 +19528,8 @@ input:checked + .contract-offer__slider:before {
 @media screen and (max-width: 979px) {
   .new-footer__content {
     flex-direction: column;
+    margin-top: 40px;
+    gap: 30px;
   }
 }
 .new-footer__menu {
@@ -19526,6 +19537,13 @@ input:checked + .contract-offer__slider:before {
   display: flex;
   flex-direction: column;
   max-width: 205px;
+}
+@media screen and (max-width: 979px) {
+  .new-footer__menu {
+    order: 2;
+    max-width: 100%;
+    align-items: center;
+  }
 }
 .new-footer__menu_title {
   color: #fff;
@@ -19549,6 +19567,11 @@ input:checked + .contract-offer__slider:before {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+@media screen and (max-width: 979px) {
+  .new-footer__actions {
+    order: 1;
+  }
 }
 .new-footer__actions_card {
   border-radius: 24px;
@@ -19577,11 +19600,6 @@ input:checked + .contract-offer__slider:before {
   align-items: center;
   gap: 12px;
 }
-@media screen and (max-width: 979px) {
-  .new-footer__logo {
-    display: none;
-  }
-}
 .new-footer__logo_img {
   height: 43px;
   width: auto;
@@ -19599,6 +19617,12 @@ input:checked + .contract-offer__slider:before {
   align-items: center;
   gap: 20px;
   justify-content: space-between;
+}
+@media screen and (max-width: 979px) {
+  .new-footer__footer {
+    justify-content: center;
+    padding: 0;
+  }
 }
 .new-footer__top {
   border-radius: 16px;
@@ -19619,6 +19643,12 @@ input:checked + .contract-offer__slider:before {
   padding-bottom: 30px;
   position: relative;
 }
+@media screen and (max-width: 979px) {
+  .mail-sub {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+}
 .mail-sub__left-shape {
   position: absolute;
   z-index: 1;
@@ -19629,6 +19659,11 @@ input:checked + .contract-offer__slider:before {
   height: 15px;
   background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
   clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
+}
+@media screen and (max-width: 979px) {
+  .mail-sub__left-shape {
+    width: calc(50% - 50px);
+  }
 }
 .mail-sub__right-shape {
   position: absolute;
@@ -19641,6 +19676,11 @@ input:checked + .contract-offer__slider:before {
   background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
   clip-path: polygon(100% 0, 100% 100%, 0 0, 0 0);
 }
+@media screen and (max-width: 979px) {
+  .mail-sub__right-shape {
+    width: calc(50% - 50px);
+  }
+}
 .mail-sub__left-t-shape {
   position: absolute;
   z-index: 3;
@@ -19652,6 +19692,11 @@ input:checked + .contract-offer__slider:before {
   background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
   clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
+@media screen and (max-width: 979px) {
+  .mail-sub__left-t-shape {
+    width: calc(50% - 50px);
+  }
+}
 .mail-sub__right-t-shape {
   position: absolute;
   z-index: 3;
@@ -19662,6 +19707,11 @@ input:checked + .contract-offer__slider:before {
   height: 15px;
   background: linear-gradient(90deg, rgba(135, 61, 37, 0.35) -0.17%, rgba(255, 108, 61, 0.35) 48.02%);
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+@media screen and (max-width: 979px) {
+  .mail-sub__right-t-shape {
+    width: calc(50% - 50px);
+  }
 }
 .mail-sub__block {
   display: flex;
@@ -19680,10 +19730,26 @@ input:checked + .contract-offer__slider:before {
   gap: 30px;
   font-family: "Roboto", sans-serif;
 }
+@media screen and (max-width: 979px) {
+  .mail-sub__heading {
+    flex-direction: column;
+    text-align: center;
+    max-width: 288px;
+    gap: 20px;
+    position: relative;
+    top: -30px;
+    z-index: 3;
+  }
+}
 .mail-sub__heading_block {
   display: flex;
   flex-direction: column;
   color: #c3b8a2;
+}
+@media screen and (max-width: 979px) {
+  .mail-sub__heading_block {
+    gap: 20px;
+  }
 }
 .mail-sub__heading_icon {
   width: auto;
@@ -19699,6 +19765,11 @@ input:checked + .contract-offer__slider:before {
   font-size: 19px;
   font-weight: 300;
 }
+@media screen and (max-width: 979px) {
+  .mail-sub__heading_text {
+    line-height: 1.2;
+  }
+}
 .mail-sub__content {
   width: 100%;
   display: flex;
@@ -19706,12 +19777,24 @@ input:checked + .contract-offer__slider:before {
   align-items: flex-end;
   gap: 8px;
 }
+@media screen and (max-width: 979px) {
+  .mail-sub__content {
+    align-items: center;
+    gap: 15px;
+  }
+}
 .mail-sub__form {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 6px;
+}
+@media screen and (max-width: 979px) {
+  .mail-sub__form {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .mail-sub__form_input {
   width: 100%;
@@ -19747,6 +19830,12 @@ input:checked + .contract-offer__slider:before {
   color: #161513;
   transition: 300ms ease;
 }
+@media screen and (max-width: 979px) {
+  .mail-sub__form_button {
+    width: 100%;
+    max-width: 370px;
+  }
+}
 .mail-sub__form_button:hover {
   background-color: #ff6c3d;
 }
@@ -19773,6 +19862,13 @@ input:checked + .contract-offer__slider:before {
 @media screen and (max-width: 1200px) {
   .footer-to-top {
     right: 20px;
+  }
+}
+@media screen and (max-width: 979px) {
+  .footer-to-top {
+    right: 20px;
+    bottom: 20px;
+    position: fixed;
   }
 }
 .footer-to-top svg {

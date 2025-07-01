@@ -4,7 +4,14 @@
   padding-bottom: 40px;
   position: relative;
 
-  &__block {}
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
 
   &__content {
     display: flex;
@@ -14,6 +21,8 @@
 
     @include mobile {
       flex-direction: column;
+      margin-top: 40px;
+      gap: 30px;
     }
   }
 
@@ -22,6 +31,12 @@
     display: flex;
     flex-direction: column;
     max-width: 205px;
+
+    @include mobile {
+      order: 2;
+      max-width: 100%;
+      align-items: center;
+    }
 
     &_title {
       color: #fff;
@@ -49,6 +64,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    @include mobile {
+      order: 1;
+    }
 
     &_card {
       border-radius: 24px;
@@ -83,10 +102,6 @@
     align-items: center;
     gap: 12px;
 
-    @include mobile {
-      display: none;
-    }
-
     &_img {
       height: 43px;
       width: auto;
@@ -108,6 +123,11 @@
     align-items: center;
     gap: 20px;
     justify-content: space-between;
+
+    @include mobile {
+      justify-content: center;
+      padding: 0;
+    }
   }
 
   &__top {
@@ -131,6 +151,11 @@
   padding-bottom: 30px;
   position: relative;
 
+  @include mobile {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
   &__left-shape {
     position: absolute;
     z-index: 1;
@@ -143,6 +168,10 @@
         rgba(135, 61, 37, 0.35) -0.17%,
         rgba(255, 108, 61, 0.35) 48.02%);
     clip-path: polygon(0 0, 100% 0, 0 100%, 0% 100%);
+
+    @include mobile {
+      width: calc(50% - 50px);
+    }
   }
 
   &__right-shape {
@@ -157,6 +186,10 @@
         rgba(135, 61, 37, 0.35) -0.17%,
         rgba(255, 108, 61, 0.35) 48.02%);
     clip-path: polygon(100% 0, 100% 100%, 0 0, 0 0);
+
+    @include mobile {
+      width: calc(50% - 50px);
+    }
   }
 
   &__left-t-shape {
@@ -171,6 +204,10 @@
         rgba(135, 61, 37, 0.35) -0.17%,
         rgba(255, 108, 61, 0.35) 48.02%);
     clip-path: polygon(0 0, 0% 100%, 100% 100%);
+
+    @include mobile {
+      width: calc(50% - 50px);
+    }
   }
 
   &__right-t-shape {
@@ -185,6 +222,10 @@
         rgba(135, 61, 37, 0.35) -0.17%,
         rgba(255, 108, 61, 0.35) 48.02%);
     clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+
+    @include mobile {
+      width: calc(50% - 50px);
+    }
   }
 
   &__block {
@@ -204,10 +245,24 @@
     gap: 30px;
     font-family: $font-roboto;
 
+    @include mobile {
+      flex-direction: column;
+      text-align: center;
+      max-width: 288px;
+      gap: 20px;
+      position: relative;
+      top: -30px;
+      z-index: 3;
+    }
+
     &_block {
       display: flex;
       flex-direction: column;
       color: #c3b8a2;
+
+      @include mobile {
+        gap: 20px;
+      }
     }
 
     &_icon {
@@ -225,6 +280,10 @@
     &_text {
       font-size: 19px;
       font-weight: 300;
+
+      @include mobile {
+        line-height: 1.2;
+      }
     }
   }
 
@@ -234,6 +293,11 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 8px;
+
+    @include mobile {
+      align-items: center;
+      gap: 15px;
+    }
   }
 
   &__form {
@@ -242,6 +306,11 @@
     align-items: center;
     justify-content: flex-end;
     gap: 6px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 10px;
+    }
 
     &_input {
       width: 100%;
@@ -281,6 +350,11 @@
       color: #161513;
       transition: 300ms ease;
 
+      @include mobile {
+        width: 100%;
+        max-width: 370px;
+      }
+
       &:hover {
         background-color: #ff6c3d;
       }
@@ -311,6 +385,12 @@
 
   @include netbook {
     right: 20px;
+  }
+
+  @include mobile {
+    right: 20px;
+    bottom: 20px;
+    position: fixed;
   }
 
   svg {
