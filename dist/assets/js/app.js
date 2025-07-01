@@ -13389,6 +13389,406 @@ var Swiper=function(){"use strict";function e(e){return null!==e&&"object"==type
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* Utils */
+    /* Аккордион */
+const accordions = document.querySelectorAll(".accordion");
+const openAccordion = (accordion) => {
+  const content = accordion.querySelector(".accordion__content");
+  accordion.classList.add("accordion__active");
+  content.style.maxHeight = content.scrollHeight + 40 + "px";
+};
+const closeAccordion = (accordion) => {
+  const content = accordion.querySelector(".accordion__content");
+  accordion.classList.remove("accordion__active");
+  content.style.maxHeight = null;
+};
+accordions.forEach((accordion) => {
+  const intro = accordion.querySelector(".accordion__intro");
+  const content = accordion.querySelector(".accordion__content");
+
+  intro.onclick = () => {
+    if (content.style.maxHeight) {
+      closeAccordion(accordion);
+    } else {
+      accordions.forEach((accordion) => closeAccordion(accordion));
+      openAccordion(accordion);
+    }
+  };
+});
+
+    function setupToggleClassButtons() {
+  const addClassBtns = document.querySelectorAll(".add-class-btn");
+
+  const stateMap = new Map(); // хранит lastElements и lastButton по targetId
+
+  addClassBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.getAttribute("data-class-target");
+      const classToAdd = button.getAttribute("data-class-name");
+
+      const targetElements = document.querySelectorAll(
+        `[data-class-element="${targetId}"]`
+      );
+
+      if (targetElements.length === 0 || !classToAdd) return;
+
+      const isActive = Array.from(targetElements).some((el) =>
+        el.classList.contains(classToAdd)
+      );
+
+      const state = stateMap.get(targetId) || {
+        lastElements: [],
+        lastButton: null,
+      };
+
+      if (isActive) {
+        // Удалить класс у всех элементов с текущим targetId
+        targetElements.forEach((el) => el.classList.remove(classToAdd));
+        button.classList.remove(classToAdd);
+        stateMap.set(targetId, {
+          lastElements: [],
+          lastButton: null,
+        });
+      } else {
+        // Удалить с предыдущих элементов, если они есть
+        state.lastElements.forEach((el) => el.classList.remove(classToAdd));
+        if (state.lastButton && state.lastButton !== button) {
+          state.lastButton.classList.remove(classToAdd);
+        }
+
+        // Добавить класс к текущим элементам
+        targetElements.forEach((el) => el.classList.add(classToAdd));
+        button.classList.add(classToAdd);
+
+        // Обновить stateMap
+        stateMap.set(targetId, {
+          lastElements: Array.from(targetElements),
+          lastButton: button,
+        });
+      }
+    });
+  });
+}
+setupToggleClassButtons();
+
+    function initExpandableFilterBlock(
+  containerSelector = ".filter-block__card_content"
+) {
+  document.querySelectorAll(containerSelector).forEach((block) => {
+    const items = block.querySelectorAll(".main-input__checkbox");
+    const button = block.querySelector(".filter-block__card_more");
+
+    if (!button || items.length <= 4) {
+      if (button) button.style.display = "none";
+      return;
+    }
+
+    // Скрываем все элементы, начиная с 5-го
+    items.forEach((item, index) => {
+      if (index >= 4) item.style.display = "none";
+    });
+
+    let expanded = false;
+
+    button.addEventListener("click", () => {
+      expanded = !expanded;
+      items.forEach((item, index) => {
+        if (index >= 4) {
+          item.style.display = expanded ? "" : "none";
+        }
+      });
+      button.textContent = expanded ? "Скрыть" : "Показать все";
+    });
+  });
+}
+initExpandableFilterBlock();
+
+    /* Таймер */
+const formatNumber = (number) => {
+  return `<div class="timer__wrapper">${number
+    .toString()
+    .split("")
+    .map(
+      (digit) =>
+        `<span class="timer__digit"><span class="timer__digit_num">${digit}</span></span>`
+    )
+    .join("")}</div>`;
+};
+
+const updateTimer = (timer, deadline) => {
+  const now = new Date().getTime();
+  const distance = deadline - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+  const daysContainer = timer.querySelector(".timer__day");
+  const hoursContainer = timer.querySelector(".timer__hours");
+  const minsContainer = timer.querySelector(".timer__minutes");
+  const secsContainer = timer.querySelector(".timer__seconds");
+  const timerInfo = timer.querySelector(".timer__info");
+  const messageContainer = timer.querySelector(".timer__message");
+
+  if (daysContainer)
+    daysContainer.innerHTML =
+      formatNumber(days) + '<h3 class="timer__label">Дней</h3>';
+  if (hoursContainer)
+    hoursContainer.innerHTML =
+      formatNumber(hours) + '<h3 class="timer__label">Часов</h3>';
+  if (minsContainer)
+    minsContainer.innerHTML =
+      formatNumber(mins) + '<h3 class="timer__label">Минут</h3>';
+  if (secsContainer)
+    secsContainer.innerHTML =
+      formatNumber(secs) + '<h3 class="timer__label">Секунд</h3>';
+
+  if (distance < 0) {
+    clearInterval(timer.interval);
+    if (timerInfo) timerInfo.classList.add("is-hidden");
+    if (messageContainer) messageContainer.classList.add("is-visible");
+  }
+};
+
+const timers = document.querySelectorAll(".timer");
+
+timers.forEach((timer) => {
+  const deadline = new Date(timer.getAttribute("data-deadline")).getTime();
+
+  timer.interval = setInterval(() => {
+    updateTimer(timer, deadline);
+  }, 1000);
+
+  updateTimer(timer, deadline);
+});
+
+    // Init readmore.js
+const ReadSmore = window.readSmore;
+const readMoreEls = document.querySelectorAll(".js-read-smore");
+ReadSmore(readMoreEls).init();
+
+    /* Select */
+function createCustomSelects() {
+  const customSelects = document.querySelectorAll(".custom-select");
+  customSelects.forEach((customSelect) => {
+    const selectElement = customSelect.querySelector("select");
+    createSelectContainer(customSelect, selectElement);
+    createOptionsList(customSelect, selectElement);
+    addSelectEventListeners(customSelect);
+  });
+}
+
+function createSelectContainer(customSelect, selectElement) {
+  const selectedContainer = document.createElement("DIV");
+  selectedContainer.classList.add("select-selected");
+  selectedContainer.innerHTML =
+    selectElement.options[selectElement.selectedIndex].innerHTML;
+  customSelect.appendChild(selectedContainer);
+}
+
+function createOptionsList(customSelect, selectElement) {
+  const optionsList = document.createElement("DIV");
+  optionsList.classList.add("select-items", "select-hide");
+  for (let i = 1; i < selectElement.length; i++) {
+    const optionItem = document.createElement("DIV");
+    optionItem.innerHTML = selectElement.options[i].innerHTML;
+    optionItem.addEventListener("click", function (event) {
+      updateSelectBox(this);
+    });
+    optionsList.appendChild(optionItem);
+  }
+  customSelect.appendChild(optionsList);
+}
+
+function updateSelectBox(selectedItem) {
+  const selectBox = selectedItem.parentNode.parentNode.querySelector("select");
+  const selectedContainer = selectedItem.parentNode.previousSibling;
+  selectBox.selectedIndex = Array.from(selectBox.options).findIndex(
+    (option) => option.innerHTML === selectedItem.innerHTML
+  );
+  selectedContainer.innerHTML = selectedItem.innerHTML;
+  const sameAsSelected =
+    selectedItem.parentNode.querySelectorAll(".same-as-selected");
+  sameAsSelected.forEach((item) => item.classList.remove("same-as-selected"));
+  selectedItem.classList.add("same-as-selected");
+  selectedContainer.click();
+}
+
+function addSelectEventListeners(customSelect) {
+  const selectedContainer = customSelect.querySelector(".select-selected");
+  selectedContainer.addEventListener("click", function (event) {
+    event.stopPropagation();
+    closeAllSelects(this);
+    const optionsList = this.nextSibling;
+    optionsList.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+
+function closeAllSelects(currentSelect) {
+  const allOptionsLists = document.querySelectorAll(".select-items");
+  const allSelectedContainers = document.querySelectorAll(".select-selected");
+  allOptionsLists.forEach((optionsList) => {
+    if (optionsList.previousSibling !== currentSelect) {
+      optionsList.classList.add("select-hide");
+    }
+  });
+  allSelectedContainers.forEach((selectedContainer) => {
+    if (selectedContainer !== currentSelect) {
+      selectedContainer.classList.remove("select-arrow-active");
+    }
+  });
+}
+
+document.addEventListener("click", function () {
+  closeAllSelects(null);
+});
+
+createCustomSelects();
+
+
+/* Form Select */
+const formSelects = document.querySelectorAll(".form-select");
+
+formSelects.forEach((formSelect) => {
+  const searchInput = formSelect.querySelector(".form-input");
+  const selectOptions = formSelect.querySelector(".form-select__options");
+  const options = formSelect.querySelectorAll(".form-select__option");
+
+  searchInput.addEventListener("focus", () => {
+    selectOptions.style.display = "block";
+  });
+
+  searchInput.addEventListener("input", () => {
+    const filter = searchInput.value.toLowerCase();
+    options.forEach((option) => {
+      const text = option.textContent.toLowerCase();
+      if (text.includes(filter)) {
+        option.classList.remove("hidden");
+      } else {
+        option.classList.add("hidden");
+      }
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".form-select")) {
+      selectOptions.style.display = "none";
+    }
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      searchInput.value = option.textContent;
+      selectOptions.style.display = "none";
+    });
+  });
+
+  if (options.length > 4) {
+    selectOptions.style.maxHeight = "150px";
+    selectOptions.style.overflowY = "scroll";
+  } else {
+    selectOptions.style.maxHeight = "";
+    selectOptions.style.overflowY = "";
+  }
+});
+
+
+/* Data Attr */
+document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
+  const trigger = selectElement.querySelector("[data-select-trigger]");
+  const optionsContainer = selectElement.querySelector("[data-select-options]");
+  const options = selectElement.querySelectorAll("[data-select-option]");
+  const hiddenInput = selectElement.querySelector("[data-select-input]");
+
+  trigger.addEventListener("click", () => {
+    const isOpen = optionsContainer.style.display === "block";
+    document
+      .querySelectorAll("[data-custom-select] [data-select-options]")
+      .forEach((container) => (container.style.display = "none"));
+    document
+      .querySelectorAll("[data-custom-select] [data-select-trigger]")
+      .forEach((trg) => trg.classList.remove("open"));
+    if (!isOpen) {
+      optionsContainer.style.display = "block";
+      trigger.classList.add("open");
+    }
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      const value = option.getAttribute("data-value");
+      const flagSrc = option.getAttribute("data-flag");
+
+      trigger.querySelector("img").setAttribute("src", flagSrc);
+      hiddenInput.value = value;
+
+      optionsContainer.style.display = "none";
+      trigger.classList.remove("open");
+
+      options.forEach((opt) => opt.classList.remove("active"));
+      option.classList.add("active");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!selectElement.contains(e.target)) {
+      optionsContainer.style.display = "none";
+      trigger.classList.remove("open");
+    }
+  });
+
+  const firstOption = options[0];
+  trigger
+    .querySelector("img")
+    .setAttribute("src", firstOption.getAttribute("data-flag"));
+  hiddenInput.value = firstOption.getAttribute("data-value");
+  firstOption.classList.add("active");
+});
+
+    /* Tabs */
+function setupTabs(tabButtonsClass, tabContentClass) {
+  const tabButtons = document.querySelectorAll(tabButtonsClass);
+
+  tabButtons.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabClicked(tab, tabButtonsClass, tabContentClass);
+    });
+  });
+}
+
+function tabClicked(tab, tabButtonsClass, tabContentClass) {
+  const allTabButtons = document.querySelectorAll(tabButtonsClass);
+  allTabButtons.forEach((tab) => {
+    tab.classList.remove("_active");
+  });
+  tab.classList.add("_active");
+
+  const contents = document.querySelectorAll(tabContentClass);
+  contents.forEach((content) => {
+    content.classList.remove("_active");
+  });
+
+  const contentId = tab.getAttribute("content-id");
+  const contentSelected = document.getElementById(contentId);
+
+  contentSelected.classList.add("_active");
+}
+
+setupTabs(".tab-btn", ".tab-content");
+setupTabs(".tab-btn-second", ".tab-content-second");
+setupTabs(".tab-btn-third", ".tab-content-third");
+setupTabs(".tab-btn-fourth", ".tab-content-fourth");
+
+    const scrollToTop = document.querySelector(".footer-to-top");
+
+if (scrollToTop)
+  scrollToTop.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
     /* Swiper */
 new Swiper(".new-blog .swiper", {
@@ -13911,364 +14311,59 @@ window.addEventListener("resize", function () {
   toggleSteamSlider();
 });
 
-    /* Аккордион */
-const accordions = document.querySelectorAll(".accordion");
-const openAccordion = (accordion) => {
-  const content = accordion.querySelector(".accordion__content");
-  accordion.classList.add("accordion__active");
-  content.style.maxHeight = content.scrollHeight + 40 + "px";
-};
-const closeAccordion = (accordion) => {
-  const content = accordion.querySelector(".accordion__content");
-  accordion.classList.remove("accordion__active");
-  content.style.maxHeight = null;
-};
-accordions.forEach((accordion) => {
-  const intro = accordion.querySelector(".accordion__intro");
-  const content = accordion.querySelector(".accordion__content");
+    /* Search Block */
+/* const searchButton = document.querySelector(".js-search-open");
 
-  intro.onclick = () => {
-    if (content.style.maxHeight) {
-      closeAccordion(accordion);
-    } else {
-      accordions.forEach((accordion) => closeAccordion(accordion));
-      openAccordion(accordion);
-    }
-  };
-});
 
-/* Таймер */
-const formatNumber = (number) => {
-  return `<div class="timer__wrapper">${number
-    .toString()
-    .split("")
-    .map(
-      (digit) =>
-        `<span class="timer__digit"><span class="timer__digit_num">${digit}</span></span>`
-    )
-    .join("")}</div>`;
-};
+if (searchButton)
+  searchButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Предотвращаем переход по ссылке
+    searchButton.classList.toggle("active"); // Добавляем или удаляем класс active на ссылку
+    searchBlock.classList.toggle("active"); // Добавляем или удаляем класс active на div
+  }); */
+const searchBlock = document.querySelector(".js-search-menu");
+const headerSearchBg = document.querySelector(".header-search__bg");
+const jsSearchButton = document.querySelector(".js-search-button");
 
-const updateTimer = (timer, deadline) => {
-  const now = new Date().getTime();
-  const distance = deadline - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
-  const daysContainer = timer.querySelector(".timer__day");
-  const hoursContainer = timer.querySelector(".timer__hours");
-  const minsContainer = timer.querySelector(".timer__minutes");
-  const secsContainer = timer.querySelector(".timer__seconds");
-  const timerInfo = timer.querySelector(".timer__info");
-  const messageContainer = timer.querySelector(".timer__message");
-
-  if (daysContainer)
-    daysContainer.innerHTML =
-      formatNumber(days) + '<h3 class="timer__label">Дней</h3>';
-  if (hoursContainer)
-    hoursContainer.innerHTML =
-      formatNumber(hours) + '<h3 class="timer__label">Часов</h3>';
-  if (minsContainer)
-    minsContainer.innerHTML =
-      formatNumber(mins) + '<h3 class="timer__label">Минут</h3>';
-  if (secsContainer)
-    secsContainer.innerHTML =
-      formatNumber(secs) + '<h3 class="timer__label">Секунд</h3>';
-
-  if (distance < 0) {
-    clearInterval(timer.interval);
-    if (timerInfo) timerInfo.classList.add("is-hidden");
-    if (messageContainer) messageContainer.classList.add("is-visible");
-  }
-};
-
-const timers = document.querySelectorAll(".timer");
-
-timers.forEach((timer) => {
-  const deadline = new Date(timer.getAttribute("data-deadline")).getTime();
-
-  timer.interval = setInterval(() => {
-    updateTimer(timer, deadline);
-  }, 1000);
-
-  updateTimer(timer, deadline);
-});
-
-/* Header Game */
-const headerGameBtns = document.querySelectorAll(".js-header-game-open");
-
-if (headerGameBtns)
-  headerGameBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.classList.add("remove");
-    });
-  });
-
-/* Header Admin */
-const headerAdminBtn = document.querySelector(".header__actions_admin_open");
-const headerAdminDrop = document.querySelector(".header__actions_admin_drop");
-
-if (headerAdminBtn) {
-  headerAdminBtn.addEventListener("click", (event) => {
-    headerAdminBtn.classList.toggle("_active");
-    headerAdminDrop.classList.toggle("_active");
-  });
-
-  window.addEventListener("click", (event) => {
-    if (
-      !headerAdminBtn.contains(event.target) &&
-      !headerAdminDrop.contains(event.target)
-    ) {
-      headerAdminBtn.classList.remove("_active");
-      headerAdminDrop.classList.remove("_active");
-    }
+if (headerSearchBg) {
+  headerSearchBg.addEventListener("click", function () {
+    searchBlock.classList.remove("active");
+    jsSearchButton.classList.remove("active");
   });
 }
 
-/* Language button */
-const langButton = document.querySelector(".header__lang_button");
-const langDropdown = document.querySelector(".header__lang_dropdown");
-
-if (langButton)
-  langButton.addEventListener("click", function () {
-    langDropdown.classList.toggle("active");
-  });
-
-// Init JS
-const ReadSmore = window.readSmore;
-
-const readMoreEls = document.querySelectorAll(".js-read-smore");
-
-ReadSmore(readMoreEls).init();
-
-/* Select */
-
-function createCustomSelects() {
-  const customSelects = document.querySelectorAll(".custom-select");
-  customSelects.forEach((customSelect) => {
-    const selectElement = customSelect.querySelector("select");
-    createSelectContainer(customSelect, selectElement);
-    createOptionsList(customSelect, selectElement);
-    addSelectEventListeners(customSelect);
-  });
-}
-
-function createSelectContainer(customSelect, selectElement) {
-  const selectedContainer = document.createElement("DIV");
-  selectedContainer.classList.add("select-selected");
-  selectedContainer.innerHTML =
-    selectElement.options[selectElement.selectedIndex].innerHTML;
-  customSelect.appendChild(selectedContainer);
-}
-
-function createOptionsList(customSelect, selectElement) {
-  const optionsList = document.createElement("DIV");
-  optionsList.classList.add("select-items", "select-hide");
-  for (let i = 1; i < selectElement.length; i++) {
-    const optionItem = document.createElement("DIV");
-    optionItem.innerHTML = selectElement.options[i].innerHTML;
-    optionItem.addEventListener("click", function (event) {
-      updateSelectBox(this);
-    });
-    optionsList.appendChild(optionItem);
-  }
-  customSelect.appendChild(optionsList);
-}
-
-function updateSelectBox(selectedItem) {
-  const selectBox = selectedItem.parentNode.parentNode.querySelector("select");
-  const selectedContainer = selectedItem.parentNode.previousSibling;
-  selectBox.selectedIndex = Array.from(selectBox.options).findIndex(
-    (option) => option.innerHTML === selectedItem.innerHTML
-  );
-  selectedContainer.innerHTML = selectedItem.innerHTML;
-  const sameAsSelected =
-    selectedItem.parentNode.querySelectorAll(".same-as-selected");
-  sameAsSelected.forEach((item) => item.classList.remove("same-as-selected"));
-  selectedItem.classList.add("same-as-selected");
-  selectedContainer.click();
-}
-
-function addSelectEventListeners(customSelect) {
-  const selectedContainer = customSelect.querySelector(".select-selected");
-  selectedContainer.addEventListener("click", function (event) {
-    event.stopPropagation();
-    closeAllSelects(this);
-    const optionsList = this.nextSibling;
-    optionsList.classList.toggle("select-hide");
-    this.classList.toggle("select-arrow-active");
-  });
-}
-
-function closeAllSelects(currentSelect) {
-  const allOptionsLists = document.querySelectorAll(".select-items");
-  const allSelectedContainers = document.querySelectorAll(".select-selected");
-  allOptionsLists.forEach((optionsList) => {
-    if (optionsList.previousSibling !== currentSelect) {
-      optionsList.classList.add("select-hide");
-    }
-  });
-  allSelectedContainers.forEach((selectedContainer) => {
-    if (selectedContainer !== currentSelect) {
-      selectedContainer.classList.remove("select-arrow-active");
-    }
-  });
-}
-
-document.addEventListener("click", function () {
-  closeAllSelects(null);
-});
-
-createCustomSelects();
-
-/* Tabs */
-
-function setupTabs(tabButtonsClass, tabContentClass) {
-  const tabButtons = document.querySelectorAll(tabButtonsClass);
-
-  tabButtons.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabClicked(tab, tabButtonsClass, tabContentClass);
-    });
-  });
-}
-
-function tabClicked(tab, tabButtonsClass, tabContentClass) {
-  const allTabButtons = document.querySelectorAll(tabButtonsClass);
-  allTabButtons.forEach((tab) => {
-    tab.classList.remove("_active");
-  });
-  tab.classList.add("_active");
-
-  const contents = document.querySelectorAll(tabContentClass);
-  contents.forEach((content) => {
-    content.classList.remove("_active");
-  });
-
-  const contentId = tab.getAttribute("content-id");
-  const contentSelected = document.getElementById(contentId);
-
-  contentSelected.classList.add("_active");
-}
-
-setupTabs(".tab-btn", ".tab-content");
-setupTabs(".tab-btn-second", ".tab-content-second");
-setupTabs(".tab-btn-third", ".tab-content-third");
-setupTabs(".tab-btn-fourth", ".tab-content-fourth");
-
-/* Верхняя кнопка */
-const hamburgerPositionButton = document.querySelector(
-  ".js-hamburger-header-button"
-);
-const hamburgerPositionMenu = document.querySelector(".js-hamburger-menu");
-
-hamburgerPositionButton.addEventListener("click", function () {
-  hamburgerPositionMenu.classList.toggle("position");
-});
-
-const syncButtons = document.querySelectorAll(".js-hamburger");
-let lastScrollTopButtons = 0; // Переменная для хранения последнего положения прокрутки
-
-// Функция для синхронизации классов active
-function syncActiveClass() {
-  const isActive = buttons[0].classList.contains("active");
-  const isOtherActive = buttons[1].classList.contains("active");
-
-  // Если одна кнопка активна, а другая нет, обе становятся неактивными
-  if (isActive && !isOtherActive) {
-    buttons[0].classList.remove("active");
-    buttons[1].classList.remove("active");
-  } else if (!isActive && isOtherActive) {
-    buttons[0].classList.remove("active");
-    buttons[1].classList.remove("active");
-  }
-}
-
-// Обработчик клика
-syncButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    button.classList.toggle("active");
-    syncActiveClass();
+    /* Modal */
+// Open modal
+document.querySelectorAll("[data-modal-target]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = document.querySelector(button.dataset.modalTarget);
+    modal.classList.add("active");
   });
 });
 
-// Обработчик прокрутки
-window.addEventListener("scroll", function () {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-  // Проверяем, прокручивается ли вверх
-  if (scrollTop < lastScrollTopButtons) {
-    syncActiveClass();
-  }
-
-  lastScrollTopButtons = scrollTop; // Обновляем последнее положение прокрутки
+// Close modal
+document.querySelectorAll("[data-modal-close]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest("[data-modal]");
+    modal.classList.remove("active");
+  });
 });
 
-/* Скролл Меню */
-let lastScrollTop = 0;
-const headerScroll = document.querySelector(".new-header");
-const fixedCardScroll = document.querySelector(".fixed-card");
-const hamburgerMenuScroll = document.querySelector(".js-hamburger-menu");
-const hamburgerButtonScroll = document.querySelector(".js-hamburger");
-const hamburgerHeaderButton = document.querySelector(
-  ".js-hamburger-header-button"
-);
-
-function handleScroll() {
-  const currentScroll = window.scrollY;
-
-  // Обработка шапки
-  if (headerScroll) {
-    if (currentScroll > lastScrollTop && currentScroll > 50) {
-      // Скролл вниз: скрыть шапку
-      headerScroll.classList.add("active");
-      // Закрыть гамбургер-меню
-      if (hamburgerMenuScroll && hamburgerButtonScroll) {
-        hamburgerHeaderButton.classList.add("active");
-        hamburgerMenuScroll.classList.remove("active");
-        hamburgerButtonScroll.classList.remove("active");
-        hamburgerPositionMenu.classList.remove("position");
-      }
-    } else if (currentScroll < lastScrollTop) {
-      // Скролл вверх: показать шапку
-      headerScroll.classList.remove("active");
-      hamburgerPositionMenu.classList.remove("position");
-    }
+// Close modal when clicking outside of modal content
+window.addEventListener("click", (event) => {
+  if (event.target.hasAttribute("data-modal")) {
+    event.target.classList.remove("active");
   }
+});
 
-  // Обработка карточки
-  if (fixedCardScroll) {
-    const shouldShowCard =
-      currentScroll > 600 &&
-      (!headerScroll || headerScroll.classList.contains("active"));
-
-    if (shouldShowCard) {
-      fixedCardScroll.classList.add("active");
-    } else {
-      fixedCardScroll.classList.remove("active");
-    }
-  }
-
-  lastScrollTop = currentScroll;
-}
-
-// Инициализация и обработка событий
-window.addEventListener("DOMContentLoaded", handleScroll);
-window.addEventListener("scroll", handleScroll);
-
-const scrollToTop = document.querySelector(".footer-to-top");
-
-if (scrollToTop)
-  scrollToTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+if (document.querySelector(".admin-tabs-open"))
+  document.querySelector(".admin-tabs-open").addEventListener("click", () => {
+    document.querySelector(".admin-tabs__block").classList.add("_active");
   });
 
-/* Basket Counter */
+
+    /* Partials */
+    /* Basket Counter */
 const minusBtns = document.querySelectorAll(
   ".basket-page__items .basket-page__card_minus"
 );
@@ -14327,7 +14422,9 @@ if (basketOverlayNos)
     });
   });
 
-/* Cart Add */
+
+
+    /* Cart Add */
 const newCards = document.querySelectorAll(".new-card");
 
 if (newCards)
@@ -14343,28 +14440,266 @@ if (newCards)
     });
   });
 
-/* Search Block */
-/* const searchButton = document.querySelector(".js-search-open");
+    class HeaderManager {
+  constructor() {
+    this.headerGameBtns = document.querySelectorAll(".js-header-game-open");
+    this.headerAdminBtn = document.querySelector(".header__actions_admin_open");
+    this.headerAdminDrop = document.querySelector(
+      ".header__actions_admin_drop"
+    );
+    this.headerScroll = document.querySelector(".new-header");
 
+    this.initHeaderGame();
+    this.initHeaderAdmin();
+  }
 
-if (searchButton)
-  searchButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Предотвращаем переход по ссылке
-    searchButton.classList.toggle("active"); // Добавляем или удаляем класс active на ссылку
-    searchBlock.classList.toggle("active"); // Добавляем или удаляем класс active на div
-  }); */
-const searchBlock = document.querySelector(".js-search-menu");
-const headerSearchBg = document.querySelector(".header-search__bg");
-const jsSearchButton = document.querySelector(".js-search-button");
+  initHeaderGame() {
+    if (!this.headerGameBtns) return;
 
-if (headerSearchBg) {
-  headerSearchBg.addEventListener("click", function () {
-    searchBlock.classList.remove("active");
-    jsSearchButton.classList.remove("active");
-  });
+    this.headerGameBtns.forEach((btn) => {
+      btn.addEventListener("click", () => btn.classList.add("remove"));
+    });
+  }
+
+  initHeaderAdmin() {
+    if (!this.headerAdminBtn || !this.headerAdminDrop) return;
+
+    this.headerAdminBtn.addEventListener("click", () => this.toggleAdminMenu());
+    document.addEventListener("click", (e) => this.closeAdminMenu(e));
+  }
+
+  toggleAdminMenu() {
+    this.headerAdminBtn.classList.toggle("_active");
+    this.headerAdminDrop.classList.toggle("_active");
+  }
+
+  closeAdminMenu(event) {
+    if (
+      !this.headerAdminBtn.contains(event.target) &&
+      !this.headerAdminDrop.contains(event.target)
+    ) {
+      this.headerAdminBtn.classList.remove("_active");
+      this.headerAdminDrop.classList.remove("_active");
+    }
+  }
 }
-/* FancyBox */
-Fancybox.bind();
+
+class HamburgerManager {
+  constructor() {
+    this.positionButton = document.querySelector(".js-hamburger-header-button");
+    this.positionMenu = document.querySelector(".js-hamburger-menu");
+    this.syncButtons = document.querySelectorAll(".js-hamburger");
+    this.menu = document.querySelector(".js-hamburger-menu");
+    this.button = document.querySelector(".js-hamburger");
+    this.menuClose = document.querySelector(".js-hamburger-close");
+    this.menuBgClose = document.querySelector(".js-hamburger-bg-close");
+
+    this.lastScrollTopButtons = 0;
+    this.initPositionToggle();
+    this.initSyncButtons();
+    this.initCloseHandlers();
+  }
+
+  initPositionToggle() {
+    if (!this.positionButton || !this.positionMenu) return;
+    this.positionButton.addEventListener("click", () => {
+      this.positionMenu.classList.toggle("position");
+    });
+  }
+
+  initSyncButtons() {
+    if (!this.syncButtons.length) return;
+
+    this.syncButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        this.syncActiveClass();
+      });
+    });
+
+    window.addEventListener("scroll", () => this.handleSyncScroll());
+  }
+
+  syncActiveClass() {
+    const buttons = Array.from(this.syncButtons);
+    const isActive = buttons[0].classList.contains("active");
+    const isOtherActive = buttons[1].classList.contains("active");
+
+    if ((isActive && !isOtherActive) || (!isActive && isOtherActive)) {
+      buttons.forEach((btn) => btn.classList.remove("active"));
+    }
+  }
+
+  handleSyncScroll() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop < this.lastScrollTopButtons) this.syncActiveClass();
+    this.lastScrollTopButtons = scrollTop;
+  }
+
+  initCloseHandlers() {
+    if (this.menuBgClose) {
+      this.menuBgClose.addEventListener("click", () => this.closeMenu());
+    }
+    if (this.menuClose) {
+      this.menuClose.addEventListener("click", () => this.closeMenu());
+    }
+  }
+
+  closeMenu() {
+    if (this.menu) this.menu.classList.remove("active");
+    if (this.button) this.button.classList.remove("active");
+  }
+}
+
+class ScrollManager {
+  constructor() {
+    this.header = document.querySelector(".new-header");
+    this.fixedCard = document.querySelector(".fixed-card");
+    this.hamburgerMenu = document.querySelector(".js-hamburger-menu");
+    this.hamburgerButton = document.querySelector(".js-hamburger");
+    this.positionMenu = document.querySelector(".js-hamburger-menu");
+
+    this.lastScrollTop = 0;
+    this.initScrollHandlers();
+  }
+
+  initScrollHandlers() {
+    window.addEventListener("DOMContentLoaded", () => this.handleScroll());
+    window.addEventListener("scroll", () => this.handleScroll());
+  }
+
+  handleScroll() {
+    const currentScroll = window.scrollY;
+    this.handleHeaderScroll(currentScroll);
+    this.handleCardScroll(currentScroll);
+    this.lastScrollTop = currentScroll;
+  }
+
+  handleHeaderScroll(scrollPos) {
+    if (!this.header) return;
+
+    if (scrollPos > this.lastScrollTop && scrollPos > 50) {
+      this.header.classList.add("active");
+      this.closeHamburgerMenu();
+    } else if (scrollPos < this.lastScrollTop) {
+      this.header.classList.remove("active");
+      if (this.positionMenu) this.positionMenu.classList.remove("position");
+    }
+  }
+
+  closeHamburgerMenu() {
+    if (!this.hamburgerMenu || !this.hamburgerButton) return;
+
+    this.hamburgerMenu.classList.remove("active");
+    this.hamburgerButton.classList.remove("active");
+  }
+
+  handleCardScroll(scrollPos) {
+    if (!this.fixedCard) return;
+
+    const shouldShowCard =
+      scrollPos > 600 &&
+      (!this.header || this.header.classList.contains("active"));
+
+    this.fixedCard.classList.toggle("active", shouldShowCard);
+  }
+}
+
+class CategoryMenu {
+  constructor() {
+    this.buttons = document.querySelectorAll("[data-category-target]");
+    this.menus = document.querySelectorAll("[data-category-id]");
+    this.currentActiveMenu = null;
+
+    if (this.buttons.length) this.init();
+  }
+
+  init() {
+    this.setupButtonEvents();
+    this.activateFirstMenu();
+  }
+
+  setupButtonEvents() {
+    this.buttons.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        const targetId = button.getAttribute("data-category-target");
+        this.activateMenu(targetId);
+      });
+    });
+  }
+
+  activateMenu(targetId) {
+    this.deactivateAll();
+
+    const activeButton = document.querySelector(
+      `[data-category-target="${targetId}"]`
+    );
+    const activeMenu = document.querySelector(
+      `[data-category-id="${targetId}"]`
+    );
+
+    if (activeButton) activeButton.classList.add("active");
+    if (activeMenu) {
+      activeMenu.classList.add("active");
+      this.currentActiveMenu = targetId;
+    }
+  }
+
+  deactivateAll() {
+    this.buttons.forEach((btn) => btn.classList.remove("active"));
+    this.menus.forEach((menu) => menu.classList.remove("active"));
+  }
+
+  activateFirstMenu() {
+    const firstTarget = this.buttons[0].getAttribute("data-category-target");
+    this.activateMenu(firstTarget);
+  }
+}
+
+// Инициализация приложения
+new HeaderManager();
+new HamburgerManager();
+new ScrollManager();
+new CategoryMenu();
+
+    /* new-reviews */
+(function () {
+  const content = document.querySelector(".new-reviews__content");
+
+  if (content) {
+    content.addEventListener("mousedown", (e) => {
+      let isDown = true;
+      let startX = e.pageX - content.offsetLeft;
+      let scrollLeft = content.scrollLeft;
+
+      content.classList.add("active");
+
+      const mouseMoveHandler = (e) => {
+        if (!isDown) return; // Если мышь не нажата, выходим
+        e.preventDefault();
+        const x = e.pageX - content.offsetLeft;
+        const walk = (x - startX) * 2; // Увеличьте или уменьшите скорость прокрутки
+        content.scrollLeft = scrollLeft - walk;
+      };
+
+      const mouseUpHandler = () => {
+        isDown = false;
+        content.classList.remove("active");
+        document.removeEventListener("mousemove", mouseMoveHandler);
+        document.removeEventListener("mouseup", mouseUpHandler);
+      };
+
+      document.addEventListener("mousemove", mouseMoveHandler);
+      document.addEventListener("mouseup", mouseUpHandler);
+    });
+
+    content.addEventListener("mouseleave", () => {
+      content.classList.remove("active");
+    });
+  }
+})();
+
+    
 
 /* Steam */
 const steamPrices = document.querySelectorAll(".steam-discount__price");
@@ -14520,516 +14855,13 @@ function updateDoingProgressBars() {
 // Call the function to update all progress bars initially
 updateDoingProgressBars();
 
-/* Form Select */
-const formSelects = document.querySelectorAll(".form-select");
 
-formSelects.forEach((formSelect) => {
-  const searchInput = formSelect.querySelector(".form-input");
-  const selectOptions = formSelect.querySelector(".form-select__options");
-  const options = formSelect.querySelectorAll(".form-select__option");
+    /* FancyBox */
+Fancybox.bind();
 
-  searchInput.addEventListener("focus", () => {
-    selectOptions.style.display = "block";
-  });
 
-  searchInput.addEventListener("input", () => {
-    const filter = searchInput.value.toLowerCase();
-    options.forEach((option) => {
-      const text = option.textContent.toLowerCase();
-      if (text.includes(filter)) {
-        option.classList.remove("hidden");
-      } else {
-        option.classList.add("hidden");
-      }
-    });
-  });
 
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".form-select")) {
-      selectOptions.style.display = "none";
-    }
-  });
 
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      searchInput.value = option.textContent;
-      selectOptions.style.display = "none";
-    });
-  });
-
-  if (options.length > 4) {
-    selectOptions.style.maxHeight = "150px";
-    selectOptions.style.overflowY = "scroll";
-  } else {
-    selectOptions.style.maxHeight = "";
-    selectOptions.style.overflowY = "";
-  }
-});
-
-/* Catalog */
-function initializeCatalog() {
-  const catalogTabWrapper = document.querySelectorAll(".catalog__tabs");
-  const catalogButtons = document.querySelectorAll(".catalog__btn");
-  const catalogContents = document.querySelectorAll(".catalog__tabs_content");
-  const catalogBgs = document.querySelectorAll(".catalog__bg");
-
-  catalogButtons.forEach((button, index) => {
-    button.addEventListener("click", function (event) {
-      event.stopPropagation();
-      catalogContents[index].classList.toggle("active");
-      catalogBgs[index].classList.toggle("active");
-      catalogTabWrapper[index].classList.toggle("active");
-    });
-  });
-
-  document.addEventListener("click", function (event) {
-    if (!event.target.closest(".catalog__tabs")) {
-      catalogContents.forEach((content) => {
-        content.classList.remove("active");
-      });
-      catalogBgs.forEach((bg) => {
-        bg.classList.remove("active");
-      });
-      catalogTabWrapper.forEach((wrap) => {
-        wrap.classList.remove("active");
-      });
-    }
-  });
-
-  const catalogTabsContent = document.querySelector(".catalog__tabs_content");
-  if (catalogTabsContent) {
-    const catalogTabs = catalogTabsContent.querySelectorAll(".catalog__tab");
-    const catalogTabReturns = catalogTabsContent.querySelectorAll(
-      ".catalog__tab_drop_return"
-    );
-
-    catalogTabs.forEach((tab) => {
-      const catalogTabBtn = tab.querySelector(".catalog__tab_btn");
-      const catalogTabDrop = tab.querySelector(".catalog__tab_drop");
-
-      catalogTabBtn.addEventListener("click", (event) => {
-        event.stopPropagation();
-        const isActive = catalogTabBtn.classList.contains("_active");
-
-        catalogTabWrapper.forEach((item) => {
-          item.classList.add("active");
-        });
-        catalogBgs.forEach((item) => {
-          item.classList.add("active");
-        });
-
-        catalogTabs.forEach((innerTab) => {
-          innerTab.classList.remove("_active");
-          innerTab
-            .querySelector(".catalog__tab_btn")
-            .classList.remove("_active");
-          innerTab
-            .querySelector(".catalog__tab_drop")
-            .classList.remove("_active");
-        });
-
-        if (!isActive) {
-          tab.classList.add("_active");
-          catalogTabBtn.classList.add("_active");
-          catalogTabDrop.classList.add("_active");
-        }
-      });
-
-      catalogTabReturns.forEach((returnBtn) => {
-        returnBtn.addEventListener("click", () => {
-          catalogTabs.forEach((tab) => {
-            tab.classList.remove("_active");
-            tab.querySelector(".catalog__tab_btn").classList.remove("_active");
-            tab.querySelector(".catalog__tab_drop").classList.remove("_active");
-            /* catalogTabWrapper.forEach((item) => {
-              item.classList.remove("active");
-            });
-            catalogBgs.forEach((item) => {
-              item.classList.remove("active");
-            }); */
-          });
-        });
-      });
-    });
-
-    document.addEventListener("click", (event) => {
-      if (!catalogTabsContent.contains(event.target)) {
-        catalogTabs.forEach((tab) => {
-          tab.classList.remove("_active");
-          tab.querySelector(".catalog__tab_btn").classList.remove("_active");
-          tab.querySelector(".catalog__tab_drop").classList.remove("_active");
-        });
-      }
-    });
-  }
-}
-
-function checkScreenSize() {
-  if (window.innerWidth <= 768) {
-    initializeCatalog();
-  } else {
-    // Здесь можно добавить код для отключения функциональности на десктопе, если это необходимо
-    // Например, удалить все обработчики событий или скрыть элементы
-    /* console.log("Десктопная версия, функциональность отключена."); */
-  }
-}
-
-// Инициализация при загрузке страницы
-checkScreenSize();
-
-// Добавление обработчика события изменения размера окна
-window.addEventListener("resize", checkScreenSize);
-
-/* Modal */
-// Open modal
-document.querySelectorAll("[data-modal-target]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = document.querySelector(button.dataset.modalTarget);
-    modal.classList.add("active");
-  });
-});
-
-// Close modal
-document.querySelectorAll("[data-modal-close]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = button.closest("[data-modal]");
-    modal.classList.remove("active");
-  });
-});
-
-// Close modal when clicking outside of modal content
-window.addEventListener("click", (event) => {
-  if (event.target.hasAttribute("data-modal")) {
-    event.target.classList.remove("active");
-  }
-});
-
-if (document.querySelector(".admin-tabs-open"))
-  document.querySelector(".admin-tabs-open").addEventListener("click", () => {
-    document.querySelector(".admin-tabs__block").classList.add("_active");
-  });
-
-/* Reviews Buttons */
-function setupToggleClassButtons() {
-  const addClassBtns = document.querySelectorAll(".add-class-btn");
-
-  const stateMap = new Map(); // хранит lastElements и lastButton по targetId
-
-  addClassBtns.forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetId = button.getAttribute("data-class-target");
-      const classToAdd = button.getAttribute("data-class-name");
-
-      const targetElements = document.querySelectorAll(
-        `[data-class-element="${targetId}"]`
-      );
-
-      if (targetElements.length === 0 || !classToAdd) return;
-
-      const isActive = Array.from(targetElements).some((el) =>
-        el.classList.contains(classToAdd)
-      );
-
-      const state = stateMap.get(targetId) || {
-        lastElements: [],
-        lastButton: null,
-      };
-
-      if (isActive) {
-        // Удалить класс у всех элементов с текущим targetId
-        targetElements.forEach((el) => el.classList.remove(classToAdd));
-        button.classList.remove(classToAdd);
-        stateMap.set(targetId, {
-          lastElements: [],
-          lastButton: null,
-        });
-      } else {
-        // Удалить с предыдущих элементов, если они есть
-        state.lastElements.forEach((el) => el.classList.remove(classToAdd));
-        if (state.lastButton && state.lastButton !== button) {
-          state.lastButton.classList.remove(classToAdd);
-        }
-
-        // Добавить класс к текущим элементам
-        targetElements.forEach((el) => el.classList.add(classToAdd));
-        button.classList.add(classToAdd);
-
-        // Обновить stateMap
-        stateMap.set(targetId, {
-          lastElements: Array.from(targetElements),
-          lastButton: button,
-        });
-      }
-    });
-  });
-}
-setupToggleClassButtons();
-
-const reviewCards = document.querySelectorAll(".home-other-reviews__card");
-const aboutReviewsBlock = document.querySelector(".about-reviews__block");
-
-let lastClickedCard = null;
-if (reviewCards)
-  reviewCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      if (!aboutReviewsBlock) return;
-
-      if (card === lastClickedCard) {
-        // Если клик по тому же самому элементу, переключаем класс active
-        aboutReviewsBlock.classList.toggle("active");
-        lastClickedCard = null;
-      } else {
-        // Если клик по другому элементу, просто добавляем класс active
-        aboutReviewsBlock.classList.add("active");
-        lastClickedCard = card;
-      }
-    });
-  });
-
-document.addEventListener("click", function (event) {
-  const copyButton = event.target.closest("[data-copy-btn]");
-
-  if (copyButton) {
-    const textElement = document.querySelector(
-      copyButton.getAttribute("data-copy-text")
-    );
-
-    if (textElement) {
-      const textToCopy = textElement.textContent;
-      const tempInput = document.createElement("input");
-      tempInput.value = textToCopy;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempInput);
-      alert("Текст скопирован: " + textToCopy);
-    }
-  }
-});
-
-/* clip path */
-function updateClipPath() {
-  const elements = document.querySelectorAll(".clip-element");
-
-  elements.forEach((element) => {
-    const clipPathValue = element.getAttribute("data-clip-path"); // Получаем значение clip-path из data-атрибута
-    const fixedPoint = 40; // Фиксированное значение в пикселях
-    const width = element.offsetWidth; // Получаем текущую ширину элемента
-    const position = element.getAttribute("data-clip-position"); // Получаем позицию (left или right)
-
-    let updatedClipPathValue;
-
-    if (position === "right") {
-      // Позиция от правого края
-      const rightPoint = width - fixedPoint; // Позиция от правого края
-      updatedClipPathValue = clipPathValue.replace(
-        /(\d+)px/,
-        `${rightPoint}px`
-      );
-    } else if (position === "left") {
-      // Позиция от левого края
-      const leftPoint = fixedPoint; // Позиция от левого края
-      updatedClipPathValue = clipPathValue.replace(/(\d+)px/, `${leftPoint}px`);
-    }
-
-    element.style.clipPath = updatedClipPathValue;
-  });
-}
-
-// Обновляем clip-path при загрузке и изменении размера окна
-window.addEventListener("load", updateClipPath);
-window.addEventListener("resize", updateClipPath);
-
-function initExpandableFilterBlock(
-  containerSelector = ".filter-block__card_content"
-) {
-  document.querySelectorAll(containerSelector).forEach((block) => {
-    const items = block.querySelectorAll(".main-input__checkbox");
-    const button = block.querySelector(".filter-block__card_more");
-
-    if (!button || items.length <= 4) {
-      if (button) button.style.display = "none";
-      return;
-    }
-
-    // Скрываем все элементы, начиная с 5-го
-    items.forEach((item, index) => {
-      if (index >= 4) item.style.display = "none";
-    });
-
-    let expanded = false;
-
-    button.addEventListener("click", () => {
-      expanded = !expanded;
-      items.forEach((item, index) => {
-        if (index >= 4) {
-          item.style.display = expanded ? "" : "none";
-        }
-      });
-      button.textContent = expanded ? "Скрыть" : "Показать все";
-    });
-  });
-}
-initExpandableFilterBlock();
-
-    const hamburgerButton = document.querySelector(".js-hamburger");
-const hamburgerMenu = document.querySelector(".js-hamburger-menu");
-const hamburgerMenuClose = document.querySelector(".js-hamburger-close");
-
-const hamburgerMenuBgClose = document.querySelector(".js-hamburger-bg-close");
-
-if (hamburgerMenuBgClose) {
-  hamburgerMenuBgClose.addEventListener("click", function () {
-    hamburgerMenu.classList.remove("active");
-    hamburgerButton.classList.remove("active");
-  });
-}
-if (hamburgerMenuClose) {
-  hamburgerMenuClose.addEventListener("click", function () {
-    hamburgerMenu.classList.remove("active");
-    hamburgerButton.classList.remove("active");
-  });
-}
-
-/* Категория */
-(function initCategoryMenu() {
-  // Получаем элементы внутри функции
-  const buttons = document.querySelectorAll("[data-category-target]");
-  const menus = document.querySelectorAll("[data-category-id]");
-
-  // Текущее активное меню (запоминаем последнее выбранное)
-  let currentActiveMenu = null;
-
-  // Функция для активации меню
-  function activateMenu(targetId) {
-    // Удаляем активные классы у всех элементов
-    buttons.forEach((button) => button.classList.remove("active"));
-    menus.forEach((menu) => menu.classList.remove("active"));
-
-    // Активируем нужные элементы
-    const activeButton = document.querySelector(
-      `[data-category-target="${targetId}"]`
-    );
-    const activeMenu = document.querySelector(
-      `[data-category-id="${targetId}"]`
-    );
-
-    if (activeButton) activeButton.classList.add("active");
-    if (activeMenu) {
-      activeMenu.classList.add("active");
-      currentActiveMenu = targetId; // Запоминаем текущее активное меню
-    }
-  }
-
-  // Обработчики событий для кнопок
-  function setupButtonEvents() {
-    buttons.forEach((button) => {
-      button.addEventListener("mouseenter", function () {
-        const targetId = this.getAttribute("data-category-target");
-        activateMenu(targetId);
-      });
-
-      // Убрали обработчик mouseleave для кнопок, чтобы меню не скрывалось
-    });
-  }
-
-  // Инициализация
-  setupButtonEvents();
-
-  // Активируем первый элемент по умолчанию
-  if (buttons.length > 0) {
-    const firstTarget = buttons[0].getAttribute("data-category-target");
-    activateMenu(firstTarget);
-  }
-})();
-
-/* new-reviews */
-(function () {
-  const content = document.querySelector(".new-reviews__content");
-
-  if (content) {
-    content.addEventListener("mousedown", (e) => {
-      let isDown = true;
-      let startX = e.pageX - content.offsetLeft;
-      let scrollLeft = content.scrollLeft;
-
-      content.classList.add("active");
-
-      const mouseMoveHandler = (e) => {
-        if (!isDown) return; // Если мышь не нажата, выходим
-        e.preventDefault();
-        const x = e.pageX - content.offsetLeft;
-        const walk = (x - startX) * 2; // Увеличьте или уменьшите скорость прокрутки
-        content.scrollLeft = scrollLeft - walk;
-      };
-
-      const mouseUpHandler = () => {
-        isDown = false;
-        content.classList.remove("active");
-        document.removeEventListener("mousemove", mouseMoveHandler);
-        document.removeEventListener("mouseup", mouseUpHandler);
-      };
-
-      document.addEventListener("mousemove", mouseMoveHandler);
-      document.addEventListener("mouseup", mouseUpHandler);
-    });
-
-    content.addEventListener("mouseleave", () => {
-      content.classList.remove("active");
-    });
-  }
-})();
-
-    document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
-  const trigger = selectElement.querySelector("[data-select-trigger]");
-  const optionsContainer = selectElement.querySelector("[data-select-options]");
-  const options = selectElement.querySelectorAll("[data-select-option]");
-  const hiddenInput = selectElement.querySelector("[data-select-input]");
-
-  trigger.addEventListener("click", () => {
-    const isOpen = optionsContainer.style.display === "block";
-    document
-      .querySelectorAll("[data-custom-select] [data-select-options]")
-      .forEach((container) => (container.style.display = "none"));
-    document
-      .querySelectorAll("[data-custom-select] [data-select-trigger]")
-      .forEach((trg) => trg.classList.remove("open"));
-    if (!isOpen) {
-      optionsContainer.style.display = "block";
-      trigger.classList.add("open");
-    }
-  });
-
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      const value = option.getAttribute("data-value");
-      const flagSrc = option.getAttribute("data-flag");
-
-      trigger.querySelector("img").setAttribute("src", flagSrc);
-      hiddenInput.value = value;
-
-      optionsContainer.style.display = "none";
-      trigger.classList.remove("open");
-
-      options.forEach((opt) => opt.classList.remove("active"));
-      option.classList.add("active");
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!selectElement.contains(e.target)) {
-      optionsContainer.style.display = "none";
-      trigger.classList.remove("open");
-    }
-  });
-
-  const firstOption = options[0];
-  trigger
-    .querySelector("img")
-    .setAttribute("src", firstOption.getAttribute("data-flag"));
-  hiddenInput.value = firstOption.getAttribute("data-value");
-  firstOption.classList.add("active");
-});
 
 
 });
