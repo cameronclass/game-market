@@ -351,3 +351,11 @@
         text-align: center;
     }
 }
+
+.new-index-mobile__btn {
+    display: none;
+
+    @include mobile {
+        display: flex;
+    }
+}

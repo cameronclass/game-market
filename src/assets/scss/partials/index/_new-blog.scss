@@ -39,6 +39,7 @@
       position: relative;
       z-index: 1;
     }
+
     &_button {
       border-radius: 14px;
       background: #22211e;
@@ -48,10 +49,15 @@
       z-index: 1;
       font-size: 14px;
 
+      @include mobile {
+        border-radius: 12px;
+      }
+
       &:hover {
         background: #ff6c3d;
       }
     }
+
     &_img {
       position: absolute;
       right: 0;
@@ -66,18 +72,22 @@
     width: 100%;
     border-radius: 24px;
     background: #191816;
-    padding: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mobile {
+      border-radius: 16px;
+    }
 
     &_heading {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 10px;
     }
 
-    &_content {
-      margin-top: 10px;
-    }
+    &_content {}
   }
 }
 

@@ -2,8 +2,7 @@
   margin-top: 70px;
   margin-bottom: 70px;
 
-  &__block {
-  }
+  &__block {}
 
   &__heading {
     display: flex;
@@ -51,6 +50,23 @@
   &__title {
     width: 100%;
     max-width: 350px;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      margin-bottom: 20px;
+      gap: 12px;
+
+      .new-block__title_icon {
+        height: 42px;
+      }
+
+      .new-block__title_text {
+        font-size: 24px;
+      }
+    }
   }
 
   &__cards {
@@ -76,16 +92,19 @@
     &:hover {
       background: #2c2b27;
     }
+
     &_title {
       font-size: 20px;
       font-weight: 500;
       color: white;
       line-height: 1.2;
     }
+
     &_img {
       height: 50px;
       margin-bottom: 7px;
     }
+
     &_count {
       font-size: 16px;
       color: #847f7d;
@@ -101,6 +120,11 @@
     font-family: $font-roboto;
     transition: 300ms ease;
 
+    @include mobile {
+      max-width: 100%;
+      min-width: 100%;
+    }
+
     &:hover {
       background: #33322d;
     }
@@ -110,12 +134,14 @@
       color: white;
       font-weight: 500;
     }
+
     &_subtitle {
       font-size: 12px;
       font-weight: 300;
       color: white;
       margin-top: 4px;
     }
+
     &_text {
       font-size: 10px;
       color: #ebe2d0;
