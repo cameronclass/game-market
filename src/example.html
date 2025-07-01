@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Cards Adaptive Slider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        /* Ваши существующие стили */
+        .new-steam__cards {
+            display: grid;
+            grid-template-columns: minmax(320px, 500px) minmax(500px, 790px);
+            gap: 8px;
+        }
+
+        .new-steam__card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 16px;
+            background: #22211e;
+            padding: 20px;
+            position: relative;
+            font-family: 'Roboto', sans-serif;
+            transition: 300ms ease;
+        }
+
+        .new-steam__card:hover {
+            background: #2c2b27;
+        }
+
+        .new-steam__card_icon {
+            height: 34px;
+            margin-bottom: 20px;
+        }
+
+        .new-steam__card_icon--partner {
+            height: 110px;
+            width: auto;
+            margin: 0;
+            margin-top: 20px;
+        }
+
+        .new-steam__card_title {
+            font-size: 24px;
+            color: #c3b8a2;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .new-steam__card_subtitle {
+            font-size: 16px;
+            color: #c3b8a2;
+        }
+
+        .new-steam__card--steam {
+            text-align: center;
+        }
+
+        .new-steam__card--discount {
+            text-align: center;
+            background: rgb(67, 53, 47);
+            background: linear-gradient(45deg,
+                    rgba(67, 53, 47, 1) 0%,
+                    rgba(49, 45, 42, 1) 20%,
+                    rgba(49, 45, 42, 1) 80%,
+                    rgba(67, 53, 47, 1) 100%);
+            transition: 300ms ease;
+        }
+
+        .new-steam__card--discount:hover {
+            background: rgb(54, 38, 30);
+            background: linear-gradient(45deg,
+                    rgba(54, 38, 30, 1) 0%,
+                    rgba(32, 26, 22, 1) 20%,
+                    rgba(32, 26, 22, 1) 80%,
+                    rgba(54, 38, 30, 1) 100%);
+        }
+
+        .new-steam__card--partner {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+
+        /* Стили для слайдера */
+        .new-steam__cards.swiper {
+            display: block;
+        }
+
+        .new-steam__cards.swiper .swiper-wrapper {
+            display: flex;
+        }
+
+        .new-steam__cards.swiper .swiper-slide {
+            height: auto;
+            width: auto;
+        }
+
+        .new-steam__cards .swiper-pagination {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .new-steam__cards .swiper-pagination-bullet {
+            background: #c3b8a2;
+            opacity: 0.5;
+        }
+
+        .new-steam__cards .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        /* Мобильные стили */
+        @media (max-width: 768px) {
+            .new-steam__cards {
+                grid-template-columns: auto;
+            }
+
+            .new-steam__card--partner {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                grid-column: auto;
+            }
+
+            .new-steam__card--partner .new-steam__card_heading {
+                margin-bottom: 20px;
+            }
+
+            .new-steam__card_icon--partner {
+                margin-top: 0;
+            }
+
+            .new-steam__card_title {
+                font-size: 20px;
+            }
+
+            .new-steam__card_subtitle {
+                font-size: 14px;
+            }
+        }
+
+        /* Демо стили для фона */
+        body {
+            background: #1a1917;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="new-steam__cards">
+            <div class="new-steam__card new-steam__card--steam">
+                <div class="new-steam__card_icon"
+                    style="background: #c3b8a2; border-radius: 50%; width: 34px; height: 34px; margin: 0 auto 20px;">
+                </div>
+                <div class="new-steam__card_title">Пополнение По логину</div>
+                <div class="new-steam__card_subtitle">Моментально и безопасно</div>
+            </div>
+            <div class="new-steam__card new-steam__card--discount">
+                <div class="new-steam__card_icon"
+                    style="background: #c3b8a2; border-radius: 50%; width: 34px; height: 34px; margin: 0 auto 20px;">
+                </div>
+                <div class="new-steam__card_title">Самый низкий процент пополнения</div>
+                <div class="new-steam__card_subtitle">Вы тратите меньше чем у наших конкурентов</div>
+            </div>
+            <div class="new-steam__card new-steam__card--partner">
+                <div class="new-steam__card_heading">
+                    <div class="new-steam__card_title">Бонусная программа при каждом пополнении</div>
+                    <div class="new-steam__card_subtitle">Система накоплений и поощрений каждому пользователю</div>
+                </div>
+                <div class="new-steam__card_img">
+                    <div class="new-steam__card_icon new-steam__card_icon--partner"
+                        style="background: #c3b8a2; border-radius: 8px; width: 110px; height: 110px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let swiperInstance = null;
+
+        function toggleSlider() {
+            const container = document.querySelector('.new-steam__cards');
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile && !swiperInstance) {
+                // Превращаем в слайдер
+                container.classList.add('swiper');
+
+                // Создаем wrapper и оборачиваем карточки
+                const cards = Array.from(container.children);
+                const swiperWrapper = document.createElement('div');
+                swiperWrapper.className = 'swiper-wrapper';
+
+                cards.forEach(card => {
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    slide.appendChild(card);
+                    swiperWrapper.appendChild(slide);
+                });
+
+                container.appendChild(swiperWrapper);
+
+                // Добавляем пагинацию
+                const pagination = document.createElement('div');
+                pagination.className = 'swiper-pagination';
+                container.appendChild(pagination);
+
+                // Инициализируем Swiper
+                swiperInstance = new Swiper('.new-steam__cards', {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        480: {
+                            slidesPerView: 1.2,
+                            spaceBetween: 16,
+                        }
+                    }
+                });
+
+            } else if (!isMobile && swiperInstance) {
+                // Возвращаем к гриду
+                swiperInstance.destroy(true, true);
+                swiperInstance = null;
+
+                container.classList.remove('swiper');
+
+                // Извлекаем карточки из слайдов и возвращаем в контейнер
+                const slides = container.querySelectorAll('.swiper-slide');
+                const cards = [];
+
+                slides.forEach(slide => {
+                    const card = slide.querySelector('.new-steam__card');
+                    if (card) {
+                        cards.push(card);
+                    }
+                });
+
+                // Очищаем контейнер и добавляем карточки обратно
+                container.innerHTML = '';
+                cards.forEach(card => {
+                    container.appendChild(card);
+                });
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function () {
+            toggleSlider();
+        });
+
+        // Переключение при изменении размера окна
+        window.addEventListener('resize', function () {
+            toggleSlider();
+        });
+    </script>
+</body>
+
+</html>

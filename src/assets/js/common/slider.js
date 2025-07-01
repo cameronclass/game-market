@@ -434,3 +434,87 @@ if (steamHistory) {
   });
   steamHistorySplide.mount(window.splide.Extensions);
 }
+
+/* Steam Mobile Swipe */
+let swiperSteamInstance = null;
+
+function toggleSteamSlider() {
+  const container = document.querySelector(".new-steam__cards");
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile && !swiperSteamInstance) {
+    // Превращаем в слайдер
+    container.classList.add("swiper");
+
+    // Создаем wrapper и оборачиваем карточки
+    const cards = Array.from(container.children);
+    const swiperWrapper = document.createElement("div");
+    swiperWrapper.className = "swiper-wrapper";
+
+    cards.forEach((card) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
+      slide.appendChild(card);
+      swiperWrapper.appendChild(slide);
+    });
+
+    container.appendChild(swiperWrapper);
+
+    // Добавляем пагинацию
+    const pagination = document.createElement("div");
+    pagination.className = "swiper-pagination";
+    container.appendChild(pagination);
+
+    // Инициализируем Swiper
+    swiperSteamInstance = new Swiper(".new-steam__cards", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      pagination: {
+        el: ".new-steam__cards .swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".new-steam__arrows .new-arrow-right",
+        prevEl: ".new-steam__arrows .new-arrow-left",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        },
+      },
+    });
+  } else if (!isMobile && swiperSteamInstance) {
+    // Возвращаем к гриду
+    swiperSteamInstance.destroy(true, true);
+    swiperSteamInstance = null;
+
+    container.classList.remove("swiper");
+
+    // Извлекаем карточки из слайдов и возвращаем в контейнер
+    const slides = container.querySelectorAll(".swiper-slide");
+    const cards = [];
+
+    slides.forEach((slide) => {
+      const card = slide.querySelector(".new-steam__card");
+      if (card) {
+        cards.push(card);
+      }
+    });
+
+    // Очищаем контейнер и добавляем карточки обратно
+    container.innerHTML = "";
+    cards.forEach((card) => {
+      container.appendChild(card);
+    });
+  }
+}
+
+// Инициализация при загрузке страницы
+
+toggleSteamSlider();
+
+// Переключение при изменении размера окна
+window.addEventListener("resize", function () {
+  toggleSteamSlider();
+});
