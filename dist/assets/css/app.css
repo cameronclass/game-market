@@ -9657,7 +9657,7 @@ input[type=number] {
   align-items: center;
   flex-direction: column;
   gap: 15px;
-  padding: 50px 15px 50px;
+  padding: 180px 15px 50px;
   overflow-y: auto;
   transition: 200ms ease;
   opacity: 0;
@@ -19231,14 +19231,6 @@ input:checked + .contract-offer__slider:before {
   gap: 10px;
   padding: 10px 15px;
   height: 50px;
-  background-color: #ff6c3d;
-  border-color: #ff6c3d;
-}
-.new-header__category:hover {
-  border-color: #ebe2d0;
-}
-.new-header__category:focus {
-  border-color: #ff6c3d;
 }
 .new-header__category.active {
   background: #ebe2d0;

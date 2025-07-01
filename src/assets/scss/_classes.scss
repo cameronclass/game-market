@@ -9,7 +9,7 @@
     padding: 0;
   }
 
-  @include mobile{
+  @include mobile {
     padding: 0 6px;
   }
 }
@@ -83,12 +83,9 @@
   color: white;
   overflow: hidden;
   border-radius: 50px;
-  background: linear-gradient(
-        175.53deg,
-        rgb(52, 45, 39) 0%,
-        rgb(34, 34, 32) 67.445%
-      )
-      padding-box,
+  background: linear-gradient(175.53deg,
+      rgb(52, 45, 39) 0%,
+      rgb(34, 34, 32) 67.445%) padding-box,
     linear-gradient(to top, #ffffff1a 4%, #ff6c3d) border-box;
   border: 1px solid transparent;
   backdrop-filter: blur(17.549999237060547px);
@@ -217,12 +214,10 @@
     width: 100%;
     border-radius: 8px;
     border: 1px solid #55473e;
-    background: linear-gradient(
-      91deg,
-      rgba(43, 40, 35, 0.76) 0%,
-      rgba(39, 37, 31, 0.76) 63.74%,
-      rgba(44, 42, 39, 0.76) 101.17%
-    );
+    background: linear-gradient(91deg,
+        rgba(43, 40, 35, 0.76) 0%,
+        rgba(39, 37, 31, 0.76) 63.74%,
+        rgba(44, 42, 39, 0.76) 101.17%);
     backdrop-filter: blur(2px);
     text-align: center;
     display: flex;
@@ -345,11 +340,9 @@
     height: 100%;
     object-fit: cover;
     filter: brightness(0.3);
-    background: linear-gradient(
-      175.53deg,
-      rgba(52, 45, 39, 0.35),
-      rgba(34, 34, 32, 0.35) 67.445%
-    );
+    background: linear-gradient(175.53deg,
+        rgba(52, 45, 39, 0.35),
+        rgba(34, 34, 32, 0.35) 67.445%);
   }
 
   &__content {
@@ -362,11 +355,9 @@
     justify-content: center;
     height: 100%;
     gap: 0;
-    background: linear-gradient(
-      175.53deg,
-      rgba(52, 45, 39, 0.35),
-      rgba(34, 34, 32, 0.35) 67.445%
-    );
+    background: linear-gradient(175.53deg,
+        rgba(52, 45, 39, 0.35),
+        rgba(34, 34, 32, 0.35) 67.445%);
   }
 
   &__number {
@@ -545,20 +536,16 @@
     }
 
     &._pc .catalog__tab_drop_title::before {
-      background: radial-gradient(
-          259.04% 28.28% at 0% 50.91%,
+      background: radial-gradient(259.04% 28.28% at 0% 50.91%,
           rgba(119, 146, 216, 0.49) 0%,
-          rgba(119, 146, 216, 0) 38.5%
-        ),
+          rgba(119, 146, 216, 0) 38.5%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.51) 100%),
-        linear-gradient(
-          270deg,
+        linear-gradient(270deg,
           rgba(79, 79, 79, 0.35) 0%,
           rgba(72, 60, 54, 0.35) 31.28%,
           rgba(70, 66, 63, 0.35) 48.78%,
           rgba(72, 60, 54, 0.35) 70.71%,
-          rgba(79, 79, 79, 0.35) 100%
-        );
+          rgba(79, 79, 79, 0.35) 100%);
       backdrop-filter: blur(30.899999618530273px);
     }
 
@@ -581,20 +568,16 @@
     }
 
     &._ps .catalog__tab_drop_title::before {
-      background: radial-gradient(
-          259.04% 28.28% at 0% 50.91%,
+      background: radial-gradient(259.04% 28.28% at 0% 50.91%,
           rgba(200, 60, 86, 0.49) 0%,
-          rgba(200, 60, 86, 0) 38.5%
-        ),
+          rgba(200, 60, 86, 0) 38.5%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.51) 100%),
-        linear-gradient(
-          270deg,
+        linear-gradient(270deg,
           rgba(79, 79, 79, 0.35) 0%,
           rgba(72, 60, 54, 0.35) 31.28%,
           rgba(70, 66, 63, 0.35) 48.78%,
           rgba(72, 60, 54, 0.35) 70.71%,
-          rgba(79, 79, 79, 0.35) 100%
-        );
+          rgba(79, 79, 79, 0.35) 100%);
       backdrop-filter: blur(30.899999618530273px);
     }
 
@@ -617,20 +600,16 @@
     }
 
     &._xbox .catalog__tab_drop_title::before {
-      background: radial-gradient(
-          259.04% 28.28% at 0% 50.91%,
+      background: radial-gradient(259.04% 28.28% at 0% 50.91%,
           rgba(129, 215, 127, 0.49) 0%,
-          rgba(129, 215, 127, 0) 38.5%
-        ),
+          rgba(129, 215, 127, 0) 38.5%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.51) 100%),
-        linear-gradient(
-          270deg,
+        linear-gradient(270deg,
           rgba(79, 79, 79, 0.35) 0%,
           rgba(72, 60, 54, 0.35) 31.28%,
           rgba(70, 66, 63, 0.35) 48.78%,
           rgba(72, 60, 54, 0.35) 70.71%,
-          rgba(79, 79, 79, 0.35) 100%
-        );
+          rgba(79, 79, 79, 0.35) 100%);
       backdrop-filter: blur(30.899999618530273px);
     }
 
@@ -653,20 +632,16 @@
     }
 
     &._nintendo .catalog__tab_drop_title::before {
-      background: radial-gradient(
-          259.04% 28.28% at 0% 50.91%,
+      background: radial-gradient(259.04% 28.28% at 0% 50.91%,
           rgba(233, 74, 53, 0.49) 0%,
-          rgba(233, 74, 53, 0) 38.5%
-        ),
+          rgba(233, 74, 53, 0) 38.5%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.51) 100%),
-        linear-gradient(
-          270deg,
+        linear-gradient(270deg,
           rgba(79, 79, 79, 0.35) 0%,
           rgba(72, 60, 54, 0.35) 31.28%,
           rgba(70, 66, 63, 0.35) 48.78%,
           rgba(72, 60, 54, 0.35) 70.71%,
-          rgba(79, 79, 79, 0.35) 100%
-        );
+          rgba(79, 79, 79, 0.35) 100%);
       backdrop-filter: blur(30.899999618530273px);
     }
 
@@ -689,20 +664,16 @@
     }
 
     &._gift .catalog__tab_drop_title::before {
-      background: radial-gradient(
-          259.04% 28.28% at 0% 50.91%,
+      background: radial-gradient(259.04% 28.28% at 0% 50.91%,
           rgba(140, 109, 180, 0.49) 0%,
-          rgba(140, 109, 180, 0) 38.5%
-        ),
+          rgba(140, 109, 180, 0) 38.5%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.51) 100%),
-        linear-gradient(
-          270deg,
+        linear-gradient(270deg,
           rgba(79, 79, 79, 0.35) 0%,
           rgba(72, 60, 54, 0.35) 31.28%,
           rgba(70, 66, 63, 0.35) 48.78%,
           rgba(72, 60, 54, 0.35) 70.71%,
-          rgba(79, 79, 79, 0.35) 100%
-        );
+          rgba(79, 79, 79, 0.35) 100%);
       backdrop-filter: blur(30.899999618530273px);
     }
 
@@ -725,20 +696,16 @@
     }
 
     &._subs .catalog__tab_drop_title::before {
-      background: radial-gradient(
-          259.04% 28.28% at 0% 50.91%,
+      background: radial-gradient(259.04% 28.28% at 0% 50.91%,
           rgba(118, 154, 112, 0.49) 0%,
-          rgba(118, 154, 112, 0) 38.5%
-        ),
+          rgba(118, 154, 112, 0) 38.5%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.51) 100%),
-        linear-gradient(
-          270deg,
+        linear-gradient(270deg,
           rgba(79, 79, 79, 0.35) 0%,
           rgba(72, 60, 54, 0.35) 31.28%,
           rgba(70, 66, 63, 0.35) 48.78%,
           rgba(72, 60, 54, 0.35) 70.71%,
-          rgba(79, 79, 79, 0.35) 100%
-        );
+          rgba(79, 79, 79, 0.35) 100%);
       backdrop-filter: blur(30.899999618530273px);
     }
 
@@ -761,20 +728,16 @@
     }
 
     &._gamepoint .catalog__tab_drop_title::before {
-      background: radial-gradient(
-          259.04% 28.28% at 0% 50.91%,
+      background: radial-gradient(259.04% 28.28% at 0% 50.91%,
           rgba(255, 160, 49, 0.49) 0%,
-          rgba(255, 160, 49, 0) 38.5%
-        ),
+          rgba(255, 160, 49, 0) 38.5%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 0.51) 100%),
-        linear-gradient(
-          270deg,
+        linear-gradient(270deg,
           rgba(79, 79, 79, 0.35) 0%,
           rgba(72, 60, 54, 0.35) 31.28%,
           rgba(70, 66, 63, 0.35) 48.78%,
           rgba(72, 60, 54, 0.35) 70.71%,
-          rgba(79, 79, 79, 0.35) 100%
-        );
+          rgba(79, 79, 79, 0.35) 100%);
       backdrop-filter: blur(30.899999618530273px);
     }
 
@@ -1167,14 +1130,12 @@
 
     @media (min-width: 768px) {
       &:hover {
-        background: linear-gradient(
-          268.85deg,
-          rgba(79, 79, 79, 0.35) 0.269%,
-          rgba(72, 60, 54, 0.35) 31.412%,
-          rgba(70, 66, 63, 0.35) 48.847%,
-          rgba(72, 60, 54, 0.35) 70.685%,
-          rgba(79, 79, 79, 0.35) 99.848%
-        );
+        background: linear-gradient(268.85deg,
+            rgba(79, 79, 79, 0.35) 0.269%,
+            rgba(72, 60, 54, 0.35) 31.412%,
+            rgba(70, 66, 63, 0.35) 48.847%,
+            rgba(72, 60, 54, 0.35) 70.685%,
+            rgba(79, 79, 79, 0.35) 99.848%);
 
         .catalog__tab_drop {
           visibility: visible;
@@ -1184,14 +1145,12 @@
     }
 
     &.active {
-      background: linear-gradient(
-        268.85deg,
-        rgba(79, 79, 79, 0.35) 0.269%,
-        rgba(72, 60, 54, 0.35) 31.412%,
-        rgba(70, 66, 63, 0.35) 48.847%,
-        rgba(72, 60, 54, 0.35) 70.685%,
-        rgba(79, 79, 79, 0.35) 99.848%
-      );
+      background: linear-gradient(268.85deg,
+          rgba(79, 79, 79, 0.35) 0.269%,
+          rgba(72, 60, 54, 0.35) 31.412%,
+          rgba(70, 66, 63, 0.35) 48.847%,
+          rgba(72, 60, 54, 0.35) 70.685%,
+          rgba(79, 79, 79, 0.35) 99.848%);
 
       .catalog__tab_drop {
         visibility: visible;
@@ -1224,14 +1183,12 @@
     width: 100%;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(
-      270deg,
-      rgba(79, 79, 79, 0.35) 0%,
-      rgba(72, 60, 54, 0.35) 31.28%,
-      rgba(70, 66, 63, 0.35) 48.78%,
-      rgba(72, 60, 54, 0.35) 70.71%,
-      rgba(79, 79, 79, 0.35) 100%
-    );
+    background: linear-gradient(270deg,
+        rgba(79, 79, 79, 0.35) 0%,
+        rgba(72, 60, 54, 0.35) 31.28%,
+        rgba(70, 66, 63, 0.35) 48.78%,
+        rgba(72, 60, 54, 0.35) 70.71%,
+        rgba(79, 79, 79, 0.35) 100%);
     display: none;
     justify-content: flex-end;
     align-items: center;
@@ -1320,8 +1277,7 @@
 
   &:hover {
     .search-block__icon {
-      filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%)
-        hue-rotate(329deg) brightness(102%) contrast(100%);
+      filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
     }
 
     .search-block__input::placeholder {
@@ -1418,8 +1374,7 @@
     color: white;
   }
 
-  &:hover {
-  }
+  &:hover {}
 }
 
 .pagination {
@@ -1590,11 +1545,9 @@
       top: 0;
       left: 0;
       z-index: 1;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(28, 27, 25, 0.91) 66.5%
-      );
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(28, 27, 25, 0.91) 66.5%);
     }
 
     &_block {
@@ -1649,12 +1602,10 @@
 
   &__card {
     border-radius: 20px;
-    background: linear-gradient(
-      91deg,
-      rgba(51, 50, 49, 0.35) 0%,
-      rgba(79, 79, 79, 0.17) 63.74%,
-      rgba(79, 79, 79, 0.35) 101.17%
-    );
+    background: linear-gradient(91deg,
+        rgba(51, 50, 49, 0.35) 0%,
+        rgba(79, 79, 79, 0.17) 63.74%,
+        rgba(79, 79, 79, 0.35) 101.17%);
     padding: 30px 40px;
     height: 100%;
 
@@ -1698,8 +1649,7 @@
       width: 58px;
       position: relative;
 
-      &_bg {
-      }
+      &_bg {}
 
       &_icon {
         width: 30px;
@@ -1713,8 +1663,7 @@
 
       &:hover {
         .pre-order__card_link_bg {
-          filter: brightness(0) saturate(100%) invert(46%) sepia(78%)
-            saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
+          filter: brightness(0) saturate(100%) invert(46%) sepia(78%) saturate(646%) hue-rotate(329deg) brightness(102%) contrast(100%);
         }
       }
     }
@@ -1931,7 +1880,7 @@
   input {
     display: none;
 
-    &:checked ~ span {
+    &:checked~span {
       color: white;
       border-color: $orange;
     }
@@ -2241,11 +2190,9 @@
   &__promo {
     border-radius: 10px;
     border: 1px solid #ff6c3d;
-    background: linear-gradient(
-        0deg,
+    background: linear-gradient(0deg,
         rgba(29, 27, 25, 0.96) 0%,
-        rgba(29, 27, 25, 0.96) 100%
-      ),
+        rgba(29, 27, 25, 0.96) 100%),
       url(<path-to-image>) lightgray 50% / cover no-repeat;
     box-shadow: 0px 4px 28.9px 0px #000;
     backdrop-filter: blur(33.650001525878906px);
@@ -2353,7 +2300,7 @@
   align-items: center;
   flex-direction: column;
   gap: 15px;
-  padding: 50px 15px 50px;
+  padding: 180px 15px 50px;
   overflow-y: auto;
   transition: 200ms ease;
   opacity: 0;
@@ -2394,8 +2341,7 @@
     margin-bottom: 9px;
   }
 
-  &__text {
-  }
+  &__text {}
 }
 
 ._discount {
