@@ -69,27 +69,6 @@ if (hamburgerMenuClose) {
   }
 })();
 
-/* Скролл Меню */
-let lastScrollTop = 0;
-window.addEventListener("scroll", function () {
-  const header = document.querySelector(".new-header");
-  const currentScroll = window.scrollY;
-
-  if (currentScroll > lastScrollTop && currentScroll > 50) {
-    header.classList.add("active");
-
-    // Закрываем меню и кнопку при скролле вниз
-    if (hamburgerMenu && hamburgerButton) {
-      hamburgerMenu.classList.remove("active");
-      hamburgerButton.classList.remove("active");
-    }
-  } else if (currentScroll < lastScrollTop) {
-    header.classList.remove("active");
-  }
-
-  lastScrollTop = currentScroll;
-});
-
 /* new-reviews */
 (function () {
   const content = document.querySelector(".new-reviews__content");

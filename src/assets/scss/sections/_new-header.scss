@@ -14,6 +14,20 @@
       transition: visibility 0s linear 0s, opacity 0ms ease, height 150ms ease,
         padding 150ms ease;
     }
+
+    .js-hamburger-header-button {
+      visibility: visible;
+      opacity: 1;
+      display: flex;
+
+      @include mobile{
+        display: none;
+      }
+    }
+  }
+
+  .js-hamburger-header-button {
+    display: none;
   }
 
   &__block {
@@ -60,13 +74,11 @@
       width: 100%;
       height: 10px;
       border-top: 1px solid #391d14;
-      background: linear-gradient(
-        90deg,
-        #ff6c3d50 0%,
-        rgba(14, 13, 12, 0) 20%,
-        rgba(14, 13, 12, 0) 80%,
-        #ff6c3d50 100%
-      );
+      background: linear-gradient(90deg,
+          #ff6c3d50 0%,
+          rgba(14, 13, 12, 0) 20%,
+          rgba(14, 13, 12, 0) 80%,
+          #ff6c3d50 100%);
     }
   }
 
@@ -131,6 +143,7 @@
     transition: 100ms;
 
     &:hover {
+
       .hamburger-inner,
       .hamburger-inner::before,
       .hamburger-inner::after {
@@ -301,6 +314,7 @@
       gap: 10px;
       padding: 5px 10px;
     }
+
     &-text {
       padding-right: 10px;
     }
@@ -314,6 +328,15 @@
     padding: 10px 15px;
     height: 50px;
     background-color: $orange;
+    border-color: $orange;
+
+    &:hover {
+      border-color: #ebe2d0;
+    }
+
+    &:focus {
+      border-color: $orange;
+    }
 
     &.active {
       background: #ebe2d0;
@@ -354,6 +377,10 @@
   position: fixed;
   z-index: 99;
   top: 160px;
+
+  &.position{
+    top: 90px;
+  }
 
   &__wrapper {
     position: relative;
@@ -426,6 +453,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 10px;
+
         svg {
           width: 22px;
           height: 22px;
@@ -447,6 +475,7 @@
 
         .new-header-category__main-btn-icon {
           border-color: #ebe2d0;
+
           svg path {
             fill: #ebe2d0;
           }
@@ -562,6 +591,7 @@
   }
 
   &.is-active {
+
     .hamburger-inner,
     .hamburger-inner:after,
     .hamburger-inner:before {
@@ -610,6 +640,7 @@
   }
 
   &--boring {
+
     .hamburger-inner,
     .hamburger-inner:after,
     .hamburger-inner:before {

@@ -64,11 +64,30 @@ function serve() {
       baseDir: "./" + distPath,
     },
     notify: false,
+    open: false, // не открывать браузер автоматически
+    reloadDelay: 300, // добавляем задержку для уменьшения нагрузки
   });
 }
 
 function html(cb) {
   panini.refresh();
+  return src(path.src.html, { base: srcPath })
+    .pipe(plumber())
+    .pipe(
+      panini({
+        root: srcPath,
+        layouts: srcPath + "layouts/",
+        partials: srcPath + "partials/",
+        helpers: srcPath + "helpers/",
+        data: srcPath + "data/",
+      })
+    )
+    .pipe(dest(path.build.html))
+    .pipe(browserSync.stream());
+}
+
+// Отдельная задача для production HTML
+function htmlBuild(cb) {
   return src(path.src.html, { base: srcPath })
     .pipe(plumber())
     .pipe(
@@ -87,13 +106,33 @@ function html(cb) {
         unformatted: ["code", "pre", "em", "strong", "span", "i", "b", "br"],
       })
     )
-    .pipe(dest(path.build.html))
-    .pipe(browserSync.stream());
-
-  cb();
+    .pipe(dest(path.build.html));
 }
 
 function css(cb) {
+  return src(path.src.css, { base: srcPath + "assets/scss/" })
+    .pipe(
+      plumber({
+        errorHandler: function (err) {
+          notify.onError({
+            title: "SCSS Error",
+            message: "Error: <%= error.message %>",
+          })(err);
+          this.emit("end");
+        },
+      })
+    )
+    .pipe(
+      sass({
+        includePaths: "./node_modules/",
+      })
+    )
+    .pipe(dest(path.build.css))
+    .pipe(browserSync.stream());
+}
+
+// Отдельная задача для production CSS
+function cssBuild(cb) {
   return src(path.src.css, { base: srcPath + "assets/scss/" })
     .pipe(
       plumber({
@@ -117,7 +156,7 @@ function css(cb) {
       })
     )
     .pipe(cssbeautify())
-    .pipe(dest(path.build.css))
+    .pipe(dest(path.build.css)) // Сначала записываем в выходную директорию
     .pipe(
       cssnano({
         zindex: false,
@@ -127,62 +166,12 @@ function css(cb) {
       })
     )
     .pipe(removeComments())
-    .pipe(dest(path.build.css))
-    .pipe(browserSync.reload({ stream: true }));
-
-  cb();
+    .pipe(dest(path.build.css)); // Записываем минимизированный CSS
 }
 
-function cssWatch(cb) {
-  return src(path.src.css, { base: srcPath + "assets/scss/" })
-    .pipe(
-      plumber({
-        errorHandler: function (err) {
-          notify.onError({
-            title: "SCSS Error",
-            message: "Error: <%= error.message %>",
-          })(err);
-          this.emit("end");
-        },
-      })
-    )
-    .pipe(
-      sass({
-        includePaths: "./node_modules/",
-      })
-    )
-    .pipe(dest(path.build.css))
-    .pipe(browserSync.reload({ stream: true }));
-
-  cb();
-}
 
 function js(cb) {
-  return (
-    src(path.src.js, { base: srcPath + "assets/js/" })
-      .pipe(
-        plumber({
-          errorHandler: function (err) {
-            notify.onError({
-              title: "JS Error",
-              message: "Error: <%= error.message %>",
-            })(err);
-            this.emit("end");
-          },
-        })
-      )
-      .pipe(fileinclude())
-      /* .pipe(uglify()) */
-
-      .pipe(dest(path.build.js))
-      .pipe(browserSync.reload({ stream: true }))
-  );
-
-  cb();
-}
-
-function jsWatch(cb) {
-  return src(path.watch.js, { base: srcPath + "assets/js/" })
+  return src(path.src.js, { base: srcPath + "assets/js/" })
     .pipe(
       plumber({
         errorHandler: function (err) {
@@ -195,14 +184,37 @@ function jsWatch(cb) {
       })
     )
     .pipe(fileinclude())
-    /* .pipe(uglify()) */
     .pipe(dest(path.build.js))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(browserSync.stream());
+}
 
-  cb();
+// Отдельная задача для production JS
+function jsBuild(cb) {
+  return src(path.src.js, { base: srcPath + "assets/js/" })
+    .pipe(
+      plumber({
+        errorHandler: function (err) {
+          notify.onError({
+            title: "JS Error",
+            message: "Error: <%= error.message %>",
+          })(err);
+          this.emit("end");
+        },
+      })
+    )
+    .pipe(fileinclude())
+    .pipe(uglify())
+    .pipe(dest(path.build.js));
 }
 
 function images(cb) {
+  return src(path.src.images)
+    .pipe(dest(path.build.images))
+    .pipe(browserSync.stream());
+}
+
+// Отдельная задача для production images
+function imagesBuild(cb) {
   return src(path.src.images)
     .pipe(
       imagemin([
@@ -214,26 +226,19 @@ function images(cb) {
         }),
       ])
     )
-    .pipe(dest(path.build.images))
-    .pipe(browserSync.reload({ stream: true }));
-
-  cb();
+    .pipe(dest(path.build.images));
 }
 
 function svg(cb) {
   return src(path.src.svg)
     .pipe(dest(path.build.images))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
 function txt(cb) {
   return src(path.src.txt)
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
-
-  cb();
 }
 
 function fonts(cb) {
@@ -242,30 +247,34 @@ function fonts(cb) {
     .pipe(ttf2woff2())
     .pipe(dest(path.build.fonts))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
 function clean(cb) {
   return del(path.clean);
-
-  cb();
 }
 
 function watchFiles() {
   gulp.watch([path.watch.html], html);
-  gulp.watch([path.watch.css], cssWatch);
-  gulp.watch([path.watch.js], jsWatch);
+  gulp.watch([path.watch.css], css);
+  gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.images], images);
   gulp.watch([path.watch.fonts], fonts);
   gulp.watch([path.watch.svg], svg);
   gulp.watch([path.watch.txt], txt);
 }
 
+// Сборка для разработки (development)
 const build = gulp.series(
   clean,
   gulp.parallel(html, css, js, images, fonts, svg, txt)
 );
+
+// Сборка для продакшена (production)
+const buildProd = gulp.series(
+  clean,
+  gulp.parallel(htmlBuild, cssBuild, jsBuild, imagesBuild, fonts, svg, txt)
+);
+
 const watch = gulp.parallel(build, watchFiles, serve);
 
 /* Exports Tasks */
@@ -278,5 +287,6 @@ exports.txt = txt;
 exports.fonts = fonts;
 exports.clean = clean;
 exports.build = build;
+exports.buildProd = buildProd;
 exports.watch = watch;
 exports.default = watch;

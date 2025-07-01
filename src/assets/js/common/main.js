@@ -1,4 +1,3 @@
-
 /* Аккордион */
 const accordions = document.querySelectorAll(".accordion");
 const openAccordion = (accordion) => {
@@ -86,29 +85,6 @@ timers.forEach((timer) => {
 
   updateTimer(timer, deadline);
 });
-
-/* Hamburger menu */
-/* const headerMenu = document.querySelector(".header__menu");
-const hamburgerButton = document.querySelector(".js-hamburger");
-const hamburgerMenu = document.querySelector(".js-hamburger-menu");
-const hamburgerMenuClose = document.querySelector(".js-hamburger-close");
-
-const logoMenuBg = document.querySelector(".logo-menu__bg");
-
-if (logoMenuBg) {
-  logoMenuBg.addEventListener("click", function () {
-    hamburgerMenu.classList.remove("active");
-    hamburgerButton.classList.remove("active");
-    headerMenu.classList.remove("active");
-  });
-}
-if (hamburgerMenuClose) {
-  hamburgerMenuClose.addEventListener("click", function () {
-    hamburgerMenu.classList.remove("active");
-    hamburgerButton.classList.remove("active");
-    headerMenu.classList.remove("active");
-  });
-} */
 
 /* Header Game */
 const headerGameBtns = document.querySelectorAll(".js-header-game-open");
@@ -272,16 +248,105 @@ setupTabs(".tab-btn-second", ".tab-content-second");
 setupTabs(".tab-btn-third", ".tab-content-third");
 setupTabs(".tab-btn-fourth", ".tab-content-fourth");
 
-window.addEventListener("scroll", function () {
-  let fixedCard = document.querySelector(".fixed-card");
+/* Верхняя кнопка */
+const hamburgerPositionButton = document.querySelector(
+  ".js-hamburger-header-button"
+);
+const hamburgerPositionMenu = document.querySelector(".js-hamburger-menu");
 
-  if (fixedCard)
-    if (window.scrollY >= 600) {
-      fixedCard.classList.add("active");
-    } else {
-      fixedCard.classList.remove("active");
-    }
+hamburgerPositionButton.addEventListener("click", function () {
+  hamburgerPositionMenu.classList.toggle("position");
 });
+
+const syncButtons = document.querySelectorAll(".js-hamburger");
+let lastScrollTopButtons = 0; // Переменная для хранения последнего положения прокрутки
+
+// Функция для синхронизации классов active
+function syncActiveClass() {
+  const isActive = buttons[0].classList.contains("active");
+  const isOtherActive = buttons[1].classList.contains("active");
+
+  // Если одна кнопка активна, а другая нет, обе становятся неактивными
+  if (isActive && !isOtherActive) {
+    buttons[0].classList.remove("active");
+    buttons[1].classList.remove("active");
+  } else if (!isActive && isOtherActive) {
+    buttons[0].classList.remove("active");
+    buttons[1].classList.remove("active");
+  }
+}
+
+// Обработчик клика
+syncButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    button.classList.toggle("active");
+    syncActiveClass();
+  });
+});
+
+// Обработчик прокрутки
+window.addEventListener("scroll", function () {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  // Проверяем, прокручивается ли вверх
+  if (scrollTop < lastScrollTopButtons) {
+    syncActiveClass();
+  }
+
+  lastScrollTopButtons = scrollTop; // Обновляем последнее положение прокрутки
+});
+
+/* Скролл Меню */
+let lastScrollTop = 0;
+const headerScroll = document.querySelector(".new-header");
+const fixedCardScroll = document.querySelector(".fixed-card");
+const hamburgerMenuScroll = document.querySelector(".js-hamburger-menu");
+const hamburgerButtonScroll = document.querySelector(".js-hamburger");
+const hamburgerHeaderButton = document.querySelector(
+  ".js-hamburger-header-button"
+);
+
+function handleScroll() {
+  const currentScroll = window.scrollY;
+
+  // Обработка шапки
+  if (headerScroll) {
+    if (currentScroll > lastScrollTop && currentScroll > 50) {
+      // Скролл вниз: скрыть шапку
+      headerScroll.classList.add("active");
+      // Закрыть гамбургер-меню
+      if (hamburgerMenuScroll && hamburgerButtonScroll) {
+        hamburgerHeaderButton.classList.add("active");
+        hamburgerMenuScroll.classList.remove("active");
+        hamburgerButtonScroll.classList.remove("active");
+        hamburgerPositionMenu.classList.remove("position");
+      }
+    } else if (currentScroll < lastScrollTop) {
+      // Скролл вверх: показать шапку
+      headerScroll.classList.remove("active");
+      hamburgerPositionMenu.classList.remove("position");
+    }
+  }
+
+  // Обработка карточки
+  if (fixedCardScroll) {
+    const shouldShowCard =
+      currentScroll > 600 &&
+      (!headerScroll || headerScroll.classList.contains("active"));
+
+    if (shouldShowCard) {
+      fixedCardScroll.classList.add("active");
+    } else {
+      fixedCardScroll.classList.remove("active");
+    }
+  }
+
+  lastScrollTop = currentScroll;
+}
+
+// Инициализация и обработка событий
+window.addEventListener("DOMContentLoaded", handleScroll);
+window.addEventListener("scroll", handleScroll);
 
 const scrollToTop = document.querySelector(".footer-to-top");
 
@@ -787,7 +852,6 @@ function setupToggleClassButtons() {
 }
 setupToggleClassButtons();
 
-
 const reviewCards = document.querySelectorAll(".home-other-reviews__card");
 const aboutReviewsBlock = document.querySelector(".about-reviews__block");
 
@@ -863,7 +927,6 @@ function updateClipPath() {
 window.addEventListener("load", updateClipPath);
 window.addEventListener("resize", updateClipPath);
 
-
 function initExpandableFilterBlock(
   containerSelector = ".filter-block__card_content"
 ) {
@@ -895,4 +958,3 @@ function initExpandableFilterBlock(
   });
 }
 initExpandableFilterBlock();
-
