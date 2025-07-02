@@ -1,54 +1,73 @@
-function setupToggleClassButtons() {
-  const addClassBtns = document.querySelectorAll(".add-class-btn");
+/* class ToggleClassManager {
+  constructor() {
+    this.stateMap = new Map();
+    this.buttons = document.querySelectorAll(".add-class-btn");
+    this.init();
+  }
 
-  const stateMap = new Map(); // хранит lastElements и lastButton по targetId
-
-  addClassBtns.forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetId = button.getAttribute("data-class-target");
-      const classToAdd = button.getAttribute("data-class-name");
-
-      const targetElements = document.querySelectorAll(
-        `[data-class-element="${targetId}"]`
-      );
-
-      if (targetElements.length === 0 || !classToAdd) return;
-
-      const isActive = Array.from(targetElements).some((el) =>
-        el.classList.contains(classToAdd)
-      );
-
-      const state = stateMap.get(targetId) || {
-        lastElements: [],
-        lastButton: null,
-      };
-
-      if (isActive) {
-        // Удалить класс у всех элементов с текущим targetId
-        targetElements.forEach((el) => el.classList.remove(classToAdd));
-        button.classList.remove(classToAdd);
-        stateMap.set(targetId, {
-          lastElements: [],
-          lastButton: null,
-        });
-      } else {
-        // Удалить с предыдущих элементов, если они есть
-        state.lastElements.forEach((el) => el.classList.remove(classToAdd));
-        if (state.lastButton && state.lastButton !== button) {
-          state.lastButton.classList.remove(classToAdd);
-        }
-
-        // Добавить класс к текущим элементам
-        targetElements.forEach((el) => el.classList.add(classToAdd));
-        button.classList.add(classToAdd);
-
-        // Обновить stateMap
-        stateMap.set(targetId, {
-          lastElements: Array.from(targetElements),
-          lastButton: button,
-        });
-      }
+  init() {
+    this.buttons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.handleButtonClick(button);
+      });
     });
-  });
+  }
+
+  handleButtonClick(button) {
+    const targetId = button.getAttribute("data-class-target");
+    const className = button.getAttribute("data-class-name");
+
+    if (!targetId || !className) return;
+
+    const targetElements = Array.from(
+      document.querySelectorAll(`[data-class-element="${targetId}"]`)
+    );
+
+    if (targetElements.length === 0) return;
+
+    const isActive = button.classList.contains(className);
+
+    if (isActive) {
+      this.deactivate(targetId, className);
+    } else {
+      this.activate(targetId, className, button, targetElements);
+    }
+  }
+
+  activate(targetId, className, button, elements) {
+    // Деактивировать предыдущие элементы с этим targetId
+    this.deactivate(targetId, className);
+
+    // Активировать текущие элементы
+    elements.forEach((el) => el.classList.add(className));
+    button.classList.add(className);
+
+    // Сохранить состояние
+    this.stateMap.set(targetId, {
+      elements,
+      button,
+      className,
+    });
+  }
+
+  deactivate(targetId, className) {
+    const state = this.stateMap.get(targetId);
+    if (!state) return;
+
+    state.elements.forEach((el) => el.classList.remove(className));
+    if (state.button) state.button.classList.remove(className);
+
+    this.stateMap.delete(targetId);
+  }
+
+  deactivateAll() {
+    for (const [targetId, state] of this.stateMap) {
+      this.deactivate(targetId, state.className);
+    }
+  }
 }
-setupToggleClassButtons();
+
+// Инициализация при загрузке документа
+const toggleManager = new ToggleClassManager();
+ */

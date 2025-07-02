@@ -1,178 +1,253 @@
-/* Select */
-function createCustomSelects() {
-  const customSelects = document.querySelectorAll(".custom-select");
-  customSelects.forEach((customSelect) => {
-    const selectElement = customSelect.querySelector("select");
-    createSelectContainer(customSelect, selectElement);
-    createOptionsList(customSelect, selectElement);
-    addSelectEventListeners(customSelect);
-  });
-}
-
-function createSelectContainer(customSelect, selectElement) {
-  const selectedContainer = document.createElement("DIV");
-  selectedContainer.classList.add("select-selected");
-  selectedContainer.innerHTML =
-    selectElement.options[selectElement.selectedIndex].innerHTML;
-  customSelect.appendChild(selectedContainer);
-}
-
-function createOptionsList(customSelect, selectElement) {
-  const optionsList = document.createElement("DIV");
-  optionsList.classList.add("select-items", "select-hide");
-  for (let i = 1; i < selectElement.length; i++) {
-    const optionItem = document.createElement("DIV");
-    optionItem.innerHTML = selectElement.options[i].innerHTML;
-    optionItem.addEventListener("click", function (event) {
-      updateSelectBox(this);
-    });
-    optionsList.appendChild(optionItem);
+class CustomSelect {
+  constructor(container) {
+    this.container = container;
+    this.selectElement = container.querySelector("select");
+    this.init();
   }
-  customSelect.appendChild(optionsList);
-}
 
-function updateSelectBox(selectedItem) {
-  const selectBox = selectedItem.parentNode.parentNode.querySelector("select");
-  const selectedContainer = selectedItem.parentNode.previousSibling;
-  selectBox.selectedIndex = Array.from(selectBox.options).findIndex(
-    (option) => option.innerHTML === selectedItem.innerHTML
-  );
-  selectedContainer.innerHTML = selectedItem.innerHTML;
-  const sameAsSelected =
-    selectedItem.parentNode.querySelectorAll(".same-as-selected");
-  sameAsSelected.forEach((item) => item.classList.remove("same-as-selected"));
-  selectedItem.classList.add("same-as-selected");
-  selectedContainer.click();
-}
+  init() {
+    this.createSelectContainer();
+    this.createOptionsList();
+    this.addEventListeners();
+  }
 
-function addSelectEventListeners(customSelect) {
-  const selectedContainer = customSelect.querySelector(".select-selected");
-  selectedContainer.addEventListener("click", function (event) {
-    event.stopPropagation();
-    closeAllSelects(this);
-    const optionsList = this.nextSibling;
-    optionsList.classList.toggle("select-hide");
-    this.classList.toggle("select-arrow-active");
-  });
-}
+  createSelectContainer() {
+    this.selectedContainer = document.createElement("DIV");
+    this.selectedContainer.classList.add("select-selected");
+    this.selectedContainer.innerHTML =
+      this.selectElement.options[this.selectElement.selectedIndex].innerHTML;
+    this.container.appendChild(this.selectedContainer);
+  }
 
-function closeAllSelects(currentSelect) {
-  const allOptionsLists = document.querySelectorAll(".select-items");
-  const allSelectedContainers = document.querySelectorAll(".select-selected");
-  allOptionsLists.forEach((optionsList) => {
-    if (optionsList.previousSibling !== currentSelect) {
-      optionsList.classList.add("select-hide");
+  createOptionsList() {
+    this.optionsList = document.createElement("DIV");
+    this.optionsList.classList.add("select-items", "select-hide");
+
+    for (let i = 1; i < this.selectElement.length; i++) {
+      const optionItem = document.createElement("DIV");
+      optionItem.innerHTML = this.selectElement.options[i].innerHTML;
+      optionItem.addEventListener("click", () => this.updateSelect(optionItem));
+      this.optionsList.appendChild(optionItem);
     }
-  });
-  allSelectedContainers.forEach((selectedContainer) => {
-    if (selectedContainer !== currentSelect) {
-      selectedContainer.classList.remove("select-arrow-active");
-    }
-  });
-}
 
-document.addEventListener("click", function () {
-  closeAllSelects(null);
-});
+    this.container.appendChild(this.optionsList);
+  }
 
-createCustomSelects();
+  updateSelect(selectedItem) {
+    const selectedOption = Array.from(this.selectElement.options).find(
+      (option) => option.innerHTML === selectedItem.innerHTML
+    );
 
+    this.selectElement.selectedIndex = selectedOption.index;
+    this.selectedContainer.innerHTML = selectedItem.innerHTML;
 
-/* Form Select */
-const formSelects = document.querySelectorAll(".form-select");
+    const sameAsSelected =
+      this.optionsList.querySelectorAll(".same-as-selected");
+    sameAsSelected.forEach((item) => item.classList.remove("same-as-selected"));
+    selectedItem.classList.add("same-as-selected");
 
-formSelects.forEach((formSelect) => {
-  const searchInput = formSelect.querySelector(".form-input");
-  const selectOptions = formSelect.querySelector(".form-select__options");
-  const options = formSelect.querySelectorAll(".form-select__option");
+    this.closeSelect();
+  }
 
-  searchInput.addEventListener("focus", () => {
-    selectOptions.style.display = "block";
-  });
+  toggleSelect() {
+    CustomSelect.closeAllSelects(this);
+    this.optionsList.classList.toggle("select-hide");
+    this.selectedContainer.classList.toggle("select-arrow-active");
+  }
 
-  searchInput.addEventListener("input", () => {
-    const filter = searchInput.value.toLowerCase();
-    options.forEach((option) => {
-      const text = option.textContent.toLowerCase();
-      if (text.includes(filter)) {
-        option.classList.remove("hidden");
-      } else {
-        option.classList.add("hidden");
+  closeSelect() {
+    this.optionsList.classList.add("select-hide");
+    this.selectedContainer.classList.remove("select-arrow-active");
+  }
+
+  static closeAllSelects(currentSelect) {
+    document.querySelectorAll(".select-items").forEach((optionsList) => {
+      if (optionsList.previousSibling !== currentSelect?.selectedContainer) {
+        optionsList.classList.add("select-hide");
       }
     });
-  });
 
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".form-select")) {
-      selectOptions.style.display = "none";
-    }
-  });
-
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      searchInput.value = option.textContent;
-      selectOptions.style.display = "none";
-    });
-  });
-
-  if (options.length > 4) {
-    selectOptions.style.maxHeight = "150px";
-    selectOptions.style.overflowY = "scroll";
-  } else {
-    selectOptions.style.maxHeight = "";
-    selectOptions.style.overflowY = "";
+    document
+      .querySelectorAll(".select-selected")
+      .forEach((selectedContainer) => {
+        if (selectedContainer !== currentSelect?.selectedContainer) {
+          selectedContainer.classList.remove("select-arrow-active");
+        }
+      });
   }
+
+  addEventListeners() {
+    this.selectedContainer.addEventListener("click", (e) => {
+      e.stopPropagation();
+      this.toggleSelect();
+    });
+  }
+}
+
+class FormSelect {
+  constructor(container) {
+    this.container = container;
+    this.searchInput = container.querySelector(".form-input");
+    this.selectOptions = container.querySelector(".form-select__options");
+    this.options = container.querySelectorAll(".form-select__option");
+    this.init();
+  }
+
+  init() {
+    this.setupEventListeners();
+    this.adjustOptionsHeight();
+  }
+
+  setupEventListeners() {
+    this.searchInput.addEventListener("focus", () => this.openOptions());
+    this.searchInput.addEventListener("input", () => this.filterOptions());
+
+    this.options.forEach((option) => {
+      option.addEventListener("click", () => this.selectOption(option));
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!this.container.contains(e.target)) {
+        this.closeOptions();
+      }
+    });
+  }
+
+  filterOptions() {
+    const filter = this.searchInput.value.toLowerCase();
+
+    this.options.forEach((option) => {
+      const text = option.textContent.toLowerCase();
+      option.classList.toggle("hidden", !text.includes(filter));
+    });
+  }
+
+  openOptions() {
+    this.selectOptions.style.display = "block";
+  }
+
+  closeOptions() {
+    this.selectOptions.style.display = "none";
+  }
+
+  selectOption(option) {
+    this.searchInput.value = option.textContent;
+    this.closeOptions();
+  }
+
+  adjustOptionsHeight() {
+    if (this.options.length > 4) {
+      this.selectOptions.style.maxHeight = "150px";
+      this.selectOptions.style.overflowY = "scroll";
+    } else {
+      this.selectOptions.style.maxHeight = "";
+      this.selectOptions.style.overflowY = "";
+    }
+  }
+}
+
+class AttrDataSelect {
+  constructor(container) {
+    this.container = container;
+    this.trigger = container.querySelector("[data-select-trigger]");
+    this.optionsContainer = container.querySelector("[data-select-options]");
+    this.options = container.querySelectorAll("[data-select-option]");
+    this.hiddenInput = container.querySelector("[data-select-input]");
+    this.init();
+  }
+
+  init() {
+    this.setupEventListeners();
+    this.selectFirstOption();
+  }
+
+  setupEventListeners() {
+    // Останавливаем всплытие, чтобы не срабатывал глобальный обработчик
+    this.trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      this.toggleOptions();
+    });
+
+    this.options.forEach((option) => {
+      option.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.selectOption(option);
+      });
+    });
+
+    // Используем делегирование для закрытия
+    document.addEventListener("click", (e) => {
+      if (!this.container.contains(e.target)) {
+        this.closeOptions();
+      }
+    });
+  }
+
+  toggleOptions() {
+    const isOpen = this.optionsContainer.style.display === "block";
+    AttrDataSelect.closeAllSelects();
+    if (!isOpen) {
+      this.optionsContainer.style.display = "block";
+      this.trigger.classList.add("open");
+    }
+  }
+
+  closeOptions() {
+    this.optionsContainer.style.display = "none";
+    this.trigger.classList.remove("open");
+  }
+
+  selectOption(option) {
+    const value = option.getAttribute("data-value");
+    const flagSrc = option.getAttribute("data-flag");
+
+    this.trigger.querySelector("img").setAttribute("src", flagSrc);
+    this.hiddenInput.value = value;
+
+    this.closeOptions();
+
+    this.options.forEach((opt) => opt.classList.remove("active"));
+    option.classList.add("active");
+  }
+
+  selectFirstOption() {
+    const firstOption = this.options[0];
+    this.trigger
+      .querySelector("img")
+      .setAttribute("src", firstOption.getAttribute("data-flag"));
+    this.hiddenInput.value = firstOption.getAttribute("data-value");
+    firstOption.classList.add("active");
+  }
+
+  static closeAllSelects() {
+    document.querySelectorAll("[data-select-options]").forEach((container) => {
+      container.style.display = "none";
+    });
+
+    document.querySelectorAll("[data-select-trigger]").forEach((trigger) => {
+      trigger.classList.remove("open");
+    });
+  }
+}
+
+// Инициализация всех типов селектов
+
+// Инициализация стандартных кастомных селектов
+document.querySelectorAll(".custom-select").forEach((container) => {
+  new CustomSelect(container);
 });
 
+// Инициализация селектов формы
+document.querySelectorAll(".form-select").forEach((container) => {
+  new FormSelect(container);
+});
 
-/* Data Attr */
-document.querySelectorAll("[data-custom-select]").forEach((selectElement) => {
-  const trigger = selectElement.querySelector("[data-select-trigger]");
-  const optionsContainer = selectElement.querySelector("[data-select-options]");
-  const options = selectElement.querySelectorAll("[data-select-option]");
-  const hiddenInput = selectElement.querySelector("[data-select-input]");
+// Инициализация селектов с data-атрибутами
+document.querySelectorAll("[data-custom-select]").forEach((container) => {
+  new AttrDataSelect(container);
+});
 
-  trigger.addEventListener("click", () => {
-    const isOpen = optionsContainer.style.display === "block";
-    document
-      .querySelectorAll("[data-custom-select] [data-select-options]")
-      .forEach((container) => (container.style.display = "none"));
-    document
-      .querySelectorAll("[data-custom-select] [data-select-trigger]")
-      .forEach((trg) => trg.classList.remove("open"));
-    if (!isOpen) {
-      optionsContainer.style.display = "block";
-      trigger.classList.add("open");
-    }
-  });
-
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      const value = option.getAttribute("data-value");
-      const flagSrc = option.getAttribute("data-flag");
-
-      trigger.querySelector("img").setAttribute("src", flagSrc);
-      hiddenInput.value = value;
-
-      optionsContainer.style.display = "none";
-      trigger.classList.remove("open");
-
-      options.forEach((opt) => opt.classList.remove("active"));
-      option.classList.add("active");
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!selectElement.contains(e.target)) {
-      optionsContainer.style.display = "none";
-      trigger.classList.remove("open");
-    }
-  });
-
-  const firstOption = options[0];
-  trigger
-    .querySelector("img")
-    .setAttribute("src", firstOption.getAttribute("data-flag"));
-  hiddenInput.value = firstOption.getAttribute("data-value");
-  firstOption.classList.add("active");
+// Глобальный обработчик для закрытия всех селектов
+document.addEventListener("click", () => {
+  CustomSelect.closeAllSelects();
 });

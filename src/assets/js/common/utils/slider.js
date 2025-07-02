@@ -442,6 +442,7 @@ function toggleSteamSlider() {
   const container = document.querySelector(".new-steam__cards");
   const isMobile = window.innerWidth <= 768;
 
+  if (!container) return; // Проверяем, что контейнер существует
   if (isMobile && !swiperSteamInstance) {
     // Превращаем в слайдер
     container.classList.add("swiper");
