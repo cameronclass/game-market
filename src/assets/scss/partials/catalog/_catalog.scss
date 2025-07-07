@@ -1,3 +1,7 @@
+.catalog-page-main {
+    overflow: hidden;
+}
+
 .catalog-page {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -8,6 +12,11 @@
         grid-template-rows: repeat(2, auto);
         align-items: start;
         gap: 20px;
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__filter {
@@ -31,6 +40,14 @@
         grid-area: 1 / 1 / 2 / 3;
         background-color: #22211E;
         border-radius: 10px;
+
+        @include mobile {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 6px;
+            background-color: initial;
+            padding: 0;
+        }
     }
 }
 
@@ -204,6 +221,13 @@
             align-items: center;
             color: $text-dark;
 
+            @include netbook {
+                background-color: #22211E;
+                border-radius: 10px;
+                padding: 15px 12px;
+                width: 100%;
+            }
+
             &_name {
                 &:hover {
                     color: $orange;
@@ -244,6 +268,12 @@
             @include netbook {
                 grid-column-start: 3;
                 grid-column-end: 8;
+                gap: 25px;
+
+                background-color: #22211E;
+                border-radius: 10px;
+                padding: 20px 15px;
+                width: 100%;
             }
 
             @include mobile {
@@ -326,13 +356,13 @@
                 color: #EBE2D0;
                 font-weight: 500;
 
-                &:hover{
+                &:hover {
                     background-color: #353330;
                     border: none;
                 }
             }
 
-            span{
+            span {
                 position: absolute;
                 left: 10px;
                 top: 50%;
@@ -380,6 +410,7 @@
                 background-color: #353330;
                 color: #EBE2D0;
             }
+
             &:focus {
                 border: 1px solid #37332A;
             }

@@ -21065,6 +21065,10 @@ input:checked + .contract-offer__slider:before {
 }
 
 /* Catalog Page */
+.catalog-page-main {
+  overflow: hidden;
+}
+
 .catalog-page {
   margin-top: 10px;
   margin-bottom: 30px;
@@ -21075,6 +21079,12 @@ input:checked + .contract-offer__slider:before {
   grid-template-rows: repeat(2, auto);
   align-items: start;
   gap: 20px;
+}
+@media screen and (max-width: 979px) {
+  .catalog-page__block {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .catalog-page__filter {
   width: 100%;
@@ -21095,6 +21105,15 @@ input:checked + .contract-offer__slider:before {
   grid-area: 1/1/2/3;
   background-color: #22211E;
   border-radius: 10px;
+}
+@media screen and (max-width: 979px) {
+  .catalog-page__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    background-color: initial;
+    padding: 0;
+  }
 }
 
 .catalog-cards {
@@ -21259,6 +21278,14 @@ input:checked + .contract-offer__slider:before {
   align-items: center;
   color: #847f7d;
 }
+@media screen and (max-width: 1200px) {
+  .catalog-filter__info_title {
+    background-color: #22211E;
+    border-radius: 10px;
+    padding: 15px 12px;
+    width: 100%;
+  }
+}
 .catalog-filter__info_title_name:hover {
   color: #ff6c3d;
 }
@@ -21292,6 +21319,11 @@ input:checked + .contract-offer__slider:before {
   .catalog-filter__info_sort {
     grid-column-start: 3;
     grid-column-end: 8;
+    gap: 25px;
+    background-color: #22211E;
+    border-radius: 10px;
+    padding: 20px 15px;
+    width: 100%;
   }
 }
 @media screen and (max-width: 979px) {
@@ -21458,6 +21490,11 @@ input:checked + .contract-offer__slider:before {
   padding-top: 40px;
   padding-bottom: 20px;
 }
+@media screen and (max-width: 979px) {
+  .catalog-page-slider {
+    padding-bottom: 10px;
+  }
+}
 .catalog-page-slider__header {
   width: 100%;
   display: flex;
@@ -21481,6 +21518,12 @@ input:checked + .contract-offer__slider:before {
 }
 .catalog-page-slider .catalog-slider__best_link {
   height: 375px;
+}
+@media screen and (max-width: 979px) {
+  .catalog-page-slider .catalog-slider__best_link {
+    height: 225px;
+    border-radius: 8px;
+  }
 }
 .catalog-page-slider .catalog-slider__best_overlay_img {
   margin-bottom: 20px;

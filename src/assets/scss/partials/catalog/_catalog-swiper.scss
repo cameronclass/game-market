@@ -2,6 +2,10 @@
     padding-top: 40px;
     padding-bottom: 20px;
 
+    @include mobile{
+        padding-bottom: 10px;
+    }
+
     &__block {}
 
     &__header {
@@ -31,6 +35,11 @@
 
     .catalog-slider__best_link {
         height: 375px;
+
+        @include mobile{
+            height: 225px;
+            border-radius: 8px;
+        }
     }
 
     .catalog-slider__best_overlay_img {

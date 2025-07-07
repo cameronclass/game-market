@@ -13983,9 +13983,11 @@ new Swiper(".catalog-page-slider .swiper", {
   },
   breakpoints: {
     0: {
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 0,
+      spaceBetween: 8,
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 4,
     },
     1290: {
       slidesPerView: 4,
