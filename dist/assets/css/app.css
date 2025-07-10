@@ -19849,7 +19849,7 @@ input:checked + .contract-offer__slider:before {
   justify-content: center;
   border-radius: 5px;
   transition: 300ms ease;
-  z-index: 5;
+  z-index: 2;
 }
 @media screen and (max-width: 1200px) {
   .footer-to-top {
@@ -21089,7 +21089,6 @@ input:checked + .contract-offer__slider:before {
 .catalog-page__filter {
   width: 100%;
   grid-area: 2/1/3/2;
-  background-color: #22211E;
   border-radius: 10px;
 }
 .catalog-page__cards {
@@ -21414,9 +21413,47 @@ input:checked + .contract-offer__slider:before {
 
 .filter-block {
   border-radius: 10px;
+  background-color: #22211E;
+}
+.filter-block__button {
+  width: 100%;
+  padding: 0;
+}
+.filter-block__content {
+  display: none;
+}
+.filter-block__content.active {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media screen and (max-width: 979px) {
+  .filter-block__content {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 65%;
+    overflow-y: scroll;
+    background-color: #22211E;
+    border-radius: 10px 10px 0 0;
+    border-top: 1px solid #ff6c3d;
+    padding: 20px 20px 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #EBE2D0;
+    z-index: 1000;
+  }
 }
 .filter-block__card {
   padding: 15px 20px;
+  width: 100%;
+}
+@media screen and (max-width: 979px) {
+  .filter-block__card {
+    background-color: #22211E;
+  }
 }
 .filter-block__card_content {
   margin-top: 16px;
@@ -21463,6 +21500,7 @@ input:checked + .contract-offer__slider:before {
   margin-left: auto;
 }
 .filter-block__search {
+  width: 100%;
   padding: 15px 20px;
 }
 .filter-block__title {

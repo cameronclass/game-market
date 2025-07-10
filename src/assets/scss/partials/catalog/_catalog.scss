@@ -22,7 +22,6 @@
     &__filter {
         width: 100%;
         grid-area: 2 / 1 / 3 / 2;
-        background-color: #22211E;
         border-radius: 10px;
     }
 
@@ -379,9 +378,49 @@
 
 .filter-block {
     border-radius: 10px;
+    background-color: #22211E;
+
+    &__button {
+        width: 100%;
+        padding: 0;
+    }
+
+    &__content {
+        display: none;
+
+        &.active {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        @include mobile {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 65%;
+            overflow-y: scroll;
+
+            background-color: #22211E;
+            border-radius: 10px 10px 0 0;
+            border-top: 1px solid #ff6c3d;
+            padding: 20px 20px 120px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: #EBE2D0;
+            z-index: 1000;
+        }
+    }
 
     &__card {
         padding: 15px 20px;
+        width: 100%;
+
+        @include mobile{
+            background-color: #22211E;
+        }
 
         &_content {
             margin-top: 16px;
@@ -437,6 +476,7 @@
     }
 
     &__search {
+        width: 100%;
         padding: 15px 20px;
     }
 

@@ -381,7 +381,7 @@
   justify-content: center;
   border-radius: 5px;
   transition: 300ms ease;
-  z-index: 5;
+  z-index: 2;
 
   @include netbook {
     right: 20px;
