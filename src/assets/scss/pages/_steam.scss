@@ -47,6 +47,7 @@
     &__card {
         position: relative;
         border-radius: 15px;
+        z-index: 1;
 
         &_bg {
             position: absolute;
@@ -585,8 +586,20 @@
             padding: 0;
         }
 
+        .form-group {
+            &:hover {
+                svg path {
+                    fill: #d6b13a;
+                }
+            }
+        }
+
         &_input {
             padding-left: 50px;
+
+            &:focus~.steam-login__form_svg path {
+                fill: #d6b13a;
+            }
         }
 
         &_btn {}
@@ -596,7 +609,7 @@
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 11;
+            z-index: 2;
         }
 
         &_subtitle {

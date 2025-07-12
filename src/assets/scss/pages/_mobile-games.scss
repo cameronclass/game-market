@@ -207,6 +207,11 @@
     &__item {
         width: auto;
         justify-self: center;
+
+        .new-card__img_item {
+            position: relative;
+            left: -1px;
+        }
     }
 }
 
@@ -377,6 +382,10 @@
             display: none;
 
             &:checked~.mobile-game-add__card_image {
+                border-color: $orange;
+            }
+
+            &:hover~.mobile-game-add__card_image {
                 border-color: $orange;
             }
         }

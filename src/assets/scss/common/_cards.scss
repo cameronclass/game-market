@@ -88,6 +88,7 @@
         z-index: 2;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     &__svg {
@@ -171,6 +172,7 @@
     }
 
     &__img {
+        width: 100%;
         display: flex;
         border-bottom: 2px solid $orange;
 
@@ -182,6 +184,7 @@
     }
 
     &__content {
+        width: 100%;
         height: 100%;
         padding: 10px;
         border-top: 2px solid #11100F;
@@ -196,6 +199,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+
     }
 
     &__subtitle {

@@ -18,8 +18,6 @@
   background: #0e0d0c;
   padding-top: 150px;
   padding-bottom: 40px;
-  position: relative;
-  z-index: 3;
 }
 
 .main {
@@ -1380,9 +1378,6 @@
 .pagination {
   display: flex;
   justify-content: center;
-  border: 1px solid $text-dark;
-  padding: 4px;
-  border-radius: 10px;
   width: max-content;
 
   @include mobile {
@@ -1391,12 +1386,22 @@
 
   &-list {
     display: flex;
-    gap: 20px;
+    gap: 3px;
     align-items: center;
 
     @include mobile {
       width: 100%;
       justify-content: space-between;
+    }
+  }
+
+  &-item {
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      margin-left: 10px;
     }
   }
 
@@ -1406,18 +1411,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #151412;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
 
     &._active {
-      color: $orange;
+      color: #EBE2D0;
       text-align: center;
-      text-shadow: 0px 4px 21px $orange;
+      background-color: #22211E;
     }
 
-    &:hover {
-      svg rect {
-        fill: lighten($color: #282725, $amount: 5);
-      }
-    }
+    &:hover {}
   }
 }
 
@@ -1838,7 +1843,7 @@
   border: 1px solid #34312d;
   background: #1c1b19;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 
   &::placeholder {
     color: white;
@@ -1911,12 +1916,6 @@
 
 .form-group {
   position: relative;
-
-  &:hover {
-    svg path {
-      fill: #d6b13a;
-    }
-  }
 }
 
 .form-select {
@@ -2292,7 +2291,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 20;
   background: rgba(16, 15, 14, 0.78);
   backdrop-filter: blur(24.850000381469727px);
   display: flex;

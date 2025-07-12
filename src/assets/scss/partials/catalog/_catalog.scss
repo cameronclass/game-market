@@ -8,7 +8,7 @@
 
     &__block {
         display: grid;
-        grid-template-columns: minmax(200px, 240px) minmax(800px, 990px);
+        grid-template-columns: minmax(220px, 240px) minmax(550px, 990px);
         grid-template-rows: repeat(2, auto);
         align-items: start;
         gap: 20px;
@@ -61,19 +61,19 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 20px 10px;
 
-        @include netbook {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
+        @media screen and (max-width: 1300px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px 0;
+        }
+
+        @media screen and (max-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            gap: 20px;
         }
 
         @include mobile {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @media screen and (max-width: 735px) {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0;
-            justify-content: center;
+            gap: 20px;
         }
 
         @media screen and (max-width: 500px) {
@@ -93,23 +93,20 @@
 
         @media screen and (max-width: 1300px) {
             .new-card {
-                transform: scale(0.9);
+                transform: scale(1);
             }
         }
 
-        @media screen and (max-width: 735px) {
-            height: 340px;
-
-            .new-card {
-                transform: scale(0.85);
-            }
-        }
-
-        @media screen and (max-width: 470px) {
+        @include netbook {
             height: auto;
 
             .new-card {
                 transform: scale(1);
+
+                &__title {
+                    margin-bottom: 10px;
+                    -webkit-line-clamp: 2;
+                }
 
                 &__svg,
                 &__discount,
@@ -224,6 +221,10 @@
                 background-color: #22211E;
                 border-radius: 10px;
                 padding: 15px 12px;
+                width: max-content;
+            }
+
+            @include mobile {
                 width: 100%;
             }
 
@@ -380,37 +381,68 @@
     border-radius: 10px;
     background-color: #22211E;
 
+    &.active {
+        @include mobile {
+            &::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: #22211ebf;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 998;
+            }
+        }
+    }
+
     &__button {
         width: 100%;
         padding: 0;
     }
 
     &__content {
-        display: none;
-
-        &.active {
+        @include mobile {
             display: flex;
             flex-direction: column;
             width: 100%;
+            position: fixed;
+            bottom: -110%;
+            transition: 300ms ease;
         }
 
-        @include mobile {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            height: 65%;
-            overflow-y: scroll;
+        &.active {
+            @include mobile {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                height: 65%;
+                overflow-y: scroll;
+                transition: 300ms ease;
 
-            background-color: #22211E;
-            border-radius: 10px 10px 0 0;
-            border-top: 1px solid #ff6c3d;
-            padding: 20px 20px 120px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            color: #EBE2D0;
-            z-index: 1000;
+                background-color: #22211E;
+                border-radius: 10px 10px 0 0;
+                border-top: 1px solid #ff6c3d;
+                padding: 20px 20px 120px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                color: #EBE2D0;
+                z-index: 1000;
+
+                &::before {
+                    content: "";
+                    width: 80px;
+                    height: 2px;
+                    border-radius: 10px;
+                    position: absolute;
+                    left: 50%;
+                    top: 10px;
+                    transform: translateX(-50%);
+                    background: rgba(255, 255, 255, 0.785);
+                }
+            }
         }
     }
 
@@ -418,7 +450,7 @@
         padding: 15px 20px;
         width: 100%;
 
-        @include mobile{
+        @include mobile {
             background-color: #22211E;
         }
 

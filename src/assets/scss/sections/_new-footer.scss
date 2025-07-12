@@ -338,25 +338,19 @@
     }
 
     &_button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #ebe2d0;
-      padding: 16px 40px;
-      border-radius: 10px;
+      padding-left: 30px;
+      padding-right: 30px;
       height: 50px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #161513;
-      transition: 300ms ease;
 
       @include mobile {
         width: 100%;
         max-width: 370px;
       }
 
-      &:hover {
-        background-color: #ff6c3d;
+      &:hover{
+        border-color: transparent;
+        color: #ebe2d0;
+        background-color: $orange;
       }
     }
 

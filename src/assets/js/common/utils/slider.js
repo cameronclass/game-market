@@ -102,7 +102,7 @@ new Swiper(".catalog-page-slider .swiper", {
       slidesPerView: 2,
     },
     768: {
-      slidesPerView: 4,
+      slidesPerView: 3,
     },
     1290: {
       slidesPerView: 4,
@@ -215,7 +215,7 @@ new Swiper(".steam-bonus .swiper", {
   },
 });
 
-new Swiper(".steam-slider .swiper", {
+/* new Swiper(".steam-slider .swiper", {
   spaceBetween: 12,
   loop: true,
   navigation: {
@@ -231,7 +231,7 @@ new Swiper(".steam-slider .swiper", {
       slidesPerView: 5,
     },
   },
-});
+}); */
 
 new Swiper(".home-main-slider .swiper", {
   spaceBetween: 12,
