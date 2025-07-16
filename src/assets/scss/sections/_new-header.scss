@@ -20,7 +20,7 @@
       opacity: 1;
       display: flex;
 
-      @include mobile{
+      @include mobile {
         display: none;
       }
     }
@@ -94,13 +94,17 @@
     position: relative;
 
     @include mobile {
-      padding: 10px;
+      padding: 10px 5px;
     }
 
     &-block {
       display: flex;
       align-items: center;
       gap: 10px;
+
+      @include mobile {
+        justify-content: space-between;
+      }
     }
   }
 
@@ -134,21 +138,30 @@
     }
   }
 
-  &__catalog {
+  &__mobile-menu {
     width: auto;
     display: flex;
     gap: 12px;
     align-items: center;
     font-size: 16px;
     transition: 100ms;
+    width: 50px;
+    height: 50px;
 
-    &:hover {
+    display: none;
 
-      .hamburger-inner,
-      .hamburger-inner::before,
-      .hamburger-inner::after {
-        background-color: #22211e;
-      }
+    @include mobile {
+      display: flex;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border: 1px solid #37332a;
+    }
+
+    &.is-active {
+      background-color: #ebe2d0;
 
       .hamburger.is-active .hamburger-inner,
       .hamburger.is-active .hamburger-inner:after,
@@ -223,6 +236,22 @@
 
     @include mobile {
       display: none;
+
+      &.active {
+        display: flex;
+        position: fixed;
+        z-index: -1;
+        top: 160px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: rgba(34, 33, 30, 0.88);
+        box-shadow: 0px 1px 54.8px 0px #000;
+        backdrop-filter: blur(11.600000381469727px);
+        flex-direction: column;
+        gap: 10px;
+        padding: 40px 20px;
+      }
     }
 
     &-item {
@@ -347,7 +376,7 @@
       margin-left: 40px;
 
       @include mobile {
-        display: none;
+        margin-left: 20px;
       }
 
       svg {
@@ -368,7 +397,7 @@
   z-index: 99;
   top: 160px;
 
-  &.position{
+  &.position {
     top: 90px;
   }
 
@@ -591,9 +620,11 @@
 
   .hamburger-box {
     position: relative;
+    top: 1px;
     display: flex;
-    width: 25px;
-    height: 25px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
   }
 
   .hamburger-inner {
@@ -605,7 +636,7 @@
     &:after,
     &:before {
       position: absolute;
-      width: 25px;
+      width: 15px;
       height: 2px;
       transition-timing-function: ease;
       transition-duration: 0.15s;
@@ -621,11 +652,11 @@
     }
 
     &:before {
-      top: -7px;
+      top: -5px;
     }
 
     &:after {
-      bottom: -7px;
+      bottom: -5px;
     }
   }
 

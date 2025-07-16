@@ -14655,7 +14655,6 @@ if (newCards)
     }
   }
 }
-
 class CategoryMenu {
   constructor() {
     this.buttons = document.querySelectorAll("[data-category-target]");
@@ -14712,6 +14711,90 @@ new CategoryMenu();
 
 /* Меню и Скроллы */
 
+class MobileMenu {
+  constructor(toggleManager) {
+    this.menuButton = document.querySelector(".new-header__mobile-menu");
+    this.menu = document.querySelector(".new-header__menu");
+    this.hamburger = document.querySelector(".hamburger");
+    this.hamburgerMenu = document.querySelector(".js-hamburger-menu");
+    this.toggleManager = toggleManager; // Reference to ToggleClassManager
+    this.lastScrollPosition = 0;
+
+    this.init();
+  }
+
+  init() {
+    // Bind event listeners
+    this.menuButton.addEventListener("click", this.toggleMenu.bind(this));
+    window.addEventListener("scroll", this.handleScroll.bind(this));
+    document.addEventListener("click", this.handleOutsideClick.bind(this));
+  }
+
+  toggleMenu(event) {
+    event.stopPropagation();
+    // Close the other menu (js-hamburger-menu)
+    if (this.hamburgerMenu && this.toggleManager) {
+      const targetId = this.hamburgerMenu.getAttribute("data-class-element");
+      if (targetId) {
+        this.toggleManager.deactivateByTarget(targetId, "active");
+      }
+    }
+    // Toggle active classes for this menu
+    this.menu.classList.toggle("active");
+    this.menuButton.classList.toggle("is-active");
+    this.hamburger.classList.toggle("is-active");
+  }
+
+  handleOutsideClick(event) {
+    const target = event.target;
+    const isButton = target.tagName === "BUTTON" || target.type === "button";
+    const isOutsideMenu =
+      !this.menu.contains(target) && !this.menuButton.contains(target);
+    const isOutsideHamburgerMenu =
+      !this.hamburgerMenu || !this.hamburgerMenu.contains(target);
+
+    // Close both menus if clicking outside or on another button (except menuButton)
+    if (
+      (isOutsideMenu && isOutsideHamburgerMenu) ||
+      (isButton && !this.menuButton.contains(target))
+    ) {
+      // Close mobile menu
+      this.menu.classList.remove("active");
+      this.menuButton.classList.remove("is-active");
+      this.hamburger.classList.remove("is-active");
+      // Close hamburger menu
+      if (this.hamburgerMenu && this.toggleManager) {
+        const targetId = this.hamburgerMenu.getAttribute("data-class-element");
+        if (targetId) {
+          this.toggleManager.deactivateByTarget(targetId, "active");
+        }
+      }
+    }
+  }
+
+  handleScroll() {
+    const currentScrollPosition = window.pageYOffset;
+
+    // Check if scrolling down
+    if (currentScrollPosition > this.lastScrollPosition) {
+      // Remove active classes for mobile menu
+      this.menu.classList.remove("active");
+      this.menuButton.classList.remove("is-active");
+      this.hamburger.classList.remove("is-active");
+      // Remove active classes for hamburger menu
+      if (this.hamburgerMenu && this.toggleManager) {
+        const targetId = this.hamburgerMenu.getAttribute("data-class-element");
+        if (targetId) {
+          this.toggleManager.deactivateByTarget(targetId, "active");
+        }
+      }
+    }
+
+    // Update last scroll position
+    this.lastScrollPosition = currentScrollPosition;
+  }
+}
+
 class ToggleClassManager {
   constructor() {
     this.stateMap = new Map();
@@ -14722,7 +14805,7 @@ class ToggleClassManager {
   init() {
     this.buttons.forEach((button) => {
       button.addEventListener("click", (e) => {
-        e.stopPropagation(); // Предотвращаем всплытие
+        e.stopPropagation();
         this.handleButtonClick(button);
       });
     });
@@ -14741,6 +14824,16 @@ class ToggleClassManager {
     if (targetElements.length === 0) return;
 
     const isActive = button.classList.contains(className);
+
+    // Close mobile menu if it's open
+    const mobileMenu = document.querySelector(".new-header__menu");
+    const mobileMenuButton = document.querySelector(".new-header__mobile-menu");
+    const hamburger = document.querySelector(".hamburger");
+    if (mobileMenu && mobileMenuButton && hamburger) {
+      mobileMenu.classList.remove("active");
+      mobileMenuButton.classList.remove("is-active");
+      hamburger.classList.remove("is-active");
+    }
 
     if (isActive) {
       this.deactivateAll(targetElements, button, className, targetId);
@@ -14778,7 +14871,6 @@ class ToggleClassManager {
     });
   }
 
-  // Новый метод для внешнего управления
   deactivateByTarget(targetId, className) {
     const state = this.stateMap.get(targetId);
     if (!state) return;
@@ -14892,9 +14984,9 @@ class ScrollManager {
 }
 
 const toggleManager = new ToggleClassManager();
-const hamburgerManager = new HamburgerManager(toggleManager);
-const scrollManager = new ScrollManager(toggleManager);
-
+new MobileMenu(toggleManager);
+new HamburgerManager(toggleManager);
+new ScrollManager(toggleManager);
 
     /* new-reviews */
 (function () {
