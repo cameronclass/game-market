@@ -14,7 +14,8 @@
     }
 
     .new-header__menu,
-    .js-category-button {
+    .js-category-button,
+    .new-header__mobile-menu {
       visibility: hidden;
       opacity: 0;
     }
@@ -32,6 +33,7 @@
 
   .js-category-button {
     transition: 100ms ease;
+
   }
 
   .js-category-button-top {
@@ -214,6 +216,10 @@
     &_content {
       position: relative;
       display: none;
+
+      &.active{
+        display: flex;
+      }
     }
 
     &_list {
@@ -487,6 +493,7 @@
     opacity: 1;
     visibility: visible;
 
+
     @include mobile {
       left: 10px;
       width: calc(100% - 20px);
@@ -508,6 +515,11 @@
     color: #6d675b;
     display: flex;
     gap: 20px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   &__block {
@@ -547,6 +559,10 @@
       gap: 10px;
       flex-direction: column;
       position: relative;
+
+      @include mobile {
+        gap: 20px;
+      }
     }
 
     &-btn {
@@ -558,6 +574,10 @@
       gap: 10px;
       border-radius: 10px;
       padding: 10px;
+
+      @include mobile {
+        padding: 0;
+      }
 
       &-icon {
         border: 1px solid #6d675b;
@@ -616,6 +636,19 @@
 
     &.active {
       display: flex;
+
+      @include mobile {
+        flex-direction: column;
+        background: #ebe2d0;
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        padding: 60px 20px;
+        gap: 20px;
+        height: 500px;
+        overflow-y: auto;
+      }
     }
 
     &-category {
@@ -624,8 +657,30 @@
       overflow-y: auto;
 
       @include mobile {
-        position: absolute;
-        right: -200%;
+        height: auto;
+      }
+    }
+
+    &-close {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      border: 1px solid #37332a;
+      color: #ebe2d0;
+      width: 40px;
+      background-color: #22211e;
+      font-size: 16px;
+      height: 40px;
+      border-radius: 5px;
+
+      @include mobile {
+        &.active {
+          display: flex;
+        }
       }
     }
 
@@ -768,4 +823,8 @@
       }
     }
   }
+}
+
+.locked {
+  overflow-y: hidden;
 }

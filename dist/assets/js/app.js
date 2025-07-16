@@ -14613,20 +14613,21 @@ if (newCards)
   });
 
     class MobileMenu {
-  constructor(toggleManager) {
+  constructor(toggleManager, categoryMenuManager, searchManager) {
     this.menuButton = document.querySelector(".new-header__mobile-menu");
     this.menu = document.querySelector(".new-header__menu");
     this.hamburger = document.querySelector(".hamburger");
     this.categoryMenu = document.querySelector(".js-category-menu");
     this.overlay = document.querySelector(".overlay-bg");
-    this.toggleManager = toggleManager; // Reference to ToggleClassManager
+    this.toggleManager = toggleManager;
+    this.categoryMenuManager = categoryMenuManager;
+    this.searchManager = searchManager;
     this.lastScrollPosition = 0;
 
     this.init();
   }
 
   init() {
-    // Bind event listeners
     this.menuButton.addEventListener("click", this.toggleMenu.bind(this));
     window.addEventListener("scroll", this.handleScroll.bind(this));
     document.addEventListener("click", this.handleOutsideClick.bind(this));
@@ -14644,6 +14645,10 @@ if (newCards)
     if (this.categoryMenu && this.toggleManager) {
       this.toggleManager.deactivateCategoryMenu();
     }
+    // Close search
+    if (this.searchManager) {
+      this.searchManager.closeSearch();
+    }
     // Toggle active classes for this menu
     const isActive = this.menu.classList.contains("active");
     this.menu.classList.toggle("active");
@@ -14652,6 +14657,12 @@ if (newCards)
     // Toggle overlay
     if (this.overlay) {
       this.overlay.classList.toggle("active", !isActive);
+    }
+    // Toggle locked class on body
+    if (window.innerWidth < 979) {
+      document.body.classList.toggle("locked", !isActive);
+    } else {
+      document.body.classList.remove("locked");
     }
   }
 
@@ -14662,11 +14673,18 @@ if (newCards)
       !this.menu.contains(target) && !this.menuButton.contains(target);
     const isOutsideCategoryMenu =
       !this.categoryMenu || !this.categoryMenu.contains(target);
+    const isOutsideSearch =
+      !document
+        .querySelector(".new-header__search_content")
+        ?.contains(target) &&
+      !document.querySelector(".new-header__search-mobile")?.contains(target);
 
-    // Close menus only if clicking outside both menus or on a button (except menuButton)
     if (
-      (isOutsideMenu && isOutsideCategoryMenu) ||
-      (isButton && !this.menuButton.contains(target) && isOutsideCategoryMenu)
+      (isOutsideMenu && isOutsideCategoryMenu && isOutsideSearch) ||
+      (isButton &&
+        !this.menuButton.contains(target) &&
+        isOutsideCategoryMenu &&
+        isOutsideSearch)
     ) {
       // Close mobile menu
       this.menu.classList.remove("active");
@@ -14676,10 +14694,20 @@ if (newCards)
       if (this.categoryMenu && this.toggleManager) {
         this.toggleManager.deactivateCategoryMenu();
       }
+      // Close categories
+      if (this.categoryMenuManager) {
+        this.categoryMenuManager.deactivateAll();
+      }
+      // Close search
+      if (this.searchManager) {
+        this.searchManager.closeSearch();
+      }
       // Remove overlay active class
       if (this.overlay) {
         this.overlay.classList.remove("active");
       }
+      // Remove locked class from body
+      document.body.classList.remove("locked");
     }
   }
 
@@ -14692,42 +14720,62 @@ if (newCards)
     if (this.categoryMenu && this.toggleManager) {
       this.toggleManager.deactivateCategoryMenu();
     }
+    // Close categories
+    if (this.categoryMenuManager) {
+      this.categoryMenuManager.deactivateAll();
+    }
+    // Close search
+    if (this.searchManager) {
+      this.searchManager.closeSearch();
+    }
     // Remove overlay active class
     if (this.overlay) {
       this.overlay.classList.remove("active");
     }
+    // Remove locked class from body
+    document.body.classList.remove("locked");
   }
 
   handleScroll() {
     const currentScrollPosition = window.pageYOffset;
 
-    // Check if scrolling down
     if (currentScrollPosition > this.lastScrollPosition) {
-      // Remove active classes for mobile menu
+      // Close mobile menu
       this.menu.classList.remove("active");
       this.menuButton.classList.remove("is-active");
       this.hamburger.classList.remove("is-active");
-      // Remove active classes for category menu
+      // Close category menu
       if (this.categoryMenu && this.toggleManager) {
         this.toggleManager.deactivateCategoryMenu();
+      }
+      // Close categories
+      if (this.categoryMenuManager) {
+        this.categoryMenuManager.deactivateAll();
+      }
+      // Close search
+      if (this.searchManager) {
+        this.searchManager.closeSearch();
       }
       // Remove overlay active class
       if (this.overlay) {
         this.overlay.classList.remove("active");
       }
+      // Remove locked class from body
+      document.body.classList.remove("locked");
     }
 
-    // Update last scroll position
     this.lastScrollPosition = currentScrollPosition;
   }
 }
 
 class ToggleClassManager {
-  constructor() {
+  constructor(categoryMenuManager, searchManager) {
     this.categoryButton = document.querySelector(".js-category-button");
     this.categoryButtonTop = document.querySelector(".js-category-button-top");
     this.categoryMenu = document.querySelector(".js-category-menu");
     this.overlay = document.querySelector(".overlay-bg");
+    this.categoryMenuManager = categoryMenuManager;
+    this.searchManager = searchManager;
     this.init();
   }
 
@@ -14751,7 +14799,7 @@ class ToggleClassManager {
 
     const isActive = this.categoryMenu.classList.contains("active");
 
-    // Close mobile menu if it's open
+    // Close mobile menu
     const mobileMenu = document.querySelector(".new-header__menu");
     const mobileMenuButton = document.querySelector(".new-header__mobile-menu");
     const hamburger = document.querySelector(".hamburger");
@@ -14759,6 +14807,16 @@ class ToggleClassManager {
       mobileMenu.classList.remove("active");
       mobileMenuButton.classList.remove("is-active");
       hamburger.classList.remove("is-active");
+    }
+
+    // Close search
+    if (this.searchManager) {
+      this.searchManager.closeSearch();
+    }
+
+    // Деактивируем категории
+    if (this.categoryMenuManager) {
+      this.categoryMenuManager.deactivateAll();
     }
 
     if (isActive) {
@@ -14773,7 +14831,7 @@ class ToggleClassManager {
 
     const isActive = this.categoryMenu.classList.contains("active");
 
-    // Close mobile menu if it's open
+    // Close mobile menu
     const mobileMenu = document.querySelector(".new-header__menu");
     const mobileMenuButton = document.querySelector(".new-header__mobile-menu");
     const hamburger = document.querySelector(".hamburger");
@@ -14783,10 +14841,20 @@ class ToggleClassManager {
       hamburger.classList.remove("is-active");
     }
 
+    // Close search
+    if (this.searchManager) {
+      this.searchManager.closeSearch();
+    }
+
+    // Деактивируем категории
+    if (this.categoryMenuManager) {
+      this.categoryMenuManager.deactivateAll();
+    }
+
     if (isActive) {
       this.deactivateCategoryMenu();
     } else {
-      this.activateCategoryMenu(true); // Pass true to add position class
+      this.activateCategoryMenu(true);
     }
   }
 
@@ -14805,6 +14873,10 @@ class ToggleClassManager {
       if (this.overlay) {
         this.overlay.classList.add("active");
       }
+      // Add locked class to body on mobile
+      if (window.innerWidth < 979) {
+        document.body.classList.add("locked");
+      }
     }
   }
 
@@ -14821,15 +14893,22 @@ class ToggleClassManager {
       if (this.overlay) {
         this.overlay.classList.remove("active");
       }
+      // Remove locked class from body
+      document.body.classList.remove("locked");
     }
   }
 }
 
 class HamburgerManager {
-  constructor(toggleManager) {
+  constructor(toggleManager, categoryMenuManager, searchManager) {
     this.toggleManager = toggleManager;
+    this.categoryMenuManager = categoryMenuManager;
+    this.searchManager = searchManager;
     this.menu = document.querySelector(".js-category-menu");
     this.menuClose = document.querySelector(".js-hamburger-close");
+    this.categoryClose = document.querySelector(
+      ".new-header-category__second-close"
+    );
     this.overlay = document.querySelector(".overlay-bg");
 
     this.initCloseHandlers();
@@ -14839,19 +14918,40 @@ class HamburgerManager {
     if (this.menuClose) {
       this.menuClose.addEventListener("click", () => this.closeMenu());
     }
+    if (this.categoryClose) {
+      this.categoryClose.addEventListener("click", () => this.closeCategory());
+    }
   }
 
   closeMenu() {
     if (!this.menu) return;
 
-    // Используем ToggleClassManager для деактивации
     this.toggleManager.deactivateCategoryMenu();
+    if (this.categoryMenuManager) {
+      this.categoryMenuManager.deactivateAll();
+    }
+    if (this.searchManager) {
+      this.searchManager.closeSearch();
+    }
+    document.body.classList.remove("locked");
+  }
+
+  closeCategory() {
+    if (this.categoryMenuManager) {
+      this.categoryMenuManager.deactivateAll();
+    }
+    if (this.searchManager) {
+      this.searchManager.closeSearch();
+    }
+    document.body.classList.remove("locked");
   }
 }
 
 class ScrollManager {
-  constructor(toggleManager) {
+  constructor(toggleManager, categoryMenuManager, searchManager) {
     this.toggleManager = toggleManager;
+    this.categoryMenuManager = categoryMenuManager;
+    this.searchManager = searchManager;
     this.header = document.querySelector(".new-header");
     this.fixedCard = document.querySelector(".fixed-card");
     this.categoryMenu = document.querySelector(".js-category-menu");
@@ -14890,8 +14990,14 @@ class ScrollManager {
   closeCategoryMenu() {
     if (!this.categoryMenu) return;
 
-    // Используем ToggleClassManager для деактивации
     this.toggleManager.deactivateCategoryMenu();
+    if (this.categoryMenuManager) {
+      this.categoryMenuManager.deactivateAll();
+    }
+    if (this.searchManager) {
+      this.searchManager.closeSearch();
+    }
+    document.body.classList.remove("locked");
   }
 
   handleCardScroll(scrollPos) {
@@ -14902,103 +15008,6 @@ class ScrollManager {
       (!this.header || this.header.classList.contains("active"));
 
     this.fixedCard.classList.toggle("active", shouldShowCard);
-  }
-}
-
-class HeaderManager {
-  constructor(toggleManager) {
-    this.toggleManager = toggleManager;
-    this.headerGameBtns = document.querySelectorAll(".js-header-game-open");
-    this.headerAdminBtn = document.querySelector(".header__actions_admin_open");
-    this.headerAdminDrop = document.querySelector(
-      ".header__actions_admin_drop"
-    );
-    this.headerScroll = document.querySelector(".new-header");
-    this.overlay = document.querySelector(".overlay-bg");
-
-    this.initHeaderGame();
-    this.initHeaderAdmin();
-  }
-
-  initHeaderGame() {
-    if (!this.headerGameBtns) return;
-
-    this.headerGameBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        btn.classList.add("remove");
-        // Close both menus
-        const mobileMenu = document.querySelector(".new-header__menu");
-        const mobileMenuButton = document.querySelector(
-          ".new-header__mobile-menu"
-        );
-        const hamburger = document.querySelector(".hamburger");
-        if (mobileMenu && mobileMenuButton && hamburger) {
-          mobileMenu.classList.remove("active");
-          mobileMenuButton.classList.remove("is-active");
-          hamburger.classList.remove("is-active");
-        }
-        if (this.toggleManager) {
-          this.toggleManager.deactivateCategoryMenu();
-        }
-        // Remove overlay active class
-        if (this.overlay) {
-          this.overlay.classList.remove("active");
-        }
-      });
-    });
-  }
-
-  initHeaderAdmin() {
-    if (!this.headerAdminBtn || !this.headerAdminDrop) return;
-
-    this.headerAdminBtn.addEventListener("click", () => {
-      this.toggleAdminMenu();
-    });
-    document.addEventListener("click", (e) => this.closeAdminMenu(e));
-    if (this.overlay) {
-      this.overlay.addEventListener("click", () => {
-        this.headerAdminBtn.classList.remove("_active");
-        this.headerAdminDrop.classList.remove("_active");
-        // Remove overlay active class
-        this.overlay.classList.remove("active");
-      });
-    }
-  }
-
-  toggleAdminMenu() {
-    const isActive = this.headerAdminDrop.classList.contains("_active");
-    this.headerAdminBtn.classList.toggle("_active");
-    this.headerAdminDrop.classList.toggle("_active");
-    // Toggle overlay
-    if (this.overlay) {
-      this.overlay.classList.toggle("active", !isActive);
-    }
-    // Close other menus
-    const mobileMenu = document.querySelector(".new-header__menu");
-    const mobileMenuButton = document.querySelector(".new-header__mobile-menu");
-    const hamburger = document.querySelector(".hamburger");
-    if (mobileMenu && mobileMenuButton && hamburger) {
-      mobileMenu.classList.remove("active");
-      mobileMenuButton.classList.remove("is-active");
-      hamburger.classList.remove("is-active");
-    }
-    if (this.toggleManager) {
-      this.toggleManager.deactivateCategoryMenu();
-    }
-  }
-
-  closeAdminMenu(event) {
-    if (
-      !this.headerAdminBtn.contains(event.target) &&
-      !this.headerAdminDrop.contains(event.target)
-    ) {
-      this.headerAdminBtn.classList.remove("_active");
-      this.headerAdminDrop.classList.remove("_active");
-      // Remove overlay active class
-      if (this.overlay) {
-        this.overlay.classList.remove("active");
-      }
-    }
   }
 }
 
@@ -15014,22 +15023,31 @@ class CategoryMenu {
 
   init() {
     this.setupButtonEvents();
-    this.activateFirstMenu();
+    if (window.innerWidth >= 979) {
+      this.activateFirstMenu();
+    }
+    // Обработка изменения размера окна
+    window.addEventListener("resize", () => this.handleResize());
   }
 
   setupButtonEvents() {
     this.buttons.forEach((button) => {
-      button.addEventListener("mouseenter", () => {
-        const targetId = button.getAttribute("data-category-target");
-        this.activateMenu(targetId);
-      });
+      const eventType = window.innerWidth < 979 ? "click" : "mouseenter";
+      button.removeEventListener("click", this.handleButtonEvent); // Удаляем старый обработчик
+      button.removeEventListener("mouseenter", this.handleButtonEvent); // Удаляем старый обработчик
+      button.addEventListener(eventType, this.handleButtonEvent.bind(this));
     });
     if (this.overlay) {
       this.overlay.addEventListener("click", () => {
         this.deactivateAll();
-        this.overlay.classList.remove("active");
+        document.body.classList.remove("locked");
       });
     }
+  }
+
+  handleButtonEvent(event) {
+    const targetId = event.target.getAttribute("data-category-target");
+    this.activateMenu(targetId);
   }
 
   activateMenu(targetId) {
@@ -15041,25 +15059,40 @@ class CategoryMenu {
     const activeMenu = document.querySelector(
       `[data-category-id="${targetId}"]`
     );
+    const secondCloseButton = document.querySelector(
+      ".new-header-category__second-close"
+    );
 
     if (activeButton) activeButton.classList.add("active");
     if (activeMenu) {
       activeMenu.classList.add("active");
       this.currentActiveMenu = targetId;
     }
-    // Add overlay active class
     if (this.overlay) {
       this.overlay.classList.add("active");
+    }
+    if (window.innerWidth < 979) {
+      document.body.classList.add("locked");
+      if (secondCloseButton) {
+        secondCloseButton.classList.add("active");
+      }
     }
   }
 
   deactivateAll() {
     this.buttons.forEach((btn) => btn.classList.remove("active"));
     this.menus.forEach((menu) => menu.classList.remove("active"));
-    // Remove overlay active class
+    this.currentActiveMenu = null;
     if (this.overlay) {
       this.overlay.classList.remove("active");
     }
+    const secondCloseButton = document.querySelector(
+      ".new-header-category__second-close"
+    );
+    if (secondCloseButton) {
+      secondCloseButton.classList.remove("active");
+    }
+    document.body.classList.remove("locked");
   }
 
   activateFirstMenu() {
@@ -15077,14 +15110,112 @@ class CategoryMenu {
       this.currentActiveMenu = firstTarget;
     }
   }
+
+  handleResize() {
+    if (window.innerWidth < 979) {
+      this.deactivateAll();
+    } else if (this.currentActiveMenu === null) {
+      this.activateFirstMenu();
+    }
+    // Обновляем обработчики событий для кнопок
+    this.setupButtonEvents();
+  }
+}
+
+class SearchManager {
+  constructor(toggleManager, categoryMenuManager) {
+    this.searchButton = document.querySelector(".new-header__search-mobile");
+    this.searchInput = document.querySelector(".new-search-block__input");
+    this.searchContent = document.querySelector(".new-header__search_content");
+    this.overlay = document.querySelector(".overlay-bg");
+    this.toggleManager = toggleManager;
+    this.categoryMenuManager = categoryMenuManager;
+
+    this.init();
+  }
+
+  init() {
+    if (this.searchButton) {
+      this.searchButton.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.toggleSearch();
+      });
+    }
+    if (this.searchInput) {
+      this.searchInput.addEventListener("input", () => this.handleInput());
+      this.searchInput.addEventListener("click", (e) => e.stopPropagation());
+    }
+    if (this.overlay) {
+      this.overlay.addEventListener("click", () => this.closeSearch());
+    }
+  }
+
+  toggleSearch() {
+    const isActive = this.searchContent.classList.contains("active");
+
+    this.closeOtherMenus();
+
+    if (isActive) {
+      this.closeSearch();
+    } else {
+      this.openSearch();
+    }
+  }
+
+  handleInput() {
+    if (this.searchInput.value.trim() !== "") {
+      this.openSearch();
+    } else {
+      this.closeSearch();
+    }
+  }
+
+  openSearch() {
+    if (this.searchContent) {
+      this.searchContent.classList.add("active");
+    }
+    if (this.overlay) {
+      this.overlay.classList.add("active");
+    }
+    if (window.innerWidth < 979) {
+      document.body.classList.add("locked");
+    }
+  }
+
+  closeSearch() {
+    if (this.searchContent) {
+      this.searchContent.classList.remove("active");
+    }
+    if (this.overlay) {
+      this.overlay.classList.remove("active");
+    }
+    document.body.classList.remove("locked");
+  }
+
+  closeOtherMenus() {
+    const mobileMenu = document.querySelector(".new-header__menu");
+    const mobileMenuButton = document.querySelector(".new-header__mobile-menu");
+    const hamburger = document.querySelector(".hamburger");
+    if (mobileMenu && mobileMenuButton && hamburger) {
+      mobileMenu.classList.remove("active");
+      mobileMenuButton.classList.remove("is-active");
+      hamburger.classList.remove("is-active");
+    }
+    if (this.toggleManager) {
+      this.toggleManager.deactivateCategoryMenu();
+    }
+    if (this.categoryMenuManager) {
+      this.categoryMenuManager.deactivateAll();
+    }
+  }
 }
 
 const toggleManager = new ToggleClassManager();
-new MobileMenu(toggleManager);
-new HamburgerManager(toggleManager);
-new ScrollManager(toggleManager);
-new HeaderManager(toggleManager);
-new CategoryMenu();
+const categoryMenuManager = new CategoryMenu();
+const searchManager = new SearchManager(toggleManager, categoryMenuManager);
+new MobileMenu(toggleManager, categoryMenuManager, searchManager); // Передаем все менеджеры
+new HamburgerManager(toggleManager, categoryMenuManager, searchManager);
+new ScrollManager(toggleManager, categoryMenuManager, searchManager);
 
     /* new-reviews */
 (function () {
