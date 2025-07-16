@@ -14612,111 +14612,13 @@ if (newCards)
     });
   });
 
-    class HeaderManager {
-  constructor() {
-    this.headerGameBtns = document.querySelectorAll(".js-header-game-open");
-    this.headerAdminBtn = document.querySelector(".header__actions_admin_open");
-    this.headerAdminDrop = document.querySelector(
-      ".header__actions_admin_drop"
-    );
-    this.headerScroll = document.querySelector(".new-header");
-
-    this.initHeaderGame();
-    this.initHeaderAdmin();
-  }
-
-  initHeaderGame() {
-    if (!this.headerGameBtns) return;
-
-    this.headerGameBtns.forEach((btn) => {
-      btn.addEventListener("click", () => btn.classList.add("remove"));
-    });
-  }
-
-  initHeaderAdmin() {
-    if (!this.headerAdminBtn || !this.headerAdminDrop) return;
-
-    this.headerAdminBtn.addEventListener("click", () => this.toggleAdminMenu());
-    document.addEventListener("click", (e) => this.closeAdminMenu(e));
-  }
-
-  toggleAdminMenu() {
-    this.headerAdminBtn.classList.toggle("_active");
-    this.headerAdminDrop.classList.toggle("_active");
-  }
-
-  closeAdminMenu(event) {
-    if (
-      !this.headerAdminBtn.contains(event.target) &&
-      !this.headerAdminDrop.contains(event.target)
-    ) {
-      this.headerAdminBtn.classList.remove("_active");
-      this.headerAdminDrop.classList.remove("_active");
-    }
-  }
-}
-class CategoryMenu {
-  constructor() {
-    this.buttons = document.querySelectorAll("[data-category-target]");
-    this.menus = document.querySelectorAll("[data-category-id]");
-    this.currentActiveMenu = null;
-
-    if (this.buttons.length) this.init();
-  }
-
-  init() {
-    this.setupButtonEvents();
-    this.activateFirstMenu();
-  }
-
-  setupButtonEvents() {
-    this.buttons.forEach((button) => {
-      button.addEventListener("mouseenter", () => {
-        const targetId = button.getAttribute("data-category-target");
-        this.activateMenu(targetId);
-      });
-    });
-  }
-
-  activateMenu(targetId) {
-    this.deactivateAll();
-
-    const activeButton = document.querySelector(
-      `[data-category-target="${targetId}"]`
-    );
-    const activeMenu = document.querySelector(
-      `[data-category-id="${targetId}"]`
-    );
-
-    if (activeButton) activeButton.classList.add("active");
-    if (activeMenu) {
-      activeMenu.classList.add("active");
-      this.currentActiveMenu = targetId;
-    }
-  }
-
-  deactivateAll() {
-    this.buttons.forEach((btn) => btn.classList.remove("active"));
-    this.menus.forEach((menu) => menu.classList.remove("active"));
-  }
-
-  activateFirstMenu() {
-    const firstTarget = this.buttons[0].getAttribute("data-category-target");
-    this.activateMenu(firstTarget);
-  }
-}
-
-new HeaderManager();
-new CategoryMenu();
-
-/* Меню и Скроллы */
-
-class MobileMenu {
+    class MobileMenu {
   constructor(toggleManager) {
     this.menuButton = document.querySelector(".new-header__mobile-menu");
     this.menu = document.querySelector(".new-header__menu");
     this.hamburger = document.querySelector(".hamburger");
-    this.hamburgerMenu = document.querySelector(".js-hamburger-menu");
+    this.categoryMenu = document.querySelector(".js-category-menu");
+    this.overlay = document.querySelector(".overlay-bg");
     this.toggleManager = toggleManager; // Reference to ToggleClassManager
     this.lastScrollPosition = 0;
 
@@ -14728,21 +14630,29 @@ class MobileMenu {
     this.menuButton.addEventListener("click", this.toggleMenu.bind(this));
     window.addEventListener("scroll", this.handleScroll.bind(this));
     document.addEventListener("click", this.handleOutsideClick.bind(this));
+    if (this.overlay) {
+      this.overlay.addEventListener(
+        "click",
+        this.handleOverlayClick.bind(this)
+      );
+    }
   }
 
   toggleMenu(event) {
     event.stopPropagation();
-    // Close the other menu (js-hamburger-menu)
-    if (this.hamburgerMenu && this.toggleManager) {
-      const targetId = this.hamburgerMenu.getAttribute("data-class-element");
-      if (targetId) {
-        this.toggleManager.deactivateByTarget(targetId, "active");
-      }
+    // Close the category menu
+    if (this.categoryMenu && this.toggleManager) {
+      this.toggleManager.deactivateCategoryMenu();
     }
     // Toggle active classes for this menu
+    const isActive = this.menu.classList.contains("active");
     this.menu.classList.toggle("active");
     this.menuButton.classList.toggle("is-active");
     this.hamburger.classList.toggle("is-active");
+    // Toggle overlay
+    if (this.overlay) {
+      this.overlay.classList.toggle("active", !isActive);
+    }
   }
 
   handleOutsideClick(event) {
@@ -14750,25 +14660,41 @@ class MobileMenu {
     const isButton = target.tagName === "BUTTON" || target.type === "button";
     const isOutsideMenu =
       !this.menu.contains(target) && !this.menuButton.contains(target);
-    const isOutsideHamburgerMenu =
-      !this.hamburgerMenu || !this.hamburgerMenu.contains(target);
+    const isOutsideCategoryMenu =
+      !this.categoryMenu || !this.categoryMenu.contains(target);
 
-    // Close both menus if clicking outside or on another button (except menuButton)
+    // Close menus only if clicking outside both menus or on a button (except menuButton)
     if (
-      (isOutsideMenu && isOutsideHamburgerMenu) ||
-      (isButton && !this.menuButton.contains(target))
+      (isOutsideMenu && isOutsideCategoryMenu) ||
+      (isButton && !this.menuButton.contains(target) && isOutsideCategoryMenu)
     ) {
       // Close mobile menu
       this.menu.classList.remove("active");
       this.menuButton.classList.remove("is-active");
       this.hamburger.classList.remove("is-active");
-      // Close hamburger menu
-      if (this.hamburgerMenu && this.toggleManager) {
-        const targetId = this.hamburgerMenu.getAttribute("data-class-element");
-        if (targetId) {
-          this.toggleManager.deactivateByTarget(targetId, "active");
-        }
+      // Close category menu
+      if (this.categoryMenu && this.toggleManager) {
+        this.toggleManager.deactivateCategoryMenu();
       }
+      // Remove overlay active class
+      if (this.overlay) {
+        this.overlay.classList.remove("active");
+      }
+    }
+  }
+
+  handleOverlayClick() {
+    // Close mobile menu
+    this.menu.classList.remove("active");
+    this.menuButton.classList.remove("is-active");
+    this.hamburger.classList.remove("is-active");
+    // Close category menu
+    if (this.categoryMenu && this.toggleManager) {
+      this.toggleManager.deactivateCategoryMenu();
+    }
+    // Remove overlay active class
+    if (this.overlay) {
+      this.overlay.classList.remove("active");
     }
   }
 
@@ -14781,12 +14707,13 @@ class MobileMenu {
       this.menu.classList.remove("active");
       this.menuButton.classList.remove("is-active");
       this.hamburger.classList.remove("is-active");
-      // Remove active classes for hamburger menu
-      if (this.hamburgerMenu && this.toggleManager) {
-        const targetId = this.hamburgerMenu.getAttribute("data-class-element");
-        if (targetId) {
-          this.toggleManager.deactivateByTarget(targetId, "active");
-        }
+      // Remove active classes for category menu
+      if (this.categoryMenu && this.toggleManager) {
+        this.toggleManager.deactivateCategoryMenu();
+      }
+      // Remove overlay active class
+      if (this.overlay) {
+        this.overlay.classList.remove("active");
       }
     }
 
@@ -14797,33 +14724,32 @@ class MobileMenu {
 
 class ToggleClassManager {
   constructor() {
-    this.stateMap = new Map();
-    this.buttons = document.querySelectorAll(".add-class-btn");
+    this.categoryButton = document.querySelector(".js-category-button");
+    this.categoryButtonTop = document.querySelector(".js-category-button-top");
+    this.categoryMenu = document.querySelector(".js-category-menu");
+    this.overlay = document.querySelector(".overlay-bg");
     this.init();
   }
 
   init() {
-    this.buttons.forEach((button) => {
-      button.addEventListener("click", (e) => {
+    if (this.categoryButton) {
+      this.categoryButton.addEventListener("click", (e) => {
         e.stopPropagation();
-        this.handleButtonClick(button);
+        this.handleCategoryButtonClick();
       });
-    });
+    }
+    if (this.categoryButtonTop) {
+      this.categoryButtonTop.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.handleCategoryButtonTopClick();
+      });
+    }
   }
 
-  handleButtonClick(button) {
-    const targetId = button.getAttribute("data-class-target");
-    const className = button.getAttribute("data-class-name");
+  handleCategoryButtonClick() {
+    if (!this.categoryMenu) return;
 
-    if (!targetId || !className) return;
-
-    const targetElements = Array.from(
-      document.querySelectorAll(`[data-class-element="${targetId}"]`)
-    );
-
-    if (targetElements.length === 0) return;
-
-    const isActive = button.classList.contains(className);
+    const isActive = this.categoryMenu.classList.contains("active");
 
     // Close mobile menu if it's open
     const mobileMenu = document.querySelector(".new-header__menu");
@@ -14836,81 +14762,80 @@ class ToggleClassManager {
     }
 
     if (isActive) {
-      this.deactivateAll(targetElements, button, className, targetId);
+      this.deactivateCategoryMenu();
     } else {
-      this.activate(targetElements, button, className, targetId);
+      this.activateCategoryMenu();
     }
   }
 
-  deactivateAll(elements, button, className, targetId) {
-    elements.forEach((el) => el.classList.remove(className));
-    button.classList.remove(className);
-    this.stateMap.set(targetId, {
-      lastElements: [],
-      lastButton: null,
-    });
-  }
+  handleCategoryButtonTopClick() {
+    if (!this.categoryMenu) return;
 
-  activate(elements, button, className, targetId) {
-    const state = this.stateMap.get(targetId) || {
-      lastElements: [],
-      lastButton: null,
-    };
+    const isActive = this.categoryMenu.classList.contains("active");
 
-    state.lastElements.forEach((el) => el.classList.remove(className));
-    if (state.lastButton && state.lastButton !== button) {
-      state.lastButton.classList.remove(className);
+    // Close mobile menu if it's open
+    const mobileMenu = document.querySelector(".new-header__menu");
+    const mobileMenuButton = document.querySelector(".new-header__mobile-menu");
+    const hamburger = document.querySelector(".hamburger");
+    if (mobileMenu && mobileMenuButton && hamburger) {
+      mobileMenu.classList.remove("active");
+      mobileMenuButton.classList.remove("is-active");
+      hamburger.classList.remove("is-active");
     }
 
-    elements.forEach((el) => el.classList.add(className));
-    button.classList.add(className);
-
-    this.stateMap.set(targetId, {
-      lastElements: elements,
-      lastButton: button,
-    });
+    if (isActive) {
+      this.deactivateCategoryMenu();
+    } else {
+      this.activateCategoryMenu(true); // Pass true to add position class
+    }
   }
 
-  deactivateByTarget(targetId, className) {
-    const state = this.stateMap.get(targetId);
-    if (!state) return;
-
-    state.lastElements.forEach((el) => el.classList.remove(className));
-    if (state.lastButton) {
-      state.lastButton.classList.remove(className);
+  activateCategoryMenu(addPosition = false) {
+    if (this.categoryMenu) {
+      this.categoryMenu.classList.add("active");
+      if (addPosition) {
+        this.categoryMenu.classList.add("position");
+      }
+      if (this.categoryButton) {
+        this.categoryButton.classList.add("active");
+      }
+      if (this.categoryButtonTop) {
+        this.categoryButtonTop.classList.add("active");
+      }
+      if (this.overlay) {
+        this.overlay.classList.add("active");
+      }
     }
+  }
 
-    this.stateMap.set(targetId, {
-      lastElements: [],
-      lastButton: null,
-    });
+  deactivateCategoryMenu() {
+    if (this.categoryMenu) {
+      this.categoryMenu.classList.remove("active");
+      this.categoryMenu.classList.remove("position");
+      if (this.categoryButton) {
+        this.categoryButton.classList.remove("active");
+      }
+      if (this.categoryButtonTop) {
+        this.categoryButtonTop.classList.remove("active");
+      }
+      if (this.overlay) {
+        this.overlay.classList.remove("active");
+      }
+    }
   }
 }
 
 class HamburgerManager {
   constructor(toggleManager) {
     this.toggleManager = toggleManager;
-    this.positionButton = document.querySelector(".js-hamburger-header-button");
-    this.positionMenu = document.querySelector(".js-hamburger-menu");
-    this.menu = document.querySelector(".js-hamburger-menu");
+    this.menu = document.querySelector(".js-category-menu");
     this.menuClose = document.querySelector(".js-hamburger-close");
-    this.menuBgClose = document.querySelector(".js-hamburger-bg-close");
+    this.overlay = document.querySelector(".overlay-bg");
 
-    this.initPositionToggle();
     this.initCloseHandlers();
   }
 
-  initPositionToggle() {
-    if (!this.positionButton || !this.positionMenu) return;
-    this.positionButton.addEventListener("click", () => {
-      this.positionMenu.classList.add("position");
-    });
-  }
-
   initCloseHandlers() {
-    if (this.menuBgClose) {
-      this.menuBgClose.addEventListener("click", () => this.closeMenu());
-    }
     if (this.menuClose) {
       this.menuClose.addEventListener("click", () => this.closeMenu());
     }
@@ -14920,10 +14845,7 @@ class HamburgerManager {
     if (!this.menu) return;
 
     // Используем ToggleClassManager для деактивации
-    const targetId = this.menu.getAttribute("data-class-element");
-    if (targetId) {
-      this.toggleManager.deactivateByTarget(targetId, "active");
-    }
+    this.toggleManager.deactivateCategoryMenu();
   }
 }
 
@@ -14932,7 +14854,8 @@ class ScrollManager {
     this.toggleManager = toggleManager;
     this.header = document.querySelector(".new-header");
     this.fixedCard = document.querySelector(".fixed-card");
-    this.hamburgerMenu = document.querySelector(".js-hamburger-menu");
+    this.categoryMenu = document.querySelector(".js-category-menu");
+    this.overlay = document.querySelector(".overlay-bg");
 
     this.lastScrollTop = 0;
     this.initScrollHandlers();
@@ -14955,21 +14878,20 @@ class ScrollManager {
 
     if (scrollPos > this.lastScrollTop && scrollPos > 50) {
       this.header.classList.add("active");
-      this.closeHamburgerMenu();
+      this.closeCategoryMenu();
     } else if (scrollPos < this.lastScrollTop) {
       this.header.classList.remove("active");
-      this.hamburgerMenu.classList.remove("position");
+      if (this.categoryMenu) {
+        this.categoryMenu.classList.remove("position");
+      }
     }
   }
 
-  closeHamburgerMenu() {
-    if (!this.hamburgerMenu) return;
+  closeCategoryMenu() {
+    if (!this.categoryMenu) return;
 
     // Используем ToggleClassManager для деактивации
-    const targetId = this.hamburgerMenu.getAttribute("data-class-element");
-    if (targetId) {
-      this.toggleManager.deactivateByTarget(targetId, "active");
-    }
+    this.toggleManager.deactivateCategoryMenu();
   }
 
   handleCardScroll(scrollPos) {
@@ -14983,10 +14905,186 @@ class ScrollManager {
   }
 }
 
+class HeaderManager {
+  constructor(toggleManager) {
+    this.toggleManager = toggleManager;
+    this.headerGameBtns = document.querySelectorAll(".js-header-game-open");
+    this.headerAdminBtn = document.querySelector(".header__actions_admin_open");
+    this.headerAdminDrop = document.querySelector(
+      ".header__actions_admin_drop"
+    );
+    this.headerScroll = document.querySelector(".new-header");
+    this.overlay = document.querySelector(".overlay-bg");
+
+    this.initHeaderGame();
+    this.initHeaderAdmin();
+  }
+
+  initHeaderGame() {
+    if (!this.headerGameBtns) return;
+
+    this.headerGameBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.classList.add("remove");
+        // Close both menus
+        const mobileMenu = document.querySelector(".new-header__menu");
+        const mobileMenuButton = document.querySelector(
+          ".new-header__mobile-menu"
+        );
+        const hamburger = document.querySelector(".hamburger");
+        if (mobileMenu && mobileMenuButton && hamburger) {
+          mobileMenu.classList.remove("active");
+          mobileMenuButton.classList.remove("is-active");
+          hamburger.classList.remove("is-active");
+        }
+        if (this.toggleManager) {
+          this.toggleManager.deactivateCategoryMenu();
+        }
+        // Remove overlay active class
+        if (this.overlay) {
+          this.overlay.classList.remove("active");
+        }
+      });
+    });
+  }
+
+  initHeaderAdmin() {
+    if (!this.headerAdminBtn || !this.headerAdminDrop) return;
+
+    this.headerAdminBtn.addEventListener("click", () => {
+      this.toggleAdminMenu();
+    });
+    document.addEventListener("click", (e) => this.closeAdminMenu(e));
+    if (this.overlay) {
+      this.overlay.addEventListener("click", () => {
+        this.headerAdminBtn.classList.remove("_active");
+        this.headerAdminDrop.classList.remove("_active");
+        // Remove overlay active class
+        this.overlay.classList.remove("active");
+      });
+    }
+  }
+
+  toggleAdminMenu() {
+    const isActive = this.headerAdminDrop.classList.contains("_active");
+    this.headerAdminBtn.classList.toggle("_active");
+    this.headerAdminDrop.classList.toggle("_active");
+    // Toggle overlay
+    if (this.overlay) {
+      this.overlay.classList.toggle("active", !isActive);
+    }
+    // Close other menus
+    const mobileMenu = document.querySelector(".new-header__menu");
+    const mobileMenuButton = document.querySelector(".new-header__mobile-menu");
+    const hamburger = document.querySelector(".hamburger");
+    if (mobileMenu && mobileMenuButton && hamburger) {
+      mobileMenu.classList.remove("active");
+      mobileMenuButton.classList.remove("is-active");
+      hamburger.classList.remove("is-active");
+    }
+    if (this.toggleManager) {
+      this.toggleManager.deactivateCategoryMenu();
+    }
+  }
+
+  closeAdminMenu(event) {
+    if (
+      !this.headerAdminBtn.contains(event.target) &&
+      !this.headerAdminDrop.contains(event.target)
+    ) {
+      this.headerAdminBtn.classList.remove("_active");
+      this.headerAdminDrop.classList.remove("_active");
+      // Remove overlay active class
+      if (this.overlay) {
+        this.overlay.classList.remove("active");
+      }
+    }
+  }
+}
+
+class CategoryMenu {
+  constructor() {
+    this.buttons = document.querySelectorAll("[data-category-target]");
+    this.menus = document.querySelectorAll("[data-category-id]");
+    this.overlay = document.querySelector(".overlay-bg");
+    this.currentActiveMenu = null;
+
+    if (this.buttons.length) this.init();
+  }
+
+  init() {
+    this.setupButtonEvents();
+    this.activateFirstMenu();
+  }
+
+  setupButtonEvents() {
+    this.buttons.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        const targetId = button.getAttribute("data-category-target");
+        this.activateMenu(targetId);
+      });
+    });
+    if (this.overlay) {
+      this.overlay.addEventListener("click", () => {
+        this.deactivateAll();
+        this.overlay.classList.remove("active");
+      });
+    }
+  }
+
+  activateMenu(targetId) {
+    this.deactivateAll();
+
+    const activeButton = document.querySelector(
+      `[data-category-target="${targetId}"]`
+    );
+    const activeMenu = document.querySelector(
+      `[data-category-id="${targetId}"]`
+    );
+
+    if (activeButton) activeButton.classList.add("active");
+    if (activeMenu) {
+      activeMenu.classList.add("active");
+      this.currentActiveMenu = targetId;
+    }
+    // Add overlay active class
+    if (this.overlay) {
+      this.overlay.classList.add("active");
+    }
+  }
+
+  deactivateAll() {
+    this.buttons.forEach((btn) => btn.classList.remove("active"));
+    this.menus.forEach((menu) => menu.classList.remove("active"));
+    // Remove overlay active class
+    if (this.overlay) {
+      this.overlay.classList.remove("active");
+    }
+  }
+
+  activateFirstMenu() {
+    const firstTarget = this.buttons[0].getAttribute("data-category-target");
+    const activeButton = document.querySelector(
+      `[data-category-target="${firstTarget}"]`
+    );
+    const activeMenu = document.querySelector(
+      `[data-category-id="${firstTarget}"]`
+    );
+
+    if (activeButton) activeButton.classList.add("active");
+    if (activeMenu) {
+      activeMenu.classList.add("active");
+      this.currentActiveMenu = firstTarget;
+    }
+  }
+}
+
 const toggleManager = new ToggleClassManager();
 new MobileMenu(toggleManager);
 new HamburgerManager(toggleManager);
 new ScrollManager(toggleManager);
+new HeaderManager(toggleManager);
+new CategoryMenu();
 
     /* new-reviews */
 (function () {
