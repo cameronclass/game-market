@@ -1,6 +1,6 @@
 .mobile-game-timer {
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     &__border {
         border-radius: 20px;
@@ -211,6 +211,38 @@
         .new-card__img_item {
             position: relative;
             left: -1px;
+        }
+
+        .new-card__btn {
+            display: block;
+        }
+
+        @include netbook {
+            width: 100%;
+
+            .new-card {
+                width: 100%;
+            }
+
+            .new-card__content {
+                justify-content: flex-start !important;
+            }
+
+            .new-card__buycategory {
+                left: 140px;
+                bottom: 10px;
+                width: calc(100% - 200px);
+            }
+
+            .new-card__gameitem {
+                max-width: 118px;
+                left: 8px;
+                bottom: 8px;
+            }
+
+            .new-card__btn {
+                display: block;
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-/* class ToggleClassManager {
+class ToggleClassCustomManager {
   constructor() {
     this.stateMap = new Map();
     this.buttons = document.querySelectorAll(".add-class-btn");
@@ -69,5 +69,4 @@
 }
 
 // Инициализация при загрузке документа
-const toggleManager = new ToggleClassManager();
- */
+const toggleCustomManager = new ToggleClassCustomManager();

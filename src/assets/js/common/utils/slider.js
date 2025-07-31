@@ -157,6 +157,7 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
   breakpoints: {
     0: {
       slidesPerView: 1,
+      direction: "horizontal",
     },
     992: {
       slidesPerView: 2,
@@ -214,24 +215,6 @@ new Swiper(".steam-bonus .swiper", {
     },
   },
 });
-
-/* new Swiper(".steam-slider .swiper", {
-  spaceBetween: 12,
-  loop: true,
-  navigation: {
-    nextEl: ".steam-slider .swiper-button-next",
-    prevEl: ".steam-slider .swiper-button-prev",
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: "auto",
-      centeredSlides: true,
-    },
-    1290: {
-      slidesPerView: 5,
-    },
-  },
-}); */
 
 new Swiper(".home-main-slider .swiper", {
   spaceBetween: 12,

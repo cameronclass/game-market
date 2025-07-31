@@ -17438,7 +17438,7 @@ input:checked + .contract-offer__slider:before {
 
 .mobile-game-timer {
   margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .mobile-game-timer__border {
   border-radius: 20px;
@@ -17629,6 +17629,33 @@ input:checked + .contract-offer__slider:before {
 .mobile-game-cards__item .new-card__img_item {
   position: relative;
   left: -1px;
+}
+.mobile-game-cards__item .new-card__btn {
+  display: block;
+}
+@media screen and (max-width: 1200px) {
+  .mobile-game-cards__item {
+    width: 100%;
+  }
+  .mobile-game-cards__item .new-card {
+    width: 100%;
+  }
+  .mobile-game-cards__item .new-card__content {
+    justify-content: flex-start !important;
+  }
+  .mobile-game-cards__item .new-card__buycategory {
+    left: 140px;
+    bottom: 10px;
+    width: calc(100% - 200px);
+  }
+  .mobile-game-cards__item .new-card__gameitem {
+    max-width: 118px;
+    left: 8px;
+    bottom: 8px;
+  }
+  .mobile-game-cards__item .new-card__btn {
+    display: block;
+  }
 }
 
 .mobile-game-form {
@@ -19022,7 +19049,20 @@ input:checked + .contract-offer__slider:before {
 @media screen and (max-width: 979px) {
   .new-header__top-search {
     position: absolute;
-    top: -150%;
+    top: -100px;
+    left: 0;
+    background-color: #121110;
+    padding: 15px;
+    z-index: 999;
+  }
+  .new-header__top-search.active {
+    top: 90px;
+  }
+  .new-header__top-search .new-search-block__img {
+    right: 40px;
+  }
+  .new-header__top-search .new-search-block__input {
+    background: #2c2b27;
   }
 }
 .new-header__top::after {
@@ -19141,6 +19181,12 @@ input:checked + .contract-offer__slider:before {
   width: 20px;
   height: 20px;
 }
+.new-header__search-mobile.active, .new-header__search-mobile:hover {
+  background-color: #ebe2d0;
+}
+.new-header__search-mobile.active .new-header__search-mobile-img, .new-header__search-mobile:hover .new-header__search-mobile-img {
+  filter: invert(1);
+}
 @media screen and (max-width: 979px) {
   .new-header__search-mobile {
     display: flex;
@@ -19153,6 +19199,14 @@ input:checked + .contract-offer__slider:before {
 .new-header__search_content.active {
   display: flex;
 }
+@media screen and (max-width: 979px) {
+  .new-header__search_content.active {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 158px;
+  }
+}
 .new-header__search_list {
   padding: 20px;
   background: rgba(34, 33, 30, 0.88);
@@ -19163,6 +19217,13 @@ input:checked + .contract-offer__slider:before {
   top: 10px;
   width: 100%;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 979px) {
+  .new-header__search_list {
+    gap: 8px;
+  }
 }
 .new-header__search_item {
   display: flex;
@@ -19173,6 +19234,12 @@ input:checked + .contract-offer__slider:before {
 .new-header__search_item:hover {
   background: #31302C;
 }
+@media screen and (max-width: 979px) {
+  .new-header__search_item {
+    padding: 12px;
+    background: #31302C;
+  }
+}
 .new-header__search_img {
   margin-right: 25px;
   display: flex;
@@ -19180,6 +19247,12 @@ input:checked + .contract-offer__slider:before {
 .new-header__search_img_item {
   width: 16px;
   height: 16px;
+}
+@media screen and (max-width: 979px) {
+  .new-header__search_img {
+    margin-right: 15px;
+    margin-left: 5px;
+  }
 }
 .new-header__search_title {
   font-weight: 500;
@@ -19189,6 +19262,11 @@ input:checked + .contract-offer__slider:before {
 .new-header__search_arrow {
   margin-left: 100px;
   margin-right: 15px;
+}
+@media screen and (max-width: 979px) {
+  .new-header__search_arrow {
+    margin-left: 20px;
+  }
 }
 .new-header__search_category {
   font-weight: 300;
@@ -21298,6 +21376,10 @@ input:checked + .contract-offer__slider:before {
   flex-wrap: wrap;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px 10px;
+  /* @include mobile {
+      grid-template-columns: 1fr;
+      gap: 10px;
+  } */
 }
 @media screen and (max-width: 1300px) {
   .catalog-cards__block {
@@ -21312,18 +21394,7 @@ input:checked + .contract-offer__slider:before {
     gap: 20px;
   }
 }
-@media screen and (max-width: 979px) {
-  .catalog-cards__block {
-    gap: 20px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .catalog-cards__block {
-    grid-template-columns: repeat(2, 210px);
-    justify-content: space-between;
-  }
-}
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 850px) {
   .catalog-cards__block {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -21445,6 +21516,7 @@ input:checked + .contract-offer__slider:before {
   gap: 10px;
   align-items: center;
   color: #847f7d;
+  width: -webkit-fill-available;
 }
 @media screen and (max-width: 1200px) {
   .catalog-filter__info_title {

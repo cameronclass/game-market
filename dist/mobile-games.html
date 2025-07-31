@@ -587,9 +587,750 @@
     
     <div class="overlay-bg"></div>
     
+    
+    <main class="main-new catalog-page-main">
+    
+        <section class="mobile-game-timer">
+            <div class="container">
+                <div class="mobile-game-timer__border">
+                    <div class="mobile-game-timer__block">
+                        <div class="mobile-game-timer__img">
+                            <img class="mobile-game-timer__img_item" src="assets/images/mobile-game/timer-img.png" alt="">
+                        </div>
+                        <a href="mobile-game-buy.html" class="mobile-game-timer__title">
+                            <img class="mobile-game-timer__title_item" src="assets/images/mobile-game/timer-title.png"
+                                alt="">
+                        </a>
+                        <div class="mobile-game-timer__timer">
+    
+                            <div class="timer" data-deadline="2026-01-01T10:00:00">
+                                <div class="timer__info">
+                                    <div class="timer__day"></div>
+                                    <div class="timer__divide">
+                                        <span class="timer__divide_dot"></span>
+                                        <span class="timer__divide_dot"></span>
+                                    </div>
+                                    <div class="timer__hours"></div>
+                                    <div class="timer__divide">
+                                        <span class="timer__divide_dot"></span>
+                                        <span class="timer__divide_dot"></span>
+                                    </div>
+                                    <div class="timer__minutes"></div>
+                                    <div class="timer__divide">
+                                        <span class="timer__divide_dot"></span>
+                                        <span class="timer__divide_dot"></span>
+                                    </div>
+                                    <div class="timer__seconds"></div>
+                                </div>
+                                <div class="timer__message">
+                                    Время вышло!
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="catalog-page">
+            <div class="container">
+                <div class="catalog-page__block">
+                    <div class="catalog-page__header">
+                        <div class="catalog-filter__info_title">
+                            <a href="#" class="catalog-filter__info_title_name">Мобильный игры</a>
+                        </div>
+                        <div class="catalog-filter__info_sort">
+                            <div class="catalog-filter__info_choose">
+                                <label class="input-label">
+                                    <input class="input-radio" type="radio" name="example" checked />
+                                    <span>Сначала популярные</span>
+                                </label>
+                                <label class="input-label">
+                                    <input class="input-radio" type="radio" name="example" />
+                                    <span>Есть предзаказ</span>
+                                </label>
+                            </div>
+                            <div class="catalog-filter__info_select">
+                                <span class="catalog-filter__info_select_text">Сортировать:</span>
+                                <div class="custom-select custom-select-unique">
+                                    <select>
+                                        <option value="0">По популярности</option>
+                                        <option value="1">Audi</option>
+                                        <option value="2">BMW</option>
+                                        <option value="3">Citroen</option>
+                                        <option value="4">Ford</option>
+                                        <option value="5">Honda</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-page__filter">
+                        <div class="filter-block">
+                            <button class="filter-block__button">
+                                <div class="filter-block__heading">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5 2.99967H4.83333V1.33301C4.83333 1.05967 4.60667 0.833008 4.33333 0.833008C4.06 0.833008 3.83333 1.05967 3.83333 1.33301V2.99967H3.66667C2.60667 2.99967 2 3.60634 2 4.66634V8.66634C2 9.72634 2.60667 10.333 3.66667 10.333H3.83333V14.6663C3.83333 14.9397 4.06 15.1663 4.33333 15.1663C4.60667 15.1663 4.83333 14.9397 4.83333 14.6663V10.333H5C6.06 10.333 6.66667 9.72634 6.66667 8.66634V4.66634C6.66667 3.60634 6.06 2.99967 5 2.99967Z"
+                                            fill="#EBE2D0" />
+                                        <path
+                                            d="M12.3359 5.66732H12.1693V1.33398C12.1693 1.06065 11.9426 0.833984 11.6693 0.833984C11.3959 0.833984 11.1693 1.06065 11.1693 1.33398V5.66732H11.0026C9.9426 5.66732 9.33594 6.27398 9.33594 7.33398V11.334C9.33594 12.394 9.9426 13.0007 11.0026 13.0007H11.1693V14.6673C11.1693 14.9406 11.3959 15.1673 11.6693 15.1673C11.9426 15.1673 12.1693 14.9406 12.1693 14.6673V13.0007H12.3359C13.3959 13.0007 14.0026 12.394 14.0026 11.334V7.33398C14.0026 6.27398 13.3959 5.66732 12.3359 5.66732Z"
+                                            fill="#EBE2D0" />
+                                    </svg>
+                                    <span class="filter-block__heading_text">Фильтры</span>
+                                    <svg class="filter-block__heading_svg-2" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.6095 2.93996H3.58948L4.84281 1.68663C5.03615 1.49329 5.03615 1.17329 4.84281 0.979961C4.64948 0.786628 4.32948 0.786628 4.13615 0.979961L2.02948 3.08663C1.98281 3.13329 1.94948 3.18663 1.92281 3.24663C1.89615 3.30663 1.88281 3.37329 1.88281 3.43996C1.88281 3.50663 1.89615 3.57329 1.92281 3.63329C1.94948 3.69329 1.98281 3.74663 2.02948 3.79329L4.13615 5.89996C4.23615 5.99996 4.36281 6.04663 4.48948 6.04663C4.61615 6.04663 4.74281 5.99996 4.84281 5.89996C5.03615 5.70663 5.03615 5.38663 4.84281 5.19329L3.58948 3.93996H11.6095C12.4361 3.93996 13.1095 4.61329 13.1095 5.43996V7.65329C13.1095 7.92663 13.3361 8.15329 13.6095 8.15329C13.8828 8.15329 14.1095 7.92663 14.1095 7.65329V5.43996C14.1095 4.05996 12.9895 2.93996 11.6095 2.93996Z"
+                                            fill="#83878F" />
+                                        <path
+                                            d="M14.1095 12.56C14.1095 12.4933 14.0961 12.4267 14.0695 12.3667C14.0428 12.3067 14.0095 12.2533 13.9628 12.2067L11.8561 10.1C11.6628 9.90668 11.3428 9.90668 11.1495 10.1C10.9561 10.2933 10.9561 10.6133 11.1495 10.8067L12.4028 12.06H4.38281C3.55615 12.06 2.88281 11.3867 2.88281 10.56V8.34668C2.88281 8.07335 2.65615 7.84668 2.38281 7.84668C2.10948 7.84668 1.88281 8.07335 1.88281 8.34668V10.56C1.88281 11.94 3.00281 13.06 4.38281 13.06H12.4028L11.1495 14.3133C10.9561 14.5067 10.9561 14.8267 11.1495 15.02C11.2495 15.12 11.3761 15.1667 11.5028 15.1667C11.6295 15.1667 11.7561 15.12 11.8561 15.02L13.9628 12.9133C14.0095 12.8667 14.0428 12.8133 14.0695 12.7533C14.0961 12.6933 14.1095 12.6267 14.1095 12.56Z"
+                                            fill="#83878F" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="filter-block__content active">
+                                <div class="filter-block__search">
+                                    <div class="new-search-block">
+                                        <img class="new-search-block__img" src="assets/images/new-icons/search.svg" alt="">
+                                        <input placeholder="Найти" type="text"
+                                            class="new-search-block__input new-search-block__input--bordered">
+                                    </div>
+                                </div>
+                                <div class="filter-block__card filter-block__platform">
+                                    <button type="button" class="filter-block__title add-class-btn"
+                                        data-class-target="platform" data-class-name="active">
+                                        <span>Платформы</span>
+                                        <span class="filter-block__title_icon"></span>
+                                    </button>
+                                    <div class="filter-block__card_content" data-class-element="platform">
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox" checked>
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>PC</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Xbox One</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Xbox X/S</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>PS4</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>PS4</span>
+                                        </label>
+                                        <button class="filter-block__card_more" type="button">Показать все</button>
+                                    </div>
+                                </div>
+                                <div class="filter-block__card filter-block__price">
+                                    <button type="button" class="filter-block__title add-class-btn"
+                                        data-class-target="price" data-class-name="active">
+                                        <span>Цена</span>
+                                        <span class="filter-block__title_icon"></span>
+                                    </button>
+                                    <div class="filter-block__card_content" data-class-element="price">
+                                        <div class="catalog-filter__value_block">
+                                            <div class="catalog-filter__value_item">
+                                                <span>₽</span>
+                                                <input type="number" placeholder="от">
+                                            </div>
+                                            <div class="catalog-filter__value_item">
+                                                <span>₽</span>
+                                                <input type="number" placeholder="до">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-block__card filter-block__category">
+                                    <button type="button" class="filter-block__title add-class-btn"
+                                        data-class-target="genre" data-class-name="active">
+                                        <span>Жанры</span>
+                                        <span class="filter-block__title_icon"></span>
+                                    </button>
+                                    <div class="filter-block__card_content" data-class-element="genre">
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox" checked>
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Action</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Adventure</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Arcade</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Casual</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>PS4</span>
+                                        </label>
+                                        <button class="filter-block__card_more" type="button">Показать все</button>
+                                    </div>
+                                </div>
+                                <div class="filter-block__card filter-block__mode">
+                                    <button type="button" class="filter-block__title add-class-btn" data-class-target="mode"
+                                        data-class-name="active">
+                                        <span>Игровые моды</span>
+                                        <span class="filter-block__title_icon"></span>
+                                    </button>
+                                    <div class="filter-block__card_content" data-class-element="mode">
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox" checked>
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Single player</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Cooperative</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Multi player</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-block__card filter-block__tags">
+                                    <button type="button" class="filter-block__title add-class-btn" data-class-target="tags"
+                                        data-class-name="active">
+                                        <span>Теги</span>
+                                        <span class="filter-block__title_icon"></span>
+                                    </button>
+                                    <div class="filter-block__card_content" data-class-element="tags">
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox" checked>
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Action</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Adventure</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Arcade</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>Casual</span>
+                                        </label>
+                                        <label class="main-input__checkbox">
+                                            <input type="checkbox">
+                                            <div class="main-input__checkbox-wrapper">
+                                                <div class="main-input__checkbox-bg"></div>
+                                                <svg fill="none" viewBox="0 0 24 24" class="main-input__checkbox-icon">
+                                                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3"
+                                                        stroke="currentColor" d="M4 12L10 18L20 6"
+                                                        class="main-input__check-path"></path>
+                                                </svg>
+                                            </div>
+                                            <span>PS4</span>
+                                        </label>
+                                        <button class="filter-block__card_more" type="button">Показать все</button>
+                                    </div>
+                                </div>
+                                <div class="filter-block__card filter-block__year">
+                                    <button type="button" class="filter-block__title add-class-btn" data-class-target="year"
+                                        data-class-name="active">
+                                        <span>Дата релиза</span>
+                                        <span class="filter-block__title_icon"></span>
+                                    </button>
+                                    <div class="filter-block__card_content" data-class-element="year">
+                                        <div class="catalog-filter__value_block">
+                                            <div class="catalog-filter__value_item">
+                                                <div class="custom-select">
+                                                    <select>
+                                                        <option value="0">От</option>
+                                                        <option value="1">Audi</option>
+                                                        <option value="2">BMW</option>
+                                                        <option value="3">Citroen</option>
+                                                        <option value="4">Ford</option>
+                                                        <option value="5">Honda</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="catalog-filter__value_item">
+                                                <div class="custom-select">
+                                                    <select>
+                                                        <option value="0">До</option>
+                                                        <option value="1">Audi</option>
+                                                        <option value="2">BMW</option>
+                                                        <option value="3">Citroen</option>
+                                                        <option value="4">Ford</option>
+                                                        <option value="5">Honda</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-page__cards">
+                        <div class="catalog-cards__block">
+                            <div class="mobile-game-cards__item catalog-cards__item">
+                                <div class="new-card">
+                                    <svg class="new-card__svg" width="234" height="373" viewBox="0 0 234 373" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.5 361V73.1753V7C0.5 3.41015 3.41015 0.5 7 0.5H70.4388H227C230.59 0.5 233.5 3.41016 233.5 7.00001V306.654C233.5 308.369 232.822 310.015 231.613 311.233L172.698 370.579C171.478 371.809 169.818 372.5 168.086 372.5H12C5.64873 372.5 0.5 367.351 0.5 361Z"
+                                            fill="#1A1917" stroke="url(#gradient)" />
+                                        <defs>
+                                            <linearGradient id="gradient" x1="188.5" y1="326" x2="202.5" y2="340.5"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#272623" />
+                                                <stop offset="1" stop-color="#FF6C3D" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="new-card__overlay">
+                                        <a href="mobile-game-buy.html" class="new-card__img">
+                                            <img class="new-card__img_item" src="assets/images/mobile-game/pubg.png" alt="">
+                                        </a>
+                                        <div class="new-card__content">
+                                            <div class="new-card__title">PUBG Mobile</div>
+                                            <div class="new-card__gameitem">
+                                                <span>UC</span>
+                                                <img class="new-card__gameitem_img"
+                                                    src="assets/images/mobile-game/pubg-item.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="new-card__btn_block">
+                                            <a href="mobile-game-buy.html" class="new-card__btn">
+                                                <svg class="new-card__btn_svg" xmlns="http://www.w3.org/2000/svg" width="28"
+                                                    height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M26.1884 8.87599L24.7884 18.886C24.7535 19.4149 24.6043 19.9299 24.3511 20.3956C24.098 20.8613 23.7468 21.2665 23.3219 21.5833C23.2684 21.6204 23.2059 21.6424 23.141 21.6471C23.0761 21.6517 23.0111 21.6388 22.9529 21.6097C22.8947 21.5806 22.8453 21.5363 22.8101 21.4816C22.7749 21.4269 22.755 21.3637 22.7526 21.2987V11.2758C22.813 10.6223 22.7287 9.96352 22.5056 9.34629C22.2826 8.72906 21.9262 8.16856 21.462 7.70465C20.9978 7.24075 20.437 6.88483 19.8196 6.66222C19.2022 6.43961 18.5434 6.35576 17.8899 6.41666H6.90923C6.55923 6.41666 6.55106 6.10166 6.57556 5.96166C6.67405 5.01261 7.13963 4.13966 7.8729 3.52916C8.2869 3.25166 8.75228 3.05987 9.24158 2.96509C9.73089 2.87032 10.2342 2.87448 10.7219 2.97732L23.0431 4.70399C23.5418 4.74026 24.0282 4.87601 24.4736 5.10323C24.919 5.33045 25.3144 5.64454 25.6366 6.02699C25.9146 6.44074 26.1067 6.90611 26.2015 7.39551C26.2963 7.8849 26.2918 8.38835 26.1884 8.87599ZM20.9991 11.2758V21.3885C21.0592 21.8109 21.0202 22.2415 20.8853 22.6463C20.7503 23.051 20.5231 23.4189 20.2215 23.7207C19.9199 24.0225 19.5523 24.25 19.1476 24.3853C18.7429 24.5205 18.3124 24.5598 17.8899 24.5H5.44389C5.02122 24.5604 4.59026 24.5217 4.18518 24.3867C3.7801 24.2517 3.41202 24.0242 3.1101 23.7223C2.80817 23.4204 2.58071 23.0523 2.44572 22.6472C2.31074 22.2421 2.27193 21.8112 2.33239 21.3885V11.2758C2.27234 10.8533 2.31144 10.4226 2.44661 10.0179C2.58177 9.61308 2.80929 9.24532 3.11116 8.94368C3.41304 8.64203 3.78097 8.41479 4.18585 8.27992C4.59073 8.14506 5.02144 8.10628 5.44389 8.16666H17.8899C18.3121 8.10693 18.7425 8.14619 19.1469 8.28132C19.5514 8.41645 19.9189 8.64376 20.2204 8.94529C20.522 9.24683 20.7493 9.61434 20.8844 10.0188C21.0195 10.4233 21.0588 10.8536 20.9991 11.2758ZM15.4574 16.3333C15.4574 16.1013 15.3652 15.8787 15.2011 15.7146C15.037 15.5505 14.8145 15.4583 14.5824 15.4583H12.5407V13.4167C12.5407 13.1846 12.4485 12.962 12.2844 12.7979C12.1204 12.6338 11.8978 12.5417 11.6657 12.5417C11.4337 12.5417 11.2111 12.6338 11.047 12.7979C10.8829 12.962 10.7907 13.1846 10.7907 13.4167V15.4583H8.74906C8.517 15.4583 8.29444 15.5505 8.13034 15.7146C7.96625 15.8787 7.87406 16.1013 7.87406 16.3333C7.87406 16.5654 7.96625 16.7879 8.13034 16.952C8.29444 17.1161 8.517 17.2083 8.74906 17.2083H10.7907V19.25C10.7907 19.4821 10.8829 19.7046 11.047 19.8687C11.2111 20.0328 11.4337 20.125 11.6657 20.125C11.8978 20.125 12.1204 20.0328 12.2844 19.8687C12.4485 19.7046 12.5407 19.4821 12.5407 19.25V17.2083H14.5824C14.8145 17.2083 15.037 17.1161 15.2011 16.952C15.3652 16.7879 15.4574 16.5654 15.4574 16.3333Z"
+                                                        fill="#847F7D" />
+                                                </svg>
+                                                <div class="new-card__btn_icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12"
+                                                        viewBox="0 0 11 12" fill="none">
+                                                        <rect x="4.24609" y="0.767578" width="2.81538" height="10.3231"
+                                                            rx="1.40769" fill="#FF7347" />
+                                                        <rect x="10.8164" y="4.52148" width="2.81539" height="10.3231"
+                                                            rx="1.40769" transform="rotate(90 10.8164 4.52148)"
+                                                            fill="#FF7347" />
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="mobile-game-cards__item catalog-cards__item">
+                                <div class="new-card">
+                                    <svg class="new-card__svg" width="234" height="373" viewBox="0 0 234 373" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.5 361V73.1753V7C0.5 3.41015 3.41015 0.5 7 0.5H70.4388H227C230.59 0.5 233.5 3.41016 233.5 7.00001V306.654C233.5 308.369 232.822 310.015 231.613 311.233L172.698 370.579C171.478 371.809 169.818 372.5 168.086 372.5H12C5.64873 372.5 0.5 367.351 0.5 361Z"
+                                            fill="#1A1917" stroke="url(#gradient)" />
+                                        <defs>
+                                            <linearGradient id="gradient" x1="188.5" y1="326" x2="202.5" y2="340.5"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#272623" />
+                                                <stop offset="1" stop-color="#FF6C3D" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="new-card__buycategory">
+                                        <div class="new-card__buycategory_item">Благословление Полой луны</div>
+                                    </div>
+                                    <div class="new-card__overlay">
+                                        <a href="mobile-game-buy.html" class="new-card__img">
+                                            <img class="new-card__img_item" src="assets/images/mobile-game/genshin.png"
+                                                alt="">
+                                        </a>
+                                        <div class="new-card__content">
+                                            <div class="new-card__title">Genshin impact</div>
+                                            <div class="new-card__gameitem">
+                                                <span>Кристалы сотвор...</span>
+                                                <img class="new-card__gameitem_img"
+                                                    src="assets/images/mobile-game/genshin-item.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="new-card__btn_block">
+                                            <a href="mobile-game-buy.html" class="new-card__btn">
+                                                <svg class="new-card__btn_svg" xmlns="http://www.w3.org/2000/svg" width="28"
+                                                    height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M26.1884 8.87599L24.7884 18.886C24.7535 19.4149 24.6043 19.9299 24.3511 20.3956C24.098 20.8613 23.7468 21.2665 23.3219 21.5833C23.2684 21.6204 23.2059 21.6424 23.141 21.6471C23.0761 21.6517 23.0111 21.6388 22.9529 21.6097C22.8947 21.5806 22.8453 21.5363 22.8101 21.4816C22.7749 21.4269 22.755 21.3637 22.7526 21.2987V11.2758C22.813 10.6223 22.7287 9.96352 22.5056 9.34629C22.2826 8.72906 21.9262 8.16856 21.462 7.70465C20.9978 7.24075 20.437 6.88483 19.8196 6.66222C19.2022 6.43961 18.5434 6.35576 17.8899 6.41666H6.90923C6.55923 6.41666 6.55106 6.10166 6.57556 5.96166C6.67405 5.01261 7.13963 4.13966 7.8729 3.52916C8.2869 3.25166 8.75228 3.05987 9.24158 2.96509C9.73089 2.87032 10.2342 2.87448 10.7219 2.97732L23.0431 4.70399C23.5418 4.74026 24.0282 4.87601 24.4736 5.10323C24.919 5.33045 25.3144 5.64454 25.6366 6.02699C25.9146 6.44074 26.1067 6.90611 26.2015 7.39551C26.2963 7.8849 26.2918 8.38835 26.1884 8.87599ZM20.9991 11.2758V21.3885C21.0592 21.8109 21.0202 22.2415 20.8853 22.6463C20.7503 23.051 20.5231 23.4189 20.2215 23.7207C19.9199 24.0225 19.5523 24.25 19.1476 24.3853C18.7429 24.5205 18.3124 24.5598 17.8899 24.5H5.44389C5.02122 24.5604 4.59026 24.5217 4.18518 24.3867C3.7801 24.2517 3.41202 24.0242 3.1101 23.7223C2.80817 23.4204 2.58071 23.0523 2.44572 22.6472C2.31074 22.2421 2.27193 21.8112 2.33239 21.3885V11.2758C2.27234 10.8533 2.31144 10.4226 2.44661 10.0179C2.58177 9.61308 2.80929 9.24532 3.11116 8.94368C3.41304 8.64203 3.78097 8.41479 4.18585 8.27992C4.59073 8.14506 5.02144 8.10628 5.44389 8.16666H17.8899C18.3121 8.10693 18.7425 8.14619 19.1469 8.28132C19.5514 8.41645 19.9189 8.64376 20.2204 8.94529C20.522 9.24683 20.7493 9.61434 20.8844 10.0188C21.0195 10.4233 21.0588 10.8536 20.9991 11.2758ZM15.4574 16.3333C15.4574 16.1013 15.3652 15.8787 15.2011 15.7146C15.037 15.5505 14.8145 15.4583 14.5824 15.4583H12.5407V13.4167C12.5407 13.1846 12.4485 12.962 12.2844 12.7979C12.1204 12.6338 11.8978 12.5417 11.6657 12.5417C11.4337 12.5417 11.2111 12.6338 11.047 12.7979C10.8829 12.962 10.7907 13.1846 10.7907 13.4167V15.4583H8.74906C8.517 15.4583 8.29444 15.5505 8.13034 15.7146C7.96625 15.8787 7.87406 16.1013 7.87406 16.3333C7.87406 16.5654 7.96625 16.7879 8.13034 16.952C8.29444 17.1161 8.517 17.2083 8.74906 17.2083H10.7907V19.25C10.7907 19.4821 10.8829 19.7046 11.047 19.8687C11.2111 20.0328 11.4337 20.125 11.6657 20.125C11.8978 20.125 12.1204 20.0328 12.2844 19.8687C12.4485 19.7046 12.5407 19.4821 12.5407 19.25V17.2083H14.5824C14.8145 17.2083 15.037 17.1161 15.2011 16.952C15.3652 16.7879 15.4574 16.5654 15.4574 16.3333Z"
+                                                        fill="#847F7D" />
+                                                </svg>
+                                                <div class="new-card__btn_icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12"
+                                                        viewBox="0 0 11 12" fill="none">
+                                                        <rect x="4.24609" y="0.767578" width="2.81538" height="10.3231"
+                                                            rx="1.40769" fill="#FF7347" />
+                                                        <rect x="10.8164" y="4.52148" width="2.81539" height="10.3231"
+                                                            rx="1.40769" transform="rotate(90 10.8164 4.52148)"
+                                                            fill="#FF7347" />
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="mobile-game-cards__item catalog-cards__item">
+                                <div class="new-card">
+                                    <svg class="new-card__svg" width="234" height="373" viewBox="0 0 234 373" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.5 361V73.1753V7C0.5 3.41015 3.41015 0.5 7 0.5H70.4388H227C230.59 0.5 233.5 3.41016 233.5 7.00001V306.654C233.5 308.369 232.822 310.015 231.613 311.233L172.698 370.579C171.478 371.809 169.818 372.5 168.086 372.5H12C5.64873 372.5 0.5 367.351 0.5 361Z"
+                                            fill="#1A1917" stroke="url(#gradient)" />
+                                        <defs>
+                                            <linearGradient id="gradient" x1="188.5" y1="326" x2="202.5" y2="340.5"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#272623" />
+                                                <stop offset="1" stop-color="#FF6C3D" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="new-card__buycategory">
+                                        <div class="new-card__buycategory_item">Пропуск Снабжениея Эксп...</div>
+                                    </div>
+                                    <div class="new-card__overlay">
+                                        <a href="mobile-game-buy.html" class="new-card__img">
+                                            <img class="new-card__img_item" src="assets/images/mobile-game/starrail.png"
+                                                alt="">
+                                        </a>
+                                        <div class="new-card__content">
+                                            <div class="new-card__title">Honkai Star Rail</div>
+                                            <div class="new-card__gameitem">
+                                                <span>Сущность древни...</span>
+                                                <img class="new-card__gameitem_img"
+                                                    src="assets/images/mobile-game/starrail-item.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="new-card__btn_block">
+                                            <a href="mobile-game-buy.html" class="new-card__btn">
+                                                <svg class="new-card__btn_svg" xmlns="http://www.w3.org/2000/svg" width="28"
+                                                    height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M26.1884 8.87599L24.7884 18.886C24.7535 19.4149 24.6043 19.9299 24.3511 20.3956C24.098 20.8613 23.7468 21.2665 23.3219 21.5833C23.2684 21.6204 23.2059 21.6424 23.141 21.6471C23.0761 21.6517 23.0111 21.6388 22.9529 21.6097C22.8947 21.5806 22.8453 21.5363 22.8101 21.4816C22.7749 21.4269 22.755 21.3637 22.7526 21.2987V11.2758C22.813 10.6223 22.7287 9.96352 22.5056 9.34629C22.2826 8.72906 21.9262 8.16856 21.462 7.70465C20.9978 7.24075 20.437 6.88483 19.8196 6.66222C19.2022 6.43961 18.5434 6.35576 17.8899 6.41666H6.90923C6.55923 6.41666 6.55106 6.10166 6.57556 5.96166C6.67405 5.01261 7.13963 4.13966 7.8729 3.52916C8.2869 3.25166 8.75228 3.05987 9.24158 2.96509C9.73089 2.87032 10.2342 2.87448 10.7219 2.97732L23.0431 4.70399C23.5418 4.74026 24.0282 4.87601 24.4736 5.10323C24.919 5.33045 25.3144 5.64454 25.6366 6.02699C25.9146 6.44074 26.1067 6.90611 26.2015 7.39551C26.2963 7.8849 26.2918 8.38835 26.1884 8.87599ZM20.9991 11.2758V21.3885C21.0592 21.8109 21.0202 22.2415 20.8853 22.6463C20.7503 23.051 20.5231 23.4189 20.2215 23.7207C19.9199 24.0225 19.5523 24.25 19.1476 24.3853C18.7429 24.5205 18.3124 24.5598 17.8899 24.5H5.44389C5.02122 24.5604 4.59026 24.5217 4.18518 24.3867C3.7801 24.2517 3.41202 24.0242 3.1101 23.7223C2.80817 23.4204 2.58071 23.0523 2.44572 22.6472C2.31074 22.2421 2.27193 21.8112 2.33239 21.3885V11.2758C2.27234 10.8533 2.31144 10.4226 2.44661 10.0179C2.58177 9.61308 2.80929 9.24532 3.11116 8.94368C3.41304 8.64203 3.78097 8.41479 4.18585 8.27992C4.59073 8.14506 5.02144 8.10628 5.44389 8.16666H17.8899C18.3121 8.10693 18.7425 8.14619 19.1469 8.28132C19.5514 8.41645 19.9189 8.64376 20.2204 8.94529C20.522 9.24683 20.7493 9.61434 20.8844 10.0188C21.0195 10.4233 21.0588 10.8536 20.9991 11.2758ZM15.4574 16.3333C15.4574 16.1013 15.3652 15.8787 15.2011 15.7146C15.037 15.5505 14.8145 15.4583 14.5824 15.4583H12.5407V13.4167C12.5407 13.1846 12.4485 12.962 12.2844 12.7979C12.1204 12.6338 11.8978 12.5417 11.6657 12.5417C11.4337 12.5417 11.2111 12.6338 11.047 12.7979C10.8829 12.962 10.7907 13.1846 10.7907 13.4167V15.4583H8.74906C8.517 15.4583 8.29444 15.5505 8.13034 15.7146C7.96625 15.8787 7.87406 16.1013 7.87406 16.3333C7.87406 16.5654 7.96625 16.7879 8.13034 16.952C8.29444 17.1161 8.517 17.2083 8.74906 17.2083H10.7907V19.25C10.7907 19.4821 10.8829 19.7046 11.047 19.8687C11.2111 20.0328 11.4337 20.125 11.6657 20.125C11.8978 20.125 12.1204 20.0328 12.2844 19.8687C12.4485 19.7046 12.5407 19.4821 12.5407 19.25V17.2083H14.5824C14.8145 17.2083 15.037 17.1161 15.2011 16.952C15.3652 16.7879 15.4574 16.5654 15.4574 16.3333Z"
+                                                        fill="#847F7D" />
+                                                </svg>
+                                                <div class="new-card__btn_icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12"
+                                                        viewBox="0 0 11 12" fill="none">
+                                                        <rect x="4.24609" y="0.767578" width="2.81538" height="10.3231"
+                                                            rx="1.40769" fill="#FF7347" />
+                                                        <rect x="10.8164" y="4.52148" width="2.81539" height="10.3231"
+                                                            rx="1.40769" transform="rotate(90 10.8164 4.52148)"
+                                                            fill="#FF7347" />
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="mobile-game-cards__item catalog-cards__item">
+                                <div class="new-card">
+                                    <svg class="new-card__svg" width="234" height="373" viewBox="0 0 234 373" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.5 361V73.1753V7C0.5 3.41015 3.41015 0.5 7 0.5H70.4388H227C230.59 0.5 233.5 3.41016 233.5 7.00001V306.654C233.5 308.369 232.822 310.015 231.613 311.233L172.698 370.579C171.478 371.809 169.818 372.5 168.086 372.5H12C5.64873 372.5 0.5 367.351 0.5 361Z"
+                                            fill="#1A1917" stroke="url(#gradient)" />
+                                        <defs>
+                                            <linearGradient id="gradient" x1="188.5" y1="326" x2="202.5" y2="340.5"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#272623" />
+                                                <stop offset="1" stop-color="#FF6C3D" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="new-card__buycategory">
+                                        <div class="new-card__buycategory_item">Боевой пропуск</div>
+                                    </div>
+                                    <div class="new-card__overlay">
+                                        <a href="mobile-game-buy.html" class="new-card__img">
+                                            <img class="new-card__img_item"
+                                                src="assets/images/mobile-game/mobile-legends.png" alt="">
+                                        </a>
+                                        <div class="new-card__content">
+                                            <div class="new-card__title">Mobile Legends</div>
+                                            <div class="new-card__gameitem">
+                                                <span>Алмазы</span>
+                                                <img class="new-card__gameitem_img"
+                                                    src="assets/images/mobile-game/mobile-legends-item.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="new-card__btn_block">
+                                            <a href="mobile-game-buy.html" class="new-card__btn">
+                                                <svg class="new-card__btn_svg" xmlns="http://www.w3.org/2000/svg" width="28"
+                                                    height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M26.1884 8.87599L24.7884 18.886C24.7535 19.4149 24.6043 19.9299 24.3511 20.3956C24.098 20.8613 23.7468 21.2665 23.3219 21.5833C23.2684 21.6204 23.2059 21.6424 23.141 21.6471C23.0761 21.6517 23.0111 21.6388 22.9529 21.6097C22.8947 21.5806 22.8453 21.5363 22.8101 21.4816C22.7749 21.4269 22.755 21.3637 22.7526 21.2987V11.2758C22.813 10.6223 22.7287 9.96352 22.5056 9.34629C22.2826 8.72906 21.9262 8.16856 21.462 7.70465C20.9978 7.24075 20.437 6.88483 19.8196 6.66222C19.2022 6.43961 18.5434 6.35576 17.8899 6.41666H6.90923C6.55923 6.41666 6.55106 6.10166 6.57556 5.96166C6.67405 5.01261 7.13963 4.13966 7.8729 3.52916C8.2869 3.25166 8.75228 3.05987 9.24158 2.96509C9.73089 2.87032 10.2342 2.87448 10.7219 2.97732L23.0431 4.70399C23.5418 4.74026 24.0282 4.87601 24.4736 5.10323C24.919 5.33045 25.3144 5.64454 25.6366 6.02699C25.9146 6.44074 26.1067 6.90611 26.2015 7.39551C26.2963 7.8849 26.2918 8.38835 26.1884 8.87599ZM20.9991 11.2758V21.3885C21.0592 21.8109 21.0202 22.2415 20.8853 22.6463C20.7503 23.051 20.5231 23.4189 20.2215 23.7207C19.9199 24.0225 19.5523 24.25 19.1476 24.3853C18.7429 24.5205 18.3124 24.5598 17.8899 24.5H5.44389C5.02122 24.5604 4.59026 24.5217 4.18518 24.3867C3.7801 24.2517 3.41202 24.0242 3.1101 23.7223C2.80817 23.4204 2.58071 23.0523 2.44572 22.6472C2.31074 22.2421 2.27193 21.8112 2.33239 21.3885V11.2758C2.27234 10.8533 2.31144 10.4226 2.44661 10.0179C2.58177 9.61308 2.80929 9.24532 3.11116 8.94368C3.41304 8.64203 3.78097 8.41479 4.18585 8.27992C4.59073 8.14506 5.02144 8.10628 5.44389 8.16666H17.8899C18.3121 8.10693 18.7425 8.14619 19.1469 8.28132C19.5514 8.41645 19.9189 8.64376 20.2204 8.94529C20.522 9.24683 20.7493 9.61434 20.8844 10.0188C21.0195 10.4233 21.0588 10.8536 20.9991 11.2758ZM15.4574 16.3333C15.4574 16.1013 15.3652 15.8787 15.2011 15.7146C15.037 15.5505 14.8145 15.4583 14.5824 15.4583H12.5407V13.4167C12.5407 13.1846 12.4485 12.962 12.2844 12.7979C12.1204 12.6338 11.8978 12.5417 11.6657 12.5417C11.4337 12.5417 11.2111 12.6338 11.047 12.7979C10.8829 12.962 10.7907 13.1846 10.7907 13.4167V15.4583H8.74906C8.517 15.4583 8.29444 15.5505 8.13034 15.7146C7.96625 15.8787 7.87406 16.1013 7.87406 16.3333C7.87406 16.5654 7.96625 16.7879 8.13034 16.952C8.29444 17.1161 8.517 17.2083 8.74906 17.2083H10.7907V19.25C10.7907 19.4821 10.8829 19.7046 11.047 19.8687C11.2111 20.0328 11.4337 20.125 11.6657 20.125C11.8978 20.125 12.1204 20.0328 12.2844 19.8687C12.4485 19.7046 12.5407 19.4821 12.5407 19.25V17.2083H14.5824C14.8145 17.2083 15.037 17.1161 15.2011 16.952C15.3652 16.7879 15.4574 16.5654 15.4574 16.3333Z"
+                                                        fill="#847F7D" />
+                                                </svg>
+                                                <div class="new-card__btn_icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12"
+                                                        viewBox="0 0 11 12" fill="none">
+                                                        <rect x="4.24609" y="0.767578" width="2.81538" height="10.3231"
+                                                            rx="1.40769" fill="#FF7347" />
+                                                        <rect x="10.8164" y="4.52148" width="2.81539" height="10.3231"
+                                                            rx="1.40769" transform="rotate(90 10.8164 4.52148)"
+                                                            fill="#FF7347" />
+                                                    </svg>
+                                                </div>
+                                            </a>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="mobile-game-cards__item catalog-cards__item">
+                                <div class="new-card">
+                                    <svg class="new-card__svg" width="234" height="373" viewBox="0 0 234 373" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.5 361V73.1753V7C0.5 3.41015 3.41015 0.5 7 0.5H70.4388H227C230.59 0.5 233.5 3.41016 233.5 7.00001V306.654C233.5 308.369 232.822 310.015 231.613 311.233L172.698 370.579C171.478 371.809 169.818 372.5 168.086 372.5H12C5.64873 372.5 0.5 367.351 0.5 361Z"
+                                            fill="#1A1917" stroke="url(#gradient)" />
+                                        <defs>
+                                            <linearGradient id="gradient" x1="188.5" y1="326" x2="202.5" y2="340.5"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#272623" />
+                                                <stop offset="1" stop-color="#FF6C3D" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="new-card__buycategory">
+                                        <div class="new-card__buycategory_item">Боевой пропуск</div>
+                                        <div class="new-card__buycategory_item">Контейнеры</div>
+                                        <div class="new-card__buycategory_item">Наборы</div>
+                                    </div>
+                                    <div class="new-card__overlay">
+                                        <a href="mobile-game-buy.html" class="new-card__img">
+                                            <img class="new-card__img_item" src="assets/images/mobile-game/arena.png"
+                                                alt="">
+                                        </a>
+                                        <div class="new-card__content">
+                                            <div class="new-card__title">Arena BreakOut</div>
+                                            <div class="new-card__gameitem">
+                                                <span>Облигации</span>
+                                                <img class="new-card__gameitem_img"
+                                                    src="assets/images/mobile-game/arena-item.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="new-card__btn_block">
+                                            <a href="mobile-game-buy.html" class="new-card__btn">
+                                                <svg class="new-card__btn_svg" xmlns="http://www.w3.org/2000/svg" width="28"
+                                                    height="28" viewBox="0 0 28 28" fill="none">
+                                                    <path
+                                                        d="M26.1884 8.87599L24.7884 18.886C24.7535 19.4149 24.6043 19.9299 24.3511 20.3956C24.098 20.8613 23.7468 21.2665 23.3219 21.5833C23.2684 21.6204 23.2059 21.6424 23.141 21.6471C23.0761 21.6517 23.0111 21.6388 22.9529 21.6097C22.8947 21.5806 22.8453 21.5363 22.8101 21.4816C22.7749 21.4269 22.755 21.3637 22.7526 21.2987V11.2758C22.813 10.6223 22.7287 9.96352 22.5056 9.34629C22.2826 8.72906 21.9262 8.16856 21.462 7.70465C20.9978 7.24075 20.437 6.88483 19.8196 6.66222C19.2022 6.43961 18.5434 6.35576 17.8899 6.41666H6.90923C6.55923 6.41666 6.55106 6.10166 6.57556 5.96166C6.67405 5.01261 7.13963 4.13966 7.8729 3.52916C8.2869 3.25166 8.75228 3.05987 9.24158 2.96509C9.73089 2.87032 10.2342 2.87448 10.7219 2.97732L23.0431 4.70399C23.5418 4.74026 24.0282 4.87601 24.4736 5.10323C24.919 5.33045 25.3144 5.64454 25.6366 6.02699C25.9146 6.44074 26.1067 6.90611 26.2015 7.39551C26.2963 7.8849 26.2918 8.38835 26.1884 8.87599ZM20.9991 11.2758V21.3885C21.0592 21.8109 21.0202 22.2415 20.8853 22.6463C20.7503 23.051 20.5231 23.4189 20.2215 23.7207C19.9199 24.0225 19.5523 24.25 19.1476 24.3853C18.7429 24.5205 18.3124 24.5598 17.8899 24.5H5.44389C5.02122 24.5604 4.59026 24.5217 4.18518 24.3867C3.7801 24.2517 3.41202 24.0242 3.1101 23.7223C2.80817 23.4204 2.58071 23.0523 2.44572 22.6472C2.31074 22.2421 2.27193 21.8112 2.33239 21.3885V11.2758C2.27234 10.8533 2.31144 10.4226 2.44661 10.0179C2.58177 9.61308 2.80929 9.24532 3.11116 8.94368C3.41304 8.64203 3.78097 8.41479 4.18585 8.27992C4.59073 8.14506 5.02144 8.10628 5.44389 8.16666H17.8899C18.3121 8.10693 18.7425 8.14619 19.1469 8.28132C19.5514 8.41645 19.9189 8.64376 20.2204 8.94529C20.522 9.24683 20.7493 9.61434 20.8844 10.0188C21.0195 10.4233 21.0588 10.8536 20.9991 11.2758ZM15.4574 16.3333C15.4574 16.1013 15.3652 15.8787 15.2011 15.7146C15.037 15.5505 14.8145 15.4583 14.5824 15.4583H12.5407V13.4167C12.5407 13.1846 12.4485 12.962 12.2844 12.7979C12.1204 12.6338 11.8978 12.5417 11.6657 12.5417C11.4337 12.5417 11.2111 12.6338 11.047 12.7979C10.8829 12.962 10.7907 13.1846 10.7907 13.4167V15.4583H8.74906C8.517 15.4583 8.29444 15.5505 8.13034 15.7146C7.96625 15.8787 7.87406 16.1013 7.87406 16.3333C7.87406 16.5654 7.96625 16.7879 8.13034 16.952C8.29444 17.1161 8.517 17.2083 8.74906 17.2083H10.7907V19.25C10.7907 19.4821 10.8829 19.7046 11.047 19.8687C11.2111 20.0328 11.4337 20.125 11.6657 20.125C11.8978 20.125 12.1204 20.0328 12.2844 19.8687C12.4485 19.7046 12.5407 19.4821 12.5407 19.25V17.2083H14.5824C14.8145 17.2083 15.037 17.1161 15.2011 16.952C15.3652 16.7879 15.4574 16.5654 15.4574 16.3333Z"
+                                                        fill="#847F7D" />
+                                                </svg>
+                                                <div class="new-card__btn_icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12"
+                                                        viewBox="0 0 11 12" fill="none">
+                                                        <rect x="4.24609" y="0.767578" width="2.81538" height="10.3231"
+                                                            rx="1.40769" fill="#FF7347" />
+                                                        <rect x="10.8164" y="4.52148" width="2.81539" height="10.3231"
+                                                            rx="1.40769" transform="rotate(90 10.8164 4.52148)"
+                                                            fill="#FF7347" />
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog-cards__more">
+                            <a href="#" class="more-btn">Загрузить еще</a>
+                            <div class="catalog-cards__pagination">
+                                <nav class="pagination">
+                                    <ul class="pagination-list">
+                                        <li class="pagination-item">
+                                            <button class="pagination-link new-arrow-left" type="button">
+                                                <svg width="12" height="19" viewBox="0 0 12 19" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M2.83984 8.57688C3.52064 8.57688 4.07254 9.12877 4.07254 9.80957C4.07254 10.4904 3.52064 11.0423 2.83984 11.0423V8.57688ZM1.17455 10.6812C0.693152 10.1998 0.693152 9.41932 1.17455 8.93793L9.01935 1.09312C9.50075 0.611727 10.2812 0.611727 10.7626 1.09312C11.244 1.57452 11.244 2.35502 10.7626 2.83641L3.78948 9.80957L10.7626 16.7827C11.244 17.2641 11.244 18.0446 10.7626 18.526C10.2812 19.0074 9.50075 19.0074 9.01935 18.526L1.17455 10.6812ZM2.83984 11.0423H2.04619V8.57688H2.83984V11.0423Z"
+                                                        fill="#EBE2D0"></path>
+                                                </svg>
+                                            </button>
+                                        </li>
+                                        <li class="pagination-item"><a class="pagination-link _active" href="#">1</a></li>
+                                        <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
+                                        <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
+                                        <li class="pagination-item"><a class="pagination-link" href="#">...</a></li>
+                                        <li class="pagination-item"><a class="pagination-link" href="#">20</a></li>
+                                        <li class="pagination-item">
+                                            <button class="pagination-link new-arrow-right" type="button">
+                                                <svg width="12" height="19" viewBox="0 0 12 19" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.16016 8.37034C8.47936 8.37034 7.92746 8.92223 7.92746 9.60303C7.92746 10.2838 8.47936 10.8357 9.16016 10.8357V8.37034ZM10.8255 10.4747C11.3068 9.99328 11.3068 9.21278 10.8255 8.73138L2.98065 0.88658C2.49925 0.405184 1.71876 0.405184 1.23736 0.88658C0.755964 1.36798 0.755964 2.14847 1.23736 2.62987L8.21052 9.60303L1.23736 16.5762C0.755964 17.0576 0.755964 17.8381 1.23736 18.3195C1.71876 18.8009 2.49925 18.8009 2.98065 18.3195L10.8255 10.4747ZM9.16016 10.8357H9.95381V8.37034H9.16016V10.8357Z"
+                                                        fill="#EBE2D0"></path>
+                                                </svg>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    
     <main class="main-new">
     
-        <!-- <section class="mobile-game-timer">
+        <section class="mobile-game-timer">
             <div class="container">
                 <div class="mobile-game-timer__border">
                     <div class="mobile-game-timer__block">
@@ -630,7 +1371,7 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
     
         <section class="mobile-game-cards">
             <div class="container">

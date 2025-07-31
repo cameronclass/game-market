@@ -13416,7 +13416,7 @@ accordions.forEach((accordion) => {
   };
 });
 
-    /* class ToggleClassManager {
+    class ToggleClassCustomManager {
   constructor() {
     this.stateMap = new Map();
     this.buttons = document.querySelectorAll(".add-class-btn");
@@ -13487,8 +13487,8 @@ accordions.forEach((accordion) => {
 }
 
 // Инициализация при загрузке документа
-const toggleManager = new ToggleClassManager();
- */
+const toggleCustomManager = new ToggleClassCustomManager();
+
     function initExpandableFilterBlock(
   containerSelector = ".filter-block__card_content"
 ) {
@@ -14118,6 +14118,7 @@ new Swiper(".catalog-slider__sold_slider .swiper", {
   breakpoints: {
     0: {
       slidesPerView: 1,
+      direction: "horizontal",
     },
     992: {
       slidesPerView: 2,
@@ -14175,24 +14176,6 @@ new Swiper(".steam-bonus .swiper", {
     },
   },
 });
-
-/* new Swiper(".steam-slider .swiper", {
-  spaceBetween: 12,
-  loop: true,
-  navigation: {
-    nextEl: ".steam-slider .swiper-button-next",
-    prevEl: ".steam-slider .swiper-button-prev",
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: "auto",
-      centeredSlides: true,
-    },
-    1290: {
-      slidesPerView: 5,
-    },
-  },
-}); */
 
 new Swiper(".home-main-slider .swiper", {
   spaceBetween: 12,
@@ -15127,6 +15110,7 @@ class SearchManager {
     this.searchButton = document.querySelector(".new-header__search-mobile");
     this.searchInput = document.querySelector(".new-search-block__input");
     this.searchContent = document.querySelector(".new-header__search_content");
+    this.topSearch = document.querySelector(".new-header__top-search"); // новый элемент
     this.overlay = document.querySelector(".overlay-bg");
     this.toggleManager = toggleManager;
     this.categoryMenuManager = categoryMenuManager;
@@ -15135,42 +15119,46 @@ class SearchManager {
   }
 
   init() {
+    // 📌 Кнопка мобильного поиска
     if (this.searchButton) {
       this.searchButton.addEventListener("click", (e) => {
         e.stopPropagation();
-        this.toggleSearch();
+        this.toggleMobileSearch();
       });
     }
+
+    // 📌 Событие фокуса на input → открываем поиск
     if (this.searchInput) {
-      this.searchInput.addEventListener("input", () => this.handleInput());
+      this.searchInput.addEventListener("focus", () => this.openSearch());
       this.searchInput.addEventListener("click", (e) => e.stopPropagation());
     }
+
+    // 📌 Клик по overlay закрывает всё
     if (this.overlay) {
-      this.overlay.addEventListener("click", () => this.closeSearch());
+      this.overlay.addEventListener("click", () => this.closeSearch(true));
     }
   }
 
-  toggleSearch() {
-    const isActive = this.searchContent.classList.contains("active");
+  /**
+   * 📱 Мобильная кнопка поиска
+   */
+  toggleMobileSearch() {
+    const isActive = this.searchButton.classList.contains("active");
 
     this.closeOtherMenus();
 
     if (isActive) {
-      this.closeSearch();
+      this.closeSearch(true);
     } else {
-      this.openSearch();
+      this.openSearch(true);
     }
   }
 
-  handleInput() {
-    if (this.searchInput.value.trim() !== "") {
-      this.openSearch();
-    } else {
-      this.closeSearch();
-    }
-  }
-
-  openSearch() {
+  /**
+   * 🔍 Открытие поиска
+   * @param {boolean} isFromMobile - вызвано ли из кнопки .new-header__search-mobile
+   */
+  openSearch(isFromMobile = false) {
     if (this.searchContent) {
       this.searchContent.classList.add("active");
     }
@@ -15180,9 +15168,19 @@ class SearchManager {
     if (window.innerWidth < 979) {
       document.body.classList.add("locked");
     }
+
+    // ✅ Если это мобильная кнопка — ставим active и на кнопку, и на блок
+    if (isFromMobile && this.searchButton && this.topSearch) {
+      this.searchButton.classList.add("active");
+      this.topSearch.classList.add("active");
+    }
   }
 
-  closeSearch() {
+  /**
+   * ❌ Закрытие поиска
+   * @param {boolean} fullClose - закрыть ли также мобильную кнопку
+   */
+  closeSearch(fullClose = false) {
     if (this.searchContent) {
       this.searchContent.classList.remove("active");
     }
@@ -15190,8 +15188,17 @@ class SearchManager {
       this.overlay.classList.remove("active");
     }
     document.body.classList.remove("locked");
+
+    // ✅ Убираем классы у кнопки и блока только если это полный клик вне поиска
+    if (fullClose && this.searchButton && this.topSearch) {
+      this.searchButton.classList.remove("active");
+      this.topSearch.classList.remove("active");
+    }
   }
 
+  /**
+   * 🔒 Закрытие других меню, чтобы не конфликтовали с поиском
+   */
   closeOtherMenus() {
     const mobileMenu = document.querySelector(".new-header__menu");
     const mobileMenuButton = document.querySelector(".new-header__mobile-menu");
