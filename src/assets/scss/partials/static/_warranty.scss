@@ -1,0 +1,89 @@
+.warranty-header {
+    margin-top: 30px;
+}
+
+.warranty-about {
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 8px;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__card {
+        border-radius: 30px;
+        background: #191816;
+        padding: 20px 30px 30px;
+        position: relative;
+        overflow: hidden;
+
+        @include mobile {
+            border-radius: 10px;
+        }
+
+        &-number {
+            width: 68px;
+            height: 68px;
+            position: relative;
+
+            &-text {
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 30px;
+                color: white;
+                z-index: 2;
+                font-family: $font-bebas;
+            }
+        }
+
+        &-title {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            color: #EBE2D0;
+            line-height: 1;
+            font-weight: 500;
+
+            ._number {
+                font-size: 80px;
+                font-family: $font-bebas;
+                color: #CE7559;
+                line-height: 1;
+                transform: translateY(5px);
+                display: inline-block;
+            }
+        }
+
+        &-btn {
+            padding: 10px 30px;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+
+            &:hover {
+                color: white;
+                background-color: $orange;
+                border: 1px solid transparent;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        &-img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 60%;
+            height: 100%;
+            object-fit: contain;
+            object-position: top right;
+        }
+    }
+}

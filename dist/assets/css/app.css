@@ -6341,6 +6341,13 @@ html.with-fancybox body.hide-scrollbar {
 /* Main */
 /* Helpers */
 /* Template */
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/assets/fonts/BebasNeue.woff") format("woff"), url("/assets/fonts/BebasNeue.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 #page-preloader {
   position: fixed;
   left: 0;
@@ -21837,4 +21844,153 @@ input:checked + .contract-offer__slider:before {
 }
 .catalog-page-slider .catalog-slider__best_overlay_img {
   margin-bottom: 20px;
+}
+
+/* Static Page */
+.static-header {
+  border-radius: 30px;
+  background: #1A1917;
+  position: relative;
+  height: 28cqw;
+  max-height: 340px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+@media screen and (max-width: 979px) {
+  .static-header {
+    border-radius: 10px;
+  }
+}
+.static-header__title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 28cqw;
+  text-align: center;
+  line-height: 1;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 2;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(180deg, rgb(255, 108, 61), rgb(25, 24, 22));
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0.5;
+  filter: drop-shadow(1px 1px 0 rgb(255, 108, 61)) drop-shadow(-1px -1px 0 rgb(25, 24, 22));
+}
+.static-header__img {
+  width: 18cqw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+.static-header__bg_1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0.6;
+}
+.static-header__bg_2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.warranty-header {
+  margin-top: 30px;
+}
+
+.warranty-about__block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__block {
+    grid-template-columns: 1fr;
+  }
+}
+.warranty-about__card {
+  border-radius: 30px;
+  background: #191816;
+  padding: 20px 30px 30px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__card {
+    border-radius: 10px;
+  }
+}
+.warranty-about__card-number {
+  width: 68px;
+  height: 68px;
+  position: relative;
+}
+.warranty-about__card-number-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: white;
+  z-index: 2;
+  font-family: "Bebas Neue", sans-serif;
+}
+.warranty-about__card-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #EBE2D0;
+  line-height: 1;
+  font-weight: 500;
+}
+.warranty-about__card-title ._number {
+  font-size: 80px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #CE7559;
+  line-height: 1;
+  transform: translateY(5px);
+  display: inline-block;
+}
+.warranty-about__card-btn {
+  padding: 10px 30px;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+.warranty-about__card-btn:hover {
+  color: white;
+  background-color: #ff6c3d;
+  border: 1px solid transparent;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__card-btn {
+    width: 100%;
+  }
+}
+.warranty-about__card-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top right;
 }
