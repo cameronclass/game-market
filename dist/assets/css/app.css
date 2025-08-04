@@ -12396,248 +12396,6 @@ input[type=number] {
   }
 }
 
-.home-reviews {
-  padding-top: 20px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #ff6c3d;
-  position: relative;
-  overflow: hidden;
-}
-.home-reviews__bg {
-  width: 100%;
-  height: 400px;
-  position: absolute;
-  left: 0;
-  top: -100px;
-  background: linear-gradient(0deg, #1C1B19 46.15%, #2B0F0A 100%);
-}
-.home-reviews__title {
-  text-align: center;
-  font-size: 20px;
-  color: #847f7d;
-  margin-bottom: 25px;
-  position: relative;
-}
-.home-reviews__title._secondary {
-  margin-top: 80px;
-}
-.home-reviews__slide {
-  width: 100%;
-  max-width: 294px;
-}
-.home-reviews .splide__track {
-  overflow: visible;
-}
-
-.home-reviews-card {
-  display: flex;
-  gap: 14px;
-  position: relative;
-}
-.home-reviews-card__name {
-  width: 100%;
-  max-width: 58px;
-  height: 76px;
-  border-radius: 5px;
-  border: 1px solid #847f7d;
-  font-size: 20px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Roboto", sans-serif;
-}
-.home-reviews-card__content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.home-reviews-card__title {
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
-}
-.home-reviews-card__date {
-  color: #847f7d;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 8px;
-}
-.home-reviews-card__date_label {
-  display: flex;
-  width: 27px;
-  height: 11px;
-  border-radius: 25px;
-}
-.home-reviews-card__date_label._green {
-  background-color: #62CC66;
-}
-.home-reviews-card__text {
-  color: #847f7d;
-  font-size: 14px;
-}
-.home-reviews-card .read-smore__link {
-  color: #ff6c3d;
-  font-size: 14px;
-}
-
-.home-other-reviews {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 11px 20px;
-  position: relative;
-  z-index: 2;
-}
-@media screen and (max-width: 979px) {
-  .home-other-reviews {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 11px;
-  }
-}
-.home-other-reviews__card {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  border-radius: 12.58px;
-  background: linear-gradient(175.53deg, rgb(52, 45, 39) 0%, rgb(34, 34, 32) 65.877%);
-  padding: 15px 20px;
-  border: 1px solid transparent;
-}
-@media screen and (max-width: 1200px) {
-  .home-other-reviews__card {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px 10px;
-  }
-}
-.home-other-reviews__card:hover, .home-other-reviews__card.active {
-  border: 1px solid #ff6c3d;
-  background: rgba(0, 0, 0, 0.062745098);
-}
-.home-other-reviews__card_img {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-}
-@media screen and (max-width: 1200px) {
-  .home-other-reviews__card_img {
-    width: auto;
-    height: 55px;
-  }
-}
-.home-other-reviews__card_content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-  gap: 4px;
-}
-@media screen and (max-width: 1200px) {
-  .home-other-reviews__card_content {
-    gap: 10px;
-  }
-}
-@media screen and (max-width: 979px) {
-  .home-other-reviews__card_content {
-    align-items: center;
-  }
-}
-.home-other-reviews__card_title {
-  font-size: 20px;
-  color: white;
-}
-.home-other-reviews__card_subtitle {
-  font-size: 16px;
-  color: #847f7d;
-}
-.home-other-reviews__content {
-  position: absolute;
-  z-index: 10;
-  top: calc(100% + 25px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1030px;
-  border-radius: 20px;
-  border: 1.258px solid #33302D;
-  background: linear-gradient(142deg, rgba(52, 45, 39, 0.81) 0%, rgba(34, 34, 32, 0.81) 67.95%);
-  backdrop-filter: blur(35.5999984741px);
-  padding: 20px 40px;
-  transition: 200ms ease;
-  opacity: 0;
-  visibility: hidden;
-}
-@media screen and (max-width: 979px) {
-  .home-other-reviews__content {
-    padding: 20px;
-  }
-}
-.home-other-reviews__content.active {
-  opacity: 1;
-  visibility: visible;
-}
-.home-other-reviews__content_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 25px;
-}
-@media screen and (max-width: 979px) {
-  .home-other-reviews__content_header {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-}
-.home-other-reviews__content_img {
-  height: 37px;
-  width: auto;
-}
-.home-other-reviews__content_info {
-  display: flex;
-  align-items: center;
-  gap: 23px;
-}
-.home-other-reviews__content_reviews {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  overflow-y: auto;
-  height: 420px;
-  padding-right: 10px;
-  /* Задаем стили для бегунка прокрутки */
-  /* Задаем стили для всей области прокрутки */
-}
-.home-other-reviews__content_reviews::-webkit-scrollbar-track {
-  background: #161513;
-  padding: 4px;
-  border-radius: 10px;
-}
-.home-other-reviews__content_reviews::-webkit-scrollbar-thumb {
-  background: #2B2824;
-  border-radius: 10px;
-  border: 4px solid transparent;
-  background-clip: padding-box;
-}
-.home-other-reviews__content_reviews::-webkit-scrollbar {
-  width: 16px;
-}
-.home-other-reviews__content_positive, .home-other-reviews__content_negative, .home-other-reviews__content_count {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #847f7d;
-}
-.home-other-reviews__content_positive img, .home-other-reviews__content_negative img, .home-other-reviews__content_count img {
-  width: auto;
-  height: 18px;
-  object-fit: cover;
-}
 /* unique classes */
 .main-bg-color {
   background-color: #1c1b19;
@@ -18121,6 +17879,7 @@ input:checked + .contract-offer__slider:before {
   font-weight: 600;
   text-align: center;
   max-width: 840px;
+  line-height: 1.2;
 }
 .about-page__title ._orange {
   color: #ff6c3d;
@@ -18451,9 +18210,8 @@ input:checked + .contract-offer__slider:before {
 }
 
 .about-reviews {
-  background-color: #161513;
   position: relative;
-  padding-top: 50px;
+  padding-top: 80px;
   padding-bottom: 100px;
   height: 1300px;
   overflow: hidden;
@@ -18463,14 +18221,14 @@ input:checked + .contract-offer__slider:before {
     padding-top: 40px;
   }
 }
-.about-reviews .home-other-reviews {
+.about-reviews .platform-reviews {
   margin-top: 40px;
 }
 .about-reviews__block {
-  margin: 40px auto 0;
+  margin: 20px auto 0;
   columns: 4;
   column-gap: 20px;
-  position: relative;
+  /* position: relative; */
   /* overflow: hidden; */
   height: 1800px;
 }
@@ -18494,21 +18252,16 @@ input:checked + .contract-offer__slider:before {
 .about-reviews__block::after {
   content: "";
   position: absolute;
-  bottom: 800px;
+  bottom: 0px;
   left: 0;
   width: 100%;
-  height: 60%;
+  height: 50%;
   background: linear-gradient(180deg, rgba(22, 21, 19, 0) 0%, #161513 89.22%);
-}
-@media screen and (max-width: 979px) {
-  .about-reviews__block::after {
-    bottom: 1000px;
-  }
 }
 .about-reviews__card {
   margin-bottom: 20px;
   border-radius: 11px 35px 35px 35px;
-  background: #2D2B29;
+  background: #191816;
   padding: 25px;
   break-inside: avoid;
 }
@@ -18557,6 +18310,94 @@ input:checked + .contract-offer__slider:before {
 .about-reviews__card_date {
   font-size: 12px;
   color: #847f7d;
+}
+
+.home-reviews {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ff6c3d;
+  position: relative;
+  overflow: hidden;
+}
+.home-reviews__bg {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  top: -100px;
+  background: linear-gradient(0deg, #1C1B19 46.15%, #2B0F0A 100%);
+}
+.home-reviews__title {
+  text-align: center;
+  font-size: 20px;
+  color: #847f7d;
+  margin-bottom: 25px;
+  position: relative;
+}
+.home-reviews__title._secondary {
+  margin-top: 80px;
+}
+.home-reviews__slide {
+  width: 100%;
+  max-width: 294px;
+}
+.home-reviews .splide__track {
+  overflow: visible;
+}
+
+.home-reviews-card {
+  display: flex;
+  gap: 14px;
+  position: relative;
+}
+.home-reviews-card__name {
+  width: 100%;
+  max-width: 58px;
+  height: 76px;
+  border-radius: 5px;
+  border: 1px solid #847f7d;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+.home-reviews-card__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.home-reviews-card__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+.home-reviews-card__date {
+  color: #847f7d;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.home-reviews-card__date_label {
+  display: flex;
+  width: 27px;
+  height: 11px;
+  border-radius: 25px;
+}
+.home-reviews-card__date_label._green {
+  background-color: #62CC66;
+}
+.home-reviews-card__text {
+  color: #847f7d;
+  font-size: 14px;
+}
+.home-reviews-card .read-smore__link {
+  color: #ff6c3d;
+  font-size: 14px;
 }
 
 .about-others {
@@ -21912,6 +21753,11 @@ input:checked + .contract-offer__slider:before {
   opacity: 0.6;
 }
 
+.warranty-main {
+  padding-bottom: 0;
+  overflow-x: hidden;
+}
+
 .warranty-header {
   margin-top: 30px;
 }
@@ -21993,4 +21839,731 @@ input:checked + .contract-offer__slider:before {
   height: 100%;
   object-fit: contain;
   object-position: top right;
+}
+
+.warranty-data {
+  margin-bottom: 30px;
+  margin-top: 8px;
+}
+.warranty-data__block {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  border-radius: 30px;
+  padding: 0 40px;
+  border: 2px dashed #CE7559;
+}
+.warranty-data__banner {
+  width: 100%;
+  max-width: 350px;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__banner {
+    flex-direction: column;
+    padding: 20px 10px;
+    border-radius: 10px;
+    min-height: 120px;
+  }
+}
+.warranty-data__icon {
+  height: auto;
+  display: block;
+}
+.warranty-data__icon--left {
+  width: 130px;
+  position: absolute;
+  left: -110px;
+  top: 10px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__icon--left {
+    width: 80px;
+    left: -50px;
+    top: 30px;
+  }
+}
+.warranty-data__icon--right {
+  width: 80px;
+  position: absolute;
+  right: -90px;
+  top: -10px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__icon--right {
+    width: 60px;
+    right: -50px;
+    top: 10px;
+  }
+}
+.warranty-data__content {
+  text-align: center;
+  flex: 1;
+  z-index: 2;
+}
+.warranty-data__title {
+  font-size: 16px;
+  color: #EBE2D0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+.warranty-data__main {
+  font-size: 76px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #EBE2D0;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1;
+  transform: translateY(5px);
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__main {
+    font-size: 48px;
+  }
+}
+.warranty-data__subtitle {
+  font-size: 16px;
+  color: #EBE2D0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+
+/* Reviews Page */
+.reviews-block__login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 35px;
+  background-color: #191816;
+  border-radius: 22px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+@media screen and (max-width: 979px) {
+  .reviews-block__login {
+    flex-direction: column;
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+.reviews-block__login_header {
+  color: #C3B8A2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1;
+}
+.reviews-block__login_title {
+  font-size: 34px;
+  font-weight: 600;
+}
+@media screen and (max-width: 979px) {
+  .reviews-block__login_title {
+    font-size: 24px;
+  }
+}
+.reviews-block__login_subtitle {
+  font-size: 18px;
+  font-weight: 300;
+}
+@media screen and (max-width: 979px) {
+  .reviews-block__login_subtitle {
+    font-size: 16px;
+  }
+}
+.reviews-block__login_btn {
+  padding: 14px 35px;
+}
+.reviews-block__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.reviews-block__card {
+  display: flex;
+  background: #191816;
+  border-radius: 25px;
+  padding: 25px;
+}
+@media screen and (max-width: 979px) {
+  .reviews-block__card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 18px;
+  }
+}
+.reviews-block__card_header {
+  min-width: 320px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.reviews-block__card_content {
+  width: 100%;
+  color: #847F7D;
+  font-size: 14px;
+}
+.reviews-block__card_game, .reviews-block__card_date {
+  font-size: 12px;
+  color: #847F7D;
+}
+.reviews-block__card_name {
+  font-size: 16px;
+  color: #C3B8A2;
+  font-weight: 600;
+}
+.reviews-block__card_img {
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+  display: flex;
+  background-color: #ebe2d0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.platform-reviews {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px 8px;
+  position: relative;
+  z-index: 2;
+}
+@media screen and (max-width: 979px) {
+  .platform-reviews {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+  }
+}
+.platform-reviews__card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 15px 10px;
+  gap: 10px;
+  border-radius: 20px;
+  background: #191816;
+  border: 1px solid transparent;
+}
+@media screen and (max-width: 1200px) {
+  .platform-reviews__card {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 10px;
+  }
+}
+.platform-reviews__card:hover, .platform-reviews__card.active {
+  background: #2C2B27;
+}
+.platform-reviews__card_img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+@media screen and (max-width: 1200px) {
+  .platform-reviews__card_img {
+    width: auto;
+    height: 55px;
+  }
+}
+.platform-reviews__card_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  gap: 4px;
+}
+@media screen and (max-width: 1200px) {
+  .platform-reviews__card_content {
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 979px) {
+  .platform-reviews__card_content {
+    align-items: center;
+  }
+}
+.platform-reviews__card_title {
+  font-size: 20px;
+  color: white;
+  width: 100%;
+}
+.platform-reviews__card_subtitle {
+  font-size: 16px;
+  color: #847f7d;
+  width: 100%;
+}
+.platform-reviews__content {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 25px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1030px;
+  border-radius: 20px;
+  border: 1.258px solid #33302D;
+  background: linear-gradient(142deg, rgba(52, 45, 39, 0.81) 0%, rgba(34, 34, 32, 0.81) 67.95%);
+  backdrop-filter: blur(35.5999984741px);
+  padding: 20px 40px;
+  transition: 200ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+@media screen and (max-width: 979px) {
+  .platform-reviews__content {
+    padding: 20px;
+  }
+}
+.platform-reviews__content.active {
+  opacity: 1;
+  visibility: visible;
+}
+.platform-reviews__content_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 979px) {
+  .platform-reviews__content_header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+.platform-reviews__content_img {
+  height: 37px;
+  width: auto;
+}
+.platform-reviews__content_info {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+.platform-reviews__content_reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  height: 420px;
+  padding-right: 10px;
+  /* Задаем стили для бегунка прокрутки */
+  /* Задаем стили для всей области прокрутки */
+}
+.platform-reviews__content_reviews::-webkit-scrollbar-track {
+  background: #161513;
+  padding: 4px;
+  border-radius: 10px;
+}
+.platform-reviews__content_reviews::-webkit-scrollbar-thumb {
+  background: #2B2824;
+  border-radius: 10px;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+.platform-reviews__content_reviews::-webkit-scrollbar {
+  width: 16px;
+}
+.platform-reviews__content_positive, .platform-reviews__content_negative, .platform-reviews__content_count {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #847f7d;
+}
+.platform-reviews__content_positive img, .platform-reviews__content_negative img, .platform-reviews__content_count img {
+  width: auto;
+  height: 18px;
+  object-fit: cover;
+}
+.platform-reviews__arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.warranty-main {
+  padding-bottom: 0;
+  overflow-x: hidden;
+}
+
+.warranty-header {
+  margin-top: 30px;
+}
+
+.warranty-about__block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__block {
+    grid-template-columns: 1fr;
+  }
+}
+.warranty-about__card {
+  border-radius: 30px;
+  background: #191816;
+  padding: 20px 30px 30px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__card {
+    border-radius: 10px;
+  }
+}
+.warranty-about__card-number {
+  width: 68px;
+  height: 68px;
+  position: relative;
+}
+.warranty-about__card-number-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: white;
+  z-index: 2;
+  font-family: "Bebas Neue", sans-serif;
+}
+.warranty-about__card-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #EBE2D0;
+  line-height: 1;
+  font-weight: 500;
+}
+.warranty-about__card-title ._number {
+  font-size: 80px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #CE7559;
+  line-height: 1;
+  transform: translateY(5px);
+  display: inline-block;
+}
+.warranty-about__card-btn {
+  padding: 10px 30px;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+.warranty-about__card-btn:hover {
+  color: white;
+  background-color: #ff6c3d;
+  border: 1px solid transparent;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__card-btn {
+    width: 100%;
+  }
+}
+.warranty-about__card-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top right;
+}
+
+.warranty-data {
+  margin-bottom: 30px;
+  margin-top: 8px;
+}
+.warranty-data__block {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  border-radius: 30px;
+  padding: 0 40px;
+  border: 2px dashed #CE7559;
+}
+.warranty-data__banner {
+  width: 100%;
+  max-width: 350px;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__banner {
+    flex-direction: column;
+    padding: 20px 10px;
+    border-radius: 10px;
+    min-height: 120px;
+  }
+}
+.warranty-data__icon {
+  height: auto;
+  display: block;
+}
+.warranty-data__icon--left {
+  width: 130px;
+  position: absolute;
+  left: -110px;
+  top: 10px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__icon--left {
+    width: 80px;
+    left: -50px;
+    top: 30px;
+  }
+}
+.warranty-data__icon--right {
+  width: 80px;
+  position: absolute;
+  right: -90px;
+  top: -10px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__icon--right {
+    width: 60px;
+    right: -50px;
+    top: 10px;
+  }
+}
+.warranty-data__content {
+  text-align: center;
+  flex: 1;
+  z-index: 2;
+}
+.warranty-data__title {
+  font-size: 16px;
+  color: #EBE2D0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+.warranty-data__main {
+  font-size: 76px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #EBE2D0;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1;
+  transform: translateY(5px);
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__main {
+    font-size: 48px;
+  }
+}
+.warranty-data__subtitle {
+  font-size: 16px;
+  color: #EBE2D0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+
+.warranty-main {
+  padding-bottom: 0;
+  overflow-x: hidden;
+}
+
+.warranty-header {
+  margin-top: 30px;
+}
+
+.warranty-about__block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__block {
+    grid-template-columns: 1fr;
+  }
+}
+.warranty-about__card {
+  border-radius: 30px;
+  background: #191816;
+  padding: 20px 30px 30px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__card {
+    border-radius: 10px;
+  }
+}
+.warranty-about__card-number {
+  width: 68px;
+  height: 68px;
+  position: relative;
+}
+.warranty-about__card-number-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: white;
+  z-index: 2;
+  font-family: "Bebas Neue", sans-serif;
+}
+.warranty-about__card-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #EBE2D0;
+  line-height: 1;
+  font-weight: 500;
+}
+.warranty-about__card-title ._number {
+  font-size: 80px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #CE7559;
+  line-height: 1;
+  transform: translateY(5px);
+  display: inline-block;
+}
+.warranty-about__card-btn {
+  padding: 10px 30px;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+.warranty-about__card-btn:hover {
+  color: white;
+  background-color: #ff6c3d;
+  border: 1px solid transparent;
+}
+@media screen and (max-width: 979px) {
+  .warranty-about__card-btn {
+    width: 100%;
+  }
+}
+.warranty-about__card-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top right;
+}
+
+.warranty-data {
+  margin-bottom: 30px;
+  margin-top: 8px;
+}
+.warranty-data__block {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  border-radius: 30px;
+  padding: 0 40px;
+  border: 2px dashed #CE7559;
+}
+.warranty-data__banner {
+  width: 100%;
+  max-width: 350px;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__banner {
+    flex-direction: column;
+    padding: 20px 10px;
+    border-radius: 10px;
+    min-height: 120px;
+  }
+}
+.warranty-data__icon {
+  height: auto;
+  display: block;
+}
+.warranty-data__icon--left {
+  width: 130px;
+  position: absolute;
+  left: -110px;
+  top: 10px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__icon--left {
+    width: 80px;
+    left: -50px;
+    top: 30px;
+  }
+}
+.warranty-data__icon--right {
+  width: 80px;
+  position: absolute;
+  right: -90px;
+  top: -10px;
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__icon--right {
+    width: 60px;
+    right: -50px;
+    top: 10px;
+  }
+}
+.warranty-data__content {
+  text-align: center;
+  flex: 1;
+  z-index: 2;
+}
+.warranty-data__title {
+  font-size: 16px;
+  color: #EBE2D0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+.warranty-data__main {
+  font-size: 76px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #EBE2D0;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1;
+  transform: translateY(5px);
+}
+@media screen and (max-width: 979px) {
+  .warranty-data__main {
+    font-size: 48px;
+  }
+}
+.warranty-data__subtitle {
+  font-size: 16px;
+  color: #EBE2D0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-align: right;
+  letter-spacing: 0.5px;
 }

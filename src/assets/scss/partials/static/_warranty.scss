@@ -1,3 +1,8 @@
+.warranty-main{
+    padding-bottom: 0;
+    overflow-x: hidden;
+}
+
 .warranty-header {
     margin-top: 30px;
 }
@@ -85,5 +90,108 @@
             object-fit: contain;
             object-position: top right;
         }
+    }
+}
+
+.warranty-data {
+    margin-bottom: 30px;
+    margin-top: 8px;
+
+    &__block {
+        display: flex;
+        justify-content: center;
+        background: transparent;
+        border-radius: 30px;
+        padding: 0 40px;
+        border: 2px dashed #CE7559;
+    }
+
+    &__banner {
+        width: 100%;
+        max-width: 350px;
+        min-height: 160px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        box-sizing: border-box;
+
+        @include mobile {
+            flex-direction: column;
+            padding: 20px 10px;
+            border-radius: 10px;
+            min-height: 120px;
+        }
+    }
+
+    &__icon {
+        height: auto;
+        display: block;
+
+        &--left {
+            width: 130px;
+            position: absolute;
+            left: -110px;
+            top: 10px;
+
+            @include mobile {
+                width: 80px;
+                left: -50px;
+                top: 30px;
+            }
+        }
+
+        &--right {
+            width: 80px;
+            position: absolute;
+            right: -90px;
+            top: -10px;
+
+            @include mobile {
+                width: 60px;
+                right: -50px;
+                top: 10px;
+            }
+        }
+    }
+
+    &__content {
+        text-align: center;
+        flex: 1;
+        z-index: 2;
+    }
+
+    &__title {
+        font-size: 16px;
+        color: #EBE2D0;
+        font-family: $font-roboto;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        text-align: left;
+    }
+
+    &__main {
+        font-size: 76px;
+        font-family: $font-bebas;
+        color: #EBE2D0;
+        font-weight: 500;
+        letter-spacing: 2px;
+        line-height: 1;
+        transform: translateY(5px);
+
+        @include mobile {
+            font-size: 48px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        color: #EBE2D0;
+        font-family: $font-roboto;
+        font-weight: 400;
+        text-align: right;
+        letter-spacing: 0.5px;
     }
 }

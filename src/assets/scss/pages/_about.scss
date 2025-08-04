@@ -204,6 +204,7 @@
         font-weight: 600;
         text-align: center;
         max-width: 840px;
+        line-height: 1.2;
 
         ._orange {
             color: $orange;
@@ -562,9 +563,8 @@
 }
 
 .about-reviews {
-    background-color: #161513;
     position: relative;
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 100px;
     height: 1300px;
     overflow: hidden;
@@ -573,15 +573,15 @@
         padding-top: 40px;
     }
 
-    .home-other-reviews {
+    .platform-reviews {
         margin-top: 40px;
     }
 
     &__block {
-        margin: 40px auto 0;
+        margin: 20px auto 0;
         columns: 4;
         column-gap: 20px;
-        position: relative;
+        /* position: relative; */
         /* overflow: hidden; */
         height: 1800px;
 
@@ -607,22 +607,18 @@
         &::after {
             content: "";
             position: absolute;
-            bottom: 800px;
+            bottom: 0px;
             left: 0;
             width: 100%;
-            height: 60%;
+            height: 50%;
             background: linear-gradient(180deg, rgba(22, 21, 19, 0.00) 0%, #161513 89.22%);
-
-            @include mobile {
-                bottom: 1000px;
-            }
         }
     }
 
     &__card {
         margin-bottom: 20px;
         border-radius: 11px 35px 35px 35px;
-        background: #2D2B29;
+        background: #191816;
         padding: 25px;
         break-inside: avoid;
 
@@ -678,6 +674,110 @@
         }
     }
 }
+
+
+
+.home-reviews {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $orange;
+    position: relative;
+    overflow: hidden;
+
+    &__bg {
+        width: 100%;
+        height: 400px;
+        position: absolute;
+        left: 0;
+        top: -100px;
+        background: linear-gradient(0deg, #1C1B19 46.15%, #2B0F0A 100%);
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 20px;
+        color: $text-dark;
+        margin-bottom: 25px;
+        position: relative;
+
+        &._secondary {
+            margin-top: 80px;
+        }
+    }
+
+    &__slide {
+        width: 100%;
+        max-width: 294px;
+    }
+
+    .splide__track {
+        overflow: visible;
+    }
+}
+
+.home-reviews-card {
+    display: flex;
+    gap: 14px;
+    position: relative;
+
+    &__name {
+        width: 100%;
+        max-width: 58px;
+        height: 76px;
+        border-radius: 5px;
+        border: 1px solid $text-dark;
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-roboto;
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__title {
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+    }
+
+    &__date {
+        color: $text-dark;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 8px;
+
+        &_label {
+            display: flex;
+            width: 27px;
+            height: 11px;
+            border-radius: 25px;
+
+            &._green {
+                background-color: #62CC66;
+            }
+        }
+    }
+
+    &__text {
+        color: $text-dark;
+        font-size: 14px;
+    }
+
+    .read-smore__link {
+        color: $orange;
+        font-size: 14px;
+    }
+}
+
 
 .about-others {
     background-color: #161513;
