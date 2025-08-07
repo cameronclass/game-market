@@ -40,6 +40,14 @@
       z-index: 1;
     }
 
+    &_subtitle{
+      color: #6D675B;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: $font-roboto;
+      margin-bottom: 20px;
+    }
+
     &_button {
       border-radius: 14px;
       background: #22211e;
