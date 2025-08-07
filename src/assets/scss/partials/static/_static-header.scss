@@ -1,3 +1,7 @@
+.static-page-header{
+    margin-top: 30px;
+}
+
 .static-header {
     border-radius: 30px;
     background: #1A1917;
@@ -54,7 +58,7 @@
         height: 100%;
         display: flex;
         justify-content: center;
-        opacity: 0.6;
+        opacity: 0.9;
     }
 
     &__bg_2 {
@@ -66,6 +70,6 @@
         height: 100%;
         display: flex;
         justify-content: center;
-        opacity: 0.6;
+        opacity: 1;
     }
 }
