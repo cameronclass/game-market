@@ -6343,7 +6343,7 @@ html.with-fancybox body.hide-scrollbar {
 /* Template */
 @font-face {
   font-family: "Bebas Neue";
-  src: url("/assets/fonts/BebasNeue.woff") format("woff"), url("/assets/fonts/BebasNeue.woff2") format("woff2");
+  src: url("/game-market/assets/fonts/BebasNeue.woff") format("woff"), url("/game-market/assets/fonts/BebasNeue.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -17696,6 +17696,11 @@ input:checked + .contract-offer__slider:before {
 }
 .mobile-game-add__card_text_price {
   color: #847f7d;
+}
+
+.main-about {
+  background: #0e0d0c;
+  padding-top: 150px;
 }
 
 .about-header {
