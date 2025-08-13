@@ -6343,7 +6343,7 @@ html.with-fancybox body.hide-scrollbar {
 /* Template */
 @font-face {
   font-family: "Bebas Neue";
-  src: url("/game-market/assets/fonts/BebasNeue.woff") format("woff"), url("/game-market/assets/fonts/BebasNeue.woff2") format("woff2");
+  src: url("/assets/fonts/BebasNeue.woff") format("woff"), url("/assets/fonts/BebasNeue.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
