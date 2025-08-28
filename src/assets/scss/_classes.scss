@@ -1854,7 +1854,7 @@
 
 /* Forms */
 .form-input {
-  padding: 18px 20px;
+  padding: 15px 20px;
   border-radius: 6px;
   border: 1px solid #34312d;
   background: #1c1b19;
@@ -1862,7 +1862,7 @@
   z-index: 1;
 
   &::placeholder {
-    color: white;
+    color: #847f7d;
   }
 
   &__btn {

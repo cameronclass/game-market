@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     @@include("common/partials/header.js")
     @@include("common/partials/reviews.js")
     @@include("common/partials/steam.js")
+    @@include("common/partials/services.js")
 
     @@include("common/main.js")
 
