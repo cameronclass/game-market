@@ -1,0 +1,295 @@
+.services-page {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__block {
+        padding: 16px;
+        background-color: #191816;
+        border-radius: 24px;
+        overflow: hidden;
+
+        @include mobile {
+            padding: 10px;
+            border-radius: 10px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2px;
+
+        .new-block__title_text {
+            @include mobile {
+                font-size: 22px;
+            }
+        }
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        color: #847f7d;
+
+        @include mobile {
+            font-size: 13px;
+        }
+    }
+
+    &__filter {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+
+        @include mobile {
+            gap: 5px;
+        }
+    }
+
+    &__filter-btn {
+        padding: 13px 30px;
+        background: #22211e;
+        color: #EBE2D0;
+        border-color: transparent;
+
+        &.active {
+            background-color: #EBE2D0;
+            color: #191816;
+        }
+
+        @include mobile {
+            padding: 8px 10px;
+            font-size: 14px;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__card {
+        background: #191816;
+        border-radius: 24px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: none;
+        position: relative;
+        transition: box-shadow 0.2s, transform 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+            transform: translateY(-2px);
+        }
+    }
+
+    &__card-img {
+        border-radius: 20px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        position: relative;
+        background: #fff;
+        overflow: hidden;
+
+        img {
+
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    &__card-img_chatgpt {
+        background: #000 url('/assets/images/services/chatgpt.svg') center/60% no-repeat;
+    }
+
+    &__card-img_telegram {
+        background: #3CA9E0 url('/assets/images/services/telegram.svg') center/60% no-repeat;
+    }
+
+    &__card-img_psn {
+        background: #3566A8 url('/assets/images/services/psn.svg') center/60% no-repeat;
+    }
+
+    &__card-img_psplus {
+        background: #fff url('/assets/images/services/psplus.svg') center/60% no-repeat;
+    }
+
+    &__card-img_xboxpass {
+        background: #43B02A url('/assets/images/services/xboxpass.svg') center/60% no-repeat;
+    }
+
+    &__card-img_psgames {
+        background: #fff url('/assets/images/services/psn.svg') center/60% no-repeat;
+    }
+
+    &__card-img_spotify {
+        background: #1ED760 url('/assets/images/services/spotify.svg') center/60% no-repeat;
+    }
+
+    &__card-img_discord {
+        background: #5865F2 url('/assets/images/services/discord.svg') center/60% no-repeat;
+    }
+
+    &__card-img_steam {
+        background: #101828 url('/assets/images/services/steam.svg') center/60% no-repeat;
+    }
+
+    &__card-img_epic {
+        background: #000 url('/assets/images/services/epic.svg') center/60% no-repeat;
+    }
+
+    &__card-img_youtube {
+        background: #FF0000 url('/assets/images/services/youtube.svg') center/60% no-repeat;
+    }
+
+    &__card-img_netflix {
+        background: #E50914 url('/assets/images/services/netflix.svg') center/60% no-repeat;
+    }
+
+    &__card-badge {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        background: #008C5F;
+        color: #fff;
+        font-size: 16px;
+        font-family: $font-roboto;
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 4px 16px;
+        z-index: 2;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    &__card-title {
+        font-size: 18px;
+        font-family: $font-roboto;
+        font-weight: 700;
+        color: #fff;
+        margin-left: 2px;
+        margin-bottom: 2px;
+        margin-top: 0;
+        letter-spacing: 0.01em;
+    }
+}
+
+.services-faq {
+    margin-bottom: 40px;
+
+    &__title {
+        .new-block__title_text {
+            @include mobile {
+                font-size: 22px;
+            }
+        }
+    }
+
+    &__questions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 0;
+        margin: 30px 0 0;
+    }
+
+    &__question {
+        border-radius: 15px;
+        background: #22211e;
+        transition: 200ms ease;
+        font-size: 20px;
+        font-weight: 500;
+
+        .accordion__intro {
+            padding: 15px 25px;
+            color: #ebe2d0;
+        }
+
+
+
+        &.active {
+            background-color: #22211e;
+        }
+    }
+}
+
+.service-topup {
+
+    .mobile-game-form__info{
+        max-width: 320px;
+    }
+
+    &__services {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    &__lists {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        border-radius: 10px;
+        padding: 8px;
+
+        &.active {
+            background-color: #191816;
+        }
+
+        &:hover {
+            background-color: #191816;
+        }
+
+        &_img {
+            min-width: 50px;
+            min-height: 50px;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            object-fit: contain;
+        }
+
+        &_name {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &_title {
+            color: #ebe2d0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        &_subtitle {
+            font-size: 11px;
+            font-weight: 400;
+            color: #847f7d;
+        }
+    }
+}
