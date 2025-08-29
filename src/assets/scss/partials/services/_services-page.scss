@@ -77,7 +77,7 @@
         }
 
         @media (max-width: 600px) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 
@@ -97,6 +97,10 @@
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
             transform: translateY(-2px);
         }
+
+        @include mobile{
+            border-radius: 10px;
+        }
     }
 
     &__card-img {
@@ -110,8 +114,11 @@
         overflow: hidden;
 
         img {
-
             aspect-ratio: 1 / 1;
+        }
+
+        @include mobile{
+            border-radius: 14px;
         }
     }
 
@@ -176,6 +183,13 @@
         padding: 4px 16px;
         z-index: 2;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+        @include mobile{
+            padding: 2px 4px;
+            font-size: 12px;
+            left: 7px;
+            bottom: 7px;
+        }
     }
 
     &__card-title {
@@ -183,10 +197,11 @@
         font-family: $font-roboto;
         font-weight: 700;
         color: #fff;
-        margin-left: 2px;
-        margin-bottom: 2px;
         margin-top: 0;
-        letter-spacing: 0.01em;
+
+        @include mobile {
+            font-size: 14px;
+        }
     }
 }
 
@@ -426,6 +441,10 @@
 
     &__content {
         padding: 15px 20px;
+
+        @include mobile{
+            padding: 15px;
+        }
     }
 
     &__time {
@@ -445,6 +464,10 @@
         border-radius: 10px;
         border: 1px solid #34312D;
         padding: 5px;
+
+        @include mobile {
+            flex-wrap: wrap;
+        }
     }
 
     &__tab {
@@ -1120,11 +1143,22 @@
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
     position: relative;
     cursor: pointer;
     border: 1px solid transparent;
     transition: background 0.2s;
+
+    @include mobile {
+        padding: 4px 6px;
+        font-size: 10px;
+        gap: 5px;
+    }
+
+    svg{
+        width: 20px;
+        height: 20px;
+    }
 
     &__discount {
         background: $orange;

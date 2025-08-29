@@ -22890,7 +22890,7 @@ input:checked + .contract-offer__slider:before {
 }
 @media (max-width: 600px) {
   .services-page__cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .services-page__card {
@@ -22909,6 +22909,11 @@ input:checked + .contract-offer__slider:before {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
   transform: translateY(-2px);
 }
+@media screen and (max-width: 979px) {
+  .services-page__card {
+    border-radius: 10px;
+  }
+}
 .services-page__card-img {
   border-radius: 20px;
   margin-bottom: 12px;
@@ -22921,6 +22926,11 @@ input:checked + .contract-offer__slider:before {
 }
 .services-page__card-img img {
   aspect-ratio: 1/1;
+}
+@media screen and (max-width: 979px) {
+  .services-page__card-img {
+    border-radius: 14px;
+  }
 }
 .services-page__card-img_chatgpt {
   background: #000 url("/assets/images/services/chatgpt.svg") center/60% no-repeat;
@@ -22972,15 +22982,25 @@ input:checked + .contract-offer__slider:before {
   z-index: 2;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+@media screen and (max-width: 979px) {
+  .services-page__card-badge {
+    padding: 2px 4px;
+    font-size: 12px;
+    left: 7px;
+    bottom: 7px;
+  }
+}
 .services-page__card-title {
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   color: #fff;
-  margin-left: 2px;
-  margin-bottom: 2px;
   margin-top: 0;
-  letter-spacing: 0.01em;
+}
+@media screen and (max-width: 979px) {
+  .services-page__card-title {
+    font-size: 14px;
+  }
 }
 
 .services-faq {
@@ -23196,6 +23216,11 @@ input:checked + .contract-offer__slider:before {
 .service-form__content {
   padding: 15px 20px;
 }
+@media screen and (max-width: 979px) {
+  .service-form__content {
+    padding: 15px;
+  }
+}
 .service-form__time {
   font-size: 14px;
   color: #ebe2d0;
@@ -23212,6 +23237,11 @@ input:checked + .contract-offer__slider:before {
   border-radius: 10px;
   border: 1px solid #34312D;
   padding: 5px;
+}
+@media screen and (max-width: 979px) {
+  .service-form__tabs {
+    flex-wrap: wrap;
+  }
 }
 .service-form__tab {
   width: 100%;
@@ -23801,11 +23831,22 @@ input:checked + .contract-offer__slider:before {
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   position: relative;
   cursor: pointer;
   border: 1px solid transparent;
   transition: background 0.2s;
+}
+@media screen and (max-width: 979px) {
+  .vpn-region-btn {
+    padding: 4px 6px;
+    font-size: 10px;
+    gap: 5px;
+  }
+}
+.vpn-region-btn svg {
+  width: 20px;
+  height: 20px;
 }
 .vpn-region-btn__discount {
   background: #ff6c3d;
