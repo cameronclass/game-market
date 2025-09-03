@@ -98,7 +98,7 @@
             transform: translateY(-2px);
         }
 
-        @include mobile{
+        @include mobile {
             border-radius: 10px;
         }
     }
@@ -117,7 +117,7 @@
             aspect-ratio: 1 / 1;
         }
 
-        @include mobile{
+        @include mobile {
             border-radius: 14px;
         }
     }
@@ -184,7 +184,7 @@
         z-index: 2;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
-        @include mobile{
+        @include mobile {
             padding: 2px 4px;
             font-size: 12px;
             left: 7px;
@@ -206,7 +206,6 @@
 }
 
 .services-faq {
-    margin-bottom: 40px;
 
     &__title {
         .new-block__title_text {
@@ -225,14 +224,14 @@
     }
 
     &__question {
-        border-radius: 15px;
+        border-radius: 10px;
         background: #22211e;
         transition: 200ms ease;
         font-size: 20px;
         font-weight: 500;
 
         .accordion__intro {
-            padding: 15px 25px;
+            padding: 12px 10px 12px 20px;
             color: #ebe2d0;
         }
 
@@ -242,28 +241,41 @@
             background-color: #22211e;
         }
     }
+
+    &__block {
+        padding: 20px;
+        background-color: #191816;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .accordion__active .accordion__content {
+        padding: 0 20px 20px;
+        color: #c2baaa;
+    }
 }
 
 .service-topup {
 
     &__block {
         display: flex;
+        align-items: flex-start;
         gap: 20px;
 
         @include netbook {
+            flex-wrap: wrap;
+        }
+
+        @include mobile {
             flex-direction: column;
         }
-    }
-
-    .mobile-game-form__info {
-        max-width: 320px;
     }
 
     &__services {
         width: 100%;
         max-width: 280px;
 
-        @include mobile {
+        @include netbook {
             max-width: 100%;
         }
 
@@ -274,10 +286,14 @@
         flex-direction: column;
         gap: 10px;
 
-        @include mobile {
+        @include netbook {
             flex-direction: row;
             overflow-x: auto;
             gap: 4px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
         }
     }
 
@@ -289,7 +305,7 @@
         border-radius: 10px;
         padding: 8px;
 
-        @include mobile {
+        @include netbook {
             min-width: 110px;
             width: 110px;
             flex-direction: column;
@@ -323,7 +339,7 @@
             display: flex;
             flex-direction: column;
 
-            @include mobile {
+            @include netbook {
                 text-align: center;
             }
         }
@@ -333,7 +349,7 @@
             font-size: 20px;
             font-weight: 600;
 
-            @include mobile {
+            @include netbook {
                 font-size: 12px;
                 line-height: 1.2;
             }
@@ -344,7 +360,7 @@
             font-weight: 400;
             color: #847f7d;
 
-            @include mobile {
+            @include netbook {
                 display: none;
             }
         }
@@ -359,15 +375,18 @@
         font-size: 18px;
         font-weight: 600;
         line-height: 1.2;
-        margin-top: 20px;
-        margin-bottom: 5px;
         color: #ebe2d0;
+        margin-bottom: 4px;
     }
 
     &__subtitle {
         font-size: 14px;
         color: #847f7d;
-        margin-bottom: 14px;
+    }
+
+    &__heading {
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
     &__header {
@@ -382,6 +401,7 @@
             top: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
             border-radius: 10px 10px 0 0;
         }
 
@@ -437,12 +457,20 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+
+        @include netbook {
+            width: 60%;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     &__content {
         padding: 15px 20px;
 
-        @include mobile{
+        @include mobile {
             padding: 15px;
         }
     }
@@ -472,7 +500,8 @@
 
     &__tab {
         width: 100%;
-        padding: 10px 20px;
+        padding: 10px;
+        line-height: 1.2;
         background: #22211e;
         color: #EBE2D0;
         border: none;
@@ -499,7 +528,7 @@
     }
 
     &__vpn {
-        margin-top: 30px;
+        margin-top: 20px;
 
         &_regions {
             display: flex;
@@ -571,11 +600,30 @@
 
     &__checkbox {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 10px;
         /* max-width: calc(50% - 5px); */
 
         @include netbook {
             max-width: 100%;
+        }
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__instructions {
+        &_btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: $orange;
+            line-height: 1;
+            background: none;
+            transition: 200ms ease;
         }
     }
 
@@ -609,7 +657,7 @@
         grid-template-columns: repeat(4, 1fr);
 
         @include mobile {
-            grid-template-columns: 2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 7px;
         }
     }
@@ -638,7 +686,7 @@
             position: relative;
             border-radius: 10px;
             border: 2px solid #34312D;
-            transition: 300ms ease;
+            transition: 200ms ease;
         }
 
         &_img {
@@ -705,13 +753,6 @@
             margin-top: 8px;
             margin-bottom: 10px;
 
-            @include mobile {
-                position: absolute;
-                left: 45%;
-                top: 45%;
-                transform: translate(-50%, -50%);
-            }
-
             &_num {
                 font-size: 12px;
                 font-weight: 500;
@@ -755,10 +796,17 @@
 }
 
 .service-summary {
-    margin: 40px 0;
 
     @include mobile {
         margin-top: 60px;
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #ebe2d0;
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
 
     &__block {
@@ -832,24 +880,22 @@
 
     &__info {
         width: 100%;
-        max-width: 403px;
+        max-width: 320px;
         border-radius: 10px;
         background: #1A1917;
-        padding: 10px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 40px;
 
         @include netbook {
-            max-width: 100%;
-            flex-direction: row;
-            gap: 40px;
+            width: calc(40% - 20px);
+            max-width: 40%;
         }
 
         @include mobile {
-            flex-direction: column;
-            background: transparent;
-            padding: 0;
-            gap: 0;
+            width: 100%;
+            max-width: 100%;
         }
 
         &_subtitle {
@@ -918,14 +964,6 @@
                 object-fit: contain;
             }
         }
-
-        &_1 {
-            width: 100%;
-        }
-
-        &_2 {
-            width: 100%;
-        }
     }
 
     &__pay {
@@ -938,6 +976,7 @@
         padding: 5px 20px;
         position: relative;
         overflow: hidden;
+        margin-top: 12px;
 
         &_card {
             display: flex;
@@ -976,7 +1015,7 @@
             border-radius: 3px;
             border: 1.2px solid #33302D;
             background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
-            transition: 300ms ease;
+            transition: 200ms ease;
 
             &:hover {
                 color: white;
@@ -1032,91 +1071,46 @@
         }
     }
 
-    &__price {
-        width: calc(100% + 20px);
-        position: relative;
-        left: -10px;
-        background: linear-gradient(90deg, rgba(255, 108, 61, 0.10) 0%, rgba(25, 25, 23, 0.00) 100%);
-        padding: 12px 20px 5px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+    &__methods {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
+        margin-top: 10px;
+    }
 
-        @include mobile {
-            width: 100%;
-            left: 0;
-        }
-
-        &::before {
-            content: "";
+    &__method {
+        &_block {
             display: flex;
-            width: 3px;
-            height: 100%;
-            border-radius: 10px;
-            background: #CBA636;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        &_pay {
-            line-height: 1;
-            display: flex;
+            align-items: center;
             flex-direction: column;
-            gap: 7px;
+            background-color: #22211e;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #ebe2d0;
+            padding: 5px;
+            gap: 5px;
+            border: 1px solid transparent;
+            transition: 200ms ease;
 
-            &_num {
-                font-size: 20px;
-                color: white;
-                font-weight: 700;
-            }
-        }
-
-        &_sub {
-            font-size: 10px;
-            color: $text-dark;
-            text-align: right;
-        }
-
-        &_get {
-            line-height: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-
-            &_num {
-                font-size: 20px;
-                color: #D7B038;
-                font-weight: 700;
-            }
-
-            &_block {
-                display: flex;
-                align-items: center;
-                gap: 7px;
-            }
-
-            &_bonus {
-                font-size: 12px;
-            }
-
-            &_wrap {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                gap: 5px;
-            }
-
-            &_icon {
-                width: 47px;
-                height: 38px;
+            img {
+                width: auto;
+                height: 40px;
                 object-fit: contain;
             }
+
+            &:hover {
+                cursor: pointer;
+                border: 1px solid $orange;
+            }
         }
 
-        &_svg {
-            margin-top: 12px;
+        input[type="radio"] {
+            display: none;
+        }
+
+
+        input[type="radio"]:checked~.service-summary__method_block {
+            border: 1px solid $orange;
         }
     }
 
@@ -1155,7 +1149,7 @@
         gap: 5px;
     }
 
-    svg{
+    svg {
         width: 20px;
         height: 20px;
     }

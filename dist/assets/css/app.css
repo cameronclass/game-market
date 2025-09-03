@@ -14384,6 +14384,7 @@ input[type=number] {
   position: relative;
   display: inline-block;
   width: 50px;
+  min-width: 50px;
   height: 20px;
   margin: 0;
 }
@@ -23003,9 +23004,6 @@ input:checked + .contract-offer__slider:before {
   }
 }
 
-.services-faq {
-  margin-bottom: 40px;
-}
 @media screen and (max-width: 979px) {
   .services-faq__title .new-block__title_text {
     font-size: 22px;
@@ -23019,37 +23017,50 @@ input:checked + .contract-offer__slider:before {
   margin: 30px 0 0;
 }
 .services-faq__question {
-  border-radius: 15px;
+  border-radius: 10px;
   background: #22211e;
   transition: 200ms ease;
   font-size: 20px;
   font-weight: 500;
 }
 .services-faq__question .accordion__intro {
-  padding: 15px 25px;
+  padding: 12px 10px 12px 20px;
   color: #ebe2d0;
 }
 .services-faq__question.active {
   background-color: #22211e;
 }
+.services-faq__block {
+  padding: 20px;
+  background-color: #191816;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.services-faq .accordion__active .accordion__content {
+  padding: 0 20px 20px;
+  color: #c2baaa;
+}
 
 .service-topup__block {
   display: flex;
+  align-items: flex-start;
   gap: 20px;
 }
 @media screen and (max-width: 1200px) {
   .service-topup__block {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
-.service-topup .mobile-game-form__info {
-  max-width: 320px;
+@media screen and (max-width: 979px) {
+  .service-topup__block {
+    flex-direction: column;
+  }
 }
 .service-topup__services {
   width: 100%;
   max-width: 280px;
 }
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 1200px) {
   .service-topup__services {
     max-width: 100%;
   }
@@ -23059,12 +23070,15 @@ input:checked + .contract-offer__slider:before {
   flex-direction: column;
   gap: 10px;
 }
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 1200px) {
   .service-topup__lists {
     flex-direction: row;
     overflow-x: auto;
     gap: 4px;
   }
+}
+.service-topup__lists::-webkit-scrollbar {
+  display: none;
 }
 .service-topup__list {
   display: flex;
@@ -23074,7 +23088,7 @@ input:checked + .contract-offer__slider:before {
   border-radius: 10px;
   padding: 8px;
 }
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 1200px) {
   .service-topup__list {
     min-width: 110px;
     width: 110px;
@@ -23106,7 +23120,7 @@ input:checked + .contract-offer__slider:before {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 1200px) {
   .service-topup__list_name {
     text-align: center;
   }
@@ -23116,7 +23130,7 @@ input:checked + .contract-offer__slider:before {
   font-size: 20px;
   font-weight: 600;
 }
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 1200px) {
   .service-topup__list_title {
     font-size: 12px;
     line-height: 1.2;
@@ -23127,7 +23141,7 @@ input:checked + .contract-offer__slider:before {
   font-weight: 400;
   color: #847f7d;
 }
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 1200px) {
   .service-topup__list_subtitle {
     display: none;
   }
@@ -23141,14 +23155,16 @@ input:checked + .contract-offer__slider:before {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
-  margin-top: 20px;
-  margin-bottom: 5px;
   color: #ebe2d0;
+  margin-bottom: 4px;
 }
 .service-form__subtitle {
   font-size: 14px;
   color: #847f7d;
-  margin-bottom: 14px;
+}
+.service-form__heading {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .service-form__header {
   display: flex;
@@ -23162,6 +23178,7 @@ input:checked + .contract-offer__slider:before {
   top: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
 .service-form__header_content {
@@ -23213,6 +23230,16 @@ input:checked + .contract-offer__slider:before {
   flex-direction: column;
   gap: 20px;
 }
+@media screen and (max-width: 1200px) {
+  .service-form__form {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 979px) {
+  .service-form__form {
+    width: 100%;
+  }
+}
 .service-form__content {
   padding: 15px 20px;
 }
@@ -23245,7 +23272,8 @@ input:checked + .contract-offer__slider:before {
 }
 .service-form__tab {
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px;
+  line-height: 1.2;
   background: #22211e;
   color: #EBE2D0;
   border: none;
@@ -23267,7 +23295,7 @@ input:checked + .contract-offer__slider:before {
   display: block;
 }
 .service-form__vpn {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .service-form__vpn_regions {
   display: flex;
@@ -23328,13 +23356,28 @@ input:checked + .contract-offer__slider:before {
 }
 .service-form__checkbox {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   /* max-width: calc(50% - 5px); */
 }
 @media screen and (max-width: 1200px) {
   .service-form__checkbox {
     max-width: 100%;
   }
+}
+.service-form__group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.service-form__instructions_btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #ff6c3d;
+  line-height: 1;
+  background: none;
+  transition: 200ms ease;
 }
 .service-form .steam-login__info {
   position: sticky;
@@ -23364,7 +23407,7 @@ input:checked + .contract-offer__slider:before {
 }
 @media screen and (max-width: 979px) {
   .service-card__cards {
-    grid-template-columns: 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 7px;
   }
 }
@@ -23389,7 +23432,7 @@ input:checked + .contract-offer__slider:before {
   position: relative;
   border-radius: 10px;
   border: 2px solid #34312D;
-  transition: 300ms ease;
+  transition: 200ms ease;
 }
 .service-card__card_img {
   height: 101%;
@@ -23447,14 +23490,6 @@ input:checked + .contract-offer__slider:before {
   margin-top: 8px;
   margin-bottom: 10px;
 }
-@media screen and (max-width: 979px) {
-  .service-card__card_text {
-    position: absolute;
-    left: 45%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-  }
-}
 .service-card__card_text_num {
   font-size: 12px;
   font-weight: 500;
@@ -23489,13 +23524,17 @@ input:checked + .contract-offer__slider:before {
   text-decoration: line-through;
 }
 
-.service-summary {
-  margin: 40px 0;
-}
 @media screen and (max-width: 979px) {
   .service-summary {
     margin-top: 60px;
   }
+}
+.service-summary__title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ebe2d0;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 .service-summary__block {
   display: flex;
@@ -23557,26 +23596,24 @@ input:checked + .contract-offer__slider:before {
 }
 .service-summary__info {
   width: 100%;
-  max-width: 403px;
+  max-width: 320px;
   border-radius: 10px;
   background: #1A1917;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
 }
 @media screen and (max-width: 1200px) {
   .service-summary__info {
-    max-width: 100%;
-    flex-direction: row;
-    gap: 40px;
+    width: calc(40% - 20px);
+    max-width: 40%;
   }
 }
 @media screen and (max-width: 979px) {
   .service-summary__info {
-    flex-direction: column;
-    background: transparent;
-    padding: 0;
-    gap: 0;
+    width: 100%;
+    max-width: 100%;
   }
 }
 .service-summary__info_subtitle {
@@ -23636,12 +23673,6 @@ input:checked + .contract-offer__slider:before {
   height: 18px;
   object-fit: contain;
 }
-.service-summary__info_1 {
-  width: 100%;
-}
-.service-summary__info_2 {
-  width: 100%;
-}
 .service-summary__pay {
   border-radius: 4px;
   background: #1D1D1B;
@@ -23652,6 +23683,7 @@ input:checked + .contract-offer__slider:before {
   padding: 5px 20px;
   position: relative;
   overflow: hidden;
+  margin-top: 12px;
 }
 .service-summary__pay_card {
   display: flex;
@@ -23685,7 +23717,7 @@ input:checked + .contract-offer__slider:before {
   border-radius: 3px;
   border: 1.2px solid #33302D;
   background: linear-gradient(142deg, #342D27 0%, #222220 67.95%);
-  transition: 300ms ease;
+  transition: 200ms ease;
 }
 .service-summary__pay_btn:hover {
   color: white;
@@ -23732,82 +23764,39 @@ input:checked + .contract-offer__slider:before {
 .service-summary__pay_add_crystal {
   width: 10px;
 }
-.service-summary__price {
-  width: calc(100% + 20px);
-  position: relative;
-  left: -10px;
-  background: linear-gradient(90deg, rgba(255, 108, 61, 0.1) 0%, rgba(25, 25, 23, 0) 100%);
-  padding: 12px 20px 5px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+.service-summary__methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
+  margin-top: 10px;
 }
-@media screen and (max-width: 979px) {
-  .service-summary__price {
-    width: 100%;
-    left: 0;
-  }
-}
-.service-summary__price::before {
-  content: "";
-  display: flex;
-  width: 3px;
-  height: 100%;
-  border-radius: 10px;
-  background: #CBA636;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.service-summary__price_pay {
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-.service-summary__price_pay_num {
-  font-size: 20px;
-  color: white;
-  font-weight: 700;
-}
-.service-summary__price_sub {
-  font-size: 10px;
-  color: #847f7d;
-  text-align: right;
-}
-.service-summary__price_get {
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.service-summary__price_get_num {
-  font-size: 20px;
-  color: #D7B038;
-  font-weight: 700;
-}
-.service-summary__price_get_block {
+.service-summary__method_block {
   display: flex;
   align-items: center;
-  gap: 7px;
-}
-.service-summary__price_get_bonus {
-  font-size: 12px;
-}
-.service-summary__price_get_wrap {
-  display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  background-color: #22211e;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #ebe2d0;
+  padding: 5px;
   gap: 5px;
+  border: 1px solid transparent;
+  transition: 200ms ease;
 }
-.service-summary__price_get_icon {
-  width: 47px;
-  height: 38px;
+.service-summary__method_block img {
+  width: auto;
+  height: 40px;
   object-fit: contain;
 }
-.service-summary__price_svg {
-  margin-top: 12px;
+.service-summary__method_block:hover {
+  cursor: pointer;
+  border: 1px solid #ff6c3d;
+}
+.service-summary__method input[type=radio] {
+  display: none;
+}
+.service-summary__method input[type=radio]:checked ~ .service-summary__method_block {
+  border: 1px solid #ff6c3d;
 }
 
 .vpn-region-select {
