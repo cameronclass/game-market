@@ -721,7 +721,7 @@
     font-size: 12px;
 
     &__text {
-        color: $text-dark;
+        color: #ebe2d0;
     }
 
     &__link {
@@ -751,7 +751,7 @@
         right: 0;
         bottom: 0;
         background-color: transparent;
-        transition: .4s;
+        transition: border 200ms ease;
         border: 1px solid #393330;
         border-radius: 6px;
         overflow: hidden;
@@ -767,8 +767,8 @@
             height: 18px;
             left: 0;
             bottom: 0;
-            background-color: $text-dark;
-            transition: .4s;
+            background: $text-dark;
+            transition: transform 200ms ease;
             border-radius: 5px;
         }
 
@@ -786,11 +786,6 @@
     }
 
     &:hover {
-
-
-        .contract-offer__text {
-            color: white;
-        }
 
         .contract-offer__link {
             border-bottom: 1px solid $orange;

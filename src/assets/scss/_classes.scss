@@ -1862,7 +1862,7 @@
   z-index: 1;
 
   &::placeholder {
-    color: #847f7d;
+    color: #ebe2d0;
   }
 
   &__btn {
@@ -1874,7 +1874,7 @@
     font-size: 12px;
     background: #282725;
     padding: 8px 25px;
-    color: $text-dark;
+    color: #ebe2d0;
     border: 1px solid transparent;
     transition: 300ms ease;
     z-index: 11;
@@ -1884,7 +1884,7 @@
 
     &:hover,
     &:focus-visible {
-      color: white;
+      color: #ebe2d0;
       border: 1px solid $orange;
     }
 

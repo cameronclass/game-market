@@ -4,7 +4,6 @@ title: Пополнение сервиса
 ---
 
 <main class="main-new">
-    {{> order-history }}
 
     <section class="service-topup">
         <div class="container">
@@ -109,7 +108,7 @@ title: Пополнение сервиса
                                 class="service-form__header_bg" alt="">
                             <div class="service-form__header_content">
                                 <img class="service-form__header_logo" src="assets/images/services/chatgpt.webp" alt="">
-                                <div class="service-form__header_title">Купить подписку ChatGPT 5 (Plus, Pro)</div>
+                                <div class="service-form__header_title">Купить подписку <br> ChatGPT 5 (Plus, Pro)</div>
                             </div>
                         </div>
                         <div class="service-form__content">
@@ -145,11 +144,10 @@ title: Пополнение сервиса
                                         </label>
                                     </div>
                                     <div class="service-form__checkbox basket-page__price_contract">
-                                        <a class="contract-offer" href="#">
+                                        <span class="contract-offer" href="#">
                                             <span class="contract-offer__text">Я соглашаюсь на передачу данных
                                                 аккаунта для успешной доставки </span>
-                                            <!--  <span class="contract-offer__link">ID</span> -->
-                                        </a>
+                                        </span>
                                         <label class="contract-offer__switch">
                                             <input class="contract-offer__input" type="checkbox" checked required>
                                             <span class="contract-offer__slider"></span>
@@ -379,7 +377,7 @@ title: Пополнение сервиса
                     </div>
 
 
-                    <button class="service-summary__pay_btn service-summary__pay_btn_main">Оплатить</button>
+                    <button class="service-summary__pay_btn">Оплатить</button>
                     <div class="service-summary__info_subtitle_2">Нажимая “Оплатить”, вы подтверждаете, что
                         указали верные данные</div>
 

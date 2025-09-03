@@ -104,10 +104,6 @@ textarea {
 
   &:hover {
     border-color: $orange;
-
-    &::placeholder {
-      color: white;
-    }
   }
 
   &::placeholder {
